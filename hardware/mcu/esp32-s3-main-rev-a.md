@@ -109,7 +109,7 @@ Radar shares the host SPI clock/data lines with W5500:
 - GPIO13 = SPI_MISO
 - GPIO14 = RADAR_CS
 - GPIO15 = RADAR_IRQ
-- GPIO16 = RADAR_RST/EN
+- GPIO16 = RADAR_EN
 
 W5500 retains GPIO10 ETH_CS.
 
@@ -234,7 +234,7 @@ Hardware must permit recovery even if application firmware is invalid.
 | 13 | ETH_MISO |
 | 14 | RADAR_CS |
 | 15 | RADAR_IRQ |
-| 16 | RADAR_RST/EN |
+| 16 | RADAR_EN |
 | 17 | I2C_SDA |
 | 18 | I2C_SCL |
 | 19 | USB D- |
@@ -245,7 +245,7 @@ Hardware must permit recovery even if application firmware is invalid.
 | 39 | VOICE_IRQ |
 | 40 | STATUS_LED |
 | 41 | SERVICE_TOUCH |
-| 42 | expansion candidate |
+| 42 | RADAR_RST |
 | 43 | UART_TX |
 | 44 | UART_RX |
 | 45 | reserved strap |
@@ -265,7 +265,7 @@ Voice control:
 - GPIO38 = VOICE_RST
 - GPIO39 = VOICE_IRQ
 
-GPIO42 remains an expansion candidate.
+GPIO42 = RADAR_RST, providing independent radar reset and enable control.
 
 GPIO22..25 are not exposed for use on the WROOM-1 module, GPIO26..37 remain unavailable for module memory, and strapping GPIO0/3/45/46 remain protected.
 
