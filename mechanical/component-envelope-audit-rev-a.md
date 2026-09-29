@@ -161,3 +161,46 @@ The following now block exact enclosure collision release:
 
 ## 14. Release rule
 The first detailed rear-frame solid may be generated with DERIVED_ENVELOPE objects, but production mechanical release requires all collision-critical components to be VERIFIED_STEP or VERIFIED_DRAWING/DERIVED_ENVELOPE and matched to the BOM.
+
+
+## 15. Connector-envelope verification pass — 2026-09-29
+
+### Molex 43650-0200
+Authoritative manufacturer drawing family is available for Micro-Fit 3.0 right-angle PCB headers. The master CAD shall use the exact 2-circuit 43650-0200 drawing/3D model and include PCB-lock/THT geometry plus the 43645-0200 mating housing and wire-service envelope.
+
+Audit state: **VERIFIED_MPN / MANUFACTURER_CAD_FAMILY_AVAILABLE / IMPORT_PENDING**.
+
+### GCT USB4085
+GCT publishes the USB4085 product with mechanical drawing and 3D-model access. The part is a USB Type-C receptacle with through-hole shell/retention features.
+
+Audit state: **VERIFIED_MPN / MANUFACTURER_DRAWING_AND_3D_AVAILABLE / IMPORT_PENDING**.
+
+### Coilcraft XAL7050-103MEC
+Coilcraft publishes the exact XAL7050-103 mechanical data and 3D model.
+For enclosure pre-CAD reserve a conservative body envelope:
+- X approximately 8.0 mm;
+- Y approximately 7.7 mm;
+- Z 5.5 mm conservative until imported model is cross-checked.
+
+Audit state: **VERIFIED_MPN / MANUFACTURER_3D_AVAILABLE / DERIVED_ENVELOPE_ACTIVE**.
+
+### Panasonic EEU-FR1V471B
+Use conservative collision envelope:
+- nominal can diameter 10 mm;
+- nominal body height 16 mm;
+- seated/max collision allowance 17.5 mm pending exact lead-form reconciliation;
+- local CAD pocket remains 12 x 12 x 19 mm.
+
+Audit state: **VERIFIED_MPN / DERIVED_ENVELOPE_ACTIVE**.
+
+### Remaining blockers
+The exact mechanical source/model remains mandatory before full collision release for:
+- EX25FHE2-4;
+- Ag53024;
+- TE 2-1734264-1 / exact RJ45 interface geometry;
+- Würth 7490220121;
+- Hirose FH12 service/bend envelopes.
+
+The CAD release rule is unchanged: a manufacturer drawing-derived conservative solid is acceptable where no trustworthy native STEP is available.
+
+Status: **CONNECTOR_AND_AUDIO_ENVELOPES_PARTIALLY_VERIFIED / EXCITER_POE_ETHERNET_ENVELOPES_REMAIN**.
