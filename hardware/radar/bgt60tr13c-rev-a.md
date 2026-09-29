@@ -353,3 +353,57 @@ Before oscillator capture, reconcile as one set:
 4. exact oscillator/source frequency and MPN.
 
 No 38.4 MHz or ~80 MHz oscillator may be released to BOM merely from an example or platform-level clock statement.
+
+
+## Reference shield reconciliation — 2026-09-29
+
+### Clock baseline resolved
+Infineon BGT60TR13C Shield User Guide Rev. 2.50 (2025-02-04) shows the sensor OSC_CLK driven by an `OSC_80M` source. The BGT60TR13C datasheet describes OSC_CLK as an 80 MHz (example) crystal/clock input.
+
+For AudioPicture Rev.A, which follows the Infineon Shield/reference topology, the capture baseline is therefore:
+- OSC_CLK nominal = **80 MHz**;
+- exact oscillator/source MPN and its supply/filter network = **OPEN_RDK_HARDWARE_TRANSCRIPTION**;
+- firmware clock/profile settings must remain coherent with the selected 80 MHz reference.
+
+The prior 38.4 MHz proposal is **SUPERSEDED / DO_NOT_USE**.
+
+### U202
+U202 family = **onsemi NCP167**, fixed 1.8 V output.
+Manufacturer datasheet confirms:
+- VIN 1.9..5.5 V;
+- fixed-output options include 1.8 V;
+- up to 700 mA;
+- 1 uF ceramic input and 1 uF ceramic output nominal application;
+- WLCSP4 and XDFN4 package families.
+
+AudioPicture preference: choose the **XDFN4 1 mm x 1 mm** 1.8 V orderable variant if lifecycle/availability are acceptable, because it is more manufacturing-friendly than WLCSP for the custom board. Exact ordering code remains a BOM gate.
+
+### Digital translation implementation
+Use **two TI SN74AXC4T245 devices** rather than mixing translator families.
+
+U204:
+- group 1: SPI_SCLK + SPI_MOSI, 3.3 -> 1.8 V;
+- group 2: SPI_MISO + RADAR_IRQ, 1.8 -> 3.3 V.
+
+U205:
+- group 1: RADAR_CS + RADAR_RST, 3.3 -> 1.8 V;
+- group 2 unused and disabled/NC per TI requirements.
+
+Rails:
+- VCCA = +3V3_SYS;
+- VCCB = +1V8_RADAR.
+
+Configure DIR pins as fixed straps for the required direction. OE is active-low; each OE gets a pull-up to its controlling VCCA so translation defaults disabled/high-Z during power-up/down. RADAR_EN-controlled logic may pull OE low only after +1V8_RADAR is valid.
+
+SN74AXC4T245 provides Ioff partial-power-down and VCC isolation; if either VCC is below 100 mV, outputs become high impedance. This is required for radar-off back-power prevention.
+
+Status:
+- U204/U205 family **FROZEN**;
+- exact package preference = UQFN/WQFN/TSSOP selection at PCB assembly/fanout review;
+- do not use auto-direction translators.
+
+### Supply-noise release gate
+BGT60TR13C datasheet specifies a stringent supply-noise condition, including a 20 uVpp limit in the 20 kHz..700 kHz band for the stated operating specification. Therefore the final NCP167 + domain-filter network must be verified by simulation/measurement against the Infineon reference network; generic decoupling alone is not a release criterion.
+
+### Reference files authority
+Infineon states that Shield schematics and PCB design files are distributed with the Radar Development Kit (RDK) under its hardware assets. The exact 80 MHz oscillator MPN and the per-domain filtering values shall be transcribed from that hardware package before BOM release.
