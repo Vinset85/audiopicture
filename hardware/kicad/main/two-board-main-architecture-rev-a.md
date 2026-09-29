@@ -36,7 +36,7 @@ MAIN-P owns high-current conversion and Class-D audio.
 Functions:
 - external 24 V input and protection;
 - source ORing/priority;
-- PoE DC output input from Ag53024;
+- isolated 24 V PoE input received from MAIN-C;
 - INA228 and shunt;
 - 5 V TPSM63603;
 - 3.3 V TPS62823 as required by final rail ownership;
@@ -49,14 +49,23 @@ Functions:
 
 Keep BTL switching loops entirely on MAIN-P.
 
-## 4. Ag53024 ownership
-Baseline: **Ag53024 belongs to MAIN-P**, while RJ45/magnetics remain on MAIN-C.
+## 4. Ag53024 ownership — FROZEN ON MAIN-C
+The production baseline places **Ag53024 on MAIN-C**, together with the complete PoE front end.
 
-This requires carrying only the PoE isolated/rectified interface appropriate to the finalized PoE architecture between the connector/magnetics side and the module side. Before freezing this split, verify the Ag53024 input architecture and whether separating it from the RJ45/magnetics creates undesirable high-voltage/common-mode routing across the inter-board harness.
+Silvertel documents VIN+ and VIN- as the direct PoE inputs after the input bridge rectifiers, while +VDC/-VDC are the isolated regulated outputs. The Ag53024 provides 24 V output, 24 W continuous / 30 W peak, with 1500 Vdc input-to-output isolation.
 
-If that verification is unfavorable, move Ag53024 to MAIN-C and send only its isolated DC output to MAIN-P.
+Therefore MAIN-C owns:
+- RJ45;
+- Ethernet magnetics;
+- PoE bridge rectifiers/protection/filtering;
+- Ag53024;
+- W5500 and Ethernet logic.
 
-Therefore Ag53024 ownership is **provisional**, unlike the Ethernet signal-chain ownership.
+MAIN-P receives the **isolated 24 V PoE output** only.
+
+This avoids carrying the pre-isolation PoE power domain across the MAIN-C / MAIN-P harness and keeps the isolation boundary physically contained on MAIN-C.
+
+Status: **AG53024_OWNERSHIP_FROZEN_MAIN_C**.
 
 ## 5. Inter-board link
 The MAIN-C <-> MAIN-P interconnect may carry:
@@ -127,7 +136,6 @@ Keep the ENV chamber thermally isolated from MAIN-P and its exhaust/conduction p
 
 ## 12. Release gates
 Before this architecture is frozen:
-1. verify exact Ag53024 input/output pin architecture and decide final board ownership;
 2. define inter-board connector and pinout;
 3. calculate rail currents and connector contact requirements;
 4. run I2S SI/harness-length check;
@@ -136,4 +144,4 @@ Before this architecture is frozen:
 7. run thermal coupling analysis;
 8. update native KiCad hierarchy to two-board topology.
 
-Status: **MAIN_P_MAIN_C_FUNCTIONAL_SPLIT_BASELINE_DEFINED / AG53024_OWNERSHIP_AND_RECTANGLE_PACKING_OPEN**.
+Status: **MAIN_P_MAIN_C_FUNCTIONAL_SPLIT_BASELINE_DEFINED / AG53024_ON_MAIN_C_FROZEN / RECTANGLE_PACKING_AND_INTERCONNECT_OPEN**.
