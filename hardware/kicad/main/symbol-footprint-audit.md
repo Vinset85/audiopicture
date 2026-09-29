@@ -191,3 +191,27 @@ It may be frozen only when the datasheet proves all of:
 - production availability.
 
 Do not use Pulse J0011D21BNL as the PoE production connector.
+
+
+## Audit pass 4 — Ethernet physical architecture FROZEN
+Decision: use **discrete Ethernet magnetics + shielded 8P8C RJ45** for MAIN Rev.A.
+
+Integrated MagJack candidates are no longer floorplan blockers.
+
+Initial transformer candidate:
+- Pulse H1102NL, listed by WIZnet for W5500 external-transformer use.
+- Status remains CANDIDATE until PoE+ DC current/insulation capability is verified against the current Pulse datasheet.
+
+RJ45 requirement:
+- plain shielded 8P8C;
+- no hidden magnetics or bridge rectifiers;
+- all 8 cable contacts exposed;
+- robust right-angle THT mechanical retention preferred.
+
+This architecture gives explicit access to:
+- data-pair cable-side center taps for PoE Alternative A;
+- spare pairs for Alternative B;
+- W5500 PHY-side transformer terminations;
+- CHASSIS_ETH.
+
+PCB floorplanning may now reserve separate footprints/zones for RJ45, transformer and two PoE bridges instead of one MagJack envelope.
