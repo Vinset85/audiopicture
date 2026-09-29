@@ -370,3 +370,49 @@ Layout priority: buck switch node and inductor remain physically separated from 
 
 Status:
 **0V9_TOPOLOGY_CAPACITANCE_AND_PLL_FILTER_FROZEN / FB_VALUES_AND_PASSIVE_MPNS_VALIDATE**.
+
+
+## 24 MHz clock and reset/support freeze — 2026-09-29
+### Crystal clock
+Rev.A uses the XU316 internal oscillator with a local 24 MHz crystal rather than adding an external active oscillator.
+
+Frozen reference implementation from the current XU316-QF60B datasheet:
+- Y101 = **Seiko Epson FA-238 24.0000MD30X-W5**;
+- frequency = 24 MHz;
+- load capacitance = 12 pF;
+- max ESR = 60 ohm;
+- Rf = **1 Mohm** across XIN/XOUT;
+- Rd = **680 ohm** damping resistor;
+- CL1 = **22 pF**;
+- CL2 = **22 pF**;
+- XIN = QF60B pin 16;
+- XOUT = QF60B pin 15.
+
+The manufacturer-listed network is frozen as the capture baseline. Final oscillator startup/drive/layout verification remains mandatory.
+
+### Reset
+QF60B RST_N = pin 21 and is an active-low Schmitt input with internal pull-up.
+
+AudioPicture keeps external VOICE_RST control from MAIN. Because the QF60B I/O rails are not all one common 1.8 V rail, do not rely solely on the internal POR: VOICE_RST shall remain asserted until +0V9_VOICE, +1V8_VOICE and +3V3_SYS are valid and the 24 MHz oscillator can start reliably.
+
+Minimum reset pulse width remains 5 us; firmware/hardware shall use a substantially conservative margin during startup.
+
+No arbitrary RC delay is frozen here: reset release is controlled by MAIN and shall be fail-safe low while MAIN is reset/unpowered according to the single-owner pull policy.
+
+### TPS62823 0.900 V feedback
+TPS62823 VFB nominal = **0.600 V**.
+
+For 0.900 V:
+VOUT = VFB * (1 + Rtop/Rbottom)
+therefore Rtop/Rbottom = **0.5**.
+
+Rev.A preferred capture pair:
+- Rbottom (FB to GND) = **100 kohm, 1%**;
+- Rtop (VOUT to FB) = **49.9 kohm, 1%**.
+
+Ideal nominal output from these standard values is approximately **0.8994 V**, before reference/resistor tolerance.
+
+Keep the divider immediately adjacent to FB, away from SW/inductor, and sense VOUT from the quiet output-capacitor node.
+
+Status:
+**VOICE_CLOCK_RESET_AND_0V9_FB_CAPTURE_BASELINE_FROZEN / STARTUP_LAYOUT_TOLERANCE_VALIDATE**.
