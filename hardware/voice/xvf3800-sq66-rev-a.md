@@ -151,3 +151,74 @@ VOICE becomes FROZEN only after:
 7. DML vibration isolation test;
 8. fabric/acoustic-port validation;
 9. EMC test with Class-D and Wi-Fi active.
+
+
+## Rev.A electrical capture review — 2026-09-29
+
+### XVF3800 rail contract
+Per current XMOS XVF3800 documentation:
+- VDD core = 0.9 V nominal, all VDD pins connected;
+- VDDIOL/VDDIOR/VDDIOT = 3.3 V;
+- VDDIOB18 = 1.8 V;
+- PLL_AVDD = filtered 0.9 V derived from the core rail;
+- USB_VDD18/USB_VDD33 may remain unpowered/floating when XVF3800 USB is not used;
+- exposed/package ground paddles connect directly to GND with local vias.
+
+PCB-B therefore requires local regulated **+0V9_VOICE** and **+1V8_VOICE** rails. +3V3_SYS is the I/O rail and microphone-source rail. Exact regulator MPNs/passives remain a capture gate until the current XK-VOICE-SQ66 design files are transcribed.
+
+### QSPI boot contract
+Normal production boot remains local QSPI master boot.
+Frozen pin behavior:
+- QSPI_D1 boot-selection pin is not strapped high for normal boot; it connects to flash D1;
+- QSPI_CS_N has external 4.7 kOhm pull-up;
+- SPI_CS_N has external 4.7 kOhm pull-up;
+- QSPI_D0/D1/D2/D3, CLK and CS route only to the local boot flash with short traces.
+
+XMOS current development-kit documentation identifies **32 Mbit flash storage**. Rev.A capacity baseline is therefore 32 Mbit minimum; exact production flash MPN remains OPEN pending the current SQ66 BOM/design-file transcription.
+
+### Microphone lifecycle correction
+**Infineon IM69D130 is not frozen for production.** Infineon currently marks it "not for new design".
+
+Preferred Rev.A replacement candidate:
+**Infineon IM72D128V01XTMA1**
+- active/preferred product;
+- digital PDM;
+- 1.62 to 3.60 V;
+- 72 dB(A) SNR;
+- 128 dBSPL AOP;
+- -36 dBFS sensitivity;
+- 4.0 x 3.0 x 1.2 mm PG-LLGA-5-3;
+- suited to multi-microphone arrays.
+
+The existing 66 x 66 mm acoustic geometry remains frozen. The new microphone footprint/acoustic port must be transcribed from the IM72D128 manufacturer drawing and validated against the front-stack mechanical model.
+
+### Microphone rail/privacy
++3V3_SYS -> hardware load switch -> +3V3_MIC -> four microphones.
+Each microphone gets local 100 nF bypass close to VDD.
+
+MIC_HW_EN default OFF is mandatory. The load switch shall include reverse-current/back-power protection appropriate to the final topology; microphone PDM/clock pins must not sustain +3V3_MIC through protection structures when the rail is OFF.
+
+Exact privacy load-switch MPN remains OPEN until reverse-current behavior and output-discharge requirement are verified.
+
+### PDM clock
+3.072 MHz remains the nominal high-performance microphone clock target. Final microphone candidate must explicitly support this clock and required duty-cycle tolerance.
+
+### J101 physical update
+J101 is now a **16-contact physical interface** using the Hirose FH12 0.5 mm family.
+The original 14 logical signals remain unchanged; two additional contacts are GND/reference contacts for improved I2S return paths.
+Preferred MAIN mating part is FH12-16S-0.5SH(55). Exact PCB-B mating orientation and physical pin order are frozen only with the FPC cable drawing.
+
+### Measurement-mode gate
+Do not mark PCB-B production-ready until the selected XVF3800 firmware build demonstrates access to four raw or minimally processed microphone channels suitable for room impulse/response measurement. Standard processed voice output alone does not satisfy AudioPicture calibration requirements.
+
+### Capture status
+Status: **READY_FOR_DETAILED_CAPTURE_AFTER_SQ66_POWER_BOM_TRANSCRIPTION**.
+
+Open electrical gates:
+1. exact +0V9_VOICE regulator and passives;
+2. exact +1V8_VOICE regulator and passives;
+3. exact 32-Mbit-or-larger QSPI flash MPN from validated XMOS-compatible list/reference BOM;
+4. exact privacy load switch;
+5. IM72D128 footprint/acoustic-port verification;
+6. current XK-VOICE-SQ66 schematic/BOM transcription;
+7. raw four-channel measurement firmware proof.
