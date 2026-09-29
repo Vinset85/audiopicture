@@ -214,3 +214,21 @@ Radar controls are independently frozen: GPIO16 = RADAR_EN and GPIO42 = RADAR_RS
 MAIN is the only source of +5V_SYS and +3V3_SYS on daughterboard interfaces. Daughterboards must not back-power MAIN. MAIN remains the only populated owner of shared I2C pull-ups.
 
 Status: READY_FOR_NATIVE_KICAD_CAPTURE_WITH_FPC_MECHANICAL_DRAWING_GATE.
+
+
+## Connector MPN freeze — 2026-09-29
+Official Hirose production connector baseline:
+- J101 VOICE = **FH12-16S-0.5SH(55)**;
+- J201 RADAR = **FH12-12S-0.5SH(55)**;
+- J301 ENV = **FH12-8S-0.5SH(55)**.
+
+Common verified family properties:
+- receptacle, ZIF;
+- 0.5 mm contact pitch;
+- horizontal FPC/FFC insertion;
+- **bottom-contact** orientation;
+- 0.30 mm FPC/FFC;
+- 0.5 A rated current per contact;
+- 2.0 mm connector height.
+
+MPNs/contact counts are frozen. Final physical net-to-contact numbering remains gated by the exact Hirose 2D drawing plus the selected MAIN-to-daughterboard FPC contact-side/orientation. Do not mirror or infer pin numbering from a top-view assumption.
