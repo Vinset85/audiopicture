@@ -475,3 +475,43 @@ These are sanity-check values only and MUST NOT be used as final schematic value
 - fail-safe logic must never interpret comparator POR as a valid external source.
 
 Status: **TOPOLOGY_FROZEN / RESISTOR_VALUES_PENDING_WORST_CASE_SOLVE**.
+
+
+## Threshold worst-case refinement — 2026-09-29
+
+### OVP target derated for production margin
+The previous 25.8 V nominal OVP trip target is superseded.
+
+Reason: the complete error stack includes TLV1822-Q1 input offset, LM4040A25 full-temperature reference error, divider/feedback resistor tolerance and temperature coefficient. A nominal trip too close to the TAS5825M 26.4 V recommended PVDD ceiling leaves inadequate production/temperature margin.
+
+Revised nominal window:
+- UV rising / EXT_VALID assert: 20.5 V
+- UV falling / invalid: 19.0 V
+- OV rising / invalid trip: **25.3 V**
+- OV falling / valid recovery: **24.7 V**
+
+The narrower 0.6 V OV hysteresis is intentional. A correct nominal 24 V adapter remains comfortably inside the valid window.
+
+### Conservative first-pass error envelope
+For engineering screening, use:
+- TLV1822-Q1 Vos: +/-4 mV;
+- LM4040A25 full-range reference tolerance/error: use datasheet full-temperature bound, not only 25 C initial tolerance;
+- threshold resistors: 0.1% max, low-TCR;
+- include feedback-resistor tolerance independently.
+
+A simplified conservative input-referred screen puts a 25.3 V nominal OVP point approximately in the 25.0-25.6 V region before a full correlated network solve. This is comfortably below 26.4 V and is therefore a safer basis than 25.8 V nominal.
+
+This screening range is NOT a substitute for exact corner analysis.
+
+### Reference bias
+Bias LM4040A25 at >=100 uA nominal around the valid 24 V input so that it is comfortably above the full-temperature minimum cathode-current requirement.
+
+Initial series-resistor class:
+(24 V - 2.5 V) / 100 uA ~= 215 kohm.
+
+Use approximately 200 kohm as the starting E96 class, then account for comparator/reference loading and the lowest valid EXT voltage. Exact value is pending current-budget corner analysis.
+
+### Capture rule
+Do not freeze final UV/OV feedback resistor values until the exact three-resistor hysteresis equations have been solved for the selected comparator input polarity and open-drain pull-up domain, and all tolerance corners have been enumerated.
+
+Status remains **TOPOLOGY_FROZEN / NOMINAL_THRESHOLDS_REFINED / EXACT_RESISTORS_PENDING_CORNER_SOLVE**.
