@@ -241,3 +241,18 @@ OPT3004 optical aperture must have:
 - dark mechanical baffle/tunnel aligned in mechanical CAD.
 
 Exact fabric-to-sensor distance is a mechanical calibration parameter.
+
+
+## OPT3004 production address freeze — 2026-09-29
+
+U302 OPT3004 must not use 0x44 because U301 SHT45 already occupies fixed address 0x44.
+
+Production capture requirement:
+- strap OPT3004 ADDR to a TI-datasheet-defined non-0x44 address;
+- preferred target = **0x45**, subject to exact ADDR-to-rail connection confirmation during symbol pin-table audit;
+- ADDR must never float;
+- firmware shall treat SHT45=0x44 and OPT3004=0x45 as the Rev.A target map.
+
+Status: **TARGET_ADDRESS_FROZEN / PHYSICAL_STRAP_CONNECTION_VERIFY_FROM_TI_PIN_TABLE**.
+
+The distinction is deliberate: the bus address is frozen, but the schematic shall not guess whether the ADDR pin reaches that address via GND, VDD, SDA or SCL until the exact OPT3004 datasheet address table is transcribed into the native-capture review.
