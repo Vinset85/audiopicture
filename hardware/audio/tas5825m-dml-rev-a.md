@@ -298,3 +298,28 @@ Gerber/production release remains blocked by:
 - EMC validation;
 - DML panel modal/acoustic validation;
 - final Smart Amp protection model.
+
+
+## Output-inductor production candidate — 2026-09-29
+
+The first production-qualified candidate for each of the four 10 uH BTL output inductors is:
+
+**Coilcraft XAL7050-103MEC**
+- L = 10 uH +/-20%;
+- shielded molded construction;
+- DCR = 25 mOhm typ / 29 mOhm max;
+- Isat = 12.1 A typ at 30% inductance drop;
+- Irms = 6.3 A for 20 C rise / 8.5 A for 40 C rise under Coilcraft reference conditions;
+- body family envelope approximately 8.0 x 7.7 x 5.0 mm;
+- manufacturer provides datasheet, loss-analysis resources and 3D model.
+
+This candidate has substantially more saturation-current margin than the >=5 A project gate and is preferred over the lower-profile XAL7030-103 for thermal/DCR reasons. XAL7030-103 remains an alternate mechanical corner only: although about 3.1 mm high and Isat 12 A, its DCR is 60.4 mOhm typ and its 20 C-rise Irms is only 2.6 A.
+
+Release conditions remain:
+1. evaluate Coilcraft core/copper loss at the TAS5825M switching waveform/frequency and actual audio current distribution;
+2. verify PCB thermal rise in the sealed 40 mm enclosure;
+3. co-simulate the complete LC network with mounted DML complex Z(f);
+4. EMC test/simulation;
+5. import and cross-check the manufacturer 3D model.
+
+Status: **OUTPUT_INDUCTOR_CANDIDATE_XAL7050_103_SELECTED / LC_AND_THERMAL_RELEASE_GATES_REMAIN**.
