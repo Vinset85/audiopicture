@@ -5,8 +5,8 @@
 - [ ] ESP32 antenna keep-out implemented.
 - [ ] ESP32 strapping states reviewed.
 - [ ] W5500 reference termination/clock/reset copied and verified.
-- [ ] PoE MagJack/module isolation reviewed.
-- [ ] LM74700 source-priority circuit works without MCU.
+- [ ] PoE discrete magnetics / Ag53024 isolation reviewed.
+- [ ] TPS48100/back-to-back MOSFET source-priority circuit works without MCU.
 - [ ] TVS clamp verified.
 - [ ] INA228 Kelvin routing represented in PCB constraints.
 - [ ] TPSM63603 reference layout followed.
