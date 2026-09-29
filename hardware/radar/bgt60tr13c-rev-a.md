@@ -90,7 +90,7 @@ Preferred architecture:
 Exact MPN remains VALIDATE after propagation-delay/SPI-rate and power-off-protection review.
 
 ## 7. Clock
-BGT60TR13C reference/system clock baseline is **38.4 MHz** per current Infineon BGT60TR13C platform/reference documentation. The earlier ~80 MHz-class placeholder is superseded.
+BGT60TR13C clock implementation is **OPEN_REFERENCE_RECONCILIATION**. Do not freeze 38.4 MHz or an ~80 MHz-class source until the selected Infineon BGT60TR13C reference schematic, datasheet OSC_CLK requirements and firmware clock configuration are reconciled.
 
 U203 oscillator/crystal implementation: VALIDATE against Infineon embedded reference design.
 
@@ -202,11 +202,7 @@ There are no separate RADAR_SCLK/RADAR_MOSI/RADAR_MISO MAIN nets in Rev.A.
 
 ### Reference clock correction
 The previous "~80 MHz class" placeholder is **SUPERSEDED**.
-Use a **38.4 MHz** radar reference/system clock baseline consistent with current Infineon BGT60TR13C platform documentation.
-
-Exact oscillator/clock-source MPN, drive level, load and connection topology remain **OPEN_REFERENCE_DESIGN** until the current Infineon reference schematic/layout is transcribed.
-
-Do not populate an 80 MHz oscillator in Rev.A.
+**Do not freeze either 38.4 MHz or ~80 MHz yet.** The clock is now an explicit reference-reconciliation gate. Exact frequency, source topology, oscillator MPN, drive level and firmware setting must be taken as one coherent set from the selected current Infineon BGT60TR13C hardware/firmware reference.
 
 ### J201 frozen interface
 J201 remains 12 contacts:
@@ -316,3 +312,44 @@ Enable sequence:
 8. configure radar profile/IRQ.
 
 Disable sequence reverses control so digital drive is removed before the radar rail is allowed to collapse.
+
+
+## Level translator freeze / clock reconciliation — 2026-09-29
+
+### U204 translation baseline
+U204 = **Texas Instruments SN74AXC4T245**.
+
+Use dual rails:
+- 3.3 V side = +3V3_SYS;
+- 1.8 V side = +1V8_RADAR.
+
+Use the two independently controlled 2-bit groups:
+- group A: SPI_SCLK, SPI_MOSI, direction 3.3 V -> 1.8 V;
+- group B: SPI_MISO, RADAR_IRQ, direction 1.8 V -> 3.3 V.
+
+The remaining MAIN->RADAR controls RADAR_CS and RADAR_RST require a second fixed-direction translation element or an equivalent reviewed grouping; do not leave them at 3.3 V.
+
+SN74AXC4T245 is selected because it provides:
+- explicit direction control;
+- output enable;
+- partial-power-down Ioff;
+- VCC isolation/high impedance when either supply is below the device isolation threshold;
+- data-rate margin far above the BGT60TR13C SPI requirement.
+
+Status: **FROZEN_TRANSLATOR_FAMILY / EXACT_PACKAGE_AND_SECOND_CONTROL_CHANNEL_IMPLEMENTATION_VERIFY**.
+
+OE must default to the disabled/high-impedance state during power-up/down. Follow TI's recommended OE bias referenced to the controlling supply. Translation must not become active until +1V8_RADAR is valid.
+
+### Clock status correction
+The earlier 38.4 MHz statement is **NOT a production freeze**.
+
+Clock status is now:
+**OPEN_REFERENCE_RECONCILIATION**.
+
+Before oscillator capture, reconcile as one set:
+1. current BGT60TR13C datasheet OSC_CLK electrical/timing requirements;
+2. current Infineon reference/shield schematic;
+3. firmware clock/profile configuration;
+4. exact oscillator/source frequency and MPN.
+
+No 38.4 MHz or ~80 MHz oscillator may be released to BOM merely from an example or platform-level clock statement.
