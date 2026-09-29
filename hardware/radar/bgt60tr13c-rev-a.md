@@ -57,9 +57,9 @@ BGT60TR13C uses standard SPI.
 Radar-side logic domain: **1.8 V**.
 
 Signals:
-- RADAR_SCLK
-- RADAR_MOSI
-- RADAR_MISO
+- SPI_SCLK
+- SPI_MOSI
+- SPI_MISO
 - RADAR_CS
 - RADAR_IRQ
 - RADAR_RST
@@ -90,7 +90,7 @@ Preferred architecture:
 Exact MPN remains VALIDATE after propagation-delay/SPI-rate and power-off-protection review.
 
 ## 7. Clock
-BGT60TR13C requires an external reference clock in the ~80 MHz class according to the selected operating/reference design.
+BGT60TR13C reference/system clock baseline is **38.4 MHz** per current Infineon BGT60TR13C platform/reference documentation. The earlier ~80 MHz-class placeholder is superseded.
 
 U203 oscillator/crystal implementation: VALIDATE against Infineon embedded reference design.
 
@@ -187,3 +187,44 @@ RADAR becomes FROZEN only after:
 8. SPI SI test at production clock;
 9. presence and stationary-person performance validated in final enclosure;
 10. EMC/coexistence test.
+
+
+## Rev.A radar electrical correction — 2026-09-29
+
+### Shared SPI naming
+PCB-C uses the MAIN shared host bus:
+- SPI_SCLK
+- SPI_MOSI
+- SPI_MISO
+- RADAR_CS
+
+There are no separate RADAR_SCLK/RADAR_MOSI/RADAR_MISO MAIN nets in Rev.A.
+
+### Reference clock correction
+The previous "~80 MHz class" placeholder is **SUPERSEDED**.
+Use a **38.4 MHz** radar reference/system clock baseline consistent with current Infineon BGT60TR13C platform documentation.
+
+Exact oscillator/clock-source MPN, drive level, load and connection topology remain **OPEN_REFERENCE_DESIGN** until the current Infineon reference schematic/layout is transcribed.
+
+Do not populate an 80 MHz oscillator in Rev.A.
+
+### J201 frozen interface
+J201 remains 12 contacts:
+1 +3V3_SYS
+2 +3V3_SYS
+3 GND
+4 GND
+5 SPI_SCLK
+6 SPI_MOSI
+7 SPI_MISO
+8 RADAR_CS
+9 RADAR_IRQ
+10 RADAR_RST
+11 RADAR_EN
+12 RESERVED
+
+Independent controls:
+- RADAR_EN = ESP32 GPIO16
+- RADAR_RST = ESP32 GPIO42
+
+PCB-C owns the 1.8 V rail, fixed-direction translation and radar clock.
