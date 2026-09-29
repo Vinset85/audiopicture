@@ -12,7 +12,7 @@ J1,MAIN,TBD PoE MagJack,1,Ethernet and PoE,VALIDATE
 J2,MAIN,TBD locking DC connector,1,24V external input,VALIDATE
 U101,VOICE,XVF3800-QF60B-C,1,Voice processor,FROZEN
 U102,VOICE,TBD,1,XVF3800 SPI flash,VALIDATE
-MIC101-MIC104,VOICE,TBD,4,PDM microphones SQ66,VALIDATE
+MIC101-MIC104,VOICE,Infineon IM69D130 baseline,4,PDM microphones SQ66,VALIDATE_REFERENCE_BOM
 U201,RADAR,BGT60TR13C,1,60GHz presence radar,FROZEN
 U202,RADAR,TBD low-noise 1.8V regulator,1,Radar 1.8V domains,VALIDATE
 U301,ENV,SHT45-AD1F,1,Temperature humidity,FROZEN
@@ -23,3 +23,4 @@ D101,MAIN,SMBJ33A candidate,1,External 24V TVS,VALIDATE_CLAMP
 C_BSTA-C_BSTD,MAIN,0.47uF X7R/X5R qualified,4,TAS5825M bootstrap,FROZEN_VALUE
 C901,MAIN,470uF 35V low-ESR baseline,1,Audio PVDD bulk capacitor,VALIDATE_MPN_MECHANICAL
 L901-L904,MAIN,10uH shielded power inductor baseline,4,Class-D LC output filter,VALIDATE_EMC_LOAD
+Q101,VOICE,TBD load switch,1,Hardware microphone power/privacy,VALIDATE
