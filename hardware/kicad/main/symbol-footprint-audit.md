@@ -215,3 +215,35 @@ This architecture gives explicit access to:
 - CHASSIS_ETH.
 
 PCB floorplanning may now reserve separate footprints/zones for RJ45, transformer and two PoE bridges instead of one MagJack envelope.
+
+
+## Audit pass 5 — PoE magnetics correction
+### H1102NL rejected
+Pulse H1102NL is now REJECTED for MAIN Rev.A.
+Manufacturer data explicitly marks it NON-POE. Its media-side OCL specification is characterized with only 8 mA DC bias, so it shall not carry the Alternative-A Class-4 PoE feed.
+
+Remove it as the production transformer candidate.
+
+### Replacement transformer requirements
+Select a PoE+ rated transformer/magnetics part with:
+- 10/100BASE-T electrical compatibility with W5500;
+- 1:1 data windings as required by W5500 reference topology;
+- cable-side center taps exposed;
+- IEEE 802.3at / PoE+ current rating explicitly stated;
+- >=1500 V isolation as required by selected safety architecture;
+- industrial temperature preferred;
+- manufacturer land pattern available.
+
+Wurth 749022011 has been identified as an active PoE+ rated LAN transformer family candidate, but it is a 10/100/1000 four-channel device and therefore oversized for W5500. Do not freeze it solely because it is PoE+ rated; continue search for a 10/100 two-channel PoE+ part or accept the size penalty only after floorplan comparison.
+
+### Bridge rectifiers
+Silvertel Ag5300 reference explicitly requires two external bridge rectifiers for input polarity / data-pair vs spare-pair compatibility.
+
+DF01S is documented by Silvertel as a suitable low-cost example for Ag5300-family designs, but AudioPicture shall not freeze DF01S until bridge conduction loss and enclosure thermal rise are calculated at Class-4 worst-case current.
+
+Selection options:
+1. conventional silicon bridge — cheapest, highest loss;
+2. Schottky bridge/discrete Schottky — lower loss;
+3. MOSFET active bridge — lowest loss, higher BOM/complexity.
+
+For the 40 mm fanless enclosure, choose based on measured/calculated thermal budget rather than component count alone.
