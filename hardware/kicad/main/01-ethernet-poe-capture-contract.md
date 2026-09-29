@@ -139,3 +139,50 @@ Pins 7 and 10 are internally common on the module but both PCB connections shall
 - W5500 PMODE strap values/state from current reference;
 - selected 25 MHz crystal MPN/load capacitors;
 - disposition of Ag53024 AT-DET pin 3.
+
+
+## Micro-gate closure — PHY mode, clock and official EDA authorities
+
+### W5500 PHY strap — FROZEN
+PMODE2/PMODE1/PMODE0 = **1/1/1**.
+This selects all-capable 10/100BASE-T, half/full duplex with auto-negotiation enabled.
+
+Implement deterministic hardware straps; do not rely on floating pins.
+
+### W5500 crystal — FROZEN MPN
+Y_ETH = **Abracon ABM8G-25.000MHZ-18-D2Y-T**.
+Electrical basis:
+- 25.000 MHz;
+- CL = 18 pF;
+- frequency tolerance = ±20 ppm;
+- frequency stability = ±30 ppm;
+- ESR = 60 ohm;
+- fundamental mode;
+- SMD 3.2 x 2.5 mm;
+- -40 to +85 degC.
+
+This satisfies the W5500 requirement for 25 MHz, <= ±30 ppm and CL 18 pF.
+Initial C_XI/C_XO = **18 pF each**, matching the WIZnet reference schematic. Final load may be tuned only if measured/PCB parasitics justify it.
+Retain the WIZnet reference bias/series topology around XI/XO.
+
+### T_ETH official EDA authority
+Wurth publishes a current official KiCad WE-LAN library plus STEP and S-parameter assets for 7490220121.
+Native capture/layout shall import or independently verify against that official library.
+The datasheet confirms PoE capability up to 600 mA per centre tap applies to pins 13-24.
+
+Status: **OFFICIAL_KICAD_LIBRARY_AVAILABLE / NUMERIC_PIN_MAPPING_VERIFY_ON_IMPORT**.
+
+### J_ETH official drawing authority
+TE product 2-1734264-1 remains active and the official design authority is product drawing **ENG_CD_1734264_A2**.
+TE explicitly instructs use of the product drawing for design activity.
+Native footprint shall be transcribed/imported from that drawing/CAD and pin numbering visually cross-checked before ERC/layout.
+
+Status: **OFFICIAL_DRAWING_CAD_AVAILABLE / PAD_NUMBERING_VERIFY_ON_NATIVE_IMPORT**.
+
+### Remaining Sheet-01 gates
+Electrical architecture gates are closed.
+Native-tool-only gates remain:
+1. visually verify 7490220121 numeric symbol/pad mapping after importing Wurth KiCad library;
+2. visually verify TE 2-1734264-1 pad numbering against ENG_CD_1734264_A2;
+3. run KiCad 9 ERC;
+4. save native schematic with KiCad 9.
