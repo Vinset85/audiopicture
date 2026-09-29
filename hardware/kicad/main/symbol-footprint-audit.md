@@ -446,3 +446,40 @@ Rev.A prioritizes:
 5. size.
 
 A later cost/size optimization may qualify a smaller two-channel 350 uH PoE+ transformer, but that optimization must not block Rev.A PCB capture.
+
+
+## Audit pass 10 — RJ45 frozen
+
+### J_ETH = TE Connectivity 2-1734264-1
+Rev.A production baseline:
+- single-port RJ45 / 8P8C;
+- shielded;
+- passive / no indicator;
+- Cat 5;
+- right-angle side entry;
+- through-hole solder;
+- low profile;
+- active TE product;
+- 1 A max contact rating;
+- -40 to +85 C;
+- recommended PCB thickness 1.6 mm;
+- manufacturer customer drawing and STEP/IGES CAD available.
+
+Manufacturer drawing key envelope:
+- width 15.8 mm;
+- depth 18.6 mm;
+- height 13.2 mm;
+- eight signal contacts;
+- two panel-ground/mechanical retention features.
+
+Status: **FROZEN_ELECTRICAL_MECHANICAL / FOOTPRINT_TRANSCRIBE_FROM_TE_DRAWING**.
+
+Do not substitute a generic RJ45 footprint.
+Pin numbering, retention holes and board-edge relationship must be transcribed from TE drawing 1734264 rev A2 and independently checked before release.
+
+Shield/panel-ground features connect to CHASSIS_ETH only, not directly to GND_SYS.
+
+### Alternate
+Molex 956223981 remains an acceptable sourcing alternate candidate:
+8/8, shielded, right-angle THT, 13.0 mm height, 1.5 A/contact, PCB retention, 2500 mating cycles.
+It is not the Rev.A footprint baseline because current Molex online data is marked limited-information and the TE drawing/CAD package is more directly auditable.
