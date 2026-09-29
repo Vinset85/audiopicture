@@ -197,3 +197,17 @@ The electrical architecture, sensor devices, rail, I2C ownership, address map ta
 
 Status:
 **READY_FOR_NATIVE_KICAD_STRUCTURE_AND_CAPTURE_WITH_ADDRESS_STRAP_AUDIT**.
+
+
+## Final electrical / package audit — 2026-09-29
+### OPT3004 address and pin freeze
+U302 OPT3004DNPR pin capture is frozen from the TI datasheet: pin 1 VDD=+3V3_SYS; pin 2 GND; pin 3 SDA=I2C_SDA; pin 4 SCL=I2C_SCL; pin 5 INT left NC in Rev.A unless ENV_INT is deliberately enabled; pin 6 ADDR tied directly to VDD for 7-bit address **0x45**. The exposed thermal pad is connected to GND as recommended by TI. ADDR must not float.
+OPT3004 DNP package uses the TI manufacturer land pattern; the optical aperture/active area and package top must remain unobstructed.
+
+### SHT45 package capture
+U301 SHT45-AD1F uses the Sensirion DFN 4-pin manufacturer land pattern and pin assignment: 1 SDA, 2 SCL, 3 VDD, 4 VSS. The AD1F PTFE membrane is part of the frozen device selection. Do not coat, glue, press or mechanically obstruct the membrane/opening.
+
+### I2C map
+Rev.A production map is now fully frozen: SHT45=0x44; OPT3004=0x45. MAIN remains the sole populated pull-up owner. PCB-D does not need ENV_INT or BOARD_ID electrically for Rev.A; both connector positions remain reserved/DNP.
+
+Status: **ELECTRICAL_PINOUT_AND_ADDRESS_AUDITED / READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE**.
