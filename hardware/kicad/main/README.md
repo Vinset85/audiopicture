@@ -45,9 +45,9 @@ EXT_PRESENT
 POWER_ALERT
 5V_PG
 3V3_PG
-RADAR_SCLK
-RADAR_MOSI
-RADAR_MISO
+SPI_SCLK
+SPI_MOSI
+SPI_MISO
 RADAR_CS
 RADAR_IRQ
 RADAR_RST
@@ -98,7 +98,7 @@ No amplifier power path.
 No uncontrolled backfeed.
 
 ### 07 Daughterboards
-J101 VOICE 14-pin
+J101 VOICE 16-pin physical / 14 logical signals
 J201 RADAR 12-pin
 J301 ENV 8-pin
 Expansion header: I2C + UART + 3V3 + 5V + GND + GPIO/INT
