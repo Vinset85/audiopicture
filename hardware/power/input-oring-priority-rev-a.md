@@ -1,5 +1,26 @@
 # Sheet 02 — 24 V Input / Ideal-Diode ORing / Source Priority Rev.A
 
+# REV.A CAPTURE AUTHORITY — READ FIRST
+
+The original LM74700 single-FET ORing concept in early sections of this document is **SUPERSEDED** and retained only as engineering history.
+
+Current Rev.A capture authority:
+- PoE disconnect/source-selection controller: **TPS48100QDGXRQ1**;
+- PoE switch: two back-to-back **ISC035N10NM5LF2ATMA1**;
+- external protected path uses the current 100 V MOSFET/protection architecture defined in the final freeze sections;
+- external UV/OV monitor: **TLV1822QDGKRQ1**;
+- precision reference: **LM4040A25IDBZR**;
+- fuse candidate: **0453004.MR**;
+- front-end TVS: **SMBJ33A-TR**, surge role only;
+- EXT priority is hardware fail-safe **break-before-make**;
+- UV thresholds 20.5/19.0 V;
+- OV thresholds 25.3/24.7 V.
+
+Any earlier paragraph that specifies LM74700 as U4/U5, a single-FET source disconnect, DMT6007LFG, firmware-dependent source selection, or a different UV/OV threshold is **LEGACY / DO_NOT_CAPTURE**.
+
+For native KiCad capture, use the final freeze sections of this document plus the MAIN capture manifest/release checklist.
+
+
 Status: **implementable schematic specification**. Exact fuse, connector, priority comparator and final MOSFET qualification remain VALIDATE before production release.
 
 ## 1. Functional requirement
