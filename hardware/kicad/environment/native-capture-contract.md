@@ -18,7 +18,7 @@ Native KiCad files must be generated/saved/validated by KiCad 9.x or validated a
 8. factory test points.
 
 ## 2. J301
-Hirose FH12 family, 0.5 mm pitch, 8 contacts:
+J301 = **Hirose FH12-8S-0.5SH(55)**, 8 contacts, 0.5 mm pitch, bottom-contact ZIF, horizontal insertion, 0.30 mm FPC:
 1 +3V3_SYS
 2 +3V3_SYS
 3 GND
@@ -28,7 +28,7 @@ Hirose FH12 family, 0.5 mm pitch, 8 contacts:
 7 ENV_INT / RESERVED
 8 BOARD_ID / RESERVED
 
-Final contact numbering/orientation must be checked against the selected mating-side FH12/FPC drawing before PCB release.
+The connector MPN is frozen. Final mating-view orientation/pin-1 must still be cross-checked against the exact Hirose 2D drawing and selected FPC contact side before PCB release.
 
 ## 3. U301 SHT45
 U301 = **Sensirion SHT45-AD1F**.
