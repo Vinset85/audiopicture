@@ -209,3 +209,40 @@ Every candidate shall carry the shared CAD volume RADAR_RF_KEEP_OUT. No conducti
 Start detailed FEA with **Stack A: composite glass-fibre/epoxy skins + PMI structural foam core**, nominally around 5 mm core with thin symmetric skins. This is a simulation baseline, NOT a material purchase/freeze. Stack B and Stack C remain mandatory comparison cases.
 
 Status: **THREE_STACK_FEA_SHORTLIST_FROZEN / EXACT_MATERIAL_GRADES_AND_PROPERTIES_OPEN**.
+
+
+## 17. Normalized modal-placement screening — 2026-09-29
+
+A geometry-only first pass was run before assigning uncertain absolute sandwich material constants. The panel was represented by rectangular bending-mode shape functions and the first 35 modes were evaluated for aggregate coupling at the four exciter points.
+
+This is NOT the production FEA and does not predict absolute resonance frequencies, SPL or impedance. Its purpose is to detect geometric placement pathologies before the material model is frozen.
+
+### Result
+The original symmetric 2 x 2 seed:
+- (75,105)
+- (225,105)
+- (75,275)
+- (225,275)
+
+shows repeated weakly coupled modal families caused by symmetry/equal spacing. It is retained only as a comparison case and is no longer the preferred placement seed.
+
+A randomized constrained search over the permitted panel region produced substantially more uniform low-order modal coupling when the four excitation points were intentionally non-uniform. One geometry-only high-scoring seed was approximately:
+- P1 = (163,311) mm
+- P2 = (110,283) mm
+- P3 = (219,125) mm
+- P4 = (50,176) mm
+
+These coordinates are **NOT production coordinates**. They are a numerical seed demonstrating that controlled asymmetry is valuable. They must be re-optimized with:
+- real sandwich orthotropic properties;
+- compliant frame boundary;
+- exciter mass/contact model;
+- left/right channel grouping and stereo objective;
+- RADAR_RF_KEEP_OUT;
+- VOICE isolation volume;
+- wiring/assembly clearance;
+- acoustic radiation objective.
+
+### Placement rule for detailed FEA
+Do not force a regular 2 x 2 grid. Use constrained asymmetric optimization while preserving practical channel grouping. Include the Dayton unequal-edge-distance guidance as a seed/constraint family, but let the coupled FEA/acoustic objective select the final coordinates.
+
+Status: **SYMMETRIC_GRID_DEMOTED / ASYMMETRIC_PLACEMENT_OPTIMIZATION_REQUIRED**.
