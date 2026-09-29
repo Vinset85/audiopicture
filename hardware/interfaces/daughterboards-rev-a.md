@@ -17,7 +17,7 @@ Rules:
 - connector contacts must be rated for rail current with margin.
 
 ## 2. J101 VOICE — 16 physical contacts / 14 logical signals
-Baseline/frozen logical pinout:
+Baseline/frozen **logical signal set** (numbers 1..14 below are legacy logical positions, not the final 16-contact physical FPC mapping):
 
 | Pin | Net | Direction at MAIN | Purpose |
 |---|---|---|---|
@@ -51,7 +51,7 @@ Current pinout has adjacent GND near the power/upper group but not interleaved g
 - source-side series damping footprints are provided on MAIN;
 - if SI/EMI simulation requires more ground interleaving, connector pin count may increase before mechanical freeze without changing logical interface.
 
-Logical interface is frozen; physical contact count may be revised upward for SI.
+Logical interface and 16-contact count are frozen. The exact physical 1..16 contact mapping remains a **FPC_MECHANICAL_DRAWING_GATE**; the two added contacts are GND references and must be placed adjacent/near the I2S group after mating-side orientation is verified. Do not copy the legacy 1..14 logical numbering directly into a 16-pin KiCad connector.
 
 ## 4. J201 RADAR — 12 pins
 Corrected Rev.A pinout for the **shared SPI bus**:
