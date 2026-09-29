@@ -334,3 +334,70 @@ Keep PDM traces referenced to continuous GND and away from DML/Class-D switching
 
 ### Current budget
 Four microphones at the manufacturer 3.072 MHz maximum-current figure consume approximately 4.48 mA total before margin. Design +3V3_MIC for at least 20 mA continuous allocation to include startup, tolerance and engineering margin; the TPS22913C current capability is therefore far above the microphone load and is selected for isolation/privacy behavior rather than ampacity.
+
+
+## XVF3800 local support network capture contract — 2026-09-29
+
+### Decoupling ownership
+All XVF3800 supply domains receive local high-frequency ceramic decoupling at the device. Native capture shall place a dedicated 100 nF-class MLCC at each practical supply-pin group, with the smallest loop to the ground paddle/plane.
+
+Bulk/domain capacitance and any ferrite/RC values shall be transcribed from the official XK-VOICE-SQ66 1V1 design files before production freeze. Do not consolidate all local bypass capacitors into a distant bulk capacitor.
+
+Domains:
+- +0V9_VOICE core;
+- +0V9_PLL after the XMOS-reference PLL filter;
+- +1V8_VOICE;
+- +3V3_SYS I/O;
+- +3V3_MIC switched microphone domain.
+
+### PLL rail
+PLL_AVDD is not connected directly to a noisy shared rail. It is derived from +0V9_VOICE through the filtering topology specified by XMOS/reference design and receives dedicated local decoupling.
+
+Exact filter component values remain **OPEN_REFERENCE_TRANSCRIPTION** until XK-VOICE-SQ66 1V1 is inspected.
+
+### Reset
+VOICE_RST from MAIN controls the XVF3800 reset path.
+MAIN provides the system-safe reset ownership. PCB-B shall not add a pull network that fights MAIN.
+
+Native capture must preserve any XMOS-required reset conditioning/supervisor topology from the SQ66 reference design. Firmware release of reset is allowed only after +0V9_VOICE, +1V8_VOICE and +3V3_SYS are valid and the local boot flash is powered.
+
+### Boot flash power
+U102 QSPI flash is powered from the voltage domain required by the exact XMOS SQ66 reference BOM/selected flash. Do not assume +3V3_SYS until the production flash is frozen.
+
+QSPI routing rules:
+- flash adjacent to XVF3800;
+- CLK shortest/highest-priority trace;
+- no test-pad stubs on CLK/data;
+- continuous GND reference;
+- CS pull-up physically local;
+- optional source damping only if supported by SI/edge-rate validation.
+
+### Clocking
+Do not add an arbitrary external oscillator to XVF3800 merely to satisfy schematic completeness.
+The system clock/PLL implementation shall be transcribed from the current XMOS SQ66 reference design and firmware requirements.
+
+MIC_CLK nominal target remains 3.072 MHz and is generated/controlled by the XVF3800 firmware/hardware configuration.
+
+### Power sequencing
+Rev.A sequencing requirement:
+1. MAIN +3V3_SYS/+5V_SYS become valid;
+2. PCB-B local +0V9_VOICE/+1V8_VOICE regulators become valid;
+3. QSPI flash supply is valid;
+4. VOICE_RST may be released;
+5. XVF3800 boots and exposes control/status;
+6. MIC_HW_EN remains OFF until privacy state and voice firmware are initialized;
+7. +3V3_MIC is enabled only on explicit product state.
+
+Brownout/reset shall return the microphone domain to OFF through the MAIN hardware pull-down on MIC_HW_EN.
+
+### Capture gate summary
+The following are deliberately NOT guessed:
+- exact +0V9 regulator;
+- exact +1V8 regulator;
+- regulator feedback/compensation/passives;
+- PLL filter values;
+- exact QSPI flash MPN and its supply voltage;
+- any external reference-clock component;
+- reference-specific reset supervisor/RC.
+
+These six items must come from the official XK-VOICE-SQ66 1V1 package or a later XMOS design authority before PCB-B can be marked READY_FOR_NATIVE_KICAD_CAPTURE.
