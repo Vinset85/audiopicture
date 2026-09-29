@@ -424,3 +424,20 @@ Status:
 - XVF3800 USB pins 28..31 remain unconnected/unpowered in Rev.A.
 
 Capture status: **READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE / PRODUCTION_RELEASE_GATES_REMAIN**.
+
+
+## U102 production QSPI selection
+U102 = **Winbond W25Q32JVSSIQ**.
+- 32 Mbit / 4 Mbyte serial NOR;
+- 2.7..3.6 V supply, powered from +3V3_SYS;
+- standard/dual/quad SPI capability;
+- SOIC-8 208 mil production package;
+- industrial temperature grade;
+- local 100 nF X7R decoupling at VCC/GND;
+- QSPI_CS_N retains the XVF3800-required 4.7 kohm pull-up;
+- WP#/IO2 and HOLD#/RESET#/IO3 are used as QSPI D2/D3, not strapped in a way that conflicts with quad operation.
+
+Status U102: **FROZEN_DEVICE_PACKAGE / BOOT_IMAGE_AND_PROGRAMMING_VALIDATE**.
+
+## J101 physical-map gate refinement
+FH12-16S-0.5SH(55) remains frozen as a 16-position, 0.5 mm pitch, bottom-contact horizontal ZIF. The connector drawing alone does not define whether a finished FPC preserves or reverses contact order between its two ends; that depends on the selected same-side/opposite-side FPC contact construction. Therefore final net-to-contact numbering is deliberately not frozen until the production FPC construction/drawing is selected. This is a cable-definition gate, not an electrical-schematic uncertainty.
