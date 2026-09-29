@@ -483,3 +483,36 @@ Shield/panel-ground features connect to CHASSIS_ETH only, not directly to GND_SY
 Molex 956223981 remains an acceptable sourcing alternate candidate:
 8/8, shielded, right-angle THT, 13.0 mm height, 1.5 A/contact, PCB retention, 2500 mating cycles.
 It is not the Rev.A footprint baseline because current Molex online data is marked limited-information and the TE drawing/CAD package is more directly auditable.
+
+
+## Audit pass 11 — PoE rectifiers and Ag53024 package
+
+### BR201 / BR202 diode freeze
+Rev.A uses eight **STMicroelectronics STPST3H100AF** trench Schottky rectifiers:
+- 100 V VRRM;
+- 3 A IF(AV);
+- SOD128Flat;
+- active / volume production;
+- low forward-drop trench technology;
+- manufacturer footprint/CAD resources available.
+
+Rationale:
+Ag5300-family legacy datasheet permits 57 V recommended input and 80 V / 1 ms absolute surge. A 60 V Schottky leaves inadequate reverse-voltage design margin around the module's stated surge envelope; therefore Rev.A uses 100 V parts.
+
+Status: **FROZEN_ELECTRICAL_PACKAGE / VERIFY_ST_FOOTPRINT**.
+
+### Ag53024 module identity
+Production PoE module remains **Silvertel Ag53024, Ag53000 family**, not legacy Ag5324.
+Current manufacturer data:
+- IEEE 802.3at Class 4;
+- 24 V output;
+- 24 W continuous / 30 W peak;
+- 37-57 V operating input;
+- 1500 Vdc isolation;
+- SIL 57 x 18 x 14 mm class;
+- pin-for-pin compatible with Ag5300 / Ag5400 families;
+- official Ag53000 STEP file available.
+
+Status: **FROZEN_DEVICE / FOOTPRINT_VERIFY_CURRENT_AG53000_DATASHEET_STEP**.
+
+Do not derive the production footprint from a distributor drawing. Use the current Silvertel Ag53000 datasheet/STEP package and cross-check pin numbering against the pin-compatible Ag5300 family.
