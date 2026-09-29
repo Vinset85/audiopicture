@@ -61,7 +61,13 @@ Requirements:
 - low dynamic resistance/clamp;
 - package permitting short symmetric routing.
 
-Exact MPN: VALIDATE_AVAILABILITY_LAYOUT.
+Exact Rev.A MPN: **Texas Instruments TPD2EUSB30ADRTR**.
+- dual-channel USB 2.0 ESD protector;
+- approximately 0.8 pF line capacitance;
+- IEC 61000-4-2 contact/air ESD capability;
+- DRL/DRT low-profile package option; Rev.A uses DRT where routing/fabrication permits.
+
+Status: **FROZEN_DEVICE / PACKAGE_LAYOUT_VERIFY**.
 
 Provide optional common-mode choke footprint only if EMC testing shows it is required. Default DNP to avoid unnecessary USB signal degradation.
 
@@ -167,7 +173,9 @@ Preferred:
 - mid-mount or reinforced SMT/through-hole shield tabs;
 - enclosure mechanically supports cable insertion forces.
 
-Exact connector MPN: VALIDATE_MECHANICAL.
+Preferred connector remains **GCT USB4085** family, USB 2.0 Type-C receptacle with reinforced shell.
+Status: **PREFERRED_CANDIDATE / MECHANICAL_DRAWING_AND_EXACT_VARIANT_VERIFY**.
+Do not freeze footprint from a distributor drawing; transcribe the exact GCT manufacturer drawing only after the enclosure/PCB mounting style is selected.
 
 ## 16. Factory test
 1. CC attach detection.
@@ -191,3 +199,79 @@ Sheet 06 becomes FROZEN only after:
 6. hard recovery procedure demonstrated;
 7. backfeed test in all power combinations;
 8. USB ESD test.
+
+
+## USB electrical freeze review — 2026-09-29
+
+### Power architecture
+Rev.A USB is **data/service only with respect to product power**.
+
+VBUS from the host creates +5V_SERVICE solely for:
+- attachment/VBUS detection;
+- ESD/transient handling;
+- optional factory sensing.
+
+There is **no power-path connection** from +5V_SERVICE to +5V_SYS or +3V3_SYS in Rev.A.
+
+Therefore:
+- AudioPicture must be powered by PoE or external 24 V during USB recovery;
+- host USB cannot energize W5500, voice, radar, TAS5825M or DML;
+- no ideal-diode/power-mux is required on Sheet 06.
+
+This is now **FROZEN_ARCHITECTURE**.
+
+### CC network
+- CC1 -> 5.1 kOhm 1% -> GND
+- CC2 -> 5.1 kOhm 1% -> GND
+
+Status: **FROZEN_VALUES**.
+
+### USB data ESD
+U_USB_ESD = **TPD2EUSB30ADRTR**.
+Place directly behind the receptacle before the pair traverses the PCB.
+
+Status: **FROZEN_MPN / FOOTPRINT_VERIFY_TI_LAND_PATTERN**.
+
+### ESP32 data interface
+- USB_D- = GPIO19
+- USB_D+ = GPIO20
+- no external pull-up/pull-down on D+/D-;
+- D+/D- series footprints remain optional/DNP until Espressif SI/reference-layout review;
+- no common-mode choke populated by default.
+
+### VBUS presence
+Do not consume another general-purpose ESP32 GPIO merely for application-level VBUS indication in Rev.A.
+
+USB recovery/attach uses the ESP32 native USB behavior while the system is already powered.
+
+Provide a high-impedance **USB_VBUS_TEST** divider/test node for factory measurement, but do not connect it to +3V3_SYS and do not permit phantom powering through an MCU protection diode.
+
+If future USB-device firmware requires explicit VBUS sensing, add a dedicated high-impedance detector in a controlled revision rather than improvising a direct GPIO divider.
+
+### Shield/chassis
+J_USB shield = **CHASSIS_USB**.
+Reserve configurable local coupling to GND_SYS:
+- 0 ohm option DNP;
+- capacitor option DNP;
+- RC/EMI option DNP.
+
+Populate only after whole-product EMC strategy is coordinated with CHASSIS_ETH.
+
+### Hard recovery
+Hardware recovery remains independent of application firmware:
+- USB D+/D- available;
+- GPIO0 BOOT available at factory pogo;
+- CHIP_PU RESET available at factory pogo.
+
+A software-only hidden touch sequence is convenience, not the sole recovery mechanism.
+
+### Sheet-06 capture status
+Status: **READY_FOR_NATIVE_KICAD_CAPTURE_WITH_CONNECTOR_MECHANICAL_GATE**.
+
+Production release remains blocked by:
+1. exact USB4085 variant/manufacturer footprint;
+2. TI ESD land-pattern verification during native capture;
+3. 90-ohm differential routing against final stackup;
+4. CHASSIS_USB/CHASSIS_ETH EMC decision;
+5. USB ROM-download/recovery validation;
+6. ESD and backfeed compliance tests.
