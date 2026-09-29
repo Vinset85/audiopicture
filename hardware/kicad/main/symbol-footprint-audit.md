@@ -247,3 +247,55 @@ Selection options:
 3. MOSFET active bridge — lowest loss, higher BOM/complexity.
 
 For the 40 mm fanless enclosure, choose based on measured/calculated thermal budget rather than component count alone.
+
+
+## Audit pass 6 — PoE+ front-end preferred candidates
+
+### Ethernet transformer preferred candidate
+**Bourns SM13126PEL** becomes the preferred transformer candidate for MAIN Rev.A.
+
+Manufacturer product table identifies it as:
+- 10/100 BASE-TX LAN transformer;
+- PoE;
+- IEEE 802.3 class product;
+- SMT;
+- 12.8 x 9.3 x 5.65 mm;
+- +85 C product class.
+
+Why preferred:
+- correct 10/100 channel class for W5500;
+- substantially smaller/more appropriate than oversized four-channel Gigabit PoE transformers;
+- explicitly sold as PoE rather than merely Ethernet-compatible.
+
+Status: PREFERRED_CANDIDATE.
+Release gate: verify the current Bourns datasheet schematic, turns ratio, center-tap exposure, isolation and maximum PoE DC current against IEEE 802.3at Class-4 requirements before marking FROZEN.
+
+### PoE module
+Ag53024 remains preferred new-production module:
+- Type 2 / Class 4;
+- 24 V nominal output;
+- 24 W continuous / 30 W peak;
+- >90% efficiency family claim;
+- 1500 Vdc isolation;
+- pin-compatible with Ag5300/Ag5400 family.
+
+Power budgeting must use 24 W continuous, not 30 W continuous.
+
+### Bridge thermal decision
+Ag5300/Ag53000 reference requires two external bridge rectifiers and cites DF01S/equivalent as a suitable conventional solution.
+
+For AudioPicture Rev.A:
+- do not adopt active MOSFET bridges unless thermal calculation demonstrates a material system benefit;
+- baseline conventional bridge path remains simplest and lowest-risk;
+- prefer lower-Vf qualified bridge technology if reverse-voltage, surge and PoE detection/classification behavior remain compliant.
+
+Before MPN freeze calculate:
+P_bridge ~= 2 * Vf * I_pair
+for the active bridge path at worst-case PD input current.
+
+Only one of the two bridge paths normally carries the delivered input current for 2-pair PoE, so do not incorrectly sum full conduction loss of BR201 and BR202 simultaneously.
+
+### Ag53024 output capacitor
+For the 24 V Silvertel variant, baseline output capacitor is **220 uF / 25 V minimum class** per current Ag5300-family guidance, located close to module output. Increase voltage margin (e.g. 35 V) if mechanical height and ESR/temperature requirements permit.
+
+Status: FROZEN_MINIMUM_CLASS / EXACT_MPN_VALIDATE.
