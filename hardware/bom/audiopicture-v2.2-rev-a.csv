@@ -26,3 +26,5 @@ L901-L904,MAIN,10uH shielded power inductor baseline,4,Class-D LC output filter,
 Q101,VOICE,TBD load switch,1,Hardware microphone power/privacy,VALIDATE
 U203,RADAR,TBD 80MHz-class reference clock,1,BGT60TR13C reference clock,VALIDATE_REFERENCE_DESIGN
 U204-U205,RADAR,TBD fixed-direction level translators,1 set,3.3V to 1.8V SPI IRQ reset translation,VALIDATE
+R301,ENV,TBD BOARD_ID coding resistor,1,ENV board revision identification,VALIDATE
+C301-C302,ENV,100nF X7R,2,Sensor local decoupling,FROZEN_VALUE
