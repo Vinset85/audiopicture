@@ -310,3 +310,56 @@ Now calculate the external 24 V transient clamp around the 100 V MOSFET/controll
 - ensure worst credible clamped voltage remains below downstream absolute maxima;
 - define F101 so TVS fault energy is safely interrupted;
 - then freeze EXT_VALID assert/deassert divider and hysteresis.
+
+
+## Transient-envelope correction — 2026-09-29
+
+### SMBJ33A role corrected
+SMBJ33A is NOT sufficient as the sole downstream overvoltage protection for +24V_RAW.
+
+Reason:
+- TAS5825M PVDD recommended maximum = 26.4 V, absolute maximum = 30 V.
+- TPSM63603 recommended input maximum = 36 V, absolute maximum = 40 V.
+- A 33 V-standoff TVS necessarily clamps above the safe TAS5825M PVDD envelope.
+
+Therefore D101/SMBJ33A, if retained, is only a connector/front-end surge-energy suppressor protecting the 100 V input-switching devices from high-energy transients. It must not be treated as the protection that guarantees safe +24V_RAW voltage.
+
+### Mandatory external-input OVP disconnect
+The external 24 V path shall include hardware overvoltage disconnect before +24V_RAW.
+
+Required behavior:
+- nominal 24 V source passes normally;
+- approaching the TAS5825M safe operating ceiling, external source is disconnected before +24V_RAW can exceed the system limit;
+- target OVP threshold shall be below 26.4 V recommended PVDD maximum with tolerance budget;
+- initial design target: approximately 25.5-26.0 V nominal trip, final value after resistor/reference tolerance analysis;
+- OVP must be independent of MCU firmware.
+
+The 100 V MOSFET/controller front-end absorbs the voltage-rating burden while the disconnect protects the lower-voltage downstream electronics.
+
+### Fuse F101
+Do NOT freeze F101 merely as a nominal 3 A fuse.
+
+Requirements:
+- normal 24 V / 3 A adapter operation shall not nuisance-trip;
+- tolerate audio crest current and controlled input-capacitor charging;
+- interrupt sustained TVS crowbar/short fault safely;
+- voltage rating suitable for the protected input;
+- time-current curve and I2t must coordinate with D101 and PCB/wiring;
+- exact MPN remains OPEN until maximum continuous external input current and final inrush profile are frozen.
+
+Initial engineering class: approximately 4 A time-delay fuse, subject to thermal derating and I2t coordination. This is not yet a production MPN.
+
+### Protection architecture
+J2 -> F101 -> surge TVS/front-end suppression -> 100 V protected switch / ideal-diode stage with hardware OVP -> +24V_RAW.
+
+This separates:
+1. high-energy transient survival at the connector;
+2. true overvoltage disconnect for sensitive downstream electronics;
+3. reverse-current / source-ORing behavior.
+
+### Release gate added
+Before Sheet 02 is frozen:
+- calculate worst-case OVP trip including resistor/reference/controller tolerances;
+- demonstrate +24V_RAW remains below 26.4 V in normal protection operation and below 30 V absolute maximum during fault/transient response;
+- calculate TVS pulse current/energy for the selected external PSU/wiring model;
+- select F101 from manufacturer time-current and I2t data rather than current rating alone.
