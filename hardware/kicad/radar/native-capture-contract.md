@@ -18,7 +18,7 @@ Detailed engineering authority: `hardware/radar/bgt60tr13c-rev-a.md`.
 8. factory/debug test points.
 
 ## 2. J201 MAIN interface
-12-contact Hirose FH12 family, 0.5 mm pitch:
+J201 = **Hirose FH12-12S-0.5SH(55)**, 12-contact, 0.5 mm pitch, bottom-contact ZIF, horizontal insertion, 0.30 mm FPC:
 1 +3V3_SYS
 2 +3V3_SYS
 3 GND
@@ -246,6 +246,8 @@ Before PCB-C production freeze:
 9. shared-SPI SI at production clock;
 10. final enclosure stationary-person performance;
 11. EMC/coexistence validation.
+
+Physical connector MPN is frozen; final mating-view orientation/pin-1 cross-check against the Hirose 2D drawing remains mandatory before PCB release.
 
 ## 16. Capture status
 J201, rail domains, preferred LDO family, dual fixed-direction translator architecture, safe sequencing, 80 MHz nominal clock requirement and RF keep-out rules are defined.
