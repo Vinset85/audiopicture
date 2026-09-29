@@ -450,3 +450,109 @@ The remaining area risks are:
 Do not reduce below 115 x 45 mm at this stage.
 
 Status: **MAIN_P_115x45_FLOORPLAN_P1_P2_P3_DEFINED / CONNECTOR_THERMAL_COPPER_RELEASE_GATES_OPEN**.
+
+
+## 17. MAIN-C <-> MAIN-P interconnect architecture
+
+Use **two physically separate interconnects** rather than one mixed power/signal connector.
+
+### JCP — power interconnect
+Function:
+- isolated PoE 24 V from MAIN-C to MAIN-P;
+- shared power return;
+- optional low-current power-status/sense only if connector family/pin allocation supports it cleanly.
+
+Baseline electrical allocation:
+- 2 contacts: +24V_POE_ISO
+- 2 contacts: GND/24V return
+
+Parallel contacts reduce contact resistance and provide margin.
+
+Target connector requirements:
+- >=3 A system-level continuous capability with derating;
+- positive latch;
+- polarized;
+- compact wire-to-board family;
+- 30 VDC or higher;
+- production crimp tooling and readily available terminals;
+- low-profile right-angle PCB header preferred where enclosure service allows.
+
+Do not use a fine-pitch FPC for this power path.
+
+### JCS — signal interconnect
+Function:
+- I2S;
+- I2C;
+- control/status;
+- ground references.
+
+Baseline 16-contact allocation:
+
+1 GND
+2 I2S_BCLK
+3 GND
+4 I2S_LRCLK
+5 GND
+6 I2S_TX
+7 GND
+8 I2S_RX
+9 GND
+10 I2C_SDA
+11 I2C_SCL
+12 AMP_PDN
+13 AMP_FAULT
+14 5V_PG
+15 3V3_PG
+16 GND
+
+This intentionally spends many contacts on ground to improve return paths for the I2S harness.
+
+### Signal connector family
+A 0.5 mm-pitch FPC/FFC connector is acceptable for JCS because no high-current system power is assigned to it.
+
+The existing Hirose FH12 family used elsewhere in AudioPicture is a strong baseline candidate for consistency, but exact orientation and cable bend/service volume must be validated.
+
+### Power connector candidate
+A 4-circuit Molex Micro-Fit 3.0-class connection is the preferred first candidate for JCP, subject to exact right-angle header, mating housing, terminal/wire gauge and service-volume verification.
+
+The design shall not assume the nominal family current rating is available in the sealed enclosure; apply temperature, contact-count, wire-gauge and PCB-copper derating.
+
+### I2S signal-integrity rules
+- keep JCS cable short;
+- ground contacts interleave BCLK/LRCLK/data;
+- retain source-series damping footprints on MAIN-C;
+- no long parallel run beside speaker/BTL harness;
+- no routing over MAIN-P switching-node area;
+- validate edge rate and ringing on final harness geometry.
+
+### Fault behavior
+JCP present / JCS absent:
+- MAIN-P receives power but amplifier remains hardware-disabled.
+
+JCS present / JCP absent:
+- no back-powering from signal pins into MAIN-P power domains.
+
+Both absent:
+- safe/off.
+
+Add connector-detect only if it provides a real diagnostic benefit without creating a new unsafe back-power path.
+
+### Mechanical placement
+On MAIN-P:
+- JCP at P1/P2 side, close to source-priority/power entry;
+- JCS along P1/P2 upper edge;
+- both kept away from P3 Class-D switching/output edge.
+
+On MAIN-C:
+- JCP near Ag53024 isolated-output side;
+- JCS near ESP32 digital/audio interface region.
+
+### Next release gates
+1. choose exact 4-circuit JCP MPN/header/housing/terminal;
+2. choose exact 16-contact JCS FPC MPN and orientation;
+3. define cable length;
+4. calculate JCP contact/wire temperature rise at PoE and external-power operating cases;
+5. verify I2S SI;
+6. verify connector mating/removal path in shared CAD.
+
+Status: **DUAL_INTERCONNECT_JCP_POWER_JCS_SIGNAL_ARCHITECTURE_FROZEN / EXACT_MPN_AND_HARNESS_RELEASE_GATES_OPEN**.
