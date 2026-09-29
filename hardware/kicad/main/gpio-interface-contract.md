@@ -17,7 +17,7 @@
 | GPIO13 | SPI MISO | W5500 bus |
 | GPIO14 | RADAR_CS | inactive at boot |
 | GPIO15 | RADAR_IRQ | input |
-| GPIO16 | RADAR_RST/EN | radar off/reset at boot |
+| GPIO16 | RADAR_EN | radar off at boot |
 | GPIO17 | I2C SDA | shared |
 | GPIO18 | I2C SCL | shared |
 | GPIO19 | USB D- | native USB |
@@ -27,7 +27,7 @@
 | GPIO39 | expansion IRQ | input |
 | GPIO40 | STATUS_LED | hidden LED |
 | GPIO41 | SERVICE_TOUCH | hidden service/pairing input |
-| GPIO42 | expansion | TBD |
+| GPIO42 | RADAR_RST | radar reset |
 | GPIO43 | UART TX | factory/debug |
 | GPIO44 | UART RX | factory/debug |
 
@@ -48,7 +48,7 @@ Additional controls:
 - GPIO8 = ETH_RST
 - GPIO9 = ETH_INT
 - GPIO15 = RADAR_IRQ
-- GPIO16 = RADAR_RST/EN
+- GPIO16 = RADAR_EN\n- GPIO42 = RADAR_RST
 - GPIO38 = VOICE_RST
 - GPIO39 = VOICE_IRQ
 
@@ -73,7 +73,7 @@ Final topology:
 - radar CS: GPIO14;
 - VOICE_RST: GPIO38;
 - VOICE_IRQ: GPIO39;
-- GPIO42 remains available for expansion.
+- GPIO42 is assigned to RADAR_RST so reset and power/enable remain independent.
 
 Strapping pins GPIO0/3/45/46 remain protected from normal peripheral assignments. GPIO26..37 remain unavailable due to module memory use; GPIO22..25 are not available as module pins.
 
