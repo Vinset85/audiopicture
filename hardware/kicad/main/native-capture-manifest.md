@@ -80,6 +80,9 @@ Frozen:
 - TDK C3225X7R1H475K250AB input MLCCs;
 - TPS62823DLCR 5->3.3 V;
 - TDK TFM201610ALM-R47MTAA 470 nH;
+- TPSM63603 native open-drain PGOOD -> `5V_PG`;
+- TPS62823 native open-drain PG -> `3V3_PG`;
+- no external U10 rail supervisor in Rev.A;
 - INA filter 10 Ohm/10 Ohm + 100 nF differential.
 
 Imports: `+24V_RAW`, `I2C_SDA`, `I2C_SCL`.
