@@ -286,3 +286,22 @@ The exact SQ66 flash order code remains **OPEN_SQ66_ARCHIVE_TRANSCRIPTION**. Do 
 
 Status for U102:
 **32_MBIT_3V3_QSPI_ELECTRICAL_INTERFACE_FROZEN / EXACT_MPN_OPEN**.
+
+
+## XU316 electrical-envelope closure — 2026-09-29
+The XVF3800-QF60B silicon power envelope is now tied to the official XU316-1024-QF60B datasheet:
+- +0V9_VOICE / VDD operating range: 0.855..0.945 V, nominal 0.900 V.
+- XU316 active VDD budget: 300 mA typical / 1110 mA maximum for C32/I32 budgetary conditions; Rev.A +0V9 regulator shall therefore be designed for **>=1.2 A continuous capability**, with transient/thermal margin and XMOS power-estimation validation.
+- PLL_AVDD operating range: 0.855..0.945 V; typical current 5 mA.
+- +1V8_VOICE / VDDIOB18 operating range: 1.62..1.98 V, nominal 1.8 V; QF60B bank current absolute limit 126 mA. Rev.A regulator allocation = **>=200 mA continuous**.
+- QF60B VDDIOL/VDDIOR/VDDIOT are 3.3 V domains and remain supplied from +3V3_SYS.
+- reset pulse width minimum = 5 us; boot initialization begins after reset release and is specified at up to 480 us.
+- external XIN clock allowed range 8..30 MHz, 24 MHz nominal baseline when oscillator mode is used.
+
+Regulator electrical requirements are therefore frozen even while exact SQ66 order codes remain open:
+- U_VOICE_0V9: 3.3 V input preferred, fixed/accurate 0.9 V, >=1.2 A continuous design capability, low-noise/fast-transient suitable for xcore.ai core.
+- U_VOICE_1V8: 3.3 V input, fixed/accurate 1.8 V, >=200 mA continuous design capability.
+- +0V9_PLL shall be filtered from +0V9_VOICE and is not a separate high-current regulator.
+
+Do not select a low-current 0.9 V LDO merely because average XVF3800 current appears modest.
+Exact regulator MPNs, PLL filter values and clock implementation remain SQ66/reference-layout gates.
