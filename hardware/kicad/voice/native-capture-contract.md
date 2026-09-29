@@ -416,3 +416,11 @@ Keep the divider immediately adjacent to FB, away from SW/inductor, and sense VO
 
 Status:
 **VOICE_CLOCK_RESET_AND_0V9_FB_CAPTURE_BASELINE_FROZEN / STARTUP_LAYOUT_TOLERANCE_VALIDATE**.
+
+
+## Final pin-audit correction
+- XVF3800 pin 14 MCLK_INOUT connects locally to pin 41 MCLK in the standard internal-MCLK configuration.
+- XVF3800 pin 25 is mandatory NC.
+- XVF3800 USB pins 28..31 remain unconnected/unpowered in Rev.A.
+
+Capture status: **READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE / PRODUCTION_RELEASE_GATES_REMAIN**.
