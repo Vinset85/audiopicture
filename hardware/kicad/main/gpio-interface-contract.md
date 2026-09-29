@@ -23,8 +23,8 @@
 | GPIO19 | USB D- | native USB |
 | GPIO20 | USB D+ | native USB |
 | GPIO21 | MIC_HW_EN | privacy-safe OFF at reset |
-| GPIO38 | service/expansion | TBD |
-| GPIO39 | expansion IRQ | input |
+| GPIO38 | VOICE_RST | defined reset state |
+| GPIO39 | VOICE_IRQ | input |
 | GPIO40 | STATUS_LED | hidden LED |
 | GPIO41 | SERVICE_TOUCH | hidden service/pairing input |
 | GPIO42 | RADAR_RST | radar reset |
@@ -48,7 +48,8 @@ Additional controls:
 - GPIO8 = ETH_RST
 - GPIO9 = ETH_INT
 - GPIO15 = RADAR_IRQ
-- GPIO16 = RADAR_EN\n- GPIO42 = RADAR_RST
+- GPIO16 = RADAR_EN
+- GPIO42 = RADAR_RST
 - GPIO38 = VOICE_RST
 - GPIO39 = VOICE_IRQ
 
