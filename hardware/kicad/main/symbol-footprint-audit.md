@@ -85,3 +85,61 @@ Before full native schematic/PCB freeze, verify:
 
 ## Release policy
 A schematic can be electrically complete while some footprints remain VALIDATE. Gerbers are forbidden until all production footprints are VERIFIED.
+
+
+## Audit pass 2 — power / service mechanical blockers
+
+### PoE module
+**Preferred new-production qualification: Silvertel Ag53024.**
+
+Manufacturer status:
+- 24 V output;
+- 24 W continuous, 30 W peak;
+- >90% efficiency family claim;
+- pin-for-pin compatible with Ag5300/Ag5400 family.
+
+Legacy baseline Ag5324 remains an allowed qualification fallback. Its documented SIL envelope is approximately 57 x 18 x 14 mm.
+
+Decision:
+- PCB footprint shall be built around the manufacturer pin-compatible SIL family drawing only after exact pin coordinates are transcribed from the current Ag53000 datasheet/STEP.
+- BOM architecture remains 24 V PoE Class-4; firmware limiter assumptions remain based on 24 W continuous, not 30 W continuous.
+
+### ORing MOSFET
+DMT6007LFG remains preferred candidate:
+- 60 V N-MOSFET;
+- PowerDI3333-8;
+- approximately 3.3 x 3.3 mm body;
+- 0.65 mm terminal pitch class;
+- RDS(on) max 6 mOhm at VGS=10 V.
+
+Status: VERIFIED_PACKAGE / VALIDATE_LM74700_GATE_DRIVE_THERMAL_SOA.
+
+### Current shunt
+Vishay WSK2512 family is mechanically suitable:
+- 2512-class, approx. 6.35 x 3.18 x 0.64 mm;
+- 1 W family rating;
+- 3 mOhm to 10 mOhm family range includes required 10 mOhm.
+
+Preferred target: 10 mOhm, <=1%, low TCR, Kelvin routing.
+Status: VERIFIED_FAMILY / EXACT_ORDER_CODE_VALIDATE.
+
+### USB-C service connector
+GCT USB4085 is a strong mechanical candidate:
+- USB 2.0 Type-C receptacle;
+- 16 contacts;
+- horizontal/top-mount;
+- through-hole shell/mechanical retention;
+- approx. 3.46 mm profile;
+- 20,000 mating-cycle manufacturer rating.
+
+Because AudioPicture uses USB only for service/recovery, the mechanically robust USB2-only connector is preferred over a denser USB3 connector.
+
+Status: CANDIDATE_MPN / VERIFY_DRAWING_WITH_ENCLOSURE.
+
+## Still blocking PCB outline/floorplan
+1. exact PoE MagJack with compatible center-tap/PoE extraction;
+2. exact external 24 V connector;
+3. exact FPC connector family and pitch;
+4. exact TAS output inductors;
+5. exact USB ESD protector;
+6. exact Ag53024/Ag5324 SIL land pattern coordinates from current manufacturer drawing.
