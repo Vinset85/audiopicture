@@ -420,3 +420,18 @@ Infineon reference capture baseline:
 The series resistor is explicitly a tuning point: phase-noise and Range-Doppler validation remain mandatory. Do not substitute 38.4 MHz.
 
 Status: **FROZEN_REFERENCE_DEVICE / FILTER_MPN_AND_PHASE_NOISE_VALIDATE**.
+
+
+## Supply-filter transcription freeze — 2026-09-29
+Current Infineon reference hardware establishes the Rev.A capture baseline:
+- VDDD: 1V8 -> 10 uF -> 600-ohm ferrite -> 1 uF local.
+- VDDA: 1V8 -> 10 uF -> 600-ohm ferrite -> 1 uF local.
+- VDDVCO: 1V8 -> 10 uF -> 600-ohm ferrite -> 1 uF local.
+- VDDPLL: 1V8 -> 10 uF -> 600-ohm ferrite -> 1 uF local.
+- VDDLF: 3V3 -> 10 uF -> 600-ohm ferrite -> 1 uF local.
+- VDDRF: 1V8 -> 10 uF -> 600-ohm ferrite -> 10 uF + 3 x 1 uF local.
+- VAREF is a 1.2 V sensor output/reference; do not drive it from 1V8/3V3.
+
+Exact ferrite order code/impedance-vs-frequency curve and VAREF bypass value remain open. The complete rail network remains subject to the BGT60TR13C low-noise requirement and final PCB layout validation.
+
+Status: **FILTER_TOPOLOGY_AND_CAP_VALUES_FROZEN_REFERENCE / FERRITE_MPN_VAREF_NOISE_VALIDATE**.
