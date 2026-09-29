@@ -363,3 +363,63 @@ Before Sheet 02 is frozen:
 - demonstrate +24V_RAW remains below 26.4 V in normal protection operation and below 30 V absolute maximum during fault/transient response;
 - calculate TVS pulse current/energy for the selected external PSU/wiring model;
 - select F101 from manufacturer time-current and I2t data rather than current rating alone.
+
+
+## External-input supervision architecture — 2026-09-29
+
+### TPS48100 function boundary
+TPS48100-Q1 provides adjustable **UVLO** through EN/UVLO and independent back-to-back MOSFET gate controls, but it does not provide a programmable external-input OVP threshold suitable for protecting TAS5825M at ~26 V.
+
+Therefore EXT_OVP is implemented with an independent hardware comparator window. Do not emulate OVP in firmware.
+
+### Window comparator baseline
+U_EXT_MON = **Texas Instruments TLV1822QDGKRQ1**
+- dual comparator;
+- open-drain outputs;
+- 2.4 V to 40 V supply;
+- rail-to-rail inputs;
+- ~5 uA/channel typical;
+- POR for deterministic startup;
+- AEC-Q100;
+- VSSOP-8 DGK.
+
+Status: **FROZEN_DEVICE_PACKAGE / THRESHOLD_NETWORK_CALCULATE**.
+
+TI documents the TLV182x family explicitly for 24 V window-comparator supervision.
+
+### Hardware states
+The dual comparator supervises +24V_EXT after connector surge protection and before connection to +24V_RAW.
+
+Define:
+- EXT_UV_OK: external input above undervoltage threshold;
+- EXT_OV_OK: external input below overvoltage threshold;
+- EXT_VALID = EXT_UV_OK AND EXT_OV_OK, implemented in fail-safe open-drain logic.
+
+Target nominal thresholds:
+- UV assert valid: 20.5 V;
+- UV release invalid: 19.0 V;
+- OV trip invalid: 25.8 V;
+- OV recovery valid: 25.0 V.
+
+These are design targets, NOT frozen resistor values. Final thresholds must include comparator offset, resistor tolerance, reference tolerance, hysteresis injection and temperature.
+
+### Source-priority behavior
+EXT_VALID high:
+- external protected path enabled;
+- PoE TPS48100 back-to-back path commanded OFF;
+- EXT_PRESENT reported true.
+
+EXT_VALID low:
+- external path disabled or prevented from feeding +24V_RAW;
+- PoE path permitted ON if +24V_POE is present;
+- EXT_PRESENT false.
+
+The logic must default to PoE-safe behavior during comparator POR/unpowered states and must not require +3V3_SYS or MCU boot.
+
+### Threshold/reference implementation gate
+Do not derive the final window thresholds directly from the 24 V rail without checking startup and fault behavior.
+Preferred next step:
+- select a precision low-Iq reference available whenever external input is present, or use a divider topology referenced to a validated auxiliary bias;
+- use <=0.5% divider resistors, preferably 0.1% where threshold stack-up benefits;
+- calculate explicit positive feedback for hysteresis;
+- SPICE worst-case corners before native capture.
