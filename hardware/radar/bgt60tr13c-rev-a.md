@@ -407,3 +407,16 @@ BGT60TR13C datasheet specifies a stringent supply-noise condition, including a 2
 
 ### Reference files authority
 Infineon states that Shield schematics and PCB design files are distributed with the Radar Development Kit (RDK) under its hardware assets. The exact 80 MHz oscillator MPN and the per-domain filtering values shall be transcribed from that hardware package before BOM release.
+
+
+## 80 MHz oscillator freeze — 2026-09-29
+Rev.A reference oscillator = **Kyocera KC2016K80.0000C1GE00CT**, 80 MHz.
+
+Infineon reference capture baseline:
+- +1V8_RADAR -> ferrite -> oscillator VDD;
+- 10 nF + 1 uF local supply bypass;
+- oscillator OUT -> 150 ohm series -> OSC_80M / BGT60TR13C OSC_CLK.
+
+The series resistor is explicitly a tuning point: phase-noise and Range-Doppler validation remain mandatory. Do not substitute 38.4 MHz.
+
+Status: **FROZEN_REFERENCE_DEVICE / FILTER_MPN_AND_PHASE_NOISE_VALIDATE**.
