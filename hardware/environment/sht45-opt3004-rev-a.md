@@ -256,3 +256,14 @@ Production capture requirement:
 Status: **TARGET_ADDRESS_FROZEN / PHYSICAL_STRAP_CONNECTION_VERIFY_FROM_TI_PIN_TABLE**.
 
 The distinction is deliberate: the bus address is frozen, but the schematic shall not guess whether the ADDR pin reaches that address via GND, VDD, SDA or SCL until the exact OPT3004 datasheet address table is transcribed into the native-capture review.
+
+
+## Rev.A thermal and optical mechanical contract — 2026-09-29
+### SHT45 chamber
+The SHT45-AD1F sensing tab shall communicate with room air through two separated hidden openings. The chamber is isolated from the warm electronics cavity but is not hermetically sealed. Use a thin PCB neck and/or routed slots around the sensor tab to reduce conduction while preserving common electrical ground. No copper pour shall form a broad thermal bridge from J301/OPT3004 to the SHT45 tab. Place the membrane in free air volume with no adhesive or wall contact.
+Mechanical CFD/thermal model shall include MAIN/DML heat sources, wall mounting orientation and passive natural convection. Calibration is performed only after the final enclosure/front stack is installed.
+
+### OPT3004 dark tunnel
+Create a matte-black, non-light-piping optical tunnel from the OPT3004 aperture to the back of the printed acoustic fabric. The tunnel shall prevent line-of-sight from internal LEDs and minimize lateral illumination. Keep the sensor/fabric spacing mechanically repeatable. Do not freeze a universal K_fabric: characterize the final fabric, print/ink and tunnel at multiple illuminance levels and representative color temperatures; store calibration by front-artwork family when required.
+
+Status: **ENV_ELECTRICAL_CAPTURE_READY / THERMAL_CFD_AND_OPTICAL_CALIBRATION_RELEASE_GATES_REMAIN**.
