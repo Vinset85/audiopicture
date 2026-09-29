@@ -53,15 +53,15 @@ Supply domains:
 Ground remains a common system ground. Do not invent split-ground islands.
 
 ## 4. +1V8_RADAR
-U202 preferred family = **onsemi NCP167**, fixed 1.8 V.
+U202 = **onsemi NCP167AMX180TBG**, fixed 1.8 V, 700 mA, active discharge, XDFN4.
 
 Requirements:
 - input +3V3_SYS;
 - >=300 mA AudioPicture continuous engineering allocation;
 - regulator family capability provides substantial transient margin;
 - low-noise/high-PSRR implementation;
-- exact fixed-1.8 V orderable MPN/package is a BOM gate;
-- XDFN4 1x1 mm preferred over WLCSP if lifecycle/assembly review passes.
+- device/package MPN is frozen;
+- final radar-noise/filter implementation remains an RDK/reference validation gate.
 
 Manufacturer nominal application uses 1 uF-class ceramic input/output capacitors. Final capacitance/layout follows exact selected order code/datasheet.
 
@@ -117,7 +117,7 @@ Required properties:
 - no parasitic radar powering;
 - no shared-SPI MISO contention.
 
-Exact SN74AXC4T245 package remains a PCB fanout/assembly gate.
+U204/U205 = **TI SN74AXC4T245BQBRG4**, WQFN (BQB), 16 pins. Device/package is frozen; PCB fanout and assembly remain layout validation items.
 
 ## 8. SPI
 Shared MAIN bus:
@@ -235,10 +235,10 @@ Mandatory tests:
 
 ## 15. Release gates
 Before PCB-C production freeze:
-1. exact NCP167 1.8 V orderable MPN/package;
+1. NCP167AMX180TBG radar-noise/filter validation against the Infineon RDK requirements;
 2. Infineon RDK per-domain filter/decoupling transcription;
 3. exact 80 MHz oscillator MPN and supply network;
-4. exact U204/U205 package/fanout;
+4. U204/U205 WQFN fanout/layout validation;
 5. BGT60TR13C manufacturer land pattern/reference layout audit;
 6. RF stackup/antenna keep-out implementation;
 7. front fabric/plastic RF characterization;
