@@ -149,7 +149,7 @@ Every unit:
 
 PoE station:
 - 802.3af/at detection/classification;
-- Ag5324 startup;
+- Ag53024 startup;
 - +24V_POE;
 - load sanity.
 
@@ -306,3 +306,86 @@ Factory Test becomes production FROZEN after:
 8. manufacturing database/traceability format frozen;
 9. false-pass/false-fail study completed;
 10. pilot-run yield review.
+
+
+## Rev.A production-test freeze — 2026-09-29
+
+### Every-unit mandatory tests
+Every manufactured unit must pass:
+- unpowered rail short/resistance screen;
+- controlled power-up/current sanity;
+- +24V_SYS, +5V_SYS, +3V3_SYS measurement;
+- CHIP_PU and GPIO0 hard-recovery control;
+- flash/PSRAM verification;
+- USB ROM recovery enumeration or UART ROM fallback;
+- W5500 register/PHY/link/packet test;
+- INA228 sanity;
+- I2C enumeration and stuck-bus test;
+- VOICE reset/IRQ and audio-stream sanity;
+- **hardware microphone privacy OFF test**;
+- radar enable/reset/SPI/IRQ sanity;
+- TAS5825M identity/fault/low-level output test;
+- left/right DML continuity and short acoustic sweep;
+- SHT45 and OPT3004 sanity;
+- STATUS_LED/service input;
+- UUID/revision/calibration record write and readback.
+
+### Safe-state test
+Every unit shall verify that, with ESP32 held in reset:
+- AMP_PDN remains inactive;
+- MIC_HW_EN remains inactive;
+- RADAR_EN remains inactive;
+- RADAR_RST remains asserted;
+- ETH_RST remains asserted;
+- ETH_CS and RADAR_CS remain inactive.
+
+This test validates the external hardware bias network, not firmware behavior.
+
+### PoE test
+Production PoE device is **Silvertel Ag53024**.
+Every-unit PoE station verifies detection/classification, startup and +24V_POE/+24V_SYS sanity.
+
+System continuous PoE application budget is **22.5 W maximum**. The production test shall not use a higher continuous load as an acceptance requirement.
+
+Full-power PoE thermal endurance and source-handover cycling are qualification/sample-QA tests, not mandatory long-duration every-unit tests.
+
+### Qualification / sample-QA tests
+Move these out of the normal high-throughput fixture:
+- maximum external-24V audio output/thermal soak;
+- sustained 22.5 W PoE application load;
+- repeated PoE/external source handover cycling;
+- Wi-Fi/BLE controlled RF characterization;
+- Ethernet long-duration stress;
+- USB ESD;
+- system EMC pre-compliance;
+- DML high-level distortion/excursion;
+- long-duration microphone/AEC characterization;
+- calibrated radar target characterization;
+- environmental chamber tests.
+
+### Pogo-pad baseline
+TP01..TP20 remain the minimum MAIN fixture set already defined in this document.
+
+USB D+/D- use the external USB-C connector by default rather than consuming two additional pogo contacts.
+
+TP03 direct +24V_RAW injection remains engineering/diagnostic only. Normal production power enters through the real external-input path or controlled PoE PSE so protection/source-selection circuitry is exercised.
+
+### Privacy acceptance criterion
+With MIC_HW_EN commanded OFF and during MCU reset, microphone power rail +3V3_MIC must collapse below the PCB-B microphone operating threshold within a validated timeout. No valid microphone stream may remain available.
+
+The factory database records this as a dedicated pass/fail field, not merely as part of a generic VOICE test.
+
+### Recovery acceptance criterion
+A unit with intentionally invalid application firmware must remain recoverable through ESP32 ROM download mode using hardware GPIO0 + CHIP_PU controls. Recovery must not depend on the hidden service touch input or application firmware.
+
+### Manufacturing status
+Status: **READY_FOR_NATIVE_KICAD_CAPTURE_WITH_FIXTURE_LAYOUT_GATE**.
+
+Remaining production-release gates:
+1. final pogo coordinates/diameters;
+2. fixture alignment/tooling geometry;
+3. USB-vs-UART primary station method after cycle-time trials;
+4. golden-unit electrical/acoustic limits;
+5. automated test firmware;
+6. characterized microphone/radar/acoustic fixtures;
+7. pilot-run false-pass/false-fail study.
