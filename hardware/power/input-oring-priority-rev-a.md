@@ -562,3 +562,67 @@ Still pending before Sheet-02 production freeze:
 - reference bias resistor exact value and dissipation;
 - fail-safe open-drain AND/interlock transistor implementation;
 - SPICE transient verification including comparator propagation, MOSFET gate turn-off and +24V_RAW overshoot.
+
+
+## Fail-safe source-selection logic — 2026-09-29
+
+### Logic convention
+Comparator outputs are open-drain and are arranged so **any fault pulls EXT_VALID_N low**.
+
+Faults include:
+- external undervoltage;
+- external overvoltage;
+- comparator POR/unpowered state through explicit default network;
+- reference-not-valid state.
+
+Only when both UV and OV comparators indicate a valid window may EXT_VALID_N be released.
+
+Do not depend on an open-drain high-impedance state alone to mean valid.
+
+### Hardware interlock
+Use a small discrete transistor interlock between EXT_VALID_N and the two source controllers.
+
+Required truth table:
+- EXT invalid/fault: EXT path OFF; PoE path permitted ON.
+- EXT valid: PoE path commanded OFF first; EXT path enabled only after PoE-off delay.
+- EXT becomes invalid: EXT path commanded OFF first; PoE enabled only after EXT-off delay.
+
+This is explicit **break-before-make** operation.
+
+### Dead-time baseline
+Initial hardware dead-time target: 0.5-2.0 ms each transition.
+
+Implementation baseline:
+- asymmetric RC + diode timing around logic transistors;
+- fast turn-OFF path;
+- delayed turn-ON path;
+- no MCU timing dependency.
+
+Exact R/C values are not frozen until controller input thresholds/leakage and MOSFET gate-discharge times are included.
+
+### OVP response requirement
+For a rising external overvoltage:
+1. TLV1822 detects the 25.3 V nominal trip;
+2. EXT switch receives immediate OFF command without intentional RC delay;
+3. 100 V MOSFET pair disconnects external source;
+4. PoE turn-on remains delayed until external isolation is established.
+
+The intentional dead time applies to source turn-ON, not protection turn-OFF.
+
+### Hold-up requirement
++24V_RAW bulk capacitance must bridge the break-before-make dead time for logic rails without requiring the amplifier to remain at full output.
+
+Energy relation:
+C >= 2*P*t / (V1^2 - V2^2).
+
+Illustrative logic-load example only:
+P=5 W, t=2 ms, V1=24 V, V2=20 V -> C >= 56.8 uF.
+
+The final hold-up capacitor is coordinated with Sheet 03 and PoE-module output-capacitance/inrush limits. Amplifier firmware may mute proactively, but hardware source safety does not depend on firmware.
+
+### OVP dynamic release gate
+Static threshold margin alone is insufficient. Before production freeze, transient simulation must show that comparator propagation + interlock + controller/MOSFET turn-off does not permit +24V_RAW to exceed 26.4 V during the defined external-source overvoltage slew envelope.
+
+If this cannot be guaranteed for arbitrary fast surges, the front-end TVS/surge network must bound the slew/amplitude and the hardware OVP is treated as sustained-overvoltage protection, not nanosecond surge clamping.
+
+Status: **LOGIC_ARCHITECTURE_FROZEN / TRANSISTOR_RC_VALUES_PENDING**.
