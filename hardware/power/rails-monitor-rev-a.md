@@ -101,10 +101,11 @@ Candidate families:
 - TDK C3216X7R1H475K160AC
 - Murata GRM31CR71H475KA12L.
 
-Output baseline:
-- 2 x 10 uF, 16 V X7R
-- 100 nF high-frequency bypass
-- final effective COUT after DC-bias derating must meet TI stability/transient guidance.
+Output baseline corrected to TI 5 V guidance:
+- minimum required effective COUT = **25 uF**;
+- production baseline = **2 x 47 uF, 10 V, 1210 X7R/X7S-class**, selected so combined effective capacitance at 5 V remains >=25 uF;
+- TI 24 V -> 5 V example reports approximately 48 uF total effective capacitance using this class;
+- retain 100 nF local high-frequency bypass where layout/reference design calls for it.
 
 Use the fixed 5 V variant and reproduce TI reference placement.
 
@@ -337,3 +338,62 @@ Infineon lists BGT60TR13C active current in the ~200 mA class at 1.8 V and also 
 
 ### Voice power note
 XVF3800 is not a native 5 V IC. Its documented rails include 0.9 V core, 1.8 V I/O/USB and 3.3 V I/O. The 5 V budget above is therefore an allocation to the PCB-B local regulator tree, not a direct 5 V XVF3800 supply. Sheet PCB-B must freeze those local regulators before this allowance becomes a verified number.
+
+
+## Converter passive freeze — 2026-09-29
+
+### TPSM63603V5 24 V -> 5 V
+Controller/module exact MPN remains **TPSM63603V5RDHR** and is now **FROZEN_DEVICE_PACKAGE**.
+
+Frequency:
+- set approximately **1 MHz**;
+- R_RT = **13.0 kohm** to AGND per TI 5 V design guidance.
+
+Input:
+- C5VIN1/C5VIN2 = **4.7 uF, 50 V, 1210, X7R/X7S**, two pieces minimum;
+- effective capacitance under 24-26 V DC bias must be checked from the selected manufacturer curves;
+- add 100 nF local HF ceramic if permitted by reference placement.
+
+Output:
+- C5VOUT1/C5VOUT2 = **47 uF, 10 V, 1210, X7R/X7S**, two pieces;
+- combined effective capacitance at 5 V must be >=25 uF;
+- target around 40-50 uF effective is preferred for voice/3.3 V transient loading.
+
+Other TI reference connections:
+- fixed 5 V variant: FB connected to VOUT as specified by TI;
+- VLDOIN connected to VOUT for efficiency;
+- VCC decoupled with **1 uF** close to VCC/PGND;
+- RBOOT/CBOOT connection follows TI efficiency recommendation;
+- PGOOD is available and shall become **5V_PG**.
+
+### TPS62823 5 V -> 3.3 V
+U_3V3 = **TPS62823DLCR**, now **FROZEN_DEVICE_PACKAGE**.
+
+Minimum/reference power stage:
+- L_3V3 = **470 nH**, shielded;
+- CIN = **4.7 uF** minimum ceramic directly at VIN/PGND;
+- COUT = **10 uF** minimum ceramic directly at VOUT/PGND;
+- PG becomes **3V3_PG**.
+
+Because AudioPicture has burst loads (ESP32 radio and Ethernet/digital activity), production baseline adds:
+- **22 uF local 3.3 V bulk ceramic** near the ESP32/network load region, separate from the converter control-loop minimum capacitor;
+- normal 100 nF local decouplers at individual ICs.
+
+### 470 nH inductor qualification
+Exact MPN remains OPEN. Required:
+- 470 nH nominal;
+- shielded;
+- low DCR;
+- saturation current comfortably above TPS62823 peak current limit, target >=4.5 A;
+- temperature-rise current >=3 A with margin;
+- compact low-profile package suitable for the 40 mm enclosure;
+- verify inductance retention under DC bias.
+
+### Capacitor selection rule
+Nominal printed capacitance is not acceptance criteria.
+For every MLCC in these converter networks, verify manufacturer DC-bias curves at:
+- 26 V for 50 V input capacitors;
+- 5 V for 10/16 V 5 V output capacitors;
+- 3.3 V for 3.3 V output capacitors.
+
+Status: **CONTROLLER_AND_PASSIVE_VALUES_FROZEN / EXACT_L_C_MPN_DC_BIAS_VERIFY**.
