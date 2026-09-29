@@ -449,3 +449,9 @@ Q101 = **Texas Instruments TPS22913CYZVR**: TPS22913C, active production orderab
 MIC101..MIC104 remain **Infineon IM72D128V01XTMA1**, PG-LLGA-5-3. Native footprint shall reproduce the Infineon manufacturer SMD-pad/stencil recommendation. The microphone is bottom-port; PCB acoustic sound port is frozen at **0.8 mm diameter (R0.4 mm)** per Infineon recommendation. Preserve the manufacturer copper/solder-mask geometry around the port and prohibit vias, copper intrusion, adhesive or conformal coating in the acoustic opening/keep-out. Pin-1 orientation must be explicit on assembly documentation.
 
 Status: **Q101_EXACT_ORDERABLE_AND_MIC_ACOUSTIC_PORT_FROZEN / ASSEMBLY_DFM_VALIDATE**.
+
+
+## BOM audit closure
+Cross-document audit confirms no unresolved functional IC selection remains on PCB-B. Remaining passive MPN/effective-C, FPC orientation, firmware and physical validation items are release gates only.
+
+Authoritative capture state: **READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE**.
