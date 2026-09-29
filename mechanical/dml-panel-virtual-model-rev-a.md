@@ -396,3 +396,42 @@ Do not collapse the glass/epoxy skin to the old provisional isotropic 20 GPa ass
 The earlier approximately 230 Hz simply-supported estimate used 0.30 mm isotropic assumed skins and is now superseded as a scale-only historical sanity check. No new absolute eigenfrequency is frozen until the orthotropic solver includes the four exciter masses and compliant perimeter.
 
 Status: **STACK_A1_SKIN_SYSTEM_AND_LAYUP_BASELINE_FROZEN_FOR_DETAILED_FEA / FULL_ORTHOTROPIC_CONSTANT_AND_DAMPING_GATE_OPEN**.
+
+
+## 22. Stack-A1 mass closure and detailed eigenmodel contract — 2026-09-29
+
+Using the traceable Gurit SE75/EGL300 constituent data (Vf 47.3%, E-glass density 2.6 g/cm3) and SE75 cured-resin density 1.19 g/cm3, the first-order laminate density is approximately **1857 kg/m3** by rule of mixtures.
+
+For the 300 x 380 mm A1 panel:
+- two 0.50 mm GFRP skins: approximately **211.7 g**;
+- 5.0 mm ROHACELL 51 IG-F core at 52 kg/m3: approximately **29.6 g**;
+- structural panel before adhesive/fabric: approximately **241.3 g**;
+- four legacy DAEX25FHE-4 devices at 110.9 g each: approximately **443.6 g**;
+- panel + four exciters before adhesive/fabric/harness: approximately **684.9 g**.
+
+Thus approximately 64.8% of this preliminary structural moving assembly mass is concentrated in the four complete exciter devices. This makes point/distributed exciter inertia a first-order modal-design variable.
+
+### Detailed eigenmodel implementation rule
+The next solver model shall use:
+1. orthotropic layered shells (or equivalent laminate formulation) for each GFRP skin;
+2. a shear-deformable solid/sandwich core using ROHACELL 51 IG-F E=70 MPa and G=19 MPa baseline;
+3. bonded/tied adhesive interfaces for the first solve, followed by adhesive-compliance sensitivity;
+4. each exciter represented by its real attachment/contact footprint with distributed rigid mass/inertia, not a mathematical point mass;
+5. Candidate-A coordinates as initial attachment centers;
+6. compliant perimeter springs/damping rather than only simply-supported or clamped edges;
+7. a mesh-convergence check on at least the first 30 modes.
+
+### Frequency reporting rule
+Absolute eigenfrequencies shall be reported as bands until G12, nu12, laminate density coupon confirmation, adhesive properties, edge-support stiffness and final exciter revision are closed. Any single-frequency value produced before those gates is diagnostic only.
+
+### Model validation metrics
+For each mode retain:
+- eigenfrequency;
+- modal effective mass;
+- surface-velocity participation at L1/L2/R1/R2;
+- L/R controllability metric;
+- strain-energy share in skins/core/edge support;
+- sensitivity to +/- core thickness tolerance;
+- sensitivity to exciter mass/position tolerance.
+
+Status: **A1_MASS_MODEL_CLOSED_FOR_FIRST_DETAILED_EIGENSOLVE / ABSOLUTE_FREQUENCY_UNCERTAINTY_GATES_REMAIN**.
