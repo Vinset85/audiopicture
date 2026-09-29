@@ -102,21 +102,20 @@ Dedicated baseline host bus:
 
 Firmware may map the bus to an available ESP32-S3 general-purpose SPI controller through GPIO matrix.
 
-## 9. Radar SPI
-Baseline:
+## 9. Radar SPI — FROZEN Rev.A
+Radar shares the host SPI clock/data lines with W5500:
+- GPIO11 = SPI_MOSI
+- GPIO12 = SPI_SCLK
+- GPIO13 = SPI_MISO
 - GPIO14 = RADAR_CS
 - GPIO15 = RADAR_IRQ
 - GPIO16 = RADAR_RST/EN
 
-Radar clock/MOSI/MISO allocation is NOT assumed to share W5500 pins.
+W5500 retains GPIO10 ETH_CS.
 
-At schematic freeze, allocate the remaining suitable GPIOs/peripheral routing only after checking:
-- second SPI host availability in ESP-IDF;
-- USB/UART/I2S conflicts;
-- strapping pins;
-- module memory pins.
+Firmware performs per-device bus arbitration and reconfigures SPI frequency/mode as required before each transaction. PCB-C contains the radar 3.3 V <-> 1.8 V fixed-direction translation.
 
-If a separate hardware SPI bus cannot be allocated cleanly, sharing W5500 SPI is permitted with separate CS and conservative arbitration. The architecture requirement is isolation of traffic behavior, not unnecessary pin consumption.
+This avoids consuming strapping pins or adding an I2C GPIO expander.
 
 ## 10. Audio I2S
 GPIO4 = AUD_BCLK
@@ -143,7 +142,8 @@ GPIO21 = MIC_HW_EN.
 Hardware default: microphones OFF while MCU is reset/unpowered.
 
 VOICE:
-- VOICE_RST and VOICE_IRQ require final GPIO assignment during pin-budget freeze if not implemented through an I/O expander/control device.
+- GPIO38 = VOICE_RST
+- GPIO39 = VOICE_IRQ.
 
 Privacy behavior must not depend solely on firmware.
 
@@ -241,8 +241,8 @@ Hardware must permit recovery even if application firmware is invalid.
 | 20 | USB D+ |
 | 21 | MIC_HW_EN |
 | 26..37 | reserved memory |
-| 38 | expansion candidate |
-| 39 | expansion IRQ candidate |
+| 38 | VOICE_RST |
+| 39 | VOICE_IRQ |
 | 40 | STATUS_LED |
 | 41 | SERVICE_TOUCH |
 | 42 | expansion candidate |
@@ -253,17 +253,21 @@ Hardware must permit recovery even if application firmware is invalid.
 
 Unlisted pins remain uncommitted until final pin-budget review.
 
-## 20. Important unresolved pin-budget item
-The previous conceptual architecture named separate RADAR_SCLK/MOSI/MISO and VOICE_RST/VOICE_IRQ but did not assign safe ESP32 GPIOs for all of them.
+## 20. Pin-budget decision
+The Rev.A pin budget is now resolved without an I/O expander.
 
-This is now explicitly a release gate.
+Shared SPI:
+- GPIO11/12/13 = MOSI/SCLK/MISO
+- GPIO10 = ETH_CS
+- GPIO14 = RADAR_CS
 
-Preferred solutions in order:
-1. verify unused safe GPIO availability on the exact WROOM-1-N16R8 module and allocate them;
-2. share W5500 SPI bus with radar using separate CS if electrical/firmware timing is acceptable;
-3. move low-speed reset/IRQ/control functions to a small I2C GPIO expander if needed.
+Voice control:
+- GPIO38 = VOICE_RST
+- GPIO39 = VOICE_IRQ
 
-Do NOT consume strapping or memory pins merely to preserve the earlier conceptual map.
+GPIO42 remains an expansion candidate.
+
+GPIO22..25 are not exposed for use on the WROOM-1 module, GPIO26..37 remain unavailable for module memory, and strapping GPIO0/3/45/46 remain protected.
 
 ## 21. Factory test
 1. 3.3 V rail/current.
@@ -284,7 +288,7 @@ Do NOT consume strapping or memory pins merely to preserve the earlier conceptua
 ## 22. Release gates
 Sheet 04 becomes FROZEN only after:
 1. exact Espressif reference reset/decoupling network transcribed;
-2. final pin-budget table including radar and voice controls;
+2. final shared-SPI firmware arbitration and per-device clock/mode validation;
 3. strapping review;
 4. USB ESD/CC interface review with Sheet 06;
 5. antenna keep-out placed on PCB floorplan;
