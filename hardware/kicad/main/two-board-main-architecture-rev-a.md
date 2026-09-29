@@ -339,3 +339,114 @@ The 145 x 45 MAIN-P target is demoted.
 The new preferred rectangle is **115 x 45 mm at X=105, Y=112** for detailed floorplanning.
 
 Status: **MAIN_P_115x45_X105_Y112_PLACEMENT_SEED / DETAILED_POWER_AUDIO_FLOORPLAN_REQUIRED**.
+
+
+## 16. MAIN-P detailed power/audio floorplan — first pass
+
+The 115 x 45 mm seed is retained for a detailed functional floorplan.
+
+### Placement coordinates
+Use local MAIN-P coordinates:
+- PX = 0..115 mm along the long axis;
+- PY = 0..45 mm along the short axis.
+
+Product placement remains:
+- product X = 105 + PX;
+- product Y = 112 + PY.
+
+### Zone P1 — 24 V ingress / protection
+Reserve approximately:
+- PX = 0..30 mm
+- PY = 0..45 mm
+
+Contains:
+- external 24 V connector interface/harness landing;
+- fuse/TVS;
+- TPS48100-Q1;
+- back-to-back MOSFETs;
+- source-priority switching interface;
+- high-current copper entry.
+
+The TPS48100 package is not area-dominant; the MOSFETs, protection spacing, connector/service volume and copper width dominate this zone.
+
+### Zone P2 — measurement / conversion
+Reserve approximately:
+- PX = 30..65 mm
+- PY = 0..45 mm
+
+Contains:
+- INA228 + Kelvin shunt;
+- TPSM63603 24 V -> 5 V;
+- TPS62823 5 V -> 3.3 V if final rail ownership remains on MAIN-P;
+- input/output capacitor banks.
+
+Verified package anchors:
+- TPSM63603: 4 x 6 x 1.8 mm;
+- TPS62823: 2 x 1.5 mm;
+- INA228: small 10-pin VSSOP.
+
+Copper, thermal vias and capacitor derating space dominate over IC package area.
+
+### Zone P3 — Class-D audio island
+Reserve approximately:
+- PX = 65..115 mm
+- PY = 0..45 mm
+
+Contains:
+- TAS5825M;
+- local PVDD ceramic decoupling;
+- four bootstrap capacitors;
+- four XAL7050-103MEC inductors;
+- final LC capacitors;
+- speaker harness egress;
+- AMP_FAULT / AMP_PDN local conditioning.
+
+Keep each BTL half-bridge path compact and symmetric. Do not route switching nodes through P1/P2.
+
+### PVDD bulk placement
+The EEU-FR1V471B 470 uF capacitor is assigned near the P2/P3 boundary rather than directly beside the hottest output inductors.
+
+Reserve its 12 x 12 x 19 mm mechanical pocket approximately around:
+- PX = 58..70 mm
+- PY = 28..40 mm
+
+Exact position remains movable to preserve PVDD current path, thermal separation and frame clearance.
+
+Local ceramic PVDD decoupling remains immediately at TAS5825M. The radial bulk is not a substitute for those ceramics.
+
+### Thermal copper policy
+MAIN-P cannot be validated from component-body area alone.
+
+Reserve substantial continuous copper for:
+- 24 V high-current path;
+- MOSFET heat spreading;
+- TPSM63603 thermal pads;
+- TAS5825M exposed pad;
+- ground return;
+- output filter current paths.
+
+Do not fill the nominally unused board area with unrelated signals until thermal/current polygons are solved.
+
+### Inter-board connector edge
+Reserve a connector strip along the upper long edge of P1/P2, away from the Class-D output switching region.
+
+The link should carry isolated PoE 24 V / system power as finally defined plus digital control/audio signals with multiple ground contacts.
+
+### Speaker harness edge
+Prefer speaker/exciter harness exits from the P3 short/right edge so BTL currents leave the board without crossing the control/power-conversion zones.
+
+### Preliminary fit result
+The 115 x 45 mm board is **electrically plausible** for the assigned functions because the selected converters and controller packages are compact, but it is not yet released.
+
+The remaining area risks are:
+1. exact external-24-V connector and mating/service envelope;
+2. back-to-back MOSFET copper/thermal requirement;
+3. final LC capacitor footprints;
+4. inter-board connector;
+5. mounting holes/boss keep-outs;
+6. thermal-via fields;
+7. creepage/clearance around protection nodes.
+
+Do not reduce below 115 x 45 mm at this stage.
+
+Status: **MAIN_P_115x45_FLOORPLAN_P1_P2_P3_DEFINED / CONNECTOR_THERMAL_COPPER_RELEASE_GATES_OPEN**.
