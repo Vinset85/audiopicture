@@ -403,3 +403,46 @@ Current priority:
 2. 600 mA PoE+ current margin;
 3. 1500 Vrms isolation;
 4. footprint size.
+
+
+## Audit pass 9 — W5500 magnetics OCL resolved
+
+### W5500 requirement
+WIZnet W5500 datasheet specifies transformer characteristics:
+- TX turns ratio 1:1;
+- RX turns ratio 1:1;
+- TX inductance 350 uH;
+- RX inductance 350 uH.
+
+Therefore 110/120/150 uH compact PoE+ transformers are NOT treated as drop-in compliant magnetics for Rev.A, even if their PoE current rating is attractive.
+
+Rejected as Rev.A baseline on OCL mismatch:
+- Wurth 74930120 (110 uH);
+- Wurth 7490120110 (120 uH);
+- Wurth 749012310 (150 uH).
+
+### Rev.A production magnetics
+**T_ETH = Wurth Elektronik 7490220121** is selected as the conservative Rev.A production baseline.
+
+Verified manufacturer characteristics:
+- 10/100/1000BASE-T;
+- 1 port / four data channels;
+- 350 uH minimum;
+- 1500 Vrms insulation;
+- 4PPoE up to 600 mA per centre tap;
+- active production;
+- official KiCad, STEP and S-parameter assets available.
+
+It is electrically oversized for W5500 because only two 100BASE-TX channels are needed. The unused transformer channels must be handled exactly as permitted by the manufacturer schematic/layout guidance and shall not be repurposed casually.
+
+Status: **FROZEN_ELECTRICAL / FOOTPRINT_VERIFY_OFFICIAL_KICAD**.
+
+### Rationale
+Rev.A prioritizes:
+1. W5500 datasheet compliance;
+2. PoE+ current margin;
+3. isolation;
+4. manufacturer EDA support;
+5. size.
+
+A later cost/size optimization may qualify a smaller two-channel 350 uH PoE+ transformer, but that optimization must not block Rev.A PCB capture.
