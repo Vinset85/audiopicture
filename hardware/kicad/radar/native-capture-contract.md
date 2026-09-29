@@ -78,7 +78,16 @@ Capture separate reference-derived filter/decoupling branches for:
 
 and the required VAREF bypass.
 
-Exact ferrite/R/C values remain **OPEN_RDK_REFERENCE_TRANSCRIPTION**.
+Rev.A filter topology/value baseline is transcribed from current Infineon reference hardware:
+- VDDD: +1V8_RADAR -> 10 uF -> 600-ohm-at-frequency ferrite -> VDDD, with 1 uF on the sensor side;
+- VDDA: +1V8_RADAR -> 10 uF -> 600-ohm ferrite -> VDDA, with 1 uF sensor-side;
+- VDDVCO: +1V8_RADAR -> 10 uF -> 600-ohm ferrite -> VDDVCO, with 1 uF sensor-side;
+- VDDPLL: +1V8_RADAR -> 10 uF -> 600-ohm ferrite -> VDDPLL, with 1 uF sensor-side;
+- VDDLF: +3V3_SYS -> 10 uF -> 600-ohm ferrite -> VDDLF, with 1 uF sensor-side;
+- VDDRF: +1V8_RADAR -> 10 uF -> 600-ohm ferrite -> VDDRF, with 10 uF + 3 x 1 uF sensor-side for the three VDDRF pins/reference implementation;
+- VAREF is a 1.2 V output/reference node and receives only the manufacturer-required bypass; it is never driven from a system rail.
+
+Capacitance topology is **FROZEN_REFERENCE_BASELINE**. Exact ferrite MPN/impedance curve and VAREF bypass value remain capture/release gates.
 
 Release verification must address the BGT60TR13C supply-noise requirement, including the stringent 20 kHz..700 kHz noise region.
 
@@ -243,7 +252,7 @@ Mandatory tests:
 ## 15. Release gates
 Before PCB-C production freeze:
 1. NCP167AMX180TBG radar-noise/filter validation against the Infineon RDK requirements;
-2. Infineon RDK per-domain filter/decoupling transcription;
+2. exact ferrite MPN/impedance curve and VAREF bypass value, plus supply-noise validation;
 3. KC2016K80.0000C1GE00CT oscillator layout/phase-noise validation and final ferrite selection;
 4. U204/U205 WQFN fanout/layout validation;
 5. BGT60TR13C manufacturer land pattern/reference layout audit;
@@ -262,4 +271,4 @@ J201, rail domains, preferred LDO family, dual fixed-direction translator archit
 The remaining open items are reference-design/BOM/layout release gates, not architecture gaps.
 
 Status:
-**READY_FOR_NATIVE_KICAD_STRUCTURE_AND_PARTIAL_CAPTURE / BLOCKED_ON_RDK_FILTER_OSCILLATOR_TRANSCRIPTION**.
+**READY_FOR_NATIVE_KICAD_STRUCTURE_AND_DETAILED_CAPTURE / FILTER_MPN_VAREF_AND_NOISE_VALIDATION_OPEN**.
