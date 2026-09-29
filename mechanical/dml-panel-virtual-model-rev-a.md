@@ -472,3 +472,42 @@ Search local coordinate perturbations around Candidate A, with each point initia
 - penalty on excessive channel sensitivity mismatch.
 
 Status: **A1_REDUCED_EIGENSOLVE_CONVERGED_DIAGNOSTICALLY / CANDIDATE_A_LOCAL_REFINEMENT_REQUIRED**.
+
+
+## 24. Candidate-B local refinement — placement freeze candidate
+
+A constrained local refinement was defined around Candidate A to improve the weakest controlled modes identified by the reduced A1 eigensolve.
+
+Search envelope:
+- each exciter center may move up to +/-25 mm from Candidate A;
+- LEFT points remain in the left acoustic region and RIGHT points in the right acoustic region;
+- minimum inter-exciter/edge clearances remain enforced;
+- horizontal L/R centroid separation shall not materially regress;
+- objective prioritizes the minimum normalized channel participation over the first 12 modes, then channel-balance and low L/R modal correlation.
+
+### Candidate B — nominal coordinates for next solver iteration
+Use the following deliberately perturbed geometry as the next detailed-FEA seed:
+
+LEFT
+- L1 = (58, 70) mm
+- L2 = (104, 186) mm
+
+RIGHT
+- R1 = (196, 258) mm
+- R2 = (244, 108) mm
+
+Relative to Candidate A, all movements remain within the +/-25 mm local search box. Horizontal channel centroids remain widely separated while vertical spacings and edge distances become less commensurate, specifically targeting the weak modal families seen in the diagnostic run.
+
+### Freeze rule
+Candidate B is a **placement freeze candidate**, not yet a production drawing. It may be frozen only if it survives:
+1. full orthotropic sandwich shell/solid eigensolve;
+2. compliant perimeter sensitivity;
+3. real exciter footprint/inertia;
+4. acoustic-radiation comparison against Candidate A;
+5. successor EX25FHE2-4 mass/mechanical variant;
+6. RADAR_RF_KEEP_OUT and VOICE isolation CAD intersection checks;
+7. tolerance perturbation of at least +/-2 mm assembly position.
+
+If Candidate B does not improve the worst-controlled modes in the full model, revert to optimizer authority rather than preserving these coordinates by preference.
+
+Status: **DML_PLACEMENT_CANDIDATE_B_DEFINED / FULL_FEA_AND_ACOUSTIC_COMPARISON_REQUIRED**.
