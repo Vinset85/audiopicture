@@ -143,3 +143,51 @@ Status: CANDIDATE_MPN / VERIFY_DRAWING_WITH_ENCLOSURE.
 4. exact TAS output inductors;
 5. exact USB ESD protector;
 6. exact Ag53024/Ag5324 SIL land pattern coordinates from current manufacturer drawing.
+
+
+## Audit pass 3 — Ethernet / PoE topology gate
+
+### Rejected MagJack candidate
+Pulse J0011D21BNL is REJECTED for the AudioPicture PoE production BOM.
+Reason: manufacturer product data classifies it as NON-POE even though it is a valid 10/100 integrated-magnetics RJ45 and appears in WIZnet W5500 recommendations.
+
+Do not confuse W5500 electrical compatibility with PoE power-path compatibility.
+
+### W5500 center-tap rule
+WIZnet documents a special case for integrated-transformer RJ45 parts with internally connected center taps:
+- RX matching network must be isolated from the 3.3 V center tap with added capacitors;
+- omission can impair W5500 operation;
+- connected center taps can increase dissipation.
+
+AudioPicture preference is therefore:
+1. PoE-rated integrated MagJack whose transformer/center-tap topology is explicitly accessible and compatible with the selected PoE extraction scheme; OR
+2. discrete 10/100 Ethernet transformer + shielded RJ45 if this produces a cleaner, auditable PoE power path.
+
+A generic integrated MagJack is not acceptable.
+
+### PoE bridge topology
+Silvertel Ag5300 family reference connection confirms two bridge rectifiers on the PoE input for IEEE 802.3at polarity support.
+
+Rev.A keeps:
+- bridge path A for data-pair feed;
+- bridge path B for spare-pair feed;
+- bridge outputs combined only on the PoE module input side as shown by the Silvertel reference architecture;
+- isolated secondary remains +24V_POE / GND_SYS.
+
+### Ag53024 output capacitor correction
+For 24 V Ag5300-family output, use the current Silvertel reference minimum/output-stability guidance rather than copying the 5/12 V example value.
+Exact production capacitance, voltage rating, ESR and temperature grade shall be frozen from the selected Ag53024 datasheet revision.
+
+### MagJack selection gate
+Exact MagJack MPN remains VALIDATE_POE_PINOUT.
+
+It may be frozen only when the datasheet proves all of:
+- 10/100BASE-T compatibility;
+- transformer ratio/termination compatible with W5500;
+- IEEE 802.3af/at current path capability for intended pairs;
+- center taps / spare pairs exposed in a topology compatible with the two-bridge Silvertel input;
+- shield pins available for CHASSIS_ETH;
+- <=40 mm product-depth mechanical envelope;
+- production availability.
+
+Do not use Pulse J0011D21BNL as the PoE production connector.
