@@ -358,3 +358,48 @@ At 0.60 A illustrative cable/bridge current:
 Ag53024 is 24 W continuous / 30 W peak, 24 V nominal output, 1 A max output class, with 41-57 V input according to current distributor/manufacturer data.
 
 System firmware and TAS5825M PoE profile shall budget from 24 W continuous.
+
+
+## Audit pass 8 — Type-2 transformer current resolution
+
+### Bourns SM13126PEL demoted
+SM13126PEL is explicitly rated only to 350 mA PoE current. For AudioPicture Type-2/Class-4 it is no longer the preferred production candidate.
+
+Status: REJECT_FOR_CLASS4_BASELINE / acceptable only if a later standards/current analysis proves adequate margin.
+
+### Würth 600 mA candidates
+Würth current catalog provides explicit 600 mA PoE+/4PPoE parts.
+
+**74930120 WE-STST**
+- 1:1;
+- PoE+ up to 600 mA;
+- 1500 Vrms insulation;
+- -40 to +105 C;
+- 4.7 x 3.22 x 2.9 mm;
+- 110 uH;
+- one transformer channel per package.
+
+For 100BASE-TX use two devices (TX and RX) if electrically compatible with W5500.
+
+Status: HIGH-INTEREST_COMPACT_CANDIDATE / VERIFY_W5500_OCL_AND_RETURN_LOSS.
+
+**7490220121 WE-LAN**
+- 10/100/1000BASE-T;
+- 4PPoE up to 600 mA;
+- 350 uH;
+- 1500 Vrms;
+- active production;
+- manufacturer KiCad/STEP/S-parameter assets available.
+
+Status: SAFE_CURRENT_CANDIDATE / OVERSIZED_FOR_W5500.
+
+### Decision gate
+Do not freeze 74930120 merely on current rating. Its 110 uH OCL must be checked against the W5500 10/100 magnetics requirements and link/return-loss performance.
+
+If W5500 requires the conventional ~350 uH class magnetics, use a 350 uH 600 mA PoE+ part even if physically larger.
+
+Current priority:
+1. electrical compliance with W5500;
+2. 600 mA PoE+ current margin;
+3. 1500 Vrms isolation;
+4. footprint size.
