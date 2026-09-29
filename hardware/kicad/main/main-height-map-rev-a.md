@@ -157,3 +157,36 @@ The MAIN is not yet proven to fit as an unmodified 220 x 70 mm rectangle.
 However, the selected audio inductor is low enough that the 470 uF capacitor is currently the dominant known audio-zone Z feature. A single controlled H4 pocket is therefore preferable to increasing the entire electronics cavity depth.
 
 Status: **MAIN_HEIGHT_ZONING_BASELINE_DEFINED / FULL_PLACEMENT_AND_STEP_COLLISION_SOLVE_OPEN**.
+
+
+## 13. First XY placement solve — vertical 220 x 70 rectangle
+
+A geometry-first placement screen was performed against the current Candidate-B exciter keep-outs (R=30 mm), product envelope 320 x 400 mm and nominal 220 x 70 mm MAIN rectangle.
+
+### Result
+A full 220 x 70 mm vertical rectangle is geometrically feasible only in restricted side corridors if a strict no-overlap rule is applied to the entire PCB outline. This is unnecessarily conservative because low-profile PCB regions may coexist in XY with an exciter provided the Z-stack clears.
+
+Therefore the production placement problem shall use **height-aware 3D collision**, not a blanket 2D board-vs-exciter exclusion.
+
+### Baseline placement strategy
+Use the MAIN long axis vertical and place it in a central-to-left or central-to-right corridor selected by component zoning, with:
+- H4 PVDD pocket entirely outside all R30 exciter projections;
+- H3/H4 PoE/connector volumes outside exciter projections unless exact Z proves clearance;
+- H0/H1/H2 logic allowed under projected exciter XY only after exact Z clearance;
+- board edge >=8 mm from structural/cosmetic outer perimeter where connector/boss geometry does not require otherwise;
+- no board region inside the DML compliant-mount land.
+
+### Board-origin parameter
+Do not freeze BOARD_X/BOARD_Y from 2D screening alone. Shared CAD shall optimize BOARD_X/Y/Z simultaneously with component-side orientation.
+
+### Notch decision
+No MAIN notch is justified yet.
+
+A notch is permitted only if the exact 3D placement cannot simultaneously provide:
+1. H4 capacitor pocket clearance;
+2. Ag53024/connector clearance;
+3. ESP32 antenna keep-out;
+4. daughterboard FPC service paths;
+5. assembly/removal path.
+
+Status: **MAIN_RECTANGULAR_OUTLINE_RETAINED_FOR_3D_PLACEMENT / HEIGHT_AWARE_COLLISION_SOLVE_REQUIRED**.
