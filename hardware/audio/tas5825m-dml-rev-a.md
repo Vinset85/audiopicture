@@ -195,3 +195,106 @@ Before AUDIO becomes FROZEN:
 6. DML modal/FEA analysis;
 7. acoustic sweep/distortion validation;
 8. final Smart Amp thermal/excursion model.
+
+
+## Datasheet/reference freeze review — 2026-09-29
+
+### TAS5825M production device
+U_AUDIO = **TAS5825MRHBR**
+- RHB VQFN-32, 5 x 5 mm;
+- PVDD operating range up to 26.4 V;
+- 2.0 mode supports approximately 2 x 30 W into 8 ohm at 24 V / 1% THD+N under TI test conditions;
+- 3-wire digital audio supported without MCLK;
+- SDOUT retained for monitoring/AEC/debug.
+
+Status: **FROZEN_DEVICE_PACKAGE_MODE**.
+
+### Bootstrap network
+Per TI datasheet:
+- BST_A to OUT_A = **0.47 uF**
+- BST_B to OUT_B = **0.47 uF**
+- BST_C to OUT_C = **0.47 uF**
+- BST_D to OUT_D = **0.47 uF**
+
+Use low-ESR ceramic and place immediately at the corresponding pins.
+
+Status: **FROZEN_VALUE_TOPOLOGY**.
+
+### PVDD decoupling
+TI requires good low-ESL/low-ESR supply decoupling larger than 22 uF close to the amplifier.
+
+AudioPicture Rev.A capture:
+- C_AUDIO_BULK = **470 uF / 35 V low-ESR** baseline;
+- C_AUDIO_MID = **22 uF / 35 V ceramic** nominal, effective capacitance under 24-26 V bias to be verified;
+- local **1 uF + 100 nF** ceramic groups at PVDD supply pins/reference placement.
+
+470 uF remains a system-level baseline, not an instruction to increase capacitance arbitrarily: PoE startup, source handover and inrush remain authority.
+
+### Digital audio
+Capture baseline remains:
+- 48 kHz;
+- I2S;
+- 32-bit slots;
+- ESP32 owns BCLK/LRCLK;
+- AUD_TX -> TAS5825M SDIN;
+- SDOUT -> test/expansion/AEC path.
+
+Source-side damping footprints:
+- BCLK 22 ohm default;
+- LRCLK 22 ohm default;
+- SDIN 22 ohm default;
+- tune 0/22/33 ohm after SI validation.
+
+### Amplifier safe state
+AMP_PDN hardware pull-down on Sheet 04 has authority: amplifier remains disabled while ESP32 is reset/unpowered.
+
+AMP_FAULT is an input to ESP32. Pull-up ownership and exact electrical implementation shall follow the TAS5825M pin behavior/reference circuit; avoid duplicate pull owners.
+
+### DML electrical topology
+Each channel remains one series pair of DAEX25FHE-4 exciters:
+- LEFT = EX1 + EX2 series;
+- RIGHT = EX3 + EX4 series;
+- nominal channel load = 8 ohm.
+
+The series midpoint is not tied to ground and is not a service-ground reference.
+
+Use polarized/keyed channel connectors or unambiguous harness marking so factory assembly preserves BTL polarity.
+
+### LC output filter
+TI reference/EVM material demonstrates a **10 uH + 0.68 uF-class** LC implementation for TAS5825M.
+
+Rev.A capture baseline:
+- four inductors, one in each BTL leg: **10 uH**;
+- capacitor network: **0.68 uF class starting value/reference topology**;
+- all four legs/layout symmetric.
+
+However, exact capacitor topology/value and inductor MPN remain **NOT PRODUCTION FROZEN** because AudioPicture does not drive a simple resistive 8-ohm loudspeaker. The two-exciter DML branch plus panel has frequency-dependent impedance and electromechanical resonances.
+
+Production freeze requires:
+1. electrical impedance model/measurement of one complete two-exciter series branch mounted on the final panel;
+2. SPICE/AC analysis of LC + measured/modelled load;
+3. check filter Q/peaking and phase through the audio band;
+4. Class-D stability/EMC review;
+5. thermal/current validation of each 10 uH inductor.
+
+Do not increase C blindly: output capacitance affects idle current and amplifier behavior.
+
+### Output-current sizing
+At the TI 2 x 30 W / 8-ohm reference point:
+- load current ~= 1.94 Arms per channel;
+- sinusoidal peak ~= 2.74 A.
+
+Therefore each LC inductor and speaker connector/harness shall be designed for at least **3 A peak** with additional saturation/thermal margin. Inductor target Isat >=4 A is preferred pending filter simulation.
+
+### Sheet-05 capture status
+Status: **READY_FOR_NATIVE_KICAD_CAPTURE_WITH_LC_DML_RELEASE_GATE**.
+
+Native schematic capture may proceed using the reference 10 uH / 0.68 uF-class filter placeholders and explicit NOT-FROZEN notes.
+
+Gerber/production release remains blocked by:
+- exact LC topology/MPNs after DML impedance model;
+- exact PVDD ceramic/bulk MPNs and inrush check;
+- thermal simulation of TAS5825M exposed pad/PCB;
+- EMC validation;
+- DML panel modal/acoustic validation;
+- final Smart Amp protection model.
