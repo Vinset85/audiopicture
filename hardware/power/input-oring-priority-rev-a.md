@@ -213,3 +213,58 @@ Sheet 02 becomes FROZEN only after:
 8. dual-source bench handover;
 9. reverse-current measurement;
 10. thermal and EMC validation.
+
+
+## Architecture correction and PoE branch switch selection — 2026-09-29
+
+### LM74700 EN limitation
+LM74700 with one external N-MOSFET remains suitable for ideal-diode / reverse-current-blocking service, but its EN function is not accepted as the sole physical source-disconnect mechanism for deterministic EXT-over-PoE priority. A single-FET path can retain a forward body-diode conduction path when gate drive is disabled.
+
+Therefore the earlier concept "EXT_VALID disables the PoE LM74700 EN" is superseded.
+
+### PoE true-disconnect baseline
+U_POE_SW = **Texas Instruments TPS4810-Q1 family**, preferred implementation **TPS48100-Q1**, with two external N-channel MOSFETs in back-to-back common-source configuration.
+
+Manufacturer characteristics supporting this selection:
+- 3.5 V to 95 V operating range;
+- 100 V absolute maximum;
+- approximately 35 uA typical operating quiescent current;
+- approximately 1 uA shutdown current;
+- two independent strong gate drivers, approximately 2 A source/sink;
+- explicit support for back-to-back MOSFETs;
+- separate INP1 / INP2 controls;
+- adjustable UVLO;
+- short-circuit protection and FLT output;
+- AEC-Q100;
+- VSSOP-19 DGX package.
+
+Status: **FROZEN_ARCHITECTURE / EXACT TPS48100 ORDERABLE SUFFIX_AND_EXTERNAL_FETS_VALIDATE**.
+
+### Corrected PoE path
++24V_POE
+-> TPS48100-Q1 controlled back-to-back MOSFET pair
+-> PoE protected/switched node
+-> ideal-diode / ORing function as required by final dual-source implementation
+-> +24V_RAW.
+
+During external-source priority:
+- hardware EXT_VALID forces the PoE switch OFF through the TPS4810 control interface;
+- both PoE MOSFETs are off, providing true off-state isolation rather than relying on one body diode;
+- source selection remains independent of MCU firmware.
+
+### External branch
+The external 24 V branch may retain LM74700-Q1 + low-RDS(on) N-MOSFET as the low-loss ideal-diode path, subject to final transient/SOA validation.
+
+### Controller comparison
+TPS4811-Q1 was evaluated but is not the baseline because its normal operating quiescent current is substantially higher and its additional current-monitor/protection functions are unnecessary for the PoE source-selection role.
+
+ADI LTC4368 was evaluated as a strong low-Iq alternative with back-to-back MOSFET control and bidirectional circuit breaker behavior. It is not the Rev.A baseline because its normal operating range ends at 60 V, leaving less operating-voltage margin than the 95 V TPS4810-Q1 architecture.
+
+### Next gate
+Before freezing the exact Sheet-02 circuit:
+1. choose exact TPS48100-Q1 orderable suffix/package;
+2. select the two PoE switch MOSFETs with >=80 V preferred VDS margin;
+3. determine whether the external LM74700 branch also moves to >=80 V MOSFET;
+4. finalize SMBJ33A/transient clamp compatibility;
+5. calculate TPS4810 UVLO and EXT_VALID control thresholds;
+6. simulate source handover and +24V_RAW inrush.
