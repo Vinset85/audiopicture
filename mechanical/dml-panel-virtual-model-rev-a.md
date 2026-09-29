@@ -354,3 +354,45 @@ This ~230 Hz value is a **SANITY-CHECK SCALE ONLY**, not a FEA result or product
 The four legacy exciters add about 444 g of rigid device mass in total, which is large relative to the lightweight 300 x 380 mm sandwich panel. Their distributed attachment mass therefore must be present in the first detailed eigenfrequency solve; a bare-panel modal solution is insufficient for placement freeze.
 
 Status: **STACK_A_CORE_BASELINE_FROZEN_FOR_FEA / SKIN_LAMINATE_PROPERTY_GATE_OPEN**.
+
+
+## 21. Stack-A glass/epoxy skin baseline — 2026-09-29
+
+### Material system selected for detailed numerical baseline
+Use **Gurit SE75 with EGL 300 g/m2 unidirectional E-glass** as the first traceable skin-property dataset.
+
+Manufacturer published laminate data for the standard cured system includes:
+- cured ply thickness: 0.25 mm;
+- fibre volume fraction: 47.3%;
+- E-glass fibre density: 2.6 g/cm3;
+- E-glass fibre modulus: 69 GPa;
+- 0-degree tensile modulus E1: 51 GPa;
+- 90-degree tensile modulus E2: 10.7 GPa;
+- 0-degree tensile strength: 1499 MPa.
+
+The manufacturer dataset is the authority for the material-card baseline. Missing orthotropic constants needed by the solver (notably G12, nu12, through-thickness properties and damping) must be entered as sensitivity ranges or obtained from supplier/test data; they shall not be silently invented as production constants.
+
+### First skin layup
+Detailed FEA Baseline A1:
+- outer skin: [0/90], 2 x 0.25 mm = approximately 0.50 mm;
+- core: ROHACELL 51 IG-F, 5.0 mm;
+- inner skin: mirrored/balanced [90/0], approximately 0.50 mm;
+- structural thickness before adhesive: approximately 6.0 mm.
+
+This balanced cross-ply construction is selected for the first solve to reduce extreme directional stiffness and to provide a traceable, manufacturable reference. It is not yet the minimum-mass optimum.
+
+### Required comparison layups
+Run at least:
+- A1: [0/90] / 5 mm PMI / [90/0];
+- A2: thinner quasi-isotropic or woven-glass skin candidate if a traceable commercial material card is available;
+- A3: A1 with core thickness reduced/increased within the 3/5/8 mm sweep.
+
+The optimization may later select woven or quasi-isotropic skins if they improve modal distribution, mass and manufacturing robustness.
+
+### Material-card rule
+Do not collapse the glass/epoxy skin to the old provisional isotropic 20 GPa assumption. Use classical laminate theory / orthotropic shell properties derived from the ply card. Treat adhesive and core shear explicitly.
+
+### Frequency interpretation
+The earlier approximately 230 Hz simply-supported estimate used 0.30 mm isotropic assumed skins and is now superseded as a scale-only historical sanity check. No new absolute eigenfrequency is frozen until the orthotropic solver includes the four exciter masses and compliant perimeter.
+
+Status: **STACK_A1_SKIN_SYSTEM_AND_LAYUP_BASELINE_FROZEN_FOR_DETAILED_FEA / FULL_ORTHOTROPIC_CONSTANT_AND_DAMPING_GATE_OPEN**.
