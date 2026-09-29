@@ -81,7 +81,7 @@ Sheet 03 provides controlled rail bulk/ceramic decoupling sufficient for convert
 - Ag53024 startup;
 - hot-plug;
 - source handover;
-- LM74700 behavior.
+- TPS48100-controlled PoE disconnect / external-source priority behavior.
 
 Total 24 V capacitance is a system value, not independently maximized per sheet.
 
