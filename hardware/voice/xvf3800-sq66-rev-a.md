@@ -401,3 +401,13 @@ The following are deliberately NOT guessed:
 - reference-specific reset supervisor/RC.
 
 These six items must come from the official XK-VOICE-SQ66 1V1 package or a later XMOS design authority before PCB-B can be marked READY_FOR_NATIVE_KICAD_CAPTURE.
+
+
+## VOICE BOM closure audit — 2026-09-29
+The normalized Rev.A BOM has been cross-checked against the current XVF3800, TI and Infineon authorities. No functional VOICE IC remains TBD: U101 XVF3800-QF60B-C, U102 W25Q32JVSSIQ, Q101 TPS22913CYZVR, MIC101..104 IM72D128V01XTMA1, U_VOICE_0V9 TPS62823DLCR and U_VOICE_1V8 TPS7A2018PDBVR are frozen devices/packages.
+
+Remaining OPEN/VALIDATE entries are passive-production, cable, firmware or validation gates rather than schematic-architecture blockers: exact 470 nH inductor MPN; capacitor MPN/effective capacitance; J101 FPC contact orientation; oscillator startup/drive; raw four-channel measurement firmware; AEC and mechanical/acoustic validation.
+
+Current XMOS documentation also lists a newer XVF3800-QF60B-I SKU, but AudioPicture Rev.A retains XVF3800-QF60B-C because it remains the documented product/kit baseline. SKU migration requires an explicit lifecycle/temperature/firmware compatibility review; it is not performed implicitly.
+
+VOICE specification status: **ELECTRICAL_BOM_AUDITED / READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE**.
