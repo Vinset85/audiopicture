@@ -154,3 +154,16 @@ Widths/clearances are NOT frozen here; they will be calculated from copper weigh
 - 08 Factory test: specified
 
 The electrical architecture specification phase for MAIN Rev.A is complete. Next phase: native KiCad schematic capture, symbol/footprint audit, ERC, then PCB floorplanning.
+
+
+## PCB floorplan constraint — Ethernet/PoE
+MAIN Rev.A reserves three physical domains at the cable edge: ETH_CABLE_PRIMARY, CHASSIS and SELV_SYSTEM.
+
+Initial isolation keep-out between PoE primary and system secondary: 6.0 mm nominal no-copper/no-via corridor, subject to final IEC 62368-1/material/pollution-degree verification.
+
+Placement chain:
+RJ45 -> T_ETH / PoE extraction -> BR201/BR202 -> Ag53024 -> C_POE_OUT -> PoE LM74700 -> +24V_RAW.
+
+W5500 remains on the SELV/system side of T_ETH and close to the transformer PHY-side pins.
+
+Routing shall not begin until exact RJ45, Ag53024 land pattern and Schottky bridge MPNs are frozen.
