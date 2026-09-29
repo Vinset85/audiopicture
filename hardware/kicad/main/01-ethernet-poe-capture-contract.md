@@ -8,7 +8,7 @@ It is NOT a substitute for a KiCad schematic. The native schematic shall only be
 ## Frozen production parts
 - J_ETH: TE Connectivity 2-1734264-1, passive shielded 8P8C right-angle THT.
 - T_ETH: Wurth Elektronik 7490220121, 350 uH, 600 mA PoE-capable magnetics.
-- U_ETH: WIZnet W5500, LQFP-48 7 x 7 mm, 0.5 mm pitch.
+- U2: WIZnet W5500, LQFP-48 7 x 7 mm, 0.5 mm pitch.
 - D_POE1..D_POE8: STMicroelectronics STPST3H100AF, 100 V / 3 A SOD128Flat.
 - U_POE: Silvertel Ag53024, Ag53000 family, 24 V isolated Type-2/Class-4 PD module.
 
@@ -186,3 +186,16 @@ Native-tool-only gates remain:
 2. visually verify TE 2-1734264-1 pad numbering against ENG_CD_1734264_A2;
 3. run KiCad 9 ERC;
 4. save native schematic with KiCad 9.
+
+
+## Reference-designator authority
+For native capture and BOM consistency:
+- W5500 = **U2**.
+- Do not use legacy/alternate reference `U_ETH`.
+- PoE module = `U_POE`.
+- Ethernet transformer = `T_ETH`.
+- RJ45 = `J_ETH`.
+- W5500 crystal = `Y_ETH`.
+- PoE rectifiers = `D_POE1..D_POE8`.
+
+These designators match the normalized Rev.A BOM and are frozen for native capture.
