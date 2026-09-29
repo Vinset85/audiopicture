@@ -397,3 +397,54 @@ For every MLCC in these converter networks, verify manufacturer DC-bias curves a
 - 3.3 V for 3.3 V output capacitors.
 
 Status: **CONTROLLER_AND_PASSIVE_VALUES_FROZEN / EXACT_L_C_MPN_DC_BIAS_VERIFY**.
+
+
+## Exact inductor and INA228 filter freeze — 2026-09-29
+
+### TPS62823 inductor exact MPN
+L_3V3 = **TDK TFM201610ALM-R47MTAA**
+- 470 nH +/-20%;
+- magnetically shielded metal-core thin-film;
+- 2.0 x 1.6 x 1.0 mm;
+- DCR 28 mOhm typ / 34 mOhm max;
+- saturation-current rating 5.8 A typ / 5.1 A max-spec criterion at 30% inductance drop;
+- temperature-rise current 5.0 A typ / 4.5 A max-spec criterion at +40 C rise;
+- -40 to +125 C including self-heating;
+- production status.
+
+TI lists this exact part among inductors tested with TPS6282x.
+
+Status: **FROZEN_MPN_FOOTPRINT**.
+
+### TPS62823 output-capacitance baseline refinement
+TI identifies 470 nH + 2 x 10 uF or 22 uF as the standard combination for most applications and permits 47 uF/100 uF with appropriate conditions.
+
+Rev.A:
+- converter-local COUT = **22 uF nominal ceramic** or 2 x 10 uF equivalent, selected for effective capacitance after 3.3 V DC bias;
+- additional 22 uF local bulk remains near ESP32/network region;
+- do not place remote bulk inside the converter feedback-loop placement envelope.
+
+### INA228 input filter
+TI recommends symmetric input filtering and warns against RFILTER >100 ohm because larger values degrade gain error/nonlinearity.
+
+Rev.A freeze:
+- R_INP = **10 ohm, 0.1%**
+- R_INN = **10 ohm, 0.1%**
+- C_DIFF = **100 nF, X7R**
+- VS decoupling = **100 nF** directly at INA228 VS/GND.
+
+This is intentionally a moderate filter; firmware conversion time/averaging provides additional noise rejection.
+
+Status: **FROZEN_ELECTRICAL_VALUES**.
+
+### Power-good nets
+TPSM63603 PGOOD -> **5V_PG**.
+TPS62823 PG -> **3V3_PG**.
+
+Both are treated as open-drain status nets:
+- one deliberate pull-up owner per net;
+- pull up to +3V3_SYS only where startup sequencing cannot create a false-valid condition;
+- otherwise use the upstream-valid domain or supervisor gating in the native schematic;
+- MCU inputs must never be phantom-powered.
+
+Do not add separate rail supervisors unless native-capture sequencing analysis shows the converter PG behavior is insufficient.
