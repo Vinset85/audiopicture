@@ -654,3 +654,117 @@ Retain source damping footprints on MAIN-C:
 Final values require bench/SI validation or field-solver/IBIS-quality simulation with the chosen FPC geometry.
 
 Status: **JCP_JCS_EXACT_HEADERS_SELECTED / HARNESS_220_230MM_SEEDS_DEFINED / FINAL_CABLE_AND_TERMINAL_RELEASE_OPEN**.
+
+
+## 19. MAIN-C 150 x 55 mm detailed floorplan — first pass
+
+Use local MAIN-C coordinates:
+- CX = 0..150 mm along the horizontal long axis;
+- CY = 0..55 mm vertically.
+
+Product seed remains:
+- product X = 85 + CX;
+- product Y = 315 + CY.
+
+### C1 — external Ethernet / PoE front end
+Reserve approximately:
+- CX = 0..55 mm
+- CY = 0..55 mm
+
+Contains:
+- RJ45 connection-bay interface;
+- TE 2-1734264-1 / final jack;
+- Würth 7490220121 magnetics;
+- PoE bridge rectifiers and input protection/filtering;
+- Ag53024 input side.
+
+Rules:
+- keep Ethernet MDI differential pairs short and direct;
+- keep PoE input bridge loops compact;
+- preserve Ag53024 isolation barrier and manufacturer keep-outs;
+- do not route SELV logic copper through the primary/non-isolated PoE domain.
+
+### C2 — isolated PoE output / Ethernet controller / service
+Reserve approximately:
+- CX = 55..105 mm
+- CY = 0..55 mm
+
+Contains:
+- Ag53024 body/output side as its final orientation requires;
+- W5500;
+- 25 MHz crystal;
+- JCP 24 V isolated output connector;
+- USB-C service connector where connection-bay geometry permits;
+- local filtering and protection.
+
+The Ag53024 body is long enough that it may span C1/C2. Its isolation boundary, not the arbitrary zone boundary, controls placement.
+
+W5500 shall remain on the same PCB as magnetics/RJ45; route MDI pairs without crossing the PoE isolation boundary unnecessarily.
+
+### C3 — MCU / RF / daughterboards
+Reserve approximately:
+- CX = 105..150 mm
+- CY = 0..55 mm
+
+Contains:
+- ESP32-S3-WROOM-1-N16R8;
+- JCS signal FPC to MAIN-P;
+- VOICE FPC;
+- RADAR FPC;
+- ENV FPC;
+- service/status low-power circuitry.
+
+### ESP32 antenna placement
+Place the ESP32-S3 module at the far right end of MAIN-C with the PCB antenna facing the board/product edge.
+
+Create an RF-clean region beyond and around the antenna:
+- no copper beneath/forward of antenna according to Espressif module guidance;
+- no Ag53024, magnetics, RJ45 shield, carbon-filled frame, wiring bundle or wall-mount metal in the forward antenna volume;
+- prefer unfilled ASA/non-conductive local shell.
+
+The exact module position and enclosure cut-free RF window are release-critical.
+
+### Connector-edge strategy
+Do not put every external/service connector on the same 150 mm board edge.
+
+Preferred:
+- RJ45 near C1 connection-bay end;
+- USB-C near C2 connection-bay access;
+- JCP/JCS on internal/lower edge toward MAIN-P;
+- VOICE/RADAR/ENV FPCs on internal edge with routing directions matched to daughterboard positions.
+
+### Isolation zoning
+MAIN-C has three electrical domains:
+1. Ethernet/PoE input and pre-isolation power;
+2. isolated 24 V output;
+3. SELV digital/control.
+
+The Ag53024 isolation boundary must be explicit in schematic, PCB copper, silkscreen/assembly documentation and mechanical keep-out.
+
+Do not allow mounting hardware or conductive PC-CF inserts to bridge the intended isolation clearance region.
+
+### Area assessment
+150 x 55 mm is **plausible but significantly more constrained than MAIN-P** because:
+- Ag53024 is approximately 57 mm long and ~14 mm high;
+- RJ45/magnetics require connector/service volume;
+- ESP32 needs empty RF volume rather than merely package area;
+- five internal/external connector systems compete for board edges.
+
+Therefore 150 x 55 mm remains the minimum preferred seed, not a target to reduce.
+
+If exact CAD shows conflict, first increase MAIN-C width within the upper free band before introducing notches or moving the ESP32 antenna inward.
+
+### Thermal note
+Ag53024 and W5500 heat must not bias the ENV daughterboard. Keep ENV physically separated and avoid routing its passive-air chamber through MAIN-C thermal plume/conduction paths.
+
+### Release gates
+1. import exact Ag53024 STEP;
+2. import exact RJ45/magnetics geometry;
+3. define Ag53024 isolation keep-out from manufacturer data;
+4. place ESP32 antenna against real rear-shell/frame geometry;
+5. validate all connector mating/service volumes;
+6. run Ethernet SI/EMI placement review;
+7. run PoE creepage/clearance review;
+8. run upper-board thermal model.
+
+Status: **MAIN_C_150x55_C1_C2_C3_FLOORPLAN_DEFINED / POE_ISOLATION_RF_AND_CONNECTOR_CAD_GATES_OPEN**.
