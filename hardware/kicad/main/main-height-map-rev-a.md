@@ -260,3 +260,61 @@ The preferred architecture is retained:
 - rear shell may use local boss/recess geometry rather than moving the whole board forward.
 
 Status: **MAIN_COMPONENT_SIDE_TOWARD_DML_BASELINE / BOARD_Z_33_TO_35MM_COLLISION_SWEEP_REQUIRED**.
+
+
+## 15. Combined XYZ placement seed
+
+Combining the 220 x 70 mm vertical MAIN target, Candidate-B exciter centers, R=30 mm preliminary keep-outs and the Z=33..35 mm board-plane window yields the following first shared-CAD seed:
+
+- **BOARD_X = 125 mm**
+- **BOARD_Y = 90 mm**
+- **BOARD_W = 70 mm**
+- **BOARD_H = 220 mm**
+- **BOARD_Z_COMPONENT_PLANE = 34 mm**
+- long axis vertical;
+- component side faces the DML.
+
+This places the nominal PCB rectangle at:
+- X = 125..195 mm;
+- Y = 90..310 mm.
+
+### Why this seed
+The central corridor keeps the board away from the product outer perimeter and connection-frame edges while distributing projected exciter intersections mainly toward board corners/edges rather than consuming the full board width.
+
+The rectangle is not collision-free in 2D and is not intended to be. Its purpose is to create usable height-zoned regions:
+- central inter-exciter column for H3/H4;
+- edge/corner overlap regions reserved for H0/very-low-H1 only;
+- upper/lower service regions adjustable toward the final connection bay.
+
+### H4 placement region
+Reserve the PVDD 470 uF capacitor near the board centerline and select its exact Y only after exact exciter-body and Ag53024 envelopes are imported.
+
+The H4 pocket must satisfy:
+- >=30 mm radial projected separation from every exciter center for the conservative first CAD pass;
+- >=2 mm rigid-body Z clearance after exact geometry;
+- no rear-frame rib overhead;
+- thermal separation from avoidable PoE/DC-DC heat.
+
+### BOARD_Z
+Retain Z=34 mm as the nominal seed and sweep 33..35 mm.
+
+Z=35 mm is mechanically attractive on the component side but leaves less rear-shell/solder-side budget.
+Z=33 mm increases rear-shell margin but sharply reduces allowed component height under exciter projections.
+
+The final optimum therefore depends on exact rear-shell thickness and THT lead/connector geometry.
+
+### Board-outline decision
+The 220 x 70 rectangular outline remains preferred for the next CAD iteration. No evidence yet justifies a notch.
+
+### Required next solve
+The next placement pass shall use exact/derived 3D envelopes for:
+- legacy and successor exciters;
+- Ag53024;
+- 470 uF capacitor;
+- XAL7050;
+- RJ45/magnetics;
+- Micro-Fit 24 V;
+- USB-C;
+and shall optimize component placement and board position together.
+
+Status: **MAIN_XYZ_SEED_DEFINED_X125_Y90_Z34 / EXACT_3D_COMPONENT_COLLISION_OPTIMIZATION_REQUIRED**.
