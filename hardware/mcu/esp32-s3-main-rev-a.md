@@ -295,3 +295,19 @@ Sheet 04 becomes FROZEN only after:
 6. TPS62823 transient test with Wi-Fi burst;
 7. RF coexistence test;
 8. recovery/OTA rollback test.
+
+
+## Espressif pin/reset verification — 2026-09-29
+
+- Strapping pins GPIO0/GPIO3/GPIO45/GPIO46 remain protected.
+- GPIO19=USB_D- and GPIO20=USB_D+ are dedicated to service USB.
+- GPIO26..37 remain unavailable for production peripherals on N16R8 memory configuration.
+- GPIO39..42 are intentionally used despite their pad-JTAG alternate functions; production debug uses USB Serial/JTAG and UART0 instead.
+- CHIP_PU RC is frozen at 10 kOhm pull-up to +3V3_SYS and 1 uF to GND, following Espressif guidance.
+- Minimum 50 us rail-stabilization and reset-low timing requirements are respected with margin.
+- GPIO38=VOICE_RST, GPIO39=VOICE_IRQ, GPIO42=RADAR_RST are committed, not expansion candidates.
+- Shared SPI GPIO11/12/13 with independent GPIO10 ETH_CS and GPIO14 RADAR_CS remains valid through the GPIO matrix.
+- USB-OTG and USB-Serial/JTAG share the internal PHY and are treated as mutually exclusive service modes.
+- For self-powered USB operation, Sheet 06 must ensure valid VBUS-presence handling without back-powering +3V3_SYS.
+
+Status: **GPIO_CONTRACT_VERIFIED / RESET_RC_FROZEN**.
