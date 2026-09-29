@@ -249,3 +249,16 @@ The hierarchy, interfaces, XVF3800 power-pin groups, boot concept, PDM topology,
 **Do not complete the regulator/PLL/flash/clock/reset sections from inference.**
 
 Status: **READY_FOR_NATIVE_KICAD_STRUCTURE_AND_PARTIAL_CAPTURE / BLOCKED_ON_XK_VOICE_SQ66_REFERENCE_TRANSCRIPTION**.
+
+
+## J101 physical-contact capture gate
+J101 has **16 physical contacts** and 14 logical signals plus two additional GND references.
+
+The historical 1..14 logical ordering is not permission to assign the final FH12 physical contacts 1..16 by extension. Before native connector capture:
+1. open the exact FH12-16S-0.5SH(55) mating-side drawing;
+2. establish PCB connector orientation and FPC contact-side orientation;
+3. place the two additional GND references adjacent/near the I2S group for return continuity;
+4. document the resulting physical 1..16 map here and in Sheet 07;
+5. cross-check both ends of the FPC.
+
+Until this is complete, J101 is **LOGICALLY_FROZEN / PHYSICAL_PIN_MAP_OPEN**.
