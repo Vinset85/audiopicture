@@ -423,3 +423,55 @@ Preferred next step:
 - use <=0.5% divider resistors, preferably 0.1% where threshold stack-up benefits;
 - calculate explicit positive feedback for hysteresis;
 - SPICE worst-case corners before native capture.
+
+
+## Precision reference and threshold-network baseline — 2026-09-29
+
+### Reference architecture
+Use a 2.500 V precision shunt reference biased directly from the protected +24V_EXT domain. This avoids creating a separate low-voltage regulator solely for the window comparator.
+
+Baseline family: **TI LM4040A-2.5 V**, A-grade preferred.
+- 2.500 V fixed shunt reference;
+- A grade initial accuracy up to +/-0.1%;
+- minimum regulation current in the tens of microamps;
+- stable with capacitive loads and no output capacitor required;
+- series bias resistor from +24V_EXT is mandatory and shall be dimensioned across the complete valid/fault input range.
+
+Exact orderable MPN/package: **VALIDATE_ORDERABLE_Q_GRADE** before BOM freeze.
+
+### Comparator error budget
+TLV1822-Q1:
+- maximum input offset over the qualified temperature range: +/-4 mV class;
+- no internal hysteresis;
+- external positive feedback is mandatory for slow 24 V rail crossings.
+
+Consequently the divider and feedback network shall be solved as one circuit. Do not select a nominal divider and add hysteresis afterwards.
+
+### Threshold targets retained
+Undervoltage channel:
+- rising EXT_VALID threshold = 20.5 V nominal;
+- falling invalid threshold = 19.0 V nominal;
+- hysteresis span = 1.5 V.
+
+Overvoltage channel:
+- rising invalid threshold = 25.8 V nominal;
+- falling valid threshold = 25.0 V nominal;
+- hysteresis span = 0.8 V.
+
+### Zero-hysteresis divider sanity check
+With VREF = 2.500 V and RLOW = 100 kohm, ideal no-feedback upper resistances would be:
+- 20.5 V threshold: RHIGH = 720 kohm;
+- 25.8 V threshold: RHIGH = 932 kohm.
+
+These are sanity-check values only and MUST NOT be used as final schematic values because positive-feedback hysteresis changes both switching points.
+
+### Final resistor-network requirements
+- use E96/E192 values;
+- <=0.1% preferred for threshold-setting resistors;
+- explicitly include comparator offset, VREF initial accuracy/drift, resistor tolerance and temperature coefficient;
+- target worst-case OVP trip safely below TAS5825M 26.4 V recommended PVDD maximum;
+- include RC noise filtering only where it cannot compromise OVP response;
+- calculate startup/POR state with TLV1822 open-drain outputs high-impedance during POR;
+- fail-safe logic must never interpret comparator POR as a valid external source.
+
+Status: **TOPOLOGY_FROZEN / RESISTOR_VALUES_PENDING_WORST_CASE_SOLVE**.
