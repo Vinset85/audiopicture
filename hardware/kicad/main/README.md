@@ -141,3 +141,16 @@ Widths/clearances are NOT frozen here; they will be calculated from copper weigh
 9. ERC.
 10. footprint audit.
 11. PCB floorplan.
+
+
+## Rev.A sheet specification status
+- 01 Ethernet/PoE: specified
+- 02 Power input/ORing: specified
+- 03 Rails/monitor: specified
+- 04 ESP32/control: specified
+- 05 TAS5825M/audio: specified
+- 06 USB service: specified
+- 07 Daughterboards: specified
+- 08 Factory test: specified
+
+The electrical architecture specification phase for MAIN Rev.A is complete. Next phase: native KiCad schematic capture, symbol/footprint audit, ERC, then PCB floorplanning.
