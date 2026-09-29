@@ -147,3 +147,65 @@ Do not freeze final exciter coordinates from geometric symmetry alone.
 Do not infer sandwich material properties from generic labels such as foam or honeycomb.
 Do not release the LC capacitor from nominal 8-ohm arithmetic.
 Do not use the legacy DAEX25FHE-4 free-air resonance for EX25FHE2-4.
+
+
+## 13. Rev.A sandwich-stack shortlist
+
+Dayton's exciter guidance favors thin, lightweight panels with high compressive strength and moderate/high bending strength, explicitly listing honeycomb and structural-foam sandwich composites among the best material families. The Rev.A virtual study therefore starts with three deliberately different stacks rather than one assumed material.
+
+### Stack A — composite skins / PMI structural foam core — PRIMARY FEA BASELINE
+Initial parameter box:
+- symmetric glass-fibre/epoxy or thin high-modulus composite skins: 0.20..0.50 mm each;
+- PMI structural foam core: 3..8 mm;
+- structural adhesive film/layer: 0.05..0.20 mm each interface;
+- total structural thickness target: 4..9 mm.
+
+Reason: non-metallic, low areal mass, useful intrinsic damping and high sandwich bending stiffness. This is the primary AudioPicture baseline because it also avoids placing a continuous conductive skin in conflict with the 60 GHz radar aperture. Carbon-fibre skins may be simulated acoustically but are NOT allowed through RADAR_RF_KEEP_OUT unless RF EM analysis explicitly proves an aperture/window implementation.
+
+### Stack B — glass/epoxy skins / aramid or resin-paper honeycomb core — HIGH-STIFFNESS COMPOSITE CORNER
+Initial parameter box:
+- glass/epoxy skins: 0.20..0.45 mm each;
+- aramid/Nomex-type or resin-impregnated-paper honeycomb: 3..8 mm;
+- adhesive: 0.05..0.20 mm;
+- total target: 4..9 mm.
+
+Reason: very high stiffness-to-mass and directly aligned with established DML material guidance. Model the honeycomb as orthotropic; do not replace it with an isotropic solid having only matched density.
+
+### Stack C — paper/fibre skins / structural foam core — HIGH-DAMPING / LOW-COST CORNER
+Initial parameter box:
+- resin-treated paper/fibre or thin glass-fibre skins: 0.25..0.60 mm each;
+- structural foam core: 3..8 mm;
+- adhesive: 0.05..0.20 mm;
+- total target: 4..9 mm.
+
+Reason: useful higher-loss comparison and manufacturing-cost corner. It is not assumed to win; humidity stability, creep, print/fabric bonding and exciter-interface durability are explicit penalties.
+
+### Excluded as primary baseline
+A monolithic metal sheet is not a primary DML candidate. Aluminum honeycomb with metallic face sheets may be retained as a simulation reference, but continuous conductive material through the radar forward cone is forbidden and metal skins generally provide less intrinsic damping than composite alternatives.
+
+## 14. First optimization matrix
+For each stack, sweep at minimum:
+- core thickness: 3, 5, 8 mm;
+- skin thickness: low / nominal / high values from the stack range;
+- perimeter support: soft, nominal, stiff;
+- structural loss factor: low/nominal/high material-data corners;
+- exciter set: legacy DAEX25FHE-4 and successor EX25FHE2-4;
+- exciter coordinates: baseline plus controlled asymmetric perturbations.
+
+First-stage ranking weights:
+- 30% spatial/modal response smoothness;
+- 20% usable low-frequency mobility;
+- 15% high-frequency modal density/extension;
+- 15% panel + exciter mass;
+- 10% reaction force into enclosure/VOICE region;
+- 10% manufacturability and tolerance robustness.
+
+These weights are engineering search weights, not production acceptance limits.
+
+## 15. Radar interaction
+Every candidate shall carry the shared CAD volume RADAR_RF_KEEP_OUT. No conductive face sheet, foil, carbon-rich layer, metallic honeycomb, fastener or exciter hardware may intersect the forward RF cone. If a conductive/high-loss stack otherwise wins acoustically, it must be re-evaluated with a dedicated non-conductive RF window before it can remain a production candidate.
+
+## 16. Current preferred virtual baseline
+Start detailed FEA with **Stack A: composite glass-fibre/epoxy skins + PMI structural foam core**, nominally around 5 mm core with thin symmetric skins. This is a simulation baseline, NOT a material purchase/freeze. Stack B and Stack C remain mandatory comparison cases.
+
+Status: **THREE_STACK_FEA_SHORTLIST_FROZEN / EXACT_MATERIAL_GRADES_AND_PROPERTIES_OPEN**.
