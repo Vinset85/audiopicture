@@ -145,3 +145,66 @@ Before this architecture is frozen:
 8. update native KiCad hierarchy to two-board topology.
 
 Status: **MAIN_P_MAIN_C_FUNCTIONAL_SPLIT_BASELINE_DEFINED / AG53024_ON_MAIN_C_FROZEN / RECTANGLE_PACKING_AND_INTERCONNECT_OPEN**.
+
+
+## 13. First physical rectangle packing
+
+The first packaging pass uses the verified successor-exciter dimensions and the Ag53024 envelope.
+
+### MAIN-C seed
+Initial board envelope:
+- **150 x 55 mm**
+- long axis horizontal
+- intended functions: RJ45/magnetics, PoE bridges, Ag53024, W5500, ESP32-S3, USB-C and daughterboard interfaces.
+
+The 55 mm depth is a starting target, not a release dimension. Ag53024 occupies approximately 57.3 x 17.4/18 x 14 mm by itself, so it shall run along the long board axis.
+
+Preferred product placement seed:
+- **X = 85..235 mm**
+- **Y = 315..370 mm**
+
+This upper horizontal band is clear of the coarse Candidate-B successor-exciter exclusion boxes. Exact perimeter-frame, DML-mount and wall-mount clearance remains to be checked.
+
+MAIN-C shall place the ESP32 antenna toward an outer RF-clean end of the board, not behind Ag53024, magnetics, carbon-filled frame or metal wall hardware.
+
+### MAIN-P seed
+Initial board envelope:
+- **145 x 55 mm**
+- long axis horizontal
+- intended functions: external 24 V protection/source priority, INA228, 5 V/3.3 V power conversion as assigned, TAS5825M, output LC, 470 uF bulk and speaker harness egress.
+
+Preferred product placement seed:
+- **X = 88..233 mm**
+- **Y = 5..60 mm**
+
+This lower band is geometrically attractive but partially competes with the DML/perimeter structural land. Therefore Y=5..60 is only a mathematical free-space seed. Mechanical CAD must move it inward or locally reshape the rear frame without loading the compliant DML perimeter.
+
+### Alternative MAIN-P band
+If the lower perimeter cannot provide enough structural/service clearance, evaluate a central horizontal board in the free band between lower and upper exciter pairs, with exact notches only if required.
+
+### Packaging implication
+Two approximately 150 x 55 mm horizontal boards use the staggered Candidate-B layout much more efficiently than the former 70 x 220 mm vertical board.
+
+The split also creates physical thermal separation:
+- upper MAIN-C: PoE/network/control;
+- lower MAIN-P: high-current audio/power.
+
+### Board area sanity check
+- MAIN-C seed area: 8250 mm2
+- MAIN-P seed area: 7975 mm2
+- combined: 16225 mm2
+
+This is larger than the old 220 x 70 board area (15400 mm2) by about 5.4%, which is acceptable at this stage because the split adds connector/keep-out overhead but substantially improves usable placement geometry.
+
+### Not frozen
+Do not release either rectangle to PCB layout yet. Required before freeze:
+1. rear structural-frame perimeter clearance;
+2. exact RJ45 and connection-bay service volume;
+3. exact Ag53024 STEP/drawing import;
+4. ESP32 antenna RF volume;
+5. exact 24 V connector service volume;
+6. MAIN-C/MAIN-P inter-board connector selection;
+7. thermal zoning;
+8. mounting-hole/boss locations.
+
+Status: **MAIN_C_150x55_UPPER_SEED / MAIN_P_145x55_LOWER_SEED / FRAME_AND_CONNECTOR_COLLISION_GATE_OPEN**.
