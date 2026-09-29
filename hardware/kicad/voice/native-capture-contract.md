@@ -339,3 +339,34 @@ This provides 50% current headroom over the 200 mA Rev.A engineering allocation 
 
 Status:
 **VOICE_REGULATOR_DEVICES_FROZEN / 0V9_PASSIVES_PLL_FILTER_AND_SEQUENCE_VALIDATE**.
+
+
+## +0V9_VOICE passive network and PLL filter freeze — 2026-09-29
+### TPS62823 0.900 V network
+TI TPS6282x Rev.C is the electrical authority.
+Rev.A capture baseline:
+- VIN = +3V3_SYS;
+- L = **470 nH**;
+- CIN = **4.7 uF nominal X7R/X5R**, minimum effective capacitance >=3 uF at bias;
+- COUT = **2 x 10 uF nominal X7R/X5R**, with minimum total effective capacitance >=5 uF at 0.9 V and expected temperature/bias;
+- VOUT = **0.900 V nominal**;
+- FB divider shall be calculated from the current TI datasheet equation/reference voltage and then checked for standard-value tolerance; do not guess resistor values from another rail;
+- PG may be used for VOICE sequencing/diagnostics but shall not create a new MAIN GPIO requirement unless reviewed.
+
+The exact 470 nH inductor MPN and capacitor MPNs remain BOM/layout gates; the topology and nominal capacitance are frozen.
+
+### +0V9_PLL
+Official XU316-1024-QF60B authority:
+- source = +0V9_VOICE;
+- series ferrite = **600 ohm @ 100 MHz, DCR <1 ohm**;
+- manufacturer example = **Taiyo Yuden BKH1005LM601-T**;
+- PLL_AVDD local bypass = **1 uF MLCC** placed immediately at the pin;
+- filtered node name = +0V9_PLL;
+- no other loads on +0V9_PLL.
+
+For Rev.A, BKH1005LM601-T is the preferred/frozen reference ferrite unless lifecycle/availability review forces an equivalent with matched impedance/DC-current/DCR behavior.
+
+Layout priority: buck switch node and inductor remain physically separated from PLL_AVDD/ferrite/local capacitor; +0V9_PLL is routed only after the ferrite.
+
+Status:
+**0V9_TOPOLOGY_CAPACITANCE_AND_PLL_FILTER_FROZEN / FB_VALUES_AND_PASSIVE_MPNS_VALIDATE**.
