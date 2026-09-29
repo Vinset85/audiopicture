@@ -262,3 +262,10 @@ The historical 1..14 logical ordering is not permission to assign the final FH12
 5. cross-check both ends of the FPC.
 
 Until this is complete, J101 is **LOGICALLY_FROZEN / PHYSICAL_PIN_MAP_OPEN**.
+
+
+## J101 connector MPN freeze
+J101 = **Hirose FH12-16S-0.5SH(55)**.
+Verified family attributes: 16 positions, 0.5 mm pitch, bottom-contact ZIF, horizontal insertion, 0.30 mm FPC, 0.5 A/contact.
+
+The MPN is frozen. The final 1..16 net assignment remains blocked only on mating-view/FPC-orientation review; do not infer it by mirroring the legacy 14-signal table.
