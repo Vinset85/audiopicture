@@ -311,3 +311,44 @@ Sheet 04 becomes FROZEN only after:
 - For self-powered USB operation, Sheet 06 must ensure valid VBUS-presence handling without back-powering +3V3_SYS.
 
 Status: **GPIO_CONTRACT_VERIFIED / RESET_RC_FROZEN**.
+
+
+## Hardware safe-state freeze — 2026-09-29
+
+All safety-relevant enables/selects must have deterministic external bias while ESP32-S3 GPIOs are high-impedance during reset.
+
+### Frozen pull network
+- GPIO2 / AMP_PDN: **100 kOhm pull-down**. Amplifier hardware state = OFF/PDN during MCU reset.
+- GPIO21 / MIC_HW_EN: **100 kOhm pull-down**. Microphone load switch = OFF during reset; privacy default is physical power removal.
+- GPIO16 / RADAR_EN: **100 kOhm pull-down**. Radar local power/regulator enable = OFF during reset.
+- GPIO42 / RADAR_RST: **10 kOhm pull-down**, interpreted at PCB-C so radar reset is asserted while host is unavailable.
+- GPIO10 / ETH_CS: **10 kOhm pull-up to +3V3_SYS**, W5500 deselected.
+- GPIO14 / RADAR_CS: **10 kOhm pull-up to +3V3_SYS**, radar deselected before/while its level translator becomes active.
+- GPIO8 / ETH_RST: **10 kOhm pull-down**, W5500 held reset until firmware explicitly releases it.
+
+### Input/status nets
+- GPIO1 / AMP_FAULT: input; pull ownership belongs to TAS5825M/interface implementation, no duplicate strong MAIN pull.
+- GPIO9 / ETH_INT: W5500 interrupt is active-low; provide a single 10 kOhm pull-up to +3V3_SYS if the W5500/reference implementation does not already own it.
+- GPIO15 / RADAR_IRQ: input; pull ownership belongs to PCB-C translator/radar implementation.
+- GPIO39 / VOICE_IRQ: input; pull ownership belongs to PCB-B.
+- GPIO38 / VOICE_RST: **10 kOhm pull-down** on MAIN unless PCB-B reset interface already provides the guaranteed asserted default. Only one effective owner shall be populated.
+
+### Boot sequencing
+Firmware release order after +3V3_SYS valid:
+1. keep AMP_PDN=0, MIC_HW_EN=0, RADAR_EN=0;
+2. initialize GPIO directions and shared SPI with both CS high;
+3. release ETH_RST and validate W5500;
+4. power/enable radar, keep RADAR_RST asserted until PCB-C rails/translators settle, then release;
+5. release VOICE_RST only after voice rails are valid;
+6. MIC_HW_EN may assert only after privacy state and indicator path are initialized;
+7. AMP_PDN may assert only after audio clocks/DSP state are valid and anti-pop sequence is ready.
+
+### Failure behavior
+Watchdog reset, brownout reset or firmware crash must naturally return the external pull network to the safe states above.
+
+No safety-relevant enable may rely on ESP32 internal pulls alone.
+
+### Strap isolation
+None of these safe-state networks uses GPIO0/GPIO3/GPIO45/GPIO46, so the external bias network does not alter ESP32-S3 strapping.
+
+Status: **SAFE_STATES_FROZEN_FOR_CAPTURE**.
