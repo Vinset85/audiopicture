@@ -435,3 +435,9 @@ Current Infineon reference hardware establishes the Rev.A capture baseline:
 Exact ferrite order code/impedance-vs-frequency curve and VAREF bypass value remain open. The complete rail network remains subject to the BGT60TR13C low-noise requirement and final PCB layout validation.
 
 Status: **FILTER_TOPOLOGY_AND_CAP_VALUES_FROZEN_REFERENCE / FERRITE_MPN_VAREF_NOISE_VALIDATE**.
+
+
+## Mechanical/RF integration baseline — 2026-09-29
+PCB-C and enclosure CAD shall share a forward `RADAR_RF_KEEP_OUT` volume. U201 requires solid GND immediately below the package with no signal/test routing. The forward antenna region must contain no metal, magnets or conductive DML skin. Initial CAD/EM baseline uses about 2.5 mm (lambda/2 at 60 GHz) from AiP face to first plastic surface; final air gap, plastic thickness and fabric/ink/adhesive stack are optimized from actual dielectric properties in EM simulation. Generic quarter-wave thickness is not a production freeze.
+
+Status: **RF_MECHANICAL_CONTRACT_DEFINED / EM_OPTIMIZATION_REQUIRED**.
