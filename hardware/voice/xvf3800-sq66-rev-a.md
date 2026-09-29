@@ -274,3 +274,63 @@ Before marking PCB-B READY_FOR_NATIVE_KICAD_CAPTURE, obtain and inspect the offi
 5. any power-good/sequencing constraints not explicit in the XVF3800 datasheet.
 
 Until that transcription is complete these MPNs remain OPEN, not guessed.
+
+
+## Microphone privacy / PDM electrical freeze — 2026-09-29
+
+### Production microphone baseline
+MIC101..MIC104 = **Infineon IM72D128V01XTMA1**.
+
+Electrical capture baseline:
+- VDD = +3V3_MIC;
+- operating supply range supports 3.3 V;
+- PDM clock target = 3.072 MHz;
+- maximum microphone supply current at 3.072 MHz is approximately 1.12 mA per microphone per manufacturer data;
+- provide 100 nF X7R local bypass at each microphone;
+- preserve manufacturer acoustic-port/land-pattern keep-out exactly.
+
+Status: **FROZEN_DEVICE / FOOTPRINT_ACOUSTIC_VERIFY**.
+
+### Hardware privacy load switch
+Q101 = **Texas Instruments TPS22913C** family baseline.
+
+Required characteristics used by AudioPicture:
+- 1.4 to 5.5 V input range;
+- low-Ron load switch;
+- full-time reverse-current protection;
+- controlled turn-on;
+- quick output discharge;
+- active-high ON compatible with MIC_HW_EN.
+
+Connections:
+- IN -> +3V3_SYS;
+- OUT -> +3V3_MIC;
+- ON -> MIC_HW_EN;
+- GND -> GND.
+
+MAIN already owns a 100 kOhm pull-down on MIC_HW_EN. PCB-B shall not add a conflicting pull-up. A local weak pull-down may be DNP-only unless sequencing analysis proves it necessary.
+
+The exact TPS22913C orderable suffix/package is a footprint/manufacturing gate. Do not substitute TPS22930 without re-review: its reverse-current protection behavior is weaker for this privacy use case.
+
+### Privacy-off signal isolation
+Power removal alone is not sufficient if digital pins can parasitically power the microphone rail.
+
+Therefore native capture/layout shall include optional small series-resistor footprints on each microphone CLOCK/DATA path close to the powered source/device boundary. Populate only after signal-integrity and power-off injection analysis.
+
+Acceptance condition:
+- with MIC_HW_EN low, +3V3_MIC discharges through Q101 QOD;
+- no microphone is powered through CLOCK/DATA protection structures;
+- no valid PDM stream is available;
+- factory privacy test measures the physical rail state.
+
+### PDM topology
+MIC_CLK from XVF3800 fans out to all four microphones.
+Use a star/controlled short-branch topology from the processor region; avoid long daisy-chain stubs.
+Provide source damping footprint at MIC_CLK driver, initial DNP/0-ohm capture baseline, tune by edge/SI measurement.
+
+MIC_DATA0..3 are independent returns to XVF3800; do not wire-OR microphone data in Rev.A.
+
+Keep PDM traces referenced to continuous GND and away from DML/Class-D switching nodes.
+
+### Current budget
+Four microphones at the manufacturer 3.072 MHz maximum-current figure consume approximately 4.48 mA total before margin. Design +3V3_MIC for at least 20 mA continuous allocation to include startup, tolerance and engineering margin; the TPS22913C current capability is therefore far above the microphone load and is selected for isolation/privacy behavior rather than ampacity.
