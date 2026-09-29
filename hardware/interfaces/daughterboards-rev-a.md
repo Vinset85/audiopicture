@@ -16,7 +16,7 @@ Rules:
 - FPC pin numbering is verified from the mating-side drawing before PCB release;
 - connector contacts must be rated for rail current with margin.
 
-## 2. J101 VOICE — 14 pins
+## 2. J101 VOICE — 16 physical contacts / 14 logical signals
 Baseline/frozen logical pinout:
 
 | Pin | Net | Direction at MAIN | Purpose |
