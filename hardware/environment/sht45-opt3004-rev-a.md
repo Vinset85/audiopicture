@@ -169,3 +169,75 @@ ENV becomes FROZEN only after:
 6. internal LED leakage test;
 7. condensation/dust/mechanical review;
 8. I2C EMC test with Class-D, Ethernet and radar active.
+
+
+## Rev.A electrical capture review — 2026-09-29
+
+### SHT45 electrical baseline
+U301 = **Sensirion SHT45-AD1F**.
+- supply = +3V3_SYS;
+- fixed 7-bit I2C address = 0x44;
+- local 100 nF ceramic bypass directly at VDD/GND;
+- PTFE membrane/sensing opening remains completely free of coating, adhesive and enclosure contact.
+
+Status: **FROZEN_DEVICE / MANUFACTURER_LAND_PATTERN**.
+
+### OPT3004 address requirement
+U302 = **Texas Instruments OPT3004DNPR**.
+
+Do **not** strap OPT3004 ADDR to a state that resolves to I2C address 0x44 because SHT45 already owns 0x44 on the same bus.
+
+The exact ADDR strap is **OPEN_DATASHEET_TABLE_CONFIRMATION** and must be selected from the TI address table to a fixed non-conflicting production address before native capture release.
+
+### I2C ownership
+MAIN is the sole populated owner of SDA/SCL pull-ups (4.7 kOhm baseline).
+PCB-D:
+- no populated parallel pull-ups by default;
+- may provide DNP footprints only;
+- may provide optional small series-resistor footprints at the FPC branch for EMC tuning;
+- must remain functional at 100 kHz;
+- 400 kHz operation is permitted only after complete system/FPC rise-time validation.
+
+### ENV_INT
+Rev.A does not require an interrupt for SHT45.
+OPT3004 interrupt capability is optional.
+
+J301 pin 7 ENV_INT remains **RESERVED/DNP** unless the final firmware architecture demonstrates a need for hardware threshold interrupts. Do not consume a MAIN GPIO merely because the OPT3004 exposes an interrupt output.
+
+### BOARD_ID
+J301 pin 8 BOARD_ID remains reserved for hardware revision identification, but Rev.A shall not require an additional MAIN ADC GPIO unless one is explicitly allocated.
+
+Preferred implementation hierarchy:
+1. identify PCB-D revision in firmware from known sensor/device combination where sufficient;
+2. if a physical BOARD_ID is required, allocate a reviewed ADC-capable MAIN input and resistor coding;
+3. otherwise leave BOARD_ID reserved/DNP.
+
+Do not invent a resistor value or connect BOARD_ID to an unallocated ESP32 pin during native capture.
+
+### Local power
+No regulator on PCB-D.
+Use:
+- 100 nF X7R at SHT45;
+- 100 nF X7R at OPT3004;
+- optional 1 uF X7R local bulk near J301.
+
+Avoid unnecessary ferrites that could create DC drop or thermal gradients. Any FPC-branch ferrite/0R option belongs at the MAIN/interface side and is a tuning feature, not required sensor circuitry.
+
+### Thermal-layout rule
+SHT45 placement is a PCB-layout constraint, not merely an enclosure note:
+- sensor at a board edge/tab nearest the passive air chamber;
+- minimum copper around the sensor except required pads/traces;
+- no ground/power pour directly used as a thermal bridge from connector/OPT3004 region into the SHT45 island;
+- thin neck/tab or slots may be used after mechanical-strength review;
+- keep OPT3004 and any FPC connector thermal mass away from the immediate SHT45 sensing island.
+
+Do not create a separate electrical ground island; thermal isolation is achieved geometrically while maintaining valid signal return.
+
+### Optical-layout rule
+OPT3004 optical aperture must have:
+- manufacturer keep-out respected;
+- no silkscreen, solder mask obstruction, adhesive or conformal coating over the optical path;
+- no status/privacy LED line-of-sight;
+- dark mechanical baffle/tunnel aligned in mechanical CAD.
+
+Exact fabric-to-sensor distance is a mechanical calibration parameter.
