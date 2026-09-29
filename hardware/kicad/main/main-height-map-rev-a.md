@@ -190,3 +190,73 @@ A notch is permitted only if the exact 3D placement cannot simultaneously provid
 5. assembly/removal path.
 
 Status: **MAIN_RECTANGULAR_OUTLINE_RETAINED_FOR_3D_PLACEMENT / HEIGHT_AWARE_COLLISION_SOLVE_REQUIRED**.
+
+
+## 14. MAIN Z-stack baseline — component side toward DML
+
+The preferred first 3D configuration is:
+
+**rear shell -> PCB solder side -> PCB -> component side -> DML cavity**
+
+This uses the inter-exciter cavity for component height while keeping the rear shell side comparatively flat and serviceable.
+
+### Product Z reference
+Use the master product datum with Z=0 at the visible front and Z increasing toward the wall.
+
+Working stack for collision studies:
+- front fabric/cosmetic allowance: approximately Z=0..2 mm;
+- DML A1 structural stack: approximately Z=2..8 mm;
+- exciter bodies project rearward from approximately Z=8 to Z=28.5 mm using the legacy 20.5 mm reference;
+- maintain >=2 mm nominal clearance beyond the exciter body where a rigid object lies directly behind it.
+
+### MAIN board plane seed
+Use an initial PCB component-side reference plane near **Z=34 mm**, with components projecting toward decreasing Z (toward the DML).
+
+Assuming approximately 1.6 mm PCB thickness, the solder side/rear face lies near Z=35.6 mm before local solder/lead allowances, leaving roughly 4.4 mm to the 40 mm external limit for rear shell, standoffs and tolerance. This is a CAD seed only.
+
+### Height-aware consequence
+At PCB component plane Z=34 mm:
+- an H1 5 mm component reaches approximately Z=29 mm;
+- an H2 10 mm component reaches approximately Z=24 mm;
+- the H4 capacitor envelope of 19 mm reaches approximately Z=15 mm.
+
+Therefore:
+- H0/H1 regions can potentially sit behind an exciter projection if exact body geometry and >=2 mm clearance are satisfied;
+- H2 generally conflicts with the legacy exciter depth where projected XY overlaps;
+- H3/H4 must be placed in inter-exciter free volumes.
+
+With the conservative legacy exciter rear body ending near Z=28.5 mm, a 5 mm component ending at Z=29 mm provides only about 0.5 mm nominal separation and is **not acceptable**. Thus H1-under-exciter is not automatically released at BOARD_Z=34 mm.
+
+### Clearance target
+Require >=2.0 mm nominal rigid-body clearance between exciter envelope and any PCB/component/frame object, before print/assembly tolerance stack.
+
+To place a 5 mm component directly behind a legacy exciter would require moving the component-side PCB plane farther rearward than approximately Z=35.5 mm, which is incompatible with the current rear-shell budget. Consequently only lower-profile H0/low-H1 parts may ultimately occupy direct exciter-overlap regions.
+
+### PCB plane optimization window
+Shared CAD shall sweep the PCB component plane approximately Z=33..35 mm, constrained by:
+- rear shell thickness;
+- standoff/boss geometry;
+- solder-side protrusions;
+- connector THT tails;
+- assembly tolerance;
+- wall-mount features.
+
+Do not freeze Z=34 mm until exact rear-shell and connector models are imported.
+
+### Through-hole consequence
+RJ45, Micro-Fit, USB retention tabs and other THT features require local rear/solder-side clearance. These may force local shell recesses or connector-edge placement independent of the general board plane.
+
+### H4 capacitor orientation
+The 470 uF capacitor shall remain vertical to the PCB for the baseline. Do not bend/lay it horizontally merely to solve Z unless vibration, lead stress, assembly and electrical-loop implications are requalified.
+
+At the Z=34 mm seed its 19 mm conservative envelope occupies to approximately Z=15 mm, so it requires a clean inter-exciter column through that depth.
+
+### Mechanical conclusion
+The preferred architecture is retained:
+- MAIN near rear shell;
+- components facing DML;
+- tall components placed between exciter volumes;
+- low-profile logic may use limited overlap regions;
+- rear shell may use local boss/recess geometry rather than moving the whole board forward.
+
+Status: **MAIN_COMPONENT_SIDE_TOWARD_DML_BASELINE / BOARD_Z_33_TO_35MM_COLLISION_SWEEP_REQUIRED**.
