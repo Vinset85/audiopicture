@@ -228,3 +228,91 @@ Independent controls:
 - RADAR_RST = ESP32 GPIO42
 
 PCB-C owns the 1.8 V rail, fixed-direction translation and radar clock.
+
+
+## 1.8 V power / translation design review — 2026-09-29
+
+### Radar current and rail performance
+Infineon specifies approximately 200 mA-class active current for BGT60TR13C. Current Infineon 60 GHz FMCW schematic guidance requires the radar supply to be treated as a low-noise transient-sensitive rail, including fast load-step response and adequate local energy storage.
+
+Design +1V8_RADAR for **>=300 mA continuous engineering allocation** and substantially higher regulator current capability/margin. Do not size the regulator from digital-domain current alone.
+
+### U202 preferred baseline
+Preferred +1V8_RADAR regulator family: **onsemi NCP167**, 1.8 V fixed-output variant, subject to exact orderable suffix/package verification.
+
+Rationale:
+- NCP167 is explicitly listed by Infineon among tested/recommended LDO families for 60 GHz radar supply design;
+- current capability up to the 700 mA class provides useful transient margin above the BGT60TR13C active-current envelope;
+- appropriate low-noise/high-PSRR class for the radar application.
+
+Status: **PREFERRED_REFERENCE_VALIDATED_FAMILY / EXACT_1V8_MPN_PACKAGE_VERIFY**.
+
+Before production freeze verify the exact 1.8 V ordering code, stability/output-capacitance requirements, PSRR/noise and thermal performance from +3V3_SYS under the final radar duty cycle.
+
+### Supply filtering
+Do not feed all BGT60TR13C 1.8 V pins from one undifferentiated long trace.
+
+The Infineon shield/reference architecture uses per-domain low-pass/pi filtering because the radar is sensitive to supply noise/crosstalk.
+
+Native capture shall provide reference-derived filtering/decoupling for:
+- VDDD
+- VDDA
+- VDDVCO
+- VDDRF
+- VDDPLL
+- oscillator supply where applicable
+
+and the required VAREF bypass.
+
+Exact filter values are **OPEN_REFERENCE_TRANSCRIPTION** from the current Infineon reference schematic. Do not create split ground islands.
+
+### Level translation requirements
+Radar digital I/O is referenced to VDDD = +1V8_RADAR.
+Required fixed directions:
+3.3 V -> 1.8 V:
+- SPI_SCLK
+- SPI_MOSI
+- RADAR_CS
+- RADAR_RST
+
+1.8 V -> 3.3 V:
+- SPI_MISO
+- RADAR_IRQ
+
+Translator requirements:
+- explicit DIR/fixed-direction architecture, no auto-direction bus switch;
+- adequate timing margin for production SPI rate;
+- Ioff/power-off protection or equivalent isolation so MAIN cannot parasitically power an unpowered radar;
+- OE or power-domain arrangement that leaves radar inputs inactive while +1V8_RADAR is absent;
+- no bus contention on shared SPI_MISO.
+
+Exact translator MPN remains **OPEN_POWER_OFF_TIMING_REVIEW**.
+
+### SPI rate
+BGT60TR13C datasheet specifies SPI timing up to 50 MHz under stated 1.8 V conditions.
+
+AudioPicture policy:
+- conservative low-speed initialization/bring-up;
+- production clock selected only after translator + FPC + shared-bus SI validation;
+- never assume 50 MHz simply because the sensor permits it.
+
+### RADAR_EN behavior
+RADAR_EN must control the local radar power/isolation state, not merely a firmware flag.
+
+Required OFF state:
+- +1V8_RADAR disabled or otherwise brought to the validated low-power state;
+- 3.3->1.8 translator outputs high-impedance/inactive;
+- 1.8->3.3 paths must not back-power either domain;
+- RADAR_RST remains asserted according to the MAIN safe-state contract.
+
+Enable sequence:
+1. MAIN +3V3_SYS valid;
+2. assert RADAR_RST;
+3. enable +1V8_RADAR;
+4. wait for rail/filter/clock settling;
+5. enable translation;
+6. release RADAR_RST;
+7. initialize SPI at conservative rate;
+8. configure radar profile/IRQ.
+
+Disable sequence reverses control so digital drive is removed before the radar rail is allowed to collapse.
