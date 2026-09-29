@@ -448,3 +448,54 @@ Both are treated as open-drain status nets:
 - MCU inputs must never be phantom-powered.
 
 Do not add separate rail supervisors unless native-capture sequencing analysis shows the converter PG behavior is insufficient.
+
+
+## MLCC and shunt production-part review — 2026-09-29
+
+### 24 V -> 5 V input MLCC
+C5VIN1/C5VIN2 baseline MPN:
+**TDK C3225X7R1H475K250AB**
+- 4.7 uF +/-10%;
+- 50 V;
+- X7R;
+- EIA 1210;
+- production;
+- manufacturer DC-bias models available.
+
+Status: **FROZEN_MPN / EFFECTIVE_CAPACITANCE_MODEL_RETAIN**.
+
+Because the manufacturer curve shows material capacitance loss around the 24-26 V operating point, provide **C5VIN3 as an optional identical 1210 footprint**. Populate only if final TI stability/transient/thermal simulation or bench validation requires additional effective CIN.
+
+### 5 V and 3.3 V MLCC policy
+Do not freeze a 47 uF/10 V or 22 uF/10 V part solely from search/catalog nominal value.
+Selection requires an active-production X7R/X7S part with manufacturer DC-bias model demonstrating:
+- TPSM63603: combined effective COUT >=25 uF at 5 V across tolerance/temperature;
+- TPS62823: effective converter-local COUT consistent with TI stability guidance at 3.3 V.
+
+Until a specific production MPN satisfies that evidence, retain the already frozen nominal footprints/values but keep exact output-capacitor MPN status OPEN.
+
+### RSH1 shunt
+Vishay **WSK2512 family** is verified as:
+- true 4-terminal SMD current-sense construction;
+- resistance range down to 0.5 mOhm;
+- 0.5% capability down to 1 mOhm;
+- low-TCR metal-element construction;
+- AEC-Q200 family.
+
+However, an exact active/orderable **7.5 mOhm** WSK2512 order code has not yet been verified from the manufacturer catalog.
+
+Therefore:
+- family/package/specification = **FROZEN**;
+- target value = **7.5 mOhm**;
+- exact orderable MPN = **OPEN — DO NOT INFER PART NUMBER**.
+
+If no clean 7.5 mOhm WSK2512 order code is confirmed, qualify an equivalent true 4-terminal shunt from another manufacturer rather than fabricating a Vishay code.
+
+### Sheet-03 capture status
+The sheet may be captured natively with:
+- WSK2512 4-terminal footprint and RSH1 value 7.5 mOhm marked MPN-TBD;
+- C5VIN1/2 = C3225X7R1H475K250AB;
+- C5VIN3 optional/DNP identical footprint;
+- output MLCC footprints sized for the frozen nominal capacitance classes but exact MPN held open.
+
+Gerber release remains blocked until exact shunt and output-MLCC MPNs are verified.
