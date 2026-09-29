@@ -17,7 +17,7 @@ Loads:
 INA228 measures the total post-ORing system current consumed from +24V_RAW.
 
 ## 2. Current shunt
-RSH1 baseline is revised to **7.5 mOhm**:
+RSH1 baseline is revised to **8 mOhm**:
 - 4-terminal/Kelvin;
 - >=0.5 W;
 - <=0.5% preferred, low TCR.
@@ -34,7 +34,7 @@ At 5 A transient:
 - Vshunt = 37.5 mV;
 - Pshunt = 187.5 mW.
 
-With INA228 ADCRANGE=1 (±40.96 mV), 7.5 mOhm gives approximately **5.46 A full-scale**, preserving the high-sensitivity range while providing substantially more transient headroom than 10 mOhm.
+With INA228 ADCRANGE=1 (±40.96 mV), 8 mOhm gives approximately **5.46 A full-scale**, preserving the high-sensitivity range while providing substantially more transient headroom than 10 mOhm.
 
 ## 3. INA228
 U7: **INA228AIDGSR**.
@@ -269,16 +269,16 @@ Sheet 03 becomes FROZEN only after:
 ## Sheet-03 first freeze review — 2026-09-29
 
 ### INA228 range decision
-Use INA228 **ADCRANGE = 1, +/-40.96 mV** with the revised 7.5 mOhm shunt baseline.
+Use INA228 **ADCRANGE = 1, +/-40.96 mV** with the revised 8 mOhm shunt baseline.
 This yields approximately 5.46 A measurable full scale.
 
 Do not use the +/-163.84 mV range unless later transient testing proves >5.4 A legitimate system current.
 
 ### Shunt exact-part gate
-Preferred family remains Vishay WSK2512 / WSLP2512-class 4-terminal low-TCR current-sense resistor, but exact 7.5 mOhm orderable MPN must be verified before BOM freeze.
+Preferred family remains Vishay WSK2512 / WSLP2512-class 4-terminal low-TCR current-sense resistor, but exact 8 mOhm orderable MPN must be verified before BOM freeze.
 
 Target:
-- 7.5 mOhm;
+- 8 mOhm;
 - true Kelvin / 4-terminal geometry preferred;
 - <=0.5%;
 - <=50 ppm/C preferred;
@@ -482,18 +482,18 @@ Vishay **WSK2512 family** is verified as:
 - low-TCR metal-element construction;
 - AEC-Q200 family.
 
-However, an exact active/orderable **7.5 mOhm** WSK2512 order code has not yet been verified from the manufacturer catalog.
+However, an exact active/orderable **8 mOhm** WSK2512 order code has not yet been verified from the manufacturer catalog.
 
 Therefore:
 - family/package/specification = **FROZEN**;
-- target value = **7.5 mOhm**;
+- target value = **8 mOhm**;
 - exact orderable MPN = **OPEN — DO NOT INFER PART NUMBER**.
 
-If no clean 7.5 mOhm WSK2512 order code is confirmed, qualify an equivalent true 4-terminal shunt from another manufacturer rather than fabricating a Vishay code.
+If no clean 8 mOhm WSK2512 order code is confirmed, qualify an equivalent true 4-terminal shunt from another manufacturer rather than fabricating a Vishay code.
 
 ### Sheet-03 capture status
 The sheet may be captured natively with:
-- WSK2512 4-terminal footprint and RSH1 value 7.5 mOhm marked MPN-TBD;
+- WSK2512 4-terminal footprint and RSH1 value 8 mOhm marked MPN-TBD;
 - C5VIN1/2 = C3225X7R1H475K250AB;
 - C5VIN3 optional/DNP identical footprint;
 - output MLCC footprints sized for the frozen nominal capacitance classes but exact MPN held open.
@@ -513,7 +513,7 @@ Therefore Rev.A acceptance is:
 - exact MPN remains OPEN until this evidence is attached to the BOM audit.
 
 ### RSH1 no-inference rule
-Vishay WSK2512 remains the preferred true 4-terminal family. Manufacturer data verifies the family architecture and tolerance capability, but an exact 7.5 mOhm catalog/order code is not yet verified.
+Vishay WSK2512 remains the preferred true 4-terminal family. Manufacturer data verifies the family architecture and tolerance capability, but an exact 8 mOhm catalog/order code is not yet verified.
 
 Do not derive a Vishay part number syntactically from another resistance value.
 
@@ -530,7 +530,28 @@ Sheet 03 electrical capture is now sufficiently defined for native KiCad work:
 Status: **READY_FOR_NATIVE_KICAD_CAPTURE_WITH_BOM_RELEASE_GATES**.
 
 Gerber/BOM production release remains blocked by:
-1. exact RSH1 7.5 mOhm 4-terminal MPN;
+1. exact RSH1 8 mOhm 4-terminal MPN;
 2. exact 5 V COUT MPN with >=25 uF combined effective capacitance at 5 V;
 3. exact 3.3 V COUT MPN with verified effective capacitance;
 4. final transient/thermal validation.
+
+
+## INA228 shunt production freeze — 2026-09-29
+RSH1 = **Littelfuse L4CL1206LR008FNR**:
+- 8 mOhm;
+- true four-terminal / separate voltage-sense terminals;
+- 1206;
+- 0.5 W;
+- +/-1%;
+- TCR +/-50 ppm/degC.
+
+The earlier 7.5 mOhm target is superseded. The INA228 firmware/calibration constant shall use the actual 8 mOhm nominal value and may apply per-unit calibration if production accuracy requires it.
+
+Engineering checks:
+- at 3 A: Vshunt = 24 mV, P = 72 mW;
+- at 4 A: Vshunt = 32 mV, P = 128 mW;
+- both are well below the 0.5 W resistor rating before PCB/ambient derating.
+
+Layout rule: route INA228 IN+/IN- only from the dedicated sense terminals. High-current copper enters/exits only through the current terminals. Do not merge sense traces into the power pads before the shunt.
+
+Status: **FROZEN_DEVICE_VALUE_PACKAGE / PCB_THERMAL_AND_CALIBRATION_VALIDATE**.
