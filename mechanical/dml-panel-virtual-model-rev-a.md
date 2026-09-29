@@ -246,3 +246,36 @@ These coordinates are **NOT production coordinates**. They are a numerical seed 
 Do not force a regular 2 x 2 grid. Use constrained asymmetric optimization while preserving practical channel grouping. Include the Dayton unequal-edge-distance guidance as a seed/constraint family, but let the coupled FEA/acoustic objective select the final coordinates.
 
 Status: **SYMMETRIC_GRID_DEMOTED / ASYMMETRIC_PLACEMENT_OPTIMIZATION_REQUIRED**.
+
+
+## 18. Stereo-pairing pre-screen — 2026-09-29
+
+The four-point asymmetric seed was evaluated under all three possible 2+2 electrical pairings using the same normalized rectangular modal basis used for the geometry pre-screen.
+
+This remains a geometry-only diagnostic. It does not predict stereo image, SPL or production response.
+
+Seed points:
+- P1=(163,311)
+- P2=(110,283)
+- P3=(219,125)
+- P4=(50,176) mm.
+
+Pairing results, using equal in-phase drive within each series pair:
+1. P1+P2 versus P3+P4: normalized modal-vector correlation about 0.003; pair-centroid separation about 146.5 mm.
+2. P1+P3 versus P2+P4: correlation about 0.029; centroid separation about 111.6 mm.
+3. P1+P4 versus P2+P3: correlation about 0.008; centroid separation about 70.2 mm.
+
+The numerically lowest modal correlation is NOT automatically the stereo winner: pairing 1 separates the channel centroids mainly along the panel vertical axis. AudioPicture is intended to preserve a useful horizontal stereo image, so the detailed optimization shall include horizontal centroid separation and acoustic cross-correlation/directivity as explicit objectives.
+
+### Detailed stereo optimization constraints
+- exactly two 4-ohm exciters in series per channel;
+- preserve polarity within each series branch;
+- maximize useful horizontal L/R acoustic separation over the intended listening window;
+- minimize excessive L/R transfer-function correlation where it collapses stereo width;
+- keep channel-averaged sensitivity and spectral balance close enough for DSP correction without large boost;
+- retain non-uniform edge distances and avoid regular-grid placement;
+- enforce radar, VOICE, PCB, frame and harness exclusion volumes.
+
+Dayton confirms that stereo can be produced by exciters on one panel and that image quality depends on exciter distance and symmetry; Dayton also advises against evenly spaced multiple exciters. Therefore the production solution shall balance stereo geometry against DML modal optimization rather than applying either rule alone.
+
+Status: **STEREO_PAIRING_OBJECTIVE_DEFINED / NO_FINAL_LR_PAIR_OR_COORDINATES_FROZEN**.
