@@ -146,7 +146,14 @@ BGT60TR13C system-reference specification:
 
 AudioPicture Rev.A uses an 80 MHz OSC_CLK baseline coherent with the Infineon BGT60TR13C Shield/reference architecture.
 
-Exact oscillator MPN, supply/filtering, output electrical format and layout are **OPEN_RDK_HARDWARE_TRANSCRIPTION**.
+Rev.A oscillator baseline is **Kyocera KC2016K80.0000C1GE00CT**, 80 MHz, consistent with Infineon BGT60TR13C guidance/reference hardware.
+
+Reference capture network:
+- oscillator supply from +1V8_RADAR through a ferrite bead;
+- local 10 nF + 1 uF bypass at oscillator supply;
+- 150 ohm series resistor from oscillator output toward BGT60TR13C OSC_CLK as the Infineon reference starting value.
+
+The 150 ohm value is a reference baseline, not a blind production guarantee: final phase-noise/radar-data validation may tune it. Oscillator placement, supply filtering and OSC_CLK routing remain critical layout items.
 
 Do not substitute 38.4 MHz.
 
@@ -237,7 +244,7 @@ Mandatory tests:
 Before PCB-C production freeze:
 1. NCP167AMX180TBG radar-noise/filter validation against the Infineon RDK requirements;
 2. Infineon RDK per-domain filter/decoupling transcription;
-3. exact 80 MHz oscillator MPN and supply network;
+3. KC2016K80.0000C1GE00CT oscillator layout/phase-noise validation and final ferrite selection;
 4. U204/U205 WQFN fanout/layout validation;
 5. BGT60TR13C manufacturer land pattern/reference layout audit;
 6. RF stackup/antenna keep-out implementation;
