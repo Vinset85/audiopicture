@@ -314,3 +314,43 @@ The candidate must now survive detailed sandwich FEA, compliant-edge modeling, r
 Manufacturer guidance remains consistent with this search strategy: multiple exciters should not be evenly spaced, unequal edge/inter-exciter distances are preferred, and stereo image on a single panel depends on L/R exciter separation and placement symmetry. In AudioPicture, acoustic optimization has authority over simple geometric symmetry.
 
 Status: **DML_PLACEMENT_CANDIDATE_A_DEFINED / DETAILED_FEA_NOT_YET_FROZEN**.
+
+
+## 20. Stack-A material baseline and first absolute-frequency sanity model — 2026-09-29
+
+### Core baseline
+Use **ROHACELL 51 IG-F, 5 mm** as the first detailed Stack-A core model.
+Manufacturer typical properties:
+- density: 52 kg/m^3 (published tolerance depends on product/thickness);
+- tensile modulus: 70 MPa;
+- shear modulus: 19 MPa;
+- compressive modulus: 43 MPa;
+- shear strength: 0.8 MPa;
+- compressive strength: 0.9 MPa.
+
+The 5 mm thickness is within Evonik's standard IG-F sales range. These are model initialization properties, not incoming-inspection limits.
+
+### Legacy exciter concentrated model
+For DAEX25FHE-4 initialize:
+- total exciter net mass: 110.9 g;
+- Mms: 1.61 g;
+- BL: 3.63 Tm;
+- Re: 4.3 ohm;
+- Le: 0.10 mH;
+- uncoupled Fs: 224 Hz.
+
+The total 110.9 g mass is included in structural inertia through the real attachment footprint; Mms is reserved for the coupled moving-system model and must not be double-counted as an additional rigid mass.
+
+### Skin-property gate
+No exact glass/epoxy laminate grade is frozen yet. Therefore absolute modal frequencies cannot yet be treated as predictions.
+
+For scale checking only, a provisional symmetric sandwich calculation using 5 mm PMI core, 0.30 mm skins, and an assumed quasi-isotropic glass/epoxy skin modulus of 20 GPa gives:
+- sandwich areal mass before exciters/adhesive/fabric ~=1.37 kg/m^2;
+- first simply-supported equivalent plate mode ~=230 Hz before discrete exciter mass, compliant frame and shear correction.
+
+This ~230 Hz value is a **SANITY-CHECK SCALE ONLY**, not a FEA result or product specification. Real frequencies may move materially when laminate layup, core shear deformation, adhesive, four 110.9 g exciters, edge compliance and fabric are included.
+
+### Immediate modeling implication
+The four legacy exciters add about 444 g of rigid device mass in total, which is large relative to the lightweight 300 x 380 mm sandwich panel. Their distributed attachment mass therefore must be present in the first detailed eigenfrequency solve; a bare-panel modal solution is insufficient for placement freeze.
+
+Status: **STACK_A_CORE_BASELINE_FROZEN_FOR_FEA / SKIN_LAMINATE_PROPERTY_GATE_OPEN**.
