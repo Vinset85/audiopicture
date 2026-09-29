@@ -268,3 +268,45 @@ Before freezing the exact Sheet-02 circuit:
 4. finalize SMBJ33A/transient clamp compatibility;
 5. calculate TPS4810 UVLO and EXT_VALID control thresholds;
 6. simulate source handover and +24V_RAW inrush.
+
+
+## Rev.A 100 V power-switch freeze — 2026-09-29
+
+### PoE disconnect controller exact MPN
+U_POE_SW = **Texas Instruments TPS48100QDGXRQ1**
+- TPS48100-Q1 variant;
+- DGX VSSOP-19 package, 5.1 x 3.0 mm class;
+- -40 to +125 degC;
+- 3.5-95 V operating range, 100 V absolute maximum;
+- low-Iq controller for two back-to-back N-MOSFETs.
+
+Status: **FROZEN_DEVICE_PACKAGE**.
+
+### Power MOSFET baseline
+Q_POE_A / Q_POE_B and external ideal-diode MOSFET baseline:
+**Infineon ISC035N10NM5LF2ATMA1**
+- 100 V N-channel;
+- RDS(on) max 3.5 mOhm at 10 V;
+- SuperSO8 FL / TDSON-8 5 x 6 mm;
+- wide SOA Linear FET;
+- intended by manufacturer for hot-swap, eFuse and protection/inrush applications;
+- active/recommended.
+
+Status: **FROZEN_ELECTRICAL_PACKAGE / SOA_VALIDATE_AT_FINAL_INRUSH_PROFILE**.
+
+Using the same 100 V MOSFET family on PoE and external branches is preferred for BOM/footprint consolidation.
+
+Approximate conduction check:
+- one FET at 3 A and 3.5 mOhm max: 31.5 mW;
+- two back-to-back FETs at 1 A: 7 mW;
+- two back-to-back FETs at 3 A: 63 mW.
+These figures exclude temperature rise of RDS(on), switching/inrush stress and PCB/package thermal resistance.
+
+The previous 60 V DMT6007LFG candidate is demoted from Rev.A baseline due to reduced transient-voltage margin.
+
+### Next protection gate
+Now calculate the external 24 V transient clamp around the 100 V MOSFET/controller envelope:
+- verify SMBJ33A VRWM/VBR/VC against normal 24 V PSU tolerance;
+- ensure worst credible clamped voltage remains below downstream absolute maxima;
+- define F101 so TVS fault energy is safely interrupted;
+- then freeze EXT_VALID assert/deassert divider and hysteresis.
