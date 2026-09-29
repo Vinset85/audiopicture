@@ -319,3 +319,35 @@ All VSSRF balls are GND per Infineon and must participate in the reference RF-gr
 DIO2 is not available on BGT60TR13C and therefore has no package connection to capture. Digital I/O belongs to VDDD=1.8 V; no MAIN 3.3 V signal may bypass U204/U205. SPI may reach 50 MHz electrically, but AudioPicture retains conservative bring-up and SI-qualified production rate.
 
 Package capture status: **PINOUT_AUDITED / READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE**.
+
+
+## RF footprint / antenna / radome capture contract — 2026-09-29
+Authority: Infineon BGT60TR13C Shield hardware guide and AN163617 60-GHz AiP PCB-design guidance.
+
+### U201 footprint and ground
+- package PG-VF2BGA-40-1, 6.5 x 5.0 mm, 0.5 mm minimum pitch;
+- use the Infineon suggested BGA land pattern; reference pad diameter is 0.275 mm where shown by the manufacturer;
+- maintain a solid uninterrupted GND plane immediately underneath U201 with NO signal traces or test points under the device;
+- stitch RF/system ground according to the Infineon reference via strategy; do not split VSSRF/VSSA/VSSD into isolated ground islands;
+- keep nearby component density low around the antenna-in-package region.
+
+### PCB stack-up / RF behavior
+- use a thin top dielectric/prepreg over the first solid reference plane to suppress substrate modes, following Infineon AiP guidance;
+- final PCB-C stack-up is an EM-simulation input and is not frozen merely by selecting generic 4-layer FR-4;
+- EBG structures are NOT introduced by default: they require a stack-up-specific 60-GHz design. Prefer the simpler reference-style layout unless EM simulation demonstrates a need.
+
+### Front/radome keep-out
+The complete forward RF cone from the AiP face to the room is a controlled dielectric region. No metal, copper foil, screws, magnets, shield cans, conductive DML skin, wiring, battery-like masses or metallized print may cross this window.
+AudioPicture front stack in the radar aperture shall be: AiP face -> controlled air gap -> non-conductive structural window if required -> printed acoustic fabric -> room.
+The DML panel must have a dedicated RF aperture/window aligned with U201 if its skin/core/adhesive is RF-significant.
+
+### Initial mechanical baseline
+At 60 GHz free-space wavelength is approximately 5 mm. For the first CAD/EM model use approximately **2.5 mm (lambda/2) AiP-face-to-first-plastic-surface spacing** as an Infineon-supported starting point for reducing enclosure back-reflection; this is a simulation baseline, NOT a frozen production distance.
+Do not freeze plastic thickness from a generic quarter-wave formula: thickness depends on dielectric constant/loss tangent and the full fabric/adhesive/window stack. Measure or obtain epsilon-r/loss data for the actual printed fabric, ink, plastic and adhesive and optimize the complete stack in 60-GHz EM simulation.
+
+### Mechanical exclusion zone
+Create a named CAD volume `RADAR_RF_KEEP_OUT` extending forward from U201 through the DML/front structure. PCB, enclosure and DML CAD must reference the same volume. Magnets used by the removable front frame must remain outside this volume with margin.
+
+Release requires: stack-up-aware EM simulation; S11/radiation-pattern comparison; fabric/ink/window coupon characterization or credible material models; enclosure reflection study; and final stationary-person/range-angle validation.
+
+Status: **RF_CAPTURE_RULES_FROZEN / EXACT_KEEP_OUT_GEOMETRY_AND_RADOME_STACK_EM_OPTIMIZE**.
