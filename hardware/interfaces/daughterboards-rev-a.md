@@ -206,3 +206,17 @@ Sheet 07 becomes production FROZEN after:
 6. radar reset/enable pin split frozen;
 7. daughterboard power-current measurement;
 8. mechanical retention/vibration test.
+
+
+## Rev.A connector freeze
+Connector family: Hirose FH12, 0.5 mm pitch, ZIF, 0.30 mm FPC.
+
+VOICE uses a 16-contact physical connector; the existing 14 logical signals remain unchanged and two extra contacts are ground references for the I2S group. Preferred part: FH12-16S-0.5SH(55).
+
+RADAR uses 12 contacts. ENV uses 8 contacts. Keep the existing duplicated power and ground contacts.
+
+Radar controls are independently frozen: GPIO16 = RADAR_EN and GPIO42 = RADAR_RST.
+
+MAIN is the only source of +5V_SYS and +3V3_SYS on daughterboard interfaces. Daughterboards must not back-power MAIN. MAIN remains the only populated owner of shared I2C pull-ups.
+
+Status: READY_FOR_NATIVE_KICAD_CAPTURE_WITH_FPC_MECHANICAL_DRAWING_GATE.
