@@ -516,3 +516,36 @@ Current manufacturer data:
 Status: **FROZEN_DEVICE / FOOTPRINT_VERIFY_CURRENT_AG53000_DATASHEET_STEP**.
 
 Do not derive the production footprint from a distributor drawing. Use the current Silvertel Ag53000 datasheet/STEP package and cross-check pin numbering against the pin-compatible Ag5300 family.
+
+
+## Audit pass 12 — PoE footprint authorities and preliminary envelope
+
+### STPST3H100AF footprint authority
+STMicroelectronics official datasheet DS13610 Rev.4 contains the SOD128Flat mechanical data and recommended PCB footprint.
+ST also exposes EDA footprint/3D resources for STPST3H100AF.
+
+Status upgraded to:
+**FROZEN_ELECTRICAL_PACKAGE / OFFICIAL_FOOTPRINT_AUTHORITY_VERIFIED**.
+
+Native KiCad implementation shall reproduce/check the ST recommended SOD128Flat land pattern rather than trust an unrelated generic library alias.
+
+### Ag53024 floorplan envelope
+Current Silvertel Ag53000 documentation confirms:
+- SIL module envelope: 57 mm L x 18 mm W x 14 mm H;
+- input operating range: 37-57 V;
+- 1500 Vdc input-output isolation;
+- pin-for-pin compatibility with Ag5300 / Ag5400 family.
+
+For preliminary MAIN placement reserve at least the 57 x 18 mm body envelope plus assembly/courtyard margin.
+
+The exact production pad/hole coordinates are NOT inferred from the body envelope. They remain gated on the current Silvertel Ag53000 mechanical drawing/STEP and pin-number cross-check.
+
+### Preliminary Ethernet/PoE zone
+For floorplanning only, reserve a rectangular cable-edge zone approximately:
+- width: 70-80 mm;
+- depth: 60-70 mm;
+subject to native footprint packing.
+
+This zone contains J_ETH, T_ETH, BR201/BR202, Ag53024 and primary isolation corridor. W5500 sits immediately on the SELV side adjacent to T_ETH and may extend outside this primary power rectangle.
+
+Do not convert these planning dimensions into fabrication constraints until actual footprints are placed.
