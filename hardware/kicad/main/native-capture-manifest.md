@@ -75,7 +75,7 @@ Authority: `rails-monitor-rev-a.md`.
 
 Frozen:
 - INA228AIDGSR;
-- shunt value 7.5 mOhm, exact true-Kelvin MPN still a BOM release gate;
+- RSH1 = Littelfuse L4CL1206LR008FNR, 8 mOhm true four-terminal Kelvin shunt, 0.5 W;
 - TPSM63603V5RDHR 24->5 V;
 - TDK C3225X7R1H475K250AB input MLCCs;
 - TPS62823DLCR 5->3.3 V;
@@ -84,7 +84,7 @@ Frozen:
 
 Imports: `+24V_RAW`, `I2C_SDA`, `I2C_SCL`.
 Exports: `+24V_SYS`, `+5V_SYS`, `+3V3_SYS`, `POWER_ALERT`, `5V_PG`, `3V3_PG`.
-BOM gates: exact shunt, 5 V COUT effective capacitance, 3.3 V COUT effective capacitance.
+BOM gates: 5 V COUT effective capacitance and 3.3 V COUT effective capacitance. RSH1 device/value/package is frozen; PCB thermal/Kelvin routing and calibration remain validation gates.
 
 ## Sheet 04 — ESP32 control
 Authority: `esp32-s3-main-rev-a.md` and `gpio-interface-contract.md`.
