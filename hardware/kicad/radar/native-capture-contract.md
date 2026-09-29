@@ -272,3 +272,21 @@ The remaining open items are reference-design/BOM/layout release gates, not arch
 
 Status:
 **READY_FOR_NATIVE_KICAD_STRUCTURE_AND_DETAILED_CAPTURE / FILTER_MPN_VAREF_AND_NOISE_VALIDATION_OPEN**.
+
+
+## Reference audit closure — 2026-09-29
+Current Infineon BGT60TR13C datasheet and 2026 reference hardware re-confirm the Rev.A rail filter architecture and the 20 uVpp supply-noise requirement in the 20 kHz..700 kHz band.
+
+### VAREF / MADC bypass closure
+VAREF is generated internally (nominal approximately 1.2 V) and MUST NOT be driven by +1V8_RADAR or +3V3_SYS. The MADC reference network uses the manufacturer bypass arrangement shown in the BGT60TR13C datasheet: **1 uF and 470 nF local bypass capacitors** associated with the MADC reference/supply block, placed immediately at the relevant analog-reference pins with VSSA/VAGND sharing the common analog ground implementation. Capture these values exactly per the manufacturer pin-level figure; do not reinterpret VAREF as a supply input.
+
+### Ferrite production baseline
+For the six radar-domain low-pass branches, Rev.A adopts **TDK MMZ1005B601CT000** as the production/reference ferrite baseline: 600 ohm @100 MHz, 0402, as used in Infineon BGT60TR13C reference hardware. Final impedance-vs-frequency/DC-bias and the complete NCP167 + branch-filter simulation must still demonstrate the radar noise requirement before production release.
+
+The oscillator supply ferrite remains a separate phase-noise/layout validation item; do not automatically reuse a domain ferrite without checking the KC2016K supply current/noise behavior.
+
+### Translator audit
+U204/U205 SN74AXC4T245BQBRG4 remain valid. TI explicitly provides Ioff partial-power-down, VCC isolation below approximately 100 mV and recommends OE pull-up to VCCA for high-Z power-up/down behavior. No architecture change is required.
+
+Capture status promoted to:
+**READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE / RADAR_NOISE_RF_AND_MECHANICAL_RELEASE_GATES_REMAIN**.
