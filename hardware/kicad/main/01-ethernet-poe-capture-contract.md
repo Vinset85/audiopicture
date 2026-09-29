@@ -53,7 +53,7 @@ Continuous IEEE 802.3at application budget: 22.5 W maximum.
 - supplies/AVDD per current WIZnet reference at +3V3_SYS;
 - local decoupling at every supply group;
 - 25 MHz crystal network using selected crystal load model;
-- EXRES1 = 4.12 kOhm 1%;
+- EXRES1 = 12.4 kOhm 1%;
 - PMODE straps for intended normal operation;
 - boot-safe ETH_RST;
 - deliberate ETH_INT pull-up owner;
@@ -79,3 +79,63 @@ Do not mark Sheet 01 COMPLETE until:
 6. unused pins/channels have explicit NC semantics.
 7. ERC is run in KiCad 9.x and exceptions individually justified.
 8. schematic is saved by KiCad 9.x, not hand-authored.
+
+
+## Pin-level review 2026-09-29
+
+### W5500 verified pins
+Official W5500 v1.1.0:
+- pin 1 TXN
+- pin 2 TXP
+- pin 3 AGND
+- pin 4 AVDD
+- pin 5 RXN
+- pin 6 RXP
+- pin 7 DNC — do not connect
+- pin 8 AVDD
+- pin 9 AGND
+- pin 10 EXRES1
+- pin 28 VDD
+- pin 29 GND
+- pin 30 XI/CLKIN
+- pin 31 XO
+- pin 32 SCSn = ETH_CS
+- pin 33 SCLK = SPI_SCLK
+- pin 34 MISO = SPI_MISO
+- pin 35 MOSI = SPI_MOSI
+- pin 36 INTn = ETH_INT
+- pin 37 RSTn = ETH_RST
+- pins 43/44/45 PMODE2/PMODE1/PMODE0.
+
+Critical correction: EXRES1 uses **12.4 kOhm 1%** per W5500 v1.1.0. Any earlier 4.12 kOhm value is superseded and must not enter the schematic/BOM.
+
+### 100BASE-TX polarity contract
+Follow WIZnet external-transformer reference polarity:
+- W5500 TXP -> transformer TD+ PHY side -> cable TX+ -> RJ45 contact 1.
+- W5500 TXN -> transformer TD- PHY side -> cable TX- -> RJ45 contact 2.
+- W5500 RXP -> transformer RD+ PHY side -> cable RX+ -> RJ45 contact 3.
+- W5500 RXN -> transformer RD- PHY side -> cable RX- -> RJ45 contact 6.
+
+RJ45 contacts 4/5 and 7/8 remain spare-pair PoE Alternative-B inputs.
+
+Do not assign numeric 7490220121 transformer pins in the native schematic until the current Wurth drawing/KiCad library symbol has been opened and visually cross-checked. The functional channel mapping above is frozen; numeric transformer-pad mapping remains a native-capture verification gate.
+
+### Ag53024 logical pins
+Ag53000 is pin-for-pin compatible with Ag5300/Ag5400. Capture only after cross-checking the current Ag53000 V1.1 table:
+- pin 1 VIN+ : rectified PoE primary positive
+- pin 2 VIN- : rectified PoE primary negative
+- pin 3 AT-DET : Type-2 detection/status function; disposition must be explicitly chosen
+- pins 4/5/6 IC : no connect
+- pin 7 -VDC : GND_SYS
+- pin 8 +VDC : +24V_POE
+- pin 9 ADJ : explicit NC/default unless output trim is intentionally used
+- pin 10 -VDC : GND_SYS
+
+Pins 7 and 10 are internally common on the module but both PCB connections shall follow Silvertel layout guidance.
+
+### Remaining native-capture checks
+- exact numeric pad mapping for Wurth 7490220121;
+- exact TE 2-1734264-1 signal-pad numbering from customer drawing;
+- W5500 PMODE strap values/state from current reference;
+- selected 25 MHz crystal MPN/load capacitors;
+- disposition of Ag53024 AT-DET pin 3.
