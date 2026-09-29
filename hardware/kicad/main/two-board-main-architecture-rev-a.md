@@ -267,3 +267,75 @@ Rogers publishes PORON 4701-30 Very Soft in thicknesses that include the approxi
 - the 40 mm product depth remains viable at architecture level; the current blocker is planar packing, not global depth.
 
 Status: **MAIN_C_UPPER_SEED_RETAINED / MAIN_P_LOWER_EDGE_SEED_WITHDRAWN / MAIN_P_145x45_REPACK_REQUIRED**.
+
+
+## 15. MAIN-P 145 x 45 mm inter-exciter packing solve
+
+### Electrical area sanity
+The target is plausible but dense.
+
+The TAS5825M itself is only 5 x 5 mm (RHB VQFN-32). The dominant audio placement objects are instead:
+- 4 x XAL7050 inductors, each approximately 8.0 x 7.7 x 5.0 mm;
+- local PVDD ceramics placed immediately at the TAS5825M PVDD pins;
+- the 470 uF radial bulk pocket;
+- output LC capacitors;
+- high-current copper and speaker connector/harness egress.
+
+TI explicitly requires PVDD bypass/decoupling capacitors to be placed very close to the TAS5825M PVDD pins. Therefore the audio block shall be treated as a compact placement island and not spread across the board merely to fill free area.
+
+### Geometric result
+A useful lower-central band exists between the L1 and R2 successor-exciter columns, but the full 145 x 45 rectangle must avoid both their expanded exclusion boxes and the 20 mm protected product perimeter.
+
+First placement seed:
+
+- **MAIN-P = 145 x 45 mm**
+- **BOARD_P_X = 105 mm**
+- **BOARD_P_Y = 112 mm**
+- occupied rectangle: X=105..250 mm, Y=112..157 mm.
+
+This seed is above L1's coarse box (Y<=110 mm), below L2's box (Y>=166 mm), and below/partly laterally adjacent to R2. Because R2's coarse box is X=223..285, Y=88..148, the raw rectangle overlaps R2 in X=223..250, Y=112..148.
+
+Therefore the seed is **not collision-free** and is rejected as a simple rectangle.
+
+### Collision-free rectangular conclusion
+With the current conservative 62 x 60 mm successor-exciter boxes, a 145 x 45 mm board cannot occupy the obvious L1/L2 horizontal gap while also spanning centrally toward the right without intersecting R2.
+
+The preferred response is **not** to notch MAIN-P immediately.
+
+Reduce the first rectangle target to:
+- **MAIN-P = 115 x 45 mm**
+
+Candidate seed:
+- **X=105..220 mm**
+- **Y=112..157 mm**
+
+This clears:
+- L1 by Y;
+- L2 by Y;
+- R2 by X;
+- R1 by Y;
+while remaining outside the 20 mm protected perimeter.
+
+### Area consequence
+MAIN-P area becomes 5175 mm2.
+
+This is aggressive but potentially feasible because:
+- Ag53024, RJ45, W5500, ESP32, USB and daughterboard connectors have moved to MAIN-C;
+- TAS5825M is a 5 x 5 mm device;
+- XAL7050 inductors total only about 246 mm2 of body footprint before spacing.
+
+However, feasibility is not released until source-selection/protection, converters, bulk, connectors and copper/thermal areas are floorplanned.
+
+### Functional floorplan target
+Within 115 x 45 mm:
+- one end: external 24 V input/protection/source priority;
+- center: DC/DC + INA228;
+- opposite end: compact TAS5825M + LC island;
+- 470 uF bulk adjacent to the PVDD/audio island but outside its hottest copper;
+- speaker harness exits directly toward the DML wiring routes.
+
+### Decision
+The 145 x 45 MAIN-P target is demoted.
+The new preferred rectangle is **115 x 45 mm at X=105, Y=112** for detailed floorplanning.
+
+Status: **MAIN_P_115x45_X105_Y112_PLACEMENT_SEED / DETAILED_POWER_AUDIO_FLOORPLAN_REQUIRED**.
