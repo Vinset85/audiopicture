@@ -555,3 +555,13 @@ Engineering checks:
 Layout rule: route INA228 IN+/IN- only from the dedicated sense terminals. High-current copper enters/exits only through the current terminals. Do not merge sense traces into the power pads before the shunt.
 
 Status: **FROZEN_DEVICE_VALUE_PACKAGE / PCB_THERMAL_AND_CALIBRATION_VALIDATE**.
+
+
+## Output-capacitor acceptance freeze — 2026-09-29
+### TPSM63603V5 +5V output
+TI requires >=25 uF **effective** output capacitance at 5 V. The TI 5-V application example uses 2 x 47 uF / 10 V / 1210 ceramic capacitors and reports about 48 uF combined effective capacitance at 5 V. Rev.A therefore freezes COUT5V1/COUT5V2 as **2 x 47 uF nominal, >=10 V, X7R/X7S-class, 1210 baseline**, with production acceptance requiring >=25 uF combined effective capacitance at 5 V after DC bias, tolerance and the qualified temperature envelope. Exact MPN remains a sourcing/release gate until manufacturer curve/model evidence is attached; do not substitute by nominal value alone.
+
+### TPS62823 +3V3 output
+With L=470 nH, TI recommends 2 x 10 uF or 1 x 22 uF nominal as the standard output-filter combination and requires >=5 uF effective capacitance. Rev.A freezes converter-local COUT3V3 as **22 uF nominal X7R/X5R-class** (or electrically equivalent 2 x 10 uF), selected so effective capacitance at 3.3 V remains >=5 uF across tolerance and qualified temperature. A separate local bulk capacitor near the ESP32/network load is not counted as a substitute for converter-local COUT placement.
+
+Status: **COUT_ELECTRICAL_CLASSES_FROZEN / EXACT_PRODUCTION_MPN_DC_BIAS_EVIDENCE_REQUIRED**.
