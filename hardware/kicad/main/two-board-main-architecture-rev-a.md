@@ -208,3 +208,62 @@ Do not release either rectangle to PCB layout yet. Required before freeze:
 8. mounting-hole/boss locations.
 
 Status: **MAIN_C_150x55_UPPER_SEED / MAIN_P_145x55_LOWER_SEED / FRAME_AND_CONNECTOR_COLLISION_GATE_OPEN**.
+
+
+## 14. Rear-frame and DML-perimeter clearance pass
+
+The nominal DML is 300 x 380 mm centered in the 320 x 400 mm product, leaving only 10 mm nominal border per side in front-view projection.
+
+The DML perimeter mount baseline consumes approximately:
+- 5..6 mm DML edge land;
+- 6 mm foam strip width;
+- adjacent hard-stop/support structure;
+- rear structural perimeter beam nominally 8..12 mm projected width.
+
+These functions overlap in Z but cannot be treated as free PCB area in XY.
+
+### Protected perimeter zone
+For electronics packaging, define a conservative **20 mm protected perimeter band** from the external product edge on all four sides until detailed shared CAD resolves the frame sections.
+
+No MAIN PCB body, tall component, connector mating volume or mounting boss may enter this band in the baseline solve.
+
+This is a packaging rule, not a claim that the final frame is physically 20 mm wide everywhere.
+
+### MAIN-C upper seed correction
+Previous MAIN-C seed Y=315..370 mm ends 30 mm from the product top edge and therefore survives the 20 mm protected perimeter rule.
+
+Retain:
+- MAIN-C = 150 x 55 mm
+- X = 85..235 mm
+- Y = 315..370 mm
+
+subject to exact upper-frame/wall-mount and connector service checks.
+
+### MAIN-P lower seed correction
+Previous MAIN-P seed Y=5..60 mm violates the protected perimeter band and is withdrawn.
+
+A 55 mm-deep rectangular MAIN-P cannot simply be translated upward while remaining clear of L1's coarse exclusion box at X=37..99, Y=50..110 and R2 at X=223..285, Y=88..148 if centered across the product.
+
+Therefore the lower-band rectangle requires either:
+- reduced board depth;
+- lateral shift;
+- or use of the central free band.
+
+### Preferred MAIN-P revision
+Use a first revised target:
+- **MAIN-P = 145 x 45 mm**
+- horizontal;
+- seek placement in a central/lower inter-exciter band rather than the external perimeter.
+
+The 45 mm depth is now the packaging target to be validated against actual component placement. It is not yet a released PCB dimension.
+
+### PORON note
+Rogers publishes PORON 4701-30 Very Soft in thicknesses that include the approximately 1.6..3.2 mm range for the 320 kg/m3 family and characterizes it specifically for gasketing, gap filling and vibration isolation. The existing nominal 2.0 mm / ~20% compression DML mount remains a valid engineering baseline, but exact grade/thickness must be selected from an available production thickness and characterized in FEA.
+
+### Mechanical conclusion
+- MAIN-C 150 x 55 upper band remains plausible.
+- MAIN-P 145 x 55 lower-edge seed is rejected.
+- MAIN-P is reduced to a 145 x 45 target and must be repacked into an inter-exciter band.
+- the 40 mm product depth remains viable at architecture level; the current blocker is planar packing, not global depth.
+
+Status: **MAIN_C_UPPER_SEED_RETAINED / MAIN_P_LOWER_EDGE_SEED_WITHDRAWN / MAIN_P_145x45_REPACK_REQUIRED**.
