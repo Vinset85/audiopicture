@@ -24,3 +24,5 @@ C_BSTA-C_BSTD,MAIN,0.47uF X7R/X5R qualified,4,TAS5825M bootstrap,FROZEN_VALUE
 C901,MAIN,470uF 35V low-ESR baseline,1,Audio PVDD bulk capacitor,VALIDATE_MPN_MECHANICAL
 L901-L904,MAIN,10uH shielded power inductor baseline,4,Class-D LC output filter,VALIDATE_EMC_LOAD
 Q101,VOICE,TBD load switch,1,Hardware microphone power/privacy,VALIDATE
+U203,RADAR,TBD 80MHz-class reference clock,1,BGT60TR13C reference clock,VALIDATE_REFERENCE_DESIGN
+U204-U205,RADAR,TBD fixed-direction level translators,1 set,3.3V to 1.8V SPI IRQ reset translation,VALIDATE
