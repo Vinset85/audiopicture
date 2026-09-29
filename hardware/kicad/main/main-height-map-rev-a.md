@@ -366,3 +366,79 @@ Option B becomes preferred if a one-board outline requires narrow necks or awkwa
 The successor exciter does **not** by itself disprove the 40 mm product target. It removes the previous behind-exciter electronics assumption and makes XY packing the dominant problem.
 
 Status: **OLD_MAIN_X125_Y90_Z34_SEED_WITHDRAWN / FULL_DEPTH_EXCITER_COLUMNS_ACTIVE / PLANAR_MAIN_REPACK_REQUIRED**.
+
+
+## 17. Candidate-B free-space map with EX25FHE2-4 columns
+
+Using Candidate-B product coordinates:
+- L1 = (68,80) mm
+- L2 = (114,196) mm
+- R1 = (206,268) mm
+- R2 = (254,118) mm
+
+and the coarse successor-exciter exclusion box 62 x 60 mm centered on each point, the first-pass blocked rectangles are:
+
+- L1: X 37..99, Y 50..110
+- L2: X 83..145, Y 166..226
+- R1: X 175..237, Y 238..298
+- R2: X 223..285, Y 88..148
+
+These are conservative packaging rectangles, not final exciter geometry.
+
+### Free-space observations
+
+The four columns do not form a continuous wall across the 320 mm product width. Large connected free space remains around and between them.
+
+Important corridors include:
+
+1. **central vertical meander corridor**
+   Free space exists through the central product region, but its lateral position changes with Y because L2 and R1 occupy opposite sides. A rigid 70 mm-wide straight vertical PCB is inefficient here.
+
+2. **left-side corridor**
+   The region toward X<~35 mm is continuously clear of the coarse exciter boxes, but is too close to the product/DML perimeter to host the complete MAIN after frame, mount and connector margins.
+
+3. **right-side corridor**
+   Similarly, X>~287 mm is clear but too narrow for the complete electronics system.
+
+4. **central horizontal bands**
+   Useful full-width bands exist between the staggered exciters. These favor a shorter/wider PCB or multiple boards more than the previous long 70 x 220 board.
+
+### Architecture conclusion
+A single highly notched vertical MAIN would need to weave between L1/L2/R1/R2. That is mechanically possible in principle but unattractive for:
+- continuous ground planes;
+- high-current 24 V/PVDD routing;
+- audio BTL return/current geometry;
+- PCB stiffness;
+- panelization and assembly;
+- predictable EMC.
+
+Therefore **Option B becomes the preferred packaging architecture**:
+
+**MAIN-P — POWER / AUDIO / ETHERNET-POE power front end**
+and
+**MAIN-C — CONTROL / MCU / Ethernet logic / USB / daughterboard interfaces**
+
+The exact functional split remains to be optimized so W5500/magnetics/RJ45 placement does not create unnecessary inter-board high-speed routing.
+
+### Inter-board rule
+Avoid sending analog Class-D power loops or raw Ethernet MDI pairs across the board-to-board link.
+
+Preferred inter-board signals are:
+- regulated power rails as justified;
+- SPI or other controlled digital interfaces;
+- I2C;
+- GPIO/interrupt/reset;
+- I2S audio clocks/data;
+- housekeeping/status.
+
+### Next optimization
+Evaluate two-board rectangles in the connected free-space bands and decide which board owns:
+- RJ45 + magnetics + W5500;
+- Ag53024;
+- 24 V source selection;
+- TAS5825M and output filter;
+- ESP32-S3;
+- USB-C;
+- FPC daughterboard interfaces.
+
+Status: **TWO_BOARD_MAIN_ARCHITECTURE_PREFERRED / FUNCTIONAL_SPLIT_AND_RECTANGLE_PACKING_OPEN**.
