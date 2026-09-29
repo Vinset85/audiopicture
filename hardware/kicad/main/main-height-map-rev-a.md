@@ -318,3 +318,51 @@ The next placement pass shall use exact/derived 3D envelopes for:
 and shall optimize component placement and board position together.
 
 Status: **MAIN_XYZ_SEED_DEFINED_X125_Y90_Z34 / EXACT_3D_COMPONENT_COLLISION_OPTIMIZATION_REQUIRED**.
+
+
+## 16. Successor-exciter collision re-solve
+
+The EX25FHE2-4 manufacturer drawing supersedes the legacy depth assumption for production packaging studies.
+
+Use for coarse collision:
+- outer framed footprint approximately 58.3 x 56 mm;
+- depth 25.5 +/-0.5 mm from its mounting reference;
+- coarse XY exclusion rectangle expanded to 62 x 60 mm for first-pass tolerance/wiring;
+- no useful electronics volume assumed directly behind the exciter.
+
+### Effect on previous X125/Y90/Z34 seed
+The previous MAIN seed is **withdrawn as a production placement candidate**.
+
+Reason: at the current Candidate-B centers, a 70 x 220 vertical board in the central region intersects successor-exciter full-depth exclusion volumes. Moving the board plane rearward cannot recover adequate room within the 40 mm product envelope once PCB thickness, rear shell, solder-side features and assembly tolerance are included.
+
+### New placement rule
+Treat each successor exciter as a full-depth exclusion column from the DML rear surface to the rear-shell electronics zone.
+
+No PCB substrate, component, rigid frame rib or connector service volume may cross those columns in the baseline CAD model.
+
+Only flexible harness may cross locally, subject to abrasion and motion clearance.
+
+### Consequence for MAIN outline
+The simple 70 x 220 rectangular MAIN is no longer the preferred architecture.
+
+The next CAD solve shall compare:
+A. a notched/slender MAIN that routes around the four exciter columns;
+B. two electrically connected MAIN sub-boards, separating power/audio from MCU/Ethernet/service;
+C. a shorter MAIN placed entirely in a single exciter-free corridor.
+
+Do not increase product depth beyond 40 mm before these planar packaging options are exhausted.
+
+### Preferred direction
+Option A remains first to test because it preserves one PCB and avoids additional board-to-board connectors. However, a highly constricted neck is rejected if it compromises:
+- return-current continuity;
+- power copper width;
+- PCB stiffness;
+- assembly panelization;
+- EMC partitioning.
+
+Option B becomes preferred if a one-board outline requires narrow necks or awkward high-current routing.
+
+### 40 mm feasibility
+The successor exciter does **not** by itself disprove the 40 mm product target. It removes the previous behind-exciter electronics assumption and makes XY packing the dominant problem.
+
+Status: **OLD_MAIN_X125_Y90_Z34_SEED_WITHDRAWN / FULL_DEPTH_EXCITER_COLUMNS_ACTIVE / PLANAR_MAIN_REPACK_REQUIRED**.
