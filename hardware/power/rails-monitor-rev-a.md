@@ -499,3 +499,38 @@ The sheet may be captured natively with:
 - output MLCC footprints sized for the frozen nominal capacitance classes but exact MPN held open.
 
 Gerber release remains blocked until exact shunt and output-MLCC MPNs are verified.
+
+
+## Sheet-03 release-state refinement — 2026-09-29
+
+### Effective-capacitance acceptance rule
+For TPS62823, TI explicitly recommends 470 nH with 2 x 10 uF or 22 uF as the standard combination for most applications and notes that effective ceramic capacitance may vary substantially with package, voltage rating and dielectric.
+
+Therefore Rev.A acceptance is:
+- nominal converter-local COUT: 22 uF class;
+- manufacturer DC-bias curve/model mandatory;
+- effective COUT at 3.3 V must remain inside TI's qualified LC region after tolerance and bias;
+- exact MPN remains OPEN until this evidence is attached to the BOM audit.
+
+### RSH1 no-inference rule
+Vishay WSK2512 remains the preferred true 4-terminal family. Manufacturer data verifies the family architecture and tolerance capability, but an exact 7.5 mOhm catalog/order code is not yet verified.
+
+Do not derive a Vishay part number syntactically from another resistance value.
+
+### Capture/release distinction
+Sheet 03 electrical capture is now sufficiently defined for native KiCad work:
+- topology frozen;
+- controllers frozen;
+- rail voltages frozen;
+- inductor MPN frozen;
+- INA228 filter frozen;
+- CIN MPN frozen;
+- PG nets defined.
+
+Status: **READY_FOR_NATIVE_KICAD_CAPTURE_WITH_BOM_RELEASE_GATES**.
+
+Gerber/BOM production release remains blocked by:
+1. exact RSH1 7.5 mOhm 4-terminal MPN;
+2. exact 5 V COUT MPN with >=25 uF combined effective capacitance at 5 V;
+3. exact 3.3 V COUT MPN with verified effective capacitance;
+4. final transient/thermal validation.
