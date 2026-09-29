@@ -305,3 +305,37 @@ Regulator electrical requirements are therefore frozen even while exact SQ66 ord
 
 Do not select a low-current 0.9 V LDO merely because average XVF3800 current appears modest.
 Exact regulator MPNs, PLL filter values and clock implementation remain SQ66/reference-layout gates.
+
+
+## VOICE regulator MPN freeze — 2026-09-29
+### U_VOICE_0V9
+**Texas Instruments TPS62823DLCR**.
+- VIN 2.4..5.5 V, fed from +3V3_SYS;
+- 3 A capability;
+- adjustable down to 0.6 V;
+- 1% feedback accuracy;
+- DCS-Control, fast transient response;
+- PG available;
+- VSON-HR DLC 8-pin, 2.0 x 1.5 mm;
+- 470 nH-class inductor architecture consistent with the family.
+
+Configure for **0.900 V nominal**. Exact feedback divider, output-capacitance/effective-C network and inductor MPN are capture/BOM validation gates. The use of the same regulator family/MPN already present on MAIN is intentional BOM consolidation, but PCB-B has an independent instance and output network.
+
+### U_VOICE_1V8
+**Texas Instruments TPS7A2018PDBVR**.
+- fixed 1.8 V;
+- 300 mA;
+- VIN 1.6..6.0 V, fed from +3V3_SYS;
+- 7 uVrms-class low output noise;
+- high PSRR;
+- 1.5% maximum output tolerance;
+- stable with >=1 uF ceramic output capacitance;
+- SOT-23-5 DBV package.
+
+This provides 50% current headroom over the 200 mA Rev.A engineering allocation and avoids the tighter 250 mA ceiling of LP5907.
+
+### PLL
++0V9_PLL remains derived from +0V9_VOICE through the XMOS/reference low-pass filter. It shall not be connected directly to the noisy switching node and shall not receive a separate arbitrary LDO unless reference/noise analysis requires one.
+
+Status:
+**VOICE_REGULATOR_DEVICES_FROZEN / 0V9_PASSIVES_PLL_FILTER_AND_SEQUENCE_VALIDATE**.
