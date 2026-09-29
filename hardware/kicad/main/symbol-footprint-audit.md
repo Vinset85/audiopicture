@@ -549,3 +549,36 @@ subject to native footprint packing.
 This zone contains J_ETH, T_ETH, BR201/BR202, Ag53024 and primary isolation corridor. W5500 sits immediately on the SELV side adjacent to T_ETH and may extend outside this primary power rectangle.
 
 Do not convert these planning dimensions into fabrication constraints until actual footprints are placed.
+
+
+## Audit pass 13 — Ag53024 land pattern frozen from Silvertel V1.1 (2026-06-22)
+
+Official Ag53000 datasheet Figure 13 is now the production footprint authority.
+
+Verified land-pattern dimensions:
+- 10 through-hole SIL pins;
+- drill / hole diameter A = 1.12 mm;
+- pin pitch B = 2.54 mm;
+- dimension C = 43.18 mm;
+- primary-to-secondary group geometry a = 27.94 mm;
+- copper keep-out depth b > 8.46 mm;
+- edge/isolation dimension d > 1.27 mm;
+- dimension e = 13.97 mm.
+
+Package envelope:
+- length A = 57.28 mm nominal, 58.28 mm max;
+- width B = 14.02 mm nominal, 15.02 mm max;
+- height C = 11.50 mm nominal, 13.00 mm max;
+- overall drawing courtyard dimensions include K = 59.28 mm and L = 15.52 mm.
+
+The native KiCad footprint shall include the manufacturer copper keep-out and primary/secondary isolation markings from Figure 13.
+
+Status: **FROZEN_FOOTPRINT_AUTHORITY**.
+
+### Power-budget correction from current datasheet
+Silvertel V1.1 states that although Ag53000 can deliver 24 W continuous / 30 W short peak under suitable input conditions, a fully compliant IEEE802.3at system guarantees only 25.5 W at the input to the bridge rectifiers. Silvertel therefore instructs the application to be designed for a maximum continuous output power of **22.5 W**.
+
+AudioPicture PoE mode system budget is corrected:
+- 22.5 W maximum continuous application design budget;
+- 30 W is transient/module capability only and is not a continuous system budget;
+- firmware/DSP shall enforce additional margin for digital, sensor and conversion loads before allocating amplifier power.
