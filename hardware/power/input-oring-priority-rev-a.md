@@ -515,3 +515,50 @@ Use approximately 200 kohm as the starting E96 class, then account for comparato
 Do not freeze final UV/OV feedback resistor values until the exact three-resistor hysteresis equations have been solved for the selected comparator input polarity and open-drain pull-up domain, and all tolerance corners have been enumerated.
 
 Status remains **TOPOLOGY_FROZEN / NOMINAL_THRESHOLDS_REFINED / EXACT_RESISTORS_PENDING_CORNER_SOLVE**.
+
+
+## Exact comparator network solve — 2026-09-29
+
+### UV channel — values frozen
+Non-inverting Schmitt network, VREF = 2.500 V:
+- R_UV_IN = 660 kohm, 0.1%
+- R_UV_GND = 100 kohm, 0.1%
+- R_UV_FB = 1.10 Mohm, 0.1%
+- comparator open-drain output pulled up to VREF domain.
+
+Ideal thresholds:
+- rising = 20.500 V
+- falling = 19.000 V
+
+Conservative brute-force corner screen using resistor +/-0.1%, LM4040A25 full-range +/-19 mV reference bound and TLV1822-Q1 +/-4 mV Vos:
+- UV rising approx 20.276 to 20.725 V
+- UV falling approx 18.790 to 19.211 V
+
+### OV channel — values frozen
+Inverting window channel:
+- R_OV_TOP = 912 kohm, 0.1%
+- R_OV_BOT = 100 kohm, 0.1%
+- R_OV_REF = 100 kohm, 0.1%
+- R_OV_FB = 4.12 Mohm, 0.1%
+- comparator open-drain output pulled up to VREF domain.
+
+Ideal thresholds:
+- rising trip = 25.300 V
+- falling recovery = 24.7005 V
+
+Conservative brute-force corner screen with the same assumptions:
+- OV rising trip approx 25.022 to 25.579 V
+- OV falling recovery approx 24.427 to 24.975 V
+
+The worst screened OV trip remains below the TAS5825M 26.4 V recommended PVDD ceiling by approximately 0.82 V.
+
+### Important implementation note
+The 4.12 Mohm feedback leg is electrically valid but high impedance. Layout shall keep this node short/clean, away from switching nodes, flux residue and high-leakage protection structures. If PCB contamination/leakage analysis later makes 4.12 Mohm undesirable, scale the OV network downward while preserving ratios and re-run bias-current/power calculations.
+
+### Status
+Threshold resistor ratios: **FROZEN_ELECTRICAL**.
+Still pending before Sheet-02 production freeze:
+- exact LM4040A25-Q1/orderable package decision;
+- reference bias resistor exact value and dissipation;
+- fail-safe open-drain AND/interlock transistor implementation;
+- SPICE transient verification including comparator propagation, MOSFET gate turn-off and +24V_RAW overshoot.
