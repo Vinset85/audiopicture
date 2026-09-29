@@ -435,3 +435,40 @@ For each mode retain:
 - sensitivity to exciter mass/position tolerance.
 
 Status: **A1_MASS_MODEL_CLOSED_FOR_FIRST_DETAILED_EIGENSOLVE / ABSOLUTE_FREQUENCY_UNCERTAINTY_GATES_REMAIN**.
+
+
+## 23. Reduced-order A1 eigensolve — diagnostic run
+
+A Ritz diagnostic model was evaluated before the full shell/solid FEA. It uses a simply-supported 300 x 380 mm plate basis, an equivalent balanced-cross-ply bending stiffness derived from the A1 skin baseline, the closed A1 panel mass, and four 110.9 g concentrated exciter masses at Candidate-A coordinates.
+
+This model deliberately omits core-shear refinement, adhesive compliance, real exciter footprint/inertia, compliant frame springs, fabric and full laminate constitutive constants. Therefore its frequencies are diagnostic bands/seeds only.
+
+### Basis convergence
+First modes for increasing sine-basis resolution converged as follows:
+- 9x9 basis: 150.8, 319.4, 373.6, 510.8 Hz;
+- 11x11 basis: 150.8, 318.7, 372.4, 507.7 Hz;
+- 13x13 basis: 150.7, 318.3, 371.9, 506.2 Hz.
+
+The low-order reduced model is therefore numerically stable with respect to basis size, although model-form uncertainty remains dominant.
+
+### First 12 diagnostic eigenfrequencies, 13x13 basis
+Approximately:
+151, 318, 372, 506, 917, 1237, 1475, 1758, 1994, 2143, 2361, 2599 Hz.
+
+Do NOT use these as production resonances.
+
+### Candidate-A controllability observation
+Equal in-phase summation of the two exciters in each electrical channel gives strong participation for the first four reduced-order modes. Weaker controllability appears in several higher modes, notably around the diagnostic 0.9 kHz, 1.5 kHz and 2.0 kHz regions.
+
+This does not reject Candidate A. It identifies the objective for the next local-coordinate optimization: increase the minimum L/R modal participation across the low/mid modal set without sacrificing horizontal stereo centroid separation or channel balance.
+
+### Next optimization
+Search local coordinate perturbations around Candidate A, with each point initially allowed to move +/-25 mm subject to:
+- LEFT/RIGHT x-region constraints;
+- edge and inter-exciter clearance;
+- radar/VOICE exclusion volumes when available;
+- minimum horizontal centroid separation;
+- penalty on poorly controlled modes;
+- penalty on excessive channel sensitivity mismatch.
+
+Status: **A1_REDUCED_EIGENSOLVE_CONVERGED_DIAGNOSTICALLY / CANDIDATE_A_LOCAL_REFINEMENT_REQUIRED**.
