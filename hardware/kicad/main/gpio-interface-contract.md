@@ -34,12 +34,25 @@
 GPIO26..37: **do not use**; module flash/PSRAM reservation.
 GPIO3/45/46: avoid casual assignment; strapping implications must be reviewed.
 
-## SPI architecture
-Rev.A preference:
-- SPI controller/bus A: W5500.
-- radar interface exposed separately to PCB-C and may use a second ESP32 SPI controller if driver/resource validation permits.
+## SPI architecture — FROZEN Rev.A
+One shared host SPI bus is used for W5500 and BGT60TR13C:
+- GPIO11 = SPI_MOSI
+- GPIO12 = SPI_SCLK
+- GPIO13 = SPI_MISO
+- GPIO10 = ETH_CS
+- GPIO14 = RADAR_CS
 
-Do not force W5500 and radar onto one clock domain solely to save pins.
+Rationale: ESP32-S3 GPIO matrix permits peripheral routing, while the WROOM-1-N16R8 pin budget is constrained by non-exposed GPIO22..25 and memory use on GPIO26..37. Independent chip selects and firmware bus arbitration prevent simultaneous transactions.
+
+Additional controls:
+- GPIO8 = ETH_RST
+- GPIO9 = ETH_INT
+- GPIO15 = RADAR_IRQ
+- GPIO16 = RADAR_RST/EN
+- GPIO38 = VOICE_RST
+- GPIO39 = VOICE_IRQ
+
+SPI electrical rule: radar-side PCB-C performs 3.3 V <-> 1.8 V translation. W5500 remains 3.3 V native.
 
 ## Audio clock ownership
 ESP32-S3 is host/master for the synchronized AudioPicture audio domain:
@@ -51,12 +64,17 @@ ESP32-S3 is host/master for the synchronized AudioPicture audio domain:
 Exact peripheral assignment and DMA topology are firmware validation items.
 
 
-## Pin-budget release gate
-The earlier conceptual map did not assign dedicated safe GPIOs for RADAR_SCLK/MOSI/MISO plus VOICE_RST/VOICE_IRQ. Do not silently consume strapping or memory pins.
+## Pin-budget decision — FROZEN Rev.A
+No GPIO expander is required.
 
-Before schematic freeze choose one validated topology:
-1. allocate genuinely free safe WROOM-1-N16R8 GPIOs;
-2. share the W5500 SPI bus with radar using independent CS and firmware arbitration;
-3. move low-speed reset/IRQ controls to an I2C GPIO expander.
+Final topology:
+- shared SPI data/clock: GPIO11/12/13;
+- W5500 CS: GPIO10;
+- radar CS: GPIO14;
+- VOICE_RST: GPIO38;
+- VOICE_IRQ: GPIO39;
+- GPIO42 remains available for expansion.
 
-This decision must be reflected in schematic, firmware pin map and factory test together.
+Strapping pins GPIO0/3/45/46 remain protected from normal peripheral assignments. GPIO26..37 remain unavailable due to module memory use; GPIO22..25 are not available as module pins.
+
+Firmware must serialize W5500/radar SPI access and support device-specific SPI clock/mode settings per transaction.
