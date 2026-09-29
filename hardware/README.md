@@ -3,7 +3,7 @@
 AudioPicture V2.2 uses four PCBs: MAIN, VOICE, RADAR and ENV.
 
 ## Design status
-Rev.A architecture is frozen at block level. Exact passive values, power MOSFETs, MagJack, 3.3 V buck, radar 1.8 V supply/level translation, PDM microphones, XVF3800 flash and inter-board FPC parts remain **VALIDATE** until reference-design and layout review.
+Rev.A architecture is frozen at block level. Current Rev.A device families are frozen where documented. Remaining release gates include exact passive/MPN selections, XVF3800 reference-derived regulators/flash/support networks, radar reference-derived filter/oscillator details, FPC orientation/suffixes, DML output-filter validation and mechanical/RF/thermal verification.
 
 ## KiCad target
 The electrical design will be captured sheet-by-sheet:
