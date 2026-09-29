@@ -29,7 +29,7 @@ U204-U205,RADAR,TBD fixed-direction level translators,1 set,3.3V to 1.8V SPI IRQ
 R301,ENV,TBD BOARD_ID coding resistor,1,ENV board revision identification,VALIDATE
 C301-C302,ENV,100nF X7R,2,Sensor local decoupling,FROZEN_VALUE
 Y201,MAIN,TBD 25MHz crystal,1,W5500 reference clock,VALIDATE_LOAD_MPN
-R201,MAIN,4.12k 1%,1,W5500 EXRES1,FROZEN_VALUE
+R201,MAIN,12.4 kOhm 1%,1,W5500 EXRES1,FROZEN_VALUE
 R202-R205,MAIN,33R baseline,4,W5500 MDI series termination,VALIDATE_REFERENCE_CAPTURE
 BR201-BR202,MAIN,TBD PoE-qualified bridge rectifier,2,Ag5324 PoE polarity/pair rectification,VALIDATE
 C_CHASSIS_ETH,MAIN,1nF 2kV-class baseline,1,RJ45 shield to system ground EMC coupling,VALIDATE_EMC_SAFETY
