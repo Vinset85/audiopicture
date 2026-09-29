@@ -222,3 +222,55 @@ Open electrical gates:
 5. IM72D128 footprint/acoustic-port verification;
 6. current XK-VOICE-SQ66 schematic/BOM transcription;
 7. raw four-channel measurement firmware proof.
+
+
+## XMOS reference-design verification gate — 2026-09-29
+
+Official XMOS resources verified:
+- XK-VOICE-SQ66 Design Files version 1V1, dated 2023-06-28, remain the hardware-reference package;
+- current XVF3800 datasheet is the pin/power authority;
+- current XVF3800 v3.2.1 firmware documentation is the software/tuning authority.
+
+The design-file ZIP is not transcribed in this repository yet. Therefore **do not infer regulator or flash MPNs from generic xcore.ai designs**.
+
+### Frozen XVF3800 supply pin groups
+Native capture must implement:
+- VDD pins 4,12,19,27,34,42,49,57 and core paddles 61..64 -> +0V9_VOICE;
+- V_DDIOL pin 8 -> +3V3_SYS;
+- V_DDIOR pin 38 -> +3V3_SYS;
+- V_DDIOT pin 52 -> +3V3_SYS;
+- VDD_IOB18 pins 17,26 -> +1V8_VOICE;
+- PLL_AVDD pin 22 -> filtered +0V9_VOICE;
+- VSS paddle pin 65 -> GND with direct local via strategy;
+- USB_VDD18 pin 31 and USB_VDD33 pin 30 are not populated/powered in AudioPicture Rev.A unless XVF3800 USB is later enabled.
+
+All package paddles 61..65 must be electrically and thermally implemented exactly as required by XMOS.
+
+### Frozen boot pins
+- pin 1 QSPI_D1: connect to boot-flash D1; no boot-mode pull-up in normal product mode;
+- pin 2 QSPI_D3 -> flash D3;
+- pin 3 QSPI_CS_N -> flash CS_N plus 4.7 kOhm external pull-up;
+- pin 5 QSPI_CLK -> flash CLK;
+- pin 6 SPI_CS_N -> 4.7 kOhm external pull-up;
+- remaining QSPI data pins are captured from the current XVF3800 pin table and SQ66 design files, not guessed.
+
+### Firmware/acoustic geometry
+The XMOS v3.2.1 square/rectangular geometry example uses microphone coordinates at +/-33.3 mm in X/Y, corresponding to approximately 66.6 mm corner spacing. AudioPicture's nominal 66 mm square array is therefore retained as the firmware-coordinate baseline; final as-built coordinates shall be entered in mic_geometries.yaml from PCB/mechanical CAD.
+
+### Production firmware requirement
+The production XVF3800 firmware must be rebuilt/tuned for AudioPicture rather than using an unmodified evaluation-kit binary. At minimum the product configuration must reflect:
+- exact microphone coordinates;
+- DML loudspeaker/AEC reference behavior;
+- microphone gain/sensitivity;
+- AudioPicture I2S routing;
+- raw/minimally processed measurement mode requirement.
+
+### Remaining SQ66 transcription gate
+Before marking PCB-B READY_FOR_NATIVE_KICAD_CAPTURE, obtain and inspect the official XK-VOICE-SQ66 Design Files 1V1 and record:
+1. +0V9 regulator exact MPN, feedback/passives and sequencing;
+2. +1V8 regulator exact MPN, feedback/passives and sequencing;
+3. boot QSPI flash exact MPN/capacity/decoupling;
+4. reset/clock/support networks and decoupling values;
+5. any power-good/sequencing constraints not explicit in the XVF3800 datasheet.
+
+Until that transcription is complete these MPNs remain OPEN, not guessed.
