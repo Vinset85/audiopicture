@@ -556,3 +556,101 @@ On MAIN-C:
 6. verify connector mating/removal path in shared CAD.
 
 Status: **DUAL_INTERCONNECT_JCP_POWER_JCS_SIGNAL_ARCHITECTURE_FROZEN / EXACT_MPN_AND_HARNESS_RELEASE_GATES_OPEN**.
+
+
+## 18. Exact MAIN-C <-> MAIN-P connector selections
+
+### JCP — power connector frozen candidate
+PCB header:
+**Molex 43650-0411**
+- Micro-Fit 3.0;
+- right-angle;
+- single row;
+- 4 circuits;
+- metal PCB retention clip;
+- gold mating finish;
+- manufacturer status Active at selection;
+- 8.5 A maximum per contact published for the part;
+- 600 V maximum published for the part;
+- mated height 6.98 mm.
+
+Mating receptacle family:
+**Molex 43645, 4-circuit variant**, exact housing suffix and 43030 terminal suffix to be frozen with wire gauge and harness process.
+
+Electrical assignment remains:
+1 +24V_POE_ISO
+2 +24V_POE_ISO
+3 GND
+4 GND
+
+The published current rating is not used as the design current without derating. Two contacts per pole are retained for lower resistance, thermal margin and contact redundancy.
+
+Mechanical release still requires the exact mating housing, crimp terminal, wire gauge, bend radius and unplug service volume.
+
+Status: **JCP_HEADER_43650_0411_SELECTED / MATING_HOUSING_TERMINAL_WIRE_RELEASE_OPEN**.
+
+### JCS — signal connector frozen
+**Hirose FH12-16S-0.5SH(55)**
+- 16 positions;
+- 0.5 mm pitch;
+- horizontal FPC/FFC insertion;
+- ZIF;
+- bottom contact;
+- body approximately 12.1 x 6.4 x 2.0 mm;
+- manufacturer STEP available.
+
+Use the same exact connector on MAIN-C and MAIN-P unless cable contact orientation proves that an alternate top-contact variant is required.
+
+Pin allocation remains:
+1 GND
+2 I2S_BCLK
+3 GND
+4 I2S_LRCLK
+5 GND
+6 I2S_TX
+7 GND
+8 I2S_RX
+9 GND
+10 I2C_SDA
+11 I2C_SCL
+12 AMP_PDN
+13 AMP_FAULT
+14 5V_PG
+15 3V3_PG
+16 GND
+
+Status: **JCS_FH12_16S_0_5SH_55_SELECTED / FPC_ORIENTATION_AND_LENGTH_RELEASE_OPEN**.
+
+### Harness-length seed from current board placement
+Current product-space seeds:
+- MAIN-C: X=85..235, Y=315..370 mm;
+- MAIN-P: X=105..220, Y=112..157 mm.
+
+The minimum board-edge separation is therefore approximately 158 mm between MAIN-P top edge Y=157 and MAIN-C bottom edge Y=315.
+
+Do not use a 158 mm cable. The harness must include connector setback, routing around exciter/frame volumes, bend radius and assembly/service slack.
+
+Initial CAD harness targets:
+- JCS FPC developed length: **220 mm**
+- JCP wire harness developed length: **230 mm**
+
+These are routing seeds, not production cut lengths.
+
+### First power-drop bound
+Ag53024 continuous output power is 24 W at 24 V, corresponding to approximately 1 A nominal continuous output current before conversion losses/load dynamics.
+
+With two JCP contacts in parallel per pole, connector contact current is approximately 0.5 A/contact at the nominal 24 W PoE operating point. This is far below the published 8.5 A maximum/contact rating of the selected header; wire/contact temperature-rise verification remains mandatory.
+
+For the JCP harness, start with **AWG22 copper** as the baseline candidate. Final gauge depends on actual routing, temperature rise, crimp terminal qualification and mechanical flexibility.
+
+### I2S SI seed
+At approximately 220 mm FPC length, treat I2S as a transmission-line-sensitive digital link even at 48 kHz audio rate because edge rate, not sample rate, controls ringing.
+
+Retain source damping footprints on MAIN-C:
+- BCLK: 22 ohm default, options 0/22/33;
+- LRCLK: 22 ohm default, options 0/22/33;
+- TX/RX: 22 ohm default where direction/source permits.
+
+Final values require bench/SI validation or field-solver/IBIS-quality simulation with the chosen FPC geometry.
+
+Status: **JCP_JCS_EXACT_HEADERS_SELECTED / HARNESS_220_230MM_SEEDS_DEFINED / FINAL_CABLE_AND_TERMINAL_RELEASE_OPEN**.
