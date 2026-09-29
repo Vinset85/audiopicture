@@ -441,3 +441,11 @@ Status U102: **FROZEN_DEVICE_PACKAGE / BOOT_IMAGE_AND_PROGRAMMING_VALIDATE**.
 
 ## J101 physical-map gate refinement
 FH12-16S-0.5SH(55) remains frozen as a 16-position, 0.5 mm pitch, bottom-contact horizontal ZIF. The connector drawing alone does not define whether a finished FPC preserves or reverses contact order between its two ends; that depends on the selected same-side/opposite-side FPC contact construction. Therefore final net-to-contact numbering is deliberately not frozen until the production FPC construction/drawing is selected. This is a cable-definition gate, not an electrical-schematic uncertainty.
+
+
+## Microphone privacy switch and acoustic-footprint production freeze
+Q101 = **Texas Instruments TPS22913CYZVR**: TPS22913C, active production orderable, YZV 4-ball DSBGA, 0.5 mm pitch, large tape-and-reel. This exact C variant retains full-time reverse-current protection and quick output discharge required by the privacy architecture. Use TI YZV manufacturer land pattern; no generic substitute footprint.
+
+MIC101..MIC104 remain **Infineon IM72D128V01XTMA1**, PG-LLGA-5-3. Native footprint shall reproduce the Infineon manufacturer SMD-pad/stencil recommendation. The microphone is bottom-port; PCB acoustic sound port is frozen at **0.8 mm diameter (R0.4 mm)** per Infineon recommendation. Preserve the manufacturer copper/solder-mask geometry around the port and prohibit vias, copper intrusion, adhesive or conformal coating in the acoustic opening/keep-out. Pin-1 orientation must be explicit on assembly documentation.
+
+Status: **Q101_EXACT_ORDERABLE_AND_MIC_ACOUSTIC_PORT_FROZEN / ASSEMBLY_DFM_VALIDATE**.
