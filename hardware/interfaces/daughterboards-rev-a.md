@@ -1,6 +1,6 @@
 # Sheet 07 — Daughterboard Interfaces / Expansion Rev.A
 
-Status: **interface contract FROZEN Rev.A**. Exact FPC connector family/pitch remains VALIDATE_MECHANICAL_SI.
+Status: **READY_FOR_NATIVE_KICAD_CAPTURE_WITH_FPC_MECHANICAL_DRAWING_GATE**. Connector family is frozen to Hirose FH12, 0.5 mm ZIF.
 
 ## 1. Design rules
 MAIN connects to:
@@ -79,17 +79,11 @@ PCB-C performs:
 W5500 remains on MAIN and shares only SPI_SCLK/MOSI/MISO; ETH_CS and RADAR_CS remain independent.
 
 ## 5. Radar reset/enable implementation
-The current ESP32 map uses GPIO16 for radar reset/enable control.
-
-If PCB-C requires independent RADAR_RST and RADAR_EN electrical controls, J201 pins 10/11 shall be resolved by:
-- deriving one signal locally with a reset supervisor/load-switch timing network; or
-- assigning the remaining GPIO42 to the second function.
-
-Preferred freeze target:
+Frozen independent controls:
 - GPIO16 = RADAR_EN
 - GPIO42 = RADAR_RST
 
-This uses the available expansion pin and avoids ambiguous tied reset/enable behavior.
+No tied reset/enable implementation is permitted.
 
 ## 6. J301 ENV — 8 pins
 | Pin | Net | Direction at MAIN | Purpose |
