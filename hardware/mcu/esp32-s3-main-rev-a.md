@@ -352,3 +352,93 @@ No safety-relevant enable may rely on ESP32 internal pulls alone.
 None of these safe-state networks uses GPIO0/GPIO3/GPIO45/GPIO46, so the external bias network does not alter ESP32-S3 strapping.
 
 Status: **SAFE_STATES_FROZEN_FOR_CAPTURE**.
+
+
+## Final electrical capture gates — 2026-09-29
+
+### ESP32-S3-WROOM-1 local supply network
+Rev.A capture baseline:
+- module 3V3 supply fed directly from +3V3_SYS with a short/wide low-impedance path;
+- **10 uF X7R/X7S local bulk** at the module supply entrance;
+- **100 nF X7R local high-frequency bypass** adjacent to the supply entry;
+- no ferrite bead in series by default: avoid adding rail impedance during Wi-Fi current bursts unless RF/EMI testing demonstrates a need;
+- TPS62823 output/bulk network remains the upstream source of transient energy.
+
+Acceptance gate: +3V3_SYS at the module must remain inside Espressif operating limits during worst-case Wi-Fi/BLE burst plus concurrent Ethernet/radar activity.
+
+### I2C pull-up freeze
+MAIN owns the shared I2C pull-ups:
+- SDA: **4.7 kOhm to +3V3_SYS**
+- SCL: **4.7 kOhm to +3V3_SYS**
+- one owner only; daughterboards shall not populate parallel pull-ups by default.
+
+At 3.3 V the static low-state current is about 0.70 mA per asserted line.
+
+For Standard/Fast-mode operation, total bus capacitance must remain within the I2C electrical timing budget. With 4.7 kOhm, use **400 pF as an absolute bus-capacitance ceiling only for Standard-mode analysis**; for 400 kHz operation the practical capacitance target is much lower and must be checked from measured/calculated rise time.
+
+Rev.A firmware baseline:
+- boot/discovery: 100 kHz permitted;
+- normal target: 400 kHz only after bus rise-time validation across MAIN + FPC + PCB-B/C/D.
+
+Provide SDA/SCL test points near the MAIN bus origin.
+
+### Shared SPI source damping
+Populate optional source-side damping footprints:
+- GPIO12 / SPI_SCLK: **22 ohm default**
+- GPIO11 / SPI_MOSI: **22 ohm default**
+- GPIO10 / ETH_CS: **22 ohm default**
+- GPIO14 / RADAR_CS: **22 ohm default**
+
+MISO is driven by two different slaves and therefore does not receive a single MCU-source resistor. If SI requires damping, place device-side optional series footprints at each slave output instead.
+
+All series resistors must be physically near the signal source they damp.
+
+Rev.A status:
+- 22 ohm = POPULATE_DEFAULT;
+- tuning range = 0/22/33 ohm after SI validation.
+
+Firmware must never assert ETH_CS and RADAR_CS simultaneously.
+
+### Shared SPI frequency policy
+Do not freeze one global SPI clock.
+Firmware configures each transaction for the target slave:
+- W5500 according to its validated SPI timing limit and board SI;
+- BGT60TR13C according to radar/level-translator timing limits.
+
+Boot starts at conservative clock rates; production firmware may raise each device rate only after hardware validation.
+
+### Antenna implementation gate
+For ESP32-S3-WROOM-1 PCB-antenna variant:
+- place antenna end at a MAIN PCB edge;
+- preferred geometry is antenna projecting beyond the host-board ground/copper boundary;
+- no copper, ground, traces, components, screws, metal brackets or shielding inside the Espressif antenna keep-out volume;
+- keep Class-D inductors, PoE magnetics/module and DML exciter metal as far as practical;
+- do not place conductive DML skin directly over/behind the antenna field region.
+
+The exact keep-out dimensions and module courtyard must be copied from the current Espressif recommended land pattern during native PCB capture, not redrawn from memory.
+
+If enclosure/FEA/RF layout cannot provide a clean antenna zone, change to the WROOM-1U external-antenna variant before PCB release.
+
+### Sheet-04 capture status
+Electrical decisions now sufficient for native schematic capture:
+- MCU module/version frozen;
+- GPIO contract verified;
+- memory pins protected;
+- strapping pins protected;
+- CHIP_PU RC frozen;
+- safety pulls frozen;
+- native USB pins frozen;
+- I2C pull-ups frozen;
+- shared SPI topology and source damping frozen;
+- I2S pin ownership frozen;
+- UART/debug strategy frozen.
+
+Status: **READY_FOR_NATIVE_KICAD_CAPTURE_WITH_LAYOUT_RF_GATES**.
+
+Production/Gerber release remains blocked by:
+1. Espressif land-pattern/antenna keep-out transcription and visual audit;
+2. enclosure-level Wi-Fi/BLE RF validation;
+3. +3V3 transient validation under radio bursts;
+4. shared-SPI SI validation including radar translator;
+5. USB ESD/VBUS review with Sheet 06;
+6. recovery/OTA/factory-mode validation.
