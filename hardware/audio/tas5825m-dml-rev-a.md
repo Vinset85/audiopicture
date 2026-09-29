@@ -323,3 +323,34 @@ Release conditions remain:
 5. import and cross-check the manufacturer 3D model.
 
 Status: **OUTPUT_INDUCTOR_CANDIDATE_XAL7050_103_SELECTED / LC_AND_THERMAL_RELEASE_GATES_REMAIN**.
+
+
+## PVDD bulk-capacitor production candidate — 2026-09-29
+
+The first production-qualified candidate for the TAS5825M local PVDD bulk function is:
+
+**Panasonic EEU-FR1V471B**
+- aluminum electrolytic, radial;
+- 470 uF +/-20%;
+- 35 VDC;
+- 105 C;
+- case approximately 10 mm diameter x 16 mm height;
+- rated ripple approximately 1.79 A under published series conditions;
+- low-impedance / low-ESR FR family;
+- long-life 105 C family.
+
+Mechanical classification: **H4 (>15 mm)** in the AudioPicture MAIN height map.
+
+The narrower Panasonic EEU-FR1V471LB family option is not preferred for the nominal layout: its approximately 8 mm diameter is attractive, but height rises to about 20..22 mm and rated high-frequency ripple is about 1.56 A. It remains an alternate for a narrow XY corridor only.
+
+The previous aspirational 10..12.5 mm height target for a single 470 uF / 35 V radial low-ESR capacitor is therefore removed. Mechanical zoning shall accommodate a 16 mm nominal can rather than selecting an electrically weaker part solely for height.
+
+Release conditions:
+1. confirm exact suffix/lead form and manufacturer dimensional drawing at BOM release;
+2. verify ripple-current spectrum from the real TAS5825M operating modes;
+3. calculate hot-spot temperature and lifetime in the sealed enclosure;
+4. verify inrush interaction and source impedance;
+5. maintain local ceramic decoupling as separately specified;
+6. import/cross-check the exact mechanical envelope in master CAD.
+
+Status: **PVDD_BULK_CANDIDATE_EEU_FR1V471B_SELECTED / RIPPLE_THERMAL_LIFETIME_RELEASE_GATES_REMAIN**.
