@@ -269,3 +269,20 @@ J101 = **Hirose FH12-16S-0.5SH(55)**.
 Verified family attributes: 16 positions, 0.5 mm pitch, bottom-contact ZIF, horizontal insertion, 0.30 mm FPC, 0.5 A/contact.
 
 The MPN is frozen. The final 1..16 net assignment remains blocked only on mating-view/FPC-orientation review; do not infer it by mirroring the legacy 14-signal table.
+
+
+## QSPI boot electrical gate closure — 2026-09-29
+Official XVF3800 documentation plus the XK-VOICE-SQ66 product specification establish:
+- production local boot uses quad-capable QSPI flash;
+- XK-VOICE-SQ66 reference capacity = **32 Mbit**;
+- QSPI I/O belongs to XVF3800 IOL domain;
+- VDDIOL = **+3V3_SYS** in AudioPicture, therefore the selected QSPI flash shall be a 3.3 V device compatible with that I/O domain;
+- QSPI_CS_N has an external **4.7 kOhm pull-up**;
+- QSPI_D1/BOOTSEL connects directly to flash D1 for QSPI master boot and shall not be strapped high in normal production mode;
+- QSPI_D0/D1/D2/D3/CLK/CS are point-to-point local PCB-B nets;
+- flash is placed adjacent to U101, QSPI_CLK shortest, continuous GND, no production test stubs.
+
+The exact SQ66 flash order code remains **OPEN_SQ66_ARCHIVE_TRANSCRIPTION**. Do not substitute an arbitrary 1.8 V flash.
+
+Status for U102:
+**32_MBIT_3V3_QSPI_ELECTRICAL_INTERFACE_FROZEN / EXACT_MPN_OPEN**.
