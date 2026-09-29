@@ -17,23 +17,24 @@ Loads:
 INA228 measures the total post-ORing system current consumed from +24V_RAW.
 
 ## 2. Current shunt
-RSH1:
-- 10 mOhm
-- 4-terminal/Kelvin
-- >=0.5 W
-- <=1% tolerance; lower TCR preferred.
-
-Candidate family: Vishay WSK2512 or qualified equivalent.
+RSH1 baseline is revised to **7.5 mOhm**:
+- 4-terminal/Kelvin;
+- >=0.5 W;
+- <=0.5% preferred, low TCR.
 
 At 3 A:
-- Vshunt = 30 mV
-- Pshunt = 90 mW.
+- Vshunt = 22.5 mV;
+- Pshunt = 67.5 mW.
 
-At 4 A transient:
-- Vshunt = 40 mV
-- Pshunt = 160 mW.
+At 4 A:
+- Vshunt = 30 mV;
+- Pshunt = 120 mW.
 
-This fits the planned INA228 high-sensitivity shunt range with little margin at 4 A; firmware/analog range selection must therefore be verified against actual peak current before freeze.
+At 5 A transient:
+- Vshunt = 37.5 mV;
+- Pshunt = 187.5 mW.
+
+With INA228 ADCRANGE=1 (±40.96 mV), 7.5 mOhm gives approximately **5.46 A full-scale**, preserving the high-sensitivity range while providing substantially more transient headroom than 10 mOhm.
 
 ## 3. INA228
 U7: **INA228AIDGSR**.
@@ -77,7 +78,7 @@ Kelvin traces:
 Audio-local bulk belongs primarily at TAS5825M Sheet 05.
 
 Sheet 03 provides controlled rail bulk/ceramic decoupling sufficient for converter input stability while respecting:
-- Ag5324 startup;
+- Ag53024 startup;
 - hot-plug;
 - source handover;
 - LM74700 behavior.
@@ -169,7 +170,7 @@ Boot sequence must not enable audio/radar/voice until required rails are valid.
 Exact supervisor topology: VALIDATE_CAPTURE.
 
 ## 11. PoE power budget
-Ag5324 continuous budget baseline: ~24 W available from its isolated 24 V output under rated conditions.
+Ag53024 application continuous budget baseline: **22.5 W maximum continuous output** for a fully IEEE 802.3at-compliant application, per the current Silvertel guidance. 30 W is transient/module capability only and is not the continuous application budget.
 
 System design shall reserve power for:
 - conversion losses;
@@ -262,3 +263,35 @@ Sheet 03 becomes FROZEN only after:
 8. converter thermal simulation/measurement;
 9. load-transient validation;
 10. EMI pre-compliance.
+
+
+## Sheet-03 first freeze review — 2026-09-29
+
+### INA228 range decision
+Use INA228 **ADCRANGE = 1, +/-40.96 mV** with the revised 7.5 mOhm shunt baseline.
+This yields approximately 5.46 A measurable full scale.
+
+Do not use the +/-163.84 mV range unless later transient testing proves >5.4 A legitimate system current.
+
+### Shunt exact-part gate
+Preferred family remains Vishay WSK2512 / WSLP2512-class 4-terminal low-TCR current-sense resistor, but exact 7.5 mOhm orderable MPN must be verified before BOM freeze.
+
+Target:
+- 7.5 mOhm;
+- true Kelvin / 4-terminal geometry preferred;
+- <=0.5%;
+- <=50 ppm/C preferred;
+- >=0.5 W, preferably >=1 W for low self-heating.
+
+### 3.3 V converter current gate
+Do not freeze TPS62823 solely from its 3 A headline rating. Before final freeze, sum worst-case +3V3_SYS loads including:
+- ESP32-S3-WROOM Wi-Fi peaks;
+- W5500;
+- INA228;
+- radar support/local 1.8 V input power reflected to 3.3 V;
+- ENV and status logic;
+- daughterboard/control overhead.
+
+The XVF3800 main 5 V load is accounted on +5V_SYS, not blindly added to +3V3_SYS.
+
+Status: **TPS62823 RETAINED_CANDIDATE / LOAD_BUDGET_VERIFY**.
