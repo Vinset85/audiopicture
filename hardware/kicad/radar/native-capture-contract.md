@@ -290,3 +290,32 @@ U204/U205 SN74AXC4T245BQBRG4 remain valid. TI explicitly provides Ioff partial-p
 
 Capture status promoted to:
 **READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE / RADAR_NOISE_RF_AND_MECHANICAL_RELEASE_GATES_REMAIN**.
+
+
+## BGT60TR13C PG-VF2BGA-40 pin-by-pin capture audit — 2026-09-29
+Authority: Infineon BGT60TR13C datasheet V2.4.9 pin definition tables.
+
+Functional balls are frozen as follows:
+- A1,A2 VSSD -> GND;
+- B1 CLK -> translated SPI_SCLK;
+- C1 IRQ -> translated RADAR_IRQ;
+- D1 DI/DIO0 -> translated SPI_MOSI;
+- E1 DO/DIO1 -> translated SPI_MISO;
+- F1 DIO3 -> translated RADAR_RST (hardware reset function);
+- G1 CS_N -> translated RADAR_CS;
+- H1 VDDD -> filtered +1V8_RADAR VDDD branch;
+- J1 VDDA -> filtered +1V8_RADAR VDDA branch;
+- K1 VSSA -> GND;
+- L1 VAREF -> manufacturer reference bypass only, never externally driven;
+- M1,F9,G9 VDDRF -> filtered +1V8_RADAR VDDRF branch;
+- M2 OSC_CLK -> 80 MHz reference-clock network;
+- M3 VDDLF -> filtered +3V3_SYS VDDLF branch;
+- M4 VDDPLL -> filtered +1V8_RADAR VDDPLL branch;
+- M5 DIV_TEST -> local RF diagnostic VCO/16 output; production functional path NC, no long test stub;
+- M6 VDDVCO -> filtered +1V8_RADAR VDDVCO branch.
+
+All VSSRF balls are GND per Infineon and must participate in the reference RF-ground/via implementation: M7,M9,L9,K9,J9,H9,E9,D9,C9,B9,B8,A9,A8,A7,A6,A5,B4,A4,B3,A3. Do not convert these into generic NC balls and do not create split ground islands.
+
+DIO2 is not available on BGT60TR13C and therefore has no package connection to capture. Digital I/O belongs to VDDD=1.8 V; no MAIN 3.3 V signal may bypass U204/U205. SPI may reach 50 MHz electrically, but AudioPicture retains conservative bring-up and SI-qualified production rate.
+
+Package capture status: **PINOUT_AUDITED / READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE**.
