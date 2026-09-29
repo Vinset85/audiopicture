@@ -204,3 +204,49 @@ The exact mechanical source/model remains mandatory before full collision releas
 The CAD release rule is unchanged: a manufacturer drawing-derived conservative solid is acceptable where no trustworthy native STEP is available.
 
 Status: **CONNECTOR_AND_AUDIO_ENVELOPES_PARTIALLY_VERIFIED / EXCITER_POE_ETHERNET_ENVELOPES_REMAIN**.
+
+
+## 16. EX25FHE2-4 successor mechanical closure — critical architecture impact
+
+Dayton Audio Engineering Change Document dated 2024-02-20 confirms the successor geometry differs materially from DAEX25FHE-4.
+
+### Legacy DAEX25FHE-4
+- nominal main diameter: 50.5 mm;
+- overall framed width envelope: approximately 58.3 x 56 mm including mounting structure;
+- rear depth: 20.5 +/-0.5 mm;
+- net mass: 110.9 g;
+- Fs approximately 224 Hz.
+
+### Successor EX25FHE2-4
+Manufacturer change drawing gives approximately:
+- framed outer envelope: 58.3 +/-0.5 x 56 +/-0.3 mm;
+- rear depth: **25.5 +/-0.5 mm**;
+- voice-coil diameter: 25 mm;
+- Re 4.3 ohm;
+- Le 0.10 mH;
+- RMS power 24 W;
+- Fs approximately **115 Hz**.
+Current distributor data lists mass approximately 113 g.
+
+### Mechanical consequence
+The successor is about 5 mm deeper than the legacy reference. Therefore the previous >=23 mm rearward exciter keep-out is superseded for successor studies.
+
+Use preliminary successor envelope:
+- XY bounding box >=60 x 58 mm including tolerance/service margin before exact STEP;
+- radial shorthand R=31 mm may be used only for coarse screening;
+- Z rearward keep-out from DML mounting plane >=27 mm before terminal/wire service volume.
+
+### 40 mm architecture consequence
+With a working DML rear mounting plane near product Z=8 mm, the successor body may extend to approximately Z=34 mm. The prior MAIN seed with component-side plane at Z=34 mm and components facing the DML is therefore **not compatible with direct XY overlap** with the successor exciter.
+
+This does not yet invalidate the 40 mm product envelope. It invalidates the assumption that useful component height exists directly behind successor exciter projections.
+
+New rule:
+- successor exciter projected XY regions are full-depth PCB/component/frame exclusion zones except where exact geometry proves a lateral cavity;
+- MAIN tall and low components alike shall be routed around those projected bodies;
+- bare PCB overlap is allowed only if exact STEP and board-plane geometry prove physical clearance, and is not assumed.
+
+### Acoustic consequence
+The successor's free-air Fs shift from approximately 224 Hz to 115 Hz is large enough that it requires its own electromechanical DML model. Legacy DAEX structural/acoustic tuning cannot be transferred unchanged.
+
+Audit state: **EX25FHE2_4_MANUFACTURER_DRAWING_VERIFIED / STEP_IMPORT_PENDING / Z_STACK_REOPTIMIZATION_REQUIRED**.
