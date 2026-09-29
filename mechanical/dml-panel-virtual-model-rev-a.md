@@ -279,3 +279,38 @@ The numerically lowest modal correlation is NOT automatically the stereo winner:
 Dayton confirms that stereo can be produced by exciters on one panel and that image quality depends on exciter distance and symmetry; Dayton also advises against evenly spaced multiple exciters. Therefore the production solution shall balance stereo geometry against DML modal optimization rather than applying either rule alone.
 
 Status: **STEREO_PAIRING_OBJECTIVE_DEFINED / NO_FINAL_LR_PAIR_OR_COORDINATES_FROZEN**.
+
+
+## 19. Horizontal-stereo constrained placement — Candidate A
+
+A second geometry-only optimization was run with explicit horizontal stereo constraints:
+- LEFT exciters constrained to x=45..125 mm;
+- RIGHT exciters constrained to x=175..255 mm;
+- minimum exciter-to-exciter distance 55 mm;
+- minimum within-channel vertical offset 70 mm;
+- non-uniform placement retained;
+- objectives combine modal-coupling uniformity, low normalized L/R modal correlation, horizontal centroid separation and channel aggregate-sensitivity balance.
+
+One high-scoring seed is:
+
+LEFT:
+- L1 = (50,83) mm
+- L2 = (96,169) mm
+
+RIGHT:
+- R1 = (204,243) mm
+- R2 = (237,123) mm
+
+Geometry-only diagnostics:
+- horizontal L/R centroid separation ~=147 mm;
+- normalized L/R modal-vector correlation ~=0.006;
+- aggregate modal-vector norm imbalance ~=0.24%.
+
+Interpretation:
+This is the first AudioPicture placement seed that simultaneously preserves deliberate DML asymmetry and a true horizontal LEFT/RIGHT geometry. It is designated **Candidate A**, not a production coordinate set.
+
+The candidate must now survive detailed sandwich FEA, compliant-edge modeling, real exciter mass/contact, acoustic radiation, radar/VOICE exclusion volumes, wiring clearance and tolerance analysis. Final optimization shall permit local movement around these points rather than locking them.
+
+Manufacturer guidance remains consistent with this search strategy: multiple exciters should not be evenly spaced, unequal edge/inter-exciter distances are preferred, and stereo image on a single panel depends on L/R exciter separation and placement symmetry. In AudioPicture, acoustic optimization has authority over simple geometric symmetry.
+
+Status: **DML_PLACEMENT_CANDIDATE_A_DEFINED / DETAILED_FEA_NOT_YET_FROZEN**.
