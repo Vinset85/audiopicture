@@ -49,3 +49,14 @@ ESP32-S3 is host/master for the synchronized AudioPicture audio domain:
 - RX XVF3800 processed microphone path.
 
 Exact peripheral assignment and DMA topology are firmware validation items.
+
+
+## Pin-budget release gate
+The earlier conceptual map did not assign dedicated safe GPIOs for RADAR_SCLK/MOSI/MISO plus VOICE_RST/VOICE_IRQ. Do not silently consume strapping or memory pins.
+
+Before schematic freeze choose one validated topology:
+1. allocate genuinely free safe WROOM-1-N16R8 GPIOs;
+2. share the W5500 SPI bus with radar using independent CS and firmware arbitration;
+3. move low-speed reset/IRQ controls to an I2C GPIO expander.
+
+This decision must be reflected in schematic, firmware pin map and factory test together.
