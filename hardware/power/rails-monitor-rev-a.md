@@ -295,3 +295,45 @@ Do not freeze TPS62823 solely from its 3 A headline rating. Before final freeze,
 The XVF3800 main 5 V load is accounted on +5V_SYS, not blindly added to +3V3_SYS.
 
 Status: **TPS62823 RETAINED_CANDIDATE / LOAD_BUDGET_VERIFY**.
+
+
+## Preliminary rail power budget — 2026-09-29
+
+### +3V3_SYS conservative design budget
+Use datasheet peak/normal figures where available and engineering allowances where daughterboard conversion details are not yet frozen.
+
+Direct 3.3 V loads:
+- ESP32-S3-WROOM-1-N16R8: reserve **500 mA design peak**. Espressif documents up to ~355 mA Wi-Fi TX peak for the module; additional margin covers PSRAM/digital activity and rail transient design.
+- W5500: reserve **150 mA**; datasheet normal/100BASE-TX figures are ~132 mA.
+- INA228 + ENV + status/control/I2C pullups: reserve **30 mA**.
+- Radar support reflected onto 3.3 V: reserve **180 mA input-equivalent** until the 1.8 V regulator efficiency/duty-cycle profile is frozen. BGT60TR13C can reach ~200-230 mA at 1.8 V while fully active, although duty-cycled presence operation is far lower.
+- Voice-board 3.3 V I/O/mic/control allowance: **150 mA** pending the XVF3800 daughterboard regulator tree freeze.
+- engineering/transient margin: **300 mA**.
+
+Conservative +3V3_SYS design envelope: approximately **1.31 A**.
+
+Even allowing substantial simultaneous transient margin, this is well below the TPS62823 3 A capability.
+
+Decision: **TPS62823 retained and promoted to FROZEN_CONTROLLER**, subject to thermal/passive/layout validation.
+
+### +5V_SYS conservative design budget
++5V_SYS supplies:
+- TPS62823 input. At 3.3 V x 1.31 A = 4.32 W and ~90% conversion efficiency, approximately 0.96 A is drawn from 5 V.
+- XVF3800/VOICE local regulator tree: reserve **0.8 A at 5 V** until the exact XU316/XVF3800 rail implementation is frozen.
+- expansion/internal 5 V allowance: **0.25 A**.
+- transient/design reserve: **0.35 A**.
+
+Conservative 5 V design envelope: approximately **2.36 A**.
+
+Decision: TPSM63603V5 3 A remains suitable with ~0.64 A nominal design margin, but thermal derating at 24 V input and enclosure temperature is mandatory before production freeze.
+
+### Architecture consequence
+The 3.3 V converter is not the limiting logic rail. The tighter rail is the 5 V converter because it carries both the entire 3.3 V downstream power and the XVF3800 daughterboard conversion load.
+
+Do not add arbitrary new 5 V expansion loads without re-running this budget.
+
+### Radar power note
+Infineon lists BGT60TR13C active current in the ~200 mA class at 1.8 V and also documents sub-5 mW operation with duty cycling. Size the regulator and decoupling for active peaks; use duty cycling only for average-power budgeting.
+
+### Voice power note
+XVF3800 is not a native 5 V IC. Its documented rails include 0.9 V core, 1.8 V I/O/USB and 3.3 V I/O. The 5 V budget above is therefore an allocation to the PCB-B local regulator tree, not a direct 5 V XVF3800 supply. Sheet PCB-B must freeze those local regulators before this allowance becomes a verified number.
