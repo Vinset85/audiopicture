@@ -626,3 +626,68 @@ Static threshold margin alone is insufficient. Before production freeze, transie
 If this cannot be guaranteed for arbitrary fast surges, the front-end TVS/surge network must bound the slew/amplitude and the hardware OVP is treated as sustained-overvoltage protection, not nanosecond surge clamping.
 
 Status: **LOGIC_ARCHITECTURE_FROZEN / TRANSISTOR_RC_VALUES_PENDING**.
+
+
+## Sheet-02 remaining component baseline — 2026-09-29
+
+### F101 external-input fuse
+Baseline production candidate: **Littelfuse 0453004.MR**
+- NANO2 453 series SMD time-lag fuse;
+- 4 A;
+- 125 V rating;
+- interrupting rating and time-current curve shall be checked against the selected 24 V adapter and TVS fault model;
+- compact surface-mount package.
+
+Status: **FROZEN_CANDIDATE / I2T_COORDINATION_VALIDATE**.
+
+A 4 A time-lag rating is intentionally above the recommended 24 V / 3 A adapter continuous current to reduce nuisance opening from audio crest/inrush. It is not permission for >3 A continuous product operation.
+
+### D101 front-end TVS
+Baseline remains **STMicroelectronics SMBJ33A-TR**:
+- unidirectional;
+- VRWM = 33 V;
+- 600 W 10/1000 us class;
+- SMB package.
+
+Role is strictly connector/front-end surge suppression protecting the 100 V switching front end. It does NOT guarantee the <=26.4 V TAS5825M rail envelope; sustained OVP is handled by comparator-controlled disconnect.
+
+Status: **FROZEN_ROLE_AND_PACKAGE / PULSE_ENERGY_VALIDATE**.
+
+### Precision reference exact MPN
+VREF_EXT = **Texas Instruments LM4040A25IDBZR**
+- fixed 2.5 V;
+- A grade;
+- SOT-23 DBZ;
+- industrial temperature range.
+
+Status: **FROZEN_DEVICE_PACKAGE**.
+
+Initial R_REF_BIAS = **200 kohm, 0.1%, >=0.125 W**.
+At 24 V this gives approximately 107.5 uA before reference/comparator-network loading.
+At 20.5 V approximately 90 uA.
+This is deliberately close to the full-temperature minimum-current requirement and therefore remains **VALIDATE_CURRENT_MARGIN**. Preferred production bias may be reduced to 180 kohm after total loading/power analysis to increase regulation margin.
+
+### Break-before-make timing network
+Do not freeze a single RC against TPS48100 control pins until the final transistor interface is captured.
+
+Electrical timing target is frozen:
+- protection/source OFF command: no intentional delay; target <100 us logic-interface delay;
+- opposite-source ON command: nominal **1.0 ms** delayed;
+- acceptable initial design window: 0.5-2.0 ms.
+
+Preferred discrete delay cell:
+- 100 kohm / 10 nF nominal RC = 1.0 ms time constant;
+- steering diode provides fast discharge / immediate OFF;
+- small qualified NPN/NMOS translates the delayed node into controller INP/EN logic;
+- add explicit default pull resistor so an unpowered/open comparator cannot enable the external source.
+
+The actual switching delay is not equal to one RC time constant; it depends on transistor threshold and controller input thresholds. Therefore 100 kohm/10 nF is a starting capture value, not yet a timing guarantee.
+
+### Sheet-02 status
+Electrical architecture is now **READY_FOR_DETAILED_NATIVE_CAPTURE**, with the following production-validation gates still open:
+1. F101 time-current/I2t coordination with real 24 V adapter and TVS fault;
+2. SMBJ33A pulse-energy model;
+3. LM4040 bias-current corner including all reference loading;
+4. exact transistor interlock schematic and resulting dead time;
+5. SPICE transient handover/OVP;
+6. KiCad 9 ERC and layout-current-path review.
