@@ -299,3 +299,62 @@ Only one of the two bridge paths normally carries the delivered input current fo
 For the 24 V Silvertel variant, baseline output capacitor is **220 uF / 25 V minimum class** per current Ag5300-family guidance, located close to module output. Increase voltage margin (e.g. 35 V) if mechanical height and ESR/temperature requirements permit.
 
 Status: FROZEN_MINIMUM_CLASS / EXACT_MPN_VALIDATE.
+
+
+## Audit pass 7 — PoE current and rectifier thermal decision
+
+### SM13126PEL current gate
+Current Bourns datasheet explicitly specifies:
+- 10/100 Base-Tx PoE transformer;
+- 1:1 turns ratio;
+- 1500 Vac Hi-Pot;
+- PoE current up to 350 mA.
+
+Because AudioPicture is an IEEE 802.3at Type-2/Class-4 PD, do NOT mark SM13126PEL FROZEN until the 350 mA rating is reconciled with the maximum pair current of the selected PSE/PD operating envelope and the exact Bourns winding-current definition.
+
+Status remains PREFERRED_CANDIDATE_CURRENT_GATE.
+
+### Rectifier technology — Rev.A baseline
+Silvertel's 2025 PoE power application note compares:
+- DF01S silicon bridge: ~0.9 V per conducting diode;
+- SS36 Schottky implementation: <0.4 V per conducting diode;
+- FDMQ8205A active MOSFET bridge: ~130 mOhm typical series resistance per pairset plus drive loss.
+
+Rev.A baseline is **Schottky rectification**, not DF01S.
+
+Reason:
+- materially lower loss than silicon bridge;
+- simpler/lower-risk than active bridge;
+- appropriate compromise for a 40 mm fanless enclosure.
+
+Implement BR201 and BR202 as four-diode Schottky bridges using **8 total diode elements**, with SS36-class electrical capability as the initial reference.
+
+Exact diode MPN remains VALIDATE:
+- reverse voltage >= PoE maximum plus transient margin;
+- forward current margin;
+- low Vf at actual pair current;
+- surge capability;
+- package thermal resistance;
+- creepage/clearance and assembly.
+
+Active bridge FDMQ8205A remains an optional thermal optimization, not baseline.
+
+### First-order bridge loss
+Only the energized 2-pair path carries full load in normal Type-2 operation.
+
+Approximate active-path conduction loss:
+- silicon DF01S class: P ~= 2 * 0.9 V * I = 1.8 I;
+- Schottky class: P ~= 2 * 0.4 V * I = 0.8 I;
+- active bridge: P ~= I^2 * 0.13 ohm plus controller loss.
+
+At 0.60 A illustrative cable/bridge current:
+- silicon ~= 1.08 W;
+- Schottky ~= 0.48 W;
+- active ~= 0.047 W + drive loss.
+
+0.60 A is an engineering comparison point, not a frozen operating current. Final worst-case current shall come from the Ag53024/IEEE operating envelope.
+
+### Ag53024 power constraint
+Ag53024 is 24 W continuous / 30 W peak, 24 V nominal output, 1 A max output class, with 41-57 V input according to current distributor/manufacturer data.
+
+System firmware and TAS5825M PoE profile shall budget from 24 W continuous.
