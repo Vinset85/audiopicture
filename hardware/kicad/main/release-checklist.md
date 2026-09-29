@@ -21,3 +21,11 @@
 - [ ] ERC clean with justified exceptions only.
 - [ ] BOM contains manufacturer orderable MPNs for all production parts.
 - [ ] No VALIDATE component accidentally marked production-ready.
+
+
+## Native capture gate
+- [ ] Review `symbol-footprint-audit.md`.
+- [ ] No hand-authored/guessed KiCad native files.
+- [ ] Every production footprint verified against manufacturer land pattern before Gerber release.
+- [ ] ESP32 module antenna land-pattern/keep-out checked against Espressif drawing.
+- [ ] Power-package exposed-pad and thermal-via patterns reviewed.
