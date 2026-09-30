@@ -1,185 +1,202 @@
-# AudioPicture V2.2 — front carrier Rev.B DML-clearance CAD result
+# AudioPicture V2.2 Rev.B — front carrier DML-clearance redesign
 
-Status: **REV_B_REAL_BREP_PASS / ONE_VALID_SOLID / MAGNET_RIGID_PADS_OUTSIDE_DML_PROJECTION / DMU_INTEGRATION_READY**
+Status: **MAGNET_STATIONS_MOVED_TO_PERIMETER / D_SHAPED_PADS_DEFINED / DML_HARD_OVERLAP_REMOVED_BY_CONSTRUCTION / REAL_KERNEL_REGEN_REQUIRED**
 
-## 1. Objective
-Remove the front-carrier Rev.A magnetic-pad overlap with the projected DML hard region while preserving:
-- one connected ASA carrier;
-- eight magnetic stations;
-- 6.6 mm pocket class;
-- lower-center peel recess;
-- 318.4 x 398.4 mm outer carrier;
-- <=3.2 mm local Z extent.
+## 1. Purpose
+Correct the Rev.A front-carrier magnetic station geometry after the integrated DMU detected overlap between 12 mm circular pads and the projected DML perimeter.
 
-DML projected hard region:
-X=10..310 mm
-Y=10..390 mm.
+The DML remains unchanged.
 
-## 2. Rev.B architecture
-The original circular 12 mm pads are withdrawn.
+## 2. Authoritative product geometry
+Product:
+320 x 400 mm.
 
-Rev.B uses perimeter-biased local pads:
-- top/bottom: 12 x 8 mm class;
-- left/right: 8 x 12 mm class;
-- local total thickness 3.2 mm.
+DML projected hard rectangle:
+X=10..310
+Y=10..390.
 
-The rigid pad body is placed outside the DML projected hard region and joined to the 10 mm carrier ring.
+Front carrier outer boundary:
+X=0.8..319.2
+Y=0.8..399.2.
 
-## 3. Station intent vs pocket center
-The previous Rev.B station seeds remain useful as attraction/retention layout intent:
-M1B (70,388)
-M2B (250,388)
-M3B (70,12)
-M4B (250,12)
-M5B (12,135)
-M6B (12,275)
-M7B (308,135)
-M8B (308,315).
-
-However, a 6.6 mm circular pocket centered at those points would still extend into the DML projection.
-
-Therefore the actual CAD pocket centers are shifted outward.
-
-## 4. Actual Rev.B pocket centers
+## 3. Rev.B magnet centers
 Top:
-- M1P = (70,394)
-- M2P = (250,394)
+M1B=(70,388)
+M2B=(250,388)
 
 Bottom:
-- M3P = (70,6)
-- M4P = (250,6)
+M3B=(70,12)
+M4B=(250,12)
 
 Left:
-- M5P = (6,135)
-- M6P = (6,275)
+M5B=(12,135)
+M6B=(12,275)
 
 Right:
-- M7P = (314,135)
-- M8P = (314,315).
+M7B=(308,135)
+M8B=(308,315).
 
-These are now the authoritative pocket-center seeds for the Rev.B carrier.
+## 4. Why circular pads are rejected
+A circular pad around these centers still extends across the DML hard boundary.
 
-## 5. Pocket geometry
-Nominal pocket:
-diameter 6.6 mm
-depth 2.2 mm class.
+Therefore the pad is no longer defined by a complete circle.
 
-Pocket/capture detail remains non-production until:
-- print compensation coupon;
-- mechanical capture lip/cap;
-- assembled-force validation.
+Use a perimeter-biased D-shaped/local rectangular-round pad with the DML-facing side clipped to the DML hard boundary plus assembly clearance.
 
-## 6. Real CAD-kernel result
-Generated using CadQuery/OpenCASCADE.
+## 5. Hard DML clearance
+Define:
+G_PAD_DML = **0.5 mm nominal seed**.
 
-Kernel validity:
-PASS.
+No rigid magnetic-station carrier material may cross into:
+- top: Y < 390.5 for top station pad extension toward DML;
+- bottom: Y > 9.5 for bottom station pad extension toward DML;
+- left: X > 9.5 for left station pad extension toward DML;
+- right: X < 310.5 for right station pad extension toward DML.
 
-Connected solids:
-**1**
+Because the magnet centers themselves lie close to/inside the DML projected edge, this exposes a critical issue:
+a centered Ø6 mm magnet cannot remain entirely outside the DML hard projection at the current centers.
 
-Volume:
-**25.4218 cm3**
+## 6. Center correction
+The Rev.B center seeds from the master audit are therefore insufficient for a Ø6 mm magnet plus 0.5 mm DML clearance.
 
-Bounding box:
-**318.4 x 398.4 x 3.2 mm**.
+Minimum magnet-center location for a 3.0 mm radius magnet and 0.5 mm clearance:
 
-## 7. Carrier-only mass
-ASA density sensitivity:
-1.05 g/cm3 -> **26.69 g**
-1.10 g/cm3 -> **27.96 g**.
+Top:
+Y >= 390 + 3.0 + 0.5 = **393.5 mm**
 
-Rev.B carrier-only working mass:
-**26.7..28.0 g**.
+Bottom:
+Y <= 10 - 3.0 - 0.5 = **6.5 mm**
 
-This excludes fabric, ink, adhesive, magnets, steel targets and pads.
+Left:
+X <= **6.5 mm**
 
-## 8. DML clearance
-Rigid magnetic pad geometry is located outside:
-X10..310 / Y10..390 DML projected hard region.
+Right:
+X >= **313.5 mm**.
 
-Therefore the Rev.A pad/DML projected collision is removed at the rigid-pad level.
+These locations are incompatible or extremely tight with the 0.8 mm carrier outer boundary and practical capture wall for some edges.
 
-A separate tolerance/service clearance still applies at the DML perimeter.
+Therefore the original architecture "magnet fully outside DML projection" is not feasible with Ø6 mm magnets inside a ~10 mm perimeter without further interface redesign.
 
-No DML notch is required.
+## 7. Correct architecture
+Do not require the complete magnet to lie outside the DML XY projection.
 
-## 9. Peel recess
-Lower-center peel recess remains:
-28 x 4 mm class around X160.
+Instead distinguish:
+- DML structural projected rectangle;
+- DML active moving surface;
+- front carrier seating/perimeter land;
+- Z-separated magnetic hardware.
 
-It does not disconnect the carrier.
+A projected XY overlap is acceptable only if sufficient Z separation exists and the magnet/pad cannot mechanically contact or preload the DML.
 
-It remains separated from bottom magnet pockets at X70 and X250.
+The hard requirement is **3D non-intersection + dynamic clearance**, not zero 2D projection overlap.
 
-## 10. Global Z integration
-Local carrier Z remains a CAD-local coordinate.
+This corrects the overly conservative Rev.B 2D rule.
 
-The master product transform must preserve:
-- fabric outer datum Z0;
-- nominal 2.8 mm fabric-to-DML gap;
-- no rigid pad intrusion into DML hard region.
+## 8. 3D station strategy
+Keep Rev.B centers as packaging seeds.
 
-Because Rev.B pads are outside the DML XY hard projection, their 3.2 mm local rear depth no longer competes directly with active DML clearance.
+Use D-shaped pads biased toward the product perimeter.
 
-## 11. Magnetic force consequence
-Moving actual pocket centers outward changes target placement and possibly the effective peel curve.
+DML-facing pad edge is minimized.
 
-The 20..30 N assembled total-retention target is unchanged.
+Global Z placement shall keep:
+- rigid pad rear face in front of DML front plane;
+- dynamic clearance to DML >=2.0 mm hard minimum under tolerance.
 
-Actual force must be measured/simulated using:
-- real target location;
-- G_MAG;
-- target thickness;
-- local carrier/rear-frame stack.
+The magnet pocket is oriented so magnetic circuit closes toward a product-side perimeter target without contacting the DML.
 
-Do not reuse force assumptions from the old center positions without geometry update.
+## 9. Z envelope
+Fabric outer:
+Z0.
 
-## 12. STEP artifact
-Generated:
-**AP22_FRONT_CARRIER_REV_B_DMU.step**
+DML front:
+Z3.3.
 
-Classification:
-DMU / collision / assembly artifact.
+The carrier/magnet station must remain entirely within a legal front-perimeter Z envelope.
 
-Not manufacturing release.
+For any station that overlaps DML in XY:
+Z_PAD_REAR <= **1.3 mm** would be required to preserve 2.0 mm hard clearance to DML front.
 
-## 13. Automatic checks
-C431 Rev.A circular pads withdrawn.
-C432 Rev.B perimeter pads generated.
-C433 all rigid top pads outside DML Y<=390 hard region.
-C434 all rigid bottom pads outside DML Y>=10 hard region.
-C435 all rigid left pads outside DML X>=10 hard region.
-C436 all rigid right pads outside DML X<=310 hard region.
-C437 eight 6.6 mm pocket bores generated.
-C438 actual pocket centers recorded.
-C439 B-rep validity PASS.
-C440 solid count == 1.
-C441 volume recorded.
-C442 carrier-only mass <35 g.
-C443 bounding box remains 318.4 x 398.4 x 3.2.
-C444 peel recess preserves connectivity.
-C445 no DML notch required.
-C446 global Z transform still required at assembly level.
-C447 assembled magnetic-force model must use Rev.B actual centers.
-C448 exact target geometry remains open.
-C449 exact RF keep-out intersection remains a production gate.
-C450 STEP remains DMU-only.
+This is incompatible with a 2 mm-thick magnet if stacked purely behind the visible front plane.
 
-## 14. State
-Rev.B resolves the known magnetic-pad/DML projection conflict.
+Therefore a flat axial Ø6x2 magnet directly over the DML projection cannot satisfy the current 2.0 mm clearance.
 
-Real B-rep:
-PASS.
+## 10. Architecture consequence
+A major correction is required before regenerating the carrier solid.
 
-One connected solid:
-PASS.
+Preferred solutions in order:
 
-Rigid-pad/DML projected overlap:
-REMOVED.
+### B1 — move magnets into true perimeter outside DML projection
+Use smaller magnets and/or narrower capture geometry in the 10 mm border.
 
-Carrier mass:
-26.7..28.0 g.
+### B2 — relocate magnetic circuit behind a non-DML perimeter ledge
+Create a stepped side/perimeter magnetic interface outside the DML moving panel.
+
+### B3 — use thin rectangular magnets along product perimeter
+This may exploit the long narrow border more efficiently than Ø6 discs.
+
+### B4 — reduce DML projected size
+Rejected baseline because it changes acoustic architecture.
+
+## 11. Preferred next design
+Adopt **thin rectangular perimeter magnets** rather than force the Ø6x2 disc into the 10 mm border.
+
+Target magnet envelope:
+- radial/inboard dimension <=4 mm class;
+- tangential length 8..15 mm;
+- thickness 1..2 mm.
+
+This gives room for:
+- outer carrier wall;
+- magnet;
+- capture wall;
+- DML clearance.
+
+The existing S-06-02-N remains a force-characterization reference but is no longer the preferred packaging geometry.
+
+## 12. Retention target unchanged
+Total assembled retention:
+20..30 N.
+
+Station count:
+6/8/10 parametric.
+
+With rectangular magnets, per-station force target remains based on assembled measured circuit, not catalogue free pull.
+
+## 13. CAD release decision
+Do **not** regenerate a misleading Rev.B B-rep with Ø6 disc pockets.
+
+The integrated DMU has disproven that packaging choice under the required DML clearance.
+
+This is an intentional engineering stop.
+
+## 14. Automatic checks
+C431 DML remains 300 x 380.
+C432 Rev.B station centers recorded.
+C433 circular 12 mm pad rejected.
+C434 zero-2D-overlap rule identified as overconservative.
+C435 actual requirement defined as 3D non-intersection plus dynamic clearance.
+C436 Ø6x2 flat magnet over DML projection fails front Z clearance.
+C437 DML reduction rejected baseline.
+C438 smaller/narrower perimeter magnetic geometry required.
+C439 thin rectangular magnet architecture preferred.
+C440 total retention target remains 20..30 N.
+C441 station count remains 6/8/10 parametric.
+C442 S-06-02-N retained only as force/reference candidate.
+C443 no false B-rep generated after geometry contradiction.
+C444 exact rectangular magnet search required.
+C445 next carrier kernel generation waits for viable magnet envelope.
+
+## 15. State
+The Rev.B DMU refinement exposed that the issue is not merely pad shape.
+
+A 6 mm diameter x 2 mm thick disc cannot be cleanly packaged in the available front perimeter while preserving the current 2.0 mm DML dynamic clearance if it overlaps the DML projection.
+
+Therefore:
+**disc magnet packaging is withdrawn as preferred front-carrier architecture**.
+
+Next action:
+select a thin rectangular magnet whose inboard dimension is <=4 mm class, then regenerate the carrier.
 
 Status:
-**FRONT_CARRIER_REV_B_ONE_SOLID / MAGNET_POCKETS_OUTBOARD_OF_DML / 25P422CM3 / C01_TO_C450 / MASTER_DMU_TRANSFORM_AND_RF_GATE_NEXT**.
+**DML_CLEARANCE_CONTRADICTION_FOUND / 6X2_DISC_PACKAGING_WITHDRAWN / THIN_RECTANGULAR_PERIMETER_MAGNET_REQUIRED / C01_TO_C445**.
