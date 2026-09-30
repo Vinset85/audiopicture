@@ -3,7 +3,7 @@
 import cadquery as cq
 import itertools, json, math
 
-SLOT_W=3.0; SLOT_L=45.0; WEB=3.0; EDGE=4.0
+SLOT_W=3.0; SLOT_L=45.0; WEB=3.0; EDGE=4.0; KO_MARGIN=2.0
 Z0,Z1=37.8,40.0
 
 def rect_gap(a,b):
@@ -31,7 +31,9 @@ def legal(r,side):
     # side ownership prevents center-bank ambiguity
     if side=="L" and x1>160: return False
     if side=="R" and x0<160: return False
-    return not any(overlap2d(r,e) for _,e in excl)
+    def expand(e,m):
+        return (e[0]-m,e[1]+m,e[2]-m,e[3]+m)
+    return not any(overlap2d(r,expand(e,KO_MARGIN)) for _,e in excl)
 
 def candidates(side):
     out=[]
@@ -102,7 +104,7 @@ for n,ori,r in slots:
 minweb=min(rect_gap(a[2],b[2]) for a,b in itertools.combinations(slots,2))
 print(json.dumps({
  "candidate_counts":{"left":nL,"right":nR,"left_reduced":rL,"right_reduced":rR},
- "slot_count":len(slots),
+ "slot_count":len(slots),\n "hard_keepout_margin_mm":KO_MARGIN,
  "gross_area_mm2":len(slots)*SLOT_W*SLOT_L,
  "effective_seed_mm2":len(slots)*SLOT_W*SLOT_L*0.80,
  "minimum_pairwise_web_mm":minweb,
