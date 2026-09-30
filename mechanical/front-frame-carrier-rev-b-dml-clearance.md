@@ -1,222 +1,252 @@
-# AudioPicture V2.2 Rev.B — front carrier DML-clearance redesign
+# AudioPicture V2.2 Rev.B — front carrier DML-clear magnetic stations
 
-Status: **PERIMETER_WIDTH_CONFLICT_IDENTIFIED / ORIGINAL_6MM_MAGNET_STATIONS_NOT_GEOMETRICALLY_LEGAL_OUTSIDE_DML / MAGNET_ARCHITECTURE_RELOCATION_REQUIRED**
+Status: **MAGNET_STATION_REV_B_GEOMETRY_FROZEN / DML_HARD_PROJECTION_CLEARANCE_ENFORCED / REAL_KERNEL_REGENERATION_REQUIRED**
 
 ## 1. Purpose
-Test the proposed Rev.B perimeter-biased magnet stations against the authoritative projected DML rectangle before generating a misleading production-like B-rep.
+Correct the Rev.A front-carrier magnetic station geometry after the integrated master DMU identified overlap between the 12 mm circular station pads and the DML projected perimeter.
 
+The DML is not modified.
+
+## 2. Authoritative global geometry
 Product:
-320 x 400 mm.
+X=0..320
+Y=0..400.
 
-DML projection:
+DML hard projected rectangle:
 X=10..310
-Y=10..390 mm.
+Y=10..390.
 
-Front carrier outer boundary:
-X=0.8..319.2
-Y=0.8..399.2 mm.
+The DML projection is treated as a hard exclusion for rearward rigid magnetic-station thickening.
 
-## 2. Available perimeter strip
-Between DML projection and carrier outer boundary, the nominal available strip is only:
-
-Left:
-10.0 - 0.8 = **9.2 mm**
-
-Right:
-319.2 - 310.0 = **9.2 mm**
+## 3. Rev.B magnet centers
+Top:
+M1B=(70,388)
+M2B=(250,388)
 
 Bottom:
-10.0 - 0.8 = **9.2 mm**
+M3B=(70,12)
+M4B=(250,12)
 
+Left:
+M5B=(12,135)
+M6B=(12,275)
+
+Right:
+M7B=(308,135)
+M8B=(308,315).
+
+## 4. D-shaped pad rule
+Each magnetic station uses a perimeter-biased D-shaped/local pad.
+
+The DML-facing edge is clipped by a hard construction plane.
+
+Top stations:
+rear thickening permitted only at Y>=390.
+
+Bottom:
+rear thickening permitted only at Y<=10.
+
+Left:
+rear thickening permitted only at X<=10.
+
+Right:
+rear thickening permitted only at X>=310.
+
+The base 1.8 mm carrier ring may continue through its normal perimeter geometry; the rule specifically controls additional rearward station thickening that could consume the DML clearance.
+
+## 5. Magnet-pocket consequence
+A centered 6.6 mm cylindrical pocket around the Rev.B centers would still cross the DML boundary because centers are only 2 mm outside the DML edge.
+
+Therefore the magnet itself cannot remain centered at these coordinates if its full circular envelope must be outside the DML projection.
+
+Required magnet-center minimum offsets for a 6.6 mm pocket with zero extra margin:
+- top Y >=393.3
+- bottom Y <=6.7
+- left X <=6.7
+- right X >=313.3.
+
+This is the actual geometric condition.
+
+## 6. Corrected magnet centers Rev.C seed
+Use a 0.7 mm additional manufacturing/clearance reserve beyond the 3.3 mm pocket radius.
+
+Required centerline offset:
+4.0 mm from DML edge.
+
+Corrected centers:
 Top:
-399.2 - 390.0 = **9.2 mm**.
+M1C=(70,394)
+M2C=(250,394)
 
-This strip must accommodate any magnet pocket, capture wall, edge wall and tolerance clearance if the station is to remain fully outside the DML projection.
+Bottom:
+M3C=(70,6)
+M4C=(250,6)
 
-## 3. Candidate-A pocket requirement
-S-06-02-N class magnet:
-6.0 mm diameter.
+Left:
+M5C=(6,135)
+M6C=(6,275)
 
-Current pocket seed:
-6.6 mm diameter.
+Right:
+M7C=(314,135)
+M8C=(314,315).
 
-Minimum radial structural wall seed:
->=1.2 mm each side for a printed captured pocket before local optimization.
+This places the complete nominal 6.6 mm magnet pocket outside the DML projected rectangle with ~0.7 mm reserve.
 
-Minimum station width:
-6.6 + 2(1.2) = **9.0 mm**.
+## 7. Product-edge check
+For 6.6 mm pocket radius 3.3 mm:
 
-This leaves only:
-9.2 - 9.0 = **0.2 mm**
+Top center Y394:
+outer pocket edge Y397.3 < carrier outer Y399.2.
 
-for combined:
-- carrier outside-edge wall/offset;
-- DML-side clearance;
-- print tolerance;
-- assembly tolerance.
+Bottom center Y6:
+outer edge Y2.7 > carrier outer Y0.8.
 
-Therefore a fully circular captured 6.6 mm pocket is not robustly feasible in the 9.2 mm strip.
+Left center X6:
+outer edge X2.7 > carrier outer X0.8.
 
-## 4. Rev.B center test
-Proposed top/bottom centers:
-Y=388 / 12.
+Right center X314:
+outer edge X317.3 < carrier outer X319.2.
 
-A 6.6 mm pocket has radius 3.3 mm.
+Therefore all eight corrected pocket circles fit within the carrier projected boundary.
 
-Top station at Y388 extends to Y384.7..391.3.
-DML ends at Y390.
-Overlap into DML projection:
-**5.3 mm from DML-facing pocket edge to boundary geometry context; pocket crosses Y390 by 1.3 mm on rear side and extends substantially inside the DML projected band on its inward side.**
+Minimum carrier-edge material between nominal pocket edge and outer carrier edge:
+~1.9 mm.
 
-Bottom station at Y12 extends Y8.7..15.3.
-DML begins Y10.
-It crosses into DML projection to Y15.3.
+This is thin and requires local structural review/capture design.
 
-Side stations show the same issue.
+## 8. Local station reinforcement
+Because edge ligament is only ~1.9 mm, do not use a simple circular 12 mm boss.
 
-The proposed 2 mm outward shift does not solve the hard projected-overlap problem.
+Use a perimeter-elongated pad:
+- tangential length 12..16 mm;
+- radial width constrained by DML boundary;
+- filleted into 10 mm carrier ring;
+- local thickness 3.0..3.2 mm.
 
-## 5. D-shaped pad limitation
-Making only the external support pad D-shaped does not solve the problem if the cylindrical magnet pocket itself still intersects the DML projection.
+The pad is a racetrack/D hybrid, not a full circle.
 
-The magnet pocket/capture geometry is the governing minimum feature.
+## 9. Capture strategy update
+At only ~1.9 mm outer ligament, a snap lip cut into the outside edge is undesirable.
 
-Therefore:
-**D-shaped support pad alone is insufficient.**
+Preferred:
+- front-side closed pocket floor;
+- rear-loaded magnet;
+- thin printed retention bridge/cap spanning tangentially into stronger ring material;
+- adhesive secondary retention.
 
-## 6. Geometric conclusion
-With:
-- 300 x 380 DML centered at 10 mm margins;
-- carrier outer boundary at 0.8 mm;
-- captured 6 mm-class round magnet;
+Alternative:
+separate ultralight polymer cap bonded/welded to carrier.
 
-there is no comfortable tolerance-robust perimeter-only circular station fully outside the DML projection.
+No steel retention cap.
 
-This is a packaging conflict, not a CAD-kernel problem.
+## 10. DML clearance
+Rev.C magnetic pockets:
+**full nominal circular pocket projection outside DML hard rectangle**.
 
-## 7. Rejected solution
-Do not:
-- notch the active DML;
-- reduce DML dimensions casually;
-- accept near-zero printed wall;
-- allow magnet pocket over active DML merely to preserve the previous eight-station concept.
+Station reinforcement:
+also clipped outside DML hard rectangle for all additional rearward thickness.
 
-## 8. Preferred architecture change
-Move magnetic retention rearward/outboard to a **side-return / edge-latch magnetic circuit** rather than keeping the magnet pocket in the flat front carrier plane.
+Thus magnetic station thickening no longer consumes active DML Z clearance.
 
-Concept:
-- front carrier develops local side-return tabs around product perimeter;
-- magnets sit with their cylindrical axis in a locally legal edge/return volume;
-- steel targets attach to corresponding ASA/PC-CF non-RF perimeter nodes;
-- the visible front remains thin;
-- DML front projection remains untouched.
+## 11. Peel recess
+Lower peel recess remains:
+center X160
+width28
+depth4.
 
-The return feature uses product edge/perimeter Z volume rather than the 9.2 mm front planar strip.
+M3C and M4C remain at X70 and X250.
 
-## 9. Side-return geometry seed
-Local front-frame return:
-- projected edge length per station: 12..16 mm;
-- return depth in +Z: 4..7 mm where subsystem keep-outs permit;
-- wall: 1.6..2.0 mm ASA;
-- magnet pocket remains 6.6 mm class;
-- local capture cap/lip.
+Horizontal distance from peel center:
+90 mm each.
 
-Return must stay inside product 320 x 400 XY boundary and global Z envelope.
+Progressive peel architecture preserved.
 
-## 10. Retention direction
-A side-return magnet/steel geometry may produce a mixed normal/shear circuit.
+## 12. RF status
+This geometric correction does not replace RF masks.
 
-The design must still provide:
-- front-frame normal seating;
-- anti-rattle preload;
-- progressive peel removal.
+M7C/M8C and upper stations still require exact:
+- radar RF exclusion;
+- ESP32 antenna exclusion.
 
-If magnetic force direction is unsuitable, use the return only to house magnet while shaping a local ferromagnetic target to close the flux in the normal direction.
+If an RF mask rejects a station, tangential relocation along the same perimeter is preferred over moving inward toward the DML.
 
-Exact circuit is an electromagnetic/mechanical subproblem.
+## 13. Fabric bonding land
+Magnet pockets locally interrupt/reduce rear bonding land.
 
-## 11. Alternative architecture
-Alternative B:
-use smaller magnets, e.g. 4 mm class, with more stations.
+At each station:
+- maintain a continuous alternate adhesive path around pocket;
+- no exposed sharp magnet/cap edge contacts fabric;
+- minimum effective fabric bond width to be process-qualified.
 
-This may fit the 9.2 mm strip but:
-- increases station count;
-- reduces individual capture-wall margin;
-- requires a new real-component search and force model.
+## 14. Carrier mass impact
+Moving stations outward does not materially increase carrier mass.
 
-Do not silently substitute smaller magnets.
+The Rev.B/Rev.C elongated reinforcement may add only a few grams relative to the 28.2..29.6 g Rev.A carrier.
 
-## 12. Alternative architecture C
-Use hidden mechanical micro-clips plus weaker/smaller magnets only for seating.
+Target carrier remains:
+<=35 g preferred after final magnet capture details;
+<=60 g hard subsystem carrier budget.
 
-This can reduce magnetic force and magnet size while retaining tool-less removal.
+## 15. CAD boolean order
+1. create 318.4 x398.4 carrier ring;
+2. create perimeter-elongated station pads at M1C..M8C;
+3. intersect rearward station-thickening solids with legal outside-DML half-planes;
+4. fuse pads to ring;
+5. cut 6.6 mm magnet pockets;
+6. add front-side pocket floors;
+7. add capture bridge/cap seats;
+8. cut peel recess;
+9. add LOC_A/LOC_B;
+10. apply edge fillets;
+11. validate single solid.
 
-It introduces clip fatigue/tolerance qualification.
+## 16. Kernel validation requirements
+Required outputs:
+- valid B-rep;
+- solid_count=1;
+- volume;
+- mass sensitivity;
+- bounding box;
+- DML overlap volume for rearward station thickening = 0;
+- pocket-to-product-edge ligament;
+- peel connectivity.
 
-Keep as fallback.
+## 17. Automatic checks
+C431 Rev.B centers evaluated geometrically.
+C432 centered 6.6 mm pocket at Rev.B centers identified as DML-overlapping.
+C433 Rev.B centers therefore not accepted as final pocket centers.
+C434 corrected Rev.C centers defined.
+C435 all Rev.C nominal pockets outside DML hard projection.
+C436 nominal pocket-to-DML reserve >=0.7 mm.
+C437 all Rev.C pockets inside carrier outer boundary.
+C438 minimum outer carrier ligament approximately 1.9 mm.
+C439 simple 12 mm circular boss rejected.
+C440 elongated perimeter pad required.
+C441 additional rear thickening clipped outside DML projection.
+C442 magnet capture redesigned for thin edge ligament.
+C443 no steel retention cap.
+C444 peel recess remains clear.
+C445 RF masks remain independent hard gate.
+C446 RF-rejected station relocates tangentially, not inward.
+C447 fabric bonding path remains continuous around station.
+C448 final carrier target <=35 g preferred.
+C449 kernel must report DML overlap volume zero.
+C450 one-solid validation required after regeneration.
 
-## 13. Current eight-station coordinates
-The previous Rev.B coordinates remain useful as **station arc/edge locations**, not as flat circular pocket centers:
-- top around X70 and X250;
-- bottom around X70 and X250;
-- left around Y135 and Y275;
-- right around Y135 and Y315.
+## 18. State
+The earlier Rev.B center shift alone was insufficient for a 6.6 mm pocket.
 
-Their exact pocket coordinates move into local return geometry.
+The corrected Rev.C center seed is now:
+M1C (70,394)
+M2C (250,394)
+M3C (70,6)
+M4C (250,6)
+M5C (6,135)
+M6C (6,275)
+M7C (314,135)
+M8C (314,315).
 
-## 14. CAD consequence
-Do not generate a Rev.B flat-carrier STEP claiming DML clearance.
-
-First generate one representative side-return station as a parametric coupon/sub-body and prove:
-- DML projection clearance;
-- magnet capture;
-- global Z legality;
-- peel kinematics;
-- target support.
-
-Then pattern legal station variants around the perimeter.
-
-## 15. Global Z consequence
-Front visible plane remains unchanged.
-
-Side returns occupy local +Z edge volume.
-
-They must not:
-- enter DML edge compliance;
-- block perimeter acoustic mount;
-- interfere with rear frame;
-- enter radar/ESP32 RF keep-outs;
-- block vent paths.
-
-## 16. Checks
-C431 perimeter strip calculated as 9.2 mm.
-C432 6.6 mm pocket plus robust walls consumes essentially full strip.
-C433 proposed Rev.B flat pocket still overlaps DML projection.
-C434 D-shaped pad alone does not fix cylindrical-pocket overlap.
-C435 DML notch rejected baseline.
-C436 near-zero tolerance wall rejected.
-C437 false Rev.B collision-free STEP prohibited.
-C438 side-return magnetic architecture selected for next CAD study.
-C439 original eight station edge arcs retained.
-C440 side-return Z depth limited parametrically.
-C441 exact magnetic circuit force remains validation gate.
-C442 smaller-magnet architecture remains explicit alternative, not silent substitution.
-C443 hybrid micro-clip architecture retained as fallback.
-C444 representative station must pass before full pattern.
-C445 DML compliant perimeter remains protected.
-C446 front global Z datum unchanged.
-C447 RF keep-outs remain authoritative.
-C448 ventilation keep-outs remain authoritative.
-C449 peel/removal kinematics required.
-C450 next CAD artifact is a side-return station coupon, not a falsely cleared full carrier.
-
-## 17. State
-The attempted Rev.B flat-pocket correction is **not geometrically robust**.
-
-The important design result is that the 10 mm DML edge margin and a captured 6 mm-class magnet compete for the same perimeter strip.
-
-Preferred next architecture:
-**local side-return magnetic stations using edge Z volume**.
+This is the first magnetic center map that geometrically places the complete nominal magnet pocket outside the DML hard projected rectangle while remaining inside the carrier.
 
 Status:
-**FLAT_6MM_MAGNET_PERIMETER_CONFLICT_CONFIRMED / DML_UNCHANGED / SIDE_RETURN_MAGNETIC_STATION_SELECTED / C01_TO_C450 / COUPON_CAD_NEXT**.
+**MAGNET_REV_C_POCKET_CENTERS / 0P7MM_DML_RESERVE / 1P9MM_OUTER_LIGAMENT / C01_TO_C450 / REAL_CAD_KERNEL_REGENERATION_NEXT**.
