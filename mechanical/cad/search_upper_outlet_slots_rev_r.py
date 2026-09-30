@@ -102,6 +102,10 @@ for n,ori,r in slots:
 
 # exact pairwise web
 minweb=min(rect_gap(a[2],b[2]) for a,b in itertools.combinations(slots,2))
+assert len(slots)==10
+assert abs(len(slots)*SLOT_W*SLOT_L-1350.0)<1e-9
+assert minweb>=WEB
+assert all(all(abs(v)<1e-9 for v in row["intersections_mm3"].values()) for row in rows)
 print(json.dumps({
  "candidate_counts":{"left":nL,"right":nR,"left_reduced":rL,"right_reduced":rR},
  "slot_count":len(slots),\n "hard_keepout_margin_mm":KO_MARGIN,
