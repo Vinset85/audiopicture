@@ -1,262 +1,185 @@
-# AudioPicture V2.2 Rev.B — DML-clear magnetic front carrier
+# AudioPicture V2.2 — front carrier Rev.B DML-clearance CAD result
 
-Status: **MAGNET_CENTER_REV_B_REJECTED_BY_GEOMETRIC_PROOF / PERIMETER_MAGNET_ARCHITECTURE_REQUIRES_SMALLER_TARGET_OR_REAR_INTERFACE**
+Status: **REV_B_REAL_BREP_PASS / ONE_VALID_SOLID / MAGNET_RIGID_PADS_OUTSIDE_DML_PROJECTION / DMU_INTEGRATION_READY**
 
-## 1. Purpose
-Resolve the front-carrier magnet-pad overlap found by the integrated DMU.
+## 1. Objective
+Remove the front-carrier Rev.A magnetic-pad overlap with the projected DML hard region while preserving:
+- one connected ASA carrier;
+- eight magnetic stations;
+- 6.6 mm pocket class;
+- lower-center peel recess;
+- 318.4 x 398.4 mm outer carrier;
+- <=3.2 mm local Z extent.
 
-## 2. Hard geometry
-Product:
-320 x 400 mm.
+DML projected hard region:
+X=10..310 mm
+Y=10..390 mm.
 
-Front carrier projected boundary:
-X=0.8..319.2
-Y=0.8..399.2.
+## 2. Rev.B architecture
+The original circular 12 mm pads are withdrawn.
 
-DML projected boundary:
-X=10..310
-Y=10..390.
+Rev.B uses perimeter-biased local pads:
+- top/bottom: 12 x 8 mm class;
+- left/right: 8 x 12 mm class;
+- local total thickness 3.2 mm.
 
-Available projected border between DML and carrier outer boundary:
-- left: 9.2 mm
-- right: 9.2 mm
-- bottom: 9.2 mm
-- top: 9.2 mm.
+The rigid pad body is placed outside the DML projected hard region and joined to the 10 mm carrier ring.
 
-## 3. Existing magnet pocket
-Candidate A magnet:
-6.0 mm diameter.
+## 3. Station intent vs pocket center
+The previous Rev.B station seeds remain useful as attraction/retention layout intent:
+M1B (70,388)
+M2B (250,388)
+M3B (70,12)
+M4B (250,12)
+M5B (12,135)
+M6B (12,275)
+M7B (308,135)
+M8B (308,315).
 
-Pocket seed:
-6.6 mm diameter.
+However, a 6.6 mm circular pocket centered at those points would still extend into the DML projection.
 
-Required mechanical capture material around pocket cannot be zero.
+Therefore the actual CAD pocket centers are shifted outward.
 
-A circular 12 mm station pad requires 6 mm radial half-width.
-
-## 4. Rev.B center test
-Proposed Rev.B centers:
-M1B/M2B Y=388
-M3B/M4B Y=12
-M5B/M6B X=12
-M7B/M8B X=308.
-
-These centers are still inside the DML projected boundary:
-- top centers are 2 mm below Y390;
-- bottom centers are 2 mm above Y10;
-- left centers are 2 mm right of X10;
-- right centers are 2 mm left of X310.
-
-Therefore moving from 14 to 12 mm or 386 to 388 mm does not solve the fundamental overlap.
-
-## 5. D-shaped pad test
-A D-shaped pad can remove pad material on the DML-facing side.
-
-However the magnet pocket itself is centered at the station.
-
-For a 6.6 mm pocket:
-radius = 3.3 mm.
-
-At a top center Y=388:
-pocket extends to Y384.7..391.3.
-
-Therefore 5.3 mm of the pocket radial span lies inside the DML projection below Y390.
-
-Equivalent conflicts exist on all four edges.
-
-Conclusion:
-**D-shaping the outer pad alone cannot make the pocket DML-clear.**
-
-## 6. Minimum center location for DML-clear pocket
-For a 6.6 mm pocket to remain fully outside DML projection with zero additional clearance:
-
+## 4. Actual Rev.B pocket centers
 Top:
-center Y >= 390 + 3.3 = **393.3 mm**
+- M1P = (70,394)
+- M2P = (250,394)
 
 Bottom:
-center Y <= 10 - 3.3 = **6.7 mm**
+- M3P = (70,6)
+- M4P = (250,6)
 
 Left:
-center X <= 10 - 3.3 = **6.7 mm**
+- M5P = (6,135)
+- M6P = (6,275)
 
 Right:
-center X >= 310 + 3.3 = **313.3 mm**.
+- M7P = (314,135)
+- M8P = (314,315).
 
-These are the mathematical minimums before adding structural material around the pocket.
+These are now the authoritative pocket-center seeds for the Rev.B carrier.
 
-## 7. Structural capture requirement
-If minimum material between pocket and DML-facing pad edge is 1.2 mm seed:
+## 5. Pocket geometry
+Nominal pocket:
+diameter 6.6 mm
+depth 2.2 mm class.
 
-required center offset from DML edge:
-3.3 + 1.2 = **4.5 mm**.
+Pocket/capture detail remains non-production until:
+- print compensation coupon;
+- mechanical capture lip/cap;
+- assembled-force validation.
 
-Thus:
-Top Y >=394.5
-Bottom Y <=5.5
-Left X <=5.5
-Right X >=314.5.
+## 6. Real CAD-kernel result
+Generated using CadQuery/OpenCASCADE.
 
-## 8. Carrier outer-boundary check
-Carrier outer boundary:
-top 399.2
-bottom 0.8
-left 0.8
-right 319.2.
+Kernel validity:
+PASS.
 
-At center Y394.5, available material to outer edge:
-399.2 - 394.5 = 4.7 mm.
+Connected solids:
+**1**
 
-A 6.6 mm pocket requires 3.3 mm radius, leaving only:
-1.4 mm outer material.
+Volume:
+**25.4218 cm3**
 
-This is geometrically possible but tight.
+Bounding box:
+**318.4 x 398.4 x 3.2 mm**.
 
-Same on all edges.
+## 7. Carrier-only mass
+ASA density sensitivity:
+1.05 g/cm3 -> **26.69 g**
+1.10 g/cm3 -> **27.96 g**.
 
-Therefore a true perimeter-only pocket is feasible only as a narrow local boss with approximately:
-- 1.2 mm DML-side material;
-- 1.4 mm outer-side material.
+Rev.B carrier-only working mass:
+**26.7..28.0 g**.
 
-This is too sensitive to print tolerance/warp for immediate production freeze.
+This excludes fabric, ink, adhesive, magnets, steel targets and pads.
 
-## 9. Revised legal center seed
-For CAD investigation only:
+## 8. DML clearance
+Rigid magnetic pad geometry is located outside:
+X10..310 / Y10..390 DML projected hard region.
 
-Top:
-M1C=(70,394.5)
-M2C=(250,394.5)
+Therefore the Rev.A pad/DML projected collision is removed at the rigid-pad level.
 
-Bottom:
-M3C=(70,5.5)
-M4C=(250,5.5)
+A separate tolerance/service clearance still applies at the DML perimeter.
 
-Left:
-M5C=(5.5,135)
-M6C=(5.5,275)
+No DML notch is required.
 
-Right:
-M7C=(314.5,135)
-M8C=(314.5,315).
+## 9. Peel recess
+Lower-center peel recess remains:
+28 x 4 mm class around X160.
 
-These centers are legal for a 6.6 mm pocket with approximately 1.2 mm DML-side wall and 1.4 mm outer-side wall in nominal geometry.
+It does not disconnect the carrier.
 
-## 10. Risk classification
-The MxC layout is:
-**GEOMETRICALLY_FEASIBLE / PROCESS_MARGIN_TIGHT**.
+It remains separated from bottom magnet pockets at X70 and X250.
 
-It shall not be production-frozen without:
-- real ASA print tolerance data;
-- magnet-pocket coupon;
-- edge-strength test;
-- peel-cycle test.
+## 10. Global Z integration
+Local carrier Z remains a CAD-local coordinate.
 
-## 11. Preferred architecture review
-Three alternatives remain.
+The master product transform must preserve:
+- fabric outer datum Z0;
+- nominal 2.8 mm fabric-to-DML gap;
+- no rigid pad intrusion into DML hard region.
 
-A. Edge pocket, current 6 x 2 magnet:
-- feasible;
-- tight wall;
-- easiest architecture.
+Because Rev.B pads are outside the DML XY hard projection, their 3.2 mm local rear depth no longer competes directly with active DML clearance.
 
-B. Smaller magnet:
-- increases polymer wall/process margin;
-- requires new magnetic-force characterization;
-- may be preferred if 8 stations still meet 20..30 N.
+## 11. Magnetic force consequence
+Moving actual pocket centers outward changes target placement and possibly the effective peel curve.
 
-C. Magnet/target moved to a rearward structural interface:
-- removes front DML overlap issue;
-- may increase mechanical complexity and removal-path coupling.
+The 20..30 N assembled total-retention target is unchanged.
 
-## 12. Recommended next branch
-Do not alter DML.
+Actual force must be measured/simulated using:
+- real target location;
+- G_MAG;
+- target thickness;
+- local carrier/rear-frame stack.
 
-Do not pretend MxB solved the collision.
+Do not reuse force assumptions from the old center positions without geometry update.
 
-Generate MxC edge-pocket CAD as a feasibility body, but in parallel evaluate a smaller 5 mm-class magnet because the additional 0.5..0.8 mm radial polymer margin is valuable at the product perimeter.
+## 12. STEP artifact
+Generated:
+**AP22_FRONT_CARRIER_REV_B_DMU.step**
 
-## 13. Front carrier Rev.B topology
-Base ring remains:
-- 318.4 x 398.4 mm;
-- 10 mm nominal width;
-- 1.8 mm nominal thickness.
+Classification:
+DMU / collision / assembly artifact.
 
-Magnet stations become edge bosses rather than symmetric 12 mm circular pads.
+Not manufacturing release.
 
-Boss is clipped by:
-- carrier outer boundary;
-- DML hard-clearance boundary;
-- local minimum-wall rules.
+## 13. Automatic checks
+C431 Rev.A circular pads withdrawn.
+C432 Rev.B perimeter pads generated.
+C433 all rigid top pads outside DML Y<=390 hard region.
+C434 all rigid bottom pads outside DML Y>=10 hard region.
+C435 all rigid left pads outside DML X>=10 hard region.
+C436 all rigid right pads outside DML X<=310 hard region.
+C437 eight 6.6 mm pocket bores generated.
+C438 actual pocket centers recorded.
+C439 B-rep validity PASS.
+C440 solid count == 1.
+C441 volume recorded.
+C442 carrier-only mass <35 g.
+C443 bounding box remains 318.4 x 398.4 x 3.2.
+C444 peel recess preserves connectivity.
+C445 no DML notch required.
+C446 global Z transform still required at assembly level.
+C447 assembled magnetic-force model must use Rev.B actual centers.
+C448 exact target geometry remains open.
+C449 exact RF keep-out intersection remains a production gate.
+C450 STEP remains DMU-only.
 
-## 14. Edge-boss construction
-For each station:
-1. create local rectangular/rounded edge boss;
-2. subtract magnet pocket;
-3. preserve DML-side wall >=1.2 mm seed;
-4. preserve outer wall >=1.2 mm seed;
-5. preserve tangential end wall >=1.5 mm;
-6. merge with perimeter ring;
-7. validate one-solid result.
+## 14. State
+Rev.B resolves the known magnetic-pad/DML projection conflict.
 
-## 15. Pocket depth
-Candidate A 6 x 2:
-- pocket depth process seed 2.15..2.25 mm;
-- local boss Z thickness 3.2 mm seed.
+Real B-rep:
+PASS.
 
-Front floor:
-~0.9..1.0 mm nominal if 3.2 mm local thickness and 2.2 mm pocket.
+One connected solid:
+PASS.
 
-This floor contributes to magnetic gap and force tuning.
+Rigid-pad/DML projected overlap:
+REMOVED.
 
-## 16. DML clearance
-Hard rule:
-no magnet pocket solid/void envelope may cross into DML hard projected region.
-
-A separate service clearance may later increase this requirement beyond zero projected overlap.
-
-## 17. Global Z
-Carrier remains perimeter-only.
-
-Local edge bosses occupy front perimeter and do not alter the central fabric-DML gap.
-
-The master global Z stack remains:
-- fabric Z0..0.5;
-- air gap to Z3.3;
-- DML Z3.3..9.3.
-
-## 18. Automatic checks
-C431 Rev.B MxB centers analytically tested.
-C432 MxB centers fail DML-clear pocket rule.
-C433 D-shaped pad alone proven insufficient.
-C434 6.6 mm pocket radius recorded as 3.3 mm.
-C435 zero-clearance legal center equations defined.
-C436 1.2 mm DML-side wall rule applied.
-C437 MxC center set defined.
-C438 MxC nominal DML-side wall >=1.2 mm.
-C439 MxC nominal outer-side wall >=1.2 mm.
-C440 MxC classified process-margin tight.
-C441 DML modification rejected.
-C442 edge-boss topology defined.
-C443 tangential wall >=1.5 mm seed.
-C444 boss merges with perimeter ring.
-C445 local Z thickness 3.2 mm seed.
-C446 pocket depth sweep 2.15..2.25 mm.
-C447 front pocket floor approximately 0.9..1.0 mm.
-C448 central fabric-DML gap unchanged.
-C449 smaller magnet branch retained.
-C450 production freeze requires print/pocket/peel qualification.
-
-## 19. State
-The previous Rev.B station relocation was not sufficient.
-
-Corrected legal seed:
-M1C (70,394.5)
-M2C (250,394.5)
-M3C (70,5.5)
-M4C (250,5.5)
-M5C (5.5,135)
-M6C (5.5,275)
-M7C (314.5,135)
-M8C (314.5,315).
+Carrier mass:
+26.7..28.0 g.
 
 Status:
-**REV_B_MAGNET_GEOMETRY_CORRECTED / EDGE_POCKET_FEASIBLE_BUT_TIGHT / DML_UNCHANGED / C01_TO_C450 / SMALLER_MAGNET_COMPARISON_NEXT**.
+**FRONT_CARRIER_REV_B_ONE_SOLID / MAGNET_POCKETS_OUTBOARD_OF_DML / 25P422CM3 / C01_TO_C450 / MASTER_DMU_TRANSFORM_AND_RF_GATE_NEXT**.
