@@ -78,3 +78,49 @@ FEA release: BLOCKED.
 Manufacturing release: BLOCKED.
 
 Status: **OPEN_CASCADE_REAL_GEOMETRY / 2_VALID_BODIES_REMAIN / MASS_APPROX_100_TO_108G / CONNECTIVITY_REDESIGN_REQUIRED**.
+
+
+## 8. Connectivity closure — iteration 3
+Disconnected-body diagnostic:
+- isolated body volume: 1.196 cm3;
+- isolated body CAD centroid approximately (100.5,-142.5,3.0) in centered CAD coordinates;
+- product centroid approximately (260.5,57.5,3.0) mm;
+- bounding region approximately product X224.9..296.1, Y53.6..61.4;
+- identified feature: right lower open-web bridge LB2.
+
+Root cause:
+LB2 from the service-right jamb toward the right perimeter did not physically intersect the lower/right primary network after hard keep-out subtraction.
+
+Correction:
+- add a local perimeter-biased connector from the LB2 right endpoint near product (296,60) to the lower/right ring near (296,28);
+- width 4 mm seed;
+- structural depth 6 mm;
+- reapply all hard keep-outs after union.
+
+Iteration 3 result:
+- primary solid count: **1**
+- B-rep validity: **PASS**
+- volume: **86.990 cm3**
+- mass sensitivity:
+  - 1.15 g/cm3 -> 100.04 g
+  - 1.20 g/cm3 -> 104.39 g
+  - 1.25 g/cm3 -> 108.74 g
+- structural bounding box: **312 x 392 x 8 mm**
+
+C171: **PASS**
+C164: **PASS at kernel validity/manifold diagnostic level**
+C163 mass <=250 g: **PASS with large margin**
+
+The prior connectivity failure is therefore closed without adding a central spine, crossing an exciter keep-out or altering the hard keep-out set.
+
+## 9. Current release interpretation
+The generated STEP is now a valid **G2 structural DMU B-rep** and may be used as the source for the first structural mesh preparation.
+
+It is not yet a manufacturing release because:
+- exact manufacturer solids are still an import gate;
+- semantic face-group persistence must be implemented in the solver/CAD handoff;
+- PC-CF orthotropic properties require sensitivity/coupon calibration;
+- LC1..LC7 have not yet been solved.
+
+Updated status:
+**OPEN_CASCADE_ONE_VALID_PRIMARY_SOLID / 86P990CM3 / MASS_100_TO_109G / 312X392X8 / FEA_MESH_PREPARATION_READY**.
