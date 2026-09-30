@@ -1,0 +1,13 @@
+condition_id,target_shape,target_xy_mm,target_thickness_mm,g_eff_mm,samples_min,magnet_mpn,magnet_size_mm,normal_mean_N,normal_min_N,normal_max_N,normal_std_N,tangential_mean_N,result
+M01,square,7x7,0.8,0.2,5,S-04-02-N,4x2,,,,,,
+M02,square,7x7,0.8,0.4,5,S-04-02-N,4x2,,,,,,
+M03,square,7x7,0.8,0.6,5,S-04-02-N,4x2,,,,,,
+M04,square,7x7,0.8,0.8,5,S-04-02-N,4x2,,,,,,
+M05,square,7x7,1.0,0.2,5,S-04-02-N,4x2,,,,,,
+M06,square,7x7,1.0,0.4,5,S-04-02-N,4x2,,,,,,
+M07,square,7x7,1.0,0.6,5,S-04-02-N,4x2,,,,,,
+M08,square,7x7,1.0,0.8,5,S-04-02-N,4x2,,,,,,
+M09,square,7x7,1.2,0.2,5,S-04-02-N,4x2,,,,,,
+M10,square,7x7,1.2,0.4,5,S-04-02-N,4x2,,,,,,
+M11,square,7x7,1.2,0.6,5,S-04-02-N,4x2,,,,,,
+M12,square,7x7,1.2,0.8,5,S-04-02-N,4x2,,,,,,
