@@ -1,0 +1,61 @@
+{
+  "project": "AudioPicture V2.2",
+  "revision": "Rev.EJ",
+  "analysis": "rear_frame_structural_fea",
+  "status": "SOLVER_READY_MANIFEST_NO_NUMERICAL_FEA_CLAIM",
+  "geometry": {
+    "product_mm": [320, 400, 40],
+    "frame_wall_mm": 2.4,
+    "primary_rib_sweep_mm": [2.4, 2.8, 3.2],
+    "mount_rib_sweep_mm": [3.0, 3.2, 3.6],
+    "mount_fillet_sweep_mm": [2.0, 3.0, 4.0],
+    "boss_od_sweep_mm": [11, 12, 13],
+    "insert_engagement_min_mm": 7
+  },
+  "material": {
+    "model": "orthotropic",
+    "xy_reference": "manufacturer/process seed only",
+    "Ez_over_Exy": {"MAT-A": 0.20, "MAT-B": 0.35, "MAT-C": 0.50},
+    "Gxz_over_Gxy": [0.25, 0.40, 0.60],
+    "Gyz_over_Gxy": [0.25, 0.40, 0.60],
+    "z_strength_over_xy": [0.20, 0.35, 0.50],
+    "temperatures_C": [23, 50, 70],
+    "release_requires_coupon_calibration": true
+  },
+  "mesh": {
+    "global_max_mm": 4.0,
+    "ribs_fillets_max_mm": 2.0,
+    "boss_insert_cleat_mm": [1.0, 1.5],
+    "service_corner_max_mm": 1.5,
+    "convergence_percent": 5.0,
+    "convergence_metrics": ["peak_non_singular_stress", "displacement"]
+  },
+  "loads": {
+    "LC1": {"type":"symmetric_vertical","N":70,"cleats":"both","max_mount_displacement_mm":0.5,"margin_min":2.0},
+    "LC2L": {"type":"single_cleat_fault","N":70,"cleats":"left","margin_min":1.5,"nonlinear":true},
+    "LC2R": {"type":"single_cleat_fault","N":70,"cleats":"right","margin_min":1.5,"nonlinear":true},
+    "LC3": {"type":"wall_normal_pull","N":50,"margin_min":1.5},
+    "LC4": {"type":"corner_torsion","N":30,"max_corner_normal_displacement_mm":1.0,"margin_min":1.5,"nonlinear":true},
+    "LC5": {"type":"installation_seating","N":100,"nonlinear":true},
+    "LC6": {"type":"anti_lift","N":50,"margin_min":1.5,"nonlinear":true},
+    "LC7": {"type":"assembly_misfit","imposed_displacement_mm":[0.25,0.50,1.00]}
+  },
+  "cg_sensitivity_mm": [[0,0],[20,0],[-20,0],[0,15],[0,-15]],
+  "required_outputs": [
+    "max_displacement","mount_node_displacement","corner_displacement",
+    "principal_stresses_strains","orthotropic_failure_index",
+    "insert_boss_interface_loads","cleat_screw_reactions","lower_pad_reactions",
+    "anti_lift_reaction","buckling_factor","mass","strain_energy_map"
+  ],
+  "solver_requirements": {
+    "linear": ["LC1","LC3","initial sensitivity screens"],
+    "nonlinear_contact": ["LC2L","LC2R","LC4","LC5","LC6"],
+    "buckling": ["long_side_rails","service_opening_bridge","mount_ribs"]
+  },
+  "prohibited_claims_before_execution": [
+    "LC1-LC7 pass",
+    "production structural margin",
+    "qualified PC-CF strength",
+    "insert pull-out capacity"
+  ]
+}
