@@ -108,7 +108,8 @@ assert minweb>=WEB
 assert all(all(abs(v)<1e-9 for v in row["intersections_mm3"].values()) for row in rows)
 print(json.dumps({
  "candidate_counts":{"left":nL,"right":nR,"left_reduced":rL,"right_reduced":rR},
- "slot_count":len(slots),\n "hard_keepout_margin_mm":KO_MARGIN,
+ "slot_count":len(slots),
+ "hard_keepout_margin_mm":KO_MARGIN,
  "gross_area_mm2":len(slots)*SLOT_W*SLOT_L,
  "effective_seed_mm2":len(slots)*SLOT_W*SLOT_L*0.80,
  "minimum_pairwise_web_mm":minweb,
