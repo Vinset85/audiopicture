@@ -129,3 +129,76 @@ Status remains **PENDING_RUNTIME_RESULT** until the generator is executed in a C
 
 Status:
 **COMBINED_STRUCTURAL_SPINE_GENERATOR / C01_TO_C666 / RUNTIME_BOOLEAN_PASS_REQUIRED_BEFORE_FEA**.
+
+
+## 11. Executed kernel result
+
+Execution environment:
+- CadQuery 2.8.0;
+- OpenCASCADE through CadQuery.
+
+Measured result:
+- B-rep valid: **PASS**;
+- connected solids: **1**;
+- disconnected fragments: **0**;
+- combined volume: **145,999.99999999977 mm3**, reported engineering value **146,000 mm3**;
+- bounding box: **316 x 396 x 29.9 mm**;
+- global Z extent: **5.1..35.0 mm**;
+- DML hard-volume intersection: **0 mm3**.
+
+Per-station real boolean overlaps:
+
+| Station | rear-return overlap | return-tab overlap |
+|---|---:|---:|
+| M1D | 48.0 mm3 | 64.0 mm3 |
+| M2D | 48.0 mm3 | 64.0 mm3 |
+| M3D | 48.0 mm3 | 64.0 mm3 |
+| M4D | 48.0 mm3 | 64.0 mm3 |
+| M5D | 48.0 mm3 | 64.0 mm3 |
+| M6D | 48.0 mm3 | 64.0 mm3 |
+| M7D | 48.0 mm3 | 64.0 mm3 |
+| M8D | 48.0 mm3 | 64.0 mm3 |
+
+All Rev.J geometric connectivity acceptance conditions pass.
+
+## 12. Interpretation
+
+This is the first executed one-solid CAD evidence for a nominal continuous path:
+**front magnetic target tab -> local PC-CF perimeter return -> rear PC-CF structural ring**.
+
+This result does not constitute:
+- FEA;
+- strength/stiffness proof;
+- production tolerance closure;
+- RF/EM release;
+- thermal release;
+- print-process qualification.
+
+The structural topology may now advance to local FEA preparation.
+
+## 13. Added executed checks
+C667 Rev.J executed in CadQuery 2.8.0.
+C668 combined B-rep validity PASS.
+C669 combined solid count ==1.
+C670 disconnected fragments ==0.
+C671 combined volume ==146000 mm3 engineering value.
+C672 combined bbox ==316x396x29.9 mm.
+C673 combined global Z ==5.1..35.0 mm.
+C674 DML hard-volume intersection ==0 mm3.
+C675 M1D rear-return overlap >0.
+C676 M2D rear-return overlap >0.
+C677 M3D rear-return overlap >0.
+C678 M4D rear-return overlap >0.
+C679 M5D rear-return overlap >0.
+C680 M6D rear-return overlap >0.
+C681 M7D rear-return overlap >0.
+C682 M8D rear-return overlap >0.
+C683 all return-tab overlaps >0.
+C684 nominal magnetic-to-rear CAD load path continuous.
+C685 FEA not yet claimed.
+C686 tolerance/RF/thermal/process release remains open.
+
+## 14. Updated state
+
+Status:
+**COMBINED_STRUCTURAL_SPINE_KERNEL_PASS / ONE_SOLID / ZERO_FRAGMENTS / DML_ZERO / 8_OF_8_NODE_OVERLAPS_PASS / 146000MM3 / Z5P1_TO_35 / C01_TO_C686 / LOCAL_FEA_PREP_NEXT**.
