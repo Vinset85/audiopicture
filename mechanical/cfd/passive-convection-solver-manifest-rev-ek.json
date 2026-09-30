@@ -1,0 +1,56 @@
+{
+  "project":"AudioPicture V2.2",
+  "revision":"Rev.EK",
+  "analysis":"passive_natural_convection_cfd",
+  "status":"SOLVER_READY_MANIFEST_NO_CFD_RESULT",
+  "geometry":{
+    "source":"Rev.BK/Rev.EC validated CAD topology",
+    "product_envelope_mm":[320,400,40],
+    "gross_inlet_mm2":1416.823002,
+    "gross_outlet_mm2":1330.685835,
+    "effective_area_proxies_for_reduced_order_only":{"inlet_fraction":0.75,"outlet_fraction":0.80},
+    "cfd_rule":"mesh real apertures; do not impose proxy area fractions as CFD boundary conditions",
+    "wall_gap_sweep_mm":[3,4,5]
+  },
+  "domains":["AIR_ROOM_LOWER","AIR_INLET","AIR_REAR_CAVITY","AIR_CHIMNEY_MAIN","AIR_BYPASS_LEFT","AIR_BYPASS_RIGHT","AIR_OUTLET","AIR_WALL_GAP","AIR_SHT45_CHAMBER"],
+  "physics":{
+    "gravity":true,
+    "natural_convection":true,
+    "density":"temperature-dependent air or validated Boussinesq",
+    "solid_conduction":true,
+    "radiation":true,
+    "still_room_air":true,
+    "pure_conduction_is_valid_cfd_gate":false
+  },
+  "heat_sources":["Q_MAIN_P","Q_MAIN_C","Q_TAS5825M","Q_TPSM63603","Q_POE_AG53024","Q_W5500","Q_ESP32","Q_VOICE","Q_RADAR"],
+  "double_counting_rule":"component-level heat must be subtracted from aggregate MAIN-P/MAIN-C heat",
+  "total_heat_sweep_W":[3,5,8,10],
+  "ambient_C":[20,30,35],
+  "priority_matrix":[
+    {"id":"CFD01","heat_W":5,"ambient_C":30,"wall_gap_mm":4},
+    {"id":"CFD02","heat_W":8,"ambient_C":30,"wall_gap_mm":4},
+    {"id":"CFD03","heat_W":10,"ambient_C":35,"wall_gap_mm":4},
+    {"id":"CFD04","heat_W":8,"ambient_C":35,"wall_gap_mm":3},
+    {"id":"CFD05","heat_W":8,"ambient_C":35,"wall_gap_mm":5}
+  ],
+  "mesh":{
+    "levels":[
+      {"id":"M0","bulk_mm":6.0,"slot_local_mm":1.5,"hot_surface_mm":2.0},
+      {"id":"M1","bulk_mm":4.0,"slot_local_mm":1.0,"hot_surface_mm":1.5},
+      {"id":"M2","bulk_mm":3.0,"slot_local_mm":0.75,"hot_surface_mm":1.0}
+    ],
+    "wall_gap_min_cells":3,
+    "boundary_layer":"solver-supported inflation required where applicable",
+    "convergence_metrics":["Tmax_air","MAIN_P_local_air_T","MAIN_C_inlet_air_T","representative_component_T","mass_flow"],
+    "convergence_target_percent":5.0
+  },
+  "required_obstructions":["G2_PC_CF_frame","MAIN_P","MAIN_C","VOICE","RADAR","ENV","470uF_horizontal","Ag53024","Ethernet_cable_sweep","power_harness","speaker_harness","major_FPC_bundles"],
+  "outputs":["Tmax_air","Tmax_relevant_solid","MAIN_P_inlet_air_T","MAIN_C_inlet_air_T","Ag53024_local_air_T","TAS5825M_local_air_T","outlet_T","volume_flow","mean_inlet_velocity","mean_outlet_velocity","pressure_difference","stagnant_volume_fraction","heat_balance_closure","effective_system_thermal_resistance"],
+  "release_rules":{
+    "heat_balance_required":true,
+    "mesh_convergence_required":true,
+    "stagnant_hot_pocket_check":true,
+    "SHT45_not_internal_heat_proxy":true,
+    "no_absolute_junction_pass_from_coarse_CFD":true
+  }
+}
