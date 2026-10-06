@@ -1,0 +1,93 @@
+{
+  "valid": true,
+  "solid_count": 1,
+  "vent_count": 22,
+  "bbox_mm": [
+    320.0,
+    400.0,
+    4.399999999999999
+  ],
+  "z_extent_mm": [
+    35.6,
+    40.0
+  ],
+  "real_area_mm2": {
+    "inlet": 1416.8230016469245,
+    "outlet": 1330.6858347057705
+  },
+  "seat_count": 6,
+  "seat_return_overlap_mm3": {
+    "TOP_L": {
+      "LEFT_MID": 0.0,
+      "RIGHT_MID": 0.0,
+      "BOTTOM_MID": 0.0,
+      "TOP_MID": 0.0
+    },
+    "TOP_R": {
+      "LEFT_MID": 0.0,
+      "RIGHT_MID": 0.0,
+      "BOTTOM_MID": 0.0,
+      "TOP_MID": 0.0
+    },
+    "SIDE_L": {
+      "LEFT_MID": 0.0,
+      "RIGHT_MID": 0.0,
+      "BOTTOM_MID": 0.0,
+      "TOP_MID": 0.0
+    },
+    "SIDE_R": {
+      "LEFT_MID": 0.0,
+      "RIGHT_MID": 0.0,
+      "BOTTOM_MID": 0.0,
+      "TOP_MID": 0.0
+    },
+    "BOT_L": {
+      "LEFT_MID": 0.0,
+      "RIGHT_MID": 0.0,
+      "BOTTOM_MID": 0.0,
+      "TOP_MID": 0.0
+    },
+    "BOT_R": {
+      "LEFT_MID": 0.0,
+      "RIGHT_MID": 0.0,
+      "BOTTOM_MID": 0.0,
+      "TOP_MID": 0.0
+    }
+  },
+  "vent_reclosure_mm3": {
+    "IL1": 0.0,
+    "IL2": 0.0,
+    "IL3": 0.0,
+    "IL4": 0.0,
+    "IL5": 0.0,
+    "IL6": 0.0,
+    "IR1": 0.0,
+    "IR2": 0.0,
+    "IR3": 0.0,
+    "IR4": 0.0,
+    "IR5": 0.0,
+    "IR6": 0.0,
+    "UL1": 0.0,
+    "UL2": 0.0,
+    "UL3": 0.0,
+    "UL4": 0.0,
+    "UL5": 0.0,
+    "UR1": 0.0,
+    "UR2": 0.0,
+    "UR3": 0.0,
+    "UR4": 0.0,
+    "UR5": 0.0
+  },
+  "preseat_volume_mm3": 280134.12056002463,
+  "final_volume_mm3": 280982.3505764941,
+  "artifacts": [
+    "AP22_REAR_SHELL_FRAME_AWARE_MASTER_REV_BK.step",
+    "AP22_REAR_SHELL_FRAME_AWARE_MASTER_REV_BK.stl"
+  ],
+  "limitations": [
+    "service opening still architecture-only",
+    "exact RF/radar open",
+    "CFD open",
+    "process qualification open"
+  ]
+}

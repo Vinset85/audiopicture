@@ -1,0 +1,379 @@
+{
+  "classification": "CALCULATED_BREP_AUDIT_NOT_CFD",
+  "sidewall_sample_count": 36,
+  "unoccupied_sidewall_samples": 36,
+  "probes": [
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        100.0,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        100.0,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        100.0,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        200.0,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        200.0,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        200.0,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        300.0,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        300.0,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        300.0,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        100.0,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        100.0,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        100.0,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        200.0,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        200.0,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        200.0,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        300.0,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        300.0,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        300.0,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        80.0,
+        1,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        80.0,
+        1,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        80.0,
+        1,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        160.0,
+        1,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        160.0,
+        1,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        160.0,
+        1,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        240.0,
+        1,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        240.0,
+        1,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        240.0,
+        1,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        80.0,
+        399,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        80.0,
+        399,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        80.0,
+        399,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        160.0,
+        399,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        160.0,
+        399,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        160.0,
+        399,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        240.0,
+        399,
+        12
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        240.0,
+        399,
+        20
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        240.0,
+        399,
+        26
+      ],
+      "ASA_shell_material": false,
+      "PC_CF_frame_material": false
+    }
+  ],
+  "service_probe": {
+    "xyz_mm": [
+      160,
+      34,
+      39
+    ],
+    "shell_material_present": true
+  },
+  "shell_frame_min_clearance_mm": 0.6000000000000014,
+  "clearance_1mm_target_status": "FAIL",
+  "closure_status": "OPEN: no full sidewalls/front seal/service-cable penetrations in these two BREP files. 22 vent cells do not certify all openings of a complete enclosure.",
+  "CFD01_to_CFD05_status": "OPEN: exterior room, 3/4/5 mm wall gap, full obstruction volumes, CHT material properties and radiation boundary surfaces still required."
+}

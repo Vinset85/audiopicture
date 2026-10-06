@@ -1,0 +1,63 @@
+{
+  "classification": "INDEPENDENT_ARTIFACT_REIMPORT_AND_CHECKSUM_CHECK",
+  "status": "PASS_SCOPE_ONLY",
+  "STEP": [
+    {
+      "part": "carrier",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 25551.91344359463
+    },
+    {
+      "part": "window_coupon",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 334.43299184189453
+    },
+    {
+      "part": "OPT_head_PCB_envelope",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 33.27999999999994
+    },
+    {
+      "part": "OPT3004_max_package_envelope",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 2.8664999999999448
+    },
+    {
+      "part": "C302_backside_envelope_seed",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 1.7820000000000125
+    }
+  ],
+  "STL": [
+    {
+      "file": "AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "body_count": 1,
+      "vertices": 6960,
+      "faces": 13924,
+      "mesh_volume_mm3": 25551.745904751664,
+      "relative_volume_difference_percent": 0.0006556802226756836,
+      "sha256": "acb6bf725065360025677e7f0abe7b83dd6da78a7d1dc05e015c001f221da882"
+    },
+    {
+      "file": "AP22_OPTICAL_WINDOW_COUPON_REV_FA.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "body_count": 1,
+      "vertices": 272,
+      "faces": 544,
+      "mesh_volume_mm3": 334.43618088013017,
+      "relative_volume_difference_percent": 0.0009535656808464531,
+      "sha256": "6af6efe7eeaa00a36e42ef34436344e7de6859cdb7de75997bc1d7b98cf2cc24"
+    }
+  ],
+  "execution_sha256": "68b59ae4aea0cfcea440d208d644e897fbc91d2967be278458c060e8cb0420da",
+  "verifier_sha256": "b23f50afc2d492307f7d3af6aea32929020545521540b6485a4f5901bc0b4032",
+  "manufacturing_release": false
+}

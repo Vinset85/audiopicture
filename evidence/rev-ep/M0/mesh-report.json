@@ -1,0 +1,21 @@
+{
+  "classification": "ISOTROPIC_LOCAL_DEBUG_NOT_RELEASE_NOT_LC1_LC7",
+  "gmsh_version": "4.15.2",
+  "mesh_size_mm": 2.0,
+  "node_count": 9389,
+  "element_count": 5150,
+  "element_type": "C3D10",
+  "min_SICN": 0.07476612892166376,
+  "fixed_nodes": 246,
+  "target_nodes": 53,
+  "load_N": 5,
+  "applied_load_sum_N": -5.0,
+  "E_MPa": 1900,
+  "nu_assumption": 0.35,
+  "source_sha256": "f1d3d35b088caa76028ae35ecdf6442fe6e35068d63578d12c2a0e6b7fa71ab8",
+  "limitations": [
+    "Nodal equal-force distribution is a debug load abstraction.",
+    "Remote fixed cut faces are local boundary assumption.",
+    "No orthotropic/temperature/contact/strength release claim."
+  ]
+}

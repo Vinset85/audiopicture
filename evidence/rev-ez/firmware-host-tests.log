@@ -1,0 +1,52 @@
+Start testing: Oct 05 22:09 CEST
+----------------------------------------------------------
+1/3 Testing: power_governor_safety_transitions
+1/3 Test: power_governor_safety_transitions
+Command: "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/environment-host-build/test_power_governor"
+Directory: /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/environment-host-build
+"power_governor_safety_transitions" start time: Oct 05 22:09 CEST
+Output:
+----------------------------------------------------------
+PASS: 200000 deterministic events, 27909 enabled samples with safety invariants
+PASS: governor transitions, source loss, 22.5 W boundary, fault latch, stale/invalid monitor, 320 input combinations, timer wrap, config rejection
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"power_governor_safety_transitions" end time: Oct 05 22:09 CEST
+"power_governor_safety_transitions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: environment_protocol_faults
+2/3 Test: environment_protocol_faults
+Command: "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/environment-host-build/test_environment"
+Directory: /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/environment-host-build
+"environment_protocol_faults" start time: Oct 05 22:09 CEST
+Output:
+----------------------------------------------------------
+PASS: datasheet vectors, 48 single-bit CRC corruptions, signed ADC endpoints, 16 transport failures, identity, overflow and bounded timeouts
+<end of output>
+Test time =   0.57 sec
+----------------------------------------------------------
+Test Passed.
+"environment_protocol_faults" end time: Oct 05 22:09 CEST
+"environment_protocol_faults" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: status_expander_fail_closed
+3/3 Test: status_expander_fail_closed
+Command: "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/environment-host-build/test_status"
+Directory: /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/environment-host-build
+"status_expander_fail_closed" start time: Oct 05 22:09 CEST
+Output:
+----------------------------------------------------------
+PASS: 256 raw patterns, 510 invalid register configurations, 7 transport faults, input-only writes; no hardware/source qualification claimed
+<end of output>
+Test time =   0.35 sec
+----------------------------------------------------------
+Test Passed.
+"status_expander_fail_closed" end time: Oct 05 22:09 CEST
+"status_expander_fail_closed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 05 22:09 CEST

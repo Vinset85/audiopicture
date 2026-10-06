@@ -2,6 +2,11 @@
 
 Status: **M1D_SUBMODEL_KERNEL_READY / DATASHEET_SCREENING_PROPERTIES_IDENTIFIED / RELEASE_ORTHOTROPIC_DATA_OPEN**
 
+> Rev.EX provenance correction: the current linked Prusament TDS reports printed
+> tensile moduli 2.6/3.2 GPa, not the historical 1.9/2.0 GPa below. Existing
+> 1900 MPa runs remain assumed conservative screening only. See
+> `component-source-verification-rev-ex.md`; no qualified material card is implied.
+
 ## 1. M1D local model
 The first local structural submodel is M1D, top station at X70/Y394.
 

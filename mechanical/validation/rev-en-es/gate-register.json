@@ -1,0 +1,207 @@
+{
+  "base_head": "19a436701211b5135ecb1b672eae44f177894629",
+  "status": "PARTIAL_DIGITAL_CHECKPOINT_NOT_PRODUCTION_RELEASE",
+  "definitions": {
+    "PASS": "Only the stated scope and evidence; not an inherited full-product claim",
+    "FAIL": "Demonstrated failure of the stated baseline/candidate",
+    "OPEN": "Unexecuted or insufficient evidence"
+  },
+  "dependency_order": [
+    "G03 -> G05/G06/G07/G08 -> G09/G21",
+    "G10 -> G11 -> G12/G17",
+    "G18 + final interfaces -> G17",
+    "G12 + sourced thermal model + G20 -> G21",
+    "G22 + G23 + physical P01..P15 -> G26"
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "status": "PASS",
+      "scope": "Repository HEAD verified",
+      "evidence": "19a436701211b5135ecb1b672eae44f177894629"
+    },
+    {
+      "id": "G02",
+      "status": "PASS",
+      "scope": "Rev.EM BREP/export/reimport",
+      "evidence": 287929.522
+    },
+    {
+      "id": "G03",
+      "status": "FAIL",
+      "scope": "Rev.EM labyrinth coverage/axial LOS",
+      "evidence": {
+        "covered_vents": 4,
+        "open_axial_rays": 22
+      }
+    },
+    {
+      "id": "G04",
+      "status": "FAIL",
+      "scope": "Rev.EO collector airflow sections",
+      "evidence": {
+        "upper_gate_mm2_per_side": 5.1
+      }
+    },
+    {
+      "id": "G05",
+      "status": "PASS",
+      "scope": "Rev.EQ coverage and geometric LOS",
+      "evidence": {
+        "covered_vents": 22,
+        "sampled_rays": 2574,
+        "open_rays": 0
+      }
+    },
+    {
+      "id": "G06",
+      "status": "PASS",
+      "scope": "Rev.EQ real vent openness/connectivity",
+      "evidence": {
+        "max_reclosure_mm3": 0,
+        "connected_vents": 22
+      }
+    },
+    {
+      "id": "G07",
+      "status": "PASS",
+      "scope": "Rev.EQ BREP/export/reimport and coarse-frame clearance",
+      "evidence": {
+        "solid_volume_mm3": 302276.34146088536,
+        "fluid_volume_mm3": 3514228.146035117,
+        "clearance_mm": 1.0
+      }
+    },
+    {
+      "id": "G08",
+      "status": "PASS",
+      "scope": "Rev.EQ geometric cross sections",
+      "evidence": {
+        "lower_mm2": 960,
+        "upper_mm2": 900
+      }
+    },
+    {
+      "id": "G09",
+      "status": "OPEN",
+      "scope": "Effective airflow/pressure loss and acoustic attenuation",
+      "evidence": "Geometry alone insufficient"
+    },
+    {
+      "id": "G10",
+      "status": "FAIL",
+      "scope": "Rev.J baseline conservative RF mask intrusion",
+      "evidence": {
+        "volume_mm3": 1798
+      }
+    },
+    {
+      "id": "G11",
+      "status": "PASS",
+      "scope": "Rev.ES conservative RF subtraction",
+      "evidence": {
+        "overlap_mm3": 0,
+        "single_valid_solid": true
+      }
+    },
+    {
+      "id": "G12",
+      "status": "OPEN",
+      "scope": "Exact RF/full component/cleat/harness DMU",
+      "evidence": "Supplier CAD/mount dimensions and exact masks missing"
+    },
+    {
+      "id": "G13",
+      "status": "PASS",
+      "scope": "CalculiX unit-cube analytical check",
+      "evidence": {
+        "relative_error": 2.0000000061030226e-08
+      }
+    },
+    {
+      "id": "G14",
+      "status": "PASS",
+      "scope": "M1D local target-displacement mesh convergence",
+      "evidence": {
+        "M1_M2_change_percent": 1.1453011235854762
+      }
+    },
+    {
+      "id": "G15",
+      "status": "OPEN",
+      "scope": "M1D non-singular stress/hotspot convergence",
+      "evidence": "Raw peak does not close stress gate"
+    },
+    {
+      "id": "G16",
+      "status": "PASS",
+      "scope": "27 M1D normalized material executions",
+      "evidence": {
+        "executed_cases": 27,
+        "scope": "local screening assumptions only"
+      }
+    },
+    {
+      "id": "G17",
+      "status": "OPEN",
+      "scope": "Full-frame LC1-LC7, nonlinear/contact, buckling",
+      "evidence": "Final interfaces, material/contact model and allowables missing"
+    },
+    {
+      "id": "G18",
+      "status": "OPEN",
+      "scope": "Qualified material and process properties",
+      "evidence": "User confirmed measurements unavailable"
+    },
+    {
+      "id": "G19",
+      "status": "PASS",
+      "scope": "Elmer installed and radiation reference regression",
+      "evidence": {
+        "relative_reference_error": 4.439833e-10
+      }
+    },
+    {
+      "id": "G20",
+      "status": "OPEN",
+      "scope": "Elmer natural-convection coupled convergence",
+      "evidence": "Reference norm matches; coupling warning persists; direct trial NaN"
+    },
+    {
+      "id": "G21",
+      "status": "OPEN",
+      "scope": "AudioPicture CFD01-CFD05, full CHT/convergence/balances",
+      "evidence": "No full domain/thermal properties/obstruction model or numerical matrix executed"
+    },
+    {
+      "id": "G22",
+      "status": "OPEN",
+      "scope": "Production BOM/native schematics/PCB",
+      "evidence": "74 BOM rows; 35 explicit unresolved rows; no native files"
+    },
+    {
+      "id": "G23",
+      "status": "OPEN",
+      "scope": "Firmware/Home Assistant verification",
+      "evidence": "Pinned repository contains specifications only"
+    },
+    {
+      "id": "G24",
+      "status": "PASS",
+      "scope": "Physical test plan and printable process coupons prepared",
+      "evidence": "Plan only; measurements not performed"
+    },
+    {
+      "id": "G25",
+      "status": "OPEN",
+      "scope": "Magnetic assembled retention and peel",
+      "evidence": "Requires measured 20..30 N complete-front retention plus coupon/peel/hot tests"
+    },
+    {
+      "id": "G26",
+      "status": "OPEN",
+      "scope": "Frozen CAD and first-article production package",
+      "evidence": "Full digital and physical prerequisites above remain open"
+    }
+  ]
+}

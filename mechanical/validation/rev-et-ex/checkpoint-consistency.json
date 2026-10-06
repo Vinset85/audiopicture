@@ -1,0 +1,9 @@
+{
+  "new_frame_STEP_hashes": "PASS",
+  "new_FEM_deck_hashes_and_force_balances": "PASS",
+  "JSON_parse": "PASS",
+  "git_diff_whitespace": "PASS",
+  "physical_measurements": "NOT_RUN",
+  "product_CFD": "NOT_RUN",
+  "production_release": false
+}

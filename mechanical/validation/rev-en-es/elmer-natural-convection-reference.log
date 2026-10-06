@@ -1,0 +1,1663 @@
+ELMER SOLVER (v 26.2) STARTED AT: 2026/09/30 18:16:13
+ Started inside library code
+ Going parallel initialization
+ParCommInit: Initialize #PEs: 1
+ Back from parallel initialization
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright April 1st 1995 -> , CSC - IT Center for Science Ltd.
+MAIN: Repository https://www.github.org/elmerCSC/elmerfem
+MAIN: Homepage https://www.elmerfem.org/,  Email elmeradm@csc.fi
+MAIN: Version: 26.2-devel (Rev: 4b49ea6, Compiled: 2026-09-30)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: case.sif
+LoadInputFile: Scanning input file: case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 4
+LoadInputFile: Number of Body Forces: 1
+LoadInputFile: Number of Initial Conditions: 1
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+ElmerMeshReader: Base mesh name: ./square
+PrepareMesh: Preparing mesh for the future
+LoadMesh: Elapsed REAL time:     0.0014 (s)
+MAIN: -------------------------------------
+OptimizeBandwidth: Initial bandwidth for heat equation: 31
+OptimizeBandwidth: Optimized bandwidth for heat equation: 58
+OptimizeBandwidth: Bandwidth optimization rejected, using original ordering.
+OptimizeBandwidth: Initial bandwidth for navier-stokes: 31
+OptimizeBandwidth: Optimized bandwidth for navier-stokes: 58
+OptimizeBandwidth: Bandwidth optimization rejected, using original ordering.
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Time: 1/3:   1.000E+02
+MAIN: -------------------------------------
+MAIN: 
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            1
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.4190E-06  0.9464E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  295.00152      2.0000000     ) :: heat equation
+ComputeChange: SS (ITER=1) (NRM,RELC): (  295.00152      2.0000000     ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.9469E-07 0.9469E-07
+BiCGStabl:       13 0.3448E-10 0.3448E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.70529112E-03  2.0000000     ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    7.0529112247620976E-004
+FlowSolve:  Relative Change :    2.0000000000000000
+ComputeChange: SS (ITER=1) (NRM,RELC): ( 0.70529112E-03  2.0000000     ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            2
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.2323E-05  0.2299E-05
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98562     0.53921977E-04 ) :: heat equation
+ComputeChange: SS (ITER=2) (NRM,RELC): (  294.98562     0.53921977E-04 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.2459E-08 0.2459E-08
+BiCGStabl:       12 0.6812E-10 0.6812E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.50389092E-03 0.33311809     ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    5.0389091586693015E-004
+FlowSolve:  Relative Change :   0.33311809177259138
+ComputeChange: SS (ITER=2) (NRM,RELC): ( 0.50389092E-03 0.33311809     ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            3
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.2135E-06  0.4440E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97426     0.38483953E-04 ) :: heat equation
+ComputeChange: SS (ITER=3) (NRM,RELC): (  294.97426     0.38483953E-04 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5710E-08 0.5710E-08
+BiCGStabl:       12 0.5616E-10 0.5616E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.33111683E-03 0.41382631     ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    3.3111682776024810E-004
+FlowSolve:  Relative Change :   0.41382631340919340
+ComputeChange: SS (ITER=3) (NRM,RELC): ( 0.33111683E-03 0.41382631     ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            4
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.1838E-06  0.3985E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97414     0.42956974E-06 ) :: heat equation
+ComputeChange: SS (ITER=4) (NRM,RELC): (  294.97414     0.42956974E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.2644E-06 0.2644E-06
+BiCGStabl:       13 0.5622E-10 0.5622E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.25532735E-03 0.25847125     ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.5532734759435561E-004
+FlowSolve:  Relative Change :   0.25847125217013223
+ComputeChange: SS (ITER=4) (NRM,RELC): ( 0.25532735E-03 0.25847125     ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            5
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.5195E-06  0.5114E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98546     0.38368808E-04 ) :: heat equation
+ComputeChange: SS (ITER=5) (NRM,RELC): (  294.98546     0.38368808E-04 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.4286E-08 0.4286E-08
+BiCGStabl:       12 0.4052E-10 0.4052E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.30980225E-03 0.19278730     ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    3.0980225201126773E-004
+FlowSolve:  Relative Change :   0.19278729854152934
+ComputeChange: SS (ITER=5) (NRM,RELC): ( 0.30980225E-03 0.19278730     ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            6
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.3322E-06  0.4458E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98765     0.74308749E-05 ) :: heat equation
+ComputeChange: SS (ITER=6) (NRM,RELC): (  294.98765     0.74308749E-05 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.8326E-09 0.8326E-09
+BiCGStabl:       12 0.5615E-10 0.5615E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.30435100E-03 0.17752092E-01 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    3.0435099940734952E-004
+FlowSolve:  Relative Change :    1.7752092303758054E-002
+ComputeChange: SS (ITER=6) (NRM,RELC): ( 0.30435100E-03 0.17752092E-01 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            7
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.1516E-06  0.1495E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98510     0.86272586E-05 ) :: heat equation
+ComputeChange: SS (ITER=7) (NRM,RELC): (  294.98510     0.86272586E-05 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.3711E-08 0.3711E-08
+BiCGStabl:       11 0.5389E-10 0.5389E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29056851E-03 0.46333958E-01 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9056851151422741E-004
+FlowSolve:  Relative Change :    4.6333958258561604E-002
+ComputeChange: SS (ITER=7) (NRM,RELC): ( 0.29056851E-03 0.46333958E-01 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            8
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.3914E-07  0.6580E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98509     0.34210904E-07 ) :: heat equation
+ComputeChange: SS (ITER=8) (NRM,RELC): (  294.98509     0.34210904E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.6038E-08 0.6038E-08
+BiCGStabl:       12 0.1156E-10 0.1156E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.28881469E-03 0.60541146E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.8881468537082729E-004
+FlowSolve:  Relative Change :    6.0541146268281026E-003
+ComputeChange: SS (ITER=8) (NRM,RELC): ( 0.28881469E-03 0.60541146E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            9
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.3139E-07  0.2907E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98571     0.20878011E-05 ) :: heat equation
+ComputeChange: SS (ITER=9) (NRM,RELC): (  294.98571     0.20878011E-05 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.2276E-08 0.2276E-08
+BiCGStabl:       12 0.5807E-10 0.5807E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29359513E-03 0.16416083E-01 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9359512933490982E-004
+FlowSolve:  Relative Change :    1.6416083120089079E-002
+ComputeChange: SS (ITER=9) (NRM,RELC): ( 0.29359513E-03 0.16416083E-01 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           10
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.1413E-07  0.2955E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98562     0.30859280E-06 ) :: heat equation
+ComputeChange: SS (ITER=10) (NRM,RELC): (  294.98562     0.30859280E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.7178E-09 0.7178E-09
+BiCGStabl:       11 0.7542E-10 0.7542E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29370380E-03 0.37007749E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9370380239139170E-004
+FlowSolve:  Relative Change :    3.7007748732811776E-004
+ComputeChange: SS (ITER=10) (NRM,RELC): ( 0.29370380E-03 0.37007749E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           11
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.8335E-08  0.9145E-08
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98548     0.46217115E-06 ) :: heat equation
+ComputeChange: SS (ITER=11) (NRM,RELC): (  294.98548     0.46217115E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.4299E-09 0.4299E-09
+BiCGStabl:       12 0.1171E-10 0.1171E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29209570E-03 0.54902913E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9209569743593130E-004
+FlowSolve:  Relative Change :    5.4902913230018748E-003
+ComputeChange: SS (ITER=11) (NRM,RELC): ( 0.29209570E-03 0.54902913E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           12
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.4664E-08  0.1067E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98553     0.16404231E-06 ) :: heat equation
+ComputeChange: SS (ITER=12) (NRM,RELC): (  294.98553     0.16404231E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1058E-08 0.1058E-08
+BiCGStabl:       11 0.9258E-10 0.9258E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29219582E-03 0.34271747E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9219582089096141E-004
+FlowSolve:  Relative Change :    3.4271746855682998E-004
+ComputeChange: SS (ITER=12) (NRM,RELC): ( 0.29219582E-03 0.34271747E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           13
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98557     0.13142321E-06 ) :: heat equation
+ComputeChange: SS (ITER=13) (NRM,RELC): (  294.98557     0.13142321E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1067E-09 0.1067E-09
+BiCGStabl:       11 0.2780E-10 0.2780E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29264381E-03 0.15320006E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9264380822556236E-004
+FlowSolve:  Relative Change :    1.5320006110998066E-003
+ComputeChange: SS (ITER=13) (NRM,RELC): ( 0.29264381E-03 0.15320006E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           14
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98555     0.46853648E-07 ) :: heat equation
+ComputeChange: SS (ITER=14) (NRM,RELC): (  294.98555     0.46853648E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.9924E-10 0.9924E-10
+BiCGStabl:       10 0.9924E-10 0.9924E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29259375E-03 0.17107669E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9259374797421317E-004
+FlowSolve:  Relative Change :    1.7107668781289603E-004
+ComputeChange: SS (ITER=14) (NRM,RELC): ( 0.29259375E-03 0.17107669E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           15
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98555     0.30035673E-07 ) :: heat equation
+ComputeChange: SS (ITER=15) (NRM,RELC): (  294.98555     0.30035673E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1496E-09 0.1496E-09
+BiCGStabl:       11 0.2232E-10 0.2232E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29246643E-03 0.43522466E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9246643166632260E-004
+FlowSolve:  Relative Change :    4.3522465661155197E-004
+ComputeChange: SS (ITER=15) (NRM,RELC): ( 0.29246643E-03 0.43522466E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           16
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98555     0.16813624E-07 ) :: heat equation
+ComputeChange: SS (ITER=16) (NRM,RELC): (  294.98555     0.16813624E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.3379E-10 0.3379E-10
+BiCGStabl:       10 0.3379E-10 0.3379E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29249066E-03 0.82835490E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9249065927009057E-004
+FlowSolve:  Relative Change :    8.2835490477384431E-005
+ComputeChange: SS (ITER=16) (NRM,RELC): ( 0.29249066E-03 0.82835490E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           17
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98555     0.65661513E-08 ) :: heat equation
+ComputeChange: SS (ITER=17) (NRM,RELC): (  294.98555     0.65661513E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.8882E-10 0.8882E-10
+BiCGStabl:       10 0.8882E-10 0.8882E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29253166E-03 0.14016181E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9253165816236294E-004
+FlowSolve:  Relative Change :    1.4016180597111613E-004
+ComputeChange: SS (ITER=17) (NRM,RELC): ( 0.29253166E-03 0.14016181E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           18
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98555     0.63967067E-08 ) :: heat equation
+ComputeChange: SS (ITER=18) (NRM,RELC): (  294.98555     0.63967067E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.6337E-10 0.6337E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29250956E-03 0.75530426E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.9250956395596069E-004
+FlowSolve:  Relative Change :    7.5530426120231077E-005
+ComputeChange: SS (ITER=18) (NRM,RELC): ( 0.29250956E-03 0.75530426E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           19
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.98555     0.23112028E-09 ) :: heat equation
+ComputeChange: SS (ITER=19) (NRM,RELC): (  294.98555     0.23112028E-09 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        8 0.8368E-10 0.8368E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29251111E-03 0.52817873E-05 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.9251110893334115E-004
+FlowSolve:  Relative Change :    5.2817873010497348E-006
+ComputeChange: SS (ITER=19) (NRM,RELC): ( 0.29251111E-03 0.52817873E-05 ) :: navier-stokes
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Time: 2/3:   2.000E+02
+MAIN: -------------------------------------
+MAIN: 
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            1
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.2200E-06  0.2350E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97551     0.34026611E-04 ) :: heat equation
+ComputeChange: SS (ITER=1) (NRM,RELC): (  294.97551     0.34026611E-04 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1056E-08 0.1056E-08
+BiCGStabl:       11 0.4612E-10 0.4612E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.26146283E-03 0.11209293     ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.6146282804988556E-004
+FlowSolve:  Relative Change :   0.11209293004842455
+ComputeChange: SS (ITER=1) (NRM,RELC): ( 0.26146283E-03 0.11209293     ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            2
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.5049E-07  0.7197E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97388     0.55285033E-05 ) :: heat equation
+ComputeChange: SS (ITER=2) (NRM,RELC): (  294.97388     0.55285033E-05 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.2562E-08 0.2562E-08
+BiCGStabl:       13 0.3034E-10 0.3034E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.29127230E-03 0.10786168     ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.9127229829715431E-004
+FlowSolve:  Relative Change :   0.10786168211988249
+ComputeChange: SS (ITER=2) (NRM,RELC): ( 0.29127230E-03 0.10786168     ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            3
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.8733E-07  0.2155E-06
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97228     0.54360642E-05 ) :: heat equation
+ComputeChange: SS (ITER=3) (NRM,RELC): (  294.97228     0.54360642E-05 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5514E-08 0.5514E-08
+BiCGStabl:       13 0.3664E-10 0.3664E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27425274E-03 0.60190284E-01 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7425274199512642E-004
+FlowSolve:  Relative Change :    6.0190283681273105E-002
+ComputeChange: SS (ITER=3) (NRM,RELC): ( 0.27425274E-03 0.60190284E-01 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            4
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.3355E-07  0.8671E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97217     0.38435380E-06 ) :: heat equation
+ComputeChange: SS (ITER=4) (NRM,RELC): (  294.97217     0.38435380E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.4476E-09 0.4476E-09
+BiCGStabl:       12 0.4505E-10 0.4505E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27357851E-03 0.24614517E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7357851192173462E-004
+FlowSolve:  Relative Change :    2.4614516553088973E-003
+ComputeChange: SS (ITER=4) (NRM,RELC): ( 0.27357851E-03 0.24614517E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            5
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.2048E-07  0.2283E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97258     0.14027043E-05 ) :: heat equation
+ComputeChange: SS (ITER=5) (NRM,RELC): (  294.97258     0.14027043E-05 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1395E-08 0.1395E-08
+BiCGStabl:       11 0.6390E-10 0.6390E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27867496E-03 0.18456931E-01 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7867496408904457E-004
+FlowSolve:  Relative Change :    1.8456931060441072E-002
+ComputeChange: SS (ITER=5) (NRM,RELC): ( 0.27867496E-03 0.18456931E-01 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            6
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.1723E-07  0.3641E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97241     0.56490865E-06 ) :: heat equation
+ComputeChange: SS (ITER=6) (NRM,RELC): (  294.97241     0.56490865E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.4301E-09 0.4301E-09
+BiCGStabl:       13 0.5843E-12 0.5843E-12
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27591818E-03 0.99416429E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7591818057700967E-004
+FlowSolve:  Relative Change :    9.9416429450994558E-003
+ComputeChange: SS (ITER=6) (NRM,RELC): ( 0.27591818E-03 0.99416429E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            7
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.7214E-08  0.1680E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97239     0.68636919E-07 ) :: heat equation
+ComputeChange: SS (ITER=7) (NRM,RELC): (  294.97239     0.68636919E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1355E-09 0.1355E-09
+BiCGStabl:       11 0.6724E-10 0.6724E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27629016E-03 0.13472250E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7629015502647576E-004
+FlowSolve:  Relative Change :    1.3472250434596442E-003
+ComputeChange: SS (ITER=7) (NRM,RELC): ( 0.27629016E-03 0.13472250E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            8
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.98327379E-07 ) :: heat equation
+ComputeChange: SS (ITER=8) (NRM,RELC): (  294.97242     0.98327379E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1522E-09 0.1522E-09
+BiCGStabl:       11 0.2311E-10 0.2311E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27655025E-03 0.94093750E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7655024915968033E-004
+FlowSolve:  Relative Change :    9.4093749745898837E-004
+ComputeChange: SS (ITER=8) (NRM,RELC): ( 0.27655025E-03 0.94093750E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            9
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.14807779E-07 ) :: heat equation
+ComputeChange: SS (ITER=9) (NRM,RELC): (  294.97242     0.14807779E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:       10 0.3383E-10 0.3383E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27638396E-03 0.60148124E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7638395938359568E-004
+FlowSolve:  Relative Change :    6.0148123778684540E-004
+ComputeChange: SS (ITER=9) (NRM,RELC): ( 0.27638396E-03 0.60148124E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           10
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.44715407E-08 ) :: heat equation
+ComputeChange: SS (ITER=10) (NRM,RELC): (  294.97242     0.44715407E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:       10 0.2098E-10 0.2098E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27641038E-03 0.95584905E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7641037878074678E-004
+FlowSolve:  Relative Change :    9.5584905007633733E-005
+ComputeChange: SS (ITER=10) (NRM,RELC): ( 0.27641038E-03 0.95584905E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           11
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.24966411E-08 ) :: heat equation
+ComputeChange: SS (ITER=11) (NRM,RELC): (  294.97242     0.24966411E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.7166E-10 0.7166E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27642488E-03 0.52462702E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7642488039660278E-004
+FlowSolve:  Relative Change :    5.2462702460713933E-005
+ComputeChange: SS (ITER=11) (NRM,RELC): ( 0.27642488E-03 0.52462702E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           12
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.21007400E-09 ) :: heat equation
+ComputeChange: SS (ITER=12) (NRM,RELC): (  294.97242     0.21007400E-09 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:       10 0.5055E-10 0.5055E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27640881E-03 0.58152886E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7640880595931400E-004
+FlowSolve:  Relative Change :    5.8152886430405459E-005
+ComputeChange: SS (ITER=12) (NRM,RELC): ( 0.27640881E-03 0.58152886E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           13
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.11459150E-08 ) :: heat equation
+ComputeChange: SS (ITER=13) (NRM,RELC): (  294.97242     0.11459150E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.7514E-10 0.7514E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27642649E-03 0.63984730E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7642649246805096E-004
+FlowSolve:  Relative Change :    6.3984730306712744E-005
+ComputeChange: SS (ITER=13) (NRM,RELC): ( 0.27642649E-03 0.63984730E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           14
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.14449665E-08 ) :: heat equation
+ComputeChange: SS (ITER=14) (NRM,RELC): (  294.97242     0.14449665E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:       10 0.7936E-10 0.7936E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27640700E-03 0.70506886E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7640700318381004E-004
+FlowSolve:  Relative Change :    7.0506886410483946E-005
+ComputeChange: SS (ITER=14) (NRM,RELC): ( 0.27640700E-03 0.70506886E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           15
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.22754799E-08 ) :: heat equation
+ComputeChange: SS (ITER=15) (NRM,RELC): (  294.97242     0.22754799E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:       10 0.4891E-10 0.4891E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27642928E-03 0.80578103E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7642927643312326E-004
+FlowSolve:  Relative Change :    8.0578102901130203E-005
+ComputeChange: SS (ITER=15) (NRM,RELC): ( 0.27642928E-03 0.80578103E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           16
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.18467720E-08 ) :: heat equation
+ComputeChange: SS (ITER=16) (NRM,RELC): (  294.97242     0.18467720E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5751E-10 0.5751E-10
+BiCGStabl:       10 0.5751E-10 0.5751E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27640403E-03 0.91343449E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7640402758269601E-004
+FlowSolve:  Relative Change :    9.1343449259835072E-005
+ComputeChange: SS (ITER=16) (NRM,RELC): ( 0.27640403E-03 0.91343449E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           17
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.34294909E-08 ) :: heat equation
+ComputeChange: SS (ITER=17) (NRM,RELC): (  294.97242     0.34294909E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.7031E-10 0.7031E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27642980E-03 0.93241033E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7642980098119930E-004
+FlowSolve:  Relative Change :    9.3241032554922730E-005
+ComputeChange: SS (ITER=17) (NRM,RELC): ( 0.27642980E-03 0.93241033E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           18
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.35398884E-08 ) :: heat equation
+ComputeChange: SS (ITER=18) (NRM,RELC): (  294.97242     0.35398884E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.9219E-10 0.9219E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27640636E-03 0.84818882E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7640635550875246E-004
+FlowSolve:  Relative Change :    8.4818882309346718E-005
+ComputeChange: SS (ITER=18) (NRM,RELC): ( 0.27640636E-03 0.84818882E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           19
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.29273069E-08 ) :: heat equation
+ComputeChange: SS (ITER=19) (NRM,RELC): (  294.97242     0.29273069E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.6144E-10 0.6144E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27642718E-03 0.75354658E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7642718479985943E-004
+FlowSolve:  Relative Change :    7.5354657734183562E-005
+ComputeChange: SS (ITER=19) (NRM,RELC): ( 0.27642718E-03 0.75354658E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           20
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97242     0.18531205E-08 ) :: heat equation
+ComputeChange: SS (ITER=20) (NRM,RELC): (  294.97242     0.18531205E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.5535E-10 0.5535E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27640576E-03 0.77505530E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7640576099458811E-004
+FlowSolve:  Relative Change :    7.7505530139964260E-005
+ComputeChange: SS (ITER=20) (NRM,RELC): ( 0.27640576E-03 0.77505530E-04 ) :: navier-stokes
+SolveEquations: Coupled system iteration: 20
+WARNING:: SolveEquations: Numerical Error: Coupled system did not converge
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Time: 3/3:   3.000E+02
+MAIN: -------------------------------------
+MAIN: 
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            1
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.5674E-07  0.8075E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97175     0.22775213E-05 ) :: heat equation
+ComputeChange: SS (ITER=1) (NRM,RELC): (  294.97175     0.22775213E-05 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.6074E-09 0.6074E-09
+BiCGStabl:       11 0.6729E-10 0.6729E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27462479E-03 0.64641543E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7462478774681142E-004
+FlowSolve:  Relative Change :    6.4641543081217136E-003
+ComputeChange: SS (ITER=1) (NRM,RELC): ( 0.27462479E-03 0.64641543E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            2
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.2166E-07  0.2480E-07
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97146     0.97393290E-06 ) :: heat equation
+ComputeChange: SS (ITER=2) (NRM,RELC): (  294.97146     0.97393290E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.2079E-09 0.2079E-09
+BiCGStabl:       11 0.6105E-10 0.6105E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27548229E-03 0.31175990E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7548229438161025E-004
+FlowSolve:  Relative Change :    3.1175989644817905E-003
+ComputeChange: SS (ITER=2) (NRM,RELC): ( 0.27548229E-03 0.31175990E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            3
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+   gcr:    10  0.8249E-08  0.9641E-08
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97132     0.46489374E-06 ) :: heat equation
+ComputeChange: SS (ITER=3) (NRM,RELC): (  294.97132     0.46489374E-06 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1887E-09 0.1887E-09
+BiCGStabl:       11 0.6072E-10 0.6072E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27483410E-03 0.23557172E-02 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7483409949519036E-004
+FlowSolve:  Relative Change :    2.3557171606448800E-003
+ComputeChange: SS (ITER=3) (NRM,RELC): ( 0.27483410E-03 0.23557172E-02 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            4
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97131     0.50416179E-07 ) :: heat equation
+ComputeChange: SS (ITER=4) (NRM,RELC): (  294.97131     0.50416179E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.7085E-10 0.7085E-10
+BiCGStabl:       10 0.7085E-10 0.7085E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505675E-03 0.80981673E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7505675490146353E-004
+FlowSolve:  Relative Change :    8.0981672814860824E-004
+ComputeChange: SS (ITER=4) (NRM,RELC): ( 0.27505675E-03 0.80981673E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            5
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97130     0.13697833E-07 ) :: heat equation
+ComputeChange: SS (ITER=5) (NRM,RELC): (  294.97130     0.13697833E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.1200E-09 0.1200E-09
+BiCGStabl:       11 0.1100E-10 0.1100E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27507537E-03 0.67669702E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7507536853985570E-004
+FlowSolve:  Relative Change :    6.7669701873568209E-005
+ComputeChange: SS (ITER=5) (NRM,RELC): ( 0.27507537E-03 0.67669702E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            6
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97130     0.23370633E-07 ) :: heat equation
+ComputeChange: SS (ITER=6) (NRM,RELC): (  294.97130     0.23370633E-07 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.8556E-10 0.8556E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503438E-03 0.14900955E-03 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7503438273567584E-004
+FlowSolve:  Relative Change :    1.4900955340211276E-004
+ComputeChange: SS (ITER=6) (NRM,RELC): ( 0.27503438E-03 0.14900955E-03 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            7
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.57824324E-09 ) :: heat equation
+ComputeChange: SS (ITER=7) (NRM,RELC): (  294.97129     0.57824324E-09 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:       10 0.9529E-10 0.9529E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505514E-03 0.75459646E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7505513751598326E-004
+FlowSolve:  Relative Change :    7.5459646269656548E-005
+ComputeChange: SS (ITER=7) (NRM,RELC): ( 0.27505514E-03 0.75459646E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            8
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.23166373E-08 ) :: heat equation
+ComputeChange: SS (ITER=8) (NRM,RELC): (  294.97129     0.23166373E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.5400E-10 0.5400E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503609E-03 0.69259508E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7503608799205617E-004
+FlowSolve:  Relative Change :    6.9259508400610384E-005
+ComputeChange: SS (ITER=8) (NRM,RELC): ( 0.27503609E-03 0.69259508E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:            9
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.44145137E-09 ) :: heat equation
+ComputeChange: SS (ITER=9) (NRM,RELC): (  294.97129     0.44145137E-09 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5741E-10 0.5741E-10
+BiCGStabl:       10 0.5741E-10 0.5741E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505832E-03 0.80815833E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7505831616090237E-004
+FlowSolve:  Relative Change :    8.0815833349274615E-005
+ComputeChange: SS (ITER=9) (NRM,RELC): ( 0.27505832E-03 0.80815833E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           10
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.31183012E-08 ) :: heat equation
+ComputeChange: SS (ITER=10) (NRM,RELC): (  294.97129     0.31183012E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.3460E-10 0.3460E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503337E-03 0.90702835E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7503336872317915E-004
+FlowSolve:  Relative Change :    9.0702835213640938E-005
+ComputeChange: SS (ITER=10) (NRM,RELC): ( 0.27503337E-03 0.90702835E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           11
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.21226554E-08 ) :: heat equation
+ComputeChange: SS (ITER=11) (NRM,RELC): (  294.97129     0.21226554E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5608E-10 0.5608E-10
+BiCGStabl:       10 0.5608E-10 0.5608E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505854E-03 0.91532617E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7505854439926960E-004
+FlowSolve:  Relative Change :    9.1532616604157927E-005
+ComputeChange: SS (ITER=11) (NRM,RELC): ( 0.27505854E-03 0.91532617E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           12
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.38284515E-08 ) :: heat equation
+ComputeChange: SS (ITER=12) (NRM,RELC): (  294.97129     0.38284515E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.8359E-10 0.8359E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503622E-03 0.81151775E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7503622381582025E-004
+FlowSolve:  Relative Change :    8.1151775072401899E-005
+ComputeChange: SS (ITER=12) (NRM,RELC): ( 0.27503622E-03 0.81151775E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           13
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.15451229E-08 ) :: heat equation
+ComputeChange: SS (ITER=13) (NRM,RELC): (  294.97129     0.15451229E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.4623E-10 0.4623E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505858E-03 0.81293906E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7505858349350829E-004
+FlowSolve:  Relative Change :    8.1293905672051727E-005
+ComputeChange: SS (ITER=13) (NRM,RELC): ( 0.27505858E-03 0.81293906E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           14
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.18276828E-08 ) :: heat equation
+ComputeChange: SS (ITER=14) (NRM,RELC): (  294.97129     0.18276828E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.8375E-10 0.8375E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503380E-03 0.90113533E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7503379810941969E-004
+FlowSolve:  Relative Change :    9.0113533353715640E-005
+ComputeChange: SS (ITER=14) (NRM,RELC): ( 0.27503380E-03 0.90113533E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           15
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.31095600E-08 ) :: heat equation
+ComputeChange: SS (ITER=15) (NRM,RELC): (  294.97129     0.31095600E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5446E-10 0.5446E-10
+BiCGStabl:       10 0.5446E-10 0.5446E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505829E-03 0.89048443E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7505829053147302E-004
+FlowSolve:  Relative Change :    8.9048443193720660E-005
+ComputeChange: SS (ITER=15) (NRM,RELC): ( 0.27505829E-03 0.89048443E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           16
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.33044809E-08 ) :: heat equation
+ComputeChange: SS (ITER=16) (NRM,RELC): (  294.97129     0.33044809E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.4462E-10 0.4462E-10
+BiCGStabl:       10 0.4462E-10 0.4462E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503651E-03 0.79198128E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7503650729224449E-004
+FlowSolve:  Relative Change :    7.9198128448784605E-005
+ComputeChange: SS (ITER=16) (NRM,RELC): ( 0.27503651E-03 0.79198128E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           17
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.16308578E-08 ) :: heat equation
+ComputeChange: SS (ITER=17) (NRM,RELC): (  294.97129     0.16308578E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.5087E-10 0.5087E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505833E-03 0.79341869E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7505833006863270E-004
+FlowSolve:  Relative Change :    7.9341869459822469E-005
+ComputeChange: SS (ITER=17) (NRM,RELC): ( 0.27505833E-03 0.79341869E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           18
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.16424360E-08 ) :: heat equation
+ComputeChange: SS (ITER=18) (NRM,RELC): (  294.97129     0.16424360E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+BiCGStabl:        9 0.3563E-10 0.3563E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503407E-03 0.88195100E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.00    0.00
+FlowSolve:  Result Norm     :    2.7503407234137043E-004
+FlowSolve:  Relative Change :    8.8195100154075644E-005
+ComputeChange: SS (ITER=18) (NRM,RELC): ( 0.27503407E-03 0.88195100E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           19
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.31531398E-08 ) :: heat equation
+ComputeChange: SS (ITER=19) (NRM,RELC): (  294.97129     0.31531398E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5219E-10 0.5219E-10
+BiCGStabl:       10 0.5219E-10 0.5219E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27505804E-03 0.87150582E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7505804276531251E-004
+FlowSolve:  Relative Change :    8.7150581816422938E-005
+ComputeChange: SS (ITER=19) (NRM,RELC): ( 0.27505804E-03 0.87150582E-04 ) :: navier-stokes
+SolveEquations: -------------------------------------
+SolveEquations:  Coupled system iteration:           20
+SolveEquations: -------------------------------------
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+IterSolver: "Linear System GCR Restart" not given, setting it to 200
+ComputeChange: NS (ITER=1) (NRM,RELC): (  294.97129     0.31819977E-08 ) :: heat equation
+ComputeChange: SS (ITER=20) (NRM,RELC): (  294.97129     0.31819977E-08 ) :: heat equation
+FlowSolve: 
+FlowSolve: 
+FlowSolve: -------------------------------------
+FlowSolve:  NAVIER-STOKES ITERATION           1
+FlowSolve: -------------------------------------
+FlowSolve: 
+FlowSolve: Starting Assembly...
+FlowSolve: Assembly:
+FlowSolve: Assembly done
+FlowSolve: Dirichlet conditions done
+      10 0.5631E-10 0.5631E-10
+BiCGStabl:       10 0.5631E-10 0.5631E-10
+ComputeChange: NS (ITER=1) (NRM,RELC): ( 0.27503672E-03 0.77517712E-04 ) :: navier-stokes
+FlowSolve: iter:    1 Assembly: (s)    0.01    0.01
+FlowSolve: iter:    1 Solve:    (s)    0.01    0.01
+FlowSolve:  Result Norm     :    2.7503672172162716E-004
+FlowSolve:  Relative Change :    7.7517711717303348E-005
+ComputeChange: SS (ITER=20) (NRM,RELC): ( 0.27503672E-03 0.77517712E-04 ) :: navier-stokes
+SolveEquations: Coupled system iteration: 20
+WARNING:: SolveEquations: Numerical Error: Coupled system did not converge
+CompareToReferenceSolution: Solver 2 PASSED:  Norm = 2.75036722E-04  RefNorm = 2.75036670E-04
+CompareToReferenceSolution: Relative Error to reference norm: 1.880536E-07
+CompareToReferenceSolution: PASSED all 1 tests!
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         1.13        1.79
+ELMER SOLVER FINISHED AT: 2026/09/30 18:16:15

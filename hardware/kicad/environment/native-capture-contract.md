@@ -1,6 +1,6 @@
 # PCB-D ENV Rev.A — Native KiCad Capture Contract
 
-Status: **READY_FOR_NATIVE_KICAD_STRUCTURE_AND_CAPTURE_WITH_ADDRESS_STRAP_AUDIT**
+Status: **REV_EZ_NATIVE_SCHEMATIC_ERC_AND_PIN_NETLIST_PASS / PCB_AND_OPTICAL_PATH_OPEN**
 Target: **KiCad 9.x**
 
 Engineering authority: `hardware/environment/sht45-opt3004-rev-a.md`.
@@ -40,7 +40,7 @@ U301 = **Sensirion SHT45-AD1F**.
 - 100 nF X7R directly at VDD/GND
 - manufacturer land pattern
 
-PTFE membrane/opening must remain free from solder mask obstruction, coating, adhesive and mechanical contact.
+polyimide membrane/opening must remain free from solder mask obstruction, coating, adhesive and mechanical contact.
 
 ## 4. U302 OPT3004
 U302 = **Texas Instruments OPT3004DNPR**, DNP/USON package.
@@ -53,7 +53,9 @@ U302 = **Texas Instruments OPT3004DNPR**, DNP/USON package.
 
 Do not use address 0x44 because SHT45 already owns it.
 
-The exact ADDR pin strap required to obtain 0x45 is an explicit **TI_DATASHEET_PIN_TABLE_AUDIT** gate. ADDR must not float.
+The Rev.EZ native netlist verifies ADDR pin 2 tied to VDD for address 0x45,
+consistent with the TI address table. ADDR must not float. This closes the
+electrical capture check; address communication on hardware remains untested.
 
 Interrupt operation is not required in Rev.A. OPT3004 interrupt output is left uncommitted unless firmware requirements later justify ENV_INT.
 
@@ -118,6 +120,11 @@ Mechanical CAD must provide:
 - no visible front opening required.
 
 Exact channel geometry remains a mechanical/CFD release gate.
+
+Rev.EZ records a separate geometric failure of the nominal normal-facing light
+path: the DML lies in front of the entire ENV seed. Do not finalize PCB placement
+from the old assertion that the front path is unobstructed. See
+`../../../mechanical/cad/audit_env_front_path_rev_ez.py` and its execution evidence.
 
 ## 11. OPT3004 optical layout
 OPT3004 aperture faces the printed acoustic fabric through a controlled dark tunnel/baffle.
@@ -201,13 +208,17 @@ Status:
 
 ## Final electrical / package audit — 2026-09-29
 ### OPT3004 address and pin freeze
-U302 OPT3004DNPR pin capture is frozen from the TI datasheet: pin 1 VDD=+3V3_SYS; pin 2 GND; pin 3 SDA=I2C_SDA; pin 4 SCL=I2C_SCL; pin 5 INT left NC in Rev.A unless ENV_INT is deliberately enabled; pin 6 ADDR tied directly to VDD for 7-bit address **0x45**. The exposed thermal pad is connected to GND as recommended by TI. ADDR must not float.
+**Corrected 2026-10-01, Rev.EZ:** the previous pin-2/pin-3/pin-6 assignment was incorrect and must not be captured. U302 OPT3004DNPR, DNP six-pin USON, top view: pin 1 VDD=+3V3_SYS; pin 2 ADDR=+3V3_SYS; pin 3 GND; pin 4 SCL=I2C_SCL; pin 5 INT left NC in Rev.A unless ENV_INT is deliberately enabled; pin 6 SDA=I2C_SDA. ADDR tied to VDD selects 7-bit address **0x45**. The exposed thermal pad is connected to GND. ADDR must not float. Verified against [TI SBOS929A](https://www.ti.com/lit/ds/symlink/opt3004.pdf), Table 6-1, Table 8-1 and section 11.1; this is not the eight-pin DTS package.
 OPT3004 DNP package uses the TI manufacturer land pattern; the optical aperture/active area and package top must remain unobstructed.
 
 ### SHT45 package capture
-U301 SHT45-AD1F uses the Sensirion DFN 4-pin manufacturer land pattern and pin assignment: 1 SDA, 2 SCL, 3 VDD, 4 VSS. The AD1F PTFE membrane is part of the frozen device selection. Do not coat, glue, press or mechanically obstruct the membrane/opening.
+U301 SHT45-AD1F uses the Sensirion DFN 4-pin manufacturer land pattern and pin assignment: 1 SDA, 2 SCL, 3 VDD, 4 VSS. Verified 2026-10-01 against [Sensirion SHT4x v7.3](https://sensirion.com/resource/datasheet/sht4x), sections 5.3/5.4. Leave its central die pad unsoldered and keep copper out from under the sensor except the four pin lands, as recommended by Sensirion; do not copy the OPT3004 thermal-pad treatment. The AD1F polyimide membrane is part of the frozen device selection. Do not coat, glue, press or mechanically obstruct the membrane/opening.
 
 ### I2C map
 Rev.A production map is now fully frozen: SHT45=0x44; OPT3004=0x45. MAIN remains the sole populated pull-up owner. PCB-D does not need ENV_INT or BOARD_ID electrically for Rev.A; both connector positions remain reserved/DNP.
 
 Status: **ELECTRICAL_PINOUT_AND_ADDRESS_AUDITED / READY_FOR_NATIVE_KICAD_DETAILED_CAPTURE**.
+
+## Rev.EZ source correction, 2026-10-05
+
+Sensirion SHT4x datasheet v7.3 (June 2026), section 6.1 and revision history, corrects the membrane description from PTFE to polyimide. The older product web page still says PTFE; this capture follows the current datasheet. The device family remains SHT45-AD1F; manufacturer reel ordering code SHT45-AD1F-R2 / article 3.000.886. Procurement quantity and distributor cut-tape are not authorized by this technical selection. Source: https://sensirion.com/resource/datasheet/sht4x.

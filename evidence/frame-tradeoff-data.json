@@ -1,0 +1,32 @@
+[
+  {
+    "revision": "EU.4",
+    "mass_g": 422.22292712549284,
+    "LR_displacement_mm": 1.8207
+  },
+  {
+    "revision": "EU.8",
+    "mass_g": 248.75575935610115,
+    "LR_displacement_mm": 2.808054
+  },
+  {
+    "revision": "EU.9",
+    "mass_g": 230.1205662662243,
+    "LR_displacement_mm": 2.888121
+  },
+  {
+    "revision": "EU.10",
+    "mass_g": 246.51136802167366,
+    "LR_displacement_mm": 2.141594
+  },
+  {
+    "revision": "EU.11",
+    "mass_g": 246.94087254307217,
+    "LR_displacement_mm": 1.544203
+  },
+  {
+    "revision": "EU.12",
+    "mass_g": 246.08564751786363,
+    "LR_displacement_mm": 1.45595
+  }
+]

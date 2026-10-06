@@ -1,0 +1,55 @@
+{
+  "board_regions": {
+    "MAIN_P": {
+      "xy_mm": [
+        105,
+        220,
+        112,
+        157
+      ],
+      "role": "power/audio primary hot PCB"
+    },
+    "MAIN_C": {
+      "xy_mm": [
+        85,
+        235,
+        315,
+        370
+      ],
+      "role": "PoE/network/control"
+    }
+  },
+  "scenarios": {
+    "CFD_5W": {
+      "total_W": 5.0,
+      "Q_W": {
+        "MAIN_P": 3.5,
+        "MAIN_C": 1.5
+      },
+      "sum_W": 5.0
+    },
+    "CFD_8W": {
+      "total_W": 8.0,
+      "Q_W": {
+        "MAIN_P": 6.0,
+        "MAIN_C": 2.0
+      },
+      "sum_W": 8.0
+    },
+    "CFD_10W": {
+      "total_W": 10.0,
+      "Q_W": {
+        "MAIN_P": 8.0,
+        "MAIN_C": 2.0
+      },
+      "sum_W": 10.0
+    }
+  },
+  "status": "MODEL_ALLOCATION_ONLY",
+  "rules": [
+    "fractions are not measured losses",
+    "same allocation must be used across CFD-0/08/10 for a given heat case",
+    "do not add component heat on top unless aggregate board source is reduced by the same amount",
+    "Pi heat remains open and must be incorporated only after its actual model/location/load is reconciled"
+  ]
+}

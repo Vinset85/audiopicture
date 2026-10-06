@@ -1,0 +1,793 @@
+{
+  "revision": "Rev.EZ",
+  "base_head": "19a436701211b5135ecb1b672eae44f177894629",
+  "gate_counts": {
+    "PASS": 28,
+    "FAIL": 12,
+    "OPEN": 14
+  },
+  "counts_are_completion_percentage": false,
+  "frame_EU11": {
+    "CAD": {
+      "revision": "Rev.EU.11",
+      "classification": "CALCULATED_SCREENING_CANDIDATE_NOT_FABRICATION_RELEASE",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 202410.55126481326,
+      "reimport_valid": true,
+      "reimport_solids": 1,
+      "collision_volume_mm3": {
+        "EX_L1": 0,
+        "EX_L2": 0,
+        "EX_R1": 0,
+        "EX_R2": 0,
+        "MAIN_C": 0,
+        "MAIN_P": 0,
+        "VOICE": 0,
+        "RADAR": 0,
+        "ENV": 0,
+        "SERVICE": 0,
+        "ESP32_RF": 0,
+        "DML": 0,
+        "shell_EQ": 0
+      },
+      "shell_clearance_mm": 1.0,
+      "mount_centers_xy_mm": {
+        "UL1": [
+          37.5,
+          375
+        ],
+        "UL2": [
+          67.5,
+          375
+        ],
+        "UR1": [
+          252.5,
+          375
+        ],
+        "UR2": [
+          282.5,
+          375
+        ]
+      },
+      "bore_radius_seed_mm": 3,
+      "bore_z_mm": [
+        28,
+        35
+      ],
+      "pad_centers_xy_mm": [
+        [
+          45,
+          28
+        ],
+        [
+          275,
+          28
+        ]
+      ],
+      "anti_lift_load_interface_xy_mm": [
+        160,
+        15
+      ],
+      "rail_paths_xy_mm": {
+        "rail_L": [
+          [
+            34,
+            378
+          ],
+          [
+            34,
+            350
+          ],
+          [
+            33,
+            300
+          ],
+          [
+            32,
+            235
+          ],
+          [
+            32,
+            125
+          ],
+          [
+            33,
+            112
+          ],
+          [
+            33,
+            45
+          ],
+          [
+            45,
+            28
+          ]
+        ],
+        "rail_R": [
+          [
+            286,
+            378
+          ],
+          [
+            300,
+            350
+          ],
+          [
+            300,
+            300
+          ],
+          [
+            303,
+            225
+          ],
+          [
+            305,
+            155
+          ],
+          [
+            306,
+            75
+          ],
+          [
+            300,
+            62
+          ],
+          [
+            296,
+            30
+          ],
+          [
+            275,
+            28
+          ]
+        ],
+        "mid_B1_B2": [
+          [
+            32,
+            235
+          ],
+          [
+            155,
+            230
+          ],
+          [
+            303,
+            225
+          ]
+        ],
+        "mid_B3": [
+          [
+            155,
+            230
+          ],
+          [
+            205,
+            165
+          ],
+          [
+            305,
+            155
+          ]
+        ],
+        "mid_B4": [
+          [
+            32,
+            125
+          ],
+          [
+            70,
+            161
+          ],
+          [
+            155,
+            161
+          ],
+          [
+            155,
+            230
+          ]
+        ],
+        "lower_L": [
+          [
+            33,
+            45
+          ],
+          [
+            95,
+            45
+          ],
+          [
+            95,
+            14
+          ],
+          [
+            160,
+            14
+          ]
+        ],
+        "lower_R": [
+          [
+            300,
+            62
+          ],
+          [
+            296,
+            60
+          ],
+          [
+            225,
+            55
+          ],
+          [
+            225,
+            14
+          ],
+          [
+            160,
+            14
+          ]
+        ],
+        "pad_L_ring": [
+          [
+            45,
+            28
+          ],
+          [
+            45,
+            7
+          ]
+        ],
+        "pad_R_ring": [
+          [
+            275,
+            28
+          ],
+          [
+            275,
+            7
+          ]
+        ]
+      },
+      "primary_rib_mm": 2.8,
+      "central_bottom_tube_xy_mm": [
+        32,
+        288,
+        3.2,
+        19
+      ],
+      "central_tube_wall_mm": 3.2,
+      "central_tube_z_mm": [
+        6,
+        36.8
+      ],
+      "dml_notch_yz_mm": [
+        9.6,
+        19,
+        6,
+        10.3
+      ],
+      "anti_lift_surface_z_mm": 35,
+      "primary_rib_z_mm": [
+        20,
+        26.4
+      ],
+      "front_flange_width_mm": 6.4,
+      "perimeter_web_topology": "two opposed 2.4 mm planes, one 3.2 mm diagonal per bay/plane; opposing slopes",
+      "perimeter_web_mm": 2.4,
+      "closed_bottom_tube_y_mm": [
+        3.2,
+        12
+      ],
+      "sha256": "2dfebbbaf224d9d0a2381e566f79f6707b3d4292a563dbe58bf0ff2140d0c6b3",
+      "limitations": [
+        "Mount shift Y366->375 required by conservative RF mask; requires mating cleat redesign.",
+        "6 mm insert surrogate bore, no exact insert installation-hole claim.",
+        "Fillets, exact radar mask, cables, board carrier interfaces and fasteners remain incomplete.",
+        "Lower support/anti-lift surrogate load interfaces; actual wall hardware absent.",
+        "Volume density/strength unqualified; no product release."
+      ]
+    },
+    "mesh": {
+      "source_sha256": "2dfebbbaf224d9d0a2381e566f79f6707b3d4292a563dbe58bf0ff2140d0c6b3",
+      "size_mm": 4.0,
+      "nodes": 151260,
+      "elements": 72609,
+      "type": "C3D10",
+      "min_SICN": 0.004986120835991812,
+      "corner_tet_volume_mm3": 202408.2507848848,
+      "volume_weighted_seed_cg_mm": [
+        161.15898627060633,
+        152.35902479929098,
+        23.068729512932297
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 101,
+        "PAD_R": 101,
+        "ANTILIFT": 107,
+        "CORNER_LL": 33,
+        "CORNER_LR": 33,
+        "CORNER_UL": 31,
+        "CORNER_UR": 31
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution"
+    },
+    "LC1": {
+      "case": "LC1",
+      "solver_execution_pass": true,
+      "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+      "final_step_time": 1.0,
+      "max_displacement_mm": 7.126801841338854,
+      "max_displacement_node": 87380,
+      "max_displacement_xyz_mm": [
+        156.3770459118638,
+        160.7475231562713,
+        26.127181839093296
+      ],
+      "max_abs_UZ_mm": 0.2133739,
+      "corner_max_abs_UZ_mm": {
+        "CORNER_LL": 0.02450898,
+        "CORNER_LR": 0.006467916,
+        "CORNER_UL": 0.04200216,
+        "CORNER_UR": 0.03783751
+      },
+      "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+      "adjacent_mount_max_displacement_mm": {
+        "UL1": 0.009051723527055222,
+        "UL2": 0.004146946404739396,
+        "UR1": 0.004960232787137716,
+        "UR2": 0.01592496445349094
+      },
+      "support_reaction_sum_N": [
+        -2.494478495845831e-07,
+        69.99999963449302,
+        -3.854319998546074e-07
+      ],
+      "force_balance_residual_N": [
+        -2.494478495845831e-07,
+        -3.6550665072354604e-07,
+        -3.854319998546074e-07
+      ],
+      "force_balance_within_0_1_percent_or_0_001N": true,
+      "cleat_bore_reactions_N": {
+        "UL1": [
+          -12.027747212869993,
+          31.880607511816994,
+          1.3014368452780005
+        ],
+        "UL2": [
+          9.755488625501112,
+          4.091498133326001,
+          -0.9674484351300002
+        ],
+        "UR1": [
+          -13.461701836498976,
+          -0.42881773741999785,
+          -0.7421074836
+        ],
+        "UR2": [
+          15.73396017441998,
+          34.45671172677002,
+          1.37425383698
+        ]
+      },
+      "anti_lift_normal_reaction_N": -0.9661351489599996,
+      "warp_normal_reaction_N": null,
+      "moment_balance_residual_Nmm": [
+        -2.0860551279779788e-05,
+        -8.633051088405286e-06,
+        4.680367622354048e-05
+      ],
+      "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+      "nodal_extrapolated_stress_diagnostic": {
+        "von_mises_max_MPa": 7.154468860960609,
+        "node": 17630,
+        "xyz_mm": [
+          291.8164944809186,
+          369.4975062066627,
+          26.4
+        ],
+        "principal_max_MPa": 7.306388288927243,
+        "principal_min_MPa": -6.611980858704614,
+        "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+      },
+      "qualified_strength_margin": null
+    },
+    "LC4": {
+      "case": "LC4",
+      "solver_execution_pass": true,
+      "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+      "final_step_time": 1.0,
+      "max_displacement_mm": 1.5620256494863547,
+      "max_displacement_node": 13,
+      "max_displacement_xyz_mm": [
+        316.8,
+        3.2,
+        35.0
+      ],
+      "max_abs_UZ_mm": 1.544203,
+      "corner_max_abs_UZ_mm": {
+        "CORNER_LL": 0.1159219,
+        "CORNER_LR": 1.544203,
+        "CORNER_UL": 0.002823946,
+        "CORNER_UR": 0.02999284
+      },
+      "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+      "adjacent_mount_max_displacement_mm": {
+        "UL1": 0.0004524782393955537,
+        "UL2": 0.00027799595220164626,
+        "UR1": 0.0017617386031529337,
+        "UR2": 0.0035947119005454125
+      },
+      "support_reaction_sum_N": [
+        -7.825800083047924e-08,
+        -3.136579993789912e-07,
+        30.000006177611393
+      ],
+      "force_balance_residual_N": [
+        -7.825800083047924e-08,
+        -3.136579993789912e-07,
+        6.177611385993487e-06
+      ],
+      "force_balance_within_0_1_percent_or_0_001N": true,
+      "cleat_bore_reactions_N": {
+        "UL1": [
+          -0.11591639651500014,
+          -0.5287891427899992,
+          0.3865763510699998
+        ],
+        "UL2": [
+          -0.7498057003959998,
+          0.550709649592,
+          0.04676181581650002
+        ],
+        "UR1": [
+          1.423350988735001,
+          0.4887941388800002,
+          -1.0770374303820005
+        ],
+        "UR2": [
+          -0.557628970081999,
+          -0.5107149593400003,
+          1.0954019717269994
+        ]
+      },
+      "anti_lift_normal_reaction_N": 54.826163469200004,
+      "warp_normal_reaction_N": null,
+      "pad_max_numerical_penetration_mm": 0.004742435,
+      "pad_max_opening_mm": 1.052999,
+      "moment_balance_residual_Nmm": [
+        -0.0011072828734199902,
+        -7.829955845295444e-05,
+        -1.982621486718017e-05
+      ],
+      "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+      "nodal_extrapolated_stress_diagnostic": {
+        "von_mises_max_MPa": 8.816134880622306,
+        "node": 436,
+        "xyz_mm": [
+          169.0,
+          10.0,
+          36.8
+        ],
+        "principal_max_MPa": 9.92455919732034,
+        "principal_min_MPa": -7.379061731321329,
+        "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+      },
+      "qualified_strength_margin": null,
+      "corner_displacement_screen_status": "FAIL"
+    }
+  },
+  "ENV": {
+    "status": "PASS_ELECTRICAL_CAPTURE_SCOPE_ONLY",
+    "kicad_version": "9.0.8",
+    "erc_errors_warnings_exclusions": 0,
+    "components_without_power_flags": 10,
+    "connected_pin_count": 26,
+    "explicit_no_connect_pin_count": 3,
+    "nets": {
+      "+3V3_SYS": [
+        "C301.1",
+        "C302.1",
+        "C303.1",
+        "J301.1",
+        "J301.2",
+        "TP301.1",
+        "U301.3",
+        "U302.1",
+        "U302.2"
+      ],
+      "GND": [
+        "C301.2",
+        "C302.2",
+        "C303.2",
+        "J301.3",
+        "J301.4",
+        "TP302.1",
+        "U301.4",
+        "U302.3",
+        "U302.7"
+      ],
+      "I2C_SCL": [
+        "J301.6",
+        "TP304.1",
+        "U301.2",
+        "U302.4"
+      ],
+      "I2C_SDA": [
+        "J301.5",
+        "TP303.1",
+        "U301.1",
+        "U302.6"
+      ]
+    },
+    "no_connect": [
+      "J301.7",
+      "J301.8",
+      "U302.5"
+    ],
+    "checks": [
+      "Exact pin memberships from independent KiCad XML",
+      "OPT3004 ADDR tied VDD (0x45)",
+      "No ENV pull-up resistor components",
+      "C303 DNP; bypass capacitors populated",
+      "SHT45 no-central-pad and OPT3004 dedicated EP footprints"
+    ],
+    "source_hashes": {
+      "env-netlist.xml": "d3a4bf20a2c6465cc6ca554fb03ff7dc6d3da856365f729fd1421a4033b427f8",
+      "env-erc.json": "bc85fb699434a8dbb874bc6b66dd8740d5168e1c10cfe8d3c9e6c7a900e71d6d"
+    },
+    "not_closed": [
+      "PCB placement/routing/DRC",
+      "Mating FPC orientation",
+      "Thermal chamber and optical tunnel",
+      "Hardware bus, sensor and assembly tests",
+      "Capacitor placement and assembly qualification"
+    ]
+  },
+  "optical_path": {
+    "classification": "CALCULATED_GEOMETRIC_PATH_AUDIT_NOT_OPTICAL_SIMULATION",
+    "status": "FAIL_STRAIGHT_UNOBSTRUCTED_FRONT_PATH_FOR_CURRENT_ENV_SEED",
+    "DML_volume_mm": [
+      10,
+      310,
+      10,
+      390,
+      3.3,
+      9.3
+    ],
+    "ENV_XY_seed_mm": [
+      252,
+      294,
+      35,
+      59
+    ],
+    "ENV_PCB_front_Z_seed_mm": 12,
+    "swept_path_DML_overlap_mm3": 6048.0,
+    "projected_ENV_coverage_percent": 100,
+    "tested_normal_rays": 25,
+    "rays_intersecting_DML": 25,
+    "probes": [
+      {
+        "xy_mm": [
+          252,
+          35
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          252,
+          41
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          252,
+          47
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          252,
+          53
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          252,
+          59
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          262.5,
+          35
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          262.5,
+          41
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          262.5,
+          47
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          262.5,
+          53
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          262.5,
+          59
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          273,
+          35
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          273,
+          41
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          273,
+          47
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          273,
+          53
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          273,
+          59
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          283.5,
+          35
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          283.5,
+          41
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          283.5,
+          47
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          283.5,
+          53
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          283.5,
+          59
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          294,
+          35
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          294,
+          41
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          294,
+          47
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          294,
+          53
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      },
+      {
+        "xy_mm": [
+          294,
+          59
+        ],
+        "path_inside_DML_mm": 6.000000000000001
+      }
+    ],
+    "analytical_scope": "Entire ENV XY rectangle is a subset of the hard DML projection; changing ENV Z from 12 to 13 cannot remove the intervening DML band.",
+    "does_not_establish": [
+      "DML/fabric optical transmittance, scattering, lux accuracy or attenuation",
+      "A reflective or lateral optical path",
+      "A released relocation of the sensor"
+    ],
+    "required_resolution": "Define and verify an actual perimeter/front optical path or relocate the light sensor; preserve DML, RF and removable-front requirements. Do not release the current normal-facing placement.",
+    "sources": [
+      "mechanical/master-global-z-map-rev-a.md sections 3 and 9",
+      "mechanical/g1-dimensional-packaging-model-rev-a.md ENV XY seed",
+      "hardware/environment/sht45-opt3004-rev-a.md optical tunnel contract"
+    ]
+  },
+  "software": {
+    "host_suites": 3,
+    "ha_tests": 32,
+    "ha_line_coverage": {
+      "covered_lines": 181,
+      "num_statements": 181,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100"
+    },
+    "firmware_bytes": 851936
+  },
+  "BOM": {
+    "source": "work/audiopicture/hardware/bom/audiopicture-v2.2-rev-a.csv",
+    "sha256": "6ccc9951ac8aabef0852b51c9ade600e769902112d880b6a7b29180fd8a19570",
+    "rows": 76,
+    "optional_or_removed": 5,
+    "active_rows_without_exact_mpn": 27,
+    "explicit_review_markers_including_DNP": 39,
+    "quantity_sum": null,
+    "quantity_sum_reason": "RADAR_FILTERS is six branches, not an exact purchasable component count; grouped quantities and DNP are retained.",
+    "classification": "READ_ONLY_BOM_COMPLETENESS_AUDIT_NOT_PROCUREMENT_RELEASE",
+    "audit_note": "Rev.EX fixed A1:F75 range included an empty separator and omitted the last resistor row. Dynamic range and empty-row filtering correct it. RADAR_FILTERS is a network with incomplete individual capacitor MPNs. The CSV is still a partial BOM, not a complete native schematic-derived parts count."
+  },
+  "production_ready": false,
+  "all_remaining_digital_work_complete": false
+}

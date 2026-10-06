@@ -1,0 +1,2194 @@
+{
+  "revision": "Rev.FA",
+  "executed_at_utc": "2026-10-06T05:29:22.822550+00:00",
+  "classification": "CALCULATED_OPTICAL_PACKAGING_CANDIDATE_NOT_RADIOMETRY_OR_PRODUCTION",
+  "status": "PASS_NOMINAL_35_DEG_GEOMETRIC_FIELD_ONLY",
+  "input_sha256": {
+    "../frontcarrier-rebuild/AP22_FRONT_CARRIER_REV_B_4MM_DMU.step": "51d2ed04446683052b6d84007e67652d8e1f7b22bb55fbf9d2d1f18cf98c9807",
+    "evidence/rev-eu11/AP22_FRAME_CANDIDATE_REV_EU.step": "2dfebbbaf224d9d0a2381e566f79f6707b3d4292a563dbe58bf0ff2140d0c6b3",
+    "evidence/rev-eq/AP22_REV_EQ_SOLID.step": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+    "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/generate_optical_perimeter_candidate_rev_fa.py": "cab40bd652be282e0f6a146be03e06508b30dffec2171bd79c27526af6dde4f5"
+  },
+  "carrier_global_Z_translation_mm": 0.5,
+  "unmodified_carrier_volume_mm3": 25649.480451753578,
+  "removed_carrier_volume_mm3": 97.56700815821387,
+  "window_xyz_mm": [
+    310.59999999999997,
+    317.2,
+    42.8,
+    51.2,
+    0.5,
+    2.3
+  ],
+  "window_corner_radius_mm": 1.2,
+  "remaining_nominal_carrier_ligaments_mm": [
+    1.3999999999999773,
+    2.0
+  ],
+  "optical_center_xy_mm": [
+    313.9,
+    47.0
+  ],
+  "PCB_front_Z_mm": 3.35,
+  "PCB_thickness_seed_mm": 0.8,
+  "future_right_wall_seed_xyz_mm": [
+    317.8,
+    320,
+    0,
+    400,
+    4.1,
+    37.8
+  ],
+  "future_wall_scope": "Reservation only. The earlier Z0.5 full-height hypothesis intersected the carrier by 1034.699339 mm3. The enclosure and its front seal still need design; this result does not close them.",
+  "whole_package_source_rectangle_mm": [
+    312.84999999999997,
+    314.95,
+    45.95,
+    48.05
+  ],
+  "conservative_source_Z_mm": 3.35,
+  "analytical_all_azimuth_clear_half_angle_deg": 38.29016319224307,
+  "35_deg_remaining_combined_lateral_allowance_mm": 0.2544085161023273,
+  "allowance_rule": "A conservative registration/depth allocation obeys norm(delta_XY) + tan(35deg)*positive_delta_Z <= remaining allowance. This is available geometric margin, NOT a measured manufacturing tolerance.",
+  "aperture_proof": "Rounded port is convex; the entire source rectangle is at least 2.25 mm from its boundary. Dilating it by a disk of radius (3.35-0.5)*tan(35deg) stays inside, so every azimuth through the complete thickness is clear. Conservative source plane is behind the complete optical package.",
+  "angular_sweep": [
+    {
+      "polar_deg": 0,
+      "rays": 9,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 2.2499999999999885
+    },
+    {
+      "polar_deg": 15,
+      "rays": 648,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 1.4863448015712943
+    },
+    {
+      "polar_deg": 30,
+      "rays": 648,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 0.6045517328095567
+    },
+    {
+      "polar_deg": 35,
+      "rays": 648,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 0.2544085161023186
+    },
+    {
+      "polar_deg": 40,
+      "rays": 648,
+      "blocked_by_carrier": 42,
+      "minimum_margin_mm": -0.14143394885526317
+    },
+    {
+      "polar_deg": 45,
+      "rays": 648,
+      "blocked_by_carrier": 90,
+      "minimum_margin_mm": -0.6000000000000345
+    },
+    {
+      "polar_deg": 57,
+      "rays": 648,
+      "blocked_by_carrier": 410,
+      "minimum_margin_mm": -2.138615146871598
+    },
+    {
+      "polar_deg": 60,
+      "rays": 648,
+      "blocked_by_carrier": 518,
+      "minimum_margin_mm": -2.6863448015713063
+    }
+  ],
+  "independent_OCC_rays": [
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 0,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 35,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": false,
+      "carrier_intersection_mm": 0.848528137423882,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": false,
+      "carrier_intersection_mm": 0.848528137423882,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": false,
+      "carrier_intersection_mm": 0.848528137423882,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        312.84999999999997,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        313.9,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": false,
+      "carrier_intersection_mm": 0.848528137423882,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        45.95,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": false,
+      "carrier_intersection_mm": 0.848528137423882,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        47.0,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 0,
+      "rounded_window_clear": false,
+      "carrier_intersection_mm": 0.848528137423882,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 45,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 90,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 135,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 180,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 225,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 270,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    },
+    {
+      "origin_mm": [
+        314.95,
+        48.05,
+        3.35
+      ],
+      "polar_deg": 45,
+      "azimuth_deg": 315,
+      "rounded_window_clear": true,
+      "carrier_intersection_mm": 0,
+      "DML_intersection_mm": 0
+    }
+  ],
+  "collision_volume_mm3": {
+    "modified_carrier": {
+      "DML": 0,
+      "ESP32_RF": 0,
+      "RADAR": 0,
+      "ENV_existing_seed": 0,
+      "future_ASA_right_wall_seed": 0,
+      "frame_EU11": 0,
+      "shell_EQ": 0,
+      "eight_metal_target_envelopes": 0
+    },
+    "OPT_head_PCB_envelope": {
+      "DML": 0,
+      "ESP32_RF": 0,
+      "RADAR": 0,
+      "ENV_existing_seed": 0,
+      "future_ASA_right_wall_seed": 0,
+      "frame_EU11": 0,
+      "shell_EQ": 0,
+      "eight_metal_target_envelopes": 0,
+      "modified_carrier": 0
+    },
+    "OPT3004_max_package_envelope": {
+      "DML": 0,
+      "ESP32_RF": 0,
+      "RADAR": 0,
+      "ENV_existing_seed": 0,
+      "future_ASA_right_wall_seed": 0,
+      "frame_EU11": 0,
+      "shell_EQ": 0,
+      "eight_metal_target_envelopes": 0,
+      "modified_carrier": 0
+    },
+    "C302_backside_envelope_seed": {
+      "DML": 0,
+      "ESP32_RF": 0,
+      "RADAR": 0,
+      "ENV_existing_seed": 0,
+      "future_ASA_right_wall_seed": 0,
+      "frame_EU11": 0,
+      "shell_EQ": 0,
+      "eight_metal_target_envelopes": 0,
+      "modified_carrier": 0
+    }
+  },
+  "minimum_clearances_mm": {
+    "modified_carrier": {
+      "DML": 0.5,
+      "ESP32_RF": 22.69999999999999,
+      "RADAR": 22.19999999999999,
+      "ENV_existing_seed": 17.513708916160496,
+      "future_ASA_right_wall_seed": 0.39999999999999947,
+      "frame_EU11": 2.3,
+      "shell_EQ": 25.69708154635464,
+      "eight_metal_target_envelopes": 0.39999999999999947
+    },
+    "OPT_head_PCB_envelope": {
+      "DML": 1.2999999999999545,
+      "ESP32_RF": 329.1557230248321,
+      "RADAR": 135.20166419094107,
+      "ENV_existing_seed": 18.606786396366203,
+      "future_ASA_right_wall_seed": 1.3000000000000114,
+      "frame_EU11": 1.8499999999999996,
+      "shell_EQ": 25.63615610812197,
+      "eight_metal_target_envelopes": 66.80636197249477,
+      "modified_carrier": 1.0531943918385878
+    },
+    "OPT3004_max_package_envelope": {
+      "DML": 2.849999999999966,
+      "ESP32_RF": 332.45665130961055,
+      "RADAR": 138.38578322934765,
+      "ENV_existing_seed": 20.34318067559738,
+      "future_ASA_right_wall_seed": 2.9470324056582973,
+      "frame_EU11": 2.65,
+      "shell_EQ": 26.824335965686075,
+      "eight_metal_target_envelopes": 69.65333803917797,
+      "modified_carrier": 2.2852789764052877
+    },
+    "C302_backside_envelope_seed": {
+      "DML": 3.0,
+      "ESP32_RF": 330.6760839552809,
+      "RADAR": 136.15550851875219,
+      "ENV_existing_seed": 19.909859366655507,
+      "future_ASA_right_wall_seed": 3.000000000000057,
+      "frame_EU11": 0.9500000000000002,
+      "shell_EQ": 25.250792066784754,
+      "eight_metal_target_envelopes": 71.55635890680855,
+      "modified_carrier": 2.0359273071502315
+    }
+  },
+  "frontward_removal_samples": [
+    {
+      "frontward_travel_mm": 0,
+      "overlap_mm3": {
+        "OPT_head_PCB_envelope": 0,
+        "OPT3004_max_package_envelope": 0,
+        "C302_backside_envelope_seed": 0
+      }
+    },
+    {
+      "frontward_travel_mm": 0.5,
+      "overlap_mm3": {
+        "OPT_head_PCB_envelope": 0,
+        "OPT3004_max_package_envelope": 0,
+        "C302_backside_envelope_seed": 0
+      }
+    },
+    {
+      "frontward_travel_mm": 1,
+      "overlap_mm3": {
+        "OPT_head_PCB_envelope": 0,
+        "OPT3004_max_package_envelope": 0,
+        "C302_backside_envelope_seed": 0
+      }
+    },
+    {
+      "frontward_travel_mm": 3,
+      "overlap_mm3": {
+        "OPT_head_PCB_envelope": 0,
+        "OPT3004_max_package_envelope": 0,
+        "C302_backside_envelope_seed": 0
+      }
+    },
+    {
+      "frontward_travel_mm": 10,
+      "overlap_mm3": {
+        "OPT_head_PCB_envelope": 0,
+        "OPT3004_max_package_envelope": 0,
+        "C302_backside_envelope_seed": 0
+      }
+    },
+    {
+      "frontward_travel_mm": 40,
+      "overlap_mm3": {
+        "OPT_head_PCB_envelope": 0,
+        "OPT3004_max_package_envelope": 0,
+        "C302_backside_envelope_seed": 0
+      }
+    }
+  ],
+  "exports": {
+    "carrier": {
+      "step": "AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step",
+      "sha256": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+      "valid": true,
+      "solids": 1,
+      "reimport_valid": true,
+      "reimport_solids": 1,
+      "volume_mm3": 25551.913443595364,
+      "reimport_volume_mm3": 25551.91344359463,
+      "bbox_mm": [
+        0.7999999999960314,
+        319.20000000000397,
+        0.7999999999960439,
+        399.20000000000397,
+        0.5,
+        3.7
+      ],
+      "stl": "AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.stl",
+      "stl_sha256": "acb6bf725065360025677e7f0abe7b83dd6da78a7d1dc05e015c001f221da882",
+      "stl_scope": "Tessellated candidate; not manufacturing acceptance."
+    },
+    "window_coupon": {
+      "step": "AP22_OPTICAL_WINDOW_COUPON_REV_FA.step",
+      "sha256": "9acc5344b0721316c94f0036355d325bd78f9ac684ae10b8424e6d61572b4ed8",
+      "valid": true,
+      "solids": 1,
+      "reimport_valid": true,
+      "reimport_solids": 1,
+      "volume_mm3": 334.4329918418948,
+      "reimport_volume_mm3": 334.43299184189453,
+      "bbox_mm": [
+        309.2,
+        319.2,
+        35.0,
+        59.0,
+        0.5,
+        2.3
+      ],
+      "stl": "AP22_OPTICAL_WINDOW_COUPON_REV_FA.stl",
+      "stl_sha256": "6af6efe7eeaa00a36e42ef34436344e7de6859cdb7de75997bc1d7b98cf2cc24",
+      "stl_scope": "Tessellated candidate; not manufacturing acceptance."
+    },
+    "OPT_head_PCB_envelope": {
+      "step": "OPT_head_PCB_envelope_REV_FA.step",
+      "sha256": "f0033c9654d19430ee288f3be30aece636514d23b2420dfb75ee8ceec6cf4140",
+      "valid": true,
+      "solids": 1,
+      "reimport_valid": true,
+      "reimport_solids": 1,
+      "volume_mm3": 33.2800000000003,
+      "reimport_volume_mm3": 33.27999999999994,
+      "bbox_mm": [
+        311.3,
+        316.5,
+        43.0,
+        51.0,
+        3.35,
+        4.15
+      ]
+    },
+    "OPT3004_max_package_envelope": {
+      "step": "OPT3004_max_package_envelope_REV_FA.step",
+      "sha256": "7f5672409b22d8ce82b8658c1a6064a489b9a808597e6475d7400c2892d9f98b",
+      "valid": true,
+      "solids": 1,
+      "reimport_valid": true,
+      "reimport_solids": 1,
+      "volume_mm3": 2.866500000000023,
+      "reimport_volume_mm3": 2.8664999999999448,
+      "bbox_mm": [
+        312.85,
+        314.95,
+        45.95,
+        48.05,
+        2.7,
+        3.35
+      ]
+    },
+    "C302_backside_envelope_seed": {
+      "step": "C302_backside_envelope_seed_REV_FA.step",
+      "sha256": "8eab98f13fbd0cc667f376f32cc71878e32598526584235864a1567716395648",
+      "valid": true,
+      "solids": 1,
+      "reimport_valid": true,
+      "reimport_solids": 1,
+      "volume_mm3": 1.7819999999999563,
+      "reimport_volume_mm3": 1.7820000000000125,
+      "bbox_mm": [
+        313.0,
+        314.8,
+        49.25,
+        50.35,
+        4.15,
+        5.05
+      ]
+    }
+  },
+  "catalog_basis": {
+    "package": "TI OPT3004DNPR DNP0006A maximum 2.1 x 2.1 x 0.65 mm",
+    "field_of_view": "TI SBOS929A section 9.1.2 recommends at least +/-35 degrees; 57 degrees half-power response is a typical catalog response, not a mechanical clearance requirement.",
+    "source": "https://www.ti.com/lit/ds/symlink/opt3004.pdf"
+  },
+  "open_items": [
+    "Fixed island retention/bracket and exact connector or flex routing",
+    "Native PCB layout and electrical/mechanical verification after physical split",
+    "Registration and fabrication tolerances; window ligament strength",
+    "Dark baffle, seal, LED leakage, fabric sag and optical calibration",
+    "Actual tilted/peel removal and strain relief",
+    "SHT45 isolated passive chamber remains separate and unvalidated"
+  ],
+  "production_ready": false
+}

@@ -1,0 +1,5 @@
+{
+  "syntax_checked_python_files": 79,
+  "syntax_gate": "PASS",
+  "interpretation": "Syntax check only, not script execution. Compileall cache-write failure was bypassed with in-memory compilation."
+}

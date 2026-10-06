@@ -1,0 +1,250 @@
+{
+  "revision": "Rev.EU.4",
+  "classification": "CALCULATED_SCREENING_CANDIDATE_NOT_FABRICATION_RELEASE",
+  "valid": true,
+  "solid_count": 1,
+  "volume_mm3": 346084.3664963056,
+  "reimport_valid": true,
+  "reimport_solids": 1,
+  "collision_volume_mm3": {
+    "EX_L1": 0,
+    "EX_L2": 0,
+    "EX_R1": 0,
+    "EX_R2": 0,
+    "MAIN_C": 0,
+    "MAIN_P": 0,
+    "VOICE": 0,
+    "RADAR": 0,
+    "ENV": 0,
+    "SERVICE": 0,
+    "ESP32_RF": 0,
+    "DML": 0,
+    "shell_EQ": 0
+  },
+  "shell_clearance_mm": 0.6000000000000014,
+  "mount_centers_xy_mm": {
+    "UL1": [
+      37.5,
+      375
+    ],
+    "UL2": [
+      67.5,
+      375
+    ],
+    "UR1": [
+      252.5,
+      375
+    ],
+    "UR2": [
+      282.5,
+      375
+    ]
+  },
+  "bore_radius_seed_mm": 3,
+  "bore_z_mm": [
+    28,
+    35
+  ],
+  "pad_centers_xy_mm": [
+    [
+      45,
+      28
+    ],
+    [
+      275,
+      28
+    ]
+  ],
+  "anti_lift_load_interface_xy_mm": [
+    160,
+    15
+  ],
+  "rail_paths_xy_mm": {
+    "rail_L": [
+      [
+        34,
+        378
+      ],
+      [
+        34,
+        350
+      ],
+      [
+        33,
+        300
+      ],
+      [
+        32,
+        235
+      ],
+      [
+        32,
+        125
+      ],
+      [
+        33,
+        112
+      ],
+      [
+        33,
+        45
+      ],
+      [
+        45,
+        28
+      ]
+    ],
+    "rail_R": [
+      [
+        286,
+        378
+      ],
+      [
+        300,
+        350
+      ],
+      [
+        300,
+        300
+      ],
+      [
+        303,
+        225
+      ],
+      [
+        305,
+        155
+      ],
+      [
+        306,
+        75
+      ],
+      [
+        300,
+        62
+      ],
+      [
+        296,
+        30
+      ],
+      [
+        275,
+        28
+      ]
+    ],
+    "mid_B1_B2": [
+      [
+        32,
+        235
+      ],
+      [
+        155,
+        230
+      ],
+      [
+        303,
+        225
+      ]
+    ],
+    "mid_B3": [
+      [
+        155,
+        230
+      ],
+      [
+        205,
+        165
+      ],
+      [
+        305,
+        155
+      ]
+    ],
+    "mid_B4": [
+      [
+        32,
+        125
+      ],
+      [
+        70,
+        161
+      ],
+      [
+        155,
+        161
+      ],
+      [
+        155,
+        230
+      ]
+    ],
+    "lower_L": [
+      [
+        33,
+        45
+      ],
+      [
+        95,
+        45
+      ],
+      [
+        95,
+        14
+      ],
+      [
+        160,
+        14
+      ]
+    ],
+    "lower_R": [
+      [
+        300,
+        62
+      ],
+      [
+        296,
+        60
+      ],
+      [
+        225,
+        55
+      ],
+      [
+        225,
+        14
+      ],
+      [
+        160,
+        14
+      ]
+    ],
+    "pad_L_ring": [
+      [
+        45,
+        28
+      ],
+      [
+        45,
+        7
+      ]
+    ],
+    "pad_R_ring": [
+      [
+        275,
+        28
+      ],
+      [
+        275,
+        7
+      ]
+    ]
+  },
+  "sha256": "f01e37e5b943c9f466d1794f8265472e92994afe8f3343cc2b47134150e0c87c",
+  "limitations": [
+    "Mount shift Y366->375 required by conservative RF mask; requires mating cleat redesign.",
+    "6 mm insert surrogate bore, no exact insert installation-hole claim.",
+    "Fillets, exact radar mask, cables, board carrier interfaces and fasteners remain incomplete.",
+    "Lower support/anti-lift surrogate load interfaces; actual wall hardware absent.",
+    "Volume density/strength unqualified; no product release."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "revision": "Rev.EN",
+  "source_sha256": "d245da9960d66bb3b468bc103b1ce53f721f01ed8d9ebc94acecdc34f496fd81",
+  "classification": "CALCULATED_GEOMETRIC_AUDIT_NOT_ACOUSTIC_SIMULATION",
+  "solid_valid": true,
+  "solid_components": 1,
+  "solid_volume_mm3": 287929.5221705858,
+  "bbox_mm": [
+    320.0,
+    400.0,
+    6.0
+  ],
+  "z_extent_mm": [
+    34.0,
+    40.0
+  ],
+  "fully_footprint_covered_vents": 4,
+  "area_weighted_footprint_coverage_fraction": 0.5396169287488813,
+  "open_axial_LOS_count": 22,
+  "labyrinth_treatment_gate": "FAIL",
+  "limitations": [
+    "Footprint overlap alone does not prove treatment.",
+    "One open ray is sufficient to falsify universal LOS blockage.",
+    "Zero sampled open rays cannot prove acoustic attenuation.",
+    "Domain z33..40.25 is a local audit slab, not the full product CFD domain."
+  ]
+}

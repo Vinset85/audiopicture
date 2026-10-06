@@ -1,0 +1,14 @@
+{
+  "n": 40,
+  "Ra": 1000,
+  "Pr": 0.71,
+  "beta_delta_T": 0.01,
+  "coefficients_classification": "CONSTRUCTED_REFERENCE_MODEL_NOT_PHYSICAL_PROPERTY_CLAIM",
+  "exit_code": 0,
+  "coupled_warnings": 0,
+  "nan": false,
+  "last_changes": [
+    "ComputeChange: SS (ITER=59) (NRM,RELC): (  300.00014     0.20084665E-13 ) :: heat equation",
+    "ComputeChange: SS (ITER=59) (NRM,RELC): (  1.6671360     0.59941291E-10 ) :: navier-stokes"
+  ]
+}

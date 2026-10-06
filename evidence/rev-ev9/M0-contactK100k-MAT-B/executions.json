@@ -1,0 +1,70 @@
+[
+  {
+    "case": "LC4",
+    "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+    "constitutive_assumptions": {
+      "E1": 1900.0,
+      "E2": 1900.0,
+      "E3": 665.0,
+      "nu12": 0.35,
+      "nu13": 0.35,
+      "nu23": 0.35,
+      "G12": 703.7037037037037,
+      "G13": 281.48148148148147,
+      "G23": 281.48148148148147
+    },
+    "load_sum_N": [
+      0.0,
+      0.0,
+      -30.000000000000007
+    ],
+    "load_cg_seed_mm": [
+      160.00000000000006,
+      199.99999999999991,
+      22.87655765932738
+    ],
+    "nonlinear_geometry": true,
+    "lower_unilateral_gap_contacts": 202,
+    "total_pad_penalty_N_per_mm": 100000.0,
+    "gap_force_floor_N": 1e-12,
+    "contact_iteration_controls": true,
+    "anti_lift_normal_support_assumption": true,
+    "bonded_insert_cleat_surrogate_nodes": 2020,
+    "corner_warp_mm": null,
+    "input_sha256": "e6d523c5458cfdd683a5e2d4fd3b9495aa4070fb128176ad766c50891d5b9d9f",
+    "mesh_report": {
+      "source_sha256": "442cc6055ff12882b6e5daa9e488c386d4a059a590405a370591f876d7f0c133",
+      "size_mm": 4.0,
+      "nodes": 170348,
+      "elements": 81217,
+      "type": "C3D10",
+      "min_SICN": 0.004414269601516861,
+      "corner_tet_volume_mm3": 188618.91230492835,
+      "volume_weighted_seed_cg_mm": [
+        161.0542866237117,
+        177.98867403248562,
+        22.74688239028722
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 101,
+        "PAD_R": 101,
+        "ANTILIFT": 74,
+        "CORNER_LL": 33,
+        "CORNER_LR": 33,
+        "CORNER_UL": 31,
+        "CORNER_UR": 31
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution"
+    },
+    "qualified_allowables": null,
+    "release_margin": null,
+    "exit_code": 0,
+    "job_finished": true,
+    "errors": [],
+    "solver_execution_pass": true
+  }
+]

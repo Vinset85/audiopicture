@@ -1,0 +1,4 @@
+# Exact tested environment. Python 3.14 is required by this HA release.
+homeassistant==2026.9.4
+pytest-homeassistant-custom-component==0.13.367
+pytest-cov==7.1.0

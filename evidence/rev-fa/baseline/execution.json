@@ -1,0 +1,15 @@
+{
+  "valid": true,
+  "solid_count": 1,
+  "volume_mm3": 25649.480451757176,
+  "bbox_mm": [
+    318.4,
+    398.4,
+    3.2
+  ],
+  "dml_station_z_intersection_mm3": 0.0,
+  "min_pocket_to_dml_mm": 1.8000000000000007,
+  "min_dml_side_ligament_after_0p5_keepout_mm": 1.3000000000000007,
+  "min_outer_wall_mm": 3.0,
+  "step": "AP22_FRONT_CARRIER_REV_B_4MM_DMU.step"
+}

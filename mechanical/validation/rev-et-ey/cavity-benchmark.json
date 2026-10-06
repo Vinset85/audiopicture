@@ -1,0 +1,96 @@
+{
+  "reference": "https://doi.org/10.1002/fld.1650030305",
+  "reference_conditions": "Pr=0.71 Ra=1000, no-slip all walls, hot/cold vertical walls, insulated horizontal walls",
+  "constructed_coefficients": "L=1, rho=1, cp=1, k=1, mu=0.71, beta=.01, deltaT=1, g=71000; a mathematical benchmark, not real product air",
+  "results": [
+    {
+      "n": 20,
+      "solver_execution": {
+        "n": 20,
+        "Ra": 1000,
+        "Pr": 0.71,
+        "beta_delta_T": 0.01,
+        "coefficients_classification": "CONSTRUCTED_REFERENCE_MODEL_NOT_PHYSICAL_PROPERTY_CLAIM",
+        "exit_code": 0,
+        "coupled_warnings": 0,
+        "nan": false,
+        "last_changes": [
+          "ComputeChange: SS (ITER=64) (NRM,RELC): (  300.00015      0.0000000     ) :: heat equation",
+          "ComputeChange: SS (ITER=64) (NRM,RELC): (  1.6276367     0.86544697E-10 ) :: navier-stokes"
+        ]
+      },
+      "vtu_last": "N20/square/case_t0064.vtu",
+      "Nu_hot": 1.1172997593095697,
+      "Nu_cold": 1.1172997575147388,
+      "reference_Nu": 1.118,
+      "relative_Nu_error_percent": 0.06263333545889482,
+      "hot_cold_balance_percent": 1.6064005536712272e-07,
+      "centerline_abs_u_max": 3.6426477091365577,
+      "centerline_abs_v_max": 3.6690754516977138,
+      "reference_u_max": 3.649,
+      "reference_v_max": 3.697,
+      "flux_evaluation": "second-order one-sided boundary derivative and Simpson integration of nodal temperature; not a component-temperature model",
+      "classification": "SIMULATED_BOUSSINESQ_REFERENCE_NOT_PRODUCT_CFD"
+    },
+    {
+      "n": 40,
+      "solver_execution": {
+        "n": 40,
+        "Ra": 1000,
+        "Pr": 0.71,
+        "beta_delta_T": 0.01,
+        "coefficients_classification": "CONSTRUCTED_REFERENCE_MODEL_NOT_PHYSICAL_PROPERTY_CLAIM",
+        "exit_code": 0,
+        "coupled_warnings": 0,
+        "nan": false,
+        "last_changes": [
+          "ComputeChange: SS (ITER=59) (NRM,RELC): (  300.00014     0.20084665E-13 ) :: heat equation",
+          "ComputeChange: SS (ITER=59) (NRM,RELC): (  1.6671360     0.59941291E-10 ) :: navier-stokes"
+        ]
+      },
+      "vtu_last": "N40/square/case_t0059.vtu",
+      "Nu_hot": 1.1174425816124465,
+      "Nu_cold": 1.1174425726200734,
+      "reference_Nu": 1.118,
+      "relative_Nu_error_percent": 0.04985853198153922,
+      "hot_cold_balance_percent": 8.047279790968067e-07,
+      "centerline_abs_u_max": 3.6410119003814256,
+      "centerline_abs_v_max": 3.697766018524989,
+      "reference_u_max": 3.649,
+      "reference_v_max": 3.697,
+      "flux_evaluation": "second-order one-sided boundary derivative and Simpson integration of nodal temperature; not a component-temperature model",
+      "classification": "SIMULATED_BOUSSINESQ_REFERENCE_NOT_PRODUCT_CFD",
+      "previous_mesh_Nu_change_percent": 0.012781175984065014
+    },
+    {
+      "n": 80,
+      "solver_execution": {
+        "n": 80,
+        "Ra": 1000,
+        "Pr": 0.71,
+        "beta_delta_T": 0.01,
+        "coefficients_classification": "CONSTRUCTED_REFERENCE_MODEL_NOT_PHYSICAL_PROPERTY_CLAIM",
+        "exit_code": 0,
+        "coupled_warnings": 0,
+        "nan": false,
+        "last_changes": [
+          "ComputeChange: SS (ITER=56) (NRM,RELC): (  300.00014     0.89054648E-14 ) :: heat equation",
+          "ComputeChange: SS (ITER=56) (NRM,RELC): (  1.6876163     0.63209472E-10 ) :: navier-stokes"
+        ]
+      },
+      "vtu_last": "N80/square/case_t0056.vtu",
+      "Nu_hot": 1.1176654213907682,
+      "Nu_cold": 1.1176654066236817,
+      "reference_Nu": 1.118,
+      "relative_Nu_error_percent": 0.029926530342749835,
+      "hot_cold_balance_percent": 1.3212439302027975e-06,
+      "centerline_abs_u_max": 3.649738661773017,
+      "centerline_abs_v_max": 3.6968912852694147,
+      "reference_u_max": 3.649,
+      "reference_v_max": 3.697,
+      "flux_evaluation": "second-order one-sided boundary derivative and Simpson integration of nodal temperature; not a component-temperature model",
+      "classification": "SIMULATED_BOUSSINESQ_REFERENCE_NOT_PRODUCT_CFD",
+      "previous_mesh_Nu_change_percent": 0.019937968380951087
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "valid": true,
+  "solid_count": 1,
+  "disconnected_fragments": 0,
+  "volume_mm3": 145999.99999999977,
+  "bbox_mm": [
+    316.0,
+    396.0,
+    29.9
+  ],
+  "z_extent_mm": [
+    5.1,
+    35.0
+  ],
+  "dml_intersection_mm3": 0,
+  "node_overlaps": [
+    {
+      "station": "M1D",
+      "rear_return_overlap_mm3": 48.00000000000068,
+      "return_tab_overlap_mm3": 63.99999999999999
+    },
+    {
+      "station": "M2D",
+      "rear_return_overlap_mm3": 48.00000000000068,
+      "return_tab_overlap_mm3": 63.99999999999999
+    },
+    {
+      "station": "M3D",
+      "rear_return_overlap_mm3": 47.99999999999999,
+      "return_tab_overlap_mm3": 63.99999999999999
+    },
+    {
+      "station": "M4D",
+      "rear_return_overlap_mm3": 47.99999999999999,
+      "return_tab_overlap_mm3": 63.99999999999999
+    },
+    {
+      "station": "M5D",
+      "rear_return_overlap_mm3": 47.999999999999986,
+      "return_tab_overlap_mm3": 63.999999999999986
+    },
+    {
+      "station": "M6D",
+      "rear_return_overlap_mm3": 47.999999999999986,
+      "return_tab_overlap_mm3": 63.999999999999986
+    },
+    {
+      "station": "M7D",
+      "rear_return_overlap_mm3": 48.00000000000068,
+      "return_tab_overlap_mm3": 63.999999999999986
+    },
+    {
+      "station": "M8D",
+      "rear_return_overlap_mm3": 48.00000000000068,
+      "return_tab_overlap_mm3": 63.999999999999986
+    }
+  ],
+  "artifact": "AP22_STRUCTURAL_SPINE_REV_J.step"
+}

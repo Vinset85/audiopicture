@@ -1,0 +1,67 @@
+{
+  "status": "PASS_ELECTRICAL_CAPTURE_SCOPE_ONLY",
+  "kicad_version": "9.0.8",
+  "erc_errors_warnings_exclusions": 0,
+  "components_without_power_flags": 10,
+  "connected_pin_count": 26,
+  "explicit_no_connect_pin_count": 3,
+  "nets": {
+    "+3V3_SYS": [
+      "C301.1",
+      "C302.1",
+      "C303.1",
+      "J301.1",
+      "J301.2",
+      "TP301.1",
+      "U301.3",
+      "U302.1",
+      "U302.2"
+    ],
+    "GND": [
+      "C301.2",
+      "C302.2",
+      "C303.2",
+      "J301.3",
+      "J301.4",
+      "TP302.1",
+      "U301.4",
+      "U302.3",
+      "U302.7"
+    ],
+    "I2C_SCL": [
+      "J301.6",
+      "TP304.1",
+      "U301.2",
+      "U302.4"
+    ],
+    "I2C_SDA": [
+      "J301.5",
+      "TP303.1",
+      "U301.1",
+      "U302.6"
+    ]
+  },
+  "no_connect": [
+    "J301.7",
+    "J301.8",
+    "U302.5"
+  ],
+  "checks": [
+    "Exact pin memberships from independent KiCad XML",
+    "OPT3004 ADDR tied VDD (0x45)",
+    "No ENV pull-up resistor components",
+    "C303 DNP; bypass capacitors populated",
+    "SHT45 no-central-pad and OPT3004 dedicated EP footprints"
+  ],
+  "source_hashes": {
+    "env-netlist.xml": "d3a4bf20a2c6465cc6ca554fb03ff7dc6d3da856365f729fd1421a4033b427f8",
+    "env-erc.json": "bc85fb699434a8dbb874bc6b66dd8740d5168e1c10cfe8d3c9e6c7a900e71d6d"
+  },
+  "not_closed": [
+    "PCB placement/routing/DRC",
+    "Mating FPC orientation",
+    "Thermal chamber and optical tunnel",
+    "Hardware bus, sensor and assembly tests",
+    "Capacitor placement and assembly qualification"
+  ]
+}

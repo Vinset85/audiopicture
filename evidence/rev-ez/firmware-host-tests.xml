@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="3"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname=""
+	time="1"
+	timestamp="2026-10-05T22:09:30"
+	>
+	<testcase name="power_governor_safety_transitions" classname="power_governor_safety_transitions" time="0.367725" status="run">
+		<properties/>
+		<system-out>PASS: 200000 deterministic events, 27909 enabled samples with safety invariants
+PASS: governor transitions, source loss, 22.5 W boundary, fault latch, stale/invalid monitor, 320 input combinations, timer wrap, config rejection
+</system-out>
+	</testcase>
+	<testcase name="environment_protocol_faults" classname="environment_protocol_faults" time="0.573077" status="run">
+		<properties/>
+		<system-out>PASS: datasheet vectors, 48 single-bit CRC corruptions, signed ADC endpoints, 16 transport failures, identity, overflow and bounded timeouts
+</system-out>
+	</testcase>
+	<testcase name="status_expander_fail_closed" classname="status_expander_fail_closed" time="0.352481" status="run">
+		<properties/>
+		<system-out>PASS: 256 raw patterns, 510 invalid register configurations, 7 transport faults, input-only writes; no hardware/source qualification claimed
+</system-out>
+	</testcase>
+</testsuite>

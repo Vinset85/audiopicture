@@ -1,0 +1,45 @@
+{
+  "classification": "SIMULATED_REFERENCE_TEST_NOT_AUDIOPICTURE_CFD",
+  "Elmer_source_sha": "4b49ea695ff021e9a046b403f5ebf6df8ec317c4",
+  "source_test": "fem/tests/NaturalConvection",
+  "reference_fluid": "water from original test; not product air",
+  "beta_delta_T": 0.000828,
+  "time_scheme": "three time steps of 100 s, max 500 coupling iterations each",
+  "temperature_boundary_K": [
+    293,
+    297
+  ],
+  "results": [
+    {
+      "relaxation": 0.1,
+      "exit_code": 0,
+      "coupled_warnings": 0,
+      "nan": false,
+      "last_changes": [
+        "ComputeChange: SS (ITER=91) (NRM,RELC): (  294.97130     0.47354636E-09 ) :: heat equation",
+        "ComputeChange: SS (ITER=91) (NRM,RELC): ( 0.27505122E-03 0.28930346E-07 ) :: navier-stokes"
+      ]
+    },
+    {
+      "relaxation": 0.2,
+      "exit_code": 0,
+      "coupled_warnings": 0,
+      "nan": false,
+      "last_changes": [
+        "ComputeChange: SS (ITER=69) (NRM,RELC): (  294.97129      0.0000000     ) :: heat equation",
+        "ComputeChange: SS (ITER=69) (NRM,RELC): ( 0.27504507E-03 0.98676441E-07 ) :: navier-stokes"
+      ]
+    },
+    {
+      "relaxation": 0.35,
+      "exit_code": 0,
+      "coupled_warnings": 0,
+      "nan": false,
+      "last_changes": [
+        "ComputeChange: SS (ITER=42) (NRM,RELC): (  294.97129      0.0000000     ) :: heat equation",
+        "ComputeChange: SS (ITER=42) (NRM,RELC): ( 0.27504553E-03 0.94351680E-07 ) :: navier-stokes"
+      ]
+    }
+  ],
+  "scope": "Iterative coupling convergence and relaxation sensitivity only. No product mesh convergence, heat balance, air-property or combined CHT-radiation release."
+}

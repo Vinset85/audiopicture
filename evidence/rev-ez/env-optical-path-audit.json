@@ -1,0 +1,212 @@
+{
+  "classification": "CALCULATED_GEOMETRIC_PATH_AUDIT_NOT_OPTICAL_SIMULATION",
+  "status": "FAIL_STRAIGHT_UNOBSTRUCTED_FRONT_PATH_FOR_CURRENT_ENV_SEED",
+  "DML_volume_mm": [
+    10,
+    310,
+    10,
+    390,
+    3.3,
+    9.3
+  ],
+  "ENV_XY_seed_mm": [
+    252,
+    294,
+    35,
+    59
+  ],
+  "ENV_PCB_front_Z_seed_mm": 12,
+  "swept_path_DML_overlap_mm3": 6048.0,
+  "projected_ENV_coverage_percent": 100,
+  "tested_normal_rays": 25,
+  "rays_intersecting_DML": 25,
+  "probes": [
+    {
+      "xy_mm": [
+        252,
+        35
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        252,
+        41
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        252,
+        47
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        252,
+        53
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        252,
+        59
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        262.5,
+        35
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        262.5,
+        41
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        262.5,
+        47
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        262.5,
+        53
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        262.5,
+        59
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        273,
+        35
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        273,
+        41
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        273,
+        47
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        273,
+        53
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        273,
+        59
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        283.5,
+        35
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        283.5,
+        41
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        283.5,
+        47
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        283.5,
+        53
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        283.5,
+        59
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        294,
+        35
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        294,
+        41
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        294,
+        47
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        294,
+        53
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    },
+    {
+      "xy_mm": [
+        294,
+        59
+      ],
+      "path_inside_DML_mm": 6.000000000000001
+    }
+  ],
+  "analytical_scope": "Entire ENV XY rectangle is a subset of the hard DML projection; changing ENV Z from 12 to 13 cannot remove the intervening DML band.",
+  "does_not_establish": [
+    "DML/fabric optical transmittance, scattering, lux accuracy or attenuation",
+    "A reflective or lateral optical path",
+    "A released relocation of the sensor"
+  ],
+  "required_resolution": "Define and verify an actual perimeter/front optical path or relocate the light sensor; preserve DML, RF and removable-front requirements. Do not release the current normal-facing placement.",
+  "sources": [
+    "mechanical/master-global-z-map-rev-a.md sections 3 and 9",
+    "mechanical/g1-dimensional-packaging-model-rev-a.md ENV XY seed",
+    "hardware/environment/sht45-opt3004-rev-a.md optical tunnel contract"
+  ]
+}

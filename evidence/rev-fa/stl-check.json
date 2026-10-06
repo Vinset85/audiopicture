@@ -1,0 +1,24 @@
+[
+  {
+    "file": "AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.stl",
+    "watertight": true,
+    "winding_consistent": true,
+    "body_count": 1,
+    "vertices": 6960,
+    "faces": 13924,
+    "mesh_volume_mm3": 25551.745904751664,
+    "relative_volume_difference_percent": 0.0006556802226756836,
+    "sha256": "acb6bf725065360025677e7f0abe7b83dd6da78a7d1dc05e015c001f221da882"
+  },
+  {
+    "file": "AP22_OPTICAL_WINDOW_COUPON_REV_FA.stl",
+    "watertight": true,
+    "winding_consistent": true,
+    "body_count": 1,
+    "vertices": 272,
+    "faces": 544,
+    "mesh_volume_mm3": 334.43618088013017,
+    "relative_volume_difference_percent": 0.0009535656808464531,
+    "sha256": "6af6efe7eeaa00a36e42ef34436344e7de6859cdb7de75997bc1d7b98cf2cc24"
+  }
+]

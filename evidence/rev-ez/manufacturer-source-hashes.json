@@ -1,0 +1,27 @@
+{
+  "OPT3004": {
+    "url": "https://www.ti.com/lit/ds/symlink/opt3004.pdf",
+    "sha256": "7b26d6f9f8572e4896de0abed62a943ba4c072c074c0404e8754dce7d83d6a60",
+    "bytes": 2230767
+  },
+  "SHT4x": {
+    "url": "https://sensirion.com/resource/datasheet/sht4x",
+    "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+    "bytes": 1049911
+  },
+  "INA228": {
+    "url": "https://www.ti.com/lit/ds/symlink/ina228.pdf",
+    "sha256": "a138d39eeee04f8388426fed204c2f4012e75d36e95b60b0751ef003cd277447",
+    "bytes": 2473528
+  },
+  "TCA9534": {
+    "url": "https://www.ti.com/lit/ds/symlink/tca9534.pdf",
+    "sha256": "797c1fc96502df7c60b0e82d3d615593fa722de521e36c78cda40450360f8713",
+    "bytes": 1475980
+  },
+  "Ag53000-Datasheet": {
+    "url": "https://silvertel.com/images/datasheets/Ag53000-Datasheet.pdf",
+    "sha256": "85ae23c969ba21e713de962b9bf0f7c513b3a95b43ed2e128dda8295542f8ad4",
+    "bytes": 954001
+  }
+}

@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+import crypto from 'node:crypto';
+import {Workbook} from '@oai/artifact-tool';
+const repo='work/audiopicture';const path=repo+'/hardware/bom/audiopicture-v2.2-rev-a.csv';const source=await fs.readFile(path,'utf8');
+const wb=await Workbook.fromCSV(source,{sheetName:'BOM'});const rows=wb.worksheets.getItem('BOM').getRange('A1:F75').values;
+if(rows[0].join('|')!=='Reference|PCB|Manufacturer Part Number|Qty|Function|Status')throw Error('BOM columns changed');
+const missingExact=new Set(['R201','C_CHASSIS_ETH','C_POE_OUT','J2','COUT5V1-COUT5V2','COUT3V3','R_I2C_SDA','R_I2C_SCL','C_BSTA-C_BSTD','C_PVDD_HF1','C_PVDD_HF2','C_PVDD_HF3','C_LC_FILTER','J6','R_CC1-R_CC2','C_MIC101-C_MIC104','C301-C302','L_VOICE_0V9','C_VOICE_0V9_IN','C_VOICE_0V9_OUT1-C_VOICE_0V9_OUT2','C_VOICE_PLL','R_VOICE_XTAL_RF','R_VOICE_XTAL_RD','C_VOICE_XTAL1-C_VOICE_XTAL2','R_VOICE_0V9_TOP','R_VOICE_0V9_BOTTOM']);
+const reviewed={'C901':'hardware/audio/pvdd-bulk-packaging-rev-a.md','L901-L904':'hardware/audio/tas5825m-dml-rev-a.md','U_POE':'mechanical/component-source-verification-rev-ex.md#silvertel-ag53024','J_ETH':'mechanical/component-source-verification-rev-ex.md#rj45-and-usb','J6':'mechanical/component-source-verification-rev-ex.md#rj45-and-usb'};
+const items=rows.slice(1).map((r,i)=>({source_row:i+2,reference:r[0],board:r[1],mpn_or_class:r[2],quantity_source:r[3],status_source:r[5],optional_or_removed:/DNP|REMOVED/.test(r[5]),exact_orderable_mpn_present:!missingExact.has(r[0])&&!/DNP|NOT FITTED/.test(r[2]),source_reverification:reviewed[r[0]]??null,native_placement_erc_drc_verified:false,production_ready:false}));
+if(new Set(items.map(x=>x.reference)).size!==items.length)throw Error('Duplicate reference grouping');
+const summary={source:path,sha256:crypto.createHash('sha256').update(source).digest('hex'),rows:items.length,optional_or_removed:items.filter(x=>x.optional_or_removed).length,active_rows_without_exact_mpn:items.filter(x=>!x.optional_or_removed&&!x.exact_orderable_mpn_present).length,explicit_review_markers_including_DNP:items.filter(x=>/VALIDATE|VERIFY|PLACEHOLDER|OPEN|DNP/.test(x.status_source)).length,quantity_sum:null,quantity_sum_reason:'RADAR_FILTERS is six branches, not an exact purchasable component count; grouped quantities and DNP are retained.',classification:'READ_ONLY_BOM_COMPLETENESS_AUDIT_NOT_PROCUREMENT_RELEASE',items};
+await fs.mkdir(repo+'/evidence/rev-ex',{recursive:true});await fs.writeFile(repo+'/evidence/rev-ex/bom-audit.json',JSON.stringify(summary,null,2));
+console.log(JSON.stringify({...summary,items:undefined},null,2));

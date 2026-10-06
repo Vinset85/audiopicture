@@ -1,0 +1,30 @@
+{
+  "banks": {
+    "LL": {
+      "samples": 5069,
+      "frame_material_samples": 0,
+      "open_samples": 5069,
+      "open_fraction": 1.0
+    },
+    "LR": {
+      "samples": 5069,
+      "frame_material_samples": 0,
+      "open_samples": 5069,
+      "open_fraction": 1.0
+    },
+    "UL": {
+      "samples": 1184,
+      "frame_material_samples": 0,
+      "open_samples": 1184,
+      "open_fraction": 1.0
+    },
+    "UR": {
+      "samples": 1184,
+      "frame_material_samples": 0,
+      "open_samples": 1184,
+      "open_fraction": 1.0
+    }
+  },
+  "height_rule": "solid features over frame material: zlow>=35.1; deeper air/chamber volume may be considered only over verified open XY cells",
+  "note": "This is an analytical occupancy classifier for the next solid build, not a manufactured geometry or CFD result."
+}

@@ -1,0 +1,52 @@
+==================================================================
+ElmerGrid mesh conversion and manipulation utility, Welcome!
+Version: 26.2-devel (Rev: 4b49ea6, Compiled: 2026-09-30)
+This program is free software licensed under GPL
+==================================================================
+Elmergrid reading in-line arguments
+Output will be saved to file square.
+
+Elmergrid loading data:
+-----------------------
+Loading the geometry from file 'square.grd'.
+Loading ElmerGrid file version: 210903
+Defining the coordinate system (2-DIM).
+Loading 1 subcell sizes in X-direction
+Loading 1 subcell sizes in Y-direction
+Loading material structure
+LoadElmergrid: materials interval is [1,1]
+Loading boundary conditions
+Found 4 boundaries
+Reached the end of command file
+Found 1 divisions for grid
+
+Loading ElmerGrid commands from file 'square.grd'.
+Reached the end of command file
+Read commands from a file
+
+Elmergrid creating and manipulating meshes:
+-------------------------------------------
+1 cells were created.
+Numbered 1681 knots in 1600 4-node elements.
+Numbering order was <x><y> and max levelwidth 43.
+40 element sides between materials -1 and 1 were located to type 1.
+40 element sides between materials -2 and 1 were located to type 2.
+40 element sides between materials -3 and 1 were located to type 3.
+40 element sides between materials -4 and 1 were located to type 4.
+Coordinates defined in 2 dimensions
+Bounding box of all nodes in mesh:
+X:[0,1] Y:[0,1] Z:[0,0]
+Calculate Mesh Pieces in mesh:
+There is a single piece in the mesh, so the mesh is conforming.
+
+Elmergrid saving data with method 2:
+-------------------------------------
+Saving mesh in ElmerSolver format to directory square.
+Saving 1681 coordinates to mesh.nodes.
+Saving 1600 element topologies to mesh.elements.
+Saving boundary elements to mesh.boundary.
+Saving header info to mesh.header.
+
+Thank you for using ElmerGrid!
+Repository: https://github.com/ElmerCSC/elmerfem
+Contact: elmeradm@csc.fi

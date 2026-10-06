@@ -1,0 +1,19 @@
+__pycache__/
+.pytest_cache/
+.coverage
+*.kicad_prl
+~*.lck
+
+# Raw generated simulation/CAD data live in versioned checkpoint release assets.
+# Their exact paths, sizes and hashes are retained in evidence/raw-artifact-index.json.
+/evidence/**/*.frd
+/evidence/**/*.inp
+/evidence/**/*.dat
+/evidence/**/*.msh
+/evidence/**/*.npz
+/evidence/**/*.vtu
+/evidence/**/*.step
+/evidence/**/*.stl
+/evidence/**/*.bin
+/evidence/**/*.12d
+/evidence/**/*.out

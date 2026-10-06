@@ -1,0 +1,543 @@
+(kicad_sch (version 20250114) (generator "audiopicture_validated_automation") (generator_version "9.0") (uuid "5b1d94a2-d719-4a81-bd1a-ca18f600cc88") (paper "A4") (lib_symbols 
+
+(symbol "AudioPicture_ENV:OPT3004DNPR" (pin_names (offset 0.8)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "U" (at 0 11.43 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "OPT3004DNPR" (at 0 8.89 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 -11.43 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opt3004.pdf" (at 0 -13.97 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "OPT3004 DNP USON-6; TI SBOS929A Table 6-1; EP=7 GND" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "OPT3004DNPR_0_1" 
+
+(rectangle (start -7.62 7.62) (end 7.62 -7.62) (stroke (width 0) (type default)) (fill (type background)))) 
+
+(symbol "OPT3004DNPR_1_1" (pin bidirectional line (at -10.16 5.08 0) (length 2.54) (name "SDA" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27))))) (pin input line (at -10.16 2.54 0) (length 2.54) (name "SCL" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27))))) (pin input line (at -10.16 -2.54 0) (length 2.54) (name "ADDR" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin power_in line (at 0 10.16 270) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin power_in line (at 0 -10.16 90) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 -10.16 90) (length 2.54) (name "EP" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27))))) (pin open_collector line (at 10.16 0 180) (length 2.54) (name "INT" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Connector_Generic:Conn_01x08" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "J" (at 0 10.16 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "Conn_01x08" (at 0 -12.7 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "connector" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "Conn_01x08_1_1" 
+
+(rectangle (start -1.27 8.89) (end 1.27 -11.43) (stroke (width 0.254) (type default)) (fill (type background))) 
+
+(rectangle (start -1.27 7.747) (end 0 7.493) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 5.207) (end 0 4.953) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 2.667) (end 0 2.413) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -4.953) (end 0 -5.207) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -7.493) (end 0 -7.747) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -10.033) (end 0 -10.287) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 7.62 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 5.08 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 2.54 0) (length 3.81) (name "Pin_3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_4" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_5" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -5.08 0) (length 3.81) (name "Pin_6" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -7.62 0) (length 3.81) (name "Pin_7" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -10.16 0) (length 3.81) (name "Pin_8" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Device:C_Small" (pin_numbers (hide yes)) (pin_names (offset 0.254) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "C" (at 0.254 1.778 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C_Small" (at 0.254 -2.032 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Unpolarized capacitor, small symbol" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "capacitor cap" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_fp_filters" "C_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "C_Small_0_1" 
+
+(polyline (pts 
+
+(xy -1.524 0.508) 
+
+(xy 1.524 0.508)) (stroke (width 0.3048) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -1.524 -0.508) 
+
+(xy 1.524 -0.508)) (stroke (width 0.3302) (type default)) (fill (type none)))) 
+
+(symbol "C_Small_1_1" (pin passive line (at 0 2.54 270) (length 2.032) (name "~" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -2.54 90) (length 2.032) (name "~" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Sensor_Humidity:SHT4x" (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "SHT4x" (at 0 6.35 0) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Footprint" "Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad" (at 3.81 -6.35 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) 
+
+(property "Datasheet" "https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf" (at 3.81 -8.89 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) 
+
+(property "Description" "Digital Humidity and Temperature Sensor, ±1%RH, ±0.1°C, I2C, 1.08-3.6V, 16bit, DFN-4" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "Sensirion environment environmental measurement digital SHT40 SHT41 SHT45" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_fp_filters" "Sensirion?DFN*1.5x1.5mm*P0.8mm*SHT4x*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "SHT4x_1_1" 
+
+(rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0.254) (type default)) (fill (type background))) (pin input line (at -7.62 2.54 0) (length 2.54) (name "SCL" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin bidirectional line (at -7.62 -2.54 0) (length 2.54) (name "SDA" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin power_in line (at 2.54 7.62 270) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27))))) (pin power_in line (at 2.54 -7.62 90) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "power:PWR_FLAG" (power) (pin_numbers (hide yes)) (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "#FLG" (at 0 1.905 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Value" "PWR_FLAG" (at 0 3.81 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Special symbol for telling ERC where power comes from" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "flag power" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "PWR_FLAG_0_0" (pin power_out line (at 0 0 90) (length 0) (name "~" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))) 
+
+(symbol "PWR_FLAG_0_1" 
+
+(polyline (pts 
+
+(xy 0 0) 
+
+(xy 0 1.27) 
+
+(xy -1.016 1.905) 
+
+(xy 0 2.54) 
+
+(xy 1.016 1.905) 
+
+(xy 0 1.27)) (stroke (width 0) (type default)) (fill (type none)))) (embedded_fonts no)) 
+
+(symbol "Connector:TestPoint" (pin_numbers (hide yes)) (pin_names (offset 0.762) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "TP" (at 0 6.858 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "TestPoint" (at 0 5.08 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 5.08 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 5.08 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "test point" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "test point tp" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_fp_filters" "Pin* Test*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "TestPoint_0_1" (circle (center 0 3.302) (radius 0.762) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "TestPoint_1_1" (pin passive line (at 0 0 90) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))) 
+
+(symbol (lib_id "Device:C_Small") (at 139.7 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "9cbebe91-764f-4298-aa69-bf2a0c2fb4af") 
+
+(property "Reference" "C301" (at 142.24 62.2362 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "100nF X7R" (at 142.24 64.7762 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 139.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=C1608X7R1H104K080AA" (at 139.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "TDK C1608X7R1H104K080AA; catalog selection. PCB placement/assembly qualification open." (at 139.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "2" (uuid "94567469-762c-412a-8e7f-84f1a17652a6")) (pin "1" (uuid "5ee60324-488e-43e9-96d4-24e521f735cf")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "C301") (unit 1))))) 
+
+(symbol (lib_id "AudioPicture_ENV:OPT3004DNPR") (at 198.12 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "aa3517e3-1ee3-4afb-8805-7fe1f67e6cf5") 
+
+(property "Reference" "U302" (at 213.36 57.0798 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "OPT3004DNPR" (at 213.36 59.6198 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "AudioPicture_ENV:TI_DNP0006A_OPT3004" (at 198.12 74.93 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opt3004.pdf" (at 198.12 77.47 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "OPT3004 DNP USON-6; TI SBOS929A Table 6-1; EP=7 GND" (at 198.12 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "7" (uuid "d1b06cec-cc66-4093-aeec-00333c64482d")) (pin "4" (uuid "463b9188-1944-403f-8edb-9118b5244496")) (pin "2" (uuid "b77fe48a-bd19-4aaf-8c60-5197cf0d61e4")) (pin "6" (uuid "5174780c-ba9a-40af-9a1f-68f9f0d0447d")) (pin "3" (uuid "4da5398b-a332-4a2f-aab8-064ae1108c86")) (pin "1" (uuid "a7e2f498-de02-460f-9687-868ef4ca971e")) (pin "5" (uuid "2621e6b3-c5a7-4dc6-b998-2dd2ccf54d04")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "U302") (unit 1))))) 
+
+(symbol (lib_id "Sensor_Humidity:SHT4x") (at 114.3 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "d6edded0-ff42-4d5c-9ac5-97f23cd2aa92") 
+
+(property "Reference" "U301" (at 120.65 62.2299 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SHT45-AD1F" (at 120.65 64.7699 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad" (at 118.11 69.85 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) 
+
+(property "Datasheet" "https://sensirion.com/resource/datasheet/sht4x" (at 118.11 72.39 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) 
+
+(property "Description" "Sensirion SHT45-AD1F-R2 / article 3.000.886; integrated polyimide membrane per datasheet v7.3." (at 114.3 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "2" (uuid "08fa5346-6eff-420e-b383-265b2a8faba2")) (pin "4" (uuid "297a0afa-629f-48c9-968c-841096aa991c")) (pin "3" (uuid "30b9cfc5-19e7-41bb-9b0f-00c0b62fc0d1")) (pin "1" (uuid "9c27785c-56cd-47c9-af9e-d8fd8638ccf7")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "U301") (unit 1))))) 
+
+(symbol (lib_id "Connector_Generic:Conn_01x08") (at 50.8 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "e4248746-c935-4157-a507-54b701b7a5a0") 
+
+(property "Reference" "J301" (at 53.34 63.4999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "FH12-8S-0.5SH(55)" (at 53.34 66.0399 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-8S-0.5SH_1x08-1MP_P0.50mm_Horizontal" (at 50.8 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 50.8 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 50.8 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "4" (uuid "e01c6416-f769-4e21-b0d5-0e2a2968c98f")) (pin "5" (uuid "2bf9c8f8-9152-464c-a5f6-f34e4ee0e724")) (pin "6" (uuid "0237efcc-3490-4eb2-9e27-7d7a0747c791")) (pin "3" (uuid "38bcb0bd-8961-4a43-a3cd-3e7f3a47dce1")) (pin "7" (uuid "47bafb83-d488-4950-bada-9bb495f41262")) (pin "8" (uuid "d3c7483a-98c3-4007-8820-9711864ca1f1")) (pin "2" (uuid "bde4b311-6edc-405f-845b-49464fe8e255")) (pin "1" (uuid "bda0c663-1fae-49ec-9ffa-2c53c7047040")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "J301") (unit 1))))) (sheet_instances (path "/" (page "1"))) (embedded_fonts no) 
+
+(symbol (lib_id "Device:C_Small") (at 228.6 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "6365cfdd-e6bf-4b46-a097-d83aee9837a0") 
+
+(property "Reference" "C302" (at 231.14 62.2362 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "100nF X7R" (at 231.14 64.7762 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 228.6 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=C1608X7R1H104K080AA" (at 228.6 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "TDK C1608X7R1H104K080AA; catalog selection. PCB placement/assembly qualification open." (at 228.6 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "2" (uuid "19d0d617-e609-4311-be5d-be4f310ac3b1")) (pin "1" (uuid "a2eaf76a-2811-480c-96b7-f8f394523c1a")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "C302") (unit 1))))) 
+
+(symbol (lib_id "Device:C_Small") (at 76.2 101.6 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp yes) (fields_autoplaced yes) (uuid "1761090f-159c-4858-a8bb-1348e44b196d") 
+
+(property "Reference" "C303" (at 78.74 100.3362 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "1uF X7R" (at 78.74 102.8762 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 76.2 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=C1608X7R1C105K080AC" (at 76.2 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "TDK C1608X7R1C105K080AC; catalog selection. PCB placement/assembly qualification open." (at 76.2 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "2" (uuid "ce9d57bc-521b-4799-a984-d7a3bf201b5c")) (pin "1" (uuid "632226b7-b83c-486a-8d0e-8142c0d93b39")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "C303") (unit 1))))) 
+
+(symbol (lib_id "power:PWR_FLAG") (at 35.56 96.52 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c6a0d1d1-e238-4931-8b60-bd7623abf208") 
+
+(property "Reference" "#FLG0301" (at 35.56 89.662 0) (effects (font (size 0.762 0.762)) (hide yes))) 
+
+(property "Value" "PWR_FLAG" (at 35.56 90.678 0) (effects (font (size 0.762 0.762)))) 
+
+(property "Footprint" "" (at 35.56 96.52 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Datasheet" "" (at 35.56 96.52 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Description" "" (at 35.56 96.52 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "8428aea2-36f5-47c8-b871-96acf9241437")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "#FLG0301") (unit 1))))) 
+
+(symbol (lib_id "power:PWR_FLAG") (at 55.88 96.52 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "ac837054-c84e-41dc-90a1-df0793313874") 
+
+(property "Reference" "#FLG0302" (at 55.88 89.662 0) (effects (font (size 0.762 0.762)) (hide yes))) 
+
+(property "Value" "PWR_FLAG" (at 55.88 90.678 0) (effects (font (size 0.762 0.762)))) 
+
+(property "Footprint" "" (at 55.88 96.52 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Datasheet" "" (at 55.88 96.52 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Description" "" (at 55.88 96.52 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "33b9f6c3-76d5-4347-b69c-87d6d195672b")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "#FLG0302") (unit 1))))) 
+
+(symbol (lib_id "Connector:TestPoint") (at 111.76 101.6 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "0b964d9b-39a6-42e5-8695-e93bda8c32d1") 
+
+(property "Reference" "TP301" (at 111.76 93.97999999999999 0) (effects (font (size 1.0 1.0)) (hide no))) 
+
+(property "Value" "TP_3V3" (at 111.76 96.52 0) (effects (font (size 1.0 1.0)))) 
+
+(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 111.76 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Datasheet" "" (at 111.76 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Description" "" (at 111.76 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "1f33f2af-3372-4fe7-916a-6ad78d76a336")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "TP301") (unit 1))))) 
+
+(symbol (lib_id "Connector:TestPoint") (at 137.16 101.6 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1e178195-69d6-40ad-ac1b-bf45394f2584") 
+
+(property "Reference" "TP302" (at 137.16 93.97999999999999 0) (effects (font (size 1.0 1.0)) (hide no))) 
+
+(property "Value" "TP_GND" (at 137.16 96.52 0) (effects (font (size 1.0 1.0)))) 
+
+(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 137.16 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Datasheet" "" (at 137.16 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Description" "" (at 137.16 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c38d3566-8ce8-479d-a484-553399f1fbd7")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "TP302") (unit 1))))) 
+
+(symbol (lib_id "Connector:TestPoint") (at 170.18 101.6 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "e4d6500d-a92f-47a3-860f-1cb003365a78") 
+
+(property "Reference" "TP303" (at 170.18 93.97999999999999 0) (effects (font (size 1.0 1.0)) (hide no))) 
+
+(property "Value" "TP_SDA" (at 170.18 96.52 0) (effects (font (size 1.0 1.0)))) 
+
+(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 170.18 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Datasheet" "" (at 170.18 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Description" "" (at 170.18 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "2fed0114-f2eb-4898-91b2-dbe7d0872d82")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "TP303") (unit 1))))) 
+
+(symbol (lib_id "Connector:TestPoint") (at 203.2 101.6 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "810fc2e7-aedb-4d9d-b57b-3655848d1cb1") 
+
+(property "Reference" "TP304" (at 203.2 93.97999999999999 0) (effects (font (size 1.0 1.0)) (hide no))) 
+
+(property "Value" "TP_SCL" (at 203.2 96.52 0) (effects (font (size 1.0 1.0)))) 
+
+(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 203.2 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Datasheet" "" (at 203.2 101.6 0) (effects (font (size 1.524 1.524)) (hide yes))) 
+
+(property "Description" "" (at 203.2 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "185439e1-da9c-45f9-b117-c26d54a7a3b1")) (instances (project "audiopicture-env-rev-ez" (path "/5b1d94a2-d719-4a81-bd1a-ca18f600cc88" (reference "TP304") (unit 1))))) 
+
+(wire (pts 
+
+(xy 45.72 55.88) 
+
+(xy 30.48 55.88)) (stroke (width 0) (type default)) (uuid 84a3bb94-6784-4093-a010-63548b2f88f4)) 
+
+(label "+3V3_SYS" (at 30.48 55.88 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 969d9678-5970-4124-bdd7-8d57e2b793e8)) 
+
+(wire (pts 
+
+(xy 45.72 58.42) 
+
+(xy 30.48 58.42)) (stroke (width 0) (type default)) (uuid 2adc1ad4-7324-4c56-a97d-edf2692c560a)) 
+
+(label "+3V3_SYS" (at 30.48 58.42 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 103a61f1-9a96-4628-8e59-fb92133f5b21)) 
+
+(wire (pts 
+
+(xy 45.72 60.96) 
+
+(xy 30.48 60.96)) (stroke (width 0) (type default)) (uuid 9410d3d6-06d7-45e8-9b8c-63630d2f319b)) 
+
+(label "GND" (at 30.48 60.96 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid ab8d0917-d666-42d0-8330-92a351a71317)) 
+
+(wire (pts 
+
+(xy 45.72 63.5) 
+
+(xy 30.48 63.5)) (stroke (width 0) (type default)) (uuid 3baedb1a-9d26-423c-939c-55ba65f8e907)) 
+
+(label "GND" (at 30.48 63.5 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 0e9da959-d0f8-40e9-bf89-58ba51279d95)) 
+
+(wire (pts 
+
+(xy 45.72 66.04) 
+
+(xy 30.48 66.04)) (stroke (width 0) (type default)) (uuid 0319bd28-65cf-4d79-af9f-03c711c601d5)) 
+
+(label "I2C_SDA" (at 30.48 66.04 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid dfc1120e-78ed-4b90-b2c9-1846b729e409)) 
+
+(wire (pts 
+
+(xy 45.72 68.58) 
+
+(xy 30.48 68.58)) (stroke (width 0) (type default)) (uuid aee38654-1ae4-4840-8732-5f55e39b92e9)) 
+
+(label "I2C_SCL" (at 30.48 68.58 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 211be2c7-72d7-4267-b3f8-c50cdcc895f8)) 
+
+(wire (pts 
+
+(xy 106.68 66.04) 
+
+(xy 91.44 66.04)) (stroke (width 0) (type default)) (uuid 0244b1bd-ca8f-4b8d-9b71-ae9ac0918f08)) 
+
+(label "I2C_SDA" (at 91.44 66.04 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 995d6019-e8e1-4d9e-bba2-cb6bfe8db663)) 
+
+(wire (pts 
+
+(xy 106.68 60.96) 
+
+(xy 91.44 60.96)) (stroke (width 0) (type default)) (uuid cb0b51b8-358a-4fb6-9bfe-ffd142bd0dc6)) 
+
+(label "I2C_SCL" (at 91.44 60.96 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid d10ab90d-1dce-4383-9662-484aefbd1862)) 
+
+(wire (pts 
+
+(xy 116.84 55.88) 
+
+(xy 116.84 50.8)) (stroke (width 0) (type default)) (uuid baa5b8b0-9c79-4d81-87d0-a34b6a841748)) 
+
+(label "+3V3_SYS" (at 116.84 50.8 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 728ca65c-6cce-4016-a2e3-3d06c30395d5)) 
+
+(wire (pts 
+
+(xy 116.84 71.12) 
+
+(xy 116.84 76.2)) (stroke (width 0) (type default)) (uuid d1c14186-141d-4b03-9218-151451c0e6dd)) 
+
+(label "GND" (at 116.84 76.2 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 6004bc28-3218-4a76-9b31-cc15574ce83e)) 
+
+(wire (pts 
+
+(xy 198.12 53.34) 
+
+(xy 198.12 48.26)) (stroke (width 0) (type default)) (uuid 0cac1d1e-c118-498e-af53-fc9ea259a9a4)) 
+
+(label "+3V3_SYS" (at 198.12 48.26 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 5c1a3a21-8b13-4a42-a91a-a930d4f22880)) 
+
+(wire (pts 
+
+(xy 187.96 66.04) 
+
+(xy 172.72 66.04)) (stroke (width 0) (type default)) (uuid d10f17a7-0898-43d6-899c-e3acafc7e336)) 
+
+(label "+3V3_SYS" (at 172.72 66.04 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid d7d616c7-d8fc-4627-ac73-91c28fa8f74f)) 
+
+(wire (pts 
+
+(xy 198.12 73.66) 
+
+(xy 198.12 78.74)) (stroke (width 0) (type default)) (uuid 1609f202-70e4-4b11-bf7c-8b1d7af7f023)) 
+
+(label "GND" (at 198.12 78.74 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid ce36ca96-b208-46e5-ad7c-a286c4dfe4b1)) 
+
+(wire (pts 
+
+(xy 187.96 60.96) 
+
+(xy 172.72 60.96)) (stroke (width 0) (type default)) (uuid b5a4fcb7-4f98-46f6-beb1-90ecda6c2730)) 
+
+(label "I2C_SCL" (at 172.72 60.96 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 9dc404b5-d3d9-48c2-88fb-3ad6222f27af)) 
+
+(wire (pts 
+
+(xy 187.96 58.42) 
+
+(xy 172.72 58.42)) (stroke (width 0) (type default)) (uuid 5ad438ff-cd21-4413-b630-e477c95c107c)) 
+
+(label "I2C_SDA" (at 172.72 58.42 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid ab1c372f-02ba-4b82-a275-6ea532f25a63)) 
+
+(wire (pts 
+
+(xy 200.66 73.66) 
+
+(xy 200.66 82.55)) (stroke (width 0) (type default)) (uuid ff6c4519-b75c-49a7-8ee1-0d5fffa60cf9)) 
+
+(label "GND" (at 200.66 82.55 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid fff9aae0-daf3-40b2-8159-16ea38180878)) 
+
+(wire (pts 
+
+(xy 139.7 60.96) 
+
+(xy 139.7 55.88)) (stroke (width 0) (type default)) (uuid a54be7f8-6e0d-4099-8563-1a249bc4c106)) 
+
+(label "+3V3_SYS" (at 139.7 55.88 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 26dfb3a0-4a7d-4928-bfdb-c10de28e7ba1)) 
+
+(wire (pts 
+
+(xy 139.7 66.04) 
+
+(xy 139.7 71.12)) (stroke (width 0) (type default)) (uuid 91fdbd57-3885-4613-9274-f1a9278de944)) 
+
+(label "GND" (at 139.7 71.12 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid ffc2e04b-95f3-47ee-8e25-129322e79770)) 
+
+(wire (pts 
+
+(xy 228.6 60.96) 
+
+(xy 228.6 55.88)) (stroke (width 0) (type default)) (uuid b3e0dcc7-7629-4747-b6c2-17ba8c7a1a7b)) 
+
+(label "+3V3_SYS" (at 228.6 55.88 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 7dfd39f1-d66e-4081-949f-6f0fb07e0e26)) 
+
+(wire (pts 
+
+(xy 228.6 66.04) 
+
+(xy 228.6 71.12)) (stroke (width 0) (type default)) (uuid 86bc8350-8e59-42ab-8653-8dbd994c120d)) 
+
+(label "GND" (at 228.6 71.12 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 61a58c2c-2086-40fe-b6d7-c549143b7821)) 
+
+(wire (pts 
+
+(xy 76.2 99.06) 
+
+(xy 76.2 93.98)) (stroke (width 0) (type default)) (uuid 96df55ba-1567-4b8c-ae26-b5d105644087)) 
+
+(label "+3V3_SYS" (at 76.2 93.98 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 7dc7fcdd-5306-43ef-b543-da74abb5989f)) 
+
+(wire (pts 
+
+(xy 76.2 104.14) 
+
+(xy 76.2 109.22)) (stroke (width 0) (type default)) (uuid c731e38c-68ee-4d31-a0d3-57e30c433881)) 
+
+(label "GND" (at 76.2 109.22 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 570999fd-4f10-430f-b069-ae84ba378f97)) 
+
+(wire (pts 
+
+(xy 35.56 96.52) 
+
+(xy 35.56 101.6)) (stroke (width 0) (type default)) (uuid 4f30cfee-7134-45b6-b9cd-07ef9333b4d9)) 
+
+(label "+3V3_SYS" (at 35.56 101.6 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 00fd5938-8010-4d60-9c75-fc324d13f19d)) 
+
+(wire (pts 
+
+(xy 55.88 96.52) 
+
+(xy 55.88 101.6)) (stroke (width 0) (type default)) (uuid 12166dcc-0467-416b-b221-a81618bcebad)) 
+
+(label "GND" (at 55.88 101.6 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 42ef6f95-6843-4d4c-a1c1-27da28c665a9)) 
+
+(wire (pts 
+
+(xy 111.76 101.6) 
+
+(xy 111.76 106.68)) (stroke (width 0) (type default)) (uuid 57c3845c-c1f4-4c59-9648-ac047c3d112d)) 
+
+(label "+3V3_SYS" (at 111.76 106.68 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 02d71111-d1d2-4a02-ab48-7a83e2461b54)) 
+
+(wire (pts 
+
+(xy 137.16 101.6) 
+
+(xy 137.16 106.68)) (stroke (width 0) (type default)) (uuid 9c4e5c20-d9c5-42c9-8eca-37bf6967af07)) 
+
+(label "GND" (at 137.16 106.68 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 82b9f949-a384-40eb-8351-05617f07f2f8)) 
+
+(wire (pts 
+
+(xy 170.18 101.6) 
+
+(xy 170.18 106.68)) (stroke (width 0) (type default)) (uuid 8caa9225-d95e-495b-827b-952ab6e84cac)) 
+
+(label "I2C_SDA" (at 170.18 106.68 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid e657e826-21a7-4637-9e54-520e8b57a7aa)) 
+
+(wire (pts 
+
+(xy 203.2 101.6) 
+
+(xy 203.2 106.68)) (stroke (width 0) (type default)) (uuid a565a0bd-d8bc-4e67-9d47-417852bc8d6f)) 
+
+(label "I2C_SCL" (at 203.2 106.68 0) (fields_autoplaced) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid 4bd2759e-1b80-43ea-82c9-1e95294197bb)) (no_connect (at 45.72 71.12) (uuid "ea0ab71d-9b0e-4ee0-a1ce-b5f08585df39")) (no_connect (at 45.72 73.66) (uuid "e1b837c9-6bd7-4116-a690-63a4a1aa3c74")) (no_connect (at 208.28 63.5) (uuid "6f18d53a-99dd-4f8c-8fd4-2581ecebeb68")) 
+
+(text "AudioPicture V2.2 - ENV Rev.EZ" (at 40.64 25.4 0) (effects (font (size 2.54 2.54) (thickness 0.4) bold) (justify left bottom)) (uuid c7e84600-c139-4b75-a296-5264cb36d910)) 
+
+(text "Electrical capture candidate - PCB and calibration NOT RELEASED" (at 40.64 33.02 0) (effects (font (size 1.27 1.27) (thickness 0.4) bold) (justify left bottom)) (uuid 5108e2ef-df78-4dde-bae4-4bea9ea24f11)) 
+
+(text "MAIN owns I2C pull-ups. 100 kHz baseline. No local regulator." (at 40.64 124.46 0) (effects (font (size 1.27 1.27) (thickness 0.4) bold) (justify left bottom)) (uuid ff4d5abd-76fb-4fb6-ada8-543d45c7d294)) 
+
+(text "ADDR = VDD: OPT3004 0x45. SHT45 0x44. INT / BOARD_ID reserved NC." (at 40.64 130.81 0) (effects (font (size 1.27 1.27) (thickness 0.4) bold) (justify left bottom)) (uuid c24b9dfa-06ca-4247-ad3a-ee40cd2d3f46)) 
+
+(text "PWR_FLAG marks incoming MAIN supply and return at J301; no other power source." (at 40.64 137.16 0) (effects (font (size 1.27 1.27) (thickness 0.4) bold) (justify left bottom)) (uuid 0f382756-6f50-4f26-9db3-d02f3cfcf7a4)) 
+
+(text "C301/C302 local bypass; C303 DNP bulk. MPNs selected; PCB qualification OPEN." (at 40.64 143.51 0) (effects (font (size 1.27 1.27) (thickness 0.4) bold) (justify left bottom)) (uuid 87fb55bf-4cc7-41cd-9598-a0dd80944270)) 
+
+(text "SHT45 central die pad: no copper / no solder. OPT3004 EP: GND." (at 40.64 149.86 0) (effects (font (size 1.27 1.27) (thickness 0.4) bold) (justify left bottom)) (uuid b233ac79-a5cd-44d9-8854-8e595063f525)) 
+
+(text "FPC contact side / pin-1 mating orientation and sensor chamber placement OPEN." (at 40.64 156.21 0) (effects (font (size 1.27 1.27) (thickness 0.4) bold) (justify left bottom)) (uuid 49beca5b-40d8-4c93-a8b0-bedeb322ea85)))

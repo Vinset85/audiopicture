@@ -1,0 +1,10 @@
+{
+  "relaxation": 0.35,
+  "exit_code": 0,
+  "coupled_warnings": 0,
+  "nan": false,
+  "last_changes": [
+    "ComputeChange: SS (ITER=42) (NRM,RELC): (  294.97129      0.0000000     ) :: heat equation",
+    "ComputeChange: SS (ITER=42) (NRM,RELC): ( 0.27504553E-03 0.94351680E-07 ) :: navier-stokes"
+  ]
+}

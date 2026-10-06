@@ -1,0 +1,332 @@
+{
+  "revision": "Rev.EQ",
+  "classification": "CALCULATED_CAD_CANDIDATE_NOT_PRODUCTION",
+  "solid_valid": true,
+  "solid_components": 1,
+  "solid_volume_mm3": 302276.34146088536,
+  "fluid_valid": true,
+  "fluid_components": 1,
+  "fluid_volume_mm3": 3514228.146035117,
+  "full_coverage_vents": 22,
+  "parallel_cells": 22,
+  "cells": [
+    {
+      "id": 1,
+      "orientation": "V",
+      "aperture_xy": [
+        17,
+        20,
+        14,
+        54
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 2,
+      "orientation": "V",
+      "aperture_xy": [
+        24,
+        27,
+        14,
+        54
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 3,
+      "orientation": "V",
+      "aperture_xy": [
+        17,
+        20,
+        62,
+        102
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 4,
+      "orientation": "V",
+      "aperture_xy": [
+        24,
+        27,
+        62,
+        102
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 5,
+      "orientation": "V",
+      "aperture_xy": [
+        17,
+        20,
+        110,
+        150
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 6,
+      "orientation": "V",
+      "aperture_xy": [
+        24,
+        27,
+        110,
+        150
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 7,
+      "orientation": "H",
+      "aperture_xy": [
+        17,
+        62,
+        315,
+        318
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 8,
+      "orientation": "H",
+      "aperture_xy": [
+        17,
+        62,
+        322,
+        325
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 9,
+      "orientation": "H",
+      "aperture_xy": [
+        17,
+        62,
+        329,
+        332
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 10,
+      "orientation": "H",
+      "aperture_xy": [
+        17,
+        62,
+        336,
+        339
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 11,
+      "orientation": "H",
+      "aperture_xy": [
+        17,
+        62,
+        343,
+        346
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 12,
+      "orientation": "V",
+      "aperture_xy": [
+        300,
+        303,
+        14,
+        54
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 13,
+      "orientation": "V",
+      "aperture_xy": [
+        293,
+        296,
+        14,
+        54
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 14,
+      "orientation": "V",
+      "aperture_xy": [
+        300,
+        303,
+        62,
+        102
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 15,
+      "orientation": "V",
+      "aperture_xy": [
+        293,
+        296,
+        62,
+        102
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 16,
+      "orientation": "V",
+      "aperture_xy": [
+        300,
+        303,
+        110,
+        150
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 17,
+      "orientation": "V",
+      "aperture_xy": [
+        293,
+        296,
+        110,
+        150
+      ],
+      "minimum_geometric_cross_section_mm2": 80,
+      "cell_valid": true
+    },
+    {
+      "id": 18,
+      "orientation": "H",
+      "aperture_xy": [
+        258,
+        303,
+        315,
+        318
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 19,
+      "orientation": "H",
+      "aperture_xy": [
+        258,
+        303,
+        322,
+        325
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 20,
+      "orientation": "H",
+      "aperture_xy": [
+        258,
+        303,
+        329,
+        332
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 21,
+      "orientation": "H",
+      "aperture_xy": [
+        258,
+        303,
+        336,
+        339
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    },
+    {
+      "id": 22,
+      "orientation": "H",
+      "aperture_xy": [
+        258,
+        303,
+        343,
+        346
+      ],
+      "minimum_geometric_cross_section_mm2": 90,
+      "cell_valid": true
+    }
+  ],
+  "max_nominal_vent_reclosure_mm3": 0,
+  "connected_vents_count": 22,
+  "coarse_frame_overlap_mm3": 0,
+  "coarse_frame_clearance_mm": 1.0,
+  "sampled_rays": 2574,
+  "open_rays": 0,
+  "open_examples": [],
+  "analytic_straight_ray_baffle_coordinate_bounds_mm": [
+    -0.974358974358974,
+    1.538461538461539
+  ],
+  "baffle_coordinate_interval_mm": [
+    -3,
+    2
+  ],
+  "aggregate_lower_min_cross_section_mm2": 960,
+  "aggregate_upper_min_cross_section_mm2": 900,
+  "area_geometry_gate": "PASS",
+  "release": "OPEN",
+  "limitations": [
+    "Geometric cross sections are not measured effective flow areas.",
+    "CFD, acoustic attenuation, tolerance/print qualification open.",
+    "Coarse frame only; exact component, RF, cleat, cable DMU absent.",
+    "Floors z29..30, baffles z33..34: new candidate dimensions.",
+    "Internal audit complement excludes electronics/harnesses and room/wall gap."
+  ],
+  "physical_process_coupons": {
+    "LOWER_PAIR": {
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        15.0,
+        42.0,
+        11.0
+      ],
+      "purpose": "ASA print/metrology/flow coupon, not qualified part"
+    },
+    "UPPER_PAIR": {
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        47.0,
+        15.0,
+        11.0
+      ],
+      "purpose": "ASA print/metrology/flow coupon, not qualified part"
+    }
+  },
+  "solid_reimport_valid": true,
+  "solid_reimport_components": 1,
+  "solid_sha256": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+  "fluid_reimport_valid": true,
+  "fluid_reimport_components": 1,
+  "fluid_sha256": "c5460436f56efee469341610ad2f08afbc98aa9f7858a4e4c36312908caff07c"
+}

@@ -1,0 +1,14 @@
+{
+  "valid": true,
+  "solid_count": 1,
+  "rear_return_overlap_mm3": 48.00000000000068,
+  "return_tab_overlap_mm3": 63.99999999999999,
+  "dml_intersection_mm3": 0,
+  "bbox_mm": [
+    80.0,
+    10.0,
+    29.9
+  ],
+  "rear_ring_half_span_mm": 40.0,
+  "artifact": "AP22_M1D_FEA_SUBMODEL_REV_K.step"
+}

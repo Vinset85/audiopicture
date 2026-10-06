@@ -1,0 +1,6 @@
+{
+  "state": "INTERRUPTED_FOR_CONTACT_MODEL_CORRECTION",
+  "completed_case": "LC1",
+  "interrupted_case": "LC4",
+  "reason": "Per-node 1e6 N/mm gap penalty caused repeated contact divergence. Replace by mesh-independent total penalty and run sensitivity; unexecuted cases are OPEN."
+}

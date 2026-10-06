@@ -1,0 +1,23 @@
+{
+  "classification": "SOLVER_INSTALLATION_AND_REGRESSION_TESTS_NOT_AUDIOPICTURE_CFD",
+  "cadquery": "2.8.0",
+  "gmsh": "4.15.2",
+  "calculix": "2.23",
+  "calculix_backends": [
+    "SPOOLES",
+    "ARPACK"
+  ],
+  "elmer_source_commit": "4b49ea695ff021e9a046b403f5ebf6df8ec317c4",
+  "elmer_regressions": {
+    "natural_convection_reference_error": 1.880536e-07,
+    "natural_convection_coupled_convergence": "OPEN_WARNING",
+    "radiation_reference_error": 4.439833e-10,
+    "direct_natural_convection_attempt": "FAIL_NaN",
+    "gauge_extended_attempt": "OPEN_COUPLED_NONCONVERGENCE"
+  },
+  "download_hashes": {
+    "work/ccx_2.23.src.tar.bz2": "9c88385c10fb04f5dc6c4e98027a51bebdd8aee3920e05190d6c1dd08357d6e7",
+    "work/arpack.tar.bz2": "3b8f739c414530e0dffe630634b4957e4938711d43664684ea75e78bcf866e68",
+    "work/spooles.2.2.tgz": "a84559a0e987a1e423055ef4fdf3035d55b65bbe4bf915efaa1a35bef7f8c5dd"
+  }
+}

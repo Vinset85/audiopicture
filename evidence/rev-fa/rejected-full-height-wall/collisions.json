@@ -1,0 +1,45 @@
+{
+  "modified_carrier": {
+    "DML": 0,
+    "ESP32_RF": 0,
+    "RADAR": 0,
+    "ENV_existing_seed": 0,
+    "future_ASA_right_wall_seed": 1034.6993392332788,
+    "frame_EU11": 0,
+    "shell_EQ": 0,
+    "eight_metal_target_envelopes": 0
+  },
+  "OPT_head_PCB_envelope": {
+    "DML": 0,
+    "ESP32_RF": 0,
+    "RADAR": 0,
+    "ENV_existing_seed": 0,
+    "future_ASA_right_wall_seed": 0,
+    "frame_EU11": 0,
+    "shell_EQ": 0,
+    "eight_metal_target_envelopes": 0,
+    "modified_carrier": 0
+  },
+  "OPT3004_max_package_envelope": {
+    "DML": 0,
+    "ESP32_RF": 0,
+    "RADAR": 0,
+    "ENV_existing_seed": 0,
+    "future_ASA_right_wall_seed": 0,
+    "frame_EU11": 0,
+    "shell_EQ": 0,
+    "eight_metal_target_envelopes": 0,
+    "modified_carrier": 0
+  },
+  "C302_backside_envelope_seed": {
+    "DML": 0,
+    "ESP32_RF": 0,
+    "RADAR": 0,
+    "ENV_existing_seed": 0,
+    "future_ASA_right_wall_seed": 0,
+    "frame_EU11": 0,
+    "shell_EQ": 0,
+    "eight_metal_target_envelopes": 0,
+    "modified_carrier": 0
+  }
+}

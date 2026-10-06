@@ -2,6 +2,13 @@
 
 Status: **CFD_GEOMETRY_READY / NUMERICAL_SOLVER_UNAVAILABLE_IN_CURRENT_RUNTIME / NO_THERMAL_RESULT_CLAIMED**
 
+**Superseded environment/readiness assessment (Rev.EN–ES):** Gmsh 4.15.2
+and native Elmer are now installed. Rev.EM/EC is not a full-product CFD
+domain, and historical sampled LOS does not prove labyrinth treatment.
+Natural-convection regression reference matching includes a coupled-convergence
+warning; radiation regression matches its reference. No AudioPicture CFD
+matrix has been solved. See `digital-validation-rev-en-es.md`.
+
 A local runtime capability audit was executed before attempting any thermal CFD.
 
 Available:
@@ -56,3 +63,11 @@ C1774 CFD geometry remains qualified by Rev.EE.
 C1775 next numerical gate requires actual CFD solver plus mesh convergence.
 
 Status: **THERMAL_CFD_REV_EH / GEOMETRY_READY / SOLVER_GATE_OPEN / C01_TO_C1775**.
+
+## Rev.EY verification update
+
+Elmer is available as the alternative solver. Natural-convection coupling now
+converges. The separate de Vahl Davis Ra1000/Pr0.71 benchmark was executed on
+three meshes with 0.02993% finest-grid Nusselt error and closed wall-flux balance.
+See `validation/rev-et-ey/cavity-benchmark.json`. This supersedes the earlier
+benchmark convergence warning only; the full AudioPicture CFD model remains OPEN.

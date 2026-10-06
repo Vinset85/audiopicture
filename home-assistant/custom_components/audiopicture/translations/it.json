@@ -1,0 +1,28 @@
+{
+  "title": "AudioPicture",
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connetti AudioPicture",
+        "description": "I dispositivi vengono rilevati automaticamente nella rete locale. Usa il nome host solo se il rilevamento non è disponibile.",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        }
+      },
+      "confirm": {
+        "title": "Aggiungi AudioPicture",
+        "description": "Aggiungi il dispositivo rilevato. Questo firmware espone sensori diagnostici; audio e voce non sono ancora abilitati."
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile verificare AudioPicture. Controlla alimentazione e rete."
+    },
+    "abort": {
+      "already_configured": "This AudioPicture is already configured.",
+      "cannot_connect": "The discovered device did not respond with a valid AudioPicture API.",
+      "wrong_device": "The device identity has changed. Discover it again."
+    }
+  }
+}

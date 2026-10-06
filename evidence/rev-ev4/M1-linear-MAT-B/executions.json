@@ -1,0 +1,132 @@
+[
+  {
+    "case": "LC1",
+    "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+    "constitutive_assumptions": {
+      "E1": 1900.0,
+      "E2": 1900.0,
+      "E3": 665.0,
+      "nu12": 0.35,
+      "nu13": 0.35,
+      "nu23": 0.35,
+      "G12": 703.7037037037037,
+      "G13": 281.48148148148147,
+      "G23": 281.48148148148147
+    },
+    "load_sum_N": [
+      0.0,
+      -70.00000000000128,
+      0.0
+    ],
+    "load_cg_seed_mm": [
+      160.00000000000023,
+      199.99999999999997,
+      24.063814116099053
+    ],
+    "nonlinear_geometry": false,
+    "lower_unilateral_gap_contacts": 0,
+    "anti_lift_normal_support_assumption": true,
+    "bonded_insert_cleat_surrogate_nodes": 2020,
+    "corner_warp_mm": null,
+    "input_sha256": "c7e06cec14b72b6f0bb7a107873439b406b81ebc2c74092ee93c7371e6ed90d3",
+    "mesh_report": {
+      "source_sha256": "f01e37e5b943c9f466d1794f8265472e92994afe8f3343cc2b47134150e0c87c",
+      "size_mm": 3.0,
+      "nodes": 244903,
+      "elements": 126787,
+      "type": "C3D10",
+      "min_SICN": 0.002971412216386625,
+      "corner_tet_volume_mm3": 346094.50380494376,
+      "volume_weighted_seed_cg_mm": [
+        161.31415356544542,
+        205.72621261729105,
+        24.119400048021298
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 149,
+        "PAD_R": 149,
+        "ANTILIFT": 130,
+        "CORNER_LL": 68,
+        "CORNER_LR": 68,
+        "CORNER_UL": 62,
+        "CORNER_UR": 62
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution"
+    },
+    "qualified_allowables": null,
+    "release_margin": null,
+    "exit_code": 0,
+    "job_finished": true,
+    "errors": [],
+    "solver_execution_pass": true
+  },
+  {
+    "case": "BUCKLE",
+    "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+    "constitutive_assumptions": {
+      "E1": 1900.0,
+      "E2": 1900.0,
+      "E3": 665.0,
+      "nu12": 0.35,
+      "nu13": 0.35,
+      "nu23": 0.35,
+      "G12": 703.7037037037037,
+      "G13": 281.48148148148147,
+      "G23": 281.48148148148147
+    },
+    "load_sum_N": [
+      0.0,
+      -70.00000000000128,
+      0.0
+    ],
+    "load_cg_seed_mm": [
+      160.00000000000023,
+      199.99999999999997,
+      24.063814116099053
+    ],
+    "nonlinear_geometry": false,
+    "lower_unilateral_gap_contacts": 0,
+    "anti_lift_normal_support_assumption": true,
+    "bonded_insert_cleat_surrogate_nodes": 2020,
+    "corner_warp_mm": null,
+    "input_sha256": "ded50cd8b5a6877bde69ee2b9617c282d9183873d7a22b32d40a242d3c26131c",
+    "mesh_report": {
+      "source_sha256": "f01e37e5b943c9f466d1794f8265472e92994afe8f3343cc2b47134150e0c87c",
+      "size_mm": 3.0,
+      "nodes": 244903,
+      "elements": 126787,
+      "type": "C3D10",
+      "min_SICN": 0.002971412216386625,
+      "corner_tet_volume_mm3": 346094.50380494376,
+      "volume_weighted_seed_cg_mm": [
+        161.31415356544542,
+        205.72621261729105,
+        24.119400048021298
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 149,
+        "PAD_R": 149,
+        "ANTILIFT": 130,
+        "CORNER_LL": 68,
+        "CORNER_LR": 68,
+        "CORNER_UL": 62,
+        "CORNER_UR": 62
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution"
+    },
+    "qualified_allowables": null,
+    "release_margin": null,
+    "exit_code": 0,
+    "job_finished": true,
+    "errors": [],
+    "solver_execution_pass": true
+  }
+]

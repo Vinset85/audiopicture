@@ -65,8 +65,12 @@ ESP32-S3 is host/master for the synchronized AudioPicture audio domain:
 Exact peripheral assignment and DMA topology are firmware validation items.
 
 
-## Pin-budget decision — FROZEN Rev.A
-No GPIO expander is required.
+## Pin-budget revision — Rev.EZ, 2026-10-05
+The earlier no-expander conclusion omitted the power-status inputs. The ESP32
+map above is retained; U20 TCA9534PWR at 0x20 provides eight input-only status
+positions. See [power-status-inputs-rev-ez.md](power-status-inputs-rev-ez.md).
+Analog conditioning, PoE isolation/negotiation, native capture and timing remain
+OPEN; the digital allocation alone is not hardware qualification.
 
 Final topology:
 - shared SPI data/clock: GPIO11/12/13;

@@ -23,18 +23,18 @@ RSH1 baseline is revised to **8 mOhm**:
 - <=0.5% preferred, low TCR.
 
 At 3 A:
-- Vshunt = 22.5 mV;
-- Pshunt = 67.5 mW.
+- Vshunt = 24 mV;
+- Pshunt = 72 mW.
 
 At 4 A:
-- Vshunt = 30 mV;
-- Pshunt = 120 mW.
+- Vshunt = 32 mV;
+- Pshunt = 128 mW.
 
 At 5 A transient:
-- Vshunt = 37.5 mV;
-- Pshunt = 187.5 mW.
+- Vshunt = 40 mV;
+- Pshunt = 200 mW.
 
-With INA228 ADCRANGE=1 (±40.96 mV), 8 mOhm gives approximately **5.46 A full-scale**, preserving the high-sensitivity range while providing substantially more transient headroom than 10 mOhm.
+With INA228 ADCRANGE=1 (±40.96 mV), 8 mOhm gives approximately **5.12 A full-scale**, preserving the high-sensitivity range while providing substantially more transient headroom than 10 mOhm.
 
 ## 3. INA228
 U7: **INA228AIDGSR**.
@@ -45,6 +45,7 @@ Connections:
 - VBUS sense = +24V_SYS/load-side voltage as selected by schematic implementation.
 - VS = +3V3_SYS.
 - I2C = I2C_SDA / I2C_SCL.
+- Rev.EZ address allocation: INA228 A0 and A1 tied to GND, 7-bit 0x40 (TI SLYS021A Table 7-2); native capture/strap inspection still required.
 - ALERT = POWER_ALERT.
 
 Functions exposed:
@@ -270,7 +271,7 @@ Sheet 03 becomes FROZEN only after:
 
 ### INA228 range decision
 Use INA228 **ADCRANGE = 1, +/-40.96 mV** with the revised 8 mOhm shunt baseline.
-This yields approximately 5.46 A measurable full scale.
+This yields approximately 5.12 A measurable full scale.
 
 Do not use the +/-163.84 mV range unless later transient testing proves >5.4 A legitimate system current.
 
@@ -565,3 +566,7 @@ TI requires >=25 uF **effective** output capacitance at 5 V. The TI 5-V applicat
 With L=470 nH, TI recommends 2 x 10 uF or 1 x 22 uF nominal as the standard output-filter combination and requires >=5 uF effective capacitance. Rev.A freezes converter-local COUT3V3 as **22 uF nominal X7R/X5R-class** (or electrically equivalent 2 x 10 uF), selected so effective capacitance at 3.3 V remains >=5 uF across tolerance and qualified temperature. A separate local bulk capacitor near the ESP32/network load is not counted as a substitute for converter-local COUT placement.
 
 Status: **COUT_ELECTRICAL_CLASSES_FROZEN / EXACT_PRODUCTION_MPN_DC_BIAS_EVIDENCE_REQUIRED**.
+
+
+## Calculation reconciliation — 2026-10-01, Rev.EZ
+All preceding numerical shunt examples now use the frozen 0.008 ohm nominal: V=IR, P=I²R and 40.96 mV / 8 mOhm = 5.12 A nominal positive full scale. These are calculated nominal values, not measured calibration or a tolerance guarantee. Historical 7.5 mOhm figures must not be used by firmware.

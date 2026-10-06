@@ -1,0 +1,75 @@
+{
+  "case": "LC1",
+  "solver_execution_pass": true,
+  "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+  "final_step_time": 1.0,
+  "max_displacement_mm": 3.437293789192982,
+  "max_displacement_node": 8600,
+  "max_displacement_xyz_mm": [
+    156.4,
+    161.5647978848911,
+    28.0
+  ],
+  "max_abs_UZ_mm": 0.06286629,
+  "corner_max_abs_UZ_mm": {
+    "CORNER_LL": 0.005049985,
+    "CORNER_LR": 0.006096581,
+    "CORNER_UL": 0.01036887,
+    "CORNER_UR": 0.01132323
+  },
+  "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+  "adjacent_mount_max_displacement_mm": {
+    "UL1": 0.003493368508327922,
+    "UL2": 0.0014653637138756542,
+    "UR1": 0.0014919316845378881,
+    "UR2": 0.0035583703970319108
+  },
+  "support_reaction_sum_N": [
+    1.3399297300875634e-07,
+    70.00000003109203,
+    -6.06284139038904e-08
+  ],
+  "force_balance_residual_N": [
+    1.3399297300875634e-07,
+    3.1092312724467774e-08,
+    -6.06284139038904e-08
+  ],
+  "force_balance_within_0_1_percent_or_0_001N": true,
+  "cleat_bore_reactions_N": {
+    "UL1": [
+      -8.587040244630005,
+      37.90831989883001,
+      0.6728091505300001
+    ],
+    "UL2": [
+      6.222910691809995,
+      -2.3529116693480012,
+      -0.3704421143439999
+    ],
+    "UR1": [
+      -6.228230663286997,
+      -5.8082919809900035,
+      -0.481582908623
+    ],
+    "UR2": [
+      8.5923603501,
+      40.252883782600044,
+      0.7580868310699984
+    ]
+  },
+  "anti_lift_normal_reaction_N": 0.8825817777,
+  "warp_normal_reaction_N": null,
+  "nodal_extrapolated_stress_diagnostic": {
+    "von_mises_max_MPa": 4.408321674960725,
+    "node": 13616,
+    "xyz_mm": [
+      303.6157475961,
+      153.73144265343,
+      26.0
+    ],
+    "principal_max_MPa": 4.299655093829347,
+    "principal_min_MPa": -5.2925721612705665,
+    "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+  },
+  "qualified_strength_margin": null
+}

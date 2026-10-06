@@ -1,0 +1,233 @@
+ELMER SOLVER (v 26.2) STARTED AT: 2026/09/30 18:17:55
+ Started inside library code
+ Going parallel initialization
+ParCommInit: Initialize #PEs: 1
+ Back from parallel initialization
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright April 1st 1995 -> , CSC - IT Center for Science Ltd.
+MAIN: Repository https://www.github.org/elmerCSC/elmerfem
+MAIN: Homepage https://www.elmerfem.org/,  Email elmeradm@csc.fi
+MAIN: Version: 26.2-devel (Rev: 4b49ea6, Compiled: 2026-09-30)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: radiation.sif
+LoadInputFile: Scanning input file: radiation.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: radiation.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 3
+LoadInputFile: Number of Body Forces: 1
+LoadInputFile: Number of Initial Conditions: 1
+LoadInputFile: Number of Materials: 2
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 1
+LoadInputFile: Number of Bodies: 2
+ElmerMeshReader: Base mesh name: ./radiation
+PrepareMesh: Preparing mesh for the future
+LoadMesh: Elapsed REAL time:     0.0003 (s)
+MAIN: -------------------------------------
+RadiationFactors: ----------------------------------------------------
+RadiationFactors: Computing radiation factors for heat transfer
+RadiationFactors: Total number of Radiation Surfaces 39 out of 76
+RadiationFactors: Loading view factors from ascii file: ./radiation/ViewFactors.dat
+RadiationFactors: View factors filling (%)               3.9908E+01
+CreateRadiationMatrix: Number of entries in radiation matrix: 607
+RadiationFactors: Minimum Gebhart factors sum          1.000000E+00
+RadiationFactors: Maximum Gebhart factors sum          1.000000E+00
+RadiationFactors: Maximum share of omitted factors     0.000000E+00
+RadiationFactors: Gebhart factors filling (%)          1.000000E+02
+RadiationFactors: Gebhart factors count                1521
+RadiationFactors: Gebhart factors determined (s)         7.2300E-04
+RadiationFactors: ----------------------------------------------------
+OptimizeBandwidth: Initial bandwidth for heat equation: 67
+OptimizeBandwidth: Optimized bandwidth for heat equation: 43
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+HeatSolver: ------------------------------------------------
+HeatSolver: Solving energy equation for temperature
+HeatSolver: Heat solver iteration: 1
+       1 0.7659E-01
+       2 0.5888E-01
+       3 0.3113E-01
+       4 0.5477E-03
+       5 0.6272E-05
+       6 0.1670E-06
+       7 0.6515E-08
+       8 0.1190E-08
+       9 0.6050E-11
+      10 0.3073E-13
+      10 0.3073E-13
+ComputeChange: NS (ITER=1) (NRM,RELC): (  224.97707      2.0000000     ) :: heat equation
+HeatSolver: Heat solver iteration: 2
+       1 0.1986E-01
+       2 0.1276E-01
+       3 0.3411E-02
+       4 0.1027E-03
+       5 0.2436E-05
+       6 0.1724E-06
+       7 0.6367E-08
+       8 0.1314E-09
+       9 0.2896E-11
+      10 0.5274E-13
+      10 0.5274E-13
+ComputeChange: NS (ITER=2) (NRM,RELC): (  240.65146     0.67325726E-01 ) :: heat equation
+HeatSolver: Heat solver iteration: 3
+       1 0.3909E-02
+       2 0.1986E-02
+       3 0.6036E-03
+       4 0.4773E-04
+       5 0.2546E-05
+       6 0.1009E-06
+       7 0.2905E-08
+       8 0.6101E-10
+       9 0.1485E-11
+      10 0.2484E-13
+      10 0.2484E-13
+ComputeChange: NS (ITER=3) (NRM,RELC): (  243.92035     0.13491896E-01 ) :: heat equation
+HeatSolver: Heat solver iteration: 4
+       1 0.1111E-02
+       2 0.5402E-03
+       3 0.1680E-03
+       4 0.1454E-04
+       5 0.7671E-06
+       6 0.2920E-07
+       7 0.8614E-09
+       8 0.1813E-10
+       9 0.4362E-12
+       9 0.4362E-12
+ComputeChange: NS (ITER=4) (NRM,RELC): (  244.87168     0.38925810E-02 ) :: heat equation
+HeatSolver: Heat solver iteration: 5
+       1 0.3285E-03
+       2 0.1579E-03
+       3 0.4930E-04
+       4 0.4355E-05
+       5 0.2292E-06
+       6 0.8651E-08
+       7 0.2567E-09
+       8 0.5407E-11
+       9 0.1294E-12
+       9 0.1294E-12
+ComputeChange: NS (ITER=5) (NRM,RELC): (  245.15516     0.11569654E-02 ) :: heat equation
+HeatSolver: Heat solver iteration: 6
+       1 0.9818E-04
+       2 0.4703E-04
+       3 0.1468E-04
+       4 0.1302E-05
+       5 0.6851E-07
+       6 0.2584E-08
+       7 0.7679E-10
+       8 0.1620E-11
+       9 0.3927E-13
+       9 0.3927E-13
+ComputeChange: NS (ITER=6) (NRM,RELC): (  245.24008     0.34632895E-03 ) :: heat equation
+HeatSolver: Heat solver iteration: 7
+       1 0.2943E-04
+       2 0.1408E-04
+       3 0.4393E-05
+       4 0.3894E-06
+       5 0.2049E-07
+       6 0.7736E-09
+       7 0.2301E-10
+       8 0.4866E-12
+       8 0.4866E-12
+ComputeChange: NS (ITER=7) (NRM,RELC): (  245.26555     0.10387893E-03 ) :: heat equation
+HeatSolver: Heat solver iteration: 8
+       1 0.8829E-05
+       2 0.4223E-05
+       3 0.1316E-05
+       4 0.1164E-06
+       5 0.6126E-08
+       6 0.2318E-09
+       7 0.6898E-11
+       8 0.1461E-12
+       8 0.1461E-12
+ComputeChange: NS (ITER=8) (NRM,RELC): (  245.27320     0.31176201E-04 ) :: heat equation
+HeatSolver: Heat solver iteration: 9
+       1 0.2649E-05
+       2 0.1267E-05
+       3 0.3942E-06
+       4 0.3479E-07
+       5 0.1832E-08
+       6 0.6947E-10
+       7 0.2068E-11
+       8 0.4384E-13
+       8 0.4384E-13
+ComputeChange: NS (ITER=9) (NRM,RELC): (  245.27549     0.93582776E-05 ) :: heat equation
+HeatSolver: Heat solver iteration: 10
+       1 0.7951E-06
+       2 0.3802E-06
+       3 0.1181E-06
+       4 0.1040E-07
+       5 0.5479E-09
+       6 0.2082E-10
+       7 0.6196E-12
+       7 0.6196E-12
+ComputeChange: NS (ITER=10) (NRM,RELC): (  245.27618     0.28092595E-05 ) :: heat equation
+HeatSolver: Heat solver iteration: 11
+       1 0.2386E-06
+       2 0.1141E-06
+       3 0.3540E-07
+       4 0.3109E-08
+       5 0.1639E-09
+       6 0.6243E-11
+       7 0.1862E-12
+       7 0.1862E-12
+ComputeChange: NS (ITER=11) (NRM,RELC): (  245.27639     0.84332509E-06 ) :: heat equation
+HeatSolver: Heat solver iteration: 12
+       1 0.7162E-07
+       2 0.3424E-07
+       3 0.1061E-07
+       4 0.9292E-09
+       5 0.4901E-10
+       6 0.1872E-11
+       7 0.5569E-13
+       7 0.5569E-13
+ComputeChange: NS (ITER=12) (NRM,RELC): (  245.27645     0.25316311E-06 ) :: heat equation
+HeatSolver: Heat solver iteration: 13
+       1 0.2149E-07
+       2 0.1028E-07
+       3 0.3179E-08
+       4 0.2777E-09
+       5 0.1466E-10
+       6 0.5607E-12
+       6 0.5607E-12
+ComputeChange: NS (ITER=13) (NRM,RELC): (  245.27647     0.75998445E-07 ) :: heat equation
+HeatSolver: Heat solver iteration: 14
+       1 0.6451E-08
+       2 0.3084E-08
+       3 0.9528E-09
+       4 0.8301E-10
+       5 0.4384E-11
+       6 0.1682E-12
+       6 0.1682E-12
+ComputeChange: NS (ITER=14) (NRM,RELC): (  245.27648     0.22814745E-07 ) :: heat equation
+HeatSolver: Heat solver iteration: 15
+       1 0.1936E-08
+       2 0.9256E-09
+       3 0.2855E-09
+       4 0.2481E-10
+       5 0.1311E-11
+       6 0.5059E-13
+       6 0.5059E-13
+ComputeChange: NS (ITER=15) (NRM,RELC): (  245.27648     0.68489938E-08 ) :: heat equation
+ComputeChange: SS (ITER=1) (NRM,RELC): (  245.27648      2.0000000     ) :: heat equation
+CompareToReferenceSolution: Solver 1 PASSED:  Norm = 2.45276478E+02  RefNorm = 2.45276478E+02
+CompareToReferenceSolution: Relative Error to reference norm: 4.439833E-10
+CompareToReferenceSolution: PASSED all 1 tests!
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.08        0.10
+ELMER SOLVER FINISHED AT: 2026/09/30 18:17:55

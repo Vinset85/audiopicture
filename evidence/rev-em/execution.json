@@ -1,0 +1,31 @@
+{
+  "cadquery": "2.8.0",
+  "solid_valid": true,
+  "fluid_valid": true,
+  "fluid_components": 1,
+  "fluid_volume_mm3": 640018.572,
+  "exported": true,
+  "artifacts": {
+    "solid_step": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_SOLID.step",
+      "bytes": 1115632
+    },
+    "solid_stl": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_SOLID.stl",
+      "bytes": 867984
+    },
+    "fluid_step": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_FLUID.step",
+      "bytes": 1135491
+    },
+    "fluid_stl": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_FLUID.stl",
+      "bytes": 869034
+    }
+  },
+  "limitations": [
+    "solver-ready geometry export only",
+    "not a mesh",
+    "not CFD/FEA execution"
+  ]
+}

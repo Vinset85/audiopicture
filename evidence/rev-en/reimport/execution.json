@@ -1,0 +1,69 @@
+{
+  "cadquery": "2.8.0",
+  "solid_valid": true,
+  "solid_components": 1,
+  "solid_volume_mm3": 287929.522,
+  "fluid_valid": true,
+  "fluid_components": 1,
+  "fluid_volume_mm3": 640018.572,
+  "exported": true,
+  "export_reimport_pass": true,
+  "artifacts": {
+    "solid_step": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_SOLID.step",
+      "bytes": 1115632,
+      "sha256": "a7ab7cab5ab9eff842d778d972ba5ea68b6a53ea7c2ede63dc36a108f2bb70e0",
+      "reimport": {
+        "valid": true,
+        "components": 1,
+        "volume_mm3": 287929.5221705858,
+        "volume_delta_mm3": -9.365612640976906e-08,
+        "bbox_mm": [
+          320.0,
+          400.0,
+          6.0
+        ],
+        "z_extent_mm": [
+          34.0,
+          40.0
+        ]
+      }
+    },
+    "solid_stl": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_SOLID.stl",
+      "bytes": 867984,
+      "sha256": "d995e2039d7b9c1ba14ff87de8e1f53ff02b68670fef1818ab2e7994265b92ae"
+    },
+    "fluid_step": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_FLUID.step",
+      "bytes": 1135491,
+      "sha256": "c407590dd2886ae8c97be953c1deea8fd9eeed338ccfe02c62f2f82695e2e138",
+      "reimport": {
+        "valid": true,
+        "components": 1,
+        "volume_mm3": 640018.5718497385,
+        "volume_delta_mm3": 9.301584213972092e-08,
+        "bbox_mm": [
+          319.98,
+          399.98,
+          7.25
+        ],
+        "z_extent_mm": [
+          33.0,
+          40.25
+        ]
+      }
+    },
+    "fluid_stl": {
+      "path": "solver_exports_rev_em/AP22_REV_EM_FLUID.stl",
+      "bytes": 869034,
+      "sha256": "f0f59d6444529f3f1ec5b2672aeea3cba06804fd571421906e7f1dd169fef325"
+    }
+  },
+  "limitations": [
+    "local shell/labyrinth audit geometry only; full solver domain not represented",
+    "Rev.EN labyrinth coverage/axial LOS FAIL",
+    "not a mesh",
+    "not CFD/FEA execution"
+  ]
+}

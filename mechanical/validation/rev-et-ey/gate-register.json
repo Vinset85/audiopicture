@@ -1,0 +1,840 @@
+{
+  "base_head": "19a436701211b5135ecb1b672eae44f177894629",
+  "status": "PARTIAL_DIGITAL_VALIDATION_WITH_CONFIRMED_FAILURES_NOT_PRODUCTION_RELEASE",
+  "definitions": {
+    "PASS": "Only the stated scope and evidence; not an inherited full-product claim",
+    "FAIL": "Demonstrated failure of the stated baseline/candidate",
+    "OPEN": "Unexecuted or insufficient evidence"
+  },
+  "dependency_order": [
+    "G03 -> G05/G06/G07/G08 -> G09/G21",
+    "G10 -> G11 -> G12/G17",
+    "G18 + final interfaces -> G17",
+    "G12 + sourced thermal model + G20 -> G21",
+    "G22 + G23 + physical P01..P15 -> G26",
+    "Frame mass/torsion/clearance redesign -> exact mounts/DMU -> qualified FEA",
+    "Complete shell/service/front-seal geometry -> full CHT CFD01-CFD05",
+    "Native circuit/output-capacitance analysis -> PCB -> hardware power-governor validation"
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "status": "PASS",
+      "scope": "Repository HEAD verified",
+      "evidence": "19a436701211b5135ecb1b672eae44f177894629"
+    },
+    {
+      "id": "G02",
+      "status": "PASS",
+      "scope": "Rev.EM BREP/export/reimport",
+      "evidence": 287929.522
+    },
+    {
+      "id": "G03",
+      "status": "FAIL",
+      "scope": "Rev.EM labyrinth coverage/axial LOS",
+      "evidence": {
+        "covered_vents": 4,
+        "open_axial_rays": 22
+      }
+    },
+    {
+      "id": "G04",
+      "status": "FAIL",
+      "scope": "Rev.EO collector airflow sections",
+      "evidence": {
+        "upper_gate_mm2_per_side": 5.1
+      }
+    },
+    {
+      "id": "G05",
+      "status": "PASS",
+      "scope": "Rev.EQ coverage and geometric LOS",
+      "evidence": {
+        "covered_vents": 22,
+        "sampled_rays": 2574,
+        "open_rays": 0
+      }
+    },
+    {
+      "id": "G06",
+      "status": "PASS",
+      "scope": "Rev.EQ real vent openness/connectivity",
+      "evidence": {
+        "max_reclosure_mm3": 0,
+        "connected_vents": 22
+      }
+    },
+    {
+      "id": "G07",
+      "status": "PASS",
+      "scope": "Rev.EQ with Rev.ES coarse frame only: BREP/export/reimport and clearance (does not apply to Rev.EU)",
+      "evidence": {
+        "solid_volume_mm3": 302276.34146088536,
+        "fluid_volume_mm3": 3514228.146035117,
+        "clearance_mm": 1.0
+      }
+    },
+    {
+      "id": "G08",
+      "status": "PASS",
+      "scope": "Rev.EQ geometric cross sections",
+      "evidence": {
+        "lower_mm2": 960,
+        "upper_mm2": 900
+      }
+    },
+    {
+      "id": "G09",
+      "status": "OPEN",
+      "scope": "Effective airflow/pressure loss and acoustic attenuation",
+      "evidence": "Geometry alone insufficient"
+    },
+    {
+      "id": "G10",
+      "status": "FAIL",
+      "scope": "Rev.J baseline conservative RF mask intrusion",
+      "evidence": {
+        "volume_mm3": 1798
+      }
+    },
+    {
+      "id": "G11",
+      "status": "PASS",
+      "scope": "Rev.ES conservative RF subtraction",
+      "evidence": {
+        "overlap_mm3": 0,
+        "single_valid_solid": true
+      }
+    },
+    {
+      "id": "G12",
+      "status": "OPEN",
+      "scope": "Exact RF/full component/cleat/harness DMU",
+      "evidence": "Supplier CAD/mount dimensions and exact masks missing"
+    },
+    {
+      "id": "G13",
+      "status": "PASS",
+      "scope": "CalculiX unit-cube analytical check",
+      "evidence": {
+        "relative_error": 2.0000000061030226e-08
+      }
+    },
+    {
+      "id": "G14",
+      "status": "PASS",
+      "scope": "M1D local target-displacement mesh convergence",
+      "evidence": {
+        "M1_M2_change_percent": 1.1453011235854762
+      }
+    },
+    {
+      "id": "G15",
+      "status": "OPEN",
+      "scope": "M1D non-singular stress/hotspot convergence",
+      "evidence": "Raw peak does not close stress gate"
+    },
+    {
+      "id": "G16",
+      "status": "PASS",
+      "scope": "27 M1D normalized material executions",
+      "evidence": {
+        "executed_cases": 27,
+        "scope": "local screening assumptions only"
+      }
+    },
+    {
+      "id": "G17",
+      "status": "OPEN",
+      "scope": "Full-frame LC1-LC7, nonlinear/contact, buckling",
+      "evidence": "Full candidate frame screens now executed. Exact cleat/contact geometry, qualified allowables, temperature/orientation cases, full LC7 locations and physical correlation remain OPEN."
+    },
+    {
+      "id": "G18",
+      "status": "OPEN",
+      "scope": "Qualified material and process properties",
+      "evidence": "User confirmed measurements unavailable"
+    },
+    {
+      "id": "G19",
+      "status": "PASS",
+      "scope": "Elmer installed and radiation reference regression",
+      "evidence": {
+        "relative_reference_error": 4.439833e-10
+      }
+    },
+    {
+      "id": "G20",
+      "status": "PASS",
+      "scope": "Elmer official NaturalConvection reference converges at three relaxation factors",
+      "evidence": {
+        "coupled_warnings": 0,
+        "relaxation_factors": [
+          0.1,
+          0.2,
+          0.35
+        ],
+        "scope": "water reference only; not product CFD"
+      }
+    },
+    {
+      "id": "G21",
+      "status": "OPEN",
+      "scope": "AudioPicture CFD01-CFD05, full CHT/convergence/balances",
+      "evidence": "No full domain/thermal properties/obstruction model or numerical matrix executed"
+    },
+    {
+      "id": "G22",
+      "status": "OPEN",
+      "scope": "Production BOM/native schematics/PCB",
+      "evidence": "74 BOM rows, 26 active rows lack exact orderable MPN, 5 optional/removed; native schemas/boards and ERC/DRC still absent."
+    },
+    {
+      "id": "G23",
+      "status": "OPEN",
+      "scope": "Firmware/Home Assistant verification",
+      "evidence": "Portable governor core host-tested; full ESP-IDF drivers/app, networking, Home Assistant, OTA and hardware tests OPEN."
+    },
+    {
+      "id": "G24",
+      "status": "PASS",
+      "scope": "Physical test plan and printable process coupons prepared",
+      "evidence": "Plan only; measurements not performed"
+    },
+    {
+      "id": "G25",
+      "status": "OPEN",
+      "scope": "Magnetic assembled retention and peel",
+      "evidence": "Requires measured 20..30 N complete-front retention plus coupon/peel/hot tests"
+    },
+    {
+      "id": "G26",
+      "status": "OPEN",
+      "scope": "Frozen CAD and first-article production package",
+      "evidence": "Full digital and physical prerequisites above remain open"
+    },
+    {
+      "id": "G27",
+      "status": "FAIL",
+      "scope": "Rev.EU.4 homogeneous frame catalog-density mass <=250 g",
+      "evidence": {
+        "mass_g": 422.22292712549284,
+        "source": "Prusament PC-CF TDS, density 1.22 g/cm3",
+        "measured": false
+      }
+    },
+    {
+      "id": "G28",
+      "status": "FAIL",
+      "scope": "Rev.EU.4 normalized nonlinear LC4 lower-right corner displacement <=1 mm",
+      "evidence": {
+        "normal_displacement_mm": 1.8207,
+        "load_N": 30,
+        "exact_wall_hardware_model": false
+      }
+    },
+    {
+      "id": "G29",
+      "status": "FAIL",
+      "scope": "Rev.EU.4 to Rev.EQ baffle clearance >=1 mm target",
+      "evidence": {
+        "clearance_mm": 0.6000000000000014,
+        "collision_volume_mm3": 0
+      }
+    },
+    {
+      "id": "G30",
+      "status": "OPEN",
+      "scope": "Complete enclosure closure, DML seal, service/ENV/cable openings",
+      "evidence": {
+        "classification": "CALCULATED_BREP_AUDIT_NOT_CFD",
+        "sidewall_sample_count": 36,
+        "unoccupied_sidewall_samples": 36,
+        "probes": [
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              100.0,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              100.0,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              100.0,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              200.0,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              200.0,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              200.0,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              300.0,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              300.0,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "left",
+            "xyz_mm": [
+              1,
+              300.0,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              100.0,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              100.0,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              100.0,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              200.0,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              200.0,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              200.0,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              300.0,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              300.0,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "right",
+            "xyz_mm": [
+              319,
+              300.0,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              80.0,
+              1,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              80.0,
+              1,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              80.0,
+              1,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              160.0,
+              1,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              160.0,
+              1,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              160.0,
+              1,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              240.0,
+              1,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              240.0,
+              1,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "bottom",
+            "xyz_mm": [
+              240.0,
+              1,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              80.0,
+              399,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              80.0,
+              399,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              80.0,
+              399,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              160.0,
+              399,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              160.0,
+              399,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              160.0,
+              399,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              240.0,
+              399,
+              12
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              240.0,
+              399,
+              20
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          },
+          {
+            "side": "top",
+            "xyz_mm": [
+              240.0,
+              399,
+              26
+            ],
+            "ASA_shell_material": false,
+            "PC_CF_frame_material": false
+          }
+        ],
+        "service_probe": {
+          "xyz_mm": [
+            160,
+            34,
+            39
+          ],
+          "shell_material_present": true
+        },
+        "shell_frame_min_clearance_mm": 0.6000000000000014,
+        "clearance_1mm_target_status": "FAIL",
+        "closure_status": "OPEN: no full sidewalls/front seal/service-cable penetrations in these two BREP files. 22 vent cells do not certify all openings of a complete enclosure.",
+        "CFD01_to_CFD05_status": "OPEN: exterior room, 3/4/5 mm wall gap, full obstruction volumes, CHT material properties and radiation boundary surfaces still required."
+      }
+    },
+    {
+      "id": "G31",
+      "status": "PASS",
+      "scope": "Rev.EU.4 valid/reimported single solid, zero listed coarse keepout intersections",
+      "evidence": {
+        "valid": true,
+        "solid_count": 1,
+        "collision_volume_mm3": {
+          "EX_L1": 0,
+          "EX_L2": 0,
+          "EX_R1": 0,
+          "EX_R2": 0,
+          "MAIN_C": 0,
+          "MAIN_P": 0,
+          "VOICE": 0,
+          "RADAR": 0,
+          "ENV": 0,
+          "SERVICE": 0,
+          "ESP32_RF": 0,
+          "DML": 0,
+          "shell_EQ": 0
+        },
+        "exact_RF_DMU": false
+      }
+    },
+    {
+      "id": "G32",
+      "status": "PASS",
+      "scope": "Full candidate LC1 normalized material/CG execution only",
+      "evidence": {
+        "material_cases": 27,
+        "additional_cg_cases": 4,
+        "material_displacement_range_mm": [
+          3.4808500918663428,
+          3.501745043674355
+        ],
+        "cg_displacement_range_mm": [
+          3.459803391029043,
+          3.5225832853139454
+        ]
+      }
+    },
+    {
+      "id": "G33",
+      "status": "PASS",
+      "scope": "Normalized full-candidate linear LC1 displacement mesh convergence only",
+      "evidence": {
+        "M1_M2_change_percent": 0.22812753741052383,
+        "non_singular_stress_release": "OPEN"
+      }
+    },
+    {
+      "id": "G34",
+      "status": "PASS",
+      "scope": "Eigenvalue buckling execution, seed 70 N load and bonded interfaces",
+      "evidence": {
+        "factors": [
+          46.29288,
+          165.4514,
+          597.1354
+        ],
+        "imperfection_nonlinear_release": false
+      }
+    },
+    {
+      "id": "G35",
+      "status": "PASS",
+      "scope": "Portable governor host tests with address/undefined behavior sanitizers",
+      "evidence": {
+        "events": 200000,
+        "input_combinations": 320,
+        "hardware_tested": false,
+        "calibration_is_test_fixture": true
+      }
+    },
+    {
+      "id": "G36",
+      "status": "OPEN",
+      "scope": "Ag53024 output capacitance/startup/stability with downstream audio bulk",
+      "evidence": {
+        "catalog_Cout_uF": [
+          180,
+          220,
+          330
+        ],
+        "local_proposed_uF": 220,
+        "audio_bulk_proposed_uF": 470,
+        "connected_capacitance_requires_native_circuit_review": true,
+        "measured_instability_claimed": false
+      }
+    },
+    {
+      "id": "G37",
+      "status": "PASS",
+      "scope": "de Vahl Davis Ra1000 Pr0.71 numerical Boussinesq benchmark",
+      "evidence": {
+        "meshes": [
+          20,
+          40,
+          80
+        ],
+        "Nu_hot": 1.1176654213907682,
+        "reference_Nu": 1.118,
+        "error_percent": 0.029926530342749835,
+        "hot_cold_balance_percent": 1.3212439302027975e-06,
+        "mesh_change_percent": 0.019937968380951087,
+        "product_CFD": false
+      }
+    },
+    {
+      "id": "G38",
+      "status": "FAIL",
+      "scope": "Rev.EU.5 lighter geometry candidate rejected",
+      "evidence": {
+        "mass_g": 318.4983175374449,
+        "target_mass_g": 250,
+        "shell_clearance_mm": 0.0,
+        "target_clearance_mm": 1,
+        "full_FEA_claimed": false
+      }
+    },
+    {
+      "id": "G39",
+      "status": "PASS",
+      "scope": "Rev.EU.8 BREP and coarse geometry clearance only",
+      "evidence": {
+        "valid": true,
+        "solid_count": 1,
+        "reimport_valid": true,
+        "reimport_solids": 1,
+        "clearance_mm": 1.0,
+        "overlaps_mm3": {
+          "EX_L1": 0,
+          "EX_L2": 0,
+          "EX_R1": 0,
+          "EX_R2": 0,
+          "MAIN_C": 0,
+          "MAIN_P": 0,
+          "VOICE": 0,
+          "RADAR": 0,
+          "ENV": 0,
+          "SERVICE": 0,
+          "ESP32_RF": 0,
+          "DML": 0,
+          "shell_EQ": 0
+        },
+        "exact_DMU": false
+      }
+    },
+    {
+      "id": "G40",
+      "status": "PASS",
+      "scope": "Rev.EU.8 homogeneous catalog-density frame mass <=250 g",
+      "evidence": {
+        "mass_g": 248.75575935610115,
+        "includes_inserts_or_future_fillets": false,
+        "measured": false
+      }
+    },
+    {
+      "id": "G41",
+      "status": "FAIL",
+      "scope": "Rev.EU.8 normalized single-corner LC4 only",
+      "evidence": {
+        "corner_abs_UZ_mm": {
+          "CORNER_LL": 0.3663214,
+          "CORNER_LR": 2.808054,
+          "CORNER_UL": 0.01194976,
+          "CORNER_UR": 0.06013759
+        },
+        "all_corners_tested": false,
+        "qualified_material": false
+      }
+    },
+    {
+      "id": "G42",
+      "status": "FAIL",
+      "scope": "Rev.EU.9 combined catalog-mass/coarse-clearance/normalized one-corner LC4 screen only",
+      "evidence": {
+        "mass_g": 230.1205662662243,
+        "clearance_mm": 1.0,
+        "LC4_corner_abs_UZ_mm": {
+          "CORNER_LL": 0.3881819,
+          "CORNER_LR": 2.888121,
+          "CORNER_UL": 0.004239001,
+          "CORNER_UR": 0.08068565
+        },
+        "qualified_material": false,
+        "full_mesh_material_CG_matrix_on_this_geometry": false
+      }
+    },
+    {
+      "id": "G43",
+      "status": "FAIL",
+      "scope": "Rev.EU.10 combined catalog-mass/coarse-clearance/normalized one-corner LC4 screen only",
+      "evidence": {
+        "mass_g": 246.51136802167366,
+        "clearance_mm": 1.0,
+        "LC4_corner_abs_UZ_mm": {
+          "CORNER_LL": 0.1109797,
+          "CORNER_LR": 2.141594,
+          "CORNER_UL": 0.0007977302,
+          "CORNER_UR": 0.0601926
+        },
+        "qualified_material": false,
+        "full_mesh_material_CG_matrix_on_this_geometry": false
+      }
+    }
+  ],
+  "revision": "Rev.EY"
+}

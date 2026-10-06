@@ -1,0 +1,62 @@
+[
+  {
+    "name": "C_SECTION_EU8",
+    "classification": "CALCULATED_PROCESS_AND_STIFFNESS_COMPARISON_COUPON_NOT_PRODUCTION",
+    "valid": true,
+    "single_solid": true,
+    "reimport_valid": true,
+    "stl_watertight": true,
+    "stl_winding_consistent": true,
+    "bbox_mm": [
+      8.000000200000056,
+      84.00000020000004,
+      29.00000020000006
+    ],
+    "volume_mm3": 7518.975999999993,
+    "end_grip_length_mm": 3.2,
+    "nominal_clear_test_span_mm": 77.6,
+    "source_sha256": "e496de57133b53f0192b475a1a142eccc2d90a5a95f752b8e5ac336a3a44e074",
+    "files": {
+      "step": {
+        "path": "AP22_PERIMETER_C_SECTION_EU8_COUPON.step",
+        "sha256": "3418f94ffd04dac95a59c13e97be3272c245c82abd6aa415f6f4b54b6d3dcf35"
+      },
+      "stl": {
+        "path": "AP22_PERIMETER_C_SECTION_EU8_COUPON.stl",
+        "sha256": "9e90ad4d1c861041ab0b0217ae7bcc13a39c66dd8afbc6ce537d118c5bd92cc9"
+      }
+    },
+    "fixture_compliance_correction": "REQUIRED",
+    "load_protocol_and_acceptance": "OPEN: laboratory to define before qualification; compare same process/orientation and linear force-displacement/torque-angle slopes"
+  },
+  {
+    "name": "X_BRACED_EU9",
+    "classification": "CALCULATED_PROCESS_AND_STIFFNESS_COMPARISON_COUPON_NOT_PRODUCTION",
+    "valid": true,
+    "single_solid": true,
+    "reimport_valid": true,
+    "stl_watertight": true,
+    "stl_winding_consistent": true,
+    "bbox_mm": [
+      8.000000200017901,
+      84.00000020002682,
+      29.00000020002681
+    ],
+    "volume_mm3": 6787.642044158536,
+    "end_grip_length_mm": 3.2,
+    "nominal_clear_test_span_mm": 77.6,
+    "source_sha256": "442cc6055ff12882b6e5daa9e488c386d4a059a590405a370591f876d7f0c133",
+    "files": {
+      "step": {
+        "path": "AP22_PERIMETER_X_BRACED_EU9_COUPON.step",
+        "sha256": "8c4212511d328b9e68249dd6b7279d25f4991c1b7255fbe5b11ccad6fca07e6d"
+      },
+      "stl": {
+        "path": "AP22_PERIMETER_X_BRACED_EU9_COUPON.stl",
+        "sha256": "239d18d8417d8cf0e4bfe4f8e3a62242e781d1b048ad83831d864352fe68e2fc"
+      }
+    },
+    "fixture_compliance_correction": "REQUIRED",
+    "load_protocol_and_acceptance": "OPEN: laboratory to define before qualification; compare same process/orientation and linear force-displacement/torque-angle slopes"
+  }
+]

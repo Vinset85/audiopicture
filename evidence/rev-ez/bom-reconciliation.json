@@ -1,0 +1,64 @@
+{
+  "classification": "CATALOG_SELECTION_NOT_PROCUREMENT_RELEASE",
+  "source_sha256": "81f3c7ec5180e70cad929659a7e59d88258ea3dc55824de1ae1ed3021f99e48d",
+  "output_sha256": "6ccc9951ac8aabef0852b51c9ade600e769902112d880b6a7b29180fd8a19570",
+  "changes": [
+    {
+      "reference": "U301",
+      "column": 3,
+      "before": "Sensirion SHT45-AD1F",
+      "after": "Sensirion SHT45-AD1F-R2"
+    },
+    {
+      "reference": "U301",
+      "column": 6,
+      "before": "FROZEN_DEVICE",
+      "after": "SELECTED_ORDER_CODE_3.000.886_MEMBRANE_PI_LAYOUT_VALIDATE"
+    },
+    {
+      "reference": "C301-C302",
+      "column": 3,
+      "before": "100nF X7R",
+      "after": "TDK C1608X7R1H104K080AA"
+    },
+    {
+      "reference": "C301-C302",
+      "column": 6,
+      "before": "FROZEN_VALUE",
+      "after": "SELECTED_MPN_100NF_50V_X7R_0603_LAYOUT_VALIDATE"
+    },
+    {
+      "reference": "C303",
+      "column": 3,
+      "before": "1uF X7R optional",
+      "after": "TDK C1608X7R1C105K080AC"
+    },
+    {
+      "reference": "C303",
+      "column": 6,
+      "before": "DNP_OPTION",
+      "after": "DNP_OPTION_SELECTED_1UF_16V_X7R_0603"
+    }
+  ],
+  "added_rows": [
+    [
+      "U20",
+      "MAIN",
+      "Texas Instruments TCA9534PWR",
+      "1",
+      "Input-only power/status expander at 0x20",
+      "SELECTED_MPN_CONDITIONERS_AND_NATIVE_CAPTURE_OPEN"
+    ],
+    [
+      "C20",
+      "MAIN",
+      "TDK C1608X7R1H104K080AA",
+      "1",
+      "100nF local bypass for TCA9534",
+      "SELECTED_MPN_NATIVE_PLACEMENT_VALIDATE"
+    ]
+  ],
+  "rows": 76,
+  "round_trip_verified": true,
+  "other_cells_preserved": true
+}

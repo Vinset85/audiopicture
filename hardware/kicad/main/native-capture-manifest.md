@@ -103,7 +103,9 @@ Radar: GPIO16 EN, GPIO42 RST.
 UART0: GPIO43/44.
 
 Hardware safe states are mandatory and external.
-Gate: antenna keep-out/layout and RF/transient/SI validation.
+Rev.EZ: include U20 TCA9534PWR input-only status acquisition at 0x20 per `power-status-inputs-rev-ez.md`. The previous no-expander conclusion omitted power-status nets.
+
+Gate: antenna keep-out/layout, status-input conditioning and isolated Type-2 detection, and RF/transient/SI validation.
 
 ## Sheet 05 — TAS5825M / DML
 Authority: `tas5825m-dml-rev-a.md`.

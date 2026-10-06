@@ -1,0 +1,34 @@
+{
+  "revision": "Rev.EY",
+  "status": "PLAN_ONLY_NO_MEASUREMENTS",
+  "base_plan": "physical-qualification-rev-er.json",
+  "tests": [
+    {
+      "id": "P16",
+      "test": "PC-CF perimeter C-section versus X-braced subassembly process and stiffness comparison",
+      "status": "NOT_RUN",
+      "artifacts": [
+        "AP22_PERIMETER_C_SECTION_EU8_COUPON.step",
+        "AP22_PERIMETER_X_BRACED_EU9_COUPON.step"
+      ],
+      "nominal_bbox_mm": [
+        8,
+        84,
+        29
+      ],
+      "nominal_clear_test_span_mm": 77.6,
+      "outputs": [
+        "member_dimensions_and_missing_struts",
+        "warpage",
+        "mass",
+        "force_displacement_curve",
+        "torque_angle_curve",
+        "fixture_compliance",
+        "failure_mode_and_location",
+        "process_orientation_metadata"
+      ],
+      "acceptance": "No missing/detached braces or blocked test interfaces. Define laboratory load protocol, sample count, allowable dimensional error and correlation tolerance before qualification. Measure stiffness in the relevant print orientation and 23/50/70 C conditions; do not infer product capacity from these fixture coupons. Rerun the actual frame model with calibrated material/interface data.",
+      "source": "mechanical/cad/generate_perimeter_comparison_coupons_rev_ey.py"
+    }
+  ]
+}

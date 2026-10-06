@@ -1,0 +1,447 @@
+{
+  "revision": "Rev.EN",
+  "source_sha256": "d245da9960d66bb3b468bc103b1ce53f721f01ed8d9ebc94acecdc34f496fd81",
+  "classification": "CALCULATED_GEOMETRIC_AUDIT_NOT_ACOUSTIC_SIMULATION",
+  "solid_valid": true,
+  "solid_components": 1,
+  "solid_volume_mm3": 287929.5221705858,
+  "bbox_mm": [
+    320.0,
+    400.0,
+    6.0
+  ],
+  "z_extent_mm": [
+    34.0,
+    40.0
+  ],
+  "fully_footprint_covered_vents": 4,
+  "area_weighted_footprint_coverage_fraction": 0.5396169287488813,
+  "open_axial_LOS_count": 22,
+  "labyrinth_treatment_gate": "FAIL",
+  "vents": [
+    {
+      "vent": "IL1",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 1.0000000000000033,
+      "axial_ray": [
+        [
+          18.5,
+          34.0,
+          40.25
+        ],
+        [
+          18.5,
+          34.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999996,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IL2",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 1.0000000000000033,
+      "axial_ray": [
+        [
+          25.5,
+          34.0,
+          40.25
+        ],
+        [
+          25.5,
+          34.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999996,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IL3",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          18.5,
+          82.0,
+          40.25
+        ],
+        [
+          18.5,
+          82.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999996,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IL4",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          25.5,
+          82.0,
+          40.25
+        ],
+        [
+          25.5,
+          82.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999996,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IL5",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          18.5,
+          130.0,
+          40.25
+        ],
+        [
+          18.5,
+          130.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999996,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IL6",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          25.5,
+          130.0,
+          40.25
+        ],
+        [
+          25.5,
+          130.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999996,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IR1",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 1.0000000000000033,
+      "axial_ray": [
+        [
+          301.5,
+          34.0,
+          40.25
+        ],
+        [
+          301.5,
+          34.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5190000000000055,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IR2",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 1.0000000000000033,
+      "axial_ray": [
+        [
+          294.5,
+          34.0,
+          40.25
+        ],
+        [
+          294.5,
+          34.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5190000000000055,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IR3",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          301.5,
+          82.0,
+          40.25
+        ],
+        [
+          301.5,
+          82.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IR4",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          294.5,
+          82.0,
+          40.25
+        ],
+        [
+          294.5,
+          82.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IR5",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          301.5,
+          130.0,
+          40.25
+        ],
+        [
+          301.5,
+          130.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "IR6",
+      "nominal_area_mm2": 118.06858347057704,
+      "footprint_coverage_fraction": 0.0,
+      "axial_ray": [
+        [
+          294.5,
+          130.0,
+          40.25
+        ],
+        [
+          294.5,
+          130.0,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UL1",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592648240111399,
+      "axial_ray": [
+        [
+          39.5,
+          316.5,
+          40.25
+        ],
+        [
+          39.5,
+          316.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 0.5,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UL2",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592648240111399,
+      "axial_ray": [
+        [
+          39.5,
+          323.5,
+          40.25
+        ],
+        [
+          39.5,
+          323.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UL3",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592648240111399,
+      "axial_ray": [
+        [
+          39.5,
+          330.5,
+          40.25
+        ],
+        [
+          39.5,
+          330.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UL4",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592648240111399,
+      "axial_ray": [
+        [
+          39.5,
+          337.5,
+          40.25
+        ],
+        [
+          39.5,
+          337.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UL5",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592648240111399,
+      "axial_ray": [
+        [
+          39.5,
+          344.5,
+          40.25
+        ],
+        [
+          39.5,
+          344.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UR1",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592422792438352,
+      "axial_ray": [
+        [
+          280.5,
+          316.5,
+          40.25
+        ],
+        [
+          280.5,
+          316.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 0.5,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UR2",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592422792438352,
+      "axial_ray": [
+        [
+          280.5,
+          323.5,
+          40.25
+        ],
+        [
+          280.5,
+          323.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UR3",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592422792438352,
+      "axial_ray": [
+        [
+          280.5,
+          330.5,
+          40.25
+        ],
+        [
+          280.5,
+          330.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UR4",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592422792438352,
+      "axial_ray": [
+        [
+          280.5,
+          337.5,
+          40.25
+        ],
+        [
+          280.5,
+          337.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    },
+    {
+      "vent": "UR5",
+      "nominal_area_mm2": 133.06858347057704,
+      "footprint_coverage_fraction": 0.7592422792438352,
+      "axial_ray": [
+        [
+          280.5,
+          344.5,
+          40.25
+        ],
+        [
+          280.5,
+          344.5,
+          33.0
+        ]
+      ],
+      "axial_obstacle_distance_mm": 1.5199999999999818,
+      "axial_LOS_open": true
+    }
+  ],
+  "limitations": [
+    "Footprint overlap alone does not prove treatment.",
+    "One open ray is sufficient to falsify universal LOS blockage.",
+    "Zero sampled open rays cannot prove acoustic attenuation.",
+    "Domain z33..40.25 is a local audit slab, not the full product CFD domain."
+  ]
+}

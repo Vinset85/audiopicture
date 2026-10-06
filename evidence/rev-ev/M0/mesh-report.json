@@ -1,0 +1,28 @@
+{
+  "source_sha256": "b1beb065f146685d1cc31b29f8c3fdeff2b38f86110b4c2d7fbd5ad15b7c0fac",
+  "size_mm": 4.0,
+  "nodes": 77835,
+  "elements": 39200,
+  "type": "C3D10",
+  "min_SICN": 0.0025253090449065085,
+  "corner_tet_volume_mm3": 186636.1750178301,
+  "volume_weighted_seed_cg_mm": [
+    162.76295598534244,
+    214.82439337482475,
+    29.29916343622467
+  ],
+  "node_sets": {
+    "UL1": 504,
+    "UL2": 500,
+    "UR1": 516,
+    "UR2": 500,
+    "PAD_L": 101,
+    "PAD_R": 101,
+    "ANTILIFT": 76,
+    "CORNER_LL": 41,
+    "CORNER_LR": 41,
+    "CORNER_UL": 48,
+    "CORNER_UR": 45
+  },
+  "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution"
+}

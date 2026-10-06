@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-10-01T12:15:29.064286+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.6",
+  "python_packages": {
+    "cadquery": "2.8.0",
+    "gmsh": "4.15.2",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "vtk": "9.6.2",
+    "trimesh": "5.1.0"
+  },
+  "calculix": {
+    "version": "2.23",
+    "binary_sha256": "53f9190b9daca468381e58a76bc6ef4a624fae24d4a9272781a0513d91718291",
+    "linear_solver": "SPOOLES",
+    "eigenvalue_solver": "ARPACK"
+  },
+  "elmer": {
+    "source_commit": "4b49ea695ff021e9a046b403f5ebf6df8ec317c4",
+    "binary_sha256": "10fd5fb51fbf95e3658ea327e5a23fcefd28d1437b6c8578d312a83fcca698fb"
+  },
+  "archive_excludes": [
+    "Python environment",
+    "solver executables",
+    "vendor source/build trees",
+    ".git"
+  ],
+  "software_only": true
+}

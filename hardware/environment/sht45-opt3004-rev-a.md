@@ -16,13 +16,23 @@ U301: **Sensirion SHT45-AD1F**.
 Key implementation:
 - supply: +3V3_SYS
 - interface: I2C
-- integrated PTFE membrane variant retained for dust/splash robustness;
+- integrated polyimide membrane variant retained for dust/splash robustness;
 - no conformal coating over the sensing opening.
 
 The sensor shall be placed at the edge of PCB-D nearest the passive room-air chamber, with minimum surrounding copper and no local heat-generating components.
 
 ## 3. Ambient light
 U302: **TI OPT3004DNPR**.
+
+**Rev.FA mechanical candidate, 2026-10-06:** the old ENV normal-facing placement
+is behind the DML and is rejected by the Rev.EZ geometric audit. A separate
+fixed optical island at X313.9/Y47, PCB front Z3.35, clears a new perimeter
+window through at least +/-35 degrees nominally. See
+`../../mechanical/optical-perimeter-candidate-rev-fa.md` for executed CAD checks
+and limits. Physical interconnection, retention, PCB layout and dark baffle
+are still OPEN. This does not move SHT45 into the optical island or qualify its
+passive chamber. Rev.EZ remains the electrical capture baseline, not a released
+physical split into two boards.
 
 Key implementation:
 - supply: +3V3_SYS
@@ -68,7 +78,7 @@ To minimize self-heating, firmware must use periodic/low-duty-cycle SHT45 measur
 7 ENV_INT / reserved
 8 BOARD_ID
 
-BOARD_ID is resistor-coded so firmware can identify PCB-D hardware revision.
+BOARD_ID is reserved and left unconnected in Rev.A, consistent with the ENV native-capture contract. A future resistor-coded identification network requires a coordinated MAIN/ENV revision and a reviewed ADC allocation; the Rev.EZ schematic and firmware do not implement it.
 
 ENV_INT remains reserved because SHT45 does not require an interrupt for normal operation; it may be used by a future environmental sensor revision.
 
@@ -178,7 +188,7 @@ U301 = **Sensirion SHT45-AD1F**.
 - supply = +3V3_SYS;
 - fixed 7-bit I2C address = 0x44;
 - local 100 nF ceramic bypass directly at VDD/GND;
-- PTFE membrane/sensing opening remains completely free of coating, adhesive and enclosure contact.
+- polyimide membrane/sensing opening remains completely free of coating, adhesive and enclosure contact.
 
 Status: **FROZEN_DEVICE / MANUFACTURER_LAND_PATTERN**.
 

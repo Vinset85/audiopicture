@@ -1,0 +1,118 @@
+{
+  "classification": "NORMALIZED_LINEAR_LC1_ONLY",
+  "levels": [
+    {
+      "id": "M0",
+      "source_sha256": "f01e37e5b943c9f466d1794f8265472e92994afe8f3343cc2b47134150e0c87c",
+      "size_mm": 4.0,
+      "nodes": 161182,
+      "elements": 82369,
+      "type": "C3D10",
+      "min_SICN": 0.0046857703180730615,
+      "corner_tet_volume_mm3": 346094.50506831554,
+      "volume_weighted_seed_cg_mm": [
+        161.31415360526412,
+        205.72621226322218,
+        24.119400048621976
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 101,
+        "PAD_R": 101,
+        "ANTILIFT": 76,
+        "CORNER_LL": 39,
+        "CORNER_LR": 39,
+        "CORNER_UL": 38,
+        "CORNER_UR": 37
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+      "Umax_mm": 3.490595957617521,
+      "raw_nodal_von_mises_MPa": 4.550475321691664,
+      "raw_peak_xyz_mm": [
+        303.6157475961,
+        153.73144265343,
+        26.0
+      ]
+    },
+    {
+      "id": "M1",
+      "source_sha256": "f01e37e5b943c9f466d1794f8265472e92994afe8f3343cc2b47134150e0c87c",
+      "size_mm": 3.0,
+      "nodes": 244903,
+      "elements": 126787,
+      "type": "C3D10",
+      "min_SICN": 0.002971412216386625,
+      "corner_tet_volume_mm3": 346094.50380494376,
+      "volume_weighted_seed_cg_mm": [
+        161.31415356544542,
+        205.72621261729105,
+        24.119400048021298
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 149,
+        "PAD_R": 149,
+        "ANTILIFT": 130,
+        "CORNER_LL": 68,
+        "CORNER_LR": 68,
+        "CORNER_UL": 62,
+        "CORNER_UR": 62
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+      "Umax_mm": 3.5076376274334033,
+      "raw_nodal_von_mises_MPa": 3.208369333057372,
+      "raw_peak_xyz_mm": [
+        301.661792835951,
+        153.9268381294419,
+        23.86075140621086
+      ],
+      "Umax_mm_change_percent": 0.4858446517564544,
+      "raw_nodal_von_mises_MPa_change_percent": 41.83140559305091
+    },
+    {
+      "id": "M2",
+      "source_sha256": "f01e37e5b943c9f466d1794f8265472e92994afe8f3343cc2b47134150e0c87c",
+      "size_mm": 2.5,
+      "nodes": 367923,
+      "elements": 194571,
+      "type": "C3D10",
+      "min_SICN": 0.0003461735487162181,
+      "corner_tet_volume_mm3": 346095.6185238153,
+      "volume_weighted_seed_cg_mm": [
+        161.31435019859538,
+        205.72565065100054,
+        24.11939862342537
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 235,
+        "PAD_R": 235,
+        "ANTILIFT": 211,
+        "CORNER_LL": 92,
+        "CORNER_LR": 92,
+        "CORNER_UL": 89,
+        "CORNER_UR": 89
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+      "Umax_mm": 3.5156578110214673,
+      "raw_nodal_von_mises_MPa": 3.230858821480871,
+      "raw_peak_xyz_mm": [
+        301.91870795163726,
+        153.90114661787328,
+        24.03524459173733
+      ],
+      "Umax_mm_change_percent": 0.22812753741052383,
+      "raw_nodal_von_mises_MPa_change_percent": 0.696083910382399
+    }
+  ],
+  "non_singular_stress_status": "OPEN: raw nodal peak moved; notch/mesh classification and local mesh contract not closed; no release margin"
+}

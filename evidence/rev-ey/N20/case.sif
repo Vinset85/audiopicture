@@ -1,0 +1,157 @@
+$ relax = 0.7
+
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "." "square"
+  Include Path ""
+  Results Directory ""
+End
+
+Simulation
+  Max Output Level = 5
+  Coordinate System = Cartesian
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Steady State
+  Steady State Max Iterations = 1000
+  Timestepping Method = BDF
+  BDF Order = 2
+  Timestep intervals(1) = 3
+  Timestep Sizes(1) = 100.0
+  Output Intervals(1) = 1 
+  Post File = case.vtu
+End
+
+Constants
+  Gravity(4) = 0 -1 0 71000
+  Stefan Boltzmann = 5.67e-08
+  Permittivity of Vacuum = 8.8542e-12
+  Boltzmann Constant = 1.3807e-23
+  Unit Charge = 1.602e-19
+End
+
+Body 1
+  Target Bodies(1) = 1
+  Name = "Body 1"
+  Equation = 1
+  Material = 1
+  Body Force = 1
+  Initial condition = 1
+End
+
+Solver 1
+  Equation = Heat Equation
+  Procedure = "HeatSolve" "HeatSolver"
+  Variable = -dofs 1 Temperature
+  Stabilize = True
+  Bubbles = False
+  Optimize Bandwidth = True
+  Steady State Convergence Tolerance = 1.0e-10
+  Steady State Relaxation Factor = 0.35
+
+  Nonlinear System Convergence Tolerance = 1.0e-10
+  Nonlinear System Max Iterations = 10
+  Nonlinear System Newton After Iterations = 3
+  Nonlinear System Newton After Tolerance = 1.0e-3
+  Nonlinear System Relaxation Factor = $ relax
+
+  Linear System Symmetric = False
+  Linear System Solver = Iterative
+  Linear System Iterative Method = GCR
+  Linear System Max Iterations = 2000
+  Linear System Convergence Tolerance = 1.0e-11
+  Linear System Preconditioning = ILU0
+  Linear System Abort Not Converged = True
+  Linear System Residual Output = 10
+End
+
+Solver 2
+  Equation = Navier-Stokes
+! Procedure = "FlowSolve" "FlowSolver"
+! Variable = Flow Solution[Velocity:2 Pressure:1]
+  Stabilize = True
+  Bubbles = False
+  Optimize Bandwidth = True
+  Steady State Convergence Tolerance = 1.0e-10
+  Steady State Relaxation Factor = 0.35
+
+  Nonlinear System Convergence Tolerance = 1.0e-10
+  Nonlinear System Max Iterations = 10
+  Nonlinear System Newton After Iterations = 3
+  Nonlinear System Newton After Tolerance = 1.0e-3
+  Nonlinear System Relaxation Factor = $ relax
+
+  Linear System Symmetric = False
+  Linear System Solver = Iterative
+  Linear System Iterative Method = Bicgstabl
+  Linear System Max Iterations = 2000
+  Linear System Convergence Tolerance = 1.0e-11
+  Linear System Preconditioning = ILU0
+  Linear System Abort Not Converged = True
+  Linear System Residual Output = 10
+End
+
+
+
+Equation 1
+  Name = "Natural Convection"
+  Convection = Computed
+  Active Solvers(2) = 1 2
+End
+
+Material 1
+  Name = "Constructed benchmark coefficients Pr0.71 Ra1000"
+  Heat Conductivity = 1
+  Reference Temperature = 300
+  Heat Capacity = 1
+  Density = 1
+  Viscosity = 0.71
+  Sound speed = 1497.0
+  Heat expansion Coefficient = 0.01
+End
+
+Body Force 1
+  Name = "Bouancy"
+  Boussinesq = True
+End
+
+Initial Condition 1
+  Name = "Initial Guess"
+  Velocity 2 = 0.0
+  Velocity 1 = 1.0e-9
+  Temperature = 300
+!Variable Coordinate 1
+!    Real MATC "293+400*tx"
+End
+
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Name = "Bottom"
+  Velocity 1 = 0.0
+  Velocity 2 = 0.0
+End
+
+Boundary Condition 2
+  Target Boundaries(1) = 2
+  Name = "Right"
+  Velocity 1 = 0.0
+  Velocity 2 = 0.0
+  Temperature = 299.5
+End
+
+Boundary Condition 3
+  Target Boundaries(1) = 3
+  Name = "Top"
+  Velocity 1 = 0.0
+  Velocity 2 = 0.0
+End
+
+Boundary Condition 4
+  Target Boundaries(1) = 4
+  Name = "Left"
+  Velocity 1 = 0.0
+  Velocity 2 = 0.0
+  Temperature = 300.5
+End
+
+
+RUN

@@ -115,7 +115,7 @@ W5500 retains GPIO10 ETH_CS.
 
 Firmware performs per-device bus arbitration and reconfigures SPI frequency/mode as required before each transaction. PCB-C contains the radar 3.3 V <-> 1.8 V fixed-direction translation.
 
-This avoids consuming strapping pins or adding an I2C GPIO expander.
+This avoids consuming strapping pins for the listed peripherals. Rev.EZ separately adds a status-input expander because the original map omitted power-status nets.
 
 ## 10. Audio I2S
 GPIO4 = AUD_BCLK
@@ -254,7 +254,7 @@ Hardware must permit recovery even if application firmware is invalid.
 Unlisted pins remain uncommitted until final pin-budget review.
 
 ## 20. Pin-budget decision
-The Rev.A pin budget is now resolved without an I/O expander.
+Rev.EZ corrects the incomplete Rev.A pin-budget conclusion: power-status signals need U20 TCA9534PWR at 0x20. See `../kicad/main/power-status-inputs-rev-ez.md`; conditioning and hardware validation remain OPEN.
 
 Shared SPI:
 - GPIO11/12/13 = MOSI/SCLK/MISO

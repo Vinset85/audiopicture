@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "AudioPicture_ENV")(type "KiCad")(uri "${KIPRJMOD}/lib/AudioPicture_ENV.kicad_sym")(options "")(descr "Datasheet-audited AudioPicture symbols"))
+)

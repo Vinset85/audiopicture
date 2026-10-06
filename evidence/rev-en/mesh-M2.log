@@ -1,0 +1,203 @@
+Info    :  - Label 'Shapes/Open CASCADE STEP translator 7.9 1' (3D)
+Info    : Meshing 1D...
+Info    : [  0%] Meshing curve 1 (Line)
+Info    : [ 10%] Meshing curve 2 (Line)
+Info    : [ 10%] Meshing curve 3 (Line)
+Info    : [ 10%] Meshing curve 4 (Line)
+Info    : [ 20%] Meshing curve 5 (Line)
+Info    : [ 20%] Meshing curve 6 (Line)
+Info    : [ 20%] Meshing curve 7 (Line)
+Info    : [ 20%] Meshing curve 8 (Line)
+Info    : [ 30%] Meshing curve 9 (Line)
+Info    : [ 30%] Meshing curve 10 (Line)
+Info    : [ 30%] Meshing curve 11 (Line)
+Info    : [ 40%] Meshing curve 12 (Line)
+Info    : [ 40%] Meshing curve 13 (Line)
+Info    : [ 40%] Meshing curve 14 (Line)
+Info    : [ 40%] Meshing curve 15 (Line)
+Info    : [ 50%] Meshing curve 16 (Line)
+Info    : [ 50%] Meshing curve 17 (Line)
+Info    : [ 50%] Meshing curve 18 (Line)
+Info    : [ 60%] Meshing curve 19 (Line)
+Info    : [ 60%] Meshing curve 20 (Line)
+Info    : [ 60%] Meshing curve 21 (Line)
+Info    : [ 60%] Meshing curve 22 (Line)
+Info    : [ 70%] Meshing curve 23 (Line)
+Info    : [ 70%] Meshing curve 24 (Line)
+Info    : [ 70%] Meshing curve 25 (Line)
+Info    : [ 70%] Meshing curve 26 (Line)
+Info    : [ 80%] Meshing curve 27 (Line)
+Info    : [ 80%] Meshing curve 28 (Line)
+Info    : [ 80%] Meshing curve 29 (Line)
+Info    : [ 90%] Meshing curve 30 (Line)
+Info    : [ 90%] Meshing curve 31 (Line)
+Info    : [ 90%] Meshing curve 32 (Line)
+Info    : [ 90%] Meshing curve 33 (Line)
+Info    : [100%] Meshing curve 34 (Line)
+Info    : [100%] Meshing curve 35 (Line)
+Info    : [100%] Meshing curve 36 (Line)
+Info    : Done meshing 1D (Wall 0.013268s, CPU 0.012859s)
+Info    : Meshing 2D...
+Info    : [  0%] Meshing surface 1 (Plane, Frontal-Delaunay)
+Info    : [ 10%] Meshing surface 2 (Plane, Frontal-Delaunay)
+Info    : [ 20%] Meshing surface 3 (Plane, Frontal-Delaunay)
+Info    : [ 30%] Meshing surface 4 (Plane, Frontal-Delaunay)
+Info    : [ 30%] Meshing surface 5 (Plane, Frontal-Delaunay)
+Info    : [ 40%] Meshing surface 6 (Plane, Frontal-Delaunay)
+Info    : [ 50%] Meshing surface 7 (Plane, Frontal-Delaunay)
+Info    : [ 50%] Meshing surface 8 (Plane, Frontal-Delaunay)
+Info    : [ 60%] Meshing surface 9 (Plane, Frontal-Delaunay)
+Info    : [ 70%] Meshing surface 10 (Plane, Frontal-Delaunay)
+Info    : [ 70%] Meshing surface 11 (Plane, Frontal-Delaunay)
+Info    : [ 80%] Meshing surface 12 (Plane, Frontal-Delaunay)
+Info    : [ 90%] Meshing surface 13 (Plane, Frontal-Delaunay)
+Info    : [ 90%] Meshing surface 14 (Plane, Frontal-Delaunay)
+Info    : [100%] Meshing surface 15 (Plane, Frontal-Delaunay)
+Info    : Done meshing 2D (Wall 0.133639s, CPU 0.13096s)
+Info    : Meshing 3D...
+Info    : 3D Meshing 1 volume with 1 connected component
+Info    : Tetrahedrizing 4382 nodes...
+Info    : Done tetrahedrizing 4390 nodes (Wall 0.0308325s, CPU 0.029779s)
+Info    : Reconstructing mesh...
+Info    :  - Creating surface mesh
+Info    :  - Identifying boundary edges
+Info    :  - Recovering boundary
+Info    : Done reconstructing mesh (Wall 0.0744946s, CPU 0.069891s)
+Info    : Found volume 1
+Info    : It. 0 - 0 nodes created - worst tet radius 4.62767 (nodes removed 0 0)
+Info    : It. 500 - 500 nodes created - worst tet radius 1.69744 (nodes removed 0 0)
+Info    : It. 1000 - 1000 nodes created - worst tet radius 1.40199 (nodes removed 0 0)
+Info    : It. 1500 - 1500 nodes created - worst tet radius 1.26643 (nodes removed 0 0)
+Info    : It. 2000 - 2000 nodes created - worst tet radius 1.16399 (nodes removed 0 0)
+Info    : It. 2500 - 2500 nodes created - worst tet radius 1.09384 (nodes removed 0 0)
+Info    : It. 3000 - 3000 nodes created - worst tet radius 1.03805 (nodes removed 0 0)
+Info    : 3D refinement terminated (7800 nodes total):
+Info    :  - 0 Delaunay cavities modified for star shapeness
+Info    :  - 0 nodes could not be inserted
+Info    :  - 34668 tetrahedra created in 0.126285 sec. (274521 tets/s)
+Info    : 0 node relocations
+Info    : Done meshing 3D (Wall 0.266122s, CPU 0.253399s)
+Info    : Optimizing mesh...
+Info    : Optimizing volume 1
+Info    : Optimization starts (volume = 6922) with worst = 0.0108162 / average = 0.773589:
+Info    : 0.00 < quality < 0.10 :        93 elements
+Info    : 0.10 < quality < 0.20 :       218 elements
+Info    : 0.20 < quality < 0.30 :       409 elements
+Info    : 0.30 < quality < 0.40 :       579 elements
+Info    : 0.40 < quality < 0.50 :       845 elements
+Info    : 0.50 < quality < 0.60 :      1553 elements
+Info    : 0.60 < quality < 0.70 :      3994 elements
+Info    : 0.70 < quality < 0.80 :      8834 elements
+Info    : 0.80 < quality < 0.90 :     12198 elements
+Info    : 0.90 < quality < 1.00 :      5941 elements
+Info    : 681 edge swaps, 27 node relocations (volume = 6922): worst = 0.214292 / average = 0.786521 (Wall 0.00857733s, CPU 0.008296s)
+Info    : 682 edge swaps, 28 node relocations (volume = 6922): worst = 0.214292 / average = 0.78654 (Wall 0.00960725s, CPU 0.009297s)
+Info    : No ill-shaped tets in the mesh :-)
+Info    : 0.00 < quality < 0.10 :         0 elements
+Info    : 0.10 < quality < 0.20 :         0 elements
+Info    : 0.20 < quality < 0.30 :        32 elements
+Info    : 0.30 < quality < 0.40 :       574 elements
+Info    : 0.40 < quality < 0.50 :       796 elements
+Info    : 0.50 < quality < 0.60 :      1501 elements
+Info    : 0.60 < quality < 0.70 :      3967 elements
+Info    : 0.70 < quality < 0.80 :      8878 elements
+Info    : 0.80 < quality < 0.90 :     12344 elements
+Info    : 0.90 < quality < 1.00 :      5940 elements
+Info    : Done optimizing mesh (Wall 0.0289721s, CPU 0.02685s)
+Info    : 7800 nodes 43394 elements
+Info    : Meshing order 2 (curvilinear on)...
+Info    : [  0%] Meshing curve 1 order 2
+Info    : [ 10%] Meshing curve 2 order 2
+Info    : [ 10%] Meshing curve 3 order 2
+Info    : [ 10%] Meshing curve 4 order 2
+Info    : [ 10%] Meshing curve 5 order 2
+Info    : [ 10%] Meshing curve 6 order 2
+Info    : [ 20%] Meshing curve 7 order 2
+Info    : [ 20%] Meshing curve 8 order 2
+Info    : [ 20%] Meshing curve 9 order 2
+Info    : [ 20%] Meshing curve 10 order 2
+Info    : [ 20%] Meshing curve 11 order 2
+Info    : [ 30%] Meshing curve 12 order 2
+Info    : [ 30%] Meshing curve 13 order 2
+Info    : [ 30%] Meshing curve 14 order 2
+Info    : [ 30%] Meshing curve 15 order 2
+Info    : [ 30%] Meshing curve 16 order 2
+Info    : [ 40%] Meshing curve 17 order 2
+Info    : [ 40%] Meshing curve 18 order 2
+Info    : [ 40%] Meshing curve 19 order 2
+Info    : [ 40%] Meshing curve 20 order 2
+Info    : [ 40%] Meshing curve 21 order 2
+Info    : [ 50%] Meshing curve 22 order 2
+Info    : [ 50%] Meshing curve 23 order 2
+Info    : [ 50%] Meshing curve 24 order 2
+Info    : [ 50%] Meshing curve 25 order 2
+Info    : [ 50%] Meshing curve 26 order 2
+Info    : [ 60%] Meshing curve 27 order 2
+Info    : [ 60%] Meshing curve 28 order 2
+Info    : [ 60%] Meshing curve 29 order 2
+Info    : [ 60%] Meshing curve 30 order 2
+Info    : [ 60%] Meshing curve 31 order 2
+Info    : [ 60%] Meshing curve 32 order 2
+Info    : [ 70%] Meshing curve 33 order 2
+Info    : [ 70%] Meshing curve 34 order 2
+Info    : [ 70%] Meshing curve 35 order 2
+Info    : [ 70%] Meshing curve 36 order 2
+Info    : [ 70%] Meshing surface 1 order 2
+Info    : [ 80%] Meshing surface 2 order 2
+Info    : [ 80%] Meshing surface 3 order 2
+Info    : [ 80%] Meshing surface 4 order 2
+Info    : [ 80%] Meshing surface 5 order 2
+Info    : [ 80%] Meshing surface 6 order 2
+Info    : [ 90%] Meshing surface 7 order 2
+Info    : [ 90%] Meshing surface 8 order 2
+Info    : [ 90%] Meshing surface 9 order 2
+Info    : [ 90%] Meshing surface 10 order 2
+Info    : [ 90%] Meshing surface 11 order 2
+Info    : [100%] Meshing surface 12 order 2
+Info    : [100%] Meshing surface 13 order 2
+Info    : [100%] Meshing surface 14 order 2
+Info    : [100%] Meshing surface 15 order 2
+Info    : [100%] Meshing volume 1 order 2
+Info    : Surface mesh: worst distortion = 1 (0 elements in ]0, 0.2]); worst gamma = 0.189082
+Info    : Volume mesh: worst distortion = 1 (0 elements in ]0, 0.2])
+Info    : Done meshing order 2 (Wall 0.141358s, CPU 0.138537s)
+Info    : Optimizing mesh (HighOrder)...
+Info    : Optimizing high-order mesh...
+Info    : Optimizing mesh...
+Info    : Computing connectivity and bad elements for entity 1...
+Info    : Starting patch generation from 0 bad elements...
+Info    : Constructing 0 primary patches
+Info    : Computing patch connectivity...
+Info    : Identifying groups of primary patches...
+Info    : Merging primary patches into 0 patches...
+Info    : Computing boundaries for 0 patches...
+Info    : Generated 0 patches
+Info    : Optimization succeeded
+Info    : Done optimizing mesh (0.045842 s)
+Info    : Done optimizing high-order mesh (0.045842 s)
+Info    : Done optimizing mesh (Wall 0.0484535s, CPU 0.04715s)
+Info    : Writing 'evidence/rev-ep/M2/mesh.inp'...
+Info    : Done writing 'evidence/rev-ep/M2/mesh.inp'
+Info    : Writing 'evidence/rev-ep/M2/mesh.msh'...
+Info    : Done writing 'evidence/rev-ep/M2/mesh.msh'
+{
+  "classification": "ISOTROPIC_LOCAL_DEBUG_NOT_RELEASE_NOT_LC1_LC7",
+  "gmsh_version": "4.15.2",
+  "mesh_size_mm": 1.0,
+  "node_count": 54015,
+  "element_count": 34036,
+  "element_type": "C3D10",
+  "min_SICN": 0.17389581708540705,
+  "fixed_nodes": 886,
+  "target_nodes": 117,
+  "load_N": 5,
+  "applied_load_sum_N": -5.0,
+  "E_MPa": 1900,
+  "nu_assumption": 0.35,
+  "source_sha256": "f1d3d35b088caa76028ae35ecdf6442fe6e35068d63578d12c2a0e6b7fa71ab8",
+  "limitations": [
+    "Nodal equal-force distribution is a debug load abstraction.",
+    "Remote fixed cut faces are local boundary assumption.",
+    "No orthotropic/temperature/contact/strength release claim."
+  ]
+}

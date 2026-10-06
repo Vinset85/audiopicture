@@ -1,0 +1,17 @@
+{
+  "classification": "EXECUTED_HOST_SOFTWARE_TESTS_NOT_HARDWARE_FIRMWARE_RELEASE",
+  "sanitizer": "AddressSanitizer and UndefinedBehaviorSanitizer",
+  "compiler": "Homebrew clang version 22.1.8",
+  "result_log": "PASS: 200000 deterministic events, 27909 enabled samples with safety invariants\nPASS: governor transitions, source loss, 22.5 W boundary, fault latch, stale/invalid monitor, 320 input combinations, timer wrap, config rejection\n",
+  "source_sha256": {
+    "firmware/components/power_governor/CMakeLists.txt": "b80f9327f47584d34525372989157f238bd3ae8b730e14c61473499bc4311ac2",
+    "firmware/components/power_governor/power_governor.c": "cd03ced8f56bb64bd8f61acfe868fed56ab8413b68fb704d1b58e0b133c2e9c6",
+    "firmware/components/power_governor/include/power_governor.h": "987a516a17dda3b0b912d4efd92becb3ca572f9be1b799168e6f37860f6266d2",
+    "firmware/tests/test_power_governor.c": "865b26e4fcafb0aed1e72b17438ed9fbe19552108ca11e45b75dbd8b8947fb9c",
+    "firmware/tests/CMakeLists.txt": "a9e23379991b43cbb0250aac48588d3aee0f9cb049afe38dde17aa97d4943938"
+  },
+  "production_calibration": null,
+  "ESP_IDF_integration": false,
+  "hardware_executed": false,
+  "ctest_log": "UpdateCTestConfiguration  from :/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build/DartConfiguration.tcl\nTest project /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build\nConstructing a list of tests\nDone constructing a list of tests\nUpdating test list for fixtures\nAdded 0 tests to meet fixture requirements\nChecking test dependency graph...\nChecking test dependency graph end\ntest 1\n    Start 1: power_governor_safety_transitions\n\n1: Test command: /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build/test_power_governor\n1: Working Directory: /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build\n1: Test timeout computed to be: 10000000\n1: PASS: 200000 deterministic events, 27909 enabled samples with safety invariants\n1: PASS: governor transitions, source loss, 22.5 W boundary, fault latch, stale/invalid monitor, 320 input combinations, timer wrap, config rejection\n1/1 Test #1: power_governor_safety_transitions ...   Passed    0.73 sec\n\n100% tests passed out of 1\n\nTotal Test time (real) =   0.74 sec\n"
+}

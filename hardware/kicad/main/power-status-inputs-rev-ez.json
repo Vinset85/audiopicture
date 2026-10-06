@@ -1,0 +1,15 @@
+{
+  "revision": "Rev.EZ",
+  "classification": "DESIGN_ALLOCATION_NOT_HARDWARE_VALIDATION",
+  "device": "TCA9534PWR",
+  "reference": "U20",
+  "address_7bit": 32,
+  "address_straps": {"A0": "GND", "A1": "GND", "A2": "GND"},
+  "pins": {"1": "GND", "2": "GND", "3": "GND", "4": "POWER_ALERT", "5": "5V_PG", "6": "3V3_PG", "7": "EXT_PRESENT", "8": "GND", "9": "POE_PRESENT", "10": "POE_TYPE2_N", "11": "SERVICE_VBUS_PRESENT", "12": "GND", "13": "NC", "14": "I2C_SCL", "15": "I2C_SDA", "16": "+3V3_SYS"},
+  "configuration_register": 255,
+  "polarity_register": 0,
+  "output_writes_allowed": false,
+  "conditioners_qualified": false,
+  "native_erc_pass": false,
+  "type2_verified_by_raw_input": false
+}

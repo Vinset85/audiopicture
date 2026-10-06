@@ -1,0 +1,466 @@
+{
+  "classification": "SIMULATED_LOCAL_DEBUG_AND_NORMALIZED_ASSUMPTIONS_NOT_FRAME_RELEASE",
+  "mesh_results": [
+    {
+      "classification": "ISOTROPIC_LOCAL_DEBUG_NOT_RELEASE_NOT_LC1_LC7",
+      "gmsh_version": "4.15.2",
+      "mesh_size_mm": 2.0,
+      "node_count": 9389,
+      "element_count": 5150,
+      "element_type": "C3D10",
+      "min_SICN": 0.07476612892166376,
+      "fixed_nodes": 246,
+      "target_nodes": 53,
+      "load_N": 5,
+      "applied_load_sum_N": -5.0,
+      "E_MPa": 1900,
+      "nu_assumption": 0.35,
+      "source_sha256": "f1d3d35b088caa76028ae35ecdf6442fe6e35068d63578d12c2a0e6b7fa71ab8",
+      "limitations": [
+        "Nodal equal-force distribution is a debug load abstraction.",
+        "Remote fixed cut faces are local boundary assumption.",
+        "No orthotropic/temperature/contact/strength release claim."
+      ],
+      "max_target_displacement_mm": 0.023750125526448892,
+      "max_target_normal_displacement_mm": 0.02052627,
+      "reaction_sum_N": [
+        -2.556427e-13,
+        2.191676e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 6.734615859959646e-12,
+      "raw_max_von_mises_debug_MPa": 1.04832734365434,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables",
+      "solver": "CalculiX 2.23 SPOOLES"
+    },
+    {
+      "classification": "ISOTROPIC_LOCAL_DEBUG_NOT_RELEASE_NOT_LC1_LC7",
+      "gmsh_version": "4.15.2",
+      "mesh_size_mm": 1.5,
+      "node_count": 18512,
+      "element_count": 10791,
+      "element_type": "C3D10",
+      "min_SICN": 0.12184181771375932,
+      "fixed_nodes": 486,
+      "target_nodes": 87,
+      "load_N": 5,
+      "applied_load_sum_N": -5.0,
+      "E_MPa": 1900,
+      "nu_assumption": 0.35,
+      "source_sha256": "f1d3d35b088caa76028ae35ecdf6442fe6e35068d63578d12c2a0e6b7fa71ab8",
+      "limitations": [
+        "Nodal equal-force distribution is a debug load abstraction.",
+        "Remote fixed cut faces are local boundary assumption.",
+        "No orthotropic/temperature/contact/strength release claim."
+      ],
+      "max_target_displacement_mm": 0.023829673389889505,
+      "max_target_normal_displacement_mm": 0.02071967,
+      "reaction_sum_N": [
+        -1.029732e-14,
+        -7.654667e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.5310719168060946e-11,
+      "raw_max_von_mises_debug_MPa": 1.3690601266451958,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables",
+      "solver": "CalculiX 2.23 SPOOLES"
+    },
+    {
+      "classification": "ISOTROPIC_LOCAL_DEBUG_NOT_RELEASE_NOT_LC1_LC7",
+      "gmsh_version": "4.15.2",
+      "mesh_size_mm": 1.0,
+      "node_count": 54015,
+      "element_count": 34036,
+      "element_type": "C3D10",
+      "min_SICN": 0.17389581708540705,
+      "fixed_nodes": 886,
+      "target_nodes": 117,
+      "load_N": 5,
+      "applied_load_sum_N": -5.0,
+      "E_MPa": 1900,
+      "nu_assumption": 0.35,
+      "source_sha256": "f1d3d35b088caa76028ae35ecdf6442fe6e35068d63578d12c2a0e6b7fa71ab8",
+      "limitations": [
+        "Nodal equal-force distribution is a debug load abstraction.",
+        "Remote fixed cut faces are local boundary assumption.",
+        "No orthotropic/temperature/contact/strength release claim."
+      ],
+      "max_target_displacement_mm": 0.02410575689445043,
+      "max_target_normal_displacement_mm": 0.02075096,
+      "reaction_sum_N": [
+        2.359085e-13,
+        -2.049444e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 4.125953722235987e-11,
+      "raw_max_von_mises_debug_MPa": 1.288462208914876,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables",
+      "solver": "CalculiX 2.23 SPOOLES"
+    }
+  ],
+  "M1_to_M2_target_displacement_change_percent": 1.1453011235854762,
+  "displacement_convergence_gate": "PASS",
+  "stress_convergence_gate": "OPEN",
+  "unit_cube_relative_displacement_error": 2.0000000061030226e-08,
+  "unit_cube_gate": "PASS",
+  "normalized_cases": [
+    {
+      "case": "MAT-A_G13_0.25_G23_0.25",
+      "max_target_displacement_mm": 0.05815290642200809,
+      "max_target_normal_displacement_mm": 0.04183947,
+      "reaction_sum_N": [
+        -4.958603e-13,
+        -1.224637e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.6424331354909173e-11,
+      "raw_max_von_mises_debug_MPa": 1.375167242723084,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.25_G23_0.4",
+      "max_target_displacement_mm": 0.05788117257628964,
+      "max_target_normal_displacement_mm": 0.04162786,
+      "reaction_sum_N": [
+        -3.616205e-13,
+        -1.309092e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 7.69172554541281e-12,
+      "raw_max_von_mises_debug_MPa": 1.3363922148994958,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.25_G23_0.6",
+      "max_target_displacement_mm": 0.05769368774897823,
+      "max_target_normal_displacement_mm": 0.04147836,
+      "reaction_sum_N": [
+        -6.035727e-13,
+        1.096729e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.5036888813319358e-11,
+      "raw_max_von_mises_debug_MPa": 1.3040518528896348,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.4_G23_0.25",
+      "max_target_displacement_mm": 0.053544894411060244,
+      "max_target_normal_displacement_mm": 0.03838437,
+      "reaction_sum_N": [
+        -2.303158e-13,
+        -1.797159e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 3.623714027905977e-11,
+      "raw_max_von_mises_debug_MPa": 1.3661817774838458,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.4_G23_0.4",
+      "max_target_displacement_mm": 0.053298303735788054,
+      "max_target_normal_displacement_mm": 0.03818871,
+      "reaction_sum_N": [
+        4.537273e-13,
+        -3.303391e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.1224836457679016e-11,
+      "raw_max_von_mises_debug_MPa": 1.33171741335236,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.4_G23_0.6",
+      "max_target_displacement_mm": 0.053127243676127554,
+      "max_target_normal_displacement_mm": 0.03804997,
+      "reaction_sum_N": [
+        -1.04132e-13,
+        -1.373682e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.7552464213191533e-11,
+      "raw_max_von_mises_debug_MPa": 1.3023886887869767,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.6_G23_0.25",
+      "max_target_displacement_mm": 0.050797626784883455,
+      "max_target_normal_displacement_mm": 0.03638117,
+      "reaction_sum_N": [
+        4.276787e-13,
+        -1.187917e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.5251185075736068e-11,
+      "raw_max_von_mises_debug_MPa": 1.3546497038671066,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.6_G23_0.4",
+      "max_target_displacement_mm": 0.05056447257278772,
+      "max_target_normal_displacement_mm": 0.03619677,
+      "reaction_sum_N": [
+        1.064426e-14,
+        4.087121e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 8.177013659212208e-12,
+      "raw_max_von_mises_debug_MPa": 1.3239233471195075,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-A_G13_0.6_G23_0.6",
+      "max_target_displacement_mm": 0.05040212647441634,
+      "max_target_normal_displacement_mm": 0.03606563,
+      "reaction_sum_N": [
+        -3.067754e-13,
+        -1.031036e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.151414771113334e-11,
+      "raw_max_von_mises_debug_MPa": 1.2972405977848287,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.25_G23_0.25",
+      "max_target_displacement_mm": 0.044916774380866734,
+      "max_target_normal_displacement_mm": 0.03453694,
+      "reaction_sum_N": [
+        -1.115774e-13,
+        -1.729906e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 3.467001173940822e-11,
+      "raw_max_von_mises_debug_MPa": 1.4193372432344704,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.25_G23_0.4",
+      "max_target_displacement_mm": 0.04470186106251618,
+      "max_target_normal_displacement_mm": 0.03437728,
+      "reaction_sum_N": [
+        -1.221592e-13,
+        -5.337631e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.09512723839059e-11,
+      "raw_max_von_mises_debug_MPa": 1.37578269071087,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.25_G23_0.6",
+      "max_target_displacement_mm": 0.044552610336026505,
+      "max_target_normal_displacement_mm": 0.03426406,
+      "reaction_sum_N": [
+        -2.813791e-13,
+        -8.176333e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.729391119655354e-11,
+      "raw_max_von_mises_debug_MPa": 1.3382023844654753,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.4_G23_0.25",
+      "max_target_displacement_mm": 0.04035799884168913,
+      "max_target_normal_displacement_mm": 0.03113872,
+      "reaction_sum_N": [
+        -6.639828e-14,
+        -1.202787e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.4092366417236467e-11,
+      "raw_max_von_mises_debug_MPa": 1.4063161584627364,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.4_G23_0.4",
+      "max_target_displacement_mm": 0.04016516821390778,
+      "max_target_normal_displacement_mm": 0.03099094,
+      "reaction_sum_N": [
+        1.87475e-13,
+        -5.390757e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.1414893533546248e-11,
+      "raw_max_von_mises_debug_MPa": 1.3675755489931456,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.4_G23_0.6",
+      "max_target_displacement_mm": 0.040030548779020465,
+      "max_target_normal_displacement_mm": 0.03088573,
+      "reaction_sum_N": [
+        2.135514e-13,
+        6.152839e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.3025797143225747e-11,
+      "raw_max_von_mises_debug_MPa": 1.3334270272181585,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.6_G23_0.25",
+      "max_target_displacement_mm": 0.037648290516103536,
+      "max_target_normal_displacement_mm": 0.02917077,
+      "reaction_sum_N": [
+        -1.416645e-13,
+        3.550459e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 7.645297160138641e-12,
+      "raw_max_von_mises_debug_MPa": 1.3915085857098664,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.6_G23_0.4",
+      "max_target_displacement_mm": 0.03746682633654279,
+      "max_target_normal_displacement_mm": 0.02903095,
+      "reaction_sum_N": [
+        4.904896e-13,
+        -3.360767e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.189163733034354e-11,
+      "raw_max_von_mises_debug_MPa": 1.3570345188086266,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-B_G13_0.6_G23_0.6",
+      "max_target_displacement_mm": 0.0373396872789902,
+      "max_target_normal_displacement_mm": 0.02893103,
+      "reaction_sum_N": [
+        -2.973316e-14,
+        -8.352832e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.6716244614216742e-11,
+      "raw_max_von_mises_debug_MPa": 1.32614082923176,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.25_G23_0.25",
+      "max_target_displacement_mm": 0.03961791487473169,
+      "max_target_normal_displacement_mm": 0.03151333,
+      "reaction_sum_N": [
+        -3.348016e-14,
+        -2.416647e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 4.833757810946935e-11,
+      "raw_max_von_mises_debug_MPa": 1.4557717348641745,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.25_G23_0.4",
+      "max_target_displacement_mm": 0.03943505768463637,
+      "max_target_normal_displacement_mm": 0.03137975,
+      "reaction_sum_N": [
+        -2.613534e-13,
+        -5.611614e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.2380754686876241e-11,
+      "raw_max_von_mises_debug_MPa": 1.4106867746323213,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.25_G23_0.6",
+      "max_target_displacement_mm": 0.03930717974233055,
+      "max_target_normal_displacement_mm": 0.03128482,
+      "reaction_sum_N": [
+        2.451303e-13,
+        4.38146e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.0041131037768405e-11,
+      "raw_max_von_mises_debug_MPa": 1.370505653067315,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.4_G23_0.25",
+      "max_target_displacement_mm": 0.035098948991612734,
+      "max_target_normal_displacement_mm": 0.02814459,
+      "reaction_sum_N": [
+        1.247405e-13,
+        -1.290016e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.5920659502383423e-11,
+      "raw_max_von_mises_debug_MPa": 1.4406450434080427,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.4_G23_0.4",
+      "max_target_displacement_mm": 0.03493735296971114,
+      "max_target_normal_displacement_mm": 0.02802099,
+      "reaction_sum_N": [
+        -3.099257e-13,
+        1.000849e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 6.5137063712912316e-12,
+      "raw_max_von_mises_debug_MPa": 1.4003300959536287,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.4_G23_0.6",
+      "max_target_displacement_mm": 0.034822850575224766,
+      "max_target_normal_displacement_mm": 0.0279328,
+      "reaction_sum_N": [
+        -2.50841e-14,
+        6.140184e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.229061117457338e-11,
+      "raw_max_von_mises_debug_MPa": 1.363685294643324,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.6_G23_0.25",
+      "max_target_displacement_mm": 0.032419420606906856,
+      "max_target_normal_displacement_mm": 0.02619327,
+      "reaction_sum_N": [
+        -1.552647e-13,
+        -1.045422e-12,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 2.113777930767648e-11,
+      "raw_max_von_mises_debug_MPa": 1.4242037162081298,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.6_G23_0.4",
+      "max_target_displacement_mm": 0.032267738460092656,
+      "max_target_normal_displacement_mm": 0.02607611,
+      "reaction_sum_N": [
+        -4.187414e-13,
+        -4.455204e-14,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 8.422095804302433e-12,
+      "raw_max_von_mises_debug_MPa": 1.3881921230053555,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    },
+    {
+      "case": "MAT-C_G13_0.6_G23_0.6",
+      "max_target_displacement_mm": 0.032159800444964214,
+      "max_target_normal_displacement_mm": 0.02599213,
+      "reaction_sum_N": [
+        -5.580397e-13,
+        -4.720035e-13,
+        5.0
+      ],
+      "reaction_vector_residual_percent": 1.461773731859127e-11,
+      "raw_max_von_mises_debug_MPa": 1.3549834201849997,
+      "stress_gate": "OPEN: sharp roots/constraints require hotspot classification; no allowables"
+    }
+  ],
+  "frame_LC1_LC7_gate": "OPEN",
+  "material_qualification_gate": "OPEN",
+  "limitations": [
+    "5 N front-retention subcomponent, not 70 N frame.",
+    "No nonlinear/contact, temperature or buckling release result.",
+    "Raw von Mises is only a debug scalar, not orthotropic failure index."
+  ]
+}

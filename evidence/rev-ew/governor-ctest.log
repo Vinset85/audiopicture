@@ -1,0 +1,21 @@
+UpdateCTestConfiguration  from :/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build/DartConfiguration.tcl
+Test project /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: power_governor_safety_transitions
+
+1: Test command: /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build/test_power_governor
+1: Working Directory: /Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/governor-host-build
+1: Test timeout computed to be: 10000000
+1: PASS: 200000 deterministic events, 27909 enabled samples with safety invariants
+1: PASS: governor transitions, source loss, 22.5 W boundary, fault latch, stale/invalid monitor, 320 input combinations, timer wrap, config rejection
+1/1 Test #1: power_governor_safety_transitions ...   Passed    0.73 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =   0.74 sec

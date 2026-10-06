@@ -1,0 +1,15 @@
+{
+  "classification": "SIMULATED_LOCAL_DEBUG_AND_NORMALIZED_ASSUMPTIONS_NOT_FRAME_RELEASE",
+  "M1_to_M2_target_displacement_change_percent": 1.1453011235854762,
+  "displacement_convergence_gate": "PASS",
+  "stress_convergence_gate": "OPEN",
+  "unit_cube_relative_displacement_error": 2.0000000061030226e-08,
+  "unit_cube_gate": "PASS",
+  "frame_LC1_LC7_gate": "OPEN",
+  "material_qualification_gate": "OPEN",
+  "limitations": [
+    "5 N front-retention subcomponent, not 70 N frame.",
+    "No nonlinear/contact, temperature or buckling release result.",
+    "Raw von Mises is only a debug scalar, not orthotropic failure index."
+  ]
+}

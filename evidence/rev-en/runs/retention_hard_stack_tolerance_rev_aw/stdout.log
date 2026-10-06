@@ -1,0 +1,69 @@
+{
+  "nominal_gap_mm": 1.0,
+  "sensitivity_inputs_mm": {
+    "shell_plane_shift": [
+      -0.3,
+      0.0,
+      0.3
+    ],
+    "seat_height_error": [
+      -0.2,
+      0.0,
+      0.2
+    ],
+    "frame_rear_z_shift": [
+      -0.3,
+      0.0,
+      0.3
+    ]
+  },
+  "resulting_gap_range_mm": [
+    0.20000000000000284,
+    1.79999999999999
+  ],
+  "candidate_limiter_sweep": [
+    {
+      "limiter_mm": 0.6,
+      "residual_min_mm": -0.39999999999999714,
+      "residual_max_mm": 1.19999999999999,
+      "interference_possible": true,
+      "free_gap_possible": true
+    },
+    {
+      "limiter_mm": 0.8,
+      "residual_min_mm": -0.5999999999999972,
+      "residual_max_mm": 0.99999999999999,
+      "interference_possible": true,
+      "free_gap_possible": true
+    },
+    {
+      "limiter_mm": 1.0,
+      "residual_min_mm": -0.7999999999999972,
+      "residual_max_mm": 0.79999999999999,
+      "interference_possible": true,
+      "free_gap_possible": true
+    },
+    {
+      "limiter_mm": 1.2,
+      "residual_min_mm": -0.9999999999999971,
+      "residual_max_mm": 0.5999999999999901,
+      "interference_possible": true,
+      "free_gap_possible": true
+    },
+    {
+      "limiter_mm": 1.4,
+      "residual_min_mm": -1.199999999999997,
+      "residual_max_mm": 0.39999999999999014,
+      "interference_possible": true,
+      "free_gap_possible": true
+    }
+  ],
+  "interpretation": "No fixed limiter height can guarantee both zero interference and zero free gap across this unqualified +/- sensitivity stack.",
+  "required_architecture": "use a controlled compliant interface or post-process/measure matched hard spacer; do not release a fixed 1.0 mm hard spacer yet.",
+  "limitations": [
+    "input sweeps are engineering sensitivity seeds, not measured process capability",
+    "fastener preload not modeled",
+    "ASA creep not modeled",
+    "PC-CF insert compliance not modeled"
+  ]
+}

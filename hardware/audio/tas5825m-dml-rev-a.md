@@ -302,13 +302,14 @@ Gerber/production release remains blocked by:
 
 ## Output-inductor production candidate — 2026-09-29
 
-The first production-qualified candidate for each of the four 10 uH BTL output inductors is:
+The selected engineering candidate for each of the four 10 uH BTL output inductors is:
 
 **Coilcraft XAL7050-103MEC**
 - L = 10 uH +/-20%;
 - shielded molded construction;
 - DCR = 25 mOhm typ / 29 mOhm max;
-- Isat = 12.1 A typ at 30% inductance drop;
+- Isat = 7.1 A typ at 30% inductance drop;
+- SRF = 12.1 MHz typ (not an Isat value);
 - Irms = 6.3 A for 20 C rise / 8.5 A for 40 C rise under Coilcraft reference conditions;
 - body family envelope approximately 8.0 x 7.7 x 5.0 mm;
 - manufacturer provides datasheet, loss-analysis resources and 3D model.
@@ -327,7 +328,7 @@ Status: **OUTPUT_INDUCTOR_CANDIDATE_XAL7050_103_SELECTED / LC_AND_THERMAL_RELEAS
 
 ## PVDD bulk-capacitor production candidate — 2026-09-29
 
-The first production-qualified candidate for the TAS5825M local PVDD bulk function is:
+The selected engineering candidate for the TAS5825M local PVDD bulk function is:
 
 **Panasonic EEU-FR1V471B**
 - aluminum electrolytic, radial;
@@ -354,3 +355,13 @@ Release conditions:
 6. import/cross-check the exact mechanical envelope in master CAD.
 
 Status: **PVDD_BULK_CANDIDATE_EEU_FR1V471B_SELECTED / RIPPLE_THERMAL_LIFETIME_RELEASE_GATES_REMAIN**.
+
+## Rev.EY manufacturer correction — 2026-10-01
+
+The [Coilcraft XAL7050 datasheet, revision 2026-03-05](https://www.coilcraft.com/getmedia/13a991b3-4273-4be3-81ba-f3cf372b4691/xal7050.pdf)
+lists **7.1 A** typical Isat for XAL7050-103MEC. The previous 12.1 A
+statement confused the SRF column (12.1 MHz) with saturation current. The
+chosen part remains an engineering candidate; switching ripple, losses,
+mounted DML impedance, thermal rise and EMC are not qualified by this value.
+The BOM is reconciled to the already-selected XAL7050-103MEC and
+EEU-FR1V471B without closing their application-validation gates.

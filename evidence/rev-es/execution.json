@@ -1,0 +1,28 @@
+{
+  "revision": "Rev.ES",
+  "classification": "CALCULATED_COARSE_RF_CAD_CORRECTION_NOT_EXACT_RF_RELEASE",
+  "mask_xy_mm": [
+    64,
+    119.5,
+    318.5,
+    366.5
+  ],
+  "mask_z_mm": [
+    0,
+    40
+  ],
+  "before_RF_overlap_mm3": 1798.0,
+  "after_RF_overlap_mm3": 0,
+  "before_volume_mm3": 145999.99999999977,
+  "after_volume_mm3": 144202.00000000006,
+  "valid": true,
+  "solid_count": 1,
+  "coarse_RF_gate": "PASS",
+  "exact_RF_gate": "OPEN",
+  "structural_gate": "OPEN_REQUIRES_NEW_FRAME_FEA",
+  "limitations": [
+    "Exact antenna mask remains absent.",
+    "Mount bosses/inserts/contacts absent.",
+    "Removed material changes structural load paths."
+  ]
+}

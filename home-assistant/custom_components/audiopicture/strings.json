@@ -1,0 +1,28 @@
+{
+  "title": "AudioPicture",
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connect to AudioPicture",
+        "description": "Devices are discovered automatically on the local network. Use the hostname only when discovery is unavailable.",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        }
+      },
+      "confirm": {
+        "title": "Add AudioPicture",
+        "description": "Add the discovered device. This firmware exposes diagnostic sensors; audio and voice are not commissioned."
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to verify this AudioPicture. Check its power and network connection."
+    },
+    "abort": {
+      "already_configured": "This AudioPicture is already configured.",
+      "cannot_connect": "The discovered device did not respond with a valid AudioPicture API.",
+      "wrong_device": "The device identity has changed. Discover it again."
+    }
+  }
+}

@@ -2,6 +2,14 @@
 
 Status: **BREP_VALID / STEP_STL_EXPORT_PASS / STEP_REIMPORT_PASS / NOT_A_CFD_OR_FEA_RESULT**
 
+**Rev.EN correction:** The BREP/export claims below are reproducible, but
+do not qualify this geometry for full-product solving or labyrinth release.
+The independent regenerated-STEP audit found 22/22 open axial LOS witnesses,
+4/22 fully footprint-covered vents and 53.9617% area-weighted footprint coverage.
+The fluid export is only a local Z33..40.25 audit slab. See
+`digital-validation-rev-en-es.md`; Rev.EQ is a new candidate requiring
+downstream validation, not a production successor freeze.
+
 Rev.EL was executed locally with CadQuery 2.8.0 and correctly blocked export because the assembled shell/labyrinth solid was invalid although the fluid complement remained valid.
 
 Isolation showed:

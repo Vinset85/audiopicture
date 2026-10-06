@@ -1,6 +1,6 @@
 # AudioPicture V2.2 Rev.EM solver-ready geometry exporter
 # Rebuilds validated Rev.EC shell/labyrinth obstacle and fluid complement.
-import cadquery as cq, json, os
+import cadquery as cq, json, os, hashlib
 X=320.;Y=400.;EPS=.02
 OUT="solver_exports_rev_em"; os.makedirs(OUT,exist_ok=True)
 def box(x0,x1,y0,y1,z0,z1): return cq.Workplane("XY").box(x1-x0,y1-y0,z1-z0,centered=(False,False,False)).translate((x0,y0,z0))
@@ -41,11 +41,22 @@ solid=solid.clean()
 seed=box(-EPS,320+EPS,-EPS,400+EPS,32.98,40.27)
 fluid=seed.cut(solid).clean().intersect(box(.01,319.99,.01,399.99,33,40.25)).clean()
 fs=fluid.solids().vals()
-ok=solid.val().isValid() and fluid.val().isValid() and all(s.isValid() for s in fs) and len(fs)==1
+ss=solid.solids().vals()
+ok=solid.val().isValid() and len(ss)==1 and fluid.val().isValid() and all(s.isValid() for s in fs) and len(fs)==1
 arts={}
 if ok:
  for name,obj in [("solid",solid),("fluid",fluid)]:
   for ext in ("step","stl"):
    p=f"{OUT}/AP22_REV_EM_{name.upper()}.{ext}"
-   cq.exporters.export(obj,p);arts[f"{name}_{ext}"]={"path":p,"bytes":os.path.getsize(p)}
-print(json.dumps({"cadquery":cq.__version__,"solid_valid":solid.val().isValid(),"fluid_valid":fluid.val().isValid(),"fluid_components":len(fs),"fluid_volume_mm3":round(sum(s.Volume() for s in fs),3),"exported":ok,"artifacts":arts,"limitations":["solver-ready geometry export only","not a mesh","not CFD/FEA execution"]},indent=2))
+   cq.exporters.export(obj,p)
+   with open(p,"rb") as f:digest=hashlib.sha256(f.read()).hexdigest()
+   arts[f"{name}_{ext}"]={"path":p,"bytes":os.path.getsize(p),"sha256":digest}
+   if ext=="step":
+    imported=cq.importers.importStep(p);bb=imported.val().BoundingBox()
+    volume=sum(s.Volume() for s in imported.solids().vals())
+    original_volume=sum(s.Volume() for s in obj.solids().vals())
+    valid=imported.val().isValid() and imported.solids().size()==1 and abs(volume-original_volume)<1e-5
+    arts[f"{name}_{ext}"]["reimport"]={"valid":valid,"components":imported.solids().size(),"volume_mm3":volume,"volume_delta_mm3":volume-original_volume,"bbox_mm":[bb.xlen,bb.ylen,bb.zlen],"z_extent_mm":[bb.zmin,bb.zmax]}
+    ok=ok and valid
+print(json.dumps({"cadquery":cq.__version__,"solid_valid":solid.val().isValid(),"solid_components":len(ss),"solid_volume_mm3":round(sum(s.Volume() for s in ss),3),"fluid_valid":fluid.val().isValid(),"fluid_components":len(fs),"fluid_volume_mm3":round(sum(s.Volume() for s in fs),3),"exported":bool(arts),"export_reimport_pass":ok,"artifacts":arts,"limitations":["local shell/labyrinth audit geometry only; full solver domain not represented","Rev.EN labyrinth coverage/axial LOS FAIL","not a mesh","not CFD/FEA execution"]},indent=2))
+if not ok:raise SystemExit(1)

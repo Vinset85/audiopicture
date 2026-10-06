@@ -158,7 +158,12 @@ SHT45:
 uses separate room-air chamber; PCB Z may be locally adjusted to support thermally weak mounting.
 
 OPT3004:
-front optical path remains unobstructed.
+an unobstructed front optical path is a requirement, not a verified result.
+Rev.EZ geometric audit finds the entire ENV seed X252..294/Y35..59 behind
+the DML hard volume Z3.3..9.3. All 25 normal rays intersect 6 mm of that
+volume; a Z-only sweep does not remove it. A defined perimeter/front optical
+path or light-sensor relocation must be verified before placement release.
+This audit does not assign an optical transmittance to the unqualified DML stack.
 
 Revised sweep:
 - PCB front Z12.0 / 12.5 / 13.0
@@ -437,3 +442,24 @@ Open:
 
 Status:
 **GLOBAL_Z_MAP_FROZEN / DML_3P3_TO_9P3 / EXCITER_TO_35P3 / SHELL_INNER_37P8 / 1P5MM_GOVERNING_MARGIN / C01_TO_C430**.
+
+## 25. Verified optical relocation candidate — Rev.FA, 2026-10-06
+
+The Rev.EZ geometric audit rejects an unobstructed normal optical path from
+the existing ENV seed behind the DML. Changing its Z from 12 to 13 cannot
+resolve that overlap. The separately tested Rev.FA candidate reserves only
+the light-sensor island at X311.3..316.5/Y43..51/Z3.35..4.15, with the OPT3004
+maximum body extending forward to Z2.70. It does not change the DML hard
+projection or its Z3.3..9.3 band, nor the SHT45 region.
+
+The front carrier uses the later Rev.F +0.5 global Z transform and Rev.D
+station centers. Its new 6.6 x 8.4 mm opening passes a conservative +/-35-degree
+cone from the whole maximum sensor projection. Full mounting/interconnect,
+PCB, tolerances, light sealing and fabric calibration remain OPEN; these
+candidate coordinates are not a fabrication freeze. See
+`optical-perimeter-candidate-rev-fa.md` and `../evidence/rev-fa/execution.json`.
+
+A hypothetical ASA right wall beginning at Z0.5 intersects the removable
+carrier. The optical study therefore reserves a rearward wall starting at
+Z4.1; the enclosure wall/front joint itself is still unbuilt. Do not treat
+that clearance reservation as closure of the complete enclosure or CFD domain.

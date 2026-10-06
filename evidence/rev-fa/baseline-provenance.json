@@ -1,0 +1,10 @@
+{
+  "classification": "ARCHIVE_OF_ACTUAL_REBUILT_INPUT",
+  "generator": "mechanical/cad/generate_front_carrier_rev_b_4mm.py",
+  "generator_sha256": "ea486cf5022d1379ebb75ae184334d1d4d81a8a9fe50249510b8ac593e876e68",
+  "original_execution_location": "work/frontcarrier-rebuild",
+  "archived_inputs": {
+    "evidence/rev-fa/baseline/AP22_FRONT_CARRIER_REV_B_4MM_DMU.step": "51d2ed04446683052b6d84007e67652d8e1f7b22bb55fbf9d2d1f18cf98c9807",
+    "evidence/rev-fa/baseline/execution.json": "d4caa618f79c644fee9d026ba2d88efd57d3e58bfb2649644e189c207a8eb7c7"
+  }
+}

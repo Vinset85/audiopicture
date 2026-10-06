@@ -1,0 +1,158 @@
+[
+  {
+    "path": "evidence/rev-eq/AP22_REV_EQ_UPPER_PAIR_COUPON.step",
+    "sha256": "d218ae5677f1166e32e103051e5a6af2f0f48cba4b1710e328c8e91ba2d42418",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 3137.4982327294597,
+    "bbox_mm": [
+      47.0,
+      15.0,
+      11.0
+    ],
+    "stl": {
+      "sha256": "b5bcf00305a289601a4dcb7e9fc7c1ace5273a9870f2932e9b908045860b9bcf",
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 3137.5087556437234,
+      "triangles": 1132,
+      "bbox_mm": [
+        47.0,
+        15.0,
+        11.0
+      ]
+    }
+  },
+  {
+    "path": "evidence/rev-eq/AP22_REV_EQ_SOLID.step",
+    "sha256": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 302276.3414608702,
+    "bbox_mm": [
+      320.0,
+      400.0,
+      11.0
+    ]
+  },
+  {
+    "path": "evidence/rev-eq/AP22_REV_EQ_LOWER_PAIR_COUPON.step",
+    "sha256": "7c4f6a9d8fd6efafa6704289cb9c0dc73c57b2a1764d4f2bb1a23dc382e0ea4a",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 2826.4982327294583,
+    "bbox_mm": [
+      15.0,
+      42.0,
+      11.0
+    ],
+    "stl": {
+      "sha256": "16067838ba4516c57b0a82e813ecd34d380b0e9bf8bcbc47f1c15a3deca09476",
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 2826.5087613657693,
+      "triangles": 1132,
+      "bbox_mm": [
+        15.0,
+        42.0,
+        11.0
+      ]
+    }
+  },
+  {
+    "path": "evidence/rev-eq/AP22_REV_EQ_FLUID.step",
+    "sha256": "c5460436f56efee469341610ad2f08afbc98aa9f7858a4e4c36312908caff07c",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 3514228.14603513,
+    "bbox_mm": [
+      319.98,
+      399.98,
+      30.939999999999998
+    ]
+  },
+  {
+    "path": "evidence/rev-es/AP22_FRAME_RF_CLIPPED_REV_ES.step",
+    "sha256": "d5cd859248d48f45a148e271933c75613652c3856ee625f64d24714a4ff583c9",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 144202.00000000006,
+    "bbox_mm": [
+      316.0,
+      396.0,
+      29.9
+    ]
+  },
+  {
+    "path": "evidence/rev-en/runs/generate_asa_vent_coupon_rev_x/AP22_ASA_VENT_COUPON_REV_X.step",
+    "sha256": "89b7b943b4aea237582056e7fe62f6de17a05119561c2e0002219a802b0786f3",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 25718.000000000004,
+    "bbox_mm": [
+      125.0,
+      100.0,
+      2.2
+    ],
+    "stl": {
+      "sha256": "4225b433f07e903c2fda470c572fe1873f0794ea195a16dcafc2dbaa77b320b0",
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 25718.000557422638,
+      "triangles": 132,
+      "bbox_mm": [
+        125.0,
+        100.0,
+        2.200000047683716
+      ]
+    }
+  },
+  {
+    "path": "evidence/rev-en/runs/generate_retention_dimensional_coupons_rev_ba/AP22_RETENTION_COUPON_PC_CF_REV_BA.step",
+    "sha256": "986648430d5ba301ea3b51ce2e7944dd0f65e7fc3b3816be908d65a392fd50d0",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 12000.0,
+    "bbox_mm": [
+      50.0,
+      30.0,
+      8.0
+    ],
+    "stl": {
+      "sha256": "eccfee555e64bcd960d575c1e574073567d7359f1e5a3ac58355a0b7a131c0c6",
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 12000.0,
+      "triangles": 12,
+      "bbox_mm": [
+        50.0,
+        30.0,
+        8.0
+      ]
+    }
+  },
+  {
+    "path": "evidence/rev-en/runs/generate_retention_dimensional_coupons_rev_ba/AP22_RETENTION_COUPON_ASA_REV_BA.step",
+    "sha256": "bd539ad9e0a0a92ff84a938b1e853759dcf94dcfe9bb316802b0fa3bb2d3f7ed",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 3441.371669411546,
+    "bbox_mm": [
+      50.0,
+      30.0,
+      4.0
+    ],
+    "stl": {
+      "sha256": "d359dced798b2f26ae55a1f62716a817e5f402b2f4f607db15264552eb2a5ff4",
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 3441.3131532318253,
+      "triangles": 516,
+      "bbox_mm": [
+        50.0,
+        30.0,
+        4.0
+      ]
+    }
+  }
+]

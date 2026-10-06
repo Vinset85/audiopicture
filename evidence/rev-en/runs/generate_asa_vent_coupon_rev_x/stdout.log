@@ -1,0 +1,66 @@
+{
+  "valid": true,
+  "solid_count": 1,
+  "plate_mm": [
+    125.0,
+    100.0,
+    2.2
+  ],
+  "slot_nominal_mm": [
+    3.0,
+    45.0
+  ],
+  "critical_web_nominal_mm": 4.0,
+  "slots": [
+    [
+      "H1",
+      15.0,
+      60.0,
+      62.0,
+      65.0
+    ],
+    [
+      "H2",
+      15.0,
+      60.0,
+      69.0,
+      72.0
+    ],
+    [
+      "V1",
+      80.0,
+      83.0,
+      15.0,
+      60.0
+    ],
+    [
+      "V2",
+      87.0,
+      90.0,
+      15.0,
+      60.0
+    ]
+  ],
+  "reference_slots": [
+    [
+      "H_REF",
+      15.0,
+      60.0,
+      25.0,
+      28.0
+    ],
+    [
+      "V_REF",
+      105.0,
+      108.0,
+      15.0,
+      60.0
+    ]
+  ],
+  "bbox_mm": [
+    125.0,
+    100.0,
+    2.2
+  ],
+  "purpose": "process characterization only; no capability claim"
+}

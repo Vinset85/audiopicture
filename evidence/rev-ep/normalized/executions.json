@@ -1,0 +1,515 @@
+[
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.25_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.25_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.25_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.4_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.4_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.4_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.6_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.6_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-A",
+    "E3_over_E1": 0.2,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 380.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-A_G13_0.6_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.25_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.25_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.25_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.4_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.4_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.4_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.6_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.6_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-B",
+    "E3_over_E1": 0.35,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 665.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-B_G13_0.6_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.25_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.25_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.25,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 175.92592592592592,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.25_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.4_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.4_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.4,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 281.48148148148147,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.4_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.25,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 175.92592592592592
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.6_G23_0.25",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.4,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 281.48148148148147
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.6_G23_0.4",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  },
+  {
+    "material_label": "MAT-C",
+    "E3_over_E1": 0.5,
+    "G13_over_G12": 0.6,
+    "G23_over_G12": 0.6,
+    "assumptions": {
+      "E1_MPa": 1900.0,
+      "E2_MPa": 1900.0,
+      "E3_MPa": 950.0,
+      "nu12_nu13_nu23": 0.35,
+      "G12_MPa": 703.7037037037037,
+      "G13_MPa": 422.22222222222223,
+      "G23_MPa": 422.22222222222223
+    },
+    "folder": "evidence/rev-ep/normalized/MAT-C_G13_0.6_G23_0.6",
+    "return_code": 0,
+    "job_finished": true,
+    "classification": "NORMALIZED_LOCAL_SIMULATION_ASSUMED_MATERIAL_NOT_RELEASE"
+  }
+]

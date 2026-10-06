@@ -1,0 +1,119 @@
+Collision preflight: {"modified_carrier": {}, "OPT_head_PCB_envelope": {}, "OPT3004_max_package_envelope": {}, "C302_backside_envelope_seed": {}}
+{
+  "revision": "Rev.FA",
+  "executed_at_utc": "2026-10-06T05:29:22.822550+00:00",
+  "classification": "CALCULATED_OPTICAL_PACKAGING_CANDIDATE_NOT_RADIOMETRY_OR_PRODUCTION",
+  "status": "PASS_NOMINAL_35_DEG_GEOMETRIC_FIELD_ONLY",
+  "input_sha256": {
+    "../frontcarrier-rebuild/AP22_FRONT_CARRIER_REV_B_4MM_DMU.step": "51d2ed04446683052b6d84007e67652d8e1f7b22bb55fbf9d2d1f18cf98c9807",
+    "evidence/rev-eu11/AP22_FRAME_CANDIDATE_REV_EU.step": "2dfebbbaf224d9d0a2381e566f79f6707b3d4292a563dbe58bf0ff2140d0c6b3",
+    "evidence/rev-eq/AP22_REV_EQ_SOLID.step": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+    "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/generate_optical_perimeter_candidate_rev_fa.py": "cab40bd652be282e0f6a146be03e06508b30dffec2171bd79c27526af6dde4f5"
+  },
+  "carrier_global_Z_translation_mm": 0.5,
+  "unmodified_carrier_volume_mm3": 25649.480451753578,
+  "removed_carrier_volume_mm3": 97.56700815821387,
+  "window_xyz_mm": [
+    310.59999999999997,
+    317.2,
+    42.8,
+    51.2,
+    0.5,
+    2.3
+  ],
+  "window_corner_radius_mm": 1.2,
+  "remaining_nominal_carrier_ligaments_mm": [
+    1.3999999999999773,
+    2.0
+  ],
+  "optical_center_xy_mm": [
+    313.9,
+    47.0
+  ],
+  "PCB_front_Z_mm": 3.35,
+  "PCB_thickness_seed_mm": 0.8,
+  "future_right_wall_seed_xyz_mm": [
+    317.8,
+    320,
+    0,
+    400,
+    4.1,
+    37.8
+  ],
+  "future_wall_scope": "Reservation only. The earlier Z0.5 full-height hypothesis intersected the carrier by 1034.699339 mm3. The enclosure and its front seal still need design; this result does not close them.",
+  "whole_package_source_rectangle_mm": [
+    312.84999999999997,
+    314.95,
+    45.95,
+    48.05
+  ],
+  "conservative_source_Z_mm": 3.35,
+  "analytical_all_azimuth_clear_half_angle_deg": 38.29016319224307,
+  "35_deg_remaining_combined_lateral_allowance_mm": 0.2544085161023273,
+  "allowance_rule": "A conservative registration/depth allocation obeys norm(delta_XY) + tan(35deg)*positive_delta_Z <= remaining allowance. This is available geometric margin, NOT a measured manufacturing tolerance.",
+  "aperture_proof": "Rounded port is convex; the entire source rectangle is at least 2.25 mm from its boundary. Dilating it by a disk of radius (3.35-0.5)*tan(35deg) stays inside, so every azimuth through the complete thickness is clear. Conservative source plane is behind the complete optical package.",
+  "angular_sweep": [
+    {
+      "polar_deg": 0,
+      "rays": 9,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 2.2499999999999885
+    },
+    {
+      "polar_deg": 15,
+      "rays": 648,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 1.4863448015712943
+    },
+    {
+      "polar_deg": 30,
+      "rays": 648,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 0.6045517328095567
+    },
+    {
+      "polar_deg": 35,
+      "rays": 648,
+      "blocked_by_carrier": 0,
+      "minimum_margin_mm": 0.2544085161023186
+    },
+    {
+      "polar_deg": 40,
+      "rays": 648,
+      "blocked_by_carrier": 42,
+      "minimum_margin_mm": -0.14143394885526317
+    },
+    {
+      "polar_deg": 45,
+      "rays": 648,
+      "blocked_by_carrier": 90,
+      "minimum_margin_mm": -0.6000000000000345
+    },
+    {
+      "polar_deg": 57,
+      "rays": 648,
+      "blocked_by_carrier": 410,
+      "minimum_margin_mm": -2.138615146871598
+    },
+    {
+      "polar_deg": 60,
+      "rays": 648,
+      "blocked_by_carrier": 518,
+      "minimum_margin_mm": -2.6863448015713063
+    }
+  ],
+  "catalog_basis": {
+    "package": "TI OPT3004DNPR DNP0006A maximum 2.1 x 2.1 x 0.65 mm",
+    "field_of_view": "TI SBOS929A section 9.1.2 recommends at least +/-35 degrees; 57 degrees half-power response is a typical catalog response, not a mechanical clearance requirement.",
+    "source": "https://www.ti.com/lit/ds/symlink/opt3004.pdf"
+  },
+  "open_items": [
+    "Fixed island retention/bracket and exact connector or flex routing",
+    "Native PCB layout and electrical/mechanical verification after physical split",
+    "Registration and fabrication tolerances; window ligament strength",
+    "Dark baffle, seal, LED leakage, fabric sag and optical calibration",
+    "Actual tilted/peel removal and strain relief",
+    "SHT45 isolated passive chamber remains separate and unvalidated"
+  ],
+  "production_ready": false
+}

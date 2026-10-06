@@ -79,7 +79,7 @@ Initial total measured-power control targets:
 - GREEN: <=18 W total smoothed source power;
 - SOFT LIMIT: 18..21 W;
 - HARD ECO CONTROL: >=21 W;
-- EMERGENCY/FOLD-DOWN: approaching 23 W sustained or abnormal bus droop.
+- EMERGENCY/FOLD-DOWN: at or below 22.5 W total source power, or abnormal bus droop. Calibration must retain margin for sensing error, actuator latency and stored energy; 23 W sustained is superseded by the frozen 22.5 W application budget.
 
 These are initial firmware calibration thresholds, not production release limits.
 
@@ -209,4 +209,9 @@ Before production release:
 9. TAS5825M OTW/OTE injection or controlled thermal test;
 10. listening test for limiter pumping/artifacts.
 
-Status: **DUAL_LOOP_FAST_SLOW_GOVERNOR_DEFINED / POE_INITIAL_TOTAL_THRESHOLDS_18_21_23W / PRODUCTION_CALIBRATION_OPEN**.
+Status: **DUAL_LOOP_FAST_SLOW_GOVERNOR_DEFINED / POE_INITIAL_TOTAL_SOFT_HARD_18_21W_EMERGENCY_MAX_22P5W / PRODUCTION_CALIBRATION_OPEN**.
+
+
+## Rev.EW executed software scope
+
+A portable C control core now exists under `components/power_governor`, with host tests under `tests`. It implements safe startup, independent rail/Type-2 checks, source transitions, bounded gain requests, fault latching and monitor fallback gating. This is not complete ESP-IDF firmware: INA228/TAS5825M drivers, DSP application, dual-loop acquisition/filtering, calibrated thermal estimator, timing integration and hardware tests remain OPEN. All test fixture settings are explicitly synthetic calibration inputs.

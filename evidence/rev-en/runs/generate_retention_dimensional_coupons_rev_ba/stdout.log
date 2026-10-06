@@ -1,0 +1,40 @@
+{
+  "asa": {
+    "valid": true,
+    "size_mm": [
+      50.0,
+      30.0,
+      2.2
+    ],
+    "seat_d_mm": 10.0,
+    "seat_h_nominal_mm": 1.8,
+    "measure": [
+      "outer-to-inner wall thickness",
+      "inner-plane to seat-front protrusion",
+      "local flatness around seat"
+    ]
+  },
+  "pc_cf": {
+    "valid": true,
+    "size_mm": [
+      50.0,
+      30.0,
+      8.0
+    ],
+    "measure": [
+      "interface-plane flatness",
+      "local thickness/reference repeatability"
+    ]
+  },
+  "paired_measurement": [
+    "assemble on common datum/fixture",
+    "measure resulting local seat-to-PC-CF gap or datum difference"
+  ],
+  "replication_recommendation": "minimum 5 coupons per material/process condition for pilot screening; production capability requires a statistically justified sample plan",
+  "limitations": [
+    "coupon geometry does not reproduce full 320x400 ASA warpage",
+    "coupon does not reproduce full PC-CF frame distortion",
+    "no capability claim from CAD",
+    "final six-node measurements on full parts remain mandatory"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "classification": "DOCUMENTED_MPN_RECONCILIATION_NOT_APPLICATION_QUALIFICATION",
+  "source_sha256": "aa70c8e90434ebe0f6b3041dc3a395dc8bc9b39472d7e527746b4e6d22022a1c",
+  "output_sha256": "81f3c7ec5180e70cad929659a7e59d88258ea3dc55824de1ae1ed3021f99e48d",
+  "changes": [
+    {
+      "row": 34,
+      "column": 3,
+      "reference": "C901",
+      "before": "470uF 35V low-ESR baseline",
+      "after": "Panasonic EEU-FR1V471B"
+    },
+    {
+      "row": 34,
+      "column": 6,
+      "reference": "C901",
+      "before": "VALIDATE_MPN_MECHANICAL",
+      "after": "SELECTED_MPN_LEAD_FORM_RIPPLE_THERMAL_VALIDATE"
+    },
+    {
+      "row": 38,
+      "column": 3,
+      "reference": "L901-L904",
+      "before": "10uH shielded power inductor",
+      "after": "Coilcraft XAL7050-103MEC"
+    },
+    {
+      "row": 38,
+      "column": 6,
+      "reference": "L901-L904",
+      "before": "VALIDATE_ISAT_DCR_EXACT_MPN",
+      "after": "SELECTED_MPN_DML_LOSS_THERMAL_VALIDATE"
+    }
+  ],
+  "preserved_other_cells": true,
+  "rows": 74
+}
