@@ -74,10 +74,11 @@ geometria corrente. Nessun risultato EU.4 viene trasferito alle nuove revisioni.
 
 ## Repository e lavoro residuo
 
-Sorgenti, metriche e log compatti sono destinati a `main`; CAD, mesh, deck e
+Sorgenti, metriche e log compatti sono pubblicati in `main`; CAD, mesh, deck e
 campi completi sono conservati negli archivi del checkpoint. La pubblicazione
 è verificata separatamente mediante commit, nomi, dimensioni e SHA-256 degli
-allegati confrontati con i digest di GitHub. Vedere `docs/validation-checkpoints.md`.
+allegati confrontati con i digest di GitHub. La verifica è PASS sia per i
+10 allegati Rev.FA sia per i 3 allegati Rev.FB. Vedere `docs/validation-checkpoints.md`.
 
 Il registro contiene **38 PASS, 17 FAIL e 15 OPEN**, compresi controlli storici
 e diagnostici circoscritti. Non è una percentuale di completamento.

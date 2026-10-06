@@ -85,4 +85,7 @@ See [Rev.FB report](mechanical/digital-validation-rev-fb.md),
 [checkpoint publication policy](docs/validation-checkpoints.md).
 The [complete Rev.FA baseline](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06)
 is published: all 10 attachment sizes and SHA-256 digests match local files.
-The Rev.FB supplement is tracked separately; see its publication receipt.
+The [Rev.FB supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fb-2026-10-07)
+is also published: all 3 attachment sizes and SHA-256 digests are verified.
+Receipts: `evidence/rev-fa/github-publication.json` and
+`evidence/rev-fb/github-publication.json`.

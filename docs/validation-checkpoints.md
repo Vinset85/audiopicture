@@ -50,7 +50,12 @@ Il supplemento comprende tutti i nuovi CAD, mesh, deck, campi e log, senza
 duplicare la baseline completa. Per ricostruire lo stato estrarre prima le
 quattro parti Rev.FA e poi il supplemento Rev.FB nella stessa cartella.
 
-La ricevuta Rev.FB viene aggiunta solo dopo la pubblicazione e il confronto
-degli hash. `tools/verify_release_assets.py` ripete la verifica con la copia
+Rev.FB è [pubblicata](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fb-2026-10-07)
+sul commit `0c082813d117a03b26b0148d60d653d066d61172`: tre allegati con
+nomi, dimensioni e SHA-256 verificati. Ricevuta: `evidence/rev-fb/github-publication.json`. `tools/verify_release_assets.py` ripete la verifica con la copia
 locale degli allegati e il commit esatto atteso; termina con errore per tag,
 nomi, dimensioni, digest mancanti o non coincidenti.
+
+Gli indici dentro gli ZIP fotografano lo stato precedente al caricamento.
+Per lo stato corrente della pubblicazione fanno fede le ricevute in `main`;
+gli archivi verificati rimangono immutati.
