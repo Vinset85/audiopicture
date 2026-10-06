@@ -3,7 +3,7 @@
   "base_head": "19a436701211b5135ecb1b672eae44f177894629",
   "release_tag": "checkpoint-rev-fa-2026-10-06",
   "release_url": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06",
-  "publication_verified": false,
+  "publication_verified": true,
   "scope": "Raw generated artifacts excluded from normal Git history; recover from complete checkpoint release assets. This index is not evidence of successful upload.",
   "files": [
     {
@@ -4131,5 +4131,7 @@
       "bytes": 427018,
       "sha256": "51d2ed04446683052b6d84007e67652d8e1f7b22bb55fbf9d2d1f18cf98c9807"
     }
-  ]
+  ],
+  "publication_receipt": "evidence/rev-fa/github-publication.json",
+  "published_checkpoint_commit": "1fa4e20bd5b269b2e426532804c44618d667d176"
 }

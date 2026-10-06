@@ -1,0 +1,105 @@
+{
+  "recorded_utc": "2026-10-06T22:22:25.272149+00:00",
+  "repository": "Vinset85/audiopicture",
+  "release_id": 404626515,
+  "release_url": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06",
+  "tag": "checkpoint-rev-fa-2026-10-06",
+  "tag_commit": "1fa4e20bd5b269b2e426532804c44618d667d176",
+  "published_at": "2026-10-06T22:22:14Z",
+  "prerelease": true,
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "id": 616178901,
+      "bytes": 809,
+      "sha256": "9b4960a49d29af3738a09120857e72f6d1019252ecd13d6591d9bdb858b125da",
+      "github_digest": "sha256:9b4960a49d29af3738a09120857e72f6d1019252ecd13d6591d9bdb858b125da",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/SHA256SUMS.txt",
+      "integrity_match": true
+    },
+    {
+      "name": "audiopicture-rev-fa-part01-of04.zip",
+      "id": 616163205,
+      "bytes": 681168126,
+      "sha256": "dda743a2b7e5a1307c7e879e1c493a299d44a2da973a68eac8d81f461cc78768",
+      "github_digest": "sha256:dda743a2b7e5a1307c7e879e1c493a299d44a2da973a68eac8d81f461cc78768",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/audiopicture-rev-fa-part01-of04.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "audiopicture-rev-fa-part02-of04.zip",
+      "id": 616179970,
+      "bytes": 676180188,
+      "sha256": "e86da85c2a705be0df9812e8a741df11df808618c834f906ca01edc5a8b803c6",
+      "github_digest": "sha256:e86da85c2a705be0df9812e8a741df11df808618c834f906ca01edc5a8b803c6",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/audiopicture-rev-fa-part02-of04.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "audiopicture-rev-fa-part03-of04.zip",
+      "id": 616196457,
+      "bytes": 678377790,
+      "sha256": "7e526373b450b9a1557b3180864bc5ed5bcf2787faf52e1730e5436d0f3b5b44",
+      "github_digest": "sha256:7e526373b450b9a1557b3180864bc5ed5bcf2787faf52e1730e5436d0f3b5b44",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/audiopicture-rev-fa-part03-of04.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "audiopicture-rev-fa-part04-of04.zip",
+      "id": 616810882,
+      "bytes": 175726581,
+      "sha256": "3e0b8ad9bd9075617f48cb64484448c58a2200064544221374a5aaa54c92d13b",
+      "github_digest": "sha256:3e0b8ad9bd9075617f48cb64484448c58a2200064544221374a5aaa54c92d13b",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/audiopicture-rev-fa-part04-of04.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "firmware-diagnostico-rev-ez.zip",
+      "id": 616813836,
+      "bytes": 601327,
+      "sha256": "8b095db7156c86af2f049120cc62d9346eb175e03d570013d3a7ca1b363986fd",
+      "github_digest": "sha256:8b095db7156c86af2f049120cc62d9346eb175e03d570013d3a7ca1b363986fd",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/firmware-diagnostico-rev-ez.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "home-assistant-diagnostico-rev-ez.zip",
+      "id": 616813846,
+      "bytes": 12827,
+      "sha256": "a390822cf7a767bacd3cdf82670550a0f656d85c2788a67ac8b1ededc78c464a",
+      "github_digest": "sha256:a390822cf7a767bacd3cdf82670550a0f656d85c2788a67ac8b1ededc78c464a",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/home-assistant-diagnostico-rev-ez.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "release-assets-sha256.json",
+      "id": 616813886,
+      "bytes": 2275,
+      "sha256": "dbadba3970a2f0c7af707a80a33d8d86027fd9d2d306648f000aa5809127041f",
+      "github_digest": "sha256:dbadba3970a2f0c7af707a80a33d8d86027fd9d2d306648f000aa5809127041f",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/release-assets-sha256.json",
+      "integrity_match": true
+    },
+    {
+      "name": "schema-sensori-nativo-rev-ez.zip",
+      "id": 616813856,
+      "bytes": 25022,
+      "sha256": "1678ac72c342288adff3361e9ee3de769710e937393aae6457e3141b86ee9c45",
+      "github_digest": "sha256:1678ac72c342288adff3361e9ee3de769710e937393aae6457e3141b86ee9c45",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/schema-sensori-nativo-rev-ez.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "studio-percorso-ottico-rev-fa.zip",
+      "id": 616813864,
+      "bytes": 572676,
+      "sha256": "e14e5558b98ac55a42b73413ea6cf20fc5a660b2ee9a4f3625a2465391aa4d1d",
+      "github_digest": "sha256:e14e5558b98ac55a42b73413ea6cf20fc5a660b2ee9a4f3625a2465391aa4d1d",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fa-2026-10-06/studio-percorso-ottico-rev-fa.zip",
+      "integrity_match": true
+    }
+  ],
+  "verification": "PASS: exact asset set, size and local SHA-256 match GitHub server digests",
+  "verification_scope": "Publication integrity only; does not qualify the engineering design",
+  "verified_by_sha256": "1ca5d2a3e3137481ac8caa87dbc75d938ec6e6e0ba6b35220d0d3693a92314de"
+}

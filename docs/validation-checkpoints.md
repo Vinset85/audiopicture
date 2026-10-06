@@ -15,8 +15,11 @@ mantiene `evidence/raw-artifact-index.json` con percorsi, dimensioni e SHA-256.
 La copia locale completa conserva anche i file esclusi dalla normale storia
 Git; non vengono cancellati durante la pubblicazione.
 
-Checkpoint corrente: **Rev.FA, 2026-10-06**, tag previsto
-`checkpoint-rev-fa-2026-10-06`. È una prerelease di validazione digitale,
+Baseline pubblicata: **Rev.FA, esecuzioni al 2026-10-06**, tag
+[`checkpoint-rev-fa-2026-10-06`](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06).
+Pubblicata il 7 ottobre: dieci allegati verificati per dimensioni e SHA-256
+rispetto ai digest GitHub; ricevuta `evidence/rev-fa/github-publication.json`.
+È una prerelease di validazione digitale,
 non un rilascio per produzione. Una pubblicazione è completata soltanto dopo
 aver verificato il commit remoto e la presenza/integrità dei relativi allegati.
 
@@ -37,3 +40,17 @@ ammessi per ogni [allegato di release GitHub](https://docs.github.com/en/reposit
 Sono sempre distinte le categorie calcolato, simulato, dato di catalogo,
 ipotesi e da misurare. Le prove fisiche mancanti non vengono dichiarate concluse,
 e la loro assenza non implica che tutto il lavoro digitale sia terminato.
+
+## Supplemento Rev.FB — 7 ottobre 2026
+
+Il report `mechanical/digital-validation-rev-fb.md` e il registro
+`mechanical/validation/rev-fb/gate-register.json` aggiungono le sei prove
+LC1/LC3/LC4 di EU.13/EU.14. Nessuna approvazione produttiva è dichiarata.
+Il supplemento comprende tutti i nuovi CAD, mesh, deck, campi e log, senza
+duplicare la baseline completa. Per ricostruire lo stato estrarre prima le
+quattro parti Rev.FA e poi il supplemento Rev.FB nella stessa cartella.
+
+La ricevuta Rev.FB viene aggiunta solo dopo la pubblicazione e il confronto
+degli hash. `tools/verify_release_assets.py` ripete la verifica con la copia
+locale degli allegati e il commit esatto atteso; termina con errore per tag,
+nomi, dimensioni, digest mancanti o non coincidenti.

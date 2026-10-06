@@ -53,7 +53,7 @@ CFD and physical qualification are still incomplete.
 Evidence and remaining dependencies at that revision: `mechanical/digital-validation-rev-ez.md`
 and `mechanical/validation/rev-ez/gate-register.json`.
 
-## Current checkpoint Rev.FA — 2026-10-06
+## Checkpoint Rev.FA — 2026-10-06
 
 A perimeter optical-island candidate clears the DML and a conservative +/-35
 degree field of view. Carrier/coupon STEP reimport and STL integrity pass;
@@ -69,3 +69,20 @@ Latest evidence and work still required:
 `mechanical/digital-validation-rev-fa.md`,
 `mechanical/optical-perimeter-candidate-rev-fa.md` and
 `mechanical/validation/rev-fa/gate-register.json`.
+
+## Current checkpoint Rev.FB — 2026-10-07
+
+Six actual LC1/LC3/LC4 runs compare EU.13 cruciform ribs and EU.14 intermediate
+rail-to-perimeter ties. Both reduce LC3 displacement and show no sampled-node
+DML interference; this does not qualify continuous deformed clearance. EU.13
+fails mass (268.514 g), and both fail the 1 mm LC4 corner limit (1.412146 and
+1.434103 mm). EU.14 mass is 249.525 g before unfinished interfaces. Neither
+candidate is released for assembly. Registry: 38 PASS / 17 FAIL / 15 OPEN,
+including historical and explicitly scoped diagnostic results.
+
+See [Rev.FB report](mechanical/digital-validation-rev-fb.md),
+[gate register](mechanical/validation/rev-fb/gate-register.json) and
+[checkpoint publication policy](docs/validation-checkpoints.md).
+The [complete Rev.FA baseline](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06)
+is published: all 10 attachment sizes and SHA-256 digests match local files.
+The Rev.FB supplement is tracked separately; see its publication receipt.

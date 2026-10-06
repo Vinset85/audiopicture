@@ -1,0 +1,318 @@
+{
+  "revision": "Rev.EU.13",
+  "classification": "CALCULATED_SCREENING_CANDIDATE_NOT_FABRICATION_RELEASE",
+  "valid": true,
+  "solid_count": 1,
+  "volume_mm3": 220093.49477443172,
+  "reimport_valid": true,
+  "reimport_solids": 1,
+  "collision_volume_mm3": {
+    "EX_L1": 0,
+    "EX_L2": 0,
+    "EX_R1": 0,
+    "EX_R2": 0,
+    "MAIN_C": 0,
+    "MAIN_P": 0,
+    "VOICE": 0,
+    "RADAR": 0,
+    "ENV": 0,
+    "SERVICE": 0,
+    "ESP32_RF": 0,
+    "DML": 0,
+    "front_carrier_FA": 0,
+    "metal_target_1": 0,
+    "metal_target_2": 0,
+    "metal_target_3": 0,
+    "metal_target_4": 0,
+    "metal_target_5": 0,
+    "metal_target_6": 0,
+    "metal_target_7": 0,
+    "metal_target_8": 0,
+    "shell_EQ": 0
+  },
+  "shell_clearance_mm": 1.0,
+  "front_carrier_clearance_mm": 0.5,
+  "input_sha256": {
+    "evidence/rev-es/AP22_FRAME_RF_CLIPPED_REV_ES.step": "d5cd859248d48f45a148e271933c75613652c3856ee625f64d24714a4ff583c9",
+    "evidence/rev-eq/AP22_REV_EQ_SOLID.step": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+    "evidence/rev-fa/AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+    "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/generate_frame_candidate_rev_eu13.py": "282f4906eb187a6a0deec2bfad3d2bb89339b47eb33c369d19a3de39540b1aee"
+  },
+  "mount_centers_xy_mm": {
+    "UL1": [
+      37.5,
+      375
+    ],
+    "UL2": [
+      67.5,
+      375
+    ],
+    "UR1": [
+      252.5,
+      375
+    ],
+    "UR2": [
+      282.5,
+      375
+    ]
+  },
+  "bore_radius_seed_mm": 3,
+  "bore_z_mm": [
+    28,
+    35
+  ],
+  "pad_centers_xy_mm": [
+    [
+      45,
+      28
+    ],
+    [
+      275,
+      28
+    ]
+  ],
+  "anti_lift_load_interface_xy_mm": [
+    160,
+    15
+  ],
+  "rail_paths_xy_mm": {
+    "rail_L": [
+      [
+        34,
+        378
+      ],
+      [
+        34,
+        350
+      ],
+      [
+        33,
+        300
+      ],
+      [
+        32,
+        235
+      ],
+      [
+        32,
+        125
+      ],
+      [
+        33,
+        112
+      ],
+      [
+        33,
+        45
+      ],
+      [
+        45,
+        28
+      ]
+    ],
+    "rail_R": [
+      [
+        286,
+        378
+      ],
+      [
+        300,
+        350
+      ],
+      [
+        300,
+        300
+      ],
+      [
+        303,
+        225
+      ],
+      [
+        305,
+        155
+      ],
+      [
+        306,
+        75
+      ],
+      [
+        300,
+        62
+      ],
+      [
+        296,
+        30
+      ],
+      [
+        275,
+        28
+      ]
+    ],
+    "mid_B1_B2": [
+      [
+        32,
+        235
+      ],
+      [
+        155,
+        230
+      ],
+      [
+        303,
+        225
+      ]
+    ],
+    "mid_B3": [
+      [
+        155,
+        230
+      ],
+      [
+        205,
+        165
+      ],
+      [
+        305,
+        155
+      ]
+    ],
+    "mid_B4": [
+      [
+        32,
+        125
+      ],
+      [
+        70,
+        161
+      ],
+      [
+        155,
+        161
+      ],
+      [
+        155,
+        230
+      ]
+    ],
+    "lower_L": [
+      [
+        33,
+        45
+      ],
+      [
+        95,
+        45
+      ],
+      [
+        95,
+        14
+      ],
+      [
+        160,
+        14
+      ]
+    ],
+    "lower_R": [
+      [
+        300,
+        62
+      ],
+      [
+        296,
+        60
+      ],
+      [
+        225,
+        55
+      ],
+      [
+        225,
+        14
+      ],
+      [
+        160,
+        14
+      ]
+    ],
+    "pad_L_ring": [
+      [
+        45,
+        28
+      ],
+      [
+        45,
+        7
+      ]
+    ],
+    "pad_R_ring": [
+      [
+        275,
+        28
+      ],
+      [
+        275,
+        7
+      ]
+    ]
+  },
+  "primary_rib_mm": 6.4,
+  "primary_rib_section": {
+    "shape": "cruciform",
+    "vertical_web_width_mm": 2.4,
+    "vertical_web_z_mm": [
+      20,
+      28
+    ],
+    "horizontal_flange_width_mm": 6.4,
+    "horizontal_flange_z_mm": [
+      22.8,
+      25.2
+    ],
+    "area_mm2": 28.8,
+    "bending_I_out_of_plane_mm4": 107.008,
+    "bending_I_in_plane_mm4": 58.88
+  },
+  "central_bottom_tube_xy_mm": [
+    32,
+    288,
+    3.2,
+    19
+  ],
+  "central_tube_wall_mm": {
+    "side": 2.4,
+    "front_rear": 4.0,
+    "end": 3.2
+  },
+  "central_tube_z_mm": [
+    3.1,
+    36.8
+  ],
+  "dml_notch_yz_mm": [
+    9.6,
+    19,
+    6,
+    10.3
+  ],
+  "anti_lift_surface_z_mm": 35,
+  "primary_rib_z_mm": [
+    20,
+    28
+  ],
+  "front_flange_width_mm": 6.4,
+  "perimeter_web_topology": "two opposed 2.4 mm planes, one 3.2 mm diagonal per bay/plane; opposing slopes",
+  "perimeter_web_mm": 2.4,
+  "closed_bottom_tube_y_mm": [
+    3.2,
+    12
+  ],
+  "sha256": "a0530e25890ef8a92104ace2a5849921984f53312249b014c3eb126ff71e0f03",
+  "limitations": [
+    "Mount shift Y366->375 required by conservative RF mask; requires mating cleat redesign.",
+    "6 mm insert surrogate bore, no exact insert installation-hole claim.",
+    "Fillets, exact radar mask, cables, board carrier interfaces and fasteners remain incomplete.",
+    "Lower support/anti-lift surrogate load interfaces; actual wall hardware absent.",
+    "Volume density/strength unqualified; no product release."
+  ],
+  "mass_g_at_catalog_density_1p22": 268.5140636248067,
+  "250g_mass_target_pass": false
+}
