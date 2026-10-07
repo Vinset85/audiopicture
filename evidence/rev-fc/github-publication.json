@@ -1,0 +1,42 @@
+{
+  "recorded_utc": "2026-10-07T12:49:02.673136+00:00",
+  "repository": "Vinset85/audiopicture",
+  "release_id": 405756013,
+  "release_url": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fc-2026-10-07",
+  "tag": "checkpoint-rev-fc-2026-10-07",
+  "tag_commit": "90b2e86bde759e80ada60c053e32287648f6bb53",
+  "published_at": "2026-10-07T12:48:53Z",
+  "prerelease": true,
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "id": 618676986,
+      "bytes": 101,
+      "sha256": "10240f56c7d8c9561eac2e2e6d2db30c666784fd36514de1651764395a1b7318",
+      "github_digest": "sha256:10240f56c7d8c9561eac2e2e6d2db30c666784fd36514de1651764395a1b7318",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fc-2026-10-07/SHA256SUMS.txt",
+      "integrity_match": true
+    },
+    {
+      "name": "audiopicture-rev-fc-supplement.zip",
+      "id": 618674159,
+      "bytes": 205218297,
+      "sha256": "be1e435e060c73d948a52f7388ad22a0b4124d19709c40f6be30edc00bf1e8f9",
+      "github_digest": "sha256:be1e435e060c73d948a52f7388ad22a0b4124d19709c40f6be30edc00bf1e8f9",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fc-2026-10-07/audiopicture-rev-fc-supplement.zip",
+      "integrity_match": true
+    },
+    {
+      "name": "release-assets-sha256.json",
+      "id": 618677010,
+      "bytes": 511,
+      "sha256": "e8d009e0461c9d6f24b54c4138b22e05522983be9cbe0f1736f9de3f32eb07f8",
+      "github_digest": "sha256:e8d009e0461c9d6f24b54c4138b22e05522983be9cbe0f1736f9de3f32eb07f8",
+      "url": "https://github.com/Vinset85/audiopicture/releases/download/checkpoint-rev-fc-2026-10-07/release-assets-sha256.json",
+      "integrity_match": true
+    }
+  ],
+  "verification": "PASS: exact asset set, size and local SHA-256 match GitHub server digests",
+  "verification_scope": "Publication integrity only; does not qualify the engineering design",
+  "verified_by_sha256": "1ca5d2a3e3137481ac8caa87dbc75d938ec6e6e0ba6b35220d0d3693a92314de"
+}

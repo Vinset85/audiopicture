@@ -110,3 +110,7 @@ See [Rev.FC results](mechanical/digital-validation-rev-fc.md),
 [mass-budget review](mechanical/system-mass-review-rev-fc.md),
 [gate register](mechanical/validation/rev-fc/gate-register.json) and
 [publication status](docs/validation-checkpoints.md).
+
+The [Rev.FC supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fc-2026-10-07)
+is published: all three asset sizes and SHA-256 digests are verified against
+GitHub. Receipt: `evidence/rev-fc/github-publication.json`.

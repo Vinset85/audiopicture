@@ -71,6 +71,8 @@ Registro corrente: 47 PASS / 23 FAIL / 17 OPEN, con ambiti espliciti.
 Per ricostruire tutti i dati estrarre le quattro parti Rev.FA, il supplemento
 Rev.FB e infine `audiopicture-rev-fc-supplement.zip` nella stessa cartella.
 L'indice `evidence/rev-fc/raw-artifact-index.json` contiene i nuovi file grezzi.
-La pubblicazione degli allegati Rev.FC è in corso; non è ancora dichiarata
-verificata. Dopo il controllo del tag, dei nomi, delle dimensioni e dei digest
-GitHub, la ricevuta sarà `evidence/rev-fc/github-publication.json`.
+Rev.FC è [pubblicata](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fc-2026-10-07)
+sul commit `90b2e86bde759e80ada60c053e32287648f6bb53`. I tre allegati sono
+verificati per insieme esatto dei nomi, dimensioni e SHA-256 rispetto ai digest
+GitHub. Ricevuta: `evidence/rev-fc/github-publication.json`. Il supplemento
+contiene 116 file, inclusi 38 artefatti grezzi verificati individualmente.
