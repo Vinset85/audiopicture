@@ -1,0 +1,74 @@
+[
+  {
+    "case": "LC1",
+    "loaded_corner": null,
+    "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+    "constitutive_assumptions": {
+      "E1": 1900.0,
+      "E2": 1900.0,
+      "E3": 665.0,
+      "nu12": 0.35,
+      "nu13": 0.35,
+      "nu23": 0.35,
+      "G12": 703.7037037037037,
+      "G13": 281.48148148148147,
+      "G23": 281.48148148148147
+    },
+    "load_sum_N": [
+      0.0,
+      -69.99999999999989,
+      0.0
+    ],
+    "load_cg_seed_mm": [
+      159.99999999999994,
+      199.99999999999875,
+      23.02118359207401
+    ],
+    "nonlinear_geometry": false,
+    "lower_unilateral_gap_contacts": 0,
+    "total_pad_penalty_N_per_mm": null,
+    "gap_force_floor_N": null,
+    "contact_iteration_controls": false,
+    "anti_lift_normal_support_assumption": false,
+    "bonded_insert_cleat_surrogate_nodes": 2028,
+    "corner_warp_mm": null,
+    "input_sha256": "8a2527413e4d3bd6e6339b3e17b24aa4e4cbcece4727d8abb99fe4b45de87d94",
+    "mesh_report": {
+      "source_sha256": "be2a44002d0d5f762fe4a0e21a7fb23b3a01954a0029bf9bd916a9f0cf7d636c",
+      "size_mm": 4.0,
+      "nodes": 164193,
+      "elements": 80066,
+      "type": "C3D10",
+      "min_SICN": 0.00045410470047347706,
+      "corner_tet_volume_mm3": 204350.1878664598,
+      "volume_weighted_seed_cg_mm": [
+        160.31638552535128,
+        147.84382552029646,
+        22.526575480098895
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 508,
+        "PAD_L": 119,
+        "PAD_R": 119,
+        "ANTILIFT": 107,
+        "CORNER_LL": 35,
+        "CORNER_LR": 33,
+        "CORNER_UL": 31,
+        "CORNER_UR": 31
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+      "algorithm3d": 1,
+      "gmsh_version": "4.15.2",
+      "mesher_sha256": "0f4fae386530bc2730cc065bfdaf619723a4a9a3a159e5cb4cd521b43216d210"
+    },
+    "qualified_allowables": null,
+    "release_margin": null,
+    "exit_code": 0,
+    "job_finished": true,
+    "errors": [],
+    "solver_execution_pass": true
+  }
+]

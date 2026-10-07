@@ -59,3 +59,18 @@ nomi, dimensioni, digest mancanti o non coincidenti.
 Gli indici dentro gli ZIP fotografano lo stato precedente al caricamento.
 Per lo stato corrente della pubblicazione fanno fede le ricevute in `main`;
 gli archivi verificati rimangono immutati.
+
+## Supplemento Rev.FC — 7 ottobre 2026
+
+Il report `mechanical/digital-validation-rev-fc.md` consolida i candidati
+EU.15–EU.18, cinque nuove esecuzioni e il confronto LC4 su due mesh EU.18.
+Il telaio resta non accettato. `mechanical/system-mass-review-rev-fc.md`
+spiega l'origine del target 250 g e corregge l'uso del vecchio budget 1,55 kg.
+Registro corrente: 47 PASS / 23 FAIL / 17 OPEN, con ambiti espliciti.
+
+Per ricostruire tutti i dati estrarre le quattro parti Rev.FA, il supplemento
+Rev.FB e infine `audiopicture-rev-fc-supplement.zip` nella stessa cartella.
+L'indice `evidence/rev-fc/raw-artifact-index.json` contiene i nuovi file grezzi.
+La pubblicazione degli allegati Rev.FC è in corso; non è ancora dichiarata
+verificata. Dopo il controllo del tag, dei nomi, delle dimensioni e dei digest
+GitHub, la ricevuta sarà `evidence/rev-fc/github-publication.json`.

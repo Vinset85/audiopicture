@@ -1,0 +1,29 @@
+{
+  "classification": "EXECUTED_MESH_FAILURE_NOT_FEA",
+  "revision": "Rev.EU.17",
+  "status": "FAIL",
+  "STEP_sha256": "99f021754607e7df35d493a116f975f13435e9654ba11e0c484226473617e6d8",
+  "attempts": [
+    {
+      "algorithm3d": 1,
+      "global_size_mm": 4,
+      "exit_code": 1,
+      "log": "evidence/rev-ev17/M0-failed-default/mesh-generation.log",
+      "log_sha256": "e8a442529b178985e767ebad87c749ae7d62ae42397fd201021855669130b711"
+    },
+    {
+      "algorithm3d": 10,
+      "global_size_mm": 4,
+      "exit_code": 1,
+      "log": "evidence/rev-ev17/M0-failed-hxt/mesh-generation.log",
+      "log_sha256": "a562b8ced64df68f4793950cd8888b9147430f413b137af2e112e9ad4e9135bf"
+    }
+  ],
+  "HXT_reported_intersection_xyz_mm": [
+    313,
+    5.6,
+    22.266
+  ],
+  "geometric_diagnosis": "The lower corner rib end radius 1.4 mm at Y7 is tangent to the tube inner boundary Y5.6. EU.18 widens that rib to 3.2 mm; nominal physical geometry changes, not just a numerical tolerance.",
+  "FEA_executed": false
+}

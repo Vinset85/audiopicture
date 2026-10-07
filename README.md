@@ -70,7 +70,7 @@ Latest evidence and work still required:
 `mechanical/optical-perimeter-candidate-rev-fa.md` and
 `mechanical/validation/rev-fa/gate-register.json`.
 
-## Current checkpoint Rev.FB — 2026-10-07
+## Checkpoint Rev.FB — 2026-10-07
 
 Six actual LC1/LC3/LC4 runs compare EU.13 cruciform ribs and EU.14 intermediate
 rail-to-perimeter ties. Both reduce LC3 displacement and show no sampled-node
@@ -89,3 +89,24 @@ The [Rev.FB supplement](https://github.com/Vinset85/audiopicture/releases/tag/ch
 is also published: all 3 attachment sizes and SHA-256 digests are verified.
 Receipts: `evidence/rev-fa/github-publication.json` and
 `evidence/rev-fb/github-publication.json`.
+
+## Current checkpoint Rev.FC — 2026-10-07
+
+Four new CAD candidates and five actual CalculiX runs are consolidated.
+EU.18 weighs 249.328 g at catalog density but fails LC4 on both meshes:
+1.389561 mm / 1.392602 mm versus 1 mm; the displacement difference is 0.218%.
+LC1 is 7.179289 mm and LC3 is 8.952446 mm maximum normalized displacement.
+No sampled LC3 node enters the DML; continuous deformed clearance is open.
+EU.15 fails mass and torsion, EU.16 is CAD-only, EU.17 meshing failed twice.
+No candidate is released for assembly. Registry: 47 PASS / 23 FAIL / 17 OPEN,
+including historical and scoped diagnostics, not a completion percentage.
+
+The 250 g frame target originated as a system mass allocation, excluding
+inserts and metal cleats; it is not a material limit. The historical 1.55 kg
+system budget is stale. Mass must be reviewed together with stiffness and
+complete-assembly CAD; no new target or assembled mass is released.
+
+See [Rev.FC results](mechanical/digital-validation-rev-fc.md),
+[mass-budget review](mechanical/system-mass-review-rev-fc.md),
+[gate register](mechanical/validation/rev-fc/gate-register.json) and
+[publication status](docs/validation-checkpoints.md).

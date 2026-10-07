@@ -2,6 +2,14 @@
 
 Status: **SYSTEM_MASS_FIRST_ORDER_1P55KG_NOMINAL / CAD_VOLUME_AND_CG_RELEASE_GATE**
 
+**Historical first-order allocation, not the current assembled mass.**
+Rev.FC identifies stale shell mass and an exciter-model mismatch in this
+budget. See `system-mass-review-rev-fc.md` and
+`../evidence/rev-fc/mass-budget-review.json`. The original values below are
+retained as history; do not use 1.55 kg or its apparent headroom as a current
+production claim. The 250 g frame allocation is an optimization target;
+the product mass and structural acceptance gates remain independent.
+
 ## 1. Purpose
 Create a first-order product mass budget before detailed shared CAD volume extraction.
 

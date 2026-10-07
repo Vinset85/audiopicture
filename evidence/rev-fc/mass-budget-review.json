@@ -1,0 +1,110 @@
+{
+  "revision": "Rev.FC",
+  "recorded_utc": "2026-10-07T12:39:29.062762+00:00",
+  "classification": "CALCULATED_RECONCILIATION_WITH_EXPLICIT_CATALOG_DATA_AND_ASSUMPTIONS",
+  "historical_allocations_g": {
+    "DML_exciters_bonding": 718.0,
+    "front_system": 125.0,
+    "electronics_harness": 250.0,
+    "frame": 220.0,
+    "shell": 150.0,
+    "product_hardware": 85.0
+  },
+  "historical_total_g": 1548.0,
+  "frame_target_g": 250,
+  "frame_target_excludes_inserts_and_metal_cleats": true,
+  "target_origin": "Rear structural frame Rev.B section 24; topology review required before accepting an increase.",
+  "target_is_physical_material_limit": false,
+  "original_frame_working_range_g": [
+    170,
+    280
+  ],
+  "product_mass_target_g": 1700,
+  "vertical_design_load_baseline_N": 70,
+  "selected_exciter_catalog": {
+    "classification": "CATALOG_NOT_MEASURED",
+    "part": "DAEX25FHE-4",
+    "unit_net_mass_g": 110.9,
+    "quantity": 4,
+    "total_net_mass_g": 443.6,
+    "historical_budget_g": 452.0,
+    "source": "https://www.audiophonics.fr/images2/8713/295-224-dayton-audio-daex25fhe-4-spec-sheet.pdf",
+    "source_author": "Dayton Audio",
+    "sheet_revision_as_printed": "2/5/2014",
+    "source_host_note": "Manufacturer-authored datasheet retained by distributor; net weight, not shipping weight or moving mass.",
+    "physical_units_not_weighed": true
+  },
+  "ASA_density_classification": "ASSUMED_SENSITIVITY_ALREADY_USED_IN_REPOSITORY_NOT_QUALIFIED_PRINT_DENSITY",
+  "shell_EQ_volume_mm3": 302276.34146088536,
+  "scenarios": [
+    {
+      "frame_g": 249.32833995798677,
+      "frame_classification": "CALCULATED_CAD_AT_CATALOG_DENSITY",
+      "ASA_density_sensitivity_g_cm3": 1.05,
+      "shell_candidate_g": 317.39015853392965,
+      "conditional_total_with_other_old_reserves_g": 1736.3184984919167,
+      "difference_from_1700g_target_g": 36.31849849191667
+    },
+    {
+      "frame_g": 249.32833995798677,
+      "frame_classification": "CALCULATED_CAD_AT_CATALOG_DENSITY",
+      "ASA_density_sensitivity_g_cm3": 1.1,
+      "shell_candidate_g": 332.50397560697394,
+      "conditional_total_with_other_old_reserves_g": 1751.4323155649608,
+      "difference_from_1700g_target_g": 51.432315564960845
+    },
+    {
+      "frame_g": 275.0,
+      "frame_classification": "HYPOTHETICAL_TRADEOFF_NOT_A_CAD_RESULT",
+      "ASA_density_sensitivity_g_cm3": 1.05,
+      "shell_candidate_g": 317.39015853392965,
+      "conditional_total_with_other_old_reserves_g": 1761.9901585339298,
+      "difference_from_1700g_target_g": 61.99015853392984
+    },
+    {
+      "frame_g": 275.0,
+      "frame_classification": "HYPOTHETICAL_TRADEOFF_NOT_A_CAD_RESULT",
+      "ASA_density_sensitivity_g_cm3": 1.1,
+      "shell_candidate_g": 332.50397560697394,
+      "conditional_total_with_other_old_reserves_g": 1777.103975606974,
+      "difference_from_1700g_target_g": 77.10397560697402
+    },
+    {
+      "frame_g": 300.0,
+      "frame_classification": "HYPOTHETICAL_TRADEOFF_NOT_A_CAD_RESULT",
+      "ASA_density_sensitivity_g_cm3": 1.05,
+      "shell_candidate_g": 317.39015853392965,
+      "conditional_total_with_other_old_reserves_g": 1786.9901585339298,
+      "difference_from_1700g_target_g": 86.99015853392984
+    },
+    {
+      "frame_g": 300.0,
+      "frame_classification": "HYPOTHETICAL_TRADEOFF_NOT_A_CAD_RESULT",
+      "ASA_density_sensitivity_g_cm3": 1.1,
+      "shell_candidate_g": 332.50397560697394,
+      "conditional_total_with_other_old_reserves_g": 1802.103975606974,
+      "difference_from_1700g_target_g": 102.10397560697402
+    }
+  ],
+  "actual_assembled_mass_g": null,
+  "numeric_assembled_CG_mm": null,
+  "budget_headroom_released_g": null,
+  "frame_target_revised": false,
+  "limits": [
+    "EQ shell/labyrinth is incomplete: sidewalls, service, seals and connections are not fully modeled.",
+    "Old front reserve contains polymer/magnets/adhesive. The FA carrier alone cannot replace that complete reserve.",
+    "Electronics, cables, fasteners and printed densities are unqualified; exact DMU mass distribution is absent.",
+    "275/300 g scenarios illustrate budget effects only; they are not simulated or accepted frame designs.",
+    "70 N remains the minimum seed, not proof of actual product/anchor capacity. Recompute loads/CG when assembly masses are known."
+  ],
+  "source_sha256": {
+    "mechanical/system-mass-cg-budget-rev-a.md": "357e68fb39cfdef9d87c3fb889cf9fad9a12753478d903ba165ae8f6723f8bee",
+    "mechanical/rear-structural-frame-rev-b.md": "0a06c4120c83a7ce4fa774d220454bbe9e4a54dde25703df1ba26cc988413977",
+    "mechanical/rear-frame-parametric-fea-rev-b.md": "0045f6ebc3e56504d54a4cf34e0fa70fa79bea1eaee160f85335165d2baa96d1",
+    "mechanical/front-frame-carrier-cad-kernel-generation-rev-a.md": "ee25266c8fc167c26444e307a59a6bdfbf313cdf1cc38d7efbe2ab6634336264",
+    "evidence/rev-eu18/execution.json": "54d05da58879988432a0e80cda9aa2abcff78b9f7e34f73fa4e4e235d92ff84c",
+    "evidence/rev-eq/execution.json": "d8a86a26021c0525fe73f1a385a1061ca90b5efe46fa49a65f5d627d24273f94",
+    "evidence/rev-fa/independent-artifact-check.json": "b5ff0464fe9667534b7afea570d7eeb309a0698f85f976fcb6bb5a288236253c",
+    "mechanical/cad/review_mass_budget_rev_fc.py": "75bbe15fb2891f94ef2191a35102dd6426cff239d65a52ed8b6a27160616da13"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "classification": "CALCULATED_MESH_INTEGRITY_NOT_CONVERGENCE",
+  "elements": 80066,
+  "min_SICN": 0.00045410470046754534,
+  "min_adaptive_Jacobian_determinant_mm3": 0.0005488333509750898,
+  "nonpositive_Jacobian_elements": 0,
+  "SICN_below_0p01_count": 101,
+  "SICN_percentiles": {
+    "0": 0.00045410470046754534,
+    "1": 0.25802873396375986,
+    "5": 0.4783503497386452,
+    "50": 0.7821507336342788,
+    "100": 0.9988883326835616
+  },
+  "worst_elements": [
+    {
+      "element": 2882,
+      "SICN": 0.00045410470046754534,
+      "min_Jacobian_mm3": 0.006075620661798089,
+      "corner_centroid_xyz_mm": [
+        274.01321359697397,
+        26.698833862357898,
+        21.488682351588054
+      ]
+    },
+    {
+      "element": 2674,
+      "SICN": 0.000571163559853005,
+      "min_Jacobian_mm3": 0.0022033700177556516,
+      "corner_centroid_xyz_mm": [
+        273.7419682510653,
+        26.224124980257905,
+        20.73226018326368
+      ]
+    },
+    {
+      "element": 4013,
+      "SICN": 0.0005719977526136652,
+      "min_Jacobian_mm3": 0.003722434868598471,
+      "corner_centroid_xyz_mm": [
+        274.54517126100376,
+        27.23586033514259,
+        20.792578421074584
+      ]
+    },
+    {
+      "element": 37705,
+      "SICN": 0.0007095017155274051,
+      "min_Jacobian_mm3": 0.0023081590382669384,
+      "corner_centroid_xyz_mm": [
+        45.49658309618786,
+        26.90671413582074,
+        20.743812981224288
+      ]
+    },
+    {
+      "element": 36410,
+      "SICN": 0.0008230127375063861,
+      "min_Jacobian_mm3": 0.0018634353968145338,
+      "corner_centroid_xyz_mm": [
+        45.45640079029437,
+        27.297939170179003,
+        20.28942562697449
+      ]
+    },
+    {
+      "element": 4932,
+      "SICN": 0.0008464255187441276,
+      "min_Jacobian_mm3": 0.0020439926996905756,
+      "corner_centroid_xyz_mm": [
+        274.64541682336153,
+        27.281920513654743,
+        19.18740625275021
+      ]
+    },
+    {
+      "element": 56619,
+      "SICN": 0.0008619781595110995,
+      "min_Jacobian_mm3": 0.0007922479100792579,
+      "corner_centroid_xyz_mm": [
+        45.65183255157757,
+        26.3124875182031,
+        20.38832019952308
+      ]
+    },
+    {
+      "element": 9566,
+      "SICN": 0.0008947824947929654,
+      "min_Jacobian_mm3": 0.0008352303626468869,
+      "corner_centroid_xyz_mm": [
+        274.41574549222014,
+        26.985905242316996,
+        12.172553651761403
+      ]
+    },
+    {
+      "element": 805,
+      "SICN": 0.0009647600292982689,
+      "min_Jacobian_mm3": 0.0015939464228009606,
+      "corner_centroid_xyz_mm": [
+        45.5252744015734,
+        27.117424153405317,
+        11.18915452258666
+      ]
+    },
+    {
+      "element": 27175,
+      "SICN": 0.0009753681176368418,
+      "min_Jacobian_mm3": 0.0012394609859926928,
+      "corner_centroid_xyz_mm": [
+        274.4194019433315,
+        26.94980677164822,
+        19.55115625275021
+      ]
+    }
+  ],
+  "mesh_convergence_verified": false,
+  "source_sha256": {
+    "evidence/rev-ev18/M0/mesh.msh": "f982402aa9cf695b74ab783a2b94ab149acd6e8a2fa68709289074f4b273915d",
+    "evidence/rev-ev18/M0/mesh-data.npz": "a070f3af648b465213bbf3b9b40986c6b51b6e72fea072b7ad4e32e74842faf6",
+    "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/audit_frame_mesh_rev_fc.py": "4c6e73b72061fab9cf260cf91c27e7d408e4b4555e54129da64d604fe214076b"
+  }
+}

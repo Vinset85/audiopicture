@@ -1,0 +1,199 @@
+{
+  "revision": "Rev.FC",
+  "publication_verified": false,
+  "release_tag": "checkpoint-rev-fc-2026-10-07",
+  "baseline_release": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06",
+  "scope": "New raw EU.15-EU.18 artifacts. Extract over all four Rev.FA parts and the Rev.FB supplement; production qualification remains open. Publication is checked separately.",
+  "files": [
+    {
+      "path": "evidence/rev-eu15/AP22_FRAME_CANDIDATE_REV_EU.step",
+      "bytes": 3673791,
+      "sha256": "e71ab9b2f444561a15803d0ee37147719d58965eaa4d18b6403a5194adc6bb10"
+    },
+    {
+      "path": "evidence/rev-eu16/AP22_FRAME_CANDIDATE_REV_EU.step",
+      "bytes": 3772843,
+      "sha256": "691e07e62beaaf5782137ba8dbe038d1b627e85280e7c941c742478d09d1f89a"
+    },
+    {
+      "path": "evidence/rev-eu17/AP22_FRAME_CANDIDATE_REV_EU.step",
+      "bytes": 3245883,
+      "sha256": "99f021754607e7df35d493a116f975f13435e9654ba11e0c484226473617e6d8"
+    },
+    {
+      "path": "evidence/rev-eu18/AP22_FRAME_CANDIDATE_REV_EU.step",
+      "bytes": 3273520,
+      "sha256": "be2a44002d0d5f762fe4a0e21a7fb23b3a01954a0029bf9bd916a9f0cf7d636c"
+    },
+    {
+      "path": "evidence/rev-ev15/M0/mesh-data.npz",
+      "bytes": 5762757,
+      "sha256": "bbbca453d6c6deb88af5f28e7fb8a1e804b0835e0720bd6ce812d17d49fd4f76"
+    },
+    {
+      "path": "evidence/rev-ev15/M0/mesh.inp",
+      "bytes": 13181941,
+      "sha256": "e47f101473c26564245788b13168bf5ea591e611eb965cb4c18ecfa70bb09572"
+    },
+    {
+      "path": "evidence/rev-ev15/M0/mesh.msh",
+      "bytes": 12674164,
+      "sha256": "b736ef856a6be6f1e8c3248f4cb6cf7b146246def744808a33078c9c6366d6ad"
+    },
+    {
+      "path": "evidence/rev-ev15/M0-contactK100k-MAT-B/LC4/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev15/M0-contactK100k-MAT-B/LC4/frame.dat",
+      "bytes": 8255455,
+      "sha256": "dda2902c7eecb08076b98218db7497ffcc11e48fe13f549636a5b95b4fbd313f"
+    },
+    {
+      "path": "evidence/rev-ev15/M0-contactK100k-MAT-B/LC4/frame.frd",
+      "bytes": 50062409,
+      "sha256": "f8e5bd3fc5eec9f24278f3f3bd76993d60154c52e746b9e783e93b7a86083f7e"
+    },
+    {
+      "path": "evidence/rev-ev15/M0-contactK100k-MAT-B/LC4/frame.inp",
+      "bytes": 14200058,
+      "sha256": "cfe33256ab622344f8393b8b2413f57d8e94cd01a22b7805634a202f48e5e8fc"
+    },
+    {
+      "path": "evidence/rev-ev15/M0-contactK100k-MAT-B/LC4/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M0/mesh-data.npz",
+      "bytes": 6289122,
+      "sha256": "a070f3af648b465213bbf3b9b40986c6b51b6e72fea072b7ad4e32e74842faf6"
+    },
+    {
+      "path": "evidence/rev-ev18/M0/mesh.inp",
+      "bytes": 14316958,
+      "sha256": "5c0183b00afda2001f148aced74af644f1f2c484021e049d8f4f477e76c1ff9a"
+    },
+    {
+      "path": "evidence/rev-ev18/M0/mesh.msh",
+      "bytes": 13678860,
+      "sha256": "f982402aa9cf695b74ab783a2b94ab149acd6e8a2fa68709289074f4b273915d"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-contactK100k-MAT-B/LC4/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-contactK100k-MAT-B/LC4/frame.dat",
+      "bytes": 8828332,
+      "sha256": "169012c70d79ca756797ff011d9d14b31aafc4f530d043576a26318dc79d2170"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-contactK100k-MAT-B/LC4/frame.frd",
+      "bytes": 53744581,
+      "sha256": "5e9c698619108abbac19f1f7eb3c25f2d72f81f3d8793a63753c150337232c55"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-contactK100k-MAT-B/LC4/frame.inp",
+      "bytes": 15414272,
+      "sha256": "c389b72a897440f83acd5aaf03c0e79e37fa109d7aaf7a15d99eb4c7c3479e01"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-contactK100k-MAT-B/LC4/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-linear-MAT-B/LC1/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-linear-MAT-B/LC1/frame.dat",
+      "bytes": 8810047,
+      "sha256": "bb944e643f14495bc5fe9ca23d4d47af5d367af7fe6a86776e7eb5fe903bf2e2"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-linear-MAT-B/LC1/frame.frd",
+      "bytes": 53669538,
+      "sha256": "8ae6ca5b8709658fea8699553230179992867e20c2b77d8400201656713b03d9"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-linear-MAT-B/LC1/frame.inp",
+      "bytes": 19793813,
+      "sha256": "8a2527413e4d3bd6e6339b3e17b24aa4e4cbcece4727d8abb99fe4b45de87d94"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-linear-MAT-B/LC1/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-pull-contactK100k-MAT-B/LC3/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-pull-contactK100k-MAT-B/LC3/frame.dat",
+      "bytes": 8828332,
+      "sha256": "e4e49ef4868d7195dea696c6bb6d25814b33ec5e48dc6970fc49f15505b35cb2"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-pull-contactK100k-MAT-B/LC3/frame.frd",
+      "bytes": 53744581,
+      "sha256": "90a2db90a8723f82ce3273a863e4479a4820006ff26a76cb3eab119715a1ea64"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-pull-contactK100k-MAT-B/LC3/frame.inp",
+      "bytes": 19819383,
+      "sha256": "1db0f4337cff4d5dde7149ba6b9d1d46e48c53c258770c256055f7410836b2af"
+    },
+    {
+      "path": "evidence/rev-ev18/M0-pull-contactK100k-MAT-B/LC3/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M1/mesh-data.npz",
+      "bytes": 11868245,
+      "sha256": "0550d19ca544bb169f3eb8b86ae6ea5e69ab1b63c18eb9848eb99df1635c183b"
+    },
+    {
+      "path": "evidence/rev-ev18/M1/mesh.inp",
+      "bytes": 26520639,
+      "sha256": "3f327e921c75bcbd48816c05b01e4ac63a6ba6cb486ffbbea22814db3b420ae8"
+    },
+    {
+      "path": "evidence/rev-ev18/M1/mesh.msh",
+      "bytes": 25040380,
+      "sha256": "7a30a264ed67a88d2333dca4e4b057841743e7eddd48e7163327ff1f6f093bf9"
+    },
+    {
+      "path": "evidence/rev-ev18/M1-contactK100k-MAT-B/LC4/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-ev18/M1-contactK100k-MAT-B/LC4/frame.dat",
+      "bytes": 14709318,
+      "sha256": "2f99ee2f8830660d84e624152a28d8f371ce49c5db1148b35a1a47a9d856b34c"
+    },
+    {
+      "path": "evidence/rev-ev18/M1-contactK100k-MAT-B/LC4/frame.frd",
+      "bytes": 91559675,
+      "sha256": "4cb2d1bbb820d4a52214fd35e0c3cd8ed78c03244941a38d76c49450d373d864"
+    },
+    {
+      "path": "evidence/rev-ev18/M1-contactK100k-MAT-B/LC4/frame.inp",
+      "bytes": 28408370,
+      "sha256": "a9905f4429329c6d3333f9b5f8191ca602ac1eb73ee10964c1cb7339034b8824"
+    },
+    {
+      "path": "evidence/rev-ev18/M1-contactK100k-MAT-B/LC4/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "case": "LC3",
+    "solver_execution_pass": true,
+    "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+    "final_step_time": 1.0,
+    "max_displacement_mm": 8.952446420050979,
+    "max_displacement_node": 36669,
+    "max_displacement_xyz_mm": [
+      155.94031753315883,
+      160.25447807756305,
+      26.1128104377556
+    ],
+    "max_abs_UZ_mm": 8.948387,
+    "corner_max_abs_UZ_mm": {
+      "CORNER_LL": 0.182491,
+      "CORNER_LR": 0.1835353,
+      "CORNER_UL": 0.002467059,
+      "CORNER_UR": 0.007690523
+    },
+    "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+    "adjacent_mount_max_displacement_mm": {
+      "UL1": 0.010277111832793735,
+      "UL2": 0.0068313656052501216,
+      "UR1": 0.006094342194513026,
+      "UR2": 0.00891953117430849
+    },
+    "support_reaction_sum_N": [
+      -1.756999999380504e-07,
+      6.713699444256191e-08,
+      49.95943447400758
+    ],
+    "force_balance_residual_N": [
+      -1.756999999380504e-07,
+      6.713699444256191e-08,
+      -0.0405655259911768
+    ],
+    "force_balance_within_0_1_percent_or_0_001N": true,
+    "cleat_bore_reactions_N": {
+      "UL1": [
+        -1.0173533308419933,
+        -1.7671836592050052,
+        8.6531253753559
+      ],
+      "UL2": [
+        -2.773598132419002,
+        1.873773349709996,
+        4.224505572883997
+      ],
+      "UR1": [
+        2.7068916975210002,
+        0.8177796097820004,
+        3.6768708297740003
+      ],
+      "UR2": [
+        1.0840595900399976,
+        -0.9243692331499997,
+        8.969794949756002
+      ]
+    },
+    "anti_lift_normal_reaction_N": 24.435137745999985,
+    "warp_normal_reaction_N": null,
+    "pad_max_numerical_penetration_mm": 0.0,
+    "pad_max_opening_mm": 0.1903012,
+    "moment_balance_residual_Nmm": [
+      7.519513048195786,
+      -0.005101007304366492,
+      3.100616075091267e-05
+    ],
+    "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+    "nodal_extrapolated_stress_diagnostic": {
+      "von_mises_max_MPa": 5.402270391048101,
+      "node": 51830,
+      "xyz_mm": [
+        34.60361786281837,
+        370.5963358197091,
+        26.4
+      ],
+      "principal_max_MPa": 5.864795339039032,
+      "principal_min_MPa": -4.719061535296646,
+      "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+    },
+    "qualified_strength_margin": null
+  }
+]
