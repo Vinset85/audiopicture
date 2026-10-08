@@ -88,6 +88,10 @@ mesh LR; non è una qualificazione produttiva. Restano lavoro digitale e prove f
 
 Estrarre `audiopicture-rev-fd-supplement.zip` dopo FA, FB e FC. L'indice
 `evidence/rev-fd/raw-artifact-index.json` elenca i nuovi artefatti grezzi.
-Tag previsto: `checkpoint-rev-fd-2026-10-08`. La verifica della pubblicazione
-richiede la ricevuta `evidence/rev-fd/github-publication.json`, scritta soltanto
-dopo il controllo di nomi, dimensioni, digest SHA-256 e commit del tag remoto.
+Rev.FD è [pubblicata](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fd-2026-10-08)
+sul commit `26b60bea5645258ce13141e7a85896333513810b`. Tre allegati con
+insieme esatto dei nomi, dimensioni e SHA-256 verificati contro i digest GitHub;
+anche il commit del tag è verificato. Ricevuta: `evidence/rev-fd/github-publication.json`.
+Il supplemento contiene 216 file, inclusi 79 artefatti grezzi verificati individualmente.
+Gli indici nell'archivio restano lo snapshot immutabile precedente al caricamento;
+per lo stato di pubblicazione fa fede la ricevuta corrente in `main`.

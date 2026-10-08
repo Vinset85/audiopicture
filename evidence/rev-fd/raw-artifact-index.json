@@ -1,6 +1,6 @@
 {
   "revision": "Rev.FD",
-  "publication_verified": false,
+  "publication_verified": true,
   "release_tag": "checkpoint-rev-fd-2026-10-08",
   "baseline_release": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06",
   "scope": "New raw EU.19/EU.20 artifacts after authorized removal of the mass ceiling. Extract over all four Rev.FA parts, Rev.FB and Rev.FC supplements; production qualification remains open. Publication is checked separately.",
@@ -400,5 +400,7 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
-  ]
+  ],
+  "publication_receipt": "evidence/rev-fd/github-publication.json",
+  "release_url": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fd-2026-10-08"
 }

@@ -141,3 +141,8 @@ mass-only gates are explicitly superseded; counts are not completion percentages
 See the [report](mechanical/digital-validation-rev-fd.md),
 [register](mechanical/validation/rev-fd/gate-register.json), and
 [publication record](docs/validation-checkpoints.md).
+
+The [Rev.FD supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fd-2026-10-08)
+is published on commit `26b60bea5645258ce13141e7a85896333513810b`.
+All three attachment names, sizes and SHA-256 digests are verified against
+GitHub. Receipt: `evidence/rev-fd/github-publication.json`.
