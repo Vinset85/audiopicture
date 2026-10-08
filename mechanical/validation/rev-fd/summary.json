@@ -1,0 +1,3830 @@
+{
+  "revision": "Rev.FD",
+  "recorded_utc": "2026-10-08T05:39:32.678556+00:00",
+  "checkpoint_parent_head": "dfe1c09d39ed9c9d843f3c43f73ca6556a68587a",
+  "previous_checkpoint": "mechanical/validation/rev-fc/summary.json",
+  "gate_counts_including_history": {
+    "PASS": 64,
+    "FAIL": 25,
+    "OPEN": 18
+  },
+  "counts_excluding_superseded_mass_only_gates": {
+    "PASS": 60,
+    "FAIL": 21,
+    "OPEN": 18
+  },
+  "counts_are_not_completion_percentages": true,
+  "mass_policy": {
+    "authority": "Explicit user authorization 2026-10-07: superiamo tranquillamente il limite del budget di massa",
+    "document": "mechanical/mass-policy-rev-fd.md",
+    "frame_250g_is_rejection_gate": false,
+    "replacement_frame_ceiling_g": null,
+    "product_1700g_is_historical_planning_reference": true,
+    "mass_and_CG_tracking_required": true,
+    "vertical_load_min_N": 70,
+    "vertical_load_review_rule": "max(70 N, 4 * assembled_mass_kg * 9.80665 m/s^2)",
+    "actual_assembled_mass_kg": null,
+    "final_mass_load_adequacy_verified": false
+  },
+  "frames": {
+    "EU19": {
+      "CAD": {
+        "revision": "Rev.EU.19",
+        "classification": "CALCULATED_SCREENING_CANDIDATE_NOT_FABRICATION_RELEASE",
+        "valid": true,
+        "solid_count": 1,
+        "volume_mm3": 362831.83581927855,
+        "reimport_valid": true,
+        "reimport_solids": 1,
+        "collision_volume_mm3": {
+          "EX_L1": 0,
+          "EX_L2": 0,
+          "EX_R1": 0,
+          "EX_R2": 0,
+          "MAIN_C": 0,
+          "MAIN_P": 0,
+          "VOICE": 0,
+          "RADAR": 0,
+          "ENV": 0,
+          "SERVICE": 0,
+          "ESP32_RF": 0,
+          "DML": 0,
+          "front_carrier_FA": 0,
+          "metal_target_1": 0,
+          "metal_target_2": 0,
+          "metal_target_3": 0,
+          "metal_target_4": 0,
+          "metal_target_5": 0,
+          "metal_target_6": 0,
+          "metal_target_7": 0,
+          "metal_target_8": 0,
+          "shell_EQ": 0
+        },
+        "shell_clearance_mm": 1.0,
+        "front_carrier_clearance_mm": 0.5,
+        "input_sha256": {
+          "evidence/rev-es/AP22_FRAME_RF_CLIPPED_REV_ES.step": "d5cd859248d48f45a148e271933c75613652c3856ee625f64d24714a4ff583c9",
+          "evidence/rev-eq/AP22_REV_EQ_SOLID.step": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+          "evidence/rev-fa/AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+          "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/generate_frame_candidate_rev_eu19.py": "91109f580005236ccde6338229e09f0a304b638d8562b2a14d43c5cb4a49b26c"
+        },
+        "mount_centers_xy_mm": {
+          "UL1": [
+            37.5,
+            375
+          ],
+          "UL2": [
+            67.5,
+            375
+          ],
+          "UR1": [
+            252.5,
+            375
+          ],
+          "UR2": [
+            282.5,
+            375
+          ]
+        },
+        "bore_radius_seed_mm": 3,
+        "bore_z_mm": [
+          28,
+          35
+        ],
+        "pad_centers_xy_mm": [
+          [
+            45,
+            28
+          ],
+          [
+            275,
+            28
+          ]
+        ],
+        "anti_lift_load_interface_xy_mm": [
+          160,
+          15
+        ],
+        "rail_paths_xy_mm": {
+          "rail_L": [
+            [
+              34,
+              378
+            ],
+            [
+              34,
+              350
+            ],
+            [
+              33,
+              300
+            ],
+            [
+              32,
+              235
+            ],
+            [
+              32,
+              125
+            ],
+            [
+              33,
+              112
+            ],
+            [
+              33,
+              45
+            ],
+            [
+              45,
+              28
+            ]
+          ],
+          "rail_R": [
+            [
+              286,
+              378
+            ],
+            [
+              300,
+              350
+            ],
+            [
+              300,
+              300
+            ],
+            [
+              303,
+              225
+            ],
+            [
+              305,
+              155
+            ],
+            [
+              306,
+              75
+            ],
+            [
+              300,
+              62
+            ],
+            [
+              296,
+              30
+            ],
+            [
+              275,
+              28
+            ]
+          ],
+          "mid_B1_B2": [
+            [
+              32,
+              235
+            ],
+            [
+              155,
+              230
+            ],
+            [
+              303,
+              225
+            ]
+          ],
+          "mid_B3": [
+            [
+              155,
+              230
+            ],
+            [
+              205,
+              165
+            ],
+            [
+              305,
+              155
+            ]
+          ],
+          "mid_B4": [
+            [
+              32,
+              125
+            ],
+            [
+              70,
+              161
+            ],
+            [
+              155,
+              161
+            ],
+            [
+              155,
+              230
+            ]
+          ],
+          "pad_L_ring": [
+            [
+              45,
+              28
+            ],
+            [
+              45,
+              7
+            ]
+          ],
+          "pad_R_ring": [
+            [
+              275,
+              28
+            ],
+            [
+              275,
+              7
+            ]
+          ],
+          "tie_L125": [
+            [
+              8.4,
+              125
+            ],
+            [
+              32,
+              125
+            ]
+          ],
+          "tie_L235": [
+            [
+              8.4,
+              235
+            ],
+            [
+              32,
+              235
+            ]
+          ],
+          "tie_L350": [
+            [
+              8.4,
+              350
+            ],
+            [
+              34,
+              350
+            ]
+          ],
+          "tie_R155": [
+            [
+              311.6,
+              155
+            ],
+            [
+              305,
+              155
+            ]
+          ],
+          "tie_R225": [
+            [
+              311.6,
+              225
+            ],
+            [
+              303,
+              225
+            ]
+          ],
+          "tie_R350": [
+            [
+              311.6,
+              350
+            ],
+            [
+              300,
+              350
+            ]
+          ]
+        },
+        "primary_rib_mm": 3.2,
+        "deep_lower_girders": {
+          "side_paths": [
+            [
+              [
+                95,
+                15
+              ],
+              [
+                95,
+                28
+              ],
+              [
+                45,
+                28
+              ]
+            ],
+            [
+              [
+                225,
+                15
+              ],
+              [
+                225,
+                28
+              ],
+              [
+                275,
+                28
+              ]
+            ]
+          ],
+          "side_z_mm": [
+            10.3,
+            35
+          ],
+          "corner_paths": [
+            [
+              [
+                45,
+                28
+              ],
+              [
+                7,
+                7
+              ]
+            ],
+            [
+              [
+                275,
+                28
+              ],
+              [
+                313,
+                7
+              ]
+            ]
+          ],
+          "corner_z_mm": [
+            10.3,
+            28
+          ],
+          "side_width_mm": 2.8,
+          "corner_width_mm": 3.2
+        },
+        "intermediate_ties": {
+          "count": 6,
+          "post_xy_section_mm": [
+            2.4,
+            2.8
+          ],
+          "post_z_mm": [
+            6,
+            35
+          ]
+        },
+        "central_bottom_tube_xy_mm": [
+          32,
+          288,
+          3.2,
+          19
+        ],
+        "central_crossmember_section": "solid within outer envelope; prior hollow cavity filled",
+        "central_tube_z_mm": [
+          3.1,
+          36.8
+        ],
+        "dml_notch_yz_mm": [
+          9.6,
+          19,
+          6,
+          10.3
+        ],
+        "anti_lift_surface_z_mm": 35,
+        "primary_rib_z_mm": [
+          20,
+          28
+        ],
+        "front_flange_width_mm": 6.4,
+        "perimeter_web_topology": "continuous inner and outer PC-CF webs, outside DML projection",
+        "perimeter_web_mm": 2.4,
+        "closed_bottom_tube_y_mm": [
+          3.2,
+          12
+        ],
+        "sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+        "limitations": [
+          "Mount shift Y366->375 required by conservative RF mask; requires mating cleat redesign.",
+          "6 mm insert surrogate bore, no exact insert installation-hole claim.",
+          "Fillets, exact radar mask, cables, board carrier interfaces and fasteners remain incomplete.",
+          "Lower support/anti-lift surrogate load interfaces; actual wall hardware absent.",
+          "Volume density/strength unqualified; no product release."
+        ],
+        "mass_g_at_catalog_density_1p22": 442.6548396995198,
+        "mass_acceptance_ceiling_g": null,
+        "mass_policy": "User authorization 2026-10-07: exceed prior mass budget; no 250 g rejection criterion. Mass and assembly CG/load adequacy remain tracked.",
+        "mass_change_vs_EU18_g": 193.32649974153304
+      },
+      "meshes": {
+        "M0": {
+          "report": {
+            "source_sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+            "size_mm": 4.0,
+            "nodes": 184556,
+            "elements": 97653,
+            "type": "C3D10",
+            "min_SICN": 0.001591448529812522,
+            "corner_tet_volume_mm3": 362822.90946260345,
+            "volume_weighted_seed_cg_mm": [
+              160.30535552196315,
+              157.43378390501766,
+              22.072615583167252
+            ],
+            "node_sets": {
+              "UL1": 504,
+              "UL2": 500,
+              "UR1": 516,
+              "UR2": 500,
+              "PAD_L": 119,
+              "PAD_R": 119,
+              "ANTILIFT": 107,
+              "CORNER_LL": 33,
+              "CORNER_LR": 33,
+              "CORNER_UL": 31,
+              "CORNER_UR": 31
+            },
+            "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+            "algorithm3d": 1,
+            "linear_mesh_optimizer": "Netgen",
+            "gmsh_version": "4.15.2",
+            "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+          },
+          "quality": {
+            "classification": "CALCULATED_MESH_INTEGRITY_NOT_CONVERGENCE",
+            "elements": 97653,
+            "min_SICN": 0.0015914485297566356,
+            "min_adaptive_Jacobian_determinant_mm3": 0.0002159754089423474,
+            "nonpositive_Jacobian_elements": 0,
+            "SICN_below_0p01_count": 62,
+            "SICN_percentiles": {
+              "0": 0.0015914485297566356,
+              "1": 0.39394495914992206,
+              "5": 0.5706518256964594,
+              "50": 0.8191172126875401,
+              "100": 0.9994873506937404
+            },
+            "worst_elements": [
+              {
+                "element": 6893,
+                "SICN": 0.0015914485297566356,
+                "min_Jacobian_mm3": 0.0005816727069213046,
+                "corner_centroid_xyz_mm": [
+                  45.69247652335333,
+                  26.769099143059265,
+                  10.5425
+                ]
+              },
+              {
+                "element": 20979,
+                "SICN": 0.0016435391466691324,
+                "min_Jacobian_mm3": 0.0005310116992900195,
+                "corner_centroid_xyz_mm": [
+                  274.3005033556237,
+                  26.754298267784762,
+                  11.512349423387509
+                ]
+              },
+              {
+                "element": 81943,
+                "SICN": 0.001643992587736253,
+                "min_Jacobian_mm3": 0.0005310116993108655,
+                "corner_centroid_xyz_mm": [
+                  274.3005033556237,
+                  26.754298267784762,
+                  11.027349423387511
+                ]
+              },
+              {
+                "element": 39775,
+                "SICN": 0.0016444635277428458,
+                "min_Jacobian_mm3": 0.0005311191966763801,
+                "corner_centroid_xyz_mm": [
+                  274.31557530868974,
+                  26.746003338939,
+                  15.87758972967028
+                ]
+              },
+              {
+                "element": 12687,
+                "SICN": 0.0016447339077972863,
+                "min_Jacobian_mm3": 0.0005311191966725599,
+                "corner_centroid_xyz_mm": [
+                  274.3155753086897,
+                  26.746003338938998,
+                  16.36258972967028
+                ]
+              },
+              {
+                "element": 10577,
+                "SICN": 0.001645862433136398,
+                "min_Jacobian_mm3": 0.0005316291430219915,
+                "corner_centroid_xyz_mm": [
+                  274.3060304315801,
+                  26.75146801382083,
+                  18.302451318969425
+                ]
+              },
+              {
+                "element": 13698,
+                "SICN": 0.0016459077968110798,
+                "min_Jacobian_mm3": 0.0005318605791454474,
+                "corner_centroid_xyz_mm": [
+                  274.310485133503,
+                  26.749089751619813,
+                  16.847522149380517
+                ]
+              },
+              {
+                "element": 28991,
+                "SICN": 0.0016459771159998769,
+                "min_Jacobian_mm3": 0.0005318605791454649,
+                "corner_centroid_xyz_mm": [
+                  274.31065985613793,
+                  26.74899313744406,
+                  17.33252214938052
+                ]
+              },
+              {
+                "element": 87006,
+                "SICN": 0.0016460132838024145,
+                "min_Jacobian_mm3": 0.0005316291428881792,
+                "corner_centroid_xyz_mm": [
+                  274.30585570894505,
+                  26.751564627996583,
+                  17.817451318969425
+                ]
+              },
+              {
+                "element": 17907,
+                "SICN": 0.0016461055797956144,
+                "min_Jacobian_mm3": 0.0005313777454508069,
+                "corner_centroid_xyz_mm": [
+                  274.3056356603088,
+                  26.751593655829573,
+                  15.392472404823831
+                ]
+              }
+            ],
+            "mesh_convergence_verified": false,
+            "source_sha256": {
+              "evidence/rev-ev19/M0/mesh.msh": "7d2695c396d006e9d4e17b2f5cb0732a73dcfafe51d3b897197541af312a5739",
+              "evidence/rev-ev19/M0/mesh-data.npz": "f755ade498c3d9808cfeb7df319c88a36b6f3038e596f9498ff07c680fab53a2",
+              "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/audit_frame_mesh_rev_fc.py": "4c6e73b72061fab9cf260cf91c27e7d408e4b4555e54129da64d604fe214076b"
+            }
+          }
+        },
+        "M1": {
+          "report": {
+            "source_sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+            "size_mm": 3.0,
+            "nodes": 284766,
+            "elements": 152071,
+            "type": "C3D10",
+            "min_SICN": 0.0016456008610087859,
+            "corner_tet_volume_mm3": 362822.909472044,
+            "volume_weighted_seed_cg_mm": [
+              160.30535537034768,
+              157.43378357755526,
+              22.07261556507853
+            ],
+            "node_sets": {
+              "UL1": 504,
+              "UL2": 500,
+              "UR1": 516,
+              "UR2": 500,
+              "PAD_L": 160,
+              "PAD_R": 160,
+              "ANTILIFT": 125,
+              "CORNER_LL": 57,
+              "CORNER_LR": 57,
+              "CORNER_UL": 49,
+              "CORNER_UR": 50
+            },
+            "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+            "algorithm3d": 1,
+            "linear_mesh_optimizer": "Netgen",
+            "gmsh_version": "4.15.2",
+            "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+          },
+          "quality": {
+            "classification": "CALCULATED_MESH_INTEGRITY_NOT_CONVERGENCE",
+            "elements": 152071,
+            "min_SICN": 0.0016456008610261869,
+            "min_adaptive_Jacobian_determinant_mm3": 3.832601740819302e-05,
+            "nonpositive_Jacobian_elements": 0,
+            "SICN_below_0p01_count": 71,
+            "SICN_percentiles": {
+              "0": 0.0016456008610261869,
+              "1": 0.4841772102881854,
+              "5": 0.6152930857311572,
+              "50": 0.8466335726913615,
+              "100": 0.9998794994889739
+            },
+            "worst_elements": [
+              {
+                "element": 138973,
+                "SICN": 0.0016456008610261869,
+                "min_Jacobian_mm3": 0.0005312722984268386,
+                "corner_centroid_xyz_mm": [
+                  45.69601079779841,
+                  26.752465722999798,
+                  18.787528023055877
+                ]
+              },
+              {
+                "element": 138978,
+                "SICN": 0.001645685367224273,
+                "min_Jacobian_mm3": 0.0005312722984268289,
+                "corner_centroid_xyz_mm": [
+                  45.69601079779841,
+                  26.752465722999798,
+                  19.27252802305588
+                ]
+              },
+              {
+                "element": 13556,
+                "SICN": 0.0016457873750021848,
+                "min_Jacobian_mm3": 0.0005312213609915109,
+                "corner_centroid_xyz_mm": [
+                  274.3041883114831,
+                  26.752336771449116,
+                  11.027500239371847
+                ]
+              },
+              {
+                "element": 30752,
+                "SICN": 0.0016457880971669219,
+                "min_Jacobian_mm3": 0.0005312213609536225,
+                "corner_centroid_xyz_mm": [
+                  274.30418831148313,
+                  26.752336771449116,
+                  11.512500239371844
+                ]
+              },
+              {
+                "element": 56267,
+                "SICN": 0.0016460060115620974,
+                "min_Jacobian_mm3": 0.0005313051348128187,
+                "corner_centroid_xyz_mm": [
+                  274.3050087179218,
+                  26.751913752050598,
+                  15.392490037014406
+                ]
+              },
+              {
+                "element": 95245,
+                "SICN": 0.001646036064872911,
+                "min_Jacobian_mm3": 0.0005313051348820974,
+                "corner_centroid_xyz_mm": [
+                  274.30500871792185,
+                  26.751913752050594,
+                  14.907490037014405
+                ]
+              },
+              {
+                "element": 44178,
+                "SICN": 0.001646439474094321,
+                "min_Jacobian_mm3": 0.0005315254661424573,
+                "corner_centroid_xyz_mm": [
+                  274.3088454916444,
+                  26.749872305948355,
+                  16.847502768122098
+                ]
+              },
+              {
+                "element": 123352,
+                "SICN": 0.0016464396649637167,
+                "min_Jacobian_mm3": 0.0005315273014146749,
+                "corner_centroid_xyz_mm": [
+                  45.691159669376844,
+                  26.749875809022758,
+                  17.33249721076841
+                ]
+              },
+              {
+                "element": 122509,
+                "SICN": 0.0016464481232936882,
+                "min_Jacobian_mm3": 0.0005315273014147384,
+                "corner_centroid_xyz_mm": [
+                  45.69133439201109,
+                  26.749972423198507,
+                  16.847497210768406
+                ]
+              },
+              {
+                "element": 44383,
+                "SICN": 0.001646448124556723,
+                "min_Jacobian_mm3": 0.0005315254661424652,
+                "corner_centroid_xyz_mm": [
+                  274.30902021427937,
+                  26.7497756917726,
+                  17.3325027681221
+                ]
+              }
+            ],
+            "mesh_convergence_verified": false,
+            "source_sha256": {
+              "evidence/rev-ev19/M1/mesh.msh": "e9a064f524be7c8dcfe0916e5c73c699e787082afb66d5ccd14980e0d84465b3",
+              "evidence/rev-ev19/M1/mesh-data.npz": "25770d2c4454168801154770747f044595e60affd6dfa082ef9592a919966799",
+              "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/audit_frame_mesh_rev_fc.py": "4c6e73b72061fab9cf260cf91c27e7d408e4b4555e54129da64d604fe214076b"
+            }
+          }
+        }
+      },
+      "cases": {
+        "M0-linear70-MAT-B": {
+          "execution": {
+            "case": "LC1",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": null,
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              -70.00000000000097,
+              0.0
+            ],
+            "load_cg_seed_mm": [
+              160.00000000000003,
+              199.99999999999952,
+              22.15201611038379
+            ],
+            "nonlinear_geometry": false,
+            "lower_unilateral_gap_contacts": 0,
+            "total_pad_penalty_N_per_mm": null,
+            "gap_force_floor_N": null,
+            "contact_iteration_controls": false,
+            "anti_lift_normal_support_assumption": false,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "e56f7ee4cbf75936222349308297e8b7421d9883effb98cdbd942852b58d92c0",
+            "mesh_report": {
+              "source_sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+              "size_mm": 4.0,
+              "nodes": 184556,
+              "elements": 97653,
+              "type": "C3D10",
+              "min_SICN": 0.001591448529812522,
+              "corner_tet_volume_mm3": 362822.90946260345,
+              "volume_weighted_seed_cg_mm": [
+                160.30535552196315,
+                157.43378390501766,
+                22.072615583167252
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 119,
+                "PAD_R": 119,
+                "ANTILIFT": 107,
+                "CORNER_LL": 33,
+                "CORNER_LR": 33,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC1",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 2.3408589492398404,
+            "max_displacement_node": 8717,
+            "max_displacement_xyz_mm": [
+              197.70516242721678,
+              171.8590937299172,
+              20.0
+            ],
+            "max_abs_UZ_mm": 1.993388,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 1.925576,
+              "CORNER_LR": 1.993129,
+              "CORNER_UL": 0.08411802,
+              "CORNER_UR": 0.09497535
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.022369372654206465,
+              "UL2": 0.010857417365712455,
+              "UR1": 0.011788588731572156,
+              "UR2": 0.026584880902746754
+            },
+            "support_reaction_sum_N": [
+              4.1017999745374123e-07,
+              70.00000090719995,
+              1.4968800096659685e-07
+            ],
+            "force_balance_residual_N": [
+              4.1017999745374123e-07,
+              9.071989808262515e-07,
+              1.4968800096659685e-07
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -10.377362915339999,
+                34.062286955959976,
+                -2.62140921344
+              ],
+              "UL2": [
+                13.034460812029998,
+                1.7891262221899997,
+                2.610483959846002
+              ],
+              "UR1": [
+                -16.399580343919997,
+                -2.3285132217500024,
+                2.539739642041999
+              ],
+              "UR2": [
+                13.74248285741001,
+                36.47710095080004,
+                -2.5288142387599986
+              ]
+            },
+            "anti_lift_normal_reaction_N": 0.0,
+            "warp_normal_reaction_N": null,
+            "moment_balance_residual_Nmm": [
+              -4.083617269161344e-08,
+              1.803720682680421e-05,
+              0.00013640733570688054
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 3.378062611103132,
+              "node": 37771,
+              "xyz_mm": [
+                285.46941186357765,
+                375.4273092374902,
+                28.426800871718974
+              ],
+              "principal_max_MPa": 3.325907871564266,
+              "principal_min_MPa": -3.6705196085861465,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null
+          }
+        },
+        "M0-linear90-MAT-B": {
+          "execution": {
+            "case": "LC1",
+            "vertical_load_seed_N": 90.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": null,
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              -89.99999999999807,
+              0.0
+            ],
+            "load_cg_seed_mm": [
+              160.00000000000003,
+              199.99999999999952,
+              22.15201611038379
+            ],
+            "nonlinear_geometry": false,
+            "lower_unilateral_gap_contacts": 0,
+            "total_pad_penalty_N_per_mm": null,
+            "gap_force_floor_N": null,
+            "contact_iteration_controls": false,
+            "anti_lift_normal_support_assumption": false,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "8fc24383ed1814b3ad2a1e30ba80b7f478c41d4a79c65414d4f4296568c94b62",
+            "mesh_report": {
+              "source_sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+              "size_mm": 4.0,
+              "nodes": 184556,
+              "elements": 97653,
+              "type": "C3D10",
+              "min_SICN": 0.001591448529812522,
+              "corner_tet_volume_mm3": 362822.90946260345,
+              "volume_weighted_seed_cg_mm": [
+                160.30535552196315,
+                157.43378390501766,
+                22.072615583167252
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 119,
+                "PAD_R": 119,
+                "ANTILIFT": 107,
+                "CORNER_LL": 33,
+                "CORNER_LR": 33,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC1",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 3.0096750949653086,
+            "max_displacement_node": 8717,
+            "max_displacement_xyz_mm": [
+              197.70516242721678,
+              171.8590937299172,
+              20.0
+            ],
+            "max_abs_UZ_mm": 2.562928,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 2.475741,
+              "CORNER_LR": 2.562594,
+              "CORNER_UL": 0.1081517,
+              "CORNER_UR": 0.1221112
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.028760613764845663,
+              "UL2": 0.013959536769134879,
+              "UR1": 0.015156755078478506,
+              "UR2": 0.03418055803501698
+            },
+            "support_reaction_sum_N": [
+              6.451589951161907e-07,
+              90.0000004246801,
+              3.031559947103135e-07
+            ],
+            "force_balance_residual_N": [
+              6.451589951161907e-07,
+              4.2468202821055456e-07,
+              3.031559947103135e-07
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -13.342322647450999,
+                43.79437031649997,
+                -3.3703818481900027
+              ],
+              "UL2": [
+                16.75859316664002,
+                2.3003058679200046,
+                3.356336417940001
+              ],
+              "UR1": [
+                -21.085175027200027,
+                -2.9938021204400025,
+                3.2653795261159986
+              ],
+              "UR2": [
+                17.668905153169998,
+                46.89912636069995,
+                -3.2513337927100014
+              ]
+            },
+            "anti_lift_normal_reaction_N": 0.0,
+            "warp_normal_reaction_N": null,
+            "moment_balance_residual_Nmm": [
+              3.723506469472011e-05,
+              0.0003468782547315641,
+              -0.00045773859967932623
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 4.343220822266912,
+              "node": 37771,
+              "xyz_mm": [
+                285.46941186357765,
+                375.4273092374902,
+                28.426800871718974
+              ],
+              "principal_max_MPa": 4.276166767484653,
+              "principal_min_MPa": -4.719240647951595,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null
+          }
+        },
+        "M0-pull-contactK100k-MAT-B": {
+          "execution": {
+            "case": "LC3",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": null,
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -50.000000000001066
+            ],
+            "load_cg_seed_mm": [
+              160.00000000000003,
+              199.99999999999952,
+              22.15201611038379
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 238,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "a8f7c5518f39c4cd3c142de432f595a845089956944a890917cb998cec481ced",
+            "mesh_report": {
+              "source_sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+              "size_mm": 4.0,
+              "nodes": 184556,
+              "elements": 97653,
+              "type": "C3D10",
+              "min_SICN": 0.001591448529812522,
+              "corner_tet_volume_mm3": 362822.90946260345,
+              "volume_weighted_seed_cg_mm": [
+                160.30535552196315,
+                157.43378390501766,
+                22.072615583167252
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 119,
+                "PAD_R": 119,
+                "ANTILIFT": 107,
+                "CORNER_LL": 33,
+                "CORNER_LR": 33,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC3",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 2.0925286290551193,
+            "max_displacement_node": 7130,
+            "max_displacement_xyz_mm": [
+              156.3856406460551,
+              160.2,
+              28.0
+            ],
+            "max_abs_UZ_mm": 2.088913,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.1417952,
+              "CORNER_LR": 0.1449006,
+              "CORNER_UL": 0.01182977,
+              "CORNER_UR": 0.01289476
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.0152283815917823,
+              "UL2": 0.0024379177230567646,
+              "UR1": 0.002567437352735926,
+              "UR2": 0.016022741643605846
+            },
+            "support_reaction_sum_N": [
+              -2.6828999405426046e-07,
+              3.183098752634894e-08,
+              49.977871488498664
+            ],
+            "force_balance_residual_N": [
+              -2.6828999405426046e-07,
+              3.183098752634894e-08,
+              -0.022128511502401693
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -0.8941127184199985,
+                -1.0679921904990097,
+                11.404984498088002
+              ],
+              "UL2": [
+                -3.6583218348579964,
+                1.0163101640799994,
+                1.5666974211569005
+              ],
+              "UR1": [
+                3.620516657588003,
+                1.0828304753899998,
+                1.5601809764850014
+              ],
+              "UR2": [
+                0.9319176273999984,
+                -1.0311484171399943,
+                11.302712824320018
+              ]
+            },
+            "anti_lift_normal_reaction_N": 24.143295768211,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 0.0,
+            "pad_max_opening_mm": 0.1311899,
+            "moment_balance_residual_Nmm": [
+              4.110590315761931,
+              0.0005640755351698848,
+              3.319026528814106e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 2.1080678041706817,
+              "node": 53070,
+              "xyz_mm": [
+                35.124005671437914,
+                369.0544313350187,
+                28.0
+              ],
+              "principal_max_MPa": 2.7571205190542023,
+              "principal_min_MPa": -1.959140707711716,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null
+          },
+          "deformed_node_audit": {
+            "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+            "status": "NO_SAMPLED_NODE_INTERFERENCE",
+            "load_case": "Rev.EU.19 LC3 50 N outward; normalized MAT-B and surrogate supports",
+            "nodes_initially_inside_DML": 0,
+            "nodes_predicted_inside_DML": 0,
+            "nodes_predicted_frontward_of_DML_within_projection": 0,
+            "max_displacement_node": 7130,
+            "max_node_original_xyz_mm": [
+              156.3856406460551,
+              160.2,
+              28.0
+            ],
+            "max_node_displacement_xyz_mm": [
+              0.1142787,
+              -0.04537533,
+              -2.088913
+            ],
+            "max_node_predicted_xyz_mm": [
+              156.4999193460551,
+              160.15462466999998,
+              25.911087000000002
+            ],
+            "sample_predicted_DML_nodes": [],
+            "source_sha256": {
+              "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/frame.dat": "2c4831f1ca2a8c9f8dcaa2e5643f77dc448f0eae156223c95f281bbbd2aa8d7d",
+              "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/metrics.json": "0cd26f463c688589cfd0a65c77e8f4195598271e3605c0861c23fe027ad2c132",
+              "evidence/rev-ev19/M0/mesh-data.npz": "f755ade498c3d9808cfeb7df319c88a36b6f3038e596f9498ff07c680fab53a2",
+              "mechanical/cad/audit_loaded_frame_envelope_rev_fb.py": "aecd11f76776d6b29750331b25d1d65a13807ed453dc0afcdfdd43e5fc840e7f"
+            },
+            "limits": [
+              "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+              "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+              "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+              "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+            ]
+          },
+          "quadratic_clearance_audit": {
+            "classification": "CALCULATED_CONSERVATIVE_FULL_QUADRATIC_ELEMENT_BOUND_ON_SIMULATED_FINAL_STATE",
+            "status": "PASS_SCOPED_FEA_GEOMETRY_SEPARATION",
+            "method": "Quadratic tetrahedral Bernstein control-point convex enclosure; enclosing AABBs inflated 1e-7 mm. Overlap is inconclusive.",
+            "gmsh_edge_node_pairs_zero_based": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "self_checks": {
+              "curved_node_only_false_negative_detected": true,
+              "random_elements": 32,
+              "barycentric_samples_each": 64
+            },
+            "initial": {
+              "elements": 97653,
+              "potential_DML_box_overlap_elements": 0,
+              "potential_frontward_within_DML_projection_elements": 0,
+              "all_element_bounds_separated_from_DML_and_frontward_region": true,
+              "conservative_DML_separation_lower_bound_mm": 0.3999998999999548,
+              "unresolved_element_tags_sample": []
+            },
+            "final": {
+              "elements": 97653,
+              "potential_DML_box_overlap_elements": 0,
+              "potential_frontward_within_DML_projection_elements": 0,
+              "all_element_bounds_separated_from_DML_and_frontward_region": true,
+              "conservative_DML_separation_lower_bound_mm": 0.3238138000000017,
+              "unresolved_element_tags_sample": []
+            },
+            "limits": [
+              "Final load state only; not all intermediate states.",
+              "FEA interpolation geometry only; not exact deformed BREP, manufacturing tolerance or real assembly qualification.",
+              "DML is the fixed nominal hard box, not a deformable contact body.",
+              "No physical clearance is certified from unqualified material/support assumptions."
+            ],
+            "source_sha256": {
+              "mechanical/cad/audit_quadratic_dml_clearance_rev_fd.py": "743717843502e2064af187afe502356c5b8c35d623d9ad407608bfde2ec8d0f2",
+              "evidence/rev-ev19/M0/mesh-data.npz": "f755ade498c3d9808cfeb7df319c88a36b6f3038e596f9498ff07c680fab53a2",
+              "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/frame.dat": "2c4831f1ca2a8c9f8dcaa2e5643f77dc448f0eae156223c95f281bbbd2aa8d7d",
+              "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/metrics.json": "0cd26f463c688589cfd0a65c77e8f4195598271e3605c0861c23fe027ad2c132"
+            }
+          }
+        },
+        "M0-contactK100k-MAT-B-LR": {
+          "execution": {
+            "case": "LC4",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": "LR",
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -30.000000000000007
+            ],
+            "load_cg_seed_mm": [
+              160.00000000000003,
+              199.99999999999952,
+              22.15201611038379
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 238,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "e89035a8c936aefb3d8d4b0fa56e3c4e61ce48b18f23832bd609fe2b1c4eb3d2",
+            "mesh_report": {
+              "source_sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+              "size_mm": 4.0,
+              "nodes": 184556,
+              "elements": 97653,
+              "type": "C3D10",
+              "min_SICN": 0.001591448529812522,
+              "corner_tet_volume_mm3": 362822.90946260345,
+              "volume_weighted_seed_cg_mm": [
+                160.30535552196315,
+                157.43378390501766,
+                22.072615583167252
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 119,
+                "PAD_R": 119,
+                "ANTILIFT": 107,
+                "CORNER_LL": 33,
+                "CORNER_LR": 33,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC4",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 1.02236018408819,
+            "max_displacement_node": 40,
+            "max_displacement_xyz_mm": [
+              316.8,
+              3.2,
+              35.0
+            ],
+            "max_abs_UZ_mm": 1.006463,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.0438261,
+              "CORNER_LR": 1.006463,
+              "CORNER_UL": 0.001200265,
+              "CORNER_UR": 0.0308235
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.0008773667731840829,
+              "UL2": 0.00048379633121354903,
+              "UR1": 0.0037198037509047436,
+              "UR2": 0.008485300452412468
+            },
+            "support_reaction_sum_N": [
+              1.7999501010328156e-08,
+              4.4533079805730846e-07,
+              30.000001882961893
+            ],
+            "force_balance_residual_N": [
+              1.7999501010328156e-08,
+              4.4533079805730846e-07,
+              1.8829618859683706e-06
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -0.5174772923329982,
+                -0.5893478414030007,
+                0.8690636482159997
+              ],
+              "UL2": [
+                -1.1474343599494996,
+                0.6414701427860003,
+                -0.16209157717432002
+              ],
+              "UR1": [
+                1.5073164701389987,
+                0.1692820615578008,
+                -2.0578393710060006
+              ],
+              "UR2": [
+                0.1575952001429992,
+                -0.22140391761000244,
+                2.1120137947299984
+              ]
+            },
+            "anti_lift_normal_reaction_N": 55.977848087999995,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 0.002789432,
+            "pad_max_opening_mm": 0.6782025,
+            "moment_balance_residual_Nmm": [
+              -0.000378912092628525,
+              -2.4256616455886615e-05,
+              4.4099648645712364e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 5.16040871586263,
+              "node": 10101,
+              "xyz_mm": [
+                169.0,
+                10.0,
+                35.9
+              ],
+              "principal_max_MPa": 5.35442017176887,
+              "principal_min_MPa": -3.9521762229077226,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null,
+            "corner_displacement_screen_status": "FAIL"
+          }
+        },
+        "M1-contactK100k-MAT-B-LR": {
+          "execution": {
+            "case": "LC4",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": "LR",
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -30.00000000000003
+            ],
+            "load_cg_seed_mm": [
+              159.99999999999994,
+              200.00000000000014,
+              22.15191459800722
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 320,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "518fbc0ac4a2b4c779dbe5811a59df8ef7a0ba2031aa2777c129dd2c11338a3f",
+            "mesh_report": {
+              "source_sha256": "ccb03868605d8c8b8553ed99f94d4285ae4fdde27d6bc529306126a1061c13e3",
+              "size_mm": 3.0,
+              "nodes": 284766,
+              "elements": 152071,
+              "type": "C3D10",
+              "min_SICN": 0.0016456008610087859,
+              "corner_tet_volume_mm3": 362822.909472044,
+              "volume_weighted_seed_cg_mm": [
+                160.30535537034768,
+                157.43378357755526,
+                22.07261556507853
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 160,
+                "PAD_R": 160,
+                "ANTILIFT": 125,
+                "CORNER_LL": 57,
+                "CORNER_LR": 57,
+                "CORNER_UL": 49,
+                "CORNER_UR": 50
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC4",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 1.0200008696362608,
+            "max_displacement_node": 40,
+            "max_displacement_xyz_mm": [
+              316.8,
+              3.2,
+              35.0
+            ],
+            "max_abs_UZ_mm": 1.00406,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.04529526,
+              "CORNER_LR": 1.00406,
+              "CORNER_UL": 0.001183285,
+              "CORNER_UR": 0.03092187
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.000848930882023419,
+              "UL2": 0.0005244383760268598,
+              "UR1": 0.00397209746536248,
+              "UR2": 0.008267517022703204
+            },
+            "support_reaction_sum_N": [
+              1.0359900190839988e-07,
+              -2.2048719779121928e-07,
+              30.00000137356711
+            ],
+            "force_balance_residual_N": [
+              1.0359900190839988e-07,
+              -2.2048719779121928e-07,
+              1.3735670805203881e-06
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -0.5255646059290005,
+                -0.5871239570736998,
+                0.8745495502808002
+              ],
+              "UL2": [
+                -1.14619259595,
+                0.6384006239514003,
+                -0.1624764427791
+              ],
+              "UR1": [
+                1.5213223520240022,
+                0.17026371998200018,
+                -2.066521122288996
+              ],
+              "UR2": [
+                0.1504349534540005,
+                -0.22154060734690023,
+                2.1322153090900016
+              ]
+            },
+            "anti_lift_normal_reaction_N": 55.95654560899999,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 0.00280672,
+            "pad_max_opening_mm": 0.6786294,
+            "moment_balance_residual_Nmm": [
+              -0.00018137918821992116,
+              -7.583410216227549e-05,
+              -4.8870004828671654e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 5.447426898451048,
+              "node": 12763,
+              "xyz_mm": [
+                169.0,
+                10.0,
+                35.9
+              ],
+              "principal_max_MPa": 5.531518112748953,
+              "principal_min_MPa": -3.325528795076641,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null,
+            "corner_displacement_screen_status": "FAIL"
+          }
+        }
+      },
+      "LC4_mesh_comparison": {
+        "coarse_mm": 1.006463,
+        "fine_mm": 1.00406,
+        "relative_change_percent_fine_reference": 0.23932832699242626,
+        "two_mesh_displacement_change_below_5_percent": true,
+        "full_contract_mesh_convergence_verified": false,
+        "limits": [
+          "No converged non-singular stress or qualified allowable.",
+          "Nodal load/contact sampling changes with refinement.",
+          "No general transfer to other load/material/geometry cases."
+        ]
+      }
+    },
+    "EU20": {
+      "CAD": {
+        "revision": "Rev.EU.20",
+        "classification": "CALCULATED_SCREENING_CANDIDATE_NOT_FABRICATION_RELEASE",
+        "valid": true,
+        "solid_count": 1,
+        "volume_mm3": 374028.4244807351,
+        "reimport_valid": true,
+        "reimport_solids": 1,
+        "collision_volume_mm3": {
+          "EX_L1": 0,
+          "EX_L2": 0,
+          "EX_R1": 0,
+          "EX_R2": 0,
+          "MAIN_C": 0,
+          "MAIN_P": 0,
+          "VOICE": 0,
+          "RADAR": 0,
+          "ENV": 0,
+          "SERVICE": 0,
+          "ESP32_RF": 0,
+          "DML": 0,
+          "front_carrier_FA": 0,
+          "metal_target_1": 0,
+          "metal_target_2": 0,
+          "metal_target_3": 0,
+          "metal_target_4": 0,
+          "metal_target_5": 0,
+          "metal_target_6": 0,
+          "metal_target_7": 0,
+          "metal_target_8": 0,
+          "shell_EQ": 0
+        },
+        "shell_clearance_mm": 1.0,
+        "front_carrier_clearance_mm": 0.5,
+        "input_sha256": {
+          "evidence/rev-es/AP22_FRAME_RF_CLIPPED_REV_ES.step": "d5cd859248d48f45a148e271933c75613652c3856ee625f64d24714a4ff583c9",
+          "evidence/rev-eq/AP22_REV_EQ_SOLID.step": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+          "evidence/rev-fa/AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+          "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/generate_frame_candidate_rev_eu20.py": "d3f7e176805aa0af75a6ac8607f7ce52077168a5d1db59db14fa7ea1e2544868"
+        },
+        "mount_centers_xy_mm": {
+          "UL1": [
+            37.5,
+            375
+          ],
+          "UL2": [
+            67.5,
+            375
+          ],
+          "UR1": [
+            252.5,
+            375
+          ],
+          "UR2": [
+            282.5,
+            375
+          ]
+        },
+        "bore_radius_seed_mm": 3,
+        "bore_z_mm": [
+          28,
+          35
+        ],
+        "pad_centers_xy_mm": [
+          [
+            45,
+            28
+          ],
+          [
+            275,
+            28
+          ]
+        ],
+        "anti_lift_load_interface_xy_mm": [
+          160,
+          15
+        ],
+        "rail_paths_xy_mm": {
+          "rail_L": [
+            [
+              34,
+              378
+            ],
+            [
+              34,
+              350
+            ],
+            [
+              33,
+              300
+            ],
+            [
+              32,
+              235
+            ],
+            [
+              32,
+              125
+            ],
+            [
+              33,
+              112
+            ],
+            [
+              33,
+              45
+            ],
+            [
+              45,
+              28
+            ]
+          ],
+          "rail_R": [
+            [
+              286,
+              378
+            ],
+            [
+              300,
+              350
+            ],
+            [
+              300,
+              300
+            ],
+            [
+              303,
+              225
+            ],
+            [
+              305,
+              155
+            ],
+            [
+              306,
+              75
+            ],
+            [
+              300,
+              62
+            ],
+            [
+              296,
+              30
+            ],
+            [
+              275,
+              28
+            ]
+          ],
+          "mid_B1_B2": [
+            [
+              32,
+              235
+            ],
+            [
+              155,
+              230
+            ],
+            [
+              303,
+              225
+            ]
+          ],
+          "mid_B3": [
+            [
+              155,
+              230
+            ],
+            [
+              205,
+              165
+            ],
+            [
+              305,
+              155
+            ]
+          ],
+          "mid_B4": [
+            [
+              32,
+              125
+            ],
+            [
+              70,
+              161
+            ],
+            [
+              155,
+              161
+            ],
+            [
+              155,
+              230
+            ]
+          ],
+          "pad_L_ring": [
+            [
+              45,
+              28
+            ],
+            [
+              45,
+              7
+            ]
+          ],
+          "pad_R_ring": [
+            [
+              275,
+              28
+            ],
+            [
+              275,
+              7
+            ]
+          ],
+          "tie_L125": [
+            [
+              8.4,
+              125
+            ],
+            [
+              32,
+              125
+            ]
+          ],
+          "tie_L235": [
+            [
+              8.4,
+              235
+            ],
+            [
+              32,
+              235
+            ]
+          ],
+          "tie_L350": [
+            [
+              8.4,
+              350
+            ],
+            [
+              34,
+              350
+            ]
+          ],
+          "tie_R155": [
+            [
+              311.6,
+              155
+            ],
+            [
+              305,
+              155
+            ]
+          ],
+          "tie_R225": [
+            [
+              311.6,
+              225
+            ],
+            [
+              303,
+              225
+            ]
+          ],
+          "tie_R350": [
+            [
+              311.6,
+              350
+            ],
+            [
+              300,
+              350
+            ]
+          ]
+        },
+        "primary_rib_mm": 3.2,
+        "deep_lower_girders": {
+          "side_paths": [
+            [
+              [
+                95,
+                15
+              ],
+              [
+                95,
+                28
+              ],
+              [
+                45,
+                28
+              ]
+            ],
+            [
+              [
+                225,
+                15
+              ],
+              [
+                225,
+                28
+              ],
+              [
+                275,
+                28
+              ]
+            ]
+          ],
+          "side_z_mm": [
+            10.3,
+            35
+          ],
+          "corner_paths": [
+            [
+              [
+                45,
+                28
+              ],
+              [
+                7,
+                7
+              ]
+            ],
+            [
+              [
+                275,
+                28
+              ],
+              [
+                313,
+                7
+              ]
+            ]
+          ],
+          "corner_z_mm": [
+            10.3,
+            28
+          ],
+          "side_width_mm": 4.8,
+          "corner_width_mm": 6.4
+        },
+        "intermediate_ties": {
+          "count": 6,
+          "post_xy_section_mm": [
+            2.4,
+            2.8
+          ],
+          "post_z_mm": [
+            6,
+            35
+          ]
+        },
+        "central_bottom_tube_xy_mm": [
+          32,
+          288,
+          3.2,
+          19
+        ],
+        "central_crossmember_section": "solid section extended to both outer corners within Y3.2..12; side girders 4.8 mm and corner girders 6.4 mm",
+        "central_tube_z_mm": [
+          3.1,
+          36.8
+        ],
+        "dml_notch_yz_mm": [
+          9.6,
+          19,
+          6,
+          10.3
+        ],
+        "anti_lift_surface_z_mm": 35,
+        "primary_rib_z_mm": [
+          20,
+          28
+        ],
+        "front_flange_width_mm": 6.4,
+        "perimeter_web_topology": "continuous inner and outer PC-CF webs, outside DML projection",
+        "perimeter_web_mm": 2.4,
+        "closed_bottom_tube_y_mm": [
+          3.2,
+          12
+        ],
+        "sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+        "limitations": [
+          "Mount shift Y366->375 required by conservative RF mask; requires mating cleat redesign.",
+          "6 mm insert surrogate bore, no exact insert installation-hole claim.",
+          "Fillets, exact radar mask, cables, board carrier interfaces and fasteners remain incomplete.",
+          "Lower support/anti-lift surrogate load interfaces; actual wall hardware absent.",
+          "Volume density/strength unqualified; no product release."
+        ],
+        "mass_g_at_catalog_density_1p22": 456.31467786649677,
+        "mass_acceptance_ceiling_g": null,
+        "mass_policy": "User authorization 2026-10-07: exceed prior mass budget; no 250 g rejection criterion. Mass and assembly CG/load adequacy remain tracked.",
+        "mass_change_vs_EU19_g": 13.659838166976954
+      },
+      "meshes": {
+        "M0": {
+          "report": {
+            "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+            "size_mm": 4.0,
+            "nodes": 183498,
+            "elements": 97559,
+            "type": "C3D10",
+            "min_SICN": 0.008781184496329687,
+            "corner_tet_volume_mm3": 374017.8510584898,
+            "volume_weighted_seed_cg_mm": [
+              160.29621811899082,
+              153.32447194913016,
+              22.073346458559264
+            ],
+            "node_sets": {
+              "UL1": 504,
+              "UL2": 500,
+              "UR1": 516,
+              "UR2": 500,
+              "PAD_L": 104,
+              "PAD_R": 104,
+              "ANTILIFT": 107,
+              "CORNER_LL": 7,
+              "CORNER_LR": 7,
+              "CORNER_UL": 31,
+              "CORNER_UR": 31
+            },
+            "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+            "algorithm3d": 1,
+            "linear_mesh_optimizer": "Netgen",
+            "gmsh_version": "4.15.2",
+            "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+          },
+          "quality": {
+            "classification": "CALCULATED_MESH_INTEGRITY_NOT_CONVERGENCE",
+            "elements": 97559,
+            "min_SICN": 0.008781184496323018,
+            "min_adaptive_Jacobian_determinant_mm3": 0.002377770795497891,
+            "nonpositive_Jacobian_elements": 0,
+            "SICN_below_0p01_count": 2,
+            "SICN_percentiles": {
+              "0": 0.008781184496323018,
+              "1": 0.46109050294954035,
+              "5": 0.5976199208866464,
+              "50": 0.8230439397832671,
+              "100": 0.9994318352275585
+            },
+            "worst_elements": [
+              {
+                "element": 7324,
+                "SICN": 0.008781184496323018,
+                "min_Jacobian_mm3": 0.006265598554287155,
+                "corner_centroid_xyz_mm": [
+                  37.42500214362902,
+                  380.97014904930563,
+                  32.797843921562134
+                ]
+              },
+              {
+                "element": 86925,
+                "SICN": 0.00894878226633816,
+                "min_Jacobian_mm3": 0.00643610920186681,
+                "corner_centroid_xyz_mm": [
+                  282.5750582826564,
+                  380.9689604513565,
+                  32.79891730256066
+                ]
+              },
+              {
+                "element": 90747,
+                "SICN": 0.011098198928551824,
+                "min_Jacobian_mm3": 0.002377770795497891,
+                "corner_centroid_xyz_mm": [
+                  31.666064724864462,
+                  299.8716946464609,
+                  27.8688763066031
+                ]
+              },
+              {
+                "element": 28594,
+                "SICN": 0.013367808476188264,
+                "min_Jacobian_mm3": 0.004237309859012894,
+                "corner_centroid_xyz_mm": [
+                  31.781270389141106,
+                  299.92921989101444,
+                  20.145100548206624
+                ]
+              },
+              {
+                "element": 45892,
+                "SICN": 0.014695072534666462,
+                "min_Jacobian_mm3": 0.0051622223052638794,
+                "corner_centroid_xyz_mm": [
+                  31.574733027941292,
+                  300.00519887172135,
+                  27.249809602368337
+                ]
+              },
+              {
+                "element": 39730,
+                "SICN": 0.014698177788405993,
+                "min_Jacobian_mm3": 0.005162222305648222,
+                "corner_centroid_xyz_mm": [
+                  31.57476567507254,
+                  300.00704415418386,
+                  26.749809602368337
+                ]
+              },
+              {
+                "element": 90376,
+                "SICN": 0.014733404446629945,
+                "min_Jacobian_mm3": 0.00520673131829642,
+                "corner_centroid_xyz_mm": [
+                  31.57637379286841,
+                  300.0138633291696,
+                  20.750470961326833
+                ]
+              },
+              {
+                "element": 13559,
+                "SICN": 0.01474470607004867,
+                "min_Jacobian_mm3": 0.00520673131829642,
+                "corner_centroid_xyz_mm": [
+                  31.576406439999662,
+                  300.0157086116321,
+                  21.250470961326833
+                ]
+              },
+              {
+                "element": 70067,
+                "SICN": 0.014756710055132285,
+                "min_Jacobian_mm3": 0.0052260154334138635,
+                "corner_centroid_xyz_mm": [
+                  31.57721720592779,
+                  300.0258529176693,
+                  24.24993567983731
+                ]
+              },
+              {
+                "element": 70078,
+                "SICN": 0.014758459331244993,
+                "min_Jacobian_mm3": 0.005226015433413864,
+                "corner_centroid_xyz_mm": [
+                  31.577184558796542,
+                  300.0240076352068,
+                  23.74993567983731
+                ]
+              }
+            ],
+            "mesh_convergence_verified": false,
+            "source_sha256": {
+              "evidence/rev-ev20/M0/mesh.msh": "bf011b0589e9c804bb953b820aff918887a680ddf96ad9ae2219274fcdefe6db",
+              "evidence/rev-ev20/M0/mesh-data.npz": "03e59223b9ae20a8201c18e8c2b59e55065affd6450d4fcf99b943ee4a7d34b2",
+              "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/audit_frame_mesh_rev_fc.py": "4c6e73b72061fab9cf260cf91c27e7d408e4b4555e54129da64d604fe214076b"
+            }
+          }
+        },
+        "M1": {
+          "report": {
+            "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+            "size_mm": 3.0,
+            "nodes": 282996,
+            "elements": 151875,
+            "type": "C3D10",
+            "min_SICN": 0.007600402763620756,
+            "corner_tet_volume_mm3": 374017.8511538643,
+            "volume_weighted_seed_cg_mm": [
+              160.29621802516695,
+              153.32447164116232,
+              22.073346439546008
+            ],
+            "node_sets": {
+              "UL1": 504,
+              "UL2": 500,
+              "UR1": 516,
+              "UR2": 500,
+              "PAD_L": 164,
+              "PAD_R": 176,
+              "ANTILIFT": 125,
+              "CORNER_LL": 7,
+              "CORNER_LR": 7,
+              "CORNER_UL": 49,
+              "CORNER_UR": 49
+            },
+            "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+            "algorithm3d": 1,
+            "linear_mesh_optimizer": "Netgen",
+            "gmsh_version": "4.15.2",
+            "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+          },
+          "quality": {
+            "classification": "CALCULATED_MESH_INTEGRITY_NOT_CONVERGENCE",
+            "elements": 151875,
+            "min_SICN": 0.007600402763841181,
+            "min_adaptive_Jacobian_determinant_mm3": 0.0008106125920100437,
+            "nonpositive_Jacobian_elements": 0,
+            "SICN_below_0p01_count": 2,
+            "SICN_percentiles": {
+              "0": 0.007600402763841181,
+              "1": 0.5165833867348376,
+              "5": 0.6279599864770381,
+              "50": 0.8482900736275026,
+              "100": 0.9998807629419278
+            },
+            "worst_elements": [
+              {
+                "element": 25283,
+                "SICN": 0.007600402763841181,
+                "min_Jacobian_mm3": 0.005937212232791343,
+                "corner_centroid_xyz_mm": [
+                  282.6305759489302,
+                  380.96205843080804,
+                  32.8054666525331
+                ]
+              },
+              {
+                "element": 25882,
+                "SICN": 0.008989430113986214,
+                "min_Jacobian_mm3": 0.00650796794024075,
+                "corner_centroid_xyz_mm": [
+                  37.42596504587407,
+                  380.96865364853284,
+                  32.79995143027318
+                ]
+              },
+              {
+                "element": 43087,
+                "SICN": 0.014659562182023701,
+                "min_Jacobian_mm3": 0.005207346317932329,
+                "corner_centroid_xyz_mm": [
+                  31.576271385519846,
+                  300.0058529494355,
+                  24.750428033939222
+                ]
+              },
+              {
+                "element": 39908,
+                "SICN": 0.014670727700919093,
+                "min_Jacobian_mm3": 0.005207346317769101,
+                "corner_centroid_xyz_mm": [
+                  31.576271385519846,
+                  300.0058529494355,
+                  25.250428033939222
+                ]
+              },
+              {
+                "element": 71458,
+                "SICN": 0.01474044940184474,
+                "min_Jacobian_mm3": 0.005242026021286709,
+                "corner_centroid_xyz_mm": [
+                  31.577746863839227,
+                  300.0251394305657,
+                  26.2498758535178
+                ]
+              },
+              {
+                "element": 135630,
+                "SICN": 0.014743820440997372,
+                "min_Jacobian_mm3": 0.005242026021286709,
+                "corner_centroid_xyz_mm": [
+                  31.577779510970476,
+                  300.0269847130282,
+                  25.7498758535178
+                ]
+              },
+              {
+                "element": 48477,
+                "SICN": 0.014752016283058587,
+                "min_Jacobian_mm3": 0.005231648839042374,
+                "corner_centroid_xyz_mm": [
+                  31.57741251133804,
+                  300.02610732858295,
+                  23.249976462905856
+                ]
+              },
+              {
+                "element": 40755,
+                "SICN": 0.014752625140497815,
+                "min_Jacobian_mm3": 0.0052316488392033745,
+                "corner_centroid_xyz_mm": [
+                  31.57737986420679,
+                  300.0242620461205,
+                  22.749976462905856
+                ]
+              },
+              {
+                "element": 41924,
+                "SICN": 0.01599557757265294,
+                "min_Jacobian_mm3": 0.024204226437285908,
+                "corner_centroid_xyz_mm": [
+                  251.40637485780954,
+                  369.20907291583023,
+                  32.85362407380162
+                ]
+              },
+              {
+                "element": 79343,
+                "SICN": 0.016333412890095215,
+                "min_Jacobian_mm3": 0.004165858892627069,
+                "corner_centroid_xyz_mm": [
+                  31.541059423040657,
+                  300.00987882947726,
+                  23.6733241477018
+                ]
+              }
+            ],
+            "mesh_convergence_verified": false,
+            "source_sha256": {
+              "evidence/rev-ev20/M1/mesh.msh": "cc790064724bd47c7a728305085b996063a23dd5b9abb8e8ac8002512ae866b3",
+              "evidence/rev-ev20/M1/mesh-data.npz": "0c2ad6e8c0ea9e44a6d9ea48c585ec5fad6d86e3c1270247202b0a3f08a8df47",
+              "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/audit_frame_mesh_rev_fc.py": "4c6e73b72061fab9cf260cf91c27e7d408e4b4555e54129da64d604fe214076b"
+            }
+          }
+        }
+      },
+      "cases": {
+        "M0-linear70-MAT-B": {
+          "execution": {
+            "case": "LC1",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": null,
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              -69.99999999999989,
+              0.0
+            ],
+            "load_cg_seed_mm": [
+              160.0000000000001,
+              200.00000000000097,
+              22.15792506446229
+            ],
+            "nonlinear_geometry": false,
+            "lower_unilateral_gap_contacts": 0,
+            "total_pad_penalty_N_per_mm": null,
+            "gap_force_floor_N": null,
+            "contact_iteration_controls": false,
+            "anti_lift_normal_support_assumption": false,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "5c281fc12f6cbd7bd08590f44338e2c439073d08775cac790e343cea856e5deb",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 4.0,
+              "nodes": 183498,
+              "elements": 97559,
+              "type": "C3D10",
+              "min_SICN": 0.008781184496329687,
+              "corner_tet_volume_mm3": 374017.8510584898,
+              "volume_weighted_seed_cg_mm": [
+                160.29621811899082,
+                153.32447194913016,
+                22.073346458559264
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 104,
+                "PAD_R": 104,
+                "ANTILIFT": 107,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC1",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 2.3142778113463924,
+            "max_displacement_node": 8248,
+            "max_displacement_xyz_mm": [
+              197.70516242721678,
+              171.8590937299172,
+              20.0
+            ],
+            "max_abs_UZ_mm": 1.991261,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 1.887203,
+              "CORNER_LR": 1.941717,
+              "CORNER_UL": 0.08452363,
+              "CORNER_UR": 0.0949113
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.022322528594771112,
+              "UL2": 0.010631302772499832,
+              "UR1": 0.011812372143408831,
+              "UR2": 0.026556370770368907
+            },
+            "support_reaction_sum_N": [
+              -1.379310043958526e-07,
+              69.99999943299999,
+              1.8613499675607104e-07
+            ],
+            "force_balance_residual_N": [
+              -1.379310043958526e-07,
+              -5.669999012525295e-07,
+              1.8613499675607104e-07
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -10.473611788191,
+                34.0506911398,
+                -2.6298446198800023
+              ],
+              "UL2": [
+                13.11123480305001,
+                1.7915255360099998,
+                2.6223623649059986
+              ],
+              "UR1": [
+                -16.41087539848,
+                -2.2731797673100016,
+                2.5255643612089993
+              ],
+              "UR2": [
+                13.773252245690008,
+                36.43096252449998,
+                -2.5180819200999998
+              ]
+            },
+            "anti_lift_normal_reaction_N": 0.0,
+            "warp_normal_reaction_N": null,
+            "moment_balance_residual_Nmm": [
+              4.8370026640372904e-05,
+              7.262807896779577e-05,
+              -0.00014423907853364747
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 3.3757913895166625,
+              "node": 33520,
+              "xyz_mm": [
+                285.46941186357765,
+                375.4273092374902,
+                28.426800871718974
+              ],
+              "principal_max_MPa": 3.3652023044794204,
+              "principal_min_MPa": -3.5837352401702196,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null
+          }
+        },
+        "M0-linear90-MAT-B": {
+          "execution": {
+            "case": "LC1",
+            "vertical_load_seed_N": 90.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": null,
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              -89.99999999999872,
+              0.0
+            ],
+            "load_cg_seed_mm": [
+              160.0000000000001,
+              200.00000000000097,
+              22.15792506446229
+            ],
+            "nonlinear_geometry": false,
+            "lower_unilateral_gap_contacts": 0,
+            "total_pad_penalty_N_per_mm": null,
+            "gap_force_floor_N": null,
+            "contact_iteration_controls": false,
+            "anti_lift_normal_support_assumption": false,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "46f4792b05bf87319aa5ee129b030793f820b07d1d0047cce6d661486df71c6f",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 4.0,
+              "nodes": 183498,
+              "elements": 97559,
+              "type": "C3D10",
+              "min_SICN": 0.008781184496329687,
+              "corner_tet_volume_mm3": 374017.8510584898,
+              "volume_weighted_seed_cg_mm": [
+                160.29621811899082,
+                153.32447194913016,
+                22.073346458559264
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 104,
+                "PAD_R": 104,
+                "ANTILIFT": 107,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC1",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 2.9754999921122987,
+            "max_displacement_node": 8248,
+            "max_displacement_xyz_mm": [
+              197.70516242721678,
+              171.8590937299172,
+              20.0
+            ],
+            "max_abs_UZ_mm": 2.560192,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 2.426404,
+              "CORNER_LR": 2.496493,
+              "CORNER_UL": 0.1086732,
+              "CORNER_UR": 0.1220288
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.02870038957311871,
+              "UL2": 0.013668817525285136,
+              "UR1": 0.015187331589778403,
+              "UR2": 0.034143898249573146
+            },
+            "support_reaction_sum_N": [
+              -7.093160377669161e-07,
+              89.99999876735998,
+              -3.322509979364341e-07
+            ],
+            "force_balance_residual_N": [
+              -7.093160377669161e-07,
+              -1.2326387377470382e-06,
+              -3.322509979364341e-07
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -13.466073125156003,
+                43.779459894500015,
+                -3.381229692200001
+              ],
+              "UL2": [
+                16.857302793810003,
+                2.303389585440004,
+                3.371608754540001
+              ],
+              "UR1": [
+                -21.099696575990013,
+                -2.922659905480003,
+                3.2471542505990003
+              ],
+              "UR2": [
+                17.70846619802001,
+                46.83980919289998,
+                -3.237533645189998
+              ]
+            },
+            "anti_lift_normal_reaction_N": 0.0,
+            "warp_normal_reaction_N": null,
+            "moment_balance_residual_Nmm": [
+              -2.469749921963412e-05,
+              -7.349075159979179e-05,
+              -3.262066291436459e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 4.34029344706137,
+              "node": 33520,
+              "xyz_mm": [
+                285.46941186357765,
+                375.4273092374902,
+                28.426800871718974
+              ],
+              "principal_max_MPa": 4.326693544104957,
+              "principal_min_MPa": -4.6076570333582065,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null
+          }
+        },
+        "M0-pull-contactK100k-MAT-B": {
+          "execution": {
+            "case": "LC3",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": null,
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -49.99999999999935
+            ],
+            "load_cg_seed_mm": [
+              160.0000000000001,
+              200.00000000000097,
+              22.15792506446229
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 208,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "ebefc0e3d952cfab301360518bedc59e771743a63f7ccdfd52548e8e991611b8",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 4.0,
+              "nodes": 183498,
+              "elements": 97559,
+              "type": "C3D10",
+              "min_SICN": 0.008781184496329687,
+              "corner_tet_volume_mm3": 374017.8510584898,
+              "volume_weighted_seed_cg_mm": [
+                160.29621811899082,
+                153.32447194913016,
+                22.073346458559264
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 104,
+                "PAD_R": 104,
+                "ANTILIFT": 107,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC3",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 2.0491863725145976,
+            "max_displacement_node": 6656,
+            "max_displacement_xyz_mm": [
+              156.3856406460551,
+              160.2,
+              28.0
+            ],
+            "max_abs_UZ_mm": 2.045634,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.1427548,
+              "CORNER_LR": 0.1455502,
+              "CORNER_UL": 0.01126672,
+              "CORNER_UR": 0.01230721
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.014995567459737595,
+              "UL2": 0.0025147618513638665,
+              "UR1": 0.002642956941080123,
+              "UR2": 0.015765866071539014
+            },
+            "support_reaction_sum_N": [
+              -5.8125997182134626e-08,
+              1.2195000689829705e-08,
+              49.97769288201577
+            ],
+            "force_balance_residual_N": [
+              -5.8125997182134626e-08,
+              1.2195000689829705e-08,
+              -0.02230711798357987
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -0.9129954032300064,
+                -1.0675208732499972,
+                11.29593371342001
+              ],
+              "UL2": [
+                -3.606432360325001,
+                1.0139351350260002,
+                1.6341402121840007
+              ],
+              "UR1": [
+                3.5871423427289977,
+                1.0922393413390008,
+                1.6312753274550003
+              ],
+              "UR2": [
+                0.9322853627000084,
+                -1.0386535909200012,
+                11.19200632774901
+              ]
+            },
+            "anti_lift_normal_reaction_N": 24.224337300999995,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 0.0,
+            "pad_max_opening_mm": 0.1306829,
+            "moment_balance_residual_Nmm": [
+              4.149156036077406,
+              0.009175535070924485,
+              2.9863771928262395e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 2.1595862727559645,
+              "node": 49082,
+              "xyz_mm": [
+                35.124005671437914,
+                369.0544313350187,
+                28.0
+              ],
+              "principal_max_MPa": 2.850728488934945,
+              "principal_min_MPa": -1.9082432493665595,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null
+          },
+          "deformed_node_audit": {
+            "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+            "status": "NO_SAMPLED_NODE_INTERFERENCE",
+            "load_case": "Rev.EU.20 LC3 50 N outward; normalized MAT-B and surrogate supports",
+            "nodes_initially_inside_DML": 0,
+            "nodes_predicted_inside_DML": 0,
+            "nodes_predicted_frontward_of_DML_within_projection": 0,
+            "max_displacement_node": 6656,
+            "max_node_original_xyz_mm": [
+              156.3856406460551,
+              160.2,
+              28.0
+            ],
+            "max_node_displacement_xyz_mm": [
+              0.1123941,
+              -0.04374807,
+              -2.045634
+            ],
+            "max_node_predicted_xyz_mm": [
+              156.49803474605508,
+              160.15625193,
+              25.954366
+            ],
+            "sample_predicted_DML_nodes": [],
+            "source_sha256": {
+              "evidence/rev-ev20/M0-pull-contactK100k-MAT-B/LC3/frame.dat": "dfd6bc215e9172b579bff033a6d6c2fc9c717554ae87e5476dd04c79184976cf",
+              "evidence/rev-ev20/M0-pull-contactK100k-MAT-B/LC3/metrics.json": "79cfa39a88279fa5c4fe0b914274762c1de2d242f8ebe30d8544a1e6ec70fdcc",
+              "evidence/rev-ev20/M0/mesh-data.npz": "03e59223b9ae20a8201c18e8c2b59e55065affd6450d4fcf99b943ee4a7d34b2",
+              "mechanical/cad/audit_loaded_frame_envelope_rev_fb.py": "aecd11f76776d6b29750331b25d1d65a13807ed453dc0afcdfdd43e5fc840e7f"
+            },
+            "limits": [
+              "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+              "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+              "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+              "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+            ]
+          },
+          "quadratic_clearance_audit": {
+            "classification": "CALCULATED_CONSERVATIVE_FULL_QUADRATIC_ELEMENT_BOUND_ON_SIMULATED_FINAL_STATE",
+            "status": "PASS_SCOPED_FEA_GEOMETRY_SEPARATION",
+            "method": "Quadratic tetrahedral Bernstein control-point convex enclosure; enclosing AABBs inflated 1e-7 mm. Overlap is inconclusive.",
+            "gmsh_edge_node_pairs_zero_based": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "self_checks": {
+              "curved_node_only_false_negative_detected": true,
+              "random_elements": 32,
+              "barycentric_samples_each": 64
+            },
+            "initial": {
+              "elements": 97559,
+              "potential_DML_box_overlap_elements": 0,
+              "potential_frontward_within_DML_projection_elements": 0,
+              "all_element_bounds_separated_from_DML_and_frontward_region": true,
+              "conservative_DML_separation_lower_bound_mm": 0.3999998999999548,
+              "unresolved_element_tags_sample": []
+            },
+            "final": {
+              "elements": 97559,
+              "potential_DML_box_overlap_elements": 0,
+              "potential_frontward_within_DML_projection_elements": 0,
+              "all_element_bounds_separated_from_DML_and_frontward_region": true,
+              "conservative_DML_separation_lower_bound_mm": 0.3241564600000011,
+              "unresolved_element_tags_sample": []
+            },
+            "limits": [
+              "Final load state only; not all intermediate states.",
+              "FEA interpolation geometry only; not exact deformed BREP, manufacturing tolerance or real assembly qualification.",
+              "DML is the fixed nominal hard box, not a deformable contact body.",
+              "No physical clearance is certified from unqualified material/support assumptions."
+            ],
+            "source_sha256": {
+              "mechanical/cad/audit_quadratic_dml_clearance_rev_fd.py": "743717843502e2064af187afe502356c5b8c35d623d9ad407608bfde2ec8d0f2",
+              "evidence/rev-ev20/M0/mesh-data.npz": "03e59223b9ae20a8201c18e8c2b59e55065affd6450d4fcf99b943ee4a7d34b2",
+              "evidence/rev-ev20/M0-pull-contactK100k-MAT-B/LC3/frame.dat": "dfd6bc215e9172b579bff033a6d6c2fc9c717554ae87e5476dd04c79184976cf",
+              "evidence/rev-ev20/M0-pull-contactK100k-MAT-B/LC3/metrics.json": "79cfa39a88279fa5c4fe0b914274762c1de2d242f8ebe30d8544a1e6ec70fdcc"
+            }
+          }
+        },
+        "M0-contactK100k-MAT-B-LR": {
+          "execution": {
+            "case": "LC4",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": "LR",
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -29.999999999999996
+            ],
+            "load_cg_seed_mm": [
+              160.0000000000001,
+              200.00000000000097,
+              22.15792506446229
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 208,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "558b2e7ac3bcc38ba14baa1a8af18aaa68d4668397c5d372f0e3348b2ac91de6",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 4.0,
+              "nodes": 183498,
+              "elements": 97559,
+              "type": "C3D10",
+              "min_SICN": 0.008781184496329687,
+              "corner_tet_volume_mm3": 374017.8510584898,
+              "volume_weighted_seed_cg_mm": [
+                160.29621811899082,
+                153.32447194913016,
+                22.073346458559264
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 104,
+                "PAD_R": 104,
+                "ANTILIFT": 107,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC4",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 0.9723014707381878,
+            "max_displacement_node": 47,
+            "max_displacement_xyz_mm": [
+              316.8,
+              3.2,
+              36.8
+            ],
+            "max_abs_UZ_mm": 0.9559624,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.0238838,
+              "CORNER_LR": 0.9530406,
+              "CORNER_UL": 0.001768294,
+              "CORNER_UR": 0.03228759
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.0010251382555181423,
+              "UL2": 0.000572979030136828,
+              "UR1": 0.003900509264029537,
+              "UR2": 0.009424310444706705
+            },
+            "support_reaction_sum_N": [
+              1.421246991067937e-07,
+              -7.645600016981113e-08,
+              30.000004823650023
+            ],
+            "force_balance_residual_N": [
+              1.421246991067937e-07,
+              -7.645600016981113e-08,
+              4.823650026963833e-06
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -0.49357852544600006,
+                -0.6213759804319997,
+                0.9566161406717
+              ],
+              "UL2": [
+                -1.2498667663539982,
+                0.688796028623,
+                -0.21219479981510003
+              ],
+              "UR1": [
+                1.6190061654158006,
+                0.11473893929399946,
+                -2.2276138082220003
+              ],
+              "UR2": [
+                0.12443926850889922,
+                -0.18215906394099982,
+                2.611890476849999
+              ]
+            },
+            "anti_lift_normal_reaction_N": 55.648877993999996,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 0.002374366,
+            "pad_max_opening_mm": 0.6650938,
+            "moment_balance_residual_Nmm": [
+              -0.0009248545051150359,
+              0.00015396068170048238,
+              -4.841305915448402e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 4.864453362583098,
+              "node": 9911,
+              "xyz_mm": [
+                169.0,
+                10.0,
+                35.9
+              ],
+              "principal_max_MPa": 4.739736063438573,
+              "principal_min_MPa": -3.2815834266303505,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null,
+            "corner_displacement_screen_status": "PASS_SCOPE_ONLY"
+          }
+        },
+        "M1-contactK100k-MAT-B-LR": {
+          "execution": {
+            "case": "LC4",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": "LR",
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -29.999999999999996
+            ],
+            "load_cg_seed_mm": [
+              160.00000000000003,
+              200.00000000000094,
+              22.157828676203575
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 340,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "85e652fd1318e8d7b7c33654a90d9f93a2e3d11202b7b6c0e29df84a5ad916d6",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 3.0,
+              "nodes": 282996,
+              "elements": 151875,
+              "type": "C3D10",
+              "min_SICN": 0.007600402763620756,
+              "corner_tet_volume_mm3": 374017.8511538643,
+              "volume_weighted_seed_cg_mm": [
+                160.29621802516695,
+                153.32447164116232,
+                22.073346439546008
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 164,
+                "PAD_R": 176,
+                "ANTILIFT": 125,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 49,
+                "CORNER_UR": 49
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC4",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 0.9755233693427794,
+            "max_displacement_node": 47,
+            "max_displacement_xyz_mm": [
+              316.8,
+              3.2,
+              36.8
+            ],
+            "max_abs_UZ_mm": 0.9591243,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.0245934,
+              "CORNER_LR": 0.9573294,
+              "CORNER_UL": 0.001771592,
+              "CORNER_UR": 0.03240596
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.0009872701134385664,
+              "UL2": 0.0006225083477474258,
+              "UR1": 0.004222768186525802,
+              "UR2": 0.009163750757690622
+            },
+            "support_reaction_sum_N": [
+              1.8784979946215308e-07,
+              -2.6282120343945614e-07,
+              29.999992078898313
+            ],
+            "force_balance_residual_N": [
+              1.8784979946215308e-07,
+              -2.6282120343945614e-07,
+              -7.921101683905363e-06
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                -0.49827639245779887,
+                -0.6226388160250992,
+                0.9645443247534
+              ],
+              "UL2": [
+                -1.2543985554229995,
+                0.6896376714039005,
+                -0.21288133625329975
+              ],
+              "UR1": [
+                1.6328879498106006,
+                0.11808520474999752,
+                -2.236610181503998
+              ],
+              "UR2": [
+                0.11978718591999955,
+                -0.18508432295000093,
+                2.620836850380005
+              ]
+            },
+            "anti_lift_normal_reaction_N": 55.79105858124998,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 0.002439158,
+            "pad_max_opening_mm": 0.6674882,
+            "moment_balance_residual_Nmm": [
+              0.0014711424255438033,
+              1.1518304404489754e-05,
+              -5.561808054643791e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 5.028983764829017,
+              "node": 93273,
+              "xyz_mm": [
+                168.25,
+                10.0,
+                35.45
+              ],
+              "principal_max_MPa": 5.8281083509276215,
+              "principal_min_MPa": -3.9491516681971115,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null,
+            "corner_displacement_screen_status": "PASS_SCOPE_ONLY"
+          }
+        },
+        "M0-contactK100k-MAT-B-LL": {
+          "execution": {
+            "case": "LC4",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": "LL",
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -29.999999999999996
+            ],
+            "load_cg_seed_mm": [
+              160.0000000000001,
+              200.00000000000097,
+              22.15792506446229
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 208,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "85525ac087fea3ae33db2b49838c6209134f90aa9fe83765467e7f8945f76697",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 4.0,
+              "nodes": 183498,
+              "elements": 97559,
+              "type": "C3D10",
+              "min_SICN": 0.008781184496329687,
+              "corner_tet_volume_mm3": 374017.8510584898,
+              "volume_weighted_seed_cg_mm": [
+                160.29621811899082,
+                153.32447194913016,
+                22.073346458559264
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 104,
+                "PAD_R": 104,
+                "ANTILIFT": 107,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC4",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 0.9688573344118195,
+            "max_displacement_node": 44,
+            "max_displacement_xyz_mm": [
+              3.2,
+              3.2,
+              36.8
+            ],
+            "max_abs_UZ_mm": 0.9579823,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.9555517,
+              "CORNER_LR": 0.02414482,
+              "CORNER_UL": 0.03230471,
+              "CORNER_UR": 0.001428003
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.006954306138954876,
+              "UL2": 0.0038283278254305966,
+              "UR1": 0.0005207262449664026,
+              "UR2": 0.0015669857845880362
+            },
+            "support_reaction_sum_N": [
+              1.1330099936902871e-07,
+              -4.6002729858253544e-07,
+              30.000001625305256
+            ],
+            "force_balance_residual_N": [
+              1.1330099936902871e-07,
+              -4.6002729858253544e-07,
+              1.6253052592674067e-06
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                0.8380132163999992,
+                -0.4366585122019992,
+                2.5217450031039994
+              ],
+              "UL2": [
+                -2.336495238769001,
+                0.46869180454599896,
+                -2.1506166804579974
+              ],
+              "UR1": [
+                0.7831227304279993,
+                0.3737546142696999,
+                -0.2217740537931001
+              ],
+              "UR2": [
+                0.7153594052419995,
+                -0.4057883666410004,
+                0.9500059091870005
+              ]
+            },
+            "anti_lift_normal_reaction_N": 55.76671676709999,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 0.00226115,
+            "pad_max_opening_mm": 0.6674214,
+            "moment_balance_residual_Nmm": [
+              -0.00031277480331937113,
+              1.7104784433286113e-05,
+              3.0273757486654063e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 4.7695813758068955,
+              "node": 61896,
+              "xyz_mm": [
+                151.9,
+                10.0,
+                36.349999999999994
+              ],
+              "principal_max_MPa": 5.503540278209978,
+              "principal_min_MPa": -3.59531112337571,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null,
+            "corner_displacement_screen_status": "PASS_SCOPE_ONLY"
+          }
+        },
+        "M0-contactK100k-MAT-B-UL": {
+          "execution": {
+            "case": "LC4",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": "UL",
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -30.00000000000002
+            ],
+            "load_cg_seed_mm": [
+              160.0000000000001,
+              200.00000000000097,
+              22.15792506446229
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 208,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "45d72bf67feb5396e1ac1d1bfc4e15e83b2d32260017c66e24d7f58fd48e4442",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 4.0,
+              "nodes": 183498,
+              "elements": 97559,
+              "type": "C3D10",
+              "min_SICN": 0.008781184496329687,
+              "corner_tet_volume_mm3": 374017.8510584898,
+              "volume_weighted_seed_cg_mm": [
+                160.29621811899082,
+                153.32447194913016,
+                22.073346458559264
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 104,
+                "PAD_R": 104,
+                "ANTILIFT": 107,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC4",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 0.16412935141854643,
+            "max_displacement_node": 1,
+            "max_displacement_xyz_mm": [
+              3.2,
+              396.8,
+              35.0
+            ],
+            "max_abs_UZ_mm": 0.1633974,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 0.0006165046,
+              "CORNER_LR": 4.183231e-05,
+              "CORNER_UL": 0.1633974,
+              "CORNER_UR": 0.006397337
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.024335587367284483,
+              "UL2": 0.011536861725954594,
+              "UR1": 0.00243449859987214,
+              "UR2": 0.0019948055010056117
+            },
+            "support_reaction_sum_N": [
+              3.154242051300882e-07,
+              -5.328160097017864e-07,
+              29.999999900101738
+            ],
+            "force_balance_residual_N": [
+              3.154242051300882e-07,
+              -5.328160097017864e-07,
+              -9.9898283423272e-08
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                13.483527733030002,
+                4.462584799529993,
+                31.305133768329995
+              ],
+              "UL2": [
+                -0.4821659987010014,
+                -4.512709163049995,
+                2.0786862976799987
+              ],
+              "UR1": [
+                -6.332617022571097,
+                -4.611400134830001,
+                -1.4176902053060008
+              ],
+              "UR2": [
+                -6.668744396333697,
+                4.661523965534,
+                -1.208612971084999
+              ]
+            },
+            "anti_lift_normal_reaction_N": 0.41470710275999995,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 7.3708e-05,
+            "pad_max_opening_mm": 0.0001392701,
+            "moment_balance_residual_Nmm": [
+              -7.659436363383065e-06,
+              -2.2653658305671343e-05,
+              -7.646326274368676e-06
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 5.676276962264967,
+              "node": 68622,
+              "xyz_mm": [
+                30.642482293094616,
+                380.815200963558,
+                27.0
+              ],
+              "principal_max_MPa": 6.456635161952698,
+              "principal_min_MPa": -6.683508194383616,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null,
+            "corner_displacement_screen_status": "PASS_SCOPE_ONLY"
+          }
+        },
+        "M0-contactK100k-MAT-B-UR": {
+          "execution": {
+            "case": "LC4",
+            "vertical_load_seed_N": 70.0,
+            "assembled_mass_load_adequacy_verified": false,
+            "loaded_corner": "UR",
+            "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+            "constitutive_assumptions": {
+              "E1": 1900.0,
+              "E2": 1900.0,
+              "E3": 665.0,
+              "nu12": 0.35,
+              "nu13": 0.35,
+              "nu23": 0.35,
+              "G12": 703.7037037037037,
+              "G13": 281.48148148148147,
+              "G23": 281.48148148148147
+            },
+            "load_sum_N": [
+              0.0,
+              0.0,
+              -30.00000000000002
+            ],
+            "load_cg_seed_mm": [
+              160.0000000000001,
+              200.00000000000097,
+              22.15792506446229
+            ],
+            "nonlinear_geometry": true,
+            "lower_unilateral_gap_contacts": 208,
+            "total_pad_penalty_N_per_mm": 100000.0,
+            "gap_force_floor_N": 1e-12,
+            "contact_iteration_controls": true,
+            "anti_lift_normal_support_assumption": true,
+            "bonded_insert_cleat_surrogate_nodes": 2020,
+            "corner_warp_mm": null,
+            "input_sha256": "0b1a1610beffe892e2e077258088403594accce9fbd6560250540e82d68865d1",
+            "mesh_report": {
+              "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+              "size_mm": 4.0,
+              "nodes": 183498,
+              "elements": 97559,
+              "type": "C3D10",
+              "min_SICN": 0.008781184496329687,
+              "corner_tet_volume_mm3": 374017.8510584898,
+              "volume_weighted_seed_cg_mm": [
+                160.29621811899082,
+                153.32447194913016,
+                22.073346458559264
+              ],
+              "node_sets": {
+                "UL1": 504,
+                "UL2": 500,
+                "UR1": 516,
+                "UR2": 500,
+                "PAD_L": 104,
+                "PAD_R": 104,
+                "ANTILIFT": 107,
+                "CORNER_LL": 7,
+                "CORNER_LR": 7,
+                "CORNER_UL": 31,
+                "CORNER_UR": 31
+              },
+              "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+              "algorithm3d": 1,
+              "linear_mesh_optimizer": "Netgen",
+              "gmsh_version": "4.15.2",
+              "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+            },
+            "qualified_allowables": null,
+            "release_margin": null,
+            "exit_code": 0,
+            "job_finished": true,
+            "errors": [],
+            "solver_execution_pass": true
+          },
+          "metrics": {
+            "case": "LC4",
+            "solver_execution_pass": true,
+            "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+            "final_step_time": 1.0,
+            "max_displacement_mm": 0.16746406462223576,
+            "max_displacement_node": 2,
+            "max_displacement_xyz_mm": [
+              316.8,
+              396.8,
+              35.0
+            ],
+            "max_abs_UZ_mm": 0.1667408,
+            "corner_max_abs_UZ_mm": {
+              "CORNER_LL": 3.749153e-05,
+              "CORNER_LR": 0.0003989688,
+              "CORNER_UL": 0.006437009,
+              "CORNER_UR": 0.1667408
+            },
+            "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+            "adjacent_mount_max_displacement_mm": {
+              "UL1": 0.001990497896275655,
+              "UL2": 0.002323780913214585,
+              "UR1": 0.01189485463967715,
+              "UR2": 0.02668628752217374
+            },
+            "support_reaction_sum_N": [
+              -2.985239775377124e-07,
+              9.689800484213862e-08,
+              29.99999970399476
+            ],
+            "force_balance_residual_N": [
+              -2.985239775377124e-07,
+              9.689800484213862e-08,
+              -2.9600526119111237e-07
+            ],
+            "force_balance_within_0_1_percent_or_0_001N": true,
+            "cleat_bore_reactions_N": {
+              "UL1": [
+                6.785605846370002,
+                4.738512658674999,
+                -1.2634222644899995
+              ],
+              "UL2": [
+                6.330883999735998,
+                -4.609116788866993,
+                -1.3749541603720001
+              ],
+              "UR1": [
+                0.5505652873699968,
+                -4.938297109770001,
+                2.2962359651549664
+              ],
+              "UR2": [
+                -13.667055431999989,
+                4.808901336859997,
+                31.139565756669995
+              ]
+            },
+            "anti_lift_normal_reaction_N": 0.4024308866400001,
+            "warp_normal_reaction_N": null,
+            "pad_max_numerical_penetration_mm": 7.760871e-05,
+            "pad_max_opening_mm": 0.0001526891,
+            "moment_balance_residual_Nmm": [
+              -5.7417283471750125e-05,
+              2.4273046250300467e-05,
+              4.557072669797435e-05
+            ],
+            "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+            "nodal_extrapolated_stress_diagnostic": {
+              "von_mises_max_MPa": 5.627227448278504,
+              "node": 69536,
+              "xyz_mm": [
+                282.2904942594832,
+                381.00278299174875,
+                32.6
+              ],
+              "principal_max_MPa": 6.770800179349629,
+              "principal_min_MPa": -7.226812631168247,
+              "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+            },
+            "qualified_strength_margin": null,
+            "corner_displacement_screen_status": "PASS_SCOPE_ONLY"
+          }
+        }
+      },
+      "LC4_mesh_comparison": {
+        "coarse_mm": 0.9530406,
+        "fine_mm": 0.9573294,
+        "relative_change_percent_fine_reference": 0.4479962696225543,
+        "two_mesh_displacement_change_below_5_percent": true,
+        "full_contract_mesh_convergence_verified": false,
+        "limits": [
+          "No converged non-singular stress or qualified allowable.",
+          "Nodal load/contact sampling changes with refinement.",
+          "No general transfer to other load/material/geometry cases."
+        ]
+      }
+    }
+  },
+  "conditional_mass_load_review": {
+    "revision": "Rev.FD",
+    "classification": "CALCULATED_CONDITIONAL_RECONCILIATION_NOT_ASSEMBLED_MASS",
+    "frame_mass_ceiling_g": null,
+    "old_product_1700g_is_rejection_gate": false,
+    "scenarios": [
+      {
+        "candidate": "EU.19",
+        "frame_calculated_g": 442.6548396995198,
+        "ASA_density_assumption_g_cm3": 1.05,
+        "conditional_total_with_other_old_reserves_g": 1929.6449982334498,
+        "conditional_vertical_load_4g_min70_N": 75.69341248770424,
+        "actual_assembly_mass_or_load_qualification": false
+      },
+      {
+        "candidate": "EU.19",
+        "frame_calculated_g": 442.6548396995198,
+        "ASA_density_assumption_g_cm3": 1.1,
+        "conditional_total_with_other_old_reserves_g": 1944.758815306494,
+        "conditional_vertical_load_4g_min70_N": 76.28627614450171,
+        "actual_assembly_mass_or_load_qualification": false
+      },
+      {
+        "candidate": "EU.20",
+        "frame_calculated_g": 456.31467786649677,
+        "ASA_density_assumption_g_cm3": 1.05,
+        "conditional_total_with_other_old_reserves_g": 1943.3048364004267,
+        "conditional_vertical_load_4g_min70_N": 76.22924149554497,
+        "actual_assembly_mass_or_load_qualification": false
+      },
+      {
+        "candidate": "EU.20",
+        "frame_calculated_g": 456.31467786649677,
+        "ASA_density_assumption_g_cm3": 1.1,
+        "conditional_total_with_other_old_reserves_g": 1958.4186534734708,
+        "conditional_vertical_load_4g_min70_N": 76.82210515234244,
+        "actual_assembly_mass_or_load_qualification": false
+      }
+    ],
+    "actual_assembled_mass_g": null,
+    "actual_assembled_CG_mm": null,
+    "final_vertical_load_N": null,
+    "additional_90N_screen_is_conditional_sensitivity_only": true,
+    "limits": [
+      "EQ shell/labyrinth is incomplete: sidewalls, service, seals and connections are not fully modeled.",
+      "Old front reserve contains polymer/magnets/adhesive. The FA carrier alone cannot replace that complete reserve.",
+      "Electronics, cables, fasteners and printed densities are unqualified; exact DMU mass distribution is absent.",
+      "No physical property or budget allowance is created by authorizing more mass.",
+      "The 70 N minimum is retained; final loads must follow actual assembly mass/CG and installation requirements.",
+      "The 90 N screening seed does not certify the frame, wall anchors, insert pull-out or product mass capacity."
+    ],
+    "source_sha256": {
+      "evidence/rev-fc/mass-budget-review.json": "9ac7da9e1ad0ec28468658e16fb6359cfd32dc8ce3d9908d0546ee7ca586ebbd",
+      "mechanical/cad/review_mass_budget_rev_fd.py": "e670c87a2b537cb2ec0b7ba30a9064f134fd2a21048c6b4db3b101212a48472e",
+      "mechanical/mass-policy-rev-fd.md": "c2678f4cf7bfdd877a24b197c7b1ca87941ab4250ec9bcdc1eef154c78e2e797",
+      "evidence/rev-eu19/execution.json": "939c7260e629b6db5f64ede411b73215aafc743b93c7feca2f1be2e4a787e222",
+      "evidence/rev-eu20/execution.json": "579a8835d960ee2865140314055085c3f352c709981f4d898c9c82649f61e8e3"
+    }
+  },
+  "executed_structural_runs": 13,
+  "production_ready": false,
+  "all_remaining_digital_work_complete": false,
+  "physical_tests_executed": false,
+  "full_product_CFD_executed": false
+}

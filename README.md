@@ -4,6 +4,8 @@ Smart acoustic picture / complete Home Assistant room node.
 
 **V2.2 target:** 320 x 400 x 40 mm, DML audio, far-field voice, 60 GHz presence sensing, temperature/humidity/light sensing, Ethernet + Wi-Fi, PoE+ + 24 V external power, automatic acoustic calibration and plug-and-play Home Assistant integration.
 
+**Current verified checkpoint: [Rev.FD](mechanical/digital-validation-rev-fd.md).** The user-authorized mass increase supersedes the 250 g frame target. EU.20 passes the four-corner normalized displacement screen; production qualification remains OPEN.
+
 ## Project areas
 - `hardware/` — electronics, BOM and KiCad design
 - `mechanical/` — enclosure, DML panel and front-frame design
@@ -12,7 +14,7 @@ Smart acoustic picture / complete Home Assistant room node.
 - `manufacturing/` — factory provisioning and test
 - `docs/` — architecture and engineering specifications
 
-## Current status
+## Architecture baseline
 **V2.2 Rev.A engineering.** Architecture-level decisions are tracked as `FROZEN`; parts and values requiring reference-design/layout verification are tracked as `VALIDATE`.
 
 See `docs/architecture/v2.2-rev-a.md` and `hardware/bom/audiopicture-v2.2-rev-a.csv`.
@@ -90,7 +92,7 @@ is also published: all 3 attachment sizes and SHA-256 digests are verified.
 Receipts: `evidence/rev-fa/github-publication.json` and
 `evidence/rev-fb/github-publication.json`.
 
-## Current checkpoint Rev.FC — 2026-10-07
+## Checkpoint Rev.FC — 2026-10-07
 
 Four new CAD candidates and five actual CalculiX runs are consolidated.
 EU.18 weighs 249.328 g at catalog density but fails LC4 on both meshes:
@@ -114,3 +116,28 @@ See [Rev.FC results](mechanical/digital-validation-rev-fc.md),
 The [Rev.FC supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fc-2026-10-07)
 is published: all three asset sizes and SHA-256 digests are verified against
 GitHub. Receipt: `evidence/rev-fc/github-publication.json`.
+
+## Current checkpoint Rev.FD — 2026-10-08
+
+The [mass policy](mechanical/mass-policy-rev-fd.md) removes the 250 g rejection
+gate without inventing a replacement ceiling. Mass/CG and load adequacy remain
+tracked; 70 N is the minimum vertical seed, with actual additional 90 N screens.
+
+Two CAD candidates, four meshes and 13 new CalculiX runs are verified. EU.19
+weighs 442.655 g at catalog density and still fails LC4: 1.006463 / 1.004060 mm.
+EU.20 weighs 456.315 g and passes the normalized four-corner 30 N displacement
+screen: LR 0.953041, LL 0.955552, UL 0.163397, UR 0.166741 mm. Fine-mesh LR is
+0.957329 mm, a 0.448% two-mesh change. This does not qualify stress, real mounts,
+material/process, full LC1–LC7 sensitivity/buckling, or production readiness.
+
+EU.20 LC1 maxima are 2.314278 mm at 70 N and 2.975500 mm at 90 N; nonlinear
+LC3 outward-pull maximum is 2.049186 mm. A conservative Bernstein enclosure
+checks every full quadratic FEA element against the fixed DML box at final
+LC3 load: no overlapping bounds, at least 0.324156 mm modeled separation.
+Exact deformed CAD, tolerances and physical assembly clearance remain open.
+
+Registry including history: 64 PASS / 25 FAIL / 18 OPEN. Eight historical
+mass-only gates are explicitly superseded; counts are not completion percentages.
+See the [report](mechanical/digital-validation-rev-fd.md),
+[register](mechanical/validation/rev-fd/gate-register.json), and
+[publication record](docs/validation-checkpoints.md).

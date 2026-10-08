@@ -1,0 +1,197 @@
+{
+  "classification": "CALCULATED_POSTPROCESS_OF_EXECUTED_NORMALIZED_FEA",
+  "method": "Least squares U = translation + small_rotation cross (X-[section_x,11,22]); equal nodal weights; original coordinates; |X-section_x|<2 mm and Y<19.01 mm",
+  "sections": [
+    {
+      "section_x_mm": 160,
+      "nodes": 330,
+      "translation_xyz_mm": [
+        0.07036216739811935,
+        -0.08774364270949027,
+        -0.0015759577518349342
+      ],
+      "small_rotation_xyz_rad": [
+        0.0001509130771419236,
+        0.002371776944640469,
+        -0.0002079931505900948
+      ],
+      "fit_RMS_mm": 0.0015648587988092203
+    },
+    {
+      "section_x_mm": 170,
+      "nodes": 353,
+      "translation_xyz_mm": [
+        0.07147906805066792,
+        -0.08888366573047388,
+        -0.0199554507675719
+      ],
+      "small_rotation_xyz_rad": [
+        0.0005786762358775815,
+        0.0031555338306000534,
+        -9.648541921217135e-05
+      ],
+      "fit_RMS_mm": 0.004215953100274832
+    },
+    {
+      "section_x_mm": 190,
+      "nodes": 292,
+      "translation_xyz_mm": [
+        0.07054690963610241,
+        -0.08523813323185402,
+        -0.10178583135788302
+      ],
+      "small_rotation_xyz_rad": [
+        0.000880219679034564,
+        0.004240874850076739,
+        0.00032513657994588717
+      ],
+      "fit_RMS_mm": 0.0011334616267602605
+    },
+    {
+      "section_x_mm": 210,
+      "nodes": 258,
+      "translation_xyz_mm": [
+        0.07023945312224578,
+        -0.07504387285156332,
+        -0.2016729111710834
+      ],
+      "small_rotation_xyz_rad": [
+        0.00123896543358107,
+        0.005224800837285405,
+        0.0006300765752031693
+      ],
+      "fit_RMS_mm": 0.0009313774978492299
+    },
+    {
+      "section_x_mm": 230,
+      "nodes": 349,
+      "translation_xyz_mm": [
+        0.069996713221208,
+        -0.05964892282828951,
+        -0.31943576649607325
+      ],
+      "small_rotation_xyz_rad": [
+        0.0015749019957506255,
+        0.0060226240315852005,
+        0.0008590668242630928
+      ],
+      "fit_RMS_mm": 0.000756997074471077
+    },
+    {
+      "section_x_mm": 240,
+      "nodes": 352,
+      "translation_xyz_mm": [
+        0.07007163034248884,
+        -0.050619039846469996,
+        -0.38394175793406415
+      ],
+      "small_rotation_xyz_rad": [
+        0.0016990456437452133,
+        0.0063609091106871345,
+        0.0009483404486107034
+      ],
+      "fit_RMS_mm": 0.0008723659188613336
+    },
+    {
+      "section_x_mm": 250,
+      "nodes": 325,
+      "translation_xyz_mm": [
+        0.06968976991291274,
+        -0.041196909053108265,
+        -0.45240657236991433
+      ],
+      "small_rotation_xyz_rad": [
+        0.0018643387555693077,
+        0.006772772081745629,
+        0.000932773825705323
+      ],
+      "fit_RMS_mm": 0.0008175369033403127
+    },
+    {
+      "section_x_mm": 270,
+      "nodes": 329,
+      "translation_xyz_mm": [
+        0.0687366211612348,
+        -0.020917316094107536,
+        -0.5989525185034699
+      ],
+      "small_rotation_xyz_rad": [
+        0.002178901070584138,
+        0.007277247319142432,
+        0.0010067548910484276
+      ],
+      "fit_RMS_mm": 0.0005086348112063665
+    },
+    {
+      "section_x_mm": 280,
+      "nodes": 335,
+      "translation_xyz_mm": [
+        0.06850846825557845,
+        -0.010330806846677238,
+        -0.6748184925874724
+      ],
+      "small_rotation_xyz_rad": [
+        0.002295976440865213,
+        0.0074174730453512245,
+        0.001042279859132603
+      ],
+      "fit_RMS_mm": 0.0003924894114061588
+    },
+    {
+      "section_x_mm": 290,
+      "nodes": 441,
+      "translation_xyz_mm": [
+        0.0683505306359908,
+        0.000355607670729079,
+        -0.7526983758854744
+      ],
+      "small_rotation_xyz_rad": [
+        0.002383769337547586,
+        0.007583060858303073,
+        0.001025451729847557
+      ],
+      "fit_RMS_mm": 0.00048494394380441087
+    },
+    {
+      "section_x_mm": 300,
+      "nodes": 469,
+      "translation_xyz_mm": [
+        0.06831149806868934,
+        0.010036733100018298,
+        -0.8335891426931303
+      ],
+      "small_rotation_xyz_rad": [
+        0.002582202358292549,
+        0.007746146910028595,
+        0.0009910534332959746
+      ],
+      "fit_RMS_mm": 0.0005827443422401842
+    },
+    {
+      "section_x_mm": 313,
+      "nodes": 1844,
+      "translation_xyz_mm": [
+        0.06853993862699367,
+        0.022142952135665365,
+        -0.9404634330459495
+      ],
+      "small_rotation_xyz_rad": [
+        0.0027844946511002585,
+        0.007806266302422963,
+        0.0008381469217197224
+      ],
+      "fit_RMS_mm": 0.0011181927689485913
+    }
+  ],
+  "source_sha256": {
+    "evidence/rev-ev19/M0/mesh-data.npz": "f755ade498c3d9808cfeb7df319c88a36b6f3038e596f9498ff07c680fab53a2",
+    "evidence/rev-ev19/M0-contactK100k-MAT-B-LR/LC4/frame.dat": "cb7785bd5fdb6a547e5cb7030306906274d33948874b5a5d3cae0dfa97ba3f25",
+    "evidence/rev-ev19/M0-contactK100k-MAT-B-LR/LC4/execution.json": "da30ee5484bb5ea678162a4044c5842d10f7e53f89440563e4510cba390e3714",
+    "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/audit_lower_crossmember_rev_fc.py": "375602011310afb2b4bc2cd14ee302974032d92a16f6f549cfa2f5161f1b0488"
+  },
+  "limits": [
+    "Not a material or support qualification.",
+    "A local rigid-section fit is diagnostic; its residual is not stress or energy.",
+    "No physical rotation, separated compliance contribution or full-field displacement decomposition is asserted."
+  ]
+}

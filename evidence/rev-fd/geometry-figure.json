@@ -1,0 +1,7 @@
+{
+  "classification": "CALCULATED_CAD_INSPECTION_FIGURE_NOT_RELEASE",
+  "step_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+  "triangles": 5224,
+  "Z_visual_scale": 2.5,
+  "source_sha256": "3dde5491830648425c9bc838e7c2624e7c7fefd7f3fb100a4dc0e650ddaf3b53"
+}

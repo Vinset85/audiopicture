@@ -1,0 +1,59 @@
+{
+  "revision": "Rev.FD",
+  "classification": "CALCULATED_CONDITIONAL_RECONCILIATION_NOT_ASSEMBLED_MASS",
+  "frame_mass_ceiling_g": null,
+  "old_product_1700g_is_rejection_gate": false,
+  "scenarios": [
+    {
+      "candidate": "EU.19",
+      "frame_calculated_g": 442.6548396995198,
+      "ASA_density_assumption_g_cm3": 1.05,
+      "conditional_total_with_other_old_reserves_g": 1929.6449982334498,
+      "conditional_vertical_load_4g_min70_N": 75.69341248770424,
+      "actual_assembly_mass_or_load_qualification": false
+    },
+    {
+      "candidate": "EU.19",
+      "frame_calculated_g": 442.6548396995198,
+      "ASA_density_assumption_g_cm3": 1.1,
+      "conditional_total_with_other_old_reserves_g": 1944.758815306494,
+      "conditional_vertical_load_4g_min70_N": 76.28627614450171,
+      "actual_assembly_mass_or_load_qualification": false
+    },
+    {
+      "candidate": "EU.20",
+      "frame_calculated_g": 456.31467786649677,
+      "ASA_density_assumption_g_cm3": 1.05,
+      "conditional_total_with_other_old_reserves_g": 1943.3048364004267,
+      "conditional_vertical_load_4g_min70_N": 76.22924149554497,
+      "actual_assembly_mass_or_load_qualification": false
+    },
+    {
+      "candidate": "EU.20",
+      "frame_calculated_g": 456.31467786649677,
+      "ASA_density_assumption_g_cm3": 1.1,
+      "conditional_total_with_other_old_reserves_g": 1958.4186534734708,
+      "conditional_vertical_load_4g_min70_N": 76.82210515234244,
+      "actual_assembly_mass_or_load_qualification": false
+    }
+  ],
+  "actual_assembled_mass_g": null,
+  "actual_assembled_CG_mm": null,
+  "final_vertical_load_N": null,
+  "additional_90N_screen_is_conditional_sensitivity_only": true,
+  "limits": [
+    "EQ shell/labyrinth is incomplete: sidewalls, service, seals and connections are not fully modeled.",
+    "Old front reserve contains polymer/magnets/adhesive. The FA carrier alone cannot replace that complete reserve.",
+    "Electronics, cables, fasteners and printed densities are unqualified; exact DMU mass distribution is absent.",
+    "No physical property or budget allowance is created by authorizing more mass.",
+    "The 70 N minimum is retained; final loads must follow actual assembly mass/CG and installation requirements.",
+    "The 90 N screening seed does not certify the frame, wall anchors, insert pull-out or product mass capacity."
+  ],
+  "source_sha256": {
+    "evidence/rev-fc/mass-budget-review.json": "9ac7da9e1ad0ec28468658e16fb6359cfd32dc8ce3d9908d0546ee7ca586ebbd",
+    "mechanical/cad/review_mass_budget_rev_fd.py": "e670c87a2b537cb2ec0b7ba30a9064f134fd2a21048c6b4db3b101212a48472e",
+    "mechanical/mass-policy-rev-fd.md": "c2678f4cf7bfdd877a24b197c7b1ca87941ab4250ec9bcdc1eef154c78e2e797",
+    "evidence/rev-eu19/execution.json": "939c7260e629b6db5f64ede411b73215aafc743b93c7feca2f1be2e4a787e222",
+    "evidence/rev-eu20/execution.json": "579a8835d960ee2865140314055085c3f352c709981f4d898c9c82649f61e8e3"
+  }
+}

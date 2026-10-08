@@ -1,0 +1,343 @@
+{
+  "project": "AudioPicture V2.2",
+  "revision": "Rev.FD",
+  "analysis": "rear_frame_structural_fea",
+  "status": "UPDATED_MASS_POLICY_NORMALIZED_SCREENS_NOT_PRODUCTION_RELEASE",
+  "rev_en_es_readiness_correction": {
+    "status": "CONTRACT_ONLY_FULL_FRAME_MODEL_INCOMPLETE",
+    "solver_available": "CalculiX 2.23 with SPOOLES/ARPACK compiled and local benchmark executed",
+    "missing": [
+      "final boss/insert/cleat/contact geometry",
+      "complete material/contact model",
+      "qualified directional allowables and temperature curves"
+    ],
+    "rf_correction": "Rev.ES removes conservative RF mask intrusion; full frame FEA must use corrected geometry",
+    "executed_scope": "M1D 5 N local debug and normalized sensitivity only; NOT LC1-LC7"
+  },
+  "geometry": {
+    "product_mm": [
+      320,
+      400,
+      40
+    ],
+    "frame_wall_mm": 2.4,
+    "primary_rib_sweep_mm": [
+      2.4,
+      2.8,
+      3.2
+    ],
+    "mount_rib_sweep_mm": [
+      3.0,
+      3.2,
+      3.6
+    ],
+    "mount_fillet_sweep_mm": [
+      2.0,
+      3.0,
+      4.0
+    ],
+    "boss_od_sweep_mm": [
+      11,
+      12,
+      13
+    ],
+    "insert_engagement_min_mm": 7
+  },
+  "material": {
+    "model": "orthotropic",
+    "xy_reference": "manufacturer/process seed only",
+    "Ez_over_Exy": {
+      "MAT-A": 0.2,
+      "MAT-B": 0.35,
+      "MAT-C": 0.5
+    },
+    "Gxz_over_Gxy": [
+      0.25,
+      0.4,
+      0.6
+    ],
+    "Gyz_over_Gxy": [
+      0.25,
+      0.4,
+      0.6
+    ],
+    "z_strength_over_xy": [
+      0.2,
+      0.35,
+      0.5
+    ],
+    "temperatures_C": [
+      23,
+      50,
+      70
+    ],
+    "release_requires_coupon_calibration": true
+  },
+  "mesh": {
+    "global_max_mm": 4.0,
+    "ribs_fillets_max_mm": 2.0,
+    "boss_insert_cleat_mm": [
+      1.0,
+      1.5
+    ],
+    "service_corner_max_mm": 1.5,
+    "convergence_percent": 5.0,
+    "convergence_metrics": [
+      "peak_non_singular_stress",
+      "displacement"
+    ]
+  },
+  "loads": {
+    "LC1": {
+      "type": "symmetric_vertical",
+      "N": 70,
+      "cleats": "both",
+      "max_mount_displacement_mm": 0.5,
+      "margin_min": 2.0
+    },
+    "LC2L": {
+      "type": "single_cleat_fault",
+      "N": 70,
+      "cleats": "left",
+      "margin_min": 1.5,
+      "nonlinear": true
+    },
+    "LC2R": {
+      "type": "single_cleat_fault",
+      "N": 70,
+      "cleats": "right",
+      "margin_min": 1.5,
+      "nonlinear": true
+    },
+    "LC3": {
+      "type": "wall_normal_pull",
+      "N": 50,
+      "margin_min": 1.5
+    },
+    "LC4": {
+      "type": "corner_torsion",
+      "N": 30,
+      "max_corner_normal_displacement_mm": 1.0,
+      "margin_min": 1.5,
+      "nonlinear": true
+    },
+    "LC5": {
+      "type": "installation_seating",
+      "N": 100,
+      "nonlinear": true
+    },
+    "LC6": {
+      "type": "anti_lift",
+      "N": 50,
+      "margin_min": 1.5,
+      "nonlinear": true
+    },
+    "LC7": {
+      "type": "assembly_misfit",
+      "imposed_displacement_mm": [
+        0.25,
+        0.5,
+        1.0
+      ]
+    }
+  },
+  "cg_sensitivity_mm": [
+    [
+      0,
+      0
+    ],
+    [
+      20,
+      0
+    ],
+    [
+      -20,
+      0
+    ],
+    [
+      0,
+      15
+    ],
+    [
+      0,
+      -15
+    ]
+  ],
+  "required_outputs": [
+    "max_displacement",
+    "mount_node_displacement",
+    "corner_displacement",
+    "principal_stresses_strains",
+    "orthotropic_failure_index",
+    "insert_boss_interface_loads",
+    "cleat_screw_reactions",
+    "lower_pad_reactions",
+    "anti_lift_reaction",
+    "buckling_factor",
+    "mass",
+    "strain_energy_map"
+  ],
+  "solver_requirements": {
+    "linear": [
+      "LC1",
+      "LC3",
+      "initial sensitivity screens"
+    ],
+    "nonlinear_contact": [
+      "LC2L",
+      "LC2R",
+      "LC4",
+      "LC5",
+      "LC6"
+    ],
+    "buckling": [
+      "long_side_rails",
+      "service_opening_bridge",
+      "mount_ribs"
+    ]
+  },
+  "prohibited_claims_before_execution": [
+    "LC1-LC7 pass",
+    "production structural margin",
+    "qualified PC-CF strength",
+    "insert pull-out capacity"
+  ],
+  "rev_ey_execution_update": {
+    "candidate": "Rev.EU.4, surrogate bores/cleats/pads plus assumed anti-lift normal capture",
+    "evidence": "mechanical/validation/rev-et-ey",
+    "executed": "27 LC1 orthotropic combinations, 4 additional CG cases, 3 linear mesh levels, 3 eigenvalue buckling modes; all named nonlinear LC1-LC7 surrogate cases completed using documented numerical contact retries; LC7 three amplitudes at one corner only.",
+    "demonstrated_failures": [
+      "homogeneous frame mass >250 g",
+      "LC4 corner normal displacement >1 mm",
+      "shell/baffle clearance 0.6 mm <1 mm target"
+    ],
+    "release_open": [
+      "qualified properties and directional allowables at 23/50/70 C",
+      "real cleat/insert/sliding/friction/contact model",
+      "all LC7 locations and imperfections",
+      "non-singular hotspot classification",
+      "complete component/assembly/sidewall geometry"
+    ],
+    "additional_candidates": "EU.8/EU.9/EU.10 recover catalog-density mass and coarse 1 mm clearance, but all fail the normalized single-corner LC4 limit. No new geometry inherits EU.4 mesh/material/CG verification.",
+    "historical_mass_gate_applicability": "Superseded by the explicit Rev.FD user mass-policy decision; historical mechanical/clearance failures remain."
+  },
+  "supersedes_mass_policy_only_of": "Rev.EJ and Rev.B contracts",
+  "mass_policy": {
+    "authority": "Explicit user authorization 2026-10-07: superiamo tranquillamente il limite del budget di massa",
+    "document": "mechanical/mass-policy-rev-fd.md",
+    "frame_250g_is_rejection_gate": false,
+    "replacement_frame_ceiling_g": null,
+    "product_1700g_is_historical_planning_reference": true,
+    "mass_and_CG_tracking_required": true,
+    "vertical_load_min_N": 70,
+    "vertical_load_review_rule": "max(70 N, 4 * assembled_mass_kg * 9.80665 m/s^2)",
+    "actual_assembled_mass_kg": null,
+    "final_mass_load_adequacy_verified": false
+  },
+  "current_candidate_geometry": {
+    "revision": "Rev.EU.20",
+    "step_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+    "primary_rib_width_mm": 3.2,
+    "primary_rib_z_mm": [
+      20,
+      28
+    ],
+    "perimeter_two_continuous_webs_mm": 2.4,
+    "lower_side_girder_width_mm": 4.8,
+    "lower_corner_girder_width_mm": 6.4,
+    "crossmember": "Solid stepped section, X32..288 Y3.2..19 plus outer ends Y3.2..12; final manufacturing optimization open.",
+    "computed_homogeneous_mass_at_catalog_density_g": 456.31467786649677,
+    "full_fillet_and_assembly_geometry_complete": false
+  },
+  "rev_fd_execution_update": {
+    "recorded_date": "2026-10-08",
+    "executed_structural_runs": 13,
+    "results": {
+      "EU.19": {
+        "M0-contactK100k-MAT-B-LR": {
+          "case": "LC4",
+          "max_resultant_displacement_mm": 1.02236018408819,
+          "max_corner_normal_displacement_mm": 1.006463,
+          "qualified_strength": false
+        },
+        "M0-linear70-MAT-B": {
+          "case": "LC1",
+          "max_resultant_displacement_mm": 2.3408589492398404,
+          "max_corner_normal_displacement_mm": 1.993129,
+          "qualified_strength": false
+        },
+        "M0-linear90-MAT-B": {
+          "case": "LC1",
+          "max_resultant_displacement_mm": 3.0096750949653086,
+          "max_corner_normal_displacement_mm": 2.562594,
+          "qualified_strength": false
+        },
+        "M0-pull-contactK100k-MAT-B": {
+          "case": "LC3",
+          "max_resultant_displacement_mm": 2.0925286290551193,
+          "max_corner_normal_displacement_mm": 0.1449006,
+          "qualified_strength": false
+        },
+        "M1-contactK100k-MAT-B-LR": {
+          "case": "LC4",
+          "max_resultant_displacement_mm": 1.0200008696362608,
+          "max_corner_normal_displacement_mm": 1.00406,
+          "qualified_strength": false
+        }
+      },
+      "EU.20": {
+        "M0-contactK100k-MAT-B-LL": {
+          "case": "LC4",
+          "max_resultant_displacement_mm": 0.9688573344118195,
+          "max_corner_normal_displacement_mm": 0.9555517,
+          "qualified_strength": false
+        },
+        "M0-contactK100k-MAT-B-LR": {
+          "case": "LC4",
+          "max_resultant_displacement_mm": 0.9723014707381878,
+          "max_corner_normal_displacement_mm": 0.9530406,
+          "qualified_strength": false
+        },
+        "M0-contactK100k-MAT-B-UL": {
+          "case": "LC4",
+          "max_resultant_displacement_mm": 0.16412935141854643,
+          "max_corner_normal_displacement_mm": 0.1633974,
+          "qualified_strength": false
+        },
+        "M0-contactK100k-MAT-B-UR": {
+          "case": "LC4",
+          "max_resultant_displacement_mm": 0.16746406462223576,
+          "max_corner_normal_displacement_mm": 0.1667408,
+          "qualified_strength": false
+        },
+        "M0-linear70-MAT-B": {
+          "case": "LC1",
+          "max_resultant_displacement_mm": 2.3142778113463924,
+          "max_corner_normal_displacement_mm": 1.941717,
+          "qualified_strength": false
+        },
+        "M0-linear90-MAT-B": {
+          "case": "LC1",
+          "max_resultant_displacement_mm": 2.9754999921122987,
+          "max_corner_normal_displacement_mm": 2.496493,
+          "qualified_strength": false
+        },
+        "M0-pull-contactK100k-MAT-B": {
+          "case": "LC3",
+          "max_resultant_displacement_mm": 2.0491863725145976,
+          "max_corner_normal_displacement_mm": 0.1455502,
+          "qualified_strength": false
+        },
+        "M1-contactK100k-MAT-B-LR": {
+          "case": "LC4",
+          "max_resultant_displacement_mm": 0.9755233693427794,
+          "max_corner_normal_displacement_mm": 0.9573294,
+          "qualified_strength": false
+        }
+      }
+    },
+    "bore_constraints_cannot_validate_actual_mount_compliance": true,
+    "current_full_matrix_and_qualified_materials": false,
+    "publication_receipt": "evidence/rev-fd/github-publication.json"
+  }
+}

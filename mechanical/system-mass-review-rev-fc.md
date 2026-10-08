@@ -1,5 +1,11 @@
 # AudioPicture — revisione del budget di massa, Rev.FC
 
+**Aggiornamento successivo dell'utente, 7 ottobre 2026:** è autorizzato il
+superamento del budget di massa. Il tetto di 250 g non è più un criterio di
+esclusione; vedere la [politica corrente Rev.FD](mass-policy-rev-fd.md).
+Le considerazioni e gli scenari Rev.FC sotto riportati documentano lo stato
+precedente alla decisione e non ripristinano quel vincolo.
+
 7 ottobre 2026. **Nessuna massa assemblata o nuovo limite produttivo è rilasciato.**
 
 ## Perché 250 g

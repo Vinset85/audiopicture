@@ -1,0 +1,35 @@
+{
+  "classification": "PLOT_OF_CALCULATED_MASS_AND_SIMULATED_NORMALIZED_DISPLACEMENTS",
+  "rows": [
+    {
+      "candidate": "EU.18",
+      "mass_g": 249.32833995798677,
+      "LC1_70N_max_resultant_mm": 7.179289035735363,
+      "LC4_30N_LR_max_corner_UZ_mm": 1.389561
+    },
+    {
+      "candidate": "EU.19",
+      "mass_g": 442.6548396995198,
+      "LC1_70N_max_resultant_mm": 2.3408589492398404,
+      "LC4_30N_LR_max_corner_UZ_mm": 1.006463
+    },
+    {
+      "candidate": "EU.20",
+      "mass_g": 456.31467786649677,
+      "LC1_70N_max_resultant_mm": 2.3142778113463924,
+      "LC4_30N_LR_max_corner_UZ_mm": 0.9530406
+    }
+  ],
+  "source_sha256": {
+    "mechanical/cad/plot_frame_comparison_rev_fd.py": "3b124e1ec744cd9ada4e3f525a0230f39d850f01de5f568333dc46c9e94c1b78",
+    "evidence/rev-eu18/execution.json": "54d05da58879988432a0e80cda9aa2abcff78b9f7e34f73fa4e4e235d92ff84c",
+    "evidence/rev-ev18/M0-linear-MAT-B/LC1/metrics.json": "8545f68d736adbf5ec92711c0ddb7ed7cd59b8dd331d2a69407ceec88475bdd2",
+    "evidence/rev-ev18/M0-contactK100k-MAT-B/LC4/metrics.json": "d81b71d4c6e66aa2e8227afc412ff706c4fb76fa3833100793e8156ffa5b3259",
+    "evidence/rev-eu19/execution.json": "939c7260e629b6db5f64ede411b73215aafc743b93c7feca2f1be2e4a787e222",
+    "evidence/rev-ev19/M0-linear70-MAT-B/LC1/metrics.json": "b29253748f88a9fe8ed417c3ef4ac5e2fceaea56dfede0ccd63823ecd5000813",
+    "evidence/rev-ev19/M0-contactK100k-MAT-B-LR/LC4/metrics.json": "2a6be1f73a0917048ce97703296eeedb651f36bdcd854b9cbd0ffffd11254fa6",
+    "evidence/rev-eu20/execution.json": "579a8835d960ee2865140314055085c3f352c709981f4d898c9c82649f61e8e3",
+    "evidence/rev-ev20/M0-linear70-MAT-B/LC1/metrics.json": "cd32ccdb4e6af3c13b38dfb800fbec00059fa247ed6b0b0e2021ab5c79fe5e56",
+    "evidence/rev-ev20/M0-contactK100k-MAT-B-LR/LC4/metrics.json": "882151d366da29f1ee827d7da62555f31fb67b1961dc34f9e1e61c9ac05e07ba"
+  }
+}

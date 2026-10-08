@@ -76,3 +76,18 @@ sul commit `90b2e86bde759e80ada60c053e32287648f6bb53`. I tre allegati sono
 verificati per insieme esatto dei nomi, dimensioni e SHA-256 rispetto ai digest
 GitHub. Ricevuta: `evidence/rev-fc/github-publication.json`. Il supplemento
 contiene 116 file, inclusi 38 artefatti grezzi verificati individualmente.
+
+
+## Supplemento Rev.FD — 8 ottobre 2026
+
+Il nuovo [report](../mechanical/digital-validation-rev-fd.md) documenta la
+rimozione autorizzata del tetto di massa, due candidati CAD, quattro mesh,
+13 esecuzioni e il controllo conservativo dei volumi degli elementi FEM deformati.
+EU.20 passa il criterio normalizzato LC4 sui quattro angoli e sulla seconda
+mesh LR; non è una qualificazione produttiva. Restano lavoro digitale e prove fisiche.
+
+Estrarre `audiopicture-rev-fd-supplement.zip` dopo FA, FB e FC. L'indice
+`evidence/rev-fd/raw-artifact-index.json` elenca i nuovi artefatti grezzi.
+Tag previsto: `checkpoint-rev-fd-2026-10-08`. La verifica della pubblicazione
+richiede la ricevuta `evidence/rev-fd/github-publication.json`, scritta soltanto
+dopo il controllo di nomi, dimensioni, digest SHA-256 e commit del tag remoto.

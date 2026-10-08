@@ -1,0 +1,21 @@
+{
+  "classification": "EXECUTED_INPUT_VALIDATION_NOT_STRUCTURAL_QUALIFICATION",
+  "cases": [
+    {
+      "vertical_load_input": "69",
+      "exit_code": 1,
+      "rejected_before_output_or_mesh_read": true
+    },
+    {
+      "vertical_load_input": "nan",
+      "exit_code": 1,
+      "rejected_before_output_or_mesh_read": true
+    },
+    {
+      "vertical_load_input": "inf",
+      "exit_code": 1,
+      "rejected_before_output_or_mesh_read": true
+    }
+  ],
+  "script_sha256": "c53c129034ee15bf34fb1bcb64b5f351659893c8e62927966169d6bb939054d7"
+}

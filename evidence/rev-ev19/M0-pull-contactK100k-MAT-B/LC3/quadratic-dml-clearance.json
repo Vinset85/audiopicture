@@ -1,0 +1,64 @@
+{
+  "classification": "CALCULATED_CONSERVATIVE_FULL_QUADRATIC_ELEMENT_BOUND_ON_SIMULATED_FINAL_STATE",
+  "status": "PASS_SCOPED_FEA_GEOMETRY_SEPARATION",
+  "method": "Quadratic tetrahedral Bernstein control-point convex enclosure; enclosing AABBs inflated 1e-7 mm. Overlap is inconclusive.",
+  "gmsh_edge_node_pairs_zero_based": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "self_checks": {
+    "curved_node_only_false_negative_detected": true,
+    "random_elements": 32,
+    "barycentric_samples_each": 64
+  },
+  "initial": {
+    "elements": 97653,
+    "potential_DML_box_overlap_elements": 0,
+    "potential_frontward_within_DML_projection_elements": 0,
+    "all_element_bounds_separated_from_DML_and_frontward_region": true,
+    "conservative_DML_separation_lower_bound_mm": 0.3999998999999548,
+    "unresolved_element_tags_sample": []
+  },
+  "final": {
+    "elements": 97653,
+    "potential_DML_box_overlap_elements": 0,
+    "potential_frontward_within_DML_projection_elements": 0,
+    "all_element_bounds_separated_from_DML_and_frontward_region": true,
+    "conservative_DML_separation_lower_bound_mm": 0.3238138000000017,
+    "unresolved_element_tags_sample": []
+  },
+  "limits": [
+    "Final load state only; not all intermediate states.",
+    "FEA interpolation geometry only; not exact deformed BREP, manufacturing tolerance or real assembly qualification.",
+    "DML is the fixed nominal hard box, not a deformable contact body.",
+    "No physical clearance is certified from unqualified material/support assumptions."
+  ],
+  "source_sha256": {
+    "mechanical/cad/audit_quadratic_dml_clearance_rev_fd.py": "743717843502e2064af187afe502356c5b8c35d623d9ad407608bfde2ec8d0f2",
+    "evidence/rev-ev19/M0/mesh-data.npz": "f755ade498c3d9808cfeb7df319c88a36b6f3038e596f9498ff07c680fab53a2",
+    "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/frame.dat": "2c4831f1ca2a8c9f8dcaa2e5643f77dc448f0eae156223c95f281bbbd2aa8d7d",
+    "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/metrics.json": "0cd26f463c688589cfd0a65c77e8f4195598271e3605c0861c23fe027ad2c132"
+  }
+}

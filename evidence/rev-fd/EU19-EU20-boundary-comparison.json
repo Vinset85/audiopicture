@@ -1,0 +1,84 @@
+{
+  "classification": "CALCULATED_BOUNDARY_NODE_COMPARISON",
+  "models": [
+    "EU.19",
+    "EU.20"
+  ],
+  "comparison": {
+    "UL1": {
+      "baseline_nodes": 504,
+      "candidate_nodes": 504,
+      "coordinates_identical_to_1e_minus8_mm": true,
+      "symmetric_nearest_node_distance_mm": 0.0
+    },
+    "UL2": {
+      "baseline_nodes": 500,
+      "candidate_nodes": 500,
+      "coordinates_identical_to_1e_minus8_mm": true,
+      "symmetric_nearest_node_distance_mm": 0.0
+    },
+    "UR1": {
+      "baseline_nodes": 516,
+      "candidate_nodes": 516,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 0.00012519473032405885
+    },
+    "UR2": {
+      "baseline_nodes": 500,
+      "candidate_nodes": 500,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 0.00010523444349984358
+    },
+    "PAD_L": {
+      "baseline_nodes": 119,
+      "candidate_nodes": 104,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 1.254661793036832
+    },
+    "PAD_R": {
+      "baseline_nodes": 119,
+      "candidate_nodes": 104,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 1.2546617930368393
+    },
+    "ANTILIFT": {
+      "baseline_nodes": 107,
+      "candidate_nodes": 107,
+      "coordinates_identical_to_1e_minus8_mm": true,
+      "symmetric_nearest_node_distance_mm": 0.0
+    },
+    "CORNER_LL": {
+      "baseline_nodes": 33,
+      "candidate_nodes": 7,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 8.825216396717357
+    },
+    "CORNER_LR": {
+      "baseline_nodes": 33,
+      "candidate_nodes": 7,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 8.825216396717357
+    },
+    "CORNER_UL": {
+      "baseline_nodes": 31,
+      "candidate_nodes": 31,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 0.1448248150661119
+    },
+    "CORNER_UR": {
+      "baseline_nodes": 31,
+      "candidate_nodes": 31,
+      "coordinates_identical_to_1e_minus8_mm": false,
+      "symmetric_nearest_node_distance_mm": 0.13007301578048036
+    }
+  },
+  "all_sets_match": false,
+  "note": "Checks unchanged mesh boundary/load sampling, not validity of physical support assumptions.",
+  "sha256": {
+    "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/compare_frame_boundaries_rev_fc.py": "ab67a68b8c5b98ab3055faa0b7b9065e50f5cafe13f00f9138f3abf29c52f8ee",
+    "evidence/rev-ev19/M0/mesh-data.npz": "f755ade498c3d9808cfeb7df319c88a36b6f3038e596f9498ff07c680fab53a2",
+    "evidence/rev-ev19/M0/sets.json": "5a788d5918458ead2c34b226568017b45787e99a7b8cf1d2ebaa6e87d5496687",
+    "evidence/rev-ev20/M0/mesh-data.npz": "03e59223b9ae20a8201c18e8c2b59e55065affd6450d4fcf99b943ee4a7d34b2",
+    "evidence/rev-ev20/M0/sets.json": "5a66ec8cb8f076b0adb077cd9892cd589c9ae6d3c2c10fd71aaf10d6e379f6ee"
+  }
+}

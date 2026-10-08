@@ -1,0 +1,37 @@
+{
+  "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+  "status": "NO_SAMPLED_NODE_INTERFERENCE",
+  "load_case": "Rev.EU.19 LC3 50 N outward; normalized MAT-B and surrogate supports",
+  "nodes_initially_inside_DML": 0,
+  "nodes_predicted_inside_DML": 0,
+  "nodes_predicted_frontward_of_DML_within_projection": 0,
+  "max_displacement_node": 7130,
+  "max_node_original_xyz_mm": [
+    156.3856406460551,
+    160.2,
+    28.0
+  ],
+  "max_node_displacement_xyz_mm": [
+    0.1142787,
+    -0.04537533,
+    -2.088913
+  ],
+  "max_node_predicted_xyz_mm": [
+    156.4999193460551,
+    160.15462466999998,
+    25.911087000000002
+  ],
+  "sample_predicted_DML_nodes": [],
+  "source_sha256": {
+    "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/frame.dat": "2c4831f1ca2a8c9f8dcaa2e5643f77dc448f0eae156223c95f281bbbd2aa8d7d",
+    "evidence/rev-ev19/M0-pull-contactK100k-MAT-B/LC3/metrics.json": "0cd26f463c688589cfd0a65c77e8f4195598271e3605c0861c23fe027ad2c132",
+    "evidence/rev-ev19/M0/mesh-data.npz": "f755ade498c3d9808cfeb7df319c88a36b6f3038e596f9498ff07c680fab53a2",
+    "mechanical/cad/audit_loaded_frame_envelope_rev_fb.py": "aecd11f76776d6b29750331b25d1d65a13807ed453dc0afcdfdd43e5fc840e7f"
+  },
+  "limits": [
+    "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+    "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+    "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+    "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+  ]
+}
