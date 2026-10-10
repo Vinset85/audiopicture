@@ -1,0 +1,54 @@
+{
+  "revision": "Rev.FE",
+  "status": "PLAN_ONLY_NO_PHYSICAL_MEASUREMENTS",
+  "base_plans": [
+    "mechanical/test/physical-qualification-rev-er.json",
+    "mechanical/test/physical-qualification-addendum-rev-ey.json",
+    "manufacturing/optical-coupon-rev-fa.md"
+  ],
+  "amendments": [
+    {
+      "id": "P01",
+      "status": "NOT_RUN",
+      "requirement": "Record the actual print-to-product basis and qualify the corresponding 23/50/70 C elastic and strength data. The 18 numerical cube tests validate the material-axis implementation only. E1=1900 MPa remains an assumed screening seed, not a measured or current catalog modulus.",
+      "source": "mechanical/print-orientation-study-rev-fe.md"
+    },
+    {
+      "id": "P02",
+      "status": "NOT_RUN",
+      "new_artifact": "evidence/rev-fe/insert-coupon/AP22_INSERT_INSTALLATION_COUPON_REV_FE.step",
+      "requirement": "Perform the installation pilot in insert-installation-pilot-rev-fe.md. This catalog-sized coupon does not replace the final boss/gusset pull-out, torque, temperature and interface-stiffness tests. RX-M4x8.1 is a candidate; print compensation and qualified torque remain unset.",
+      "source": "mechanical/test/insert-installation-pilot-rev-fe.md"
+    },
+    {
+      "id": "P09",
+      "status": "NOT_RUN",
+      "minimum_vertical_seed_N": 70,
+      "provisional_project_load_rule": "max(70, 4 * measured_assembled_mass_kg * 9.80665)",
+      "final_design_load_N": null,
+      "requirement": "Reconcile LC1 and both single-cleat LC2 loads with complete measured mass, CG and the final load contract. The former 250 g ceiling is removed. The 70/100 N FE runs are sensitivities, not a released assembly load. Include actual cleats, inserts, lower contacts and anti-lift; retain the existing 0.5 mm mount and 1 mm LC4 criteria.",
+      "source": "mechanical/mass-policy-rev-fd.md"
+    }
+  ],
+  "tests": [
+    {
+      "id": "P17",
+      "test": "Front/DML perimeter, service, cable and mount penetration sealing",
+      "status": "NOT_RUN",
+      "digital_dependency": "Complete exact sealing and penetration geometry before assembling the leakage fixture. Rev.FE proves three unmanaged paths in the current nominal candidate; it does not specify a qualified gasket.",
+      "outputs": [
+        "as_built_seam_and_gasket_geometry",
+        "compression_and_seating_force",
+        "retention_and_peel_with_seals_installed",
+        "pressure_leakage_curve_and_fixture_baseline",
+        "location_of_unmanaged_leaks",
+        "acoustic_leakage_vs_frequency",
+        "thermal_cycle_and_reseating_changes",
+        "instrument_uncertainty_and_raw_data"
+      ],
+      "acceptance": "No unintended open passage bypassing the defined inlet/outlet treatment. Keep the 22 intended vents open. Whole-front retention must remain 20..30 N and fabric-DML clearance at least 2.0 mm with actual seals. Quantitative leak-rate, seal-compression, cycle-count and acoustic limits are OPEN until seal design, flow/acoustic requirements and process are qualified; do not declare PASS from visual inspection alone.",
+      "source": "evidence/rev-fe/front-joint-audit.json"
+    }
+  ],
+  "release_rule": "No physical PASS or production tolerance is established by these plans. Historical coupon sections must match the finally selected frame before their data can qualify it. Optical tests remain the Rev.FA supplement to P15; they are not silently replaced by P17."
+}

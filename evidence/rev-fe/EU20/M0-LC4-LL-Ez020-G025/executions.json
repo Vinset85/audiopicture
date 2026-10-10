@@ -1,0 +1,77 @@
+[
+  {
+    "case": "LC4",
+    "vertical_load_seed_N": 70.0,
+    "assembled_mass_load_adequacy_verified": false,
+    "loaded_corner": "LL",
+    "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+    "constitutive_assumptions": {
+      "E1": 1900.0,
+      "E2": 1900.0,
+      "E3": 380.0,
+      "nu12": 0.35,
+      "nu13": 0.35,
+      "nu23": 0.35,
+      "G12": 703.7037037037037,
+      "G13": 175.92592592592592,
+      "G23": 175.92592592592592
+    },
+    "load_sum_N": [
+      0.0,
+      0.0,
+      -29.999999999999996
+    ],
+    "load_cg_seed_mm": [
+      160.0000000000001,
+      200.00000000000097,
+      22.15792506446229
+    ],
+    "nonlinear_geometry": true,
+    "lower_unilateral_gap_contacts": 208,
+    "total_pad_penalty_N_per_mm": 100000.0,
+    "gap_force_floor_N": 1e-12,
+    "contact_iteration_controls": true,
+    "anti_lift_normal_support_assumption": true,
+    "bonded_insert_cleat_surrogate_nodes": 2020,
+    "corner_warp_mm": null,
+    "input_sha256": "3f0403a2e16f248d2231443a6434e6ca9d53a1a011a11f0837bf1fb8443de6b9",
+    "mesh_report": {
+      "source_sha256": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+      "size_mm": 4.0,
+      "nodes": 183498,
+      "elements": 97559,
+      "type": "C3D10",
+      "min_SICN": 0.008781184496329687,
+      "corner_tet_volume_mm3": 374017.8510584898,
+      "volume_weighted_seed_cg_mm": [
+        160.29621811899082,
+        153.32447194913016,
+        22.073346458559264
+      ],
+      "node_sets": {
+        "UL1": 504,
+        "UL2": 500,
+        "UR1": 516,
+        "UR2": 500,
+        "PAD_L": 104,
+        "PAD_R": 104,
+        "ANTILIFT": 107,
+        "CORNER_LL": 7,
+        "CORNER_LR": 7,
+        "CORNER_UL": 31,
+        "CORNER_UR": 31
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+      "algorithm3d": 1,
+      "linear_mesh_optimizer": "Netgen",
+      "gmsh_version": "4.15.2",
+      "mesher_sha256": "3f2c2c5326f5ff721fd6ae6a1555bd52a929ab9106c56a5ec2cdc38de41d56cf"
+    },
+    "qualified_allowables": null,
+    "release_margin": null,
+    "exit_code": 0,
+    "job_finished": true,
+    "errors": [],
+    "solver_execution_pass": true
+  }
+]

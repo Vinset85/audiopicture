@@ -1,0 +1,33 @@
+{
+  "classification": "CALCULATED_CONTROLLED_EXPERIMENT_AUDIT",
+  "status": "PASS",
+  "only_changed_input": "Material orientation card and its solid-section reference",
+  "weak_global_axis": "Y",
+  "material_axes_global": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      -1
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "identical_geometry_loads_contacts_constraints_and_material_values": true,
+  "physical_print_orientation_qualified": false,
+  "source_sha256": {
+    "evidence/rev-fe/EU20/M0-LC4-LL-Ez020-G025/LC4/frame.inp": "3f0403a2e16f248d2231443a6434e6ca9d53a1a011a11f0837bf1fb8443de6b9",
+    "evidence/rev-fe/EU20/M0-LC4-LL-Ez020-G025/LC4/execution.json": "f1f775ebd026c202d966c4a4789c0e0301e4dbf23f243aa6af9c92d8cd0b4e9c",
+    "evidence/rev-fe/EU20/M0-LC4-LL-Ez020-G025-weakY/LC4/frame.inp": "a21e96ffdfd01358981450e3e20ef862ff9a7e10602a5f68b615ab425e683ecf",
+    "evidence/rev-fe/EU20/M0-LC4-LL-Ez020-G025-weakY/LC4/execution.json": "431f858cc61d280e5d831ab6aad4bd4efbd640b9668def19e12f42362661b783",
+    "evidence/rev-fe/material-axes-check/verification.json": "9535b5721c3881c1e8aed3f97e898e59d32bf8165ed29213c74f220f6a3e26e0",
+    "mechanical/cad/audit_orientation_comparison_rev_fe.py": "7d6b344e2c85f53e267b47115d005564485d7b216f68588ffb607e22062688d2"
+  }
+}

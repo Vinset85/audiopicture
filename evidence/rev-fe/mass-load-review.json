@@ -1,0 +1,44 @@
+{
+  "revision": "Rev.FE",
+  "classification": "CALCULATED_CONDITIONAL_RECONCILIATION_NOT_ASSEMBLED_MASS",
+  "frame_mass_ceiling_g": null,
+  "scenarios": [
+    {
+      "frame": "EU.22",
+      "shell": "Rev.FE sidewalls candidate",
+      "frame_calculated_g_at_catalog_density": 605.1052046836282,
+      "ASA_density_assumption_g_cm3": 1.05,
+      "shell_calculated_g_at_assumed_density": 422.24524848152356,
+      "conditional_total_with_other_old_reserves_g": 2196.950453165152,
+      "conditional_vertical_load_4g_min70_N": 86.17889664612814,
+      "actual_assembly_mass_or_load_qualification": false
+    },
+    {
+      "frame": "EU.22",
+      "shell": "Rev.FE sidewalls candidate",
+      "frame_calculated_g_at_catalog_density": 605.1052046836282,
+      "ASA_density_assumption_g_cm3": 1.1,
+      "shell_calculated_g_at_assumed_density": 442.3521650758818,
+      "conditional_total_with_other_old_reserves_g": 2217.0573697595105,
+      "conditional_vertical_load_4g_min70_N": 86.96762262060841,
+      "actual_assembly_mass_or_load_qualification": false
+    }
+  ],
+  "actual_assembled_mass_g": null,
+  "actual_assembled_CG_mm": null,
+  "final_vertical_load_N": null,
+  "limits": [
+    "Sidewalls are now present, but service/mount interfaces, seals and ENV chamber remain incomplete.",
+    "Other old reserves are retained as explicitly conditional bookkeeping, not verified component masses.",
+    "ASA 1.05/1.10 g/cm3 are assumptions, not measured properties; frame 1.22 is the existing catalog density.",
+    "No new mass ceiling is imposed. Final loads follow actual assembly mass/CG and installation conditions.",
+    "A 100 N screening load, if executed, is a sensitivity and does not qualify wall anchors or product capacity."
+  ],
+  "source_sha256": {
+    "evidence/rev-fd/mass-load-review.json": "5243de68a316ac3ff9491fb8c040da1afcbdad14b4dd27bd8199d70ea3cfbd03",
+    "evidence/rev-eq/execution.json": "d8a86a26021c0525fe73f1a385a1061ca90b5efe46fa49a65f5d627d24273f94",
+    "evidence/rev-eu22/execution.json": "d872f2d8a81ec63322072f53af3297ab535e7e70ddf2c8bd1e56f2ce19804dd6",
+    "evidence/rev-fe/sidewalls-eu22/execution.json": "130fd8ea4961e500e0d586b2a136fcc061e00fbc1163d3568b13fdbf3bfdae8a",
+    "mechanical/cad/review_mass_budget_rev_fe.py": "bf8a5b3c2118aa7b3b2239ecdb90994e94d904171aa272e7f3d8e599943395f6"
+  }
+}

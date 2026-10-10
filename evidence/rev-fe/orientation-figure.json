@@ -1,0 +1,23 @@
+{
+  "classification": "SCIENTIFIC_FIGURE_FROM_EXECUTED_SOLVER_METRICS",
+  "source_sha256": {
+    "evidence/rev-fe/EU20/M0-LC4-LR-Ez020-G025/LC4/metrics.json": "939b01a78489a4c2a332b1d51756f722259cddf03042023b581159fd21d1dc99",
+    "evidence/rev-fe/EU21/M0-LC4-LR-Ez020-G025/LC4/metrics.json": "2293b00a3557a119b2280a73afae38bc21806811f4ea9f990673a96a20cf2456",
+    "evidence/rev-fe/EU22/M0-LC4-LR-Ez020-G025/LC4/metrics.json": "d0ac88e93ead3e5dc2d87c061b75dbe0f2b6a23b73f359eacec0329727082b13",
+    "evidence/rev-fe/EU22/M1-LC4-LR-Ez020-G025/LC4/metrics.json": "1b215e4806c83857786adf9e749fc3354861680137d1e0051fe2139172c3367c",
+    "evidence/rev-fe/EU20/M0-LC4-LR-Ez020-G025-weakX/LC4/metrics.json": "64137999d100e7ac47623858241365c5e49443a7c956d1f4913e5e0deb0ccec5",
+    "evidence/rev-fe/EU20/M0-LC4-LR-Ez020-G025-weakY/LC4/metrics.json": "89cbbca437b3a4eab0c206b7a6a1781904a7f31b1dfe06ce8a6e28f18e8c2861",
+    "mechanical/cad/plot_orientation_results_rev_fe.py": "511f591e3f5e0f7c0fd89041a09da139ef6af66ff0ce1ad1bba96bb4da0eb019"
+  },
+  "artifact_sha256": {
+    "evidence/rev-fe/orientation-results.png": "5a42a87425fed89f98d3b396251f73b407ee9b87979476cb245f60ed07179ea9"
+  },
+  "values_mm": [
+    1.084858,
+    1.060149,
+    1.052219,
+    1.051936,
+    3.171591,
+    0.8256032
+  ]
+}

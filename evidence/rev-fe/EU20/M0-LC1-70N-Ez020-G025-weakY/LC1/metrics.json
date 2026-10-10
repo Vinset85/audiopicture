@@ -1,0 +1,81 @@
+{
+  "case": "LC1",
+  "solver_execution_pass": true,
+  "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+  "final_step_time": 1.0,
+  "max_displacement_mm": 4.146077368424406,
+  "max_displacement_node": 8250,
+  "max_displacement_xyz_mm": [
+    193.0172031235521,
+    177.95344082468128,
+    20.0
+  ],
+  "max_abs_UZ_mm": 4.05763,
+  "corner_max_abs_UZ_mm": {
+    "CORNER_LL": 3.923162,
+    "CORNER_LR": 3.941553,
+    "CORNER_UL": 0.2117235,
+    "CORNER_UR": 0.2224981
+  },
+  "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+  "adjacent_mount_max_displacement_mm": {
+    "UL1": 0.03456652230118419,
+    "UL2": 0.036286658387854845,
+    "UR1": 0.039309158758419456,
+    "UR2": 0.03884031288252194
+  },
+  "support_reaction_sum_N": [
+    7.202329986577549e-07,
+    69.99999861638992,
+    2.2291159999798804e-07
+  ],
+  "force_balance_residual_N": [
+    7.202329986577549e-07,
+    -1.3836099697073223e-06,
+    2.2291159999798804e-07
+  ],
+  "force_balance_within_0_1_percent_or_0_001N": true,
+  "cleat_bore_reactions_N": {
+    "UL1": [
+      -18.46264838637,
+      32.865844134096996,
+      -2.993350469310001
+    ],
+    "UL2": [
+      12.385283373863,
+      2.576842537120002,
+      2.9821260692399987
+    ],
+    "UR1": [
+      -13.874579247859996,
+      0.9916271405700028,
+      2.9354859194435985
+    ],
+    "UR2": [
+      19.951944980599997,
+      33.565684804602995,
+      -2.924261296462
+    ]
+  },
+  "anti_lift_normal_reaction_N": 0.0,
+  "warp_normal_reaction_N": null,
+  "moment_balance_residual_Nmm": [
+    7.425002716165627e-05,
+    -8.223488021741332e-05,
+    -0.00012343969578063572
+  ],
+  "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+  "nodal_extrapolated_stress_diagnostic": {
+    "von_mises_max_MPa": 4.888342422891407,
+    "node": 30246,
+    "xyz_mm": [
+      287.377210162245,
+      371.2,
+      27.5
+    ],
+    "principal_max_MPa": 3.8644141337640594,
+    "principal_min_MPa": -5.74755984507604,
+    "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+  },
+  "qualified_strength_margin": null
+}

@@ -1,0 +1,39 @@
+{
+  "classification": "CALCULATED_INSTALLATION_COUPON_NOT_STRUCTURAL_QUALIFICATION",
+  "catalog_part": "RX-M4x8.1",
+  "base_xy_mm": 30.0,
+  "floor_mm": 2.5,
+  "boss_outer_diameter_mm": 12.0,
+  "overall_height_mm": 11.6,
+  "nominal_hole_diameter_mm": 5.6,
+  "nominal_hole_depth_mm": 9.1,
+  "radial_wall_from_nominal_hole_mm": 3.2,
+  "root_fillet_mm": 2,
+  "nominal_insert_bottom_clearance_mm": 1.0,
+  "BREP_valid": true,
+  "solid_count": 1,
+  "STEP_reimport_valid": true,
+  "volume_mm3": 3089.8226460410506,
+  "STL_watertight": true,
+  "STL_volume_relative_error": 6.057843717515653e-05,
+  "nominal_hole_obstruction_mm3": 0,
+  "floor_continuity_verified": true,
+  "source_sha256": {
+    "mechanical/components/ruthex-m4-insert-candidate-rev-fe.json": "49e87bde4b2df645b7d92934af2a5fa45ac317401d3fcdf117e5bb881aa3d738",
+    "evidence/rev-fe/insert-source/sources.json": "4ecb225a23b1514de2d4af028819046490e6d0ea263dbaad1e6bde07c4fbfc8a",
+    "mechanical/cad/generate_insert_coupon_rev_fe.py": "e3eec9aaa9c77e710052558dfc2555bc28d83a2ae59e755311d868632f983812"
+  },
+  "artifact_sha256": {
+    "AP22_INSERT_INSTALLATION_COUPON_REV_FE.step": "80579ca985403c52357cda910415487aa877b0cbe47458933270245f2f3bdc9b",
+    "AP22_INSERT_INSTALLATION_COUPON_REV_FE.stl": "69200e3de715c82cdc7a6d09c881d145acc92229aadee28de480a8454e59ae6d"
+  },
+  "printed": false,
+  "measured": false,
+  "qualified": false,
+  "limits": [
+    "Not the complete frame boss/gusset or its stress boundary condition.",
+    "Hole size is a manufacturer nominal; printer compensation and installation remain unqualified.",
+    "The base is for handling and installation trials, not a validated pullout fixture.",
+    "Strength, torque, hot performance, sample count and statistical acceptance require the P02 laboratory protocol."
+  ]
+}

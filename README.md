@@ -4,7 +4,9 @@ Smart acoustic picture / complete Home Assistant room node.
 
 **V2.2 target:** 320 x 400 x 40 mm, DML audio, far-field voice, 60 GHz presence sensing, temperature/humidity/light sensing, Ethernet + Wi-Fi, PoE+ + 24 V external power, automatic acoustic calibration and plug-and-play Home Assistant integration.
 
-**Current verified checkpoint: [Rev.FD](mechanical/digital-validation-rev-fd.md).** The user-authorized mass increase supersedes the 250 g frame target. EU.20 passes the four-corner normalized displacement screen; production qualification remains OPEN.
+**Current verified checkpoint: [Rev.FE](mechanical/digital-validation-rev-fe.md).** Weak-material and print-axis studies expose the limits of the earlier scoped displacement result. New ASA sidewalls and an M4 installation coupon are verified as CAD candidates; production qualification remains OPEN. The 250 g frame ceiling remains removed.
+
+**Physical inputs needed:** [measurements, parameters and existing acceptance criteria](manufacturing/real-data-required-rev-fe.md). This separates coupon/component tests from first-assembly tests and the digital work still required.
 
 ## Project areas
 - `hardware/` — electronics, BOM and KiCad design
@@ -117,7 +119,7 @@ The [Rev.FC supplement](https://github.com/Vinset85/audiopicture/releases/tag/ch
 is published: all three asset sizes and SHA-256 digests are verified against
 GitHub. Receipt: `evidence/rev-fc/github-publication.json`.
 
-## Current checkpoint Rev.FD — 2026-10-08
+## Checkpoint Rev.FD — 2026-10-08
 
 The [mass policy](mechanical/mass-policy-rev-fd.md) removes the 250 g rejection
 gate without inventing a replacement ceiling. Mass/CG and load adequacy remain
@@ -146,3 +148,24 @@ The [Rev.FD supplement](https://github.com/Vinset85/audiopicture/releases/tag/ch
 is published on commit `26b60bea5645258ce13141e7a85896333513810b`.
 All three attachment names, sizes and SHA-256 digests are verified against
 GitHub. Receipt: `evidence/rev-fd/github-publication.json`.
+
+
+## Current checkpoint Rev.FE — 2026-10-09
+
+14 full-frame runs and 18 independent material-axis checks are actually executed.
+The weaker normalized material makes EU.20/EU.21/EU.22 fail the flat-print
+LC4 criterion; EU.22 remains above 1 mm on both meshes despite 605.105 g
+calculated mass. EU.20 weak-Y orientation gives 0.825603/0.826344 mm at the
+two lower corners, but linear vertical screens predict DML interference.
+The separate contact/nonlinear 100 N run also fails refined full-element DML clearance, despite zero intersecting sampled nodes. Its limitations are in the report.
+No production orientation, strength or complete FEA matrix is qualified.
+
+ASA sidewalls preserve all 22 rear labyrinth cells, while a BREP path audit
+proves three unmanaged front-joint paths. An original ruthex M4 CAD and a
+catalog-sized installation coupon are verified; the provisional frame bores
+are incompatible with that insert specification. Actual seals, mounts,
+full-product CFD, electronics/PCB, functional firmware and physical qualification
+remain incomplete. See [Rev.FE results](mechanical/digital-validation-rev-fe.md)
+and [required real measurements](manufacturing/real-data-required-rev-fe.md).
+Registry including history: 78 PASS / 39 FAIL / 21 OPEN.
+Publication integrity is recorded separately in the checkpoint receipt.

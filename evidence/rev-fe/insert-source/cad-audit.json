@@ -1,0 +1,32 @@
+{
+  "classification": "CATALOG_AND_CALCULATED_CAD_NOT_MEASURED",
+  "manufacturer_part": "RX-M4x8.1",
+  "vendor_CAD_valid": true,
+  "vendor_CAD_solids": 1,
+  "vendor_CAD_volume_mm3": 109.98489129067612,
+  "vendor_CAD_Occ_bounding_box_mm": [
+    -3.1477123661391078,
+    3.1496520004756423,
+    -3.1477123661391078,
+    3.1496520004756423,
+    -8.10000010000001,
+    0.09261713028493905
+  ],
+  "bounding_box_note": "The source thread-end/bounding surface exceeds nominal Z0. Retain source unchanged; do not turn this CAD bound into a manufacturing tolerance or replace the catalog L=8.1 mm.",
+  "surrogate_frame_revision": "Rev.EU.21",
+  "surrogate_bore_diameter_mm": 6,
+  "surrogate_bore_depth_mm": 7,
+  "catalog_nominal_installation_hole_mm": 5.6,
+  "catalog_min_installation_depth_mm": 9.1,
+  "surrogate_depth_shortfall_mm": 2.0999999999999996,
+  "surrogate_hole_diameter_difference_mm": 0.40000000000000036,
+  "installation_specification_status": "FAIL_FOR_THIS_CATALOG_CANDIDATE",
+  "production_selection_status": "OPEN: installation, pullout, torque, hot properties and frame integration not qualified",
+  "source_sha256": {
+    "evidence/rev-fe/insert-source/ruthex_RX-M4x8.1.step": "427544ec89a934a12e8613cbfb7e720606b4b1ea126e917db4f5b50084112a67",
+    "mechanical/components/ruthex-m4-insert-candidate-rev-fe.json": "49e87bde4b2df645b7d92934af2a5fa45ac317401d3fcdf117e5bb881aa3d738",
+    "evidence/rev-fe/insert-source/sources.json": "4ecb225a23b1514de2d4af028819046490e6d0ea263dbaad1e6bde07c4fbfc8a",
+    "evidence/rev-eu21/execution.json": "bb922cb4b040406bf5e0267279fce3d4583f81728b7cf486131c2942b7d8e6b5",
+    "mechanical/cad/audit_insert_candidate_rev_fe.py": "4c4b7cbdb439aacd19d2e21891861b9eec4bb8bce0b7b9a3299d5f1c7daad665"
+  }
+}

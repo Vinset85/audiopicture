@@ -1,0 +1,469 @@
+{
+  "revision": "Rev.FE",
+  "classification": "CALCULATED_PARTIAL_ENCLOSURE_CANDIDATE_NOT_RELEASE",
+  "valid": true,
+  "solid_count": 1,
+  "STEP_reimport_valid": true,
+  "volume_mm3": 402138.33188716526,
+  "added_volume_mm3": 99861.99042629509,
+  "sidewall_thickness_mm": 2.2,
+  "sidewall_front_z_mm": 4.2,
+  "outer_edge_radius_mm": 2.0,
+  "frame_overlap_mm3": 0,
+  "front_overlap_mm3": 0,
+  "frame_clearance_mm": 1.0,
+  "front_clearance_mm": 0.5,
+  "labyrinth_protected_box_mm": [
+    12,
+    308,
+    12,
+    350,
+    28.8,
+    40.25
+  ],
+  "added_within_labyrinth_box_mm3": 0,
+  "removed_within_labyrinth_box_mm3": 0,
+  "unchanged_labyrinth_cells": 22,
+  "vent_probes": [
+    {
+      "id": 1,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 2,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 3,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 4,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 5,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 6,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 7,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 8,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 9,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 10,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 11,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 12,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 13,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 14,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 15,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 16,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 17,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 18,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 19,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 20,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 21,
+      "aperture_obstruction_mm3": 0
+    },
+    {
+      "id": 22,
+      "aperture_obstruction_mm3": 0
+    }
+  ],
+  "sidewall_samples": [
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        100.0,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        100.0,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        100.0,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        200.0,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        200.0,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        200.0,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        300.0,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        300.0,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "left",
+      "xyz_mm": [
+        1,
+        300.0,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        100.0,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        100.0,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        100.0,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        200.0,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        200.0,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        200.0,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        300.0,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        300.0,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "right",
+      "xyz_mm": [
+        319,
+        300.0,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        80.0,
+        1,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        80.0,
+        1,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        80.0,
+        1,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        160.0,
+        1,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        160.0,
+        1,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        160.0,
+        1,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        240.0,
+        1,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        240.0,
+        1,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "bottom",
+      "xyz_mm": [
+        240.0,
+        1,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        80.0,
+        399,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        80.0,
+        399,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        80.0,
+        399,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        160.0,
+        399,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        160.0,
+        399,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        160.0,
+        399,
+        26
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        240.0,
+        399,
+        12
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        240.0,
+        399,
+        20
+      ],
+      "ASA_material_present": true
+    },
+    {
+      "side": "top",
+      "xyz_mm": [
+        240.0,
+        399,
+        26
+      ],
+      "ASA_material_present": true
+    }
+  ],
+  "STL_watertight": true,
+  "STL_volume_relative_error": 4.517763306082846e-06,
+  "initial_STL_watertight": false,
+  "collapsed_zero_area_facets_removed": 4,
+  "STL_cleanup": "Repeated-index zero-area facets only; no moved vertices or filled holes.",
+  "full_enclosure_closed": false,
+  "full_product_CFD_executed": false,
+  "source_sha256": {
+    "evidence/rev-eq/AP22_REV_EQ_SOLID.step": "cf2e46689c2d62a6c98364b5c3905bb3da8dab58d97514607f3fcc9c210680a2",
+    "evidence/rev-eu21/AP22_FRAME_CANDIDATE_REV_EU.step": "5f20ab207a9f779f3a14cbd7c6d70e2017a6fdf8a17de8e22a1e9ced702e3091",
+    "evidence/rev-fa/AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+    "evidence/rev-eq/execution.json": "d8a86a26021c0525fe73f1a385a1061ca90b5efe46fa49a65f5d627d24273f94",
+    "mechanical/cad/generate_sidewall_candidate_rev_fe.py": "9ee0ef4e6a420dbbd376fbddd8226918824743727a843e7f2b26dc63fba974aa"
+  },
+  "artifact_sha256": {
+    "AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": "7de55c8e51ed54397df058cbdd8be0e9b3aaa8bd3dab53c804955f09afa0b446",
+    "AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.stl": "cedbf75384fd59e96255dc0458cd2b40f922f40c6cc5c674105fb9a96fd70912"
+  },
+  "limitations": [
+    "4.2 mm front edge is a design seed providing 0.5 mm to the front magnetic stock.",
+    "Front seam and DML acoustic seal remain open; no enclosure leakage qualification.",
+    "Service/cable and actual wall-mount penetrations are not yet designed.",
+    "ENV chamber and full PCB/cable DMU remain incomplete.",
+    "Unchanged cells preserve geometry only, not a thermal/flow/acoustic attenuation result.",
+    "ASA material, tolerances, shrink, warpage and production process require physical qualification."
+  ]
+}

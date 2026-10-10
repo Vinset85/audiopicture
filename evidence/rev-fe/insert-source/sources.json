@@ -1,0 +1,18 @@
+{
+  "retrieved_at": "2026-10-08T11:53:59.618744+00:00",
+  "manufacturer_product_url": "https://www.ruthex.de/products/ruthex-gewindeeinsatz-m4-50-stuck-rx-m4x8-1-messing-gewindebuchsen",
+  "files": [
+    {
+      "file": "evidence/rev-fe/insert-source/ruthex_RX-M4x8.1.step",
+      "url": "https://cdn.shopify.com/s/files/1/0567/7019/9760/files/ruthex_RX-M4x8.1.step?v=1621264078",
+      "bytes": 1130102,
+      "sha256": "427544ec89a934a12e8613cbfb7e720606b4b1ea126e917db4f5b50084112a67"
+    },
+    {
+      "file": "evidence/rev-fe/insert-source/ruthex_Datenblatt_RX-Serie.pdf",
+      "url": "https://www.igo3d.com/mediafiles/Sonstiges/Ruthex/ruthex_Datenblatt_RX-Serie.pdf",
+      "bytes": 342196,
+      "sha256": "6bfc05690afce95e31ad652a8c1860ea9d8781373cf34f5730c935f703bf1fde"
+    }
+  ]
+}

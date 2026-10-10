@@ -95,3 +95,18 @@ anche il commit del tag è verificato. Ricevuta: `evidence/rev-fd/github-publica
 Il supplemento contiene 216 file, inclusi 79 artefatti grezzi verificati individualmente.
 Gli indici nell'archivio restano lo snapshot immutabile precedente al caricamento;
 per lo stato di pubblicazione fa fede la ricevuta corrente in `main`.
+
+
+## Supplemento Rev.FE — 9 ottobre 2026
+
+Il [report Rev.FE](../mechanical/digital-validation-rev-fe.md) e il
+[registro](../mechanical/validation/rev-fe/gate-register.json) conservano
+sensibilità deboli/orientate, nuove pareti ASA, audit del giunto frontale,
+inserto originale e provino d'installazione. Il [piano delle misure reali](../manufacturing/real-data-required-rev-fe.md)
+separa attività su provini, componenti e primo assemblaggio. Nessun rilascio produttivo.
+
+Estrarre `audiopicture-rev-fe-supplement.zip` dopo FA+FB+FC+FD, nella stessa
+cartella. `evidence/rev-fe/raw-artifact-index.json` indica file grezzi, byte
+e SHA-256. La pubblicazione è completa solo quando la ricevuta
+`evidence/rev-fe/github-publication.json` verifica commit/tag e tutti gli
+allegati contro i digest GitHub; gli indici pre-upload nello ZIP restano immutabili.

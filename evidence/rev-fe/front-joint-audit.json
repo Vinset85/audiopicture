@@ -1,0 +1,353 @@
+{
+  "classification": "CALCULATED_BREP_PATH_COUNTEREXAMPLE_NOT_FLOW_OR_ACOUSTIC_SIMULATION",
+  "status": "FAIL_FULL_ENCLOSURE_SEAL_IN_CURRENT_CANDIDATE",
+  "continuous_path_count": 3,
+  "trials": [
+    {
+      "Y_mm": 120,
+      "polyline_mm": [
+        [
+          -1,
+          120,
+          3
+        ],
+        [
+          2.7,
+          120,
+          3
+        ],
+        [
+          2.7,
+          120,
+          36.5
+        ],
+        [
+          20,
+          120,
+          36.5
+        ]
+      ],
+      "segments": [
+        {
+          "from_mm": [
+            -1,
+            120,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            120,
+            3
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 1.2000000000000002,
+            "frame": 3.0413812651491097,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.306161783043132
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            120,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            120,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.5,
+            "frame": 0.5,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.3
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            120,
+            36.5
+          ],
+          "to_mm": [
+            20,
+            120,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.0,
+            "frame": 1.5,
+            "front": 34.012350697945,
+            "DML_hard_box": 27.2
+          }
+        }
+      ],
+      "minimum_centerline_clearance_mm": 0.0,
+      "continuous_positive_clearance_path": false
+    },
+    {
+      "Y_mm": 180,
+      "polyline_mm": [
+        [
+          -1,
+          180,
+          3
+        ],
+        [
+          2.7,
+          180,
+          3
+        ],
+        [
+          2.7,
+          180,
+          36.5
+        ],
+        [
+          20,
+          180,
+          36.5
+        ]
+      ],
+      "segments": [
+        {
+          "from_mm": [
+            -1,
+            180,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            180,
+            3
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 1.2000000000000002,
+            "frame": 3.0413812651491097,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.306161783043132
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            180,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            180,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.5,
+            "frame": 0.5,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.3
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            180,
+            36.5
+          ],
+          "to_mm": [
+            20,
+            180,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.5,
+            "frame": 1.5,
+            "front": 34.2,
+            "DML_hard_box": 27.2
+          }
+        }
+      ],
+      "minimum_centerline_clearance_mm": 0.5,
+      "continuous_positive_clearance_path": true
+    },
+    {
+      "Y_mm": 250,
+      "polyline_mm": [
+        [
+          -1,
+          250,
+          3
+        ],
+        [
+          2.7,
+          250,
+          3
+        ],
+        [
+          2.7,
+          250,
+          36.5
+        ],
+        [
+          20,
+          250,
+          36.5
+        ]
+      ],
+      "segments": [
+        {
+          "from_mm": [
+            -1,
+            250,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            250,
+            3
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 1.2000000000000002,
+            "frame": 3.0413812651491097,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.306161783043132
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            250,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            250,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.5,
+            "frame": 0.5,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.3
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            250,
+            36.5
+          ],
+          "to_mm": [
+            20,
+            250,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.5,
+            "frame": 1.5,
+            "front": 34.2,
+            "DML_hard_box": 27.2
+          }
+        }
+      ],
+      "minimum_centerline_clearance_mm": 0.5,
+      "continuous_positive_clearance_path": true
+    },
+    {
+      "Y_mm": 300,
+      "polyline_mm": [
+        [
+          -1,
+          300,
+          3
+        ],
+        [
+          2.7,
+          300,
+          3
+        ],
+        [
+          2.7,
+          300,
+          36.5
+        ],
+        [
+          20,
+          300,
+          36.5
+        ]
+      ],
+      "segments": [
+        {
+          "from_mm": [
+            -1,
+            300,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            300,
+            3
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 1.2000000000000002,
+            "frame": 3.0413812651491097,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.306161783043132
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            300,
+            3
+          ],
+          "to_mm": [
+            2.7,
+            300,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.5,
+            "frame": 0.5,
+            "front": 0.7000000000000002,
+            "DML_hard_box": 7.3
+          }
+        },
+        {
+          "from_mm": [
+            2.7,
+            300,
+            36.5
+          ],
+          "to_mm": [
+            20,
+            300,
+            36.5
+          ],
+          "BREP_min_distance_mm": {
+            "shell": 0.5,
+            "frame": 1.5,
+            "front": 34.2,
+            "DML_hard_box": 27.2
+          }
+        }
+      ],
+      "minimum_centerline_clearance_mm": 0.5,
+      "continuous_positive_clearance_path": true
+    }
+  ],
+  "labyrinth_treated_rear_vent_count": 22,
+  "all_product_apertures_treatment_verified": false,
+  "limitations": [
+    "Polyline includes turns; this is not a claim of direct acoustic line of sight.",
+    "Positive BREP segment clearance proves a finite geometric path only for these modeled parts.",
+    "The path stays at X<=20; no thermal/flow resistance or acoustic attenuation is calculated.",
+    "A qualified front/perimeter and DML seal design is still required; no gasket property is invented."
+  ],
+  "source_sha256": {
+    "evidence/rev-fe/sidewalls-eu22/AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": "8106ba52ad9e5378f24f0dcf08cebb09c14039e44bb4e086a0f61d3b97bbd793",
+    "evidence/rev-eu22/AP22_FRAME_CANDIDATE_REV_EU.step": "955fa0629a1754d20e9ee3dae816d6197cbdf113638f21a7d9593fa121e96635",
+    "evidence/rev-fa/AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+    "mechanical/cad/audit_front_joint_rev_fe.py": "38b88330a083e40bad0c055895b87fbec49cb65716dd071f3ee82f88422c88ad"
+  }
+}

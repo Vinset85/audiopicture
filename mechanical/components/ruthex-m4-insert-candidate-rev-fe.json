@@ -1,0 +1,33 @@
+{
+  "revision": "Rev.FE",
+  "classification": "CATALOG_CANDIDATE_NOT_QUALIFIED",
+  "manufacturer": "ruthex",
+  "part_number": "RX-M4x8.1",
+  "pack_order_number": "GE-M4x81-001",
+  "thread": "M4",
+  "nominal_length_mm": 8.1,
+  "outer_major_diameter_mm": 6.3,
+  "lead_diameter_mm": 5.5,
+  "manufacturer_nominal_installation_hole_diameter_mm": 5.6,
+  "manufacturer_min_wall_from_hole_mm": 2.1,
+  "manufacturer_min_hole_depth_rule": "L + 1 mm",
+  "manufacturer_min_hole_depth_mm": 9.1,
+  "project_min_wall_from_hole_mm": 2.5,
+  "project_min_boss_OD_mm": 11,
+  "project_root_fillet_min_mm": 2,
+  "drawing_status": "2022-08-15",
+  "source": "evidence/rev-fe/insert-source/sources.json",
+  "source_page": 1,
+  "manufacturer_product_url": "https://www.ruthex.de/products/ruthex-gewindeeinsatz-m4-50-stuck-rx-m4x8-1-messing-gewindebuchsen",
+  "qualified_installation_hole_mm": null,
+  "qualified_installation_process": null,
+  "qualified_pullout_N": null,
+  "qualified_torque_Nm": null,
+  "qualified_interface_stiffness": null,
+  "selected_for_production": false,
+  "notes": [
+    "Catalog nominal dimensions are not measured dimensions or process tolerances.",
+    "The 7 mm deep / 6 mm diameter FEA surrogate hole is not a compatible installation specification.",
+    "Vendor CAD thread end/bounding shape is retained unchanged; nominal catalog length is not inferred from the CAD bounding box."
+  ]
+}

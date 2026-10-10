@@ -1,0 +1,84 @@
+{
+  "case": "LC4",
+  "solver_execution_pass": true,
+  "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+  "final_step_time": 1.0,
+  "max_displacement_mm": 1.058461427565541,
+  "max_displacement_node": 3,
+  "max_displacement_xyz_mm": [
+    3.2,
+    12.0,
+    35.0
+  ],
+  "max_abs_UZ_mm": 1.052079,
+  "corner_max_abs_UZ_mm": {
+    "CORNER_LL": 1.052079,
+    "CORNER_LR": 0.02905931,
+    "CORNER_UL": 0.03571892,
+    "CORNER_UR": 0.001619744
+  },
+  "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+  "adjacent_mount_max_displacement_mm": {
+    "UL1": 0.010710384608312732,
+    "UL2": 0.006439943334020476,
+    "UR1": 0.0010126840042981916,
+    "UR2": 0.002198228846598154
+  },
+  "support_reaction_sum_N": [
+    1.1953101035008795e-08,
+    4.3392330346427033e-07,
+    29.9999972956465
+  ],
+  "force_balance_residual_N": [
+    1.1953101035008795e-08,
+    4.3392330346427033e-07,
+    -2.7043534984727557e-06
+  ],
+  "force_balance_within_0_1_percent_or_0_001N": true,
+  "cleat_bore_reactions_N": {
+    "UL1": [
+      1.1026929538100012,
+      0.7180660004470009,
+      2.6365919550199988
+    ],
+    "UL2": [
+      -1.5313946731599988,
+      -0.741381936894999,
+      -2.1566391603424315
+    ],
+    "UR1": [
+      0.19879057554299998,
+      -0.0098539663906994,
+      -0.32366228428339966
+    ],
+    "UR2": [
+      0.22991115576010068,
+      0.033170336762000055,
+      1.133921703085
+    ]
+  },
+  "anti_lift_normal_reaction_N": 59.44691374599998,
+  "warp_normal_reaction_N": null,
+  "pad_max_numerical_penetration_mm": 0.002194023,
+  "pad_max_opening_mm": 0.7338697,
+  "moment_balance_residual_Nmm": [
+    0.000552760573782507,
+    -3.5183772752134246e-05,
+    -5.4546094455432126e-05
+  ],
+  "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+  "nodal_extrapolated_stress_diagnostic": {
+    "von_mises_max_MPa": 4.921908876024626,
+    "node": 67458,
+    "xyz_mm": [
+      151.9,
+      10.0,
+      36.349999999999994
+    ],
+    "principal_max_MPa": 4.893555839113997,
+    "principal_min_MPa": -2.4979000288758213,
+    "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+  },
+  "qualified_strength_margin": null,
+  "corner_displacement_screen_status": "FAIL"
+}

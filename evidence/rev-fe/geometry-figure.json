@@ -1,0 +1,13 @@
+{
+  "classification": "CALCULATED_CAD_INSPECTION_NOT_RELEASE",
+  "source_sha256": {
+    "evidence/rev-eu22/AP22_FRAME_CANDIDATE_REV_EU.step": "955fa0629a1754d20e9ee3dae816d6197cbdf113638f21a7d9593fa121e96635",
+    "evidence/rev-fe/sidewalls-eu22/AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": "8106ba52ad9e5378f24f0dcf08cebb09c14039e44bb4e086a0f61d3b97bbd793",
+    "mechanical/cad/plot_geometry_rev_fe.py": "7d275b7e18716e5c66924a647bc424424222706c2c90dd3dd00601664bc555a7"
+  },
+  "triangles": {
+    "evidence/rev-eu22/AP22_FRAME_CANDIDATE_REV_EU.step": 3640,
+    "evidence/rev-fe/sidewalls-eu22/AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": 11508
+  },
+  "Z_visual_scale": 2.5
+}
