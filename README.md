@@ -168,4 +168,11 @@ full-product CFD, electronics/PCB, functional firmware and physical qualificatio
 remain incomplete. See [Rev.FE results](mechanical/digital-validation-rev-fe.md)
 and [required real measurements](manufacturing/real-data-required-rev-fe.md).
 Registry including history: 78 PASS / 39 FAIL / 21 OPEN.
-Publication integrity is recorded separately in the checkpoint receipt.
+The [Rev.FE supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fe-2026-10-09)
+was published on 11 October on commit `3996b697d6673c8ac19a297206d947c2e36917c9`.
+All three attachment names, sizes and SHA-256 digests match GitHub; the tag
+commit is verified. All 218 versioned files in the archive match that
+engineering commit; 178 raw artifacts are individually SHA-256 checked.
+Receipts: `evidence/rev-fe/github-publication.json` and
+`evidence/rev-fe/archive-tree-verification.json`. Publication integrity does
+not qualify the design for production.

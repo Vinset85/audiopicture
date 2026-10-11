@@ -107,6 +107,13 @@ separa attività su provini, componenti e primo assemblaggio. Nessun rilascio pr
 
 Estrarre `audiopicture-rev-fe-supplement.zip` dopo FA+FB+FC+FD, nella stessa
 cartella. `evidence/rev-fe/raw-artifact-index.json` indica file grezzi, byte
-e SHA-256. La pubblicazione è completa solo quando la ricevuta
-`evidence/rev-fe/github-publication.json` verifica commit/tag e tutti gli
-allegati contro i digest GitHub; gli indici pre-upload nello ZIP restano immutabili.
+e SHA-256. Rev.FE è [pubblicata](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fe-2026-10-09)
+il giorno 11 ottobre sul commit `3996b697d6673c8ac19a297206d947c2e36917c9`.
+La ricevuta `evidence/rev-fe/github-publication.json` verifica il commit del
+tag e tutti e tre gli allegati per nomi, dimensioni e SHA-256 contro i digest
+GitHub. L'archivio contiene 396 file: 218 file versionati confrontati con i
+blob del commit e 178 artefatti grezzi verificati individualmente. Il confronto
+è registrato in `evidence/rev-fe/archive-tree-verification.json`.
+Gli indici pre-upload nello ZIP restano immutabili; per lo stato corrente
+fa fede la ricevuta in `main`. È una verifica di pubblicazione, non un rilascio
+per produzione.

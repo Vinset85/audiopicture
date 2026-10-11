@@ -1,6 +1,6 @@
 {
   "revision": "Rev.FE",
-  "publication_verified": false,
+  "publication_verified": true,
   "release_tag": "checkpoint-rev-fe-2026-10-09",
   "baseline_release": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06",
   "scope": "New weak-material/orientation FEA, EU.21/EU.22 meshes, ASA sidewalls and installation coupon. Extract over all four Rev.FA parts and Rev.FB/FC/FD supplements; production qualification remains open. Publication is checked separately.",
@@ -895,5 +895,8 @@
       "bytes": 25897357,
       "sha256": "1e86eabfbfa15955774c3e6f1e317a8a27e147bfd9ad17e96a9a4a10cb13f9db"
     }
-  ]
+  ],
+  "publication_receipt": "evidence/rev-fe/github-publication.json",
+  "release_url": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fe-2026-10-09",
+  "archive_tree_receipt": "evidence/rev-fe/archive-tree-verification.json"
 }
