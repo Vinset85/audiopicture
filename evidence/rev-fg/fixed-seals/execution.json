@@ -1,0 +1,123 @@
+{
+  "classification": "CALCULATED_NOMINAL_BREP_PARTITION_WITH_IMPERMEABLE_GASKET_ASSUMPTION",
+  "status": "PASS_NOMINAL_FRONT_REAR_PARTITION_WITH_22_AUDIT_CAPS",
+  "frame_volume_mm3": 391989.7887964842,
+  "frame_mass_g_at_catalog_density_1p22": 478.22754233171065,
+  "DML_foam_nominal_free_mm": 2,
+  "DML_foam_installed_mm": 1.6,
+  "DML_foam_land_width_mm": 6,
+  "radial_foam_nominal_free_mm": 1.57,
+  "radial_foam_installed_mm": 1.2560000000000002,
+  "nominal_compression_fraction": 0.2,
+  "part_overlap_mm3": {
+    "frame/shell": 0.0,
+    "frame/front": 0.0,
+    "frame/DML": 0.0,
+    "frame/DML_seal": 0.0,
+    "frame/frame_shell_seal": 0.0,
+    "shell/front": 0.0,
+    "shell/DML": 0.0,
+    "shell/DML_seal": 0.0,
+    "shell/frame_shell_seal": 0.0,
+    "front/DML": 0.0,
+    "front/DML_seal": 0.0,
+    "front/frame_shell_seal": 0.0,
+    "DML/DML_seal": 0.0,
+    "DML/frame_shell_seal": 0.0,
+    "DML_seal/frame_shell_seal": 0.0
+  },
+  "capped_partition": {
+    "components": 4,
+    "rear_component": 3,
+    "front_component": 0,
+    "rear_front_connected": false,
+    "volumes_mm3": [
+      468314.81589271047,
+      1027.584000000002,
+      32829.60882281552,
+      3122322.9880621643
+    ]
+  },
+  "without_radial_seal": {
+    "components": 3,
+    "rear_component": 0,
+    "front_component": 0,
+    "rear_front_connected": true,
+    "volumes_mm3": [
+      3594910.3422766062,
+      1027.584000000002,
+      32829.60882281552
+    ]
+  },
+  "without_DML_seal": {
+    "components": 3,
+    "rear_component": 0,
+    "front_component": 0,
+    "rear_front_connected": true,
+    "volumes_mm3": [
+      3603463.4040730614,
+      1027.584000000002,
+      32829.60882281552
+    ]
+  },
+  "former_path_segments_intercepted": [
+    {
+      "Y_mm": 180,
+      "seal_distance_mm": 0.0
+    },
+    {
+      "Y_mm": 250,
+      "seal_distance_mm": 0.0
+    },
+    {
+      "Y_mm": 300,
+      "seal_distance_mm": 0.0
+    }
+  ],
+  "audit_caps_count": 22,
+  "artifacts": {
+    "FRAME_SEAL_LAND": {
+      "file": "evidence/rev-fg/fixed-seals/AP22_FRAME_SEAL_LAND_REV_FG.step",
+      "bytes": 2562106,
+      "sha256": "2058bec225bdb79d098ad708d8045f6939b4eebcc3d3a36533b70fe4fbe254ca",
+      "STEP_relative_volume_error": 1.083997432619151e-14
+    },
+    "DML_GASKET_COMPRESSED": {
+      "file": "evidence/rev-fg/fixed-seals/AP22_DML_GASKET_COMPRESSED_REV_FG.step",
+      "bytes": 30189,
+      "sha256": "b9c92229e77855edec6d80777ee499684a0862ad3f3dc4ea29c6e2a7d1f7a34a",
+      "STEP_relative_volume_error": 0.0
+    },
+    "FRAME_SHELL_GASKET_COMPRESSED": {
+      "file": "evidence/rev-fg/fixed-seals/AP22_FRAME_SHELL_GASKET_COMPRESSED_REV_FG.step",
+      "bytes": 30590,
+      "sha256": "331d63dc7dc4db6eba1f25bc8a6291871ff18f85d3fabfbb634d8c273cc15353",
+      "STEP_relative_volume_error": 3.2356221929988095e-14
+    },
+    "DML_NOMINAL": {
+      "file": "evidence/rev-fg/fixed-seals/AP22_DML_NOMINAL_REV_FG.step",
+      "bytes": 15475,
+      "sha256": "941500dba2d0861687ecf77a3fc75859490db4618a744b80a073c2dcfd9d4391",
+      "STEP_relative_volume_error": 0.0
+    },
+    "CAPPED_REAR_AIR_AUDIT_ONLY": {
+      "file": "evidence/rev-fg/fixed-seals/AP22_CAPPED_REAR_AIR_AUDIT_ONLY_REV_FG.step",
+      "bytes": 3969779,
+      "sha256": "b7531a64a3e34d3ef9c18398a8335b3ab333320321378f70cdb2c5eed96c978b",
+      "STEP_relative_volume_error": 1.9537256884606907e-13
+    }
+  },
+  "source_sha256": {
+    "evidence/rev-fg/frame/AP22_FRAME_INTERFACE_CANDIDATE_REV_FG.step": "92062663ac6be0910f7e54ff01e5d2dffe085b07a2d06df542a8a38f12a7d314",
+    "evidence/rev-fe/sidewalls-eu22/AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": "8106ba52ad9e5378f24f0dcf08cebb09c14039e44bb4e086a0f61d3b97bbd793",
+    "evidence/rev-fa/AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+    "mechanical/cad/generate_fixed_seals_rev_fg.py": "886046d6e63b46c749e88d1fe6dd1a2e47c642e81374366d93d4c2d6668c0eb6"
+  },
+  "limits": [
+    "Audit caps must never be included in production CAD or the real-aperture CFD model.",
+    "Gaskets are assumed impermeable in this topology calculation; their air permeability and leak rate are not measured.",
+    "Magnetic front provides no modeled gasket preload; a separate fixed DML retainer and hard stops remain required.",
+    "This nominal partition excludes future service, mount, microphone and environmental penetrations.",
+    "No thermal CFD, acoustic attenuation, tolerance closure or physical seal qualification is implied."
+  ]
+}

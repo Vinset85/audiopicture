@@ -1,0 +1,108 @@
+{
+  "classification": "CALCULATED_SUBDIVIDED_BERNSTEIN_BOUND_ON_SIMULATED_FINAL_STATE",
+  "status": "FAIL_WITNESSED_MODEL_INTERFERENCE",
+  "elements": 137215,
+  "elements_requiring_refinement": 25,
+  "subdomains_examined": 1797,
+  "maximum_depth_reached": 8,
+  "maximum_depth_allowed": 8,
+  "numerical_guard_mm": 1e-07,
+  "witness_count": 22,
+  "witnesses_beyond_0p0001_mm_numerical_margin": 19,
+  "largest_witness_boundary_margin_mm": 0.00715810074107992,
+  "unresolved_subdomains": 129,
+  "unresolved_examples": [
+    {
+      "element_tag": 93712,
+      "depth": 8
+    },
+    {
+      "element_tag": 93712,
+      "depth": 8
+    },
+    {
+      "element_tag": 93712,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93750,
+      "depth": 8
+    },
+    {
+      "element_tag": 93751,
+      "depth": 8
+    },
+    {
+      "element_tag": 93751,
+      "depth": 8
+    },
+    {
+      "element_tag": 93770,
+      "depth": 8
+    },
+    {
+      "element_tag": 93770,
+      "depth": 8
+    }
+  ],
+  "separation_lower_bound_mm": 0.0,
+  "self_checks": {
+    "eight_equal_volume_subtetrahedra": true,
+    "reference_partition_samples": 512,
+    "quadratic_subdivision_max_reconstruction_error": 1.1102230246251565e-15
+  },
+  "limits": [
+    "Final interpolated FEA geometry only; fixed DML box and its forward XY projection.",
+    "0.0001 mm witness margin is a numerical guard against output rounding, not a production tolerance.",
+    "No real DML contact, tolerance, measured material or hardware qualification.",
+    "A witness rejects the clearance screen; an overlapping bound alone stays OPEN."
+  ]
+}

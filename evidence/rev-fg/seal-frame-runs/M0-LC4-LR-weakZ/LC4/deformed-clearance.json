@@ -1,0 +1,97 @@
+{
+  "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+  "status": "FAIL_PREDICTED_DML_INTERFERENCE",
+  "load_case": "Rev.FG LC4; normalized material and surrogate supports",
+  "load_sum_N": [
+    0.0,
+    0.0,
+    -29.999999999999996
+  ],
+  "constitutive_assumptions": {
+    "E1": 1900.0,
+    "E2": 1900.0,
+    "E3": 380.0,
+    "nu12": 0.35,
+    "nu13": 0.35,
+    "nu23": 0.35,
+    "G12": 703.7037037037037,
+    "G13": 175.92592592592592,
+    "G23": 175.92592592592592
+  },
+  "weak_global_axis": "Z",
+  "nonlinear_geometry": true,
+  "nodes_initially_inside_DML": 0,
+  "nodes_predicted_inside_DML": 5,
+  "nodes_predicted_frontward_of_DML_within_projection": 0,
+  "max_displacement_node": 144,
+  "max_node_original_xyz_mm": [
+    316.8,
+    3.2,
+    36.8
+  ],
+  "max_node_displacement_xyz_mm": [
+    0.1973304,
+    -0.006587309,
+    -1.131041
+  ],
+  "max_node_predicted_xyz_mm": [
+    316.9973304,
+    3.1934126910000002,
+    35.668958999999994
+  ],
+  "sample_predicted_DML_nodes": [
+    {
+      "node": 675,
+      "xyz_mm": [
+        309.96438511,
+        10.05741071,
+        9.249281
+      ]
+    },
+    {
+      "node": 676,
+      "xyz_mm": [
+        309.96237683,
+        12.371392253021,
+        9.255335
+      ]
+    },
+    {
+      "node": 17393,
+      "xyz_mm": [
+        309.96334096,
+        11.2143871965105,
+        9.252319
+      ]
+    },
+    {
+      "node": 17395,
+      "xyz_mm": [
+        305.96463247,
+        10.05415494,
+        9.285299
+      ]
+    },
+    {
+      "node": 17469,
+      "xyz_mm": [
+        307.96450645,
+        10.05581255,
+        9.267279
+      ]
+    }
+  ],
+  "source_sha256": {
+    "evidence/rev-fg/seal-frame-runs/M0-LC4-LR-weakZ/LC4/frame.dat": "d5b3c4a493dff046b1b9be2207c2b46226f035638567523a286f7560669f8ba0",
+    "evidence/rev-fg/seal-frame-runs/M0-LC4-LR-weakZ/LC4/metrics.json": "9a5877142af17b3d483594946402e42263f37fe208b29001d1b07b4dc6e3cf4f",
+    "evidence/rev-fg/seal-frame-runs/M0-LC4-LR-weakZ/LC4/execution.json": "f162f6e3a0edc3285c0805ee1f90a49cf53af85486a1f2cf9b9cfeff17a79152",
+    "evidence/rev-fg/mesh-seals/M0/mesh-data.npz": "e3ed61a4305744c2729f11f7adc379b91c6c6cef6d35c7cc859a096a39c94773",
+    "mechanical/cad/audit_loaded_frame_envelope_rev_fe.py": "7b643f29aab695079d8730abcbd0c4693f8621db98062d18c5fecb56f8b2196f"
+  },
+  "limits": [
+    "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+    "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+    "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+    "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "case": "LC4",
+  "solver_execution_pass": true,
+  "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+  "final_step_time": 1.0,
+  "max_displacement_mm": 1.1477034300314688,
+  "max_displacement_node": 69,
+  "max_displacement_xyz_mm": [
+    316.8,
+    12.0,
+    35.0
+  ],
+  "max_abs_UZ_mm": 1.141787,
+  "corner_max_abs_UZ_mm": {
+    "CORNER_LL": 0.04492292,
+    "CORNER_LR": 1.141787,
+    "CORNER_UL": 0.006937799,
+    "CORNER_UR": 0.07783282
+  },
+  "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+  "adjacent_mount_max_displacement_mm": {
+    "UL1": 0.0014768856249917865,
+    "UL2": 0.002124057081709892,
+    "UR1": 0.012550618898544903,
+    "UR2": 0.00969030317443536
+  },
+  "support_reaction_sum_N": [
+    5.391721030366045e-08,
+    2.5403000681678903e-07,
+    29.999998344785357
+  ],
+  "force_balance_residual_N": [
+    5.391721030366045e-08,
+    2.5403000681678903e-07,
+    -1.655214639129099e-06
+  ],
+  "force_balance_within_0_1_percent_or_0_001N": true,
+  "cleat_bore_reactions_N": {
+    "UL1": [
+      0.3322654197510016,
+      -0.030607504271400066,
+      0.6001893362092199
+    ],
+    "UL2": [
+      -0.25193722061629,
+      0.053703833167300076,
+      -0.02878126907187001
+    ],
+    "UR1": [
+      0.4164662396305005,
+      -0.037503785317899975,
+      -0.260354034902214
+    ],
+    "UR2": [
+      -0.49679438484800287,
+      0.014407710452007321,
+      0.6571741533911002
+    ]
+  },
+  "anti_lift_normal_reaction_N": 58.804352929000004,
+  "warp_normal_reaction_N": null,
+  "pad_max_numerical_penetration_mm": 0.002334307,
+  "pad_max_opening_mm": 0.7942822,
+  "moment_balance_residual_Nmm": [
+    0.00031890576588011754,
+    0.00021068327589546243,
+    1.9987172253377317e-05
+  ],
+  "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+  "nodal_extrapolated_stress_diagnostic": {
+    "von_mises_max_MPa": 5.248305802225106,
+    "node": 79155,
+    "xyz_mm": [
+      168.1,
+      10.0,
+      36.349999999999994
+    ],
+    "principal_max_MPa": 5.370782268381962,
+    "principal_min_MPa": -2.70380208410283,
+    "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+  },
+  "qualified_strength_margin": null,
+  "measurement_geometry": {
+    "bore_radius_mm": 2.8,
+    "bore_z_mm": [
+      21.9,
+      31.0
+    ]
+  },
+  "source_sha256": {
+    "mechanical/cad/summarize_frame_results_rev_fg.py": "12573a3979220964ad7e35d60a12507c43289d435c1418e1665490d04b7ec8d7",
+    "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+    "evidence/rev-fg/upper-frame-runs/M0-LC4-LR-weakZ/LC4/frame.inp": "9058cac60ed3272d169a92f8d010484a63840bedabf36c74f6105386e61da1b9",
+    "evidence/rev-fg/upper-frame-runs/M0-LC4-LR-weakZ/LC4/frame.dat": "af9497685e4fc96c64ee576f52db29b6a077d0f2347c8532b8093d91b9790135",
+    "evidence/rev-fg/upper-frame-runs/M0-LC4-LR-weakZ/LC4/frame.frd": "6637b74fcb29c34ed734528a29ce69be0a9b38290e5b86a29447c04527cbcfe4",
+    "evidence/rev-fg/upper-frame-runs/M0-LC4-LR-weakZ/LC4/execution.json": "59f225d0f34d7791a35c2756e5ad408ae7e4d069b5181fc264563d9823f52e8e"
+  },
+  "corner_displacement_screen_status": "FAIL"
+}

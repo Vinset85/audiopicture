@@ -1,0 +1,85 @@
+{
+  "classification": "CALCULATED_CONSERVATIVE_FULL_QUADRATIC_ELEMENT_BOUND_ON_SIMULATED_FINAL_STATE",
+  "status": "OPEN_OVERLAPPING_BOUNDS_REQUIRE_REFINEMENT",
+  "method": "Quadratic tetrahedral Bernstein control-point convex enclosure; enclosing AABBs inflated 1e-7 mm. Overlap is inconclusive.",
+  "gmsh_edge_node_pairs_zero_based": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "self_checks": {
+    "curved_node_only_false_negative_detected": true,
+    "random_elements": 32,
+    "barycentric_samples_each": 64
+  },
+  "initial": {
+    "elements": 133705,
+    "potential_DML_box_overlap_elements": 0,
+    "potential_frontward_within_DML_projection_elements": 0,
+    "all_element_bounds_separated_from_DML_and_frontward_region": true,
+    "conservative_DML_separation_lower_bound_mm": 0.39999990000000096,
+    "unresolved_element_tags_sample": []
+  },
+  "final": {
+    "elements": 133705,
+    "potential_DML_box_overlap_elements": 22,
+    "potential_frontward_within_DML_projection_elements": 0,
+    "all_element_bounds_separated_from_DML_and_frontward_region": false,
+    "conservative_DML_separation_lower_bound_mm": 0.0,
+    "unresolved_element_tags_sample": [
+      91211,
+      94517,
+      94566,
+      94567,
+      94587,
+      94595,
+      94657,
+      100102,
+      104199,
+      108142,
+      110827,
+      111878,
+      113255,
+      113259,
+      113343,
+      119186,
+      119187,
+      119573,
+      119574,
+      119581
+    ]
+  },
+  "limits": [
+    "Final load state only; not all intermediate states.",
+    "FEA interpolation geometry only; not exact deformed BREP, manufacturing tolerance or real assembly qualification.",
+    "DML is the fixed nominal hard box, not a deformable contact body.",
+    "No physical clearance is certified from unqualified material/support assumptions."
+  ],
+  "source_sha256": {
+    "mechanical/cad/audit_quadratic_dml_clearance_rev_fd.py": "743717843502e2064af187afe502356c5b8c35d623d9ad407608bfde2ec8d0f2",
+    "evidence/rev-fg/mesh-seals/M0/mesh-data.npz": "e3ed61a4305744c2729f11f7adc379b91c6c6cef6d35c7cc859a096a39c94773",
+    "evidence/rev-fg/seal-frame-runs/M0-LC4-LR-weakZ/LC4/frame.dat": "d5b3c4a493dff046b1b9be2207c2b46226f035638567523a286f7560669f8ba0",
+    "evidence/rev-fg/seal-frame-runs/M0-LC4-LR-weakZ/LC4/metrics.json": "9a5877142af17b3d483594946402e42263f37fe208b29001d1b07b4dc6e3cf4f"
+  }
+}

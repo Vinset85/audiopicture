@@ -1,0 +1,128 @@
+Info    : Reading 'evidence/rev-fg/mesh/M0/mesh.msh'...
+Info    : 2276 entities
+Info    : 204722 nodes
+Info    : 111260 elements
+Info    : Done reading 'evidence/rev-fg/mesh/M0/mesh.msh'
+{
+  "classification": "CALCULATED_MESH_INTEGRITY_NOT_CONVERGENCE",
+  "elements": 111260,
+  "min_SICN": 0.0037482824378652613,
+  "min_adaptive_Jacobian_determinant_mm3": 3.74994487886772e-05,
+  "nonpositive_Jacobian_elements": 0,
+  "SICN_below_0p01_count": 3,
+  "SICN_percentiles": {
+    "0": 0.0037482824378652613,
+    "1": 0.24094121597359228,
+    "5": 0.5592758421541648,
+    "50": 0.8080843844492267,
+    "100": 0.9996703611037253
+  },
+  "worst_elements": [
+    {
+      "element": 90103,
+      "SICN": 0.0037482824378652613,
+      "min_Jacobian_mm3": 5.247840896129355e-05,
+      "corner_centroid_xyz_mm": [
+        283.075472897966,
+        380.97328860056194,
+        27.767758883219308
+      ]
+    },
+    {
+      "element": 90078,
+      "SICN": 0.004677350733308968,
+      "min_Jacobian_mm3": 3.74994487886772e-05,
+      "corner_centroid_xyz_mm": [
+        36.95567981498343,
+        380.9640386392579,
+        27.755907001050936
+      ]
+    },
+    {
+      "element": 19853,
+      "SICN": 0.008897220119878101,
+      "min_Jacobian_mm3": 0.006378600892761878,
+      "corner_centroid_xyz_mm": [
+        282.56988077978326,
+        380.96336991112605,
+        32.79783495914277
+      ]
+    },
+    {
+      "element": 100753,
+      "SICN": 0.01141957487286477,
+      "min_Jacobian_mm3": 0.002344359875777413,
+      "corner_centroid_xyz_mm": [
+        31.666446783249494,
+        299.8617147394632,
+        27.870718773173294
+      ]
+    },
+    {
+      "element": 80651,
+      "SICN": 0.014042650049178118,
+      "min_Jacobian_mm3": 0.004176833076324021,
+      "corner_centroid_xyz_mm": [
+        31.781106748667085,
+        299.9053463564019,
+        20.143029608243793
+      ]
+    },
+    {
+      "element": 20191,
+      "SICN": 0.014685199204166657,
+      "min_Jacobian_mm3": 0.005201986419848704,
+      "corner_centroid_xyz_mm": [
+        31.57674643670068,
+        300.0431438381065,
+        22.249980448105326
+      ]
+    },
+    {
+      "element": 52414,
+      "SICN": 0.014685710459331982,
+      "min_Jacobian_mm3": 0.005201986419949483,
+      "corner_centroid_xyz_mm": [
+        31.57674643670068,
+        300.0431438381065,
+        21.749980448105326
+      ]
+    },
+    {
+      "element": 89711,
+      "SICN": 0.016025203862806637,
+      "min_Jacobian_mm3": 0.004000268999710725,
+      "corner_centroid_xyz_mm": [
+        31.535373539129168,
+        300.0048375765289,
+        20.393029608243793
+      ]
+    },
+    {
+      "element": 38569,
+      "SICN": 0.01613032824580495,
+      "min_Jacobian_mm3": 0.004032217627644524,
+      "corner_centroid_xyz_mm": [
+        31.53631939192215,
+        299.9959840603424,
+        27.323681659906928
+      ]
+    },
+    {
+      "element": 46804,
+      "SICN": 0.01637107741145349,
+      "min_Jacobian_mm3": 0.00414963923264526,
+      "corner_centroid_xyz_mm": [
+        31.540537962499222,
+        300.011690990627,
+        21.323991615397297
+      ]
+    }
+  ],
+  "mesh_convergence_verified": false,
+  "source_sha256": {
+    "evidence/rev-fg/mesh/M0/mesh.msh": "c187c8c45a13b0effcee27011edc8ebda22fcb29ee70dbd6d92a384b379da654",
+    "evidence/rev-fg/mesh/M0/mesh-data.npz": "2a7bcf2ab88143ea65ef805a169bfe97356dcf3917e5eb9132e414631283ef2e",
+    "/Users/cinetyk/Documents/Codex/2026-09-30/referenced-chatgpt-conversation-this-is-an/work/audiopicture/mechanical/cad/audit_frame_mesh_rev_fc.py": "4c6e73b72061fab9cf260cf91c27e7d408e4b4555e54129da64d604fe214076b"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "source_sha256": "92062663ac6be0910f7e54ff01e5d2dffe085b07a2d06df542a8a38f12a7d314",
+  "size_mm": 4.0,
+  "nodes": 204722,
+  "elements": 111260,
+  "type": "C3D10",
+  "min_SICN": 0.0037482824385540628,
+  "corner_tet_volume_mm3": 373687.0750520007,
+  "volume_weighted_seed_cg_mm": [
+    160.29697898481783,
+    155.79398294409597,
+    22.26206551466442
+  ],
+  "node_sets": {
+    "UL1": 716,
+    "UL2": 716,
+    "UR1": 716,
+    "UR2": 716,
+    "PAD_L": 104,
+    "PAD_R": 104,
+    "ANTILIFT": 107,
+    "CORNER_LL": 7,
+    "CORNER_LR": 7,
+    "CORNER_UL": 31,
+    "CORNER_UR": 31
+  },
+  "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+  "interface_geometry_sha256": "e4e68c0515dd5d78409db712d0cea040b055f6df21b656745a28a65f0b6952e9",
+  "installation_hole_radius_mm": 2.8,
+  "installation_hole_z_mm": [
+    25.9,
+    35
+  ],
+  "algorithm3d": 1,
+  "linear_mesh_optimizer": "Netgen",
+  "gmsh_version": "4.15.2",
+  "mesher_sha256": "3eba13bdb07692f7656e77cc4f5adbf2622c51d4c8c61457c724df9f080b2c60"
+}

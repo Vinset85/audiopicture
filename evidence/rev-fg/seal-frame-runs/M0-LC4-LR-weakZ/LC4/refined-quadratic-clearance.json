@@ -1,0 +1,490 @@
+{
+  "classification": "CALCULATED_SUBDIVIDED_BERNSTEIN_BOUND_ON_SIMULATED_FINAL_STATE",
+  "status": "FAIL_WITNESSED_MODEL_INTERFERENCE",
+  "elements": 133705,
+  "elements_requiring_refinement": 22,
+  "subdomains_examined": 1361,
+  "maximum_depth_reached": 8,
+  "maximum_depth_allowed": 8,
+  "numerical_guard_mm": 1e-07,
+  "witness_count": 22,
+  "witnesses": [
+    {
+      "element_tag": 91211,
+      "xyz_mm": [
+        309.98431059687744,
+        11.24865643746441,
+        9.298085141293484
+      ],
+      "parent_barycentric_coordinates": [
+        0.4453125,
+        0.0390625,
+        0.46875,
+        0.046875
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0019148587065167533,
+      "inside_DML_box": true,
+      "depth": 5
+    },
+    {
+      "element_tag": 94517,
+      "xyz_mm": [
+        304.9662471748086,
+        10.047683904209803,
+        9.299418552164704
+      ],
+      "parent_barycentric_coordinates": [
+        0.001953125,
+        0.248046875,
+        0.74609375,
+        0.00390625
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0005814478352963448,
+      "inside_DML_box": true,
+      "depth": 7
+    },
+    {
+      "element_tag": 94566,
+      "xyz_mm": [
+        307.9340913276516,
+        10.033747792102712,
+        9.299898170429918
+      ],
+      "parent_barycentric_coordinates": [
+        0.4814453125,
+        0.0166015625,
+        0.484375,
+        0.017578125
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0001018295700827565,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "xyz_mm": [
+        309.7141615724396,
+        10.046756364576,
+        9.299292295795542
+      ],
+      "parent_barycentric_coordinates": [
+        0.00390625,
+        0.05859375,
+        0.9296875,
+        0.0078125
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0007077042044585369,
+      "inside_DML_box": true,
+      "depth": 6
+    },
+    {
+      "element_tag": 94587,
+      "xyz_mm": [
+        305.9706594420605,
+        10.04755835544357,
+        9.299567210566632
+      ],
+      "parent_barycentric_coordinates": [
+        0.00390625,
+        0.9814453125,
+        0.0009765625,
+        0.013671875
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0004327894333684412,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 94595,
+      "xyz_mm": [
+        309.9710492636012,
+        10.057673546122583,
+        9.297374828594343
+      ],
+      "parent_barycentric_coordinates": [
+        0.00390625,
+        0.00390625,
+        0.931640625,
+        0.060546875
+      ],
+      "forbidden_region_boundary_margin_mm": 0.002625171405657767,
+      "inside_DML_box": true,
+      "depth": 7
+    },
+    {
+      "element_tag": 94657,
+      "xyz_mm": [
+        309.9530204953005,
+        10.045625451478069,
+        9.299731495815422
+      ],
+      "parent_barycentric_coordinates": [
+        0.9296875,
+        0.0029296875,
+        0.060546875,
+        0.0068359375
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0002685041845786884,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 100102,
+      "xyz_mm": [
+        309.999015762301,
+        11.285464597240958,
+        9.26713993180145
+      ],
+      "parent_barycentric_coordinates": [
+        0.03125,
+        0.453125,
+        0.4609375,
+        0.0546875
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0009842376990150115,
+      "inside_DML_box": true,
+      "depth": 5
+    },
+    {
+      "element_tag": 104199,
+      "xyz_mm": [
+        309.99967135969445,
+        10.181284293538791,
+        9.263776322396629
+      ],
+      "parent_barycentric_coordinates": [
+        0.0068359375,
+        0.0302734375,
+        0.029296875,
+        0.93359375
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0003286403055540177,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 108142,
+      "xyz_mm": [
+        309.96697344744473,
+        10.157340942221035,
+        9.299629303494017
+      ],
+      "parent_barycentric_coordinates": [
+        0.0419921875,
+        0.919921875,
+        0.0029296875,
+        0.03515625
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0003706965059837586,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 110827,
+      "xyz_mm": [
+        309.9227532538555,
+        10.001270814923966,
+        9.257222719662742
+      ],
+      "parent_barycentric_coordinates": [
+        0.9619140625,
+        0.0126953125,
+        0.005859375,
+        0.01953125
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0012708149239664124,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 111878,
+      "xyz_mm": [
+        309.99955476443677,
+        10.148647008643106,
+        9.292927363676444
+      ],
+      "parent_barycentric_coordinates": [
+        0.0009765625,
+        0.048828125,
+        0.9345703125,
+        0.015625
+      ],
+      "forbidden_region_boundary_margin_mm": 0.00044523556323383673,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 113255,
+      "xyz_mm": [
+        309.9541774455679,
+        10.000809700287792,
+        9.291767782444762
+      ],
+      "parent_barycentric_coordinates": [
+        0.9560546875,
+        0.0146484375,
+        0.009765625,
+        0.01953125
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0008097002877924808,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 113259,
+      "xyz_mm": [
+        309.99714184874347,
+        10.05490978559218,
+        9.298815005398676
+      ],
+      "parent_barycentric_coordinates": [
+        0.00390625,
+        0.017578125,
+        0.962890625,
+        0.015625
+      ],
+      "forbidden_region_boundary_margin_mm": 0.001184994601324263,
+      "inside_DML_box": true,
+      "depth": 7
+    },
+    {
+      "element_tag": 113343,
+      "xyz_mm": [
+        309.9869618181315,
+        10.180296498140859,
+        9.299726805909515
+      ],
+      "parent_barycentric_coordinates": [
+        0.03125,
+        0.0234375,
+        0.015625,
+        0.9296875
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0002731940904858732,
+      "inside_DML_box": true,
+      "depth": 5
+    },
+    {
+      "element_tag": 119186,
+      "xyz_mm": [
+        309.98800844371306,
+        12.354034192697545,
+        9.299474768640156
+      ],
+      "parent_barycentric_coordinates": [
+        0.8681640625,
+        0.0126953125,
+        0.005859375,
+        0.11328125
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0005252313598447245,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 119187,
+      "xyz_mm": [
+        309.9998860835762,
+        12.338614489454253,
+        9.290397159526766
+      ],
+      "parent_barycentric_coordinates": [
+        0.083984375,
+        0.021484375,
+        0.8671875,
+        0.02734375
+      ],
+      "forbidden_region_boundary_margin_mm": 0.00011391642379976474,
+      "inside_DML_box": true,
+      "depth": 7
+    },
+    {
+      "element_tag": 119573,
+      "xyz_mm": [
+        304.9983469623928,
+        10.00083970999258,
+        9.297828776275118
+      ],
+      "parent_barycentric_coordinates": [
+        0.00390625,
+        0.220703125,
+        0.744140625,
+        0.03125
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0008397099925794294,
+      "inside_DML_box": true,
+      "depth": 7
+    },
+    {
+      "element_tag": 119574,
+      "xyz_mm": [
+        305.9749469283107,
+        10.000739366000051,
+        9.296989074034478
+      ],
+      "parent_barycentric_coordinates": [
+        0.0224609375,
+        0.9638671875,
+        0.001953125,
+        0.01171875
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0007393660000509783,
+      "inside_DML_box": true,
+      "depth": 8
+    },
+    {
+      "element_tag": 119581,
+      "xyz_mm": [
+        309.9988144295274,
+        10.090126779888582,
+        9.28723955452865
+      ],
+      "parent_barycentric_coordinates": [
+        0.00390625,
+        0.00390625,
+        0.962890625,
+        0.029296875
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0011855704726144722,
+      "inside_DML_box": true,
+      "depth": 7
+    },
+    {
+      "element_tag": 130023,
+      "xyz_mm": [
+        307.9662611804395,
+        10.00355045440837,
+        9.29283669007326
+      ],
+      "parent_barycentric_coordinates": [
+        0.478515625,
+        0.017578125,
+        0.484375,
+        0.01953125
+      ],
+      "forbidden_region_boundary_margin_mm": 0.003550454408369319,
+      "inside_DML_box": true,
+      "depth": 7
+    },
+    {
+      "element_tag": 130025,
+      "xyz_mm": [
+        306.0173691230183,
+        10.004693932662875,
+        9.298538854471392
+      ],
+      "parent_barycentric_coordinates": [
+        0.0234375,
+        0.9658203125,
+        0.0009765625,
+        0.009765625
+      ],
+      "forbidden_region_boundary_margin_mm": 0.0014611455286086539,
+      "inside_DML_box": true,
+      "depth": 8
+    }
+  ],
+  "witnesses_beyond_0p0001_mm_numerical_margin": 22,
+  "largest_witness_boundary_margin_mm": 0.003550454408369319,
+  "unresolved_subdomains": 161,
+  "unresolved_examples": [
+    {
+      "element_tag": 94517,
+      "depth": 8
+    },
+    {
+      "element_tag": 94517,
+      "depth": 8
+    },
+    {
+      "element_tag": 94517,
+      "depth": 8
+    },
+    {
+      "element_tag": 94517,
+      "depth": 8
+    },
+    {
+      "element_tag": 94566,
+      "depth": 8
+    },
+    {
+      "element_tag": 94566,
+      "depth": 8
+    },
+    {
+      "element_tag": 94566,
+      "depth": 8
+    },
+    {
+      "element_tag": 94566,
+      "depth": 8
+    },
+    {
+      "element_tag": 94566,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    },
+    {
+      "element_tag": 94567,
+      "depth": 8
+    }
+  ],
+  "separation_lower_bound_mm": 0.0,
+  "self_checks": {
+    "eight_equal_volume_subtetrahedra": true,
+    "reference_partition_samples": 512,
+    "quadratic_subdivision_max_reconstruction_error": 1.1102230246251565e-15
+  },
+  "limits": [
+    "Final interpolated FEA geometry only; fixed DML box and its forward XY projection.",
+    "0.0001 mm witness margin is a numerical guard against output rounding, not a production tolerance.",
+    "No real DML contact, tolerance, measured material or hardware qualification.",
+    "A witness rejects the clearance screen; an overlapping bound alone stays OPEN."
+  ],
+  "source_sha256": {
+    "mechanical/cad/refine_quadratic_clearance_rev_fe.py": "5d46c4c64dbd07297ff45662163fd4b9318250aac1a6127ca018aff45c187dfe",
+    "evidence/rev-fg/mesh-seals/M0/mesh-data.npz": "e3ed61a4305744c2729f11f7adc379b91c6c6cef6d35c7cc859a096a39c94773",
+    "evidence/rev-fg/seal-frame-runs/M0-LC4-LR-weakZ/LC4/frame.dat": "d5b3c4a493dff046b1b9be2207c2b46226f035638567523a286f7560669f8ba0",
+    "evidence/rev-fg/seal-frame-runs/M0-LC4-LR-weakZ/LC4/quadratic-dml-clearance.json": "79438132645ab3125bdce5580a44c84e308ef13468785fbb04e480c2f3bebd8a"
+  }
+}

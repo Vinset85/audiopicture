@@ -1,0 +1,20 @@
+{
+  "classification": "CALCULATED_STEP_CROSS_SECTIONS_NOT_PRODUCTION_RELEASE",
+  "source_sha256": {
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_FRAME_REV_FG.step": "337b484cf4c43287016260202a841259ed45a090a25ae30b74268ecfaa0c79aa",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_SHELL_REV_FG.step": "f437458c6def75a6bbce99cad9367b45d6c3d779475c43be6af12d7a02fc2939",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_PRODUCT_CLEAT_L_REV_FG.step": "a604534a9c130d2e3e2e44fcb1743fe9b7c9a9cbae086be9381391e080eb01f4",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_WALL_CLEAT_L_REV_FG.step": "ae1ade89d0c067816cc2da1977e919b59e8ddd0986b0eb872995755cc93e5b83",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_BOSS_SEAL_L1_COMPRESSED_REV_FG.step": "e7ea95f7ccfdc56af35f50d06dcd3b4f978096f7674c368f3998297290af96ed",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_BOSS_SEAL_L2_COMPRESSED_REV_FG.step": "e7ce68e850fbb243e84825e0ab69e970c768f70861a2de658905ca7d9802bc56",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_SCREW_L1_BOUNDING_REV_FG.step": "deef3d6f72cdfecadb592904f7c2961813952c6ccdb3b3b6a906834cd50c8b8f",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_SCREW_L2_BOUNDING_REV_FG.step": "b49863e80f72e8c80cbbc4fe2690af0ae341d1a1fa3f511cc391aff000cb2ba6",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_WALL_HEAD_L_37.5_SPACE_ENVELOPE_REV_FG.step": "c8d54cf8783bbfc948eec4cdf135372da9f3a9ff2c47e08d7ecd7526cb8ca26b",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_WALL_HEAD_L_67.5_SPACE_ENVELOPE_REV_FG.step": "f3f556df4f7ee1021b82642eecbd7f753c7faf9f388846068a239cc705be27ba",
+    "evidence/rev-fg/upper-mounts-chamfer/execution.json": "dfd8fa24e957fb936da2aeb463916fa5624e2bf2e66bd64fbbf50dae20a4f7bb",
+    "mechanical/cad/plot_mount_sections_rev_fg.py": "49deaed7ed413af18bbad530b5212a154e43344c25ed8adc7629f4fe84e34e38"
+  },
+  "artifact_sha256": {
+    "evidence/rev-fg/mount-sections.png": "697c60e4d4fb46e64ea3d2d02dd5c81a17d4300d5cd712db1f99c88148166d8f"
+  }
+}

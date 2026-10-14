@@ -1,0 +1,31 @@
+[
+  {
+    "file": "evidence/rev-fg/sources/poron-4701-30.pdf",
+    "url": "https://www.rogerscorp.com/-/media/project/rogerscorp/documents/elastomeric-material-solutions/poron/english/data-sheets/17-006-poron-4701-30-very-soft.pdf",
+    "bytes": 589374,
+    "sha256": "9567c83b0d8d9e97e5477a4ccbef6c966d849ac3209b0aff4d1a9204922c4b68",
+    "download": "PASS"
+  },
+  {
+    "file": "evidence/rev-fg/sources/pts-A73800410.html",
+    "url": "https://us.pts-uk.com/products/socket-screws/socket-button-head-screws/metric-304/A73800410",
+    "bytes": 89908,
+    "sha256": "0652cf00067fce2926e8aeac2ba46ab7ed4591ed76c936df84f821a9414f00b8",
+    "download": "PASS"
+  },
+  {
+    "file": "evidence/rev-fg/sources/kaiser-soft-alloy-shapes.pdf",
+    "url": "https://online.kaiseraluminum.com/depot/PublicProductInformation/Document/1006/Kaiser_Aluminum_Shapes_Soft_Alloy.pdf",
+    "bytes": 631376,
+    "sha256": "d0e1a2d77fc82a845459f7341c517199bcddef23bd4a49f2cf709255872cce9f",
+    "download": "PASS"
+  },
+  {
+    "file": "evidence/rev-fg/sources/pts-A79910410.html",
+    "url": "https://www.pts-uk.com/products/socket-screws/socket-countersunk-screws/metric-a2/a79910410",
+    "bytes": 91130,
+    "sha256": "30620fe450d12537b5406385ea992330c998cd4535b606d3e0eab08c8a1cfa9a",
+    "classification": "SUPPLIER_CATALOG_DIMENSIONS_NOT_PURCHASED_OR_QUALIFIED",
+    "checked_client_date": "2026-10-13"
+  }
+]

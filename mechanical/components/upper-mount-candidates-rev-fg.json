@@ -1,0 +1,114 @@
+{
+  "revision": "Rev.FG",
+  "classification": "CATALOG_AND_DESIGN_CANDIDATES_NOT_PRODUCTION_BOM",
+  "selected_for_production": false,
+  "parts": [
+    {
+      "part": "upper heat-set insert",
+      "manufacturer": "ruthex",
+      "MPN": "RX-M4x8.1",
+      "quantity": 4,
+      "classification": "CATALOG",
+      "qualification": null,
+      "nominal_installation_hole_mm": {
+        "diameter": 5.6,
+        "depth": 9.1
+      }
+    },
+    {
+      "part": "product cleat screw",
+      "manufacturer": "PTS",
+      "MPN": "A79910410",
+      "quantity": 4,
+      "classification": "CATALOG",
+      "standard": "ISO 10642",
+      "material_description": "A2 stainless steel",
+      "thread": "M4",
+      "pitch_mm": 0.7,
+      "overall_length_including_head_mm": 10,
+      "head_diameter_range_mm": [
+        7.53,
+        8.96
+      ],
+      "head_height_max_mm": 2.48,
+      "included_head_angle_deg": 90,
+      "hex_socket_mm": 2.5,
+      "modeled_thread_engagement_mm": 7.5,
+      "modeled_insert_end_reserve_mm": 0.6,
+      "qualification": null,
+      "torque_Nm": null
+    },
+    {
+      "part": "custom product cleat",
+      "quantity": 2,
+      "classification": "DESIGN_ASSUMPTION",
+      "proposed_material": "6061-T6 aluminum, certificate and manufactured properties required",
+      "nominal_width_mm": 50,
+      "nominal_plate_mm": 2.5,
+      "nominal_hook_depth_mm": 6.5,
+      "qualification": null
+    },
+    {
+      "part": "custom wall cleat with flat tip relief",
+      "quantity": 2,
+      "classification": "DESIGN_ASSUMPTION",
+      "proposed_material": "6061-T6 aluminum, certificate and manufactured properties required",
+      "nominal_width_mm": 50,
+      "tip_relief_distance_along_profile_edges_mm": 1.8,
+      "qualification": null
+    },
+    {
+      "part": "wall spacer",
+      "quantity_installed": 2,
+      "classification": "DESIGN_ASSUMPTION",
+      "alternative_thickness_mm": [
+        0,
+        1,
+        2
+      ],
+      "wall_gap_mm": [
+        3,
+        4,
+        5
+      ],
+      "alternatives_mutually_exclusive": true,
+      "qualification": null
+    },
+    {
+      "part": "axial mounting gasket washer",
+      "quantity": 4,
+      "classification": "DESIGN_GEOMETRY_WITH_CATALOG_FAMILY_SEED",
+      "catalog_family": "Rogers PORON 4701-30, 320 kg/m3",
+      "MPN": null,
+      "nominal_ID_mm": 12.4,
+      "nominal_OD_mm": 16.2,
+      "nominal_free_thickness_mm": 1.57,
+      "nominal_installed_thickness_mm": 1.256,
+      "adhesive": null,
+      "force_at_20_percent_N": null,
+      "qualification": null
+    },
+    {
+      "part": "wall anchor and screw",
+      "quantity": 4,
+      "classification": "UNSELECTED",
+      "manufacturer": null,
+      "MPN": null,
+      "substrate": null,
+      "length_mm": null,
+      "modeled_head_requirement": "M4 countersunk envelope within Z40.5..42.98; any change requires motion/contact recheck",
+      "qualification": null
+    }
+  ],
+  "scope_limits": [
+    "Not a purchase or manufacturing release.",
+    "Thread and socket geometry are bounded, not mechanically modeled.",
+    "No screw preload, anchor capacity, cleat stress or material strength qualification.",
+    "Lower capture, fixed DML retainer and complete hardware still require digital design."
+  ],
+  "source_sha256": {
+    "evidence/rev-fg/sources/pts-A79910410.html": "30620fe450d12537b5406385ea992330c998cd4535b606d3e0eab08c8a1cfa9a",
+    "mechanical/components/ruthex-m4-insert-candidate-rev-fe.json": "49e87bde4b2df645b7d92934af2a5fa45ac317401d3fcdf117e5bb881aa3d738",
+    "evidence/rev-fg/upper-mounts-chamfer/execution.json": "dfd8fa24e957fb936da2aeb463916fa5624e2bf2e66bd64fbbf50dae20a4f7bb"
+  }
+}

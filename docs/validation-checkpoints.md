@@ -117,3 +117,18 @@ blob del commit e 178 artefatti grezzi verificati individualmente. Il confronto
 Gli indici pre-upload nello ZIP restano immutabili; per lo stato corrente
 fa fede la ricevuta in `main`. È una verifica di pubblicazione, non un rilascio
 per produzione.
+
+
+## Supplemento Rev.FG — 14 ottobre 2026
+
+Il [report Rev.FG](../mechanical/digital-validation-rev-fg.md) consolida quattro
+esecuzioni strutturali, sedi inserti aggiornate, ganci incassati, guarnizioni
+assiali e audit indipendente dello sgancio continuo e dei domini d'aria.
+Il telaio corrente fallisce ancora LC4 e non è rilasciato per produzione.
+La correzione documentale Rev.FE registra i 57 nodi realmente interferenti
+nel caso EU20 LC1 100 N debole Y; gli output storici non cambiano.
+
+Estrarre `audiopicture-rev-fg-supplement.zip` dopo FA+FB+FC+FD+FE.
+L'indice `evidence/rev-fg/raw-artifact-index.json` descrive gli artefatti grezzi.
+La pubblicazione degli allegati è verificata separatamente dalla validazione
+digitale; non si considera completata prima della ricevuta in `main`.

@@ -1,0 +1,1000 @@
+{
+  "status": "PASS_SCOPED_REIMPORTED_PARTITION_AND_CONTINUOUS_RIGID_SWEPT_CHECKS",
+  "classification": "CALCULATED_NOMINAL_CAD_NOT_CONTACT_FEA_OR_PHYSICAL_SEAL_TEST",
+  "closed_partition": {
+    "omitted_seal": null,
+    "components": 5,
+    "point_components": {
+      "rear": 1,
+      "front": 0,
+      "pocket_L": 3,
+      "pocket_R": 2
+    },
+    "volumes_mm3": [
+      468314.8158927376,
+      3131684.9823122914,
+      12837.272534139853,
+      12837.021510530656,
+      1027.5839999999916
+    ],
+    "max_incremental_volume_residual_mm3": 7.269717752933502e-05
+  },
+  "each_mount_seal_removal_controls": [
+    {
+      "omitted_seal": "BOSS_SEAL_L1_COMPRESSED",
+      "components": 4,
+      "point_components": {
+        "rear": 1,
+        "front": 0,
+        "pocket_L": 1,
+        "pocket_R": 2
+      },
+      "volumes_mm3": [
+        468314.8158927376,
+        3144629.212252709,
+        12837.272534139853,
+        1027.5839999999916
+      ],
+      "max_incremental_volume_residual_mm3": 7.251743227243423e-05
+    },
+    {
+      "omitted_seal": "BOSS_SEAL_L2_COMPRESSED",
+      "components": 4,
+      "point_components": {
+        "rear": 1,
+        "front": 0,
+        "pocket_L": 1,
+        "pocket_R": 2
+      },
+      "volumes_mm3": [
+        468314.8158927376,
+        3144629.2122517293,
+        12837.272534139853,
+        1027.5839999999916
+      ],
+      "max_incremental_volume_residual_mm3": 7.256213575601578e-05
+    },
+    {
+      "omitted_seal": "BOSS_SEAL_R1_COMPRESSED",
+      "components": 4,
+      "point_components": {
+        "rear": 1,
+        "front": 0,
+        "pocket_L": 2,
+        "pocket_R": 1
+      },
+      "volumes_mm3": [
+        468314.8158927376,
+        3144629.463402373,
+        12837.021510530656,
+        1027.5839999999916
+      ],
+      "max_incremental_volume_residual_mm3": 5.415081977844238e-05
+    },
+    {
+      "omitted_seal": "BOSS_SEAL_R2_COMPRESSED",
+      "components": 4,
+      "point_components": {
+        "rear": 1,
+        "front": 0,
+        "pocket_L": 2,
+        "pocket_R": 1
+      },
+      "volumes_mm3": [
+        468314.8158927376,
+        3144629.4634020566,
+        12837.021510530656,
+        1027.5839999999916
+      ],
+      "max_incremental_volume_residual_mm3": 5.415081977844238e-05
+    }
+  ],
+  "unchanged_22_cell_region_material": {
+    "added_mm3": 0.0,
+    "removed_mm3": 0.0
+  },
+  "rigid_release_sweeps": [
+    {
+      "side": "L",
+      "lift_mm": 7,
+      "outward_sweep_mm": 6.6,
+      "overlap_checks": {
+        "frame": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "shell": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "DML": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "DML_seal": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "frame_shell_seal": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_L1_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_L1_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_L2_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_L2_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "PRODUCT_CLEAT_L": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_R1_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_R1_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_R2_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_R2_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "PRODUCT_CLEAT_R": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        }
+      }
+    },
+    {
+      "side": "R",
+      "lift_mm": 7,
+      "outward_sweep_mm": 6.6,
+      "overlap_checks": {
+        "frame": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "shell": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "DML": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "DML_seal": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "frame_shell_seal": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_L1_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_L1_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_L2_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_L2_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "PRODUCT_CLEAT_L": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_R1_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_R1_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "SCREW_R2_BOUNDING": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "BOSS_SEAL_R2_COMPRESSED": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        },
+        "PRODUCT_CLEAT_R": {
+          "lift_path_mm3": 0.0,
+          "outward_path_after_lift_mm3": 0.0
+        }
+      }
+    }
+  ],
+  "wall_gaps_with_alternative_spacers_mm": [
+    3,
+    4,
+    5
+  ],
+  "coarse_keepout_checks": {
+    "frame/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.3999999999999986
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 260.5538531666726
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 260.5538531666726
+    },
+    "SCREW_L1_BOUNDING/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 260.52
+    },
+    "SCREW_L2_BOUNDING/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 260.52
+    },
+    "PRODUCT_CLEAT_L/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 259.0
+    },
+    "WALL_CLEAT_L/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 259.03405181558657
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 301.79626723074927
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 317.87871109507887
+    },
+    "SCREW_R1_BOUNDING/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 301.7670408020296
+    },
+    "SCREW_R2_BOUNDING/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 317.85096345216357
+    },
+    "PRODUCT_CLEAT_R/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 296.09669028883116
+    },
+    "WALL_CLEAT_R/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 296.12647635765364
+    },
+    "WALL_SPACER_1MM_L/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 259.0866457384479
+    },
+    "WALL_SPACER_2MM_L/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 259.0866457384479
+    },
+    "WALL_SPACER_1MM_R/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 296.1724835294461
+    },
+    "WALL_SPACER_2MM_R/EX_L1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 296.1724835294461
+    },
+    "frame/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.80286779494802
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 151.3706085265461
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 145.3847179505876
+    },
+    "SCREW_L1_BOUNDING/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 151.31232972133128
+    },
+    "SCREW_L2_BOUNDING/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 145.3240386638491
+    },
+    "PRODUCT_CLEAT_L/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 143.10573014383456
+    },
+    "WALL_CLEAT_L/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 143.1673496297253
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 179.30065951807626
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 198.3137093220451
+    },
+    "SCREW_R1_BOUNDING/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 179.2514616498764
+    },
+    "SCREW_R2_BOUNDING/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 198.26922934502116
+    },
+    "PRODUCT_CLEAT_R/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 173.07585042402653
+    },
+    "WALL_CLEAT_R/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 173.12680323970636
+    },
+    "WALL_SPACER_1MM_L/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 143.26248636680853
+    },
+    "WALL_SPACER_2MM_L/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 143.26248636680853
+    },
+    "WALL_SPACER_1MM_R/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 173.20548490160465
+    },
+    "WALL_SPACER_2MM_R/EX_L2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 173.20548490160465
+    },
+    "frame/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 7.070728944323768
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 153.16963064542685
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 127.82082551677766
+    },
+    "SCREW_L1_BOUNDING/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 153.11203660083842
+    },
+    "SCREW_L2_BOUNDING/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 127.75180404123662
+    },
+    "PRODUCT_CLEAT_L/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 120.61198116273523
+    },
+    "WALL_CLEAT_L/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 120.68508607114633
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 74.18356302402788
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 85.0622783828801
+    },
+    "SCREW_R1_BOUNDING/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 74.06457333259887
+    },
+    "SCREW_R2_BOUNDING/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 84.95852637426445
+    },
+    "PRODUCT_CLEAT_R/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 71.21270953980054
+    },
+    "WALL_CLEAT_R/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 71.33645631793046
+    },
+    "WALL_SPACER_1MM_L/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 120.79793044584828
+    },
+    "WALL_SPACER_2MM_L/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 120.79793044584828
+    },
+    "WALL_SPACER_1MM_R/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 71.52719762440019
+    },
+    "WALL_SPACER_2MM_R/EX_R1": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 71.52719762440019
+    },
+    "frame/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 7.355334711885254
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 288.70452166659453
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 270.7057226453794
+    },
+    "SCREW_L1_BOUNDING/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 288.6739697837981
+    },
+    "SCREW_L2_BOUNDING/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 270.6731391788943
+    },
+    "PRODUCT_CLEAT_L/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 264.5963907539179
+    },
+    "WALL_CLEAT_L/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 264.62972244251023
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 222.55963335699488
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 222.55963335699488
+    },
+    "SCREW_R1_BOUNDING/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 222.51999999999998
+    },
+    "SCREW_R2_BOUNDING/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 222.51999999999998
+    },
+    "PRODUCT_CLEAT_R/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 221.0
+    },
+    "WALL_CLEAT_R/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 221.0399058993647
+    },
+    "WALL_SPACER_1MM_L/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 264.6812044705857
+    },
+    "WALL_SPACER_2MM_L/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 264.6812044705857
+    },
+    "WALL_SPACER_1MM_R/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 221.10153776036927
+    },
+    "WALL_SPACER_2MM_R/EX_R2": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 221.10153776036927
+    },
+    "frame/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 1.1999999999999886
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 43.45778412310321
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 14.263798178609951
+    },
+    "SCREW_L1_BOUNDING/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 43.282432936357
+    },
+    "SCREW_L2_BOUNDING/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 13.720274723201301
+    },
+    "PRODUCT_CLEAT_L/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 7.5
+    },
+    "WALL_CLEAT_L/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 8.453401682163221
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 14.263798178609937
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 43.45778412310324
+    },
+    "SCREW_R1_BOUNDING/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 13.720274723201289
+    },
+    "SCREW_R2_BOUNDING/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 43.28243293635703
+    },
+    "PRODUCT_CLEAT_R/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 7.5
+    },
+    "WALL_CLEAT_R/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 8.453401682163221
+    },
+    "WALL_SPACER_1MM_L/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 9.859513172565874
+    },
+    "WALL_SPACER_2MM_L/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 9.859513172565874
+    },
+    "WALL_SPACER_1MM_R/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 9.859513172565874
+    },
+    "WALL_SPACER_2MM_R/MAIN_C": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 9.859513172565874
+    },
+    "frame/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.4000000000000057
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 223.85665066407407
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 216.85156673403262
+    },
+    "SCREW_L1_BOUNDING/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 223.73153565498382
+    },
+    "SCREW_L2_BOUNDING/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 216.72240769012467
+    },
+    "PRODUCT_CLEAT_L/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 213.77616798885697
+    },
+    "WALL_CLEAT_L/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 213.9076903713375
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 216.05949010777968
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 222.42886555771008
+    },
+    "SCREW_R1_BOUNDING/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 215.9298572815574
+    },
+    "SCREW_R2_BOUNDING/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 222.30294697392085
+    },
+    "PRODUCT_CLEAT_R/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 213.1906423837594
+    },
+    "WALL_CLEAT_R/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 213.32252576790853
+    },
+    "WALL_SPACER_1MM_L/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 214.0099296761718
+    },
+    "WALL_SPACER_2MM_L/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 214.0099296761718
+    },
+    "WALL_SPACER_1MM_R/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 213.42504539064763
+    },
+    "WALL_SPACER_2MM_R/MAIN_P": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 213.42504539064763
+    },
+    "frame/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 1.0
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 281.32688362846784
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 274.25963388377966
+    },
+    "SCREW_L1_BOUNDING/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 280.85372607837246
+    },
+    "SCREW_L2_BOUNDING/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 273.77426244639
+    },
+    "PRODUCT_CLEAT_L/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 270.51848365684737
+    },
+    "WALL_CLEAT_L/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 271.14110717484357
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 274.25963388377966
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 281.3268836284678
+    },
+    "SCREW_R1_BOUNDING/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 273.77426244639
+    },
+    "SCREW_R2_BOUNDING/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 280.85372607837246
+    },
+    "PRODUCT_CLEAT_R/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 270.51848365684737
+    },
+    "WALL_CLEAT_R/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 271.14110717484357
+    },
+    "WALL_SPACER_1MM_L/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 271.3600007370283
+    },
+    "WALL_SPACER_2MM_L/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 271.3600007370283
+    },
+    "WALL_SPACER_1MM_R/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 271.3600007370283
+    },
+    "WALL_SPACER_2MM_R/VOICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 271.3600007370283
+    },
+    "frame/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 8.183264798084226
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 261.0914645793519
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 237.88141520883744
+    },
+    "SCREW_L1_BOUNDING/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 260.5815666469733
+    },
+    "SCREW_L2_BOUNDING/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 237.32165451504696
+    },
+    "PRODUCT_CLEAT_L/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 230.1961120436225
+    },
+    "WALL_CLEAT_L/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 230.927477793354
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 156.14954498812986
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 156.14954498812986
+    },
+    "SCREW_R1_BOUNDING/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 155.29546162074408
+    },
+    "SCREW_R2_BOUNDING/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 155.29546162074408
+    },
+    "PRODUCT_CLEAT_R/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 153.55129436120035
+    },
+    "WALL_CLEAT_R/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 154.64556249695625
+    },
+    "WALL_SPACER_1MM_L/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 231.1844501691236
+    },
+    "WALL_SPACER_2MM_L/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 231.1844501691236
+    },
+    "WALL_SPACER_1MM_R/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 155.0290295396317
+    },
+    "WALL_SPACER_2MM_R/RADAR": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 155.0290295396317
+    },
+    "frame/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.23606797749979
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 378.11443736587074
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 362.13801491654175
+    },
+    "SCREW_L1_BOUNDING/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 377.7625282429545
+    },
+    "SCREW_L2_BOUNDING/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 361.77056520354637
+    },
+    "PRODUCT_CLEAT_L/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 355.976473941748
+    },
+    "WALL_CLEAT_L/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 356.44985622103985
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 312.33149120765904
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 312.33149120765904
+    },
+    "SCREW_R1_BOUNDING/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 311.90537090598485
+    },
+    "SCREW_R2_BOUNDING/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 311.90537090598485
+    },
+    "PRODUCT_CLEAT_R/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 310.27246091137386
+    },
+    "WALL_CLEAT_R/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 310.8154597184638
+    },
+    "WALL_SPACER_1MM_L/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 356.6163905375074
+    },
+    "WALL_SPACER_2MM_L/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 356.6163905375074
+    },
+    "WALL_SPACER_1MM_R/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 311.0064308016797
+    },
+    "WALL_SPACER_2MM_R/ENV": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 311.0064308016797
+    },
+    "frame/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 0.0
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 328.439665099653
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 324.1314779726813
+    },
+    "SCREW_L1_BOUNDING/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 328.43928451202703
+    },
+    "SCREW_L2_BOUNDING/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 324.1310923264764
+    },
+    "PRODUCT_CLEAT_L/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.78758521732937
+    },
+    "WALL_CLEAT_L/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.78797367210603
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 324.1314779726813
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 328.439665099653
+    },
+    "SCREW_R1_BOUNDING/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 324.1310923264764
+    },
+    "SCREW_R2_BOUNDING/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 328.43928451202703
+    },
+    "PRODUCT_CLEAT_R/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.78758521732937
+    },
+    "WALL_CLEAT_R/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.78797367210603
+    },
+    "WALL_SPACER_1MM_L/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.801569293874
+    },
+    "WALL_SPACER_2MM_L/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.801569293874
+    },
+    "WALL_SPACER_1MM_R/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.801569293874
+    },
+    "WALL_SPACER_2MM_R/SERVICE": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 321.801569293874
+    },
+    "frame/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 0.10000000000002274
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 23.3498401001515
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 4.019999999999982
+    },
+    "SCREW_L1_BOUNDING/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 23.3498401001515
+    },
+    "SCREW_L2_BOUNDING/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 4.019999999999982
+    },
+    "PRODUCT_CLEAT_L/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.5
+    },
+    "WALL_CLEAT_L/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.5
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 128.79133975465243
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 158.7414753027309
+    },
+    "SCREW_R1_BOUNDING/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 128.79133975465243
+    },
+    "SCREW_R2_BOUNDING/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 158.7414753027309
+    },
+    "PRODUCT_CLEAT_R/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 123.02540388066198
+    },
+    "WALL_CLEAT_R/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 123.02540388066198
+    },
+    "WALL_SPACER_1MM_L/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.5
+    },
+    "WALL_SPACER_2MM_L/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 2.5
+    },
+    "WALL_SPACER_1MM_R/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 123.02540388066198
+    },
+    "WALL_SPACER_2MM_R/ESP32_RF": {
+      "overlap_mm3": 0.0,
+      "nominal_distance_mm": 123.02540388066198
+    }
+  },
+  "limits": [
+    "Six and a half mm is the nominal bevel profile depth; 5 mm retained pose and 7 mm release path are separate rigid CAD checks.",
+    "Anchor shaft, wall substrate and lower anti-lift/pads are absent from this motion model.",
+    "All sweeps are for the represented rigid parts at nominal dimensions; tolerances, deformation, preload and strength remain unqualified.",
+    "The capped cavity is an audit construction; caps are never production or CFD boundary conditions.",
+    "Impermeable gasket CAD and preserved vent material do not establish air leakage or acoustic attenuation."
+  ],
+  "source_sha256": {
+    "evidence/rev-fg/upper-mounts-chamfer/execution.json": "dfd8fa24e957fb936da2aeb463916fa5624e2bf2e66bd64fbbf50dae20a4f7bb",
+    "evidence/rev-fe/sidewalls-eu22/AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": "8106ba52ad9e5378f24f0dcf08cebb09c14039e44bb4e086a0f61d3b97bbd793",
+    "evidence/rev-eq/execution.json": "d8a86a26021c0525fe73f1a385a1061ca90b5efe46fa49a65f5d627d24273f94",
+    "mechanical/cad/audit_upper_mounts_rev_fg.py": "2f3150d81d96bfd14ab8a72dacbb8506ea838229eb36c303e747efca055919b6"
+  }
+}

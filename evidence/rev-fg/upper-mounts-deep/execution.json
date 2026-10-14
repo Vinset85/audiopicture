@@ -1,0 +1,721 @@
+{
+  "classification": "CALCULATED_NOMINAL_UPPER_MOUNT_ASSEMBLY_NOT_STRUCTURAL_RELEASE",
+  "status": "PASS_SCOPED_CAD_AND_RIGID_ENGAGEMENT_CHECKS",
+  "product_part_max_Z_mm": 40,
+  "wall_plane_seed_Z_mm": 43,
+  "wall_gap_seed_mm": 3,
+  "wall_gap_4_5_requires_spacers": true,
+  "alternative_spacer_thickness_mm": [
+    1,
+    2
+  ],
+  "spacers_are_mutually_exclusive": true,
+  "wall_fastener_clearance_hole_diameter_mm": 4.5,
+  "wall_head_space_envelope_diameter_height_mm": [
+    8.96,
+    2.48
+  ],
+  "wall_head_requirement": "M4 90-degree countersunk interface, flush or below Z40.5; shaft length and anchor must be qualified for substrate.",
+  "wall_anchor_MPN_and_substrate_qualification": null,
+  "nominal_hook_profile_depth_mm": 6.5,
+  "product_profile_YZ_mm": [
+    [
+      369,
+      31.0
+    ],
+    [
+      394,
+      31.0
+    ],
+    [
+      394,
+      40
+    ],
+    [
+      384,
+      40
+    ],
+    [
+      390.5,
+      33.5
+    ],
+    [
+      369,
+      33.5
+    ]
+  ],
+  "wall_profile_YZ_mm": [
+    [
+      369,
+      40.5
+    ],
+    [
+      369,
+      43
+    ],
+    [
+      389,
+      43
+    ],
+    [
+      389,
+      40
+    ],
+    [
+      384,
+      40
+    ],
+    [
+      390.5,
+      33.5
+    ],
+    [
+      381,
+      33.5
+    ],
+    [
+      381,
+      40.5
+    ]
+  ],
+  "screw_catalog_candidate": "PTS A79910410, A2 stainless, M4x10 ISO10642",
+  "screw_model": "Maximum 90-degree countersunk head and external-thread envelopes; no hex recess or original detailed screw CAD",
+  "stacks": [
+    {
+      "name": "L1",
+      "center_xy_mm": [
+        37.5,
+        375
+      ],
+      "cleat_thickness_mm": 2.5,
+      "countersunk_screw_overall_length_mm": 10,
+      "nominal_engagement_mm": 7.5,
+      "nominal_insert_bottom_reserve_mm": 0.6,
+      "nominal_bore_floor_reserve_mm": 1.6,
+      "maximum_head_back_Z_mm": 33.5,
+      "ASA_floor_gap_mm": 0.2,
+      "boss_seal_free_mm": 1.57,
+      "boss_seal_installed_mm": 1.2560000000000002,
+      "boss_seal_ID_OD_mm": [
+        12.4,
+        16.2
+      ],
+      "boss_seal_ASA_contact_radial_width_mm": 0.9,
+      "boss_seal_PC_land_top_Z_mm": 27.344,
+      "boss_seal_PC_land_OD_mm": 16.8
+    },
+    {
+      "name": "L2",
+      "center_xy_mm": [
+        67.5,
+        375
+      ],
+      "cleat_thickness_mm": 2.5,
+      "countersunk_screw_overall_length_mm": 10,
+      "nominal_engagement_mm": 7.5,
+      "nominal_insert_bottom_reserve_mm": 0.6,
+      "nominal_bore_floor_reserve_mm": 1.6,
+      "maximum_head_back_Z_mm": 33.5,
+      "ASA_floor_gap_mm": 0.2,
+      "boss_seal_free_mm": 1.57,
+      "boss_seal_installed_mm": 1.2560000000000002,
+      "boss_seal_ID_OD_mm": [
+        12.4,
+        16.2
+      ],
+      "boss_seal_ASA_contact_radial_width_mm": 0.9,
+      "boss_seal_PC_land_top_Z_mm": 27.344,
+      "boss_seal_PC_land_OD_mm": 16.8
+    },
+    {
+      "name": "R1",
+      "center_xy_mm": [
+        252.5,
+        375
+      ],
+      "cleat_thickness_mm": 2.5,
+      "countersunk_screw_overall_length_mm": 10,
+      "nominal_engagement_mm": 7.5,
+      "nominal_insert_bottom_reserve_mm": 0.6,
+      "nominal_bore_floor_reserve_mm": 1.6,
+      "maximum_head_back_Z_mm": 33.5,
+      "ASA_floor_gap_mm": 0.2,
+      "boss_seal_free_mm": 1.57,
+      "boss_seal_installed_mm": 1.2560000000000002,
+      "boss_seal_ID_OD_mm": [
+        12.4,
+        16.2
+      ],
+      "boss_seal_ASA_contact_radial_width_mm": 0.9,
+      "boss_seal_PC_land_top_Z_mm": 27.344,
+      "boss_seal_PC_land_OD_mm": 16.8
+    },
+    {
+      "name": "R2",
+      "center_xy_mm": [
+        282.5,
+        375
+      ],
+      "cleat_thickness_mm": 2.5,
+      "countersunk_screw_overall_length_mm": 10,
+      "nominal_engagement_mm": 7.5,
+      "nominal_insert_bottom_reserve_mm": 0.6,
+      "nominal_bore_floor_reserve_mm": 1.6,
+      "maximum_head_back_Z_mm": 33.5,
+      "ASA_floor_gap_mm": 0.2,
+      "boss_seal_free_mm": 1.57,
+      "boss_seal_installed_mm": 1.2560000000000002,
+      "boss_seal_ID_OD_mm": [
+        12.4,
+        16.2
+      ],
+      "boss_seal_ASA_contact_radial_width_mm": 0.9,
+      "boss_seal_PC_land_top_Z_mm": 27.344,
+      "boss_seal_PC_land_OD_mm": 16.8
+    }
+  ],
+  "rigid_engagement": [
+    {
+      "side": "L",
+      "rigid_motion_tests": [
+        {
+          "motion": "downward",
+          "dY_mm": -0.1,
+          "dZ_mm": 0,
+          "interference_mm3": 26.980030435093084
+        },
+        {
+          "motion": "outward",
+          "dY_mm": 0,
+          "dZ_mm": -0.1,
+          "interference_mm3": 26.48003043508828
+        },
+        {
+          "motion": "release_up",
+          "dY_mm": 7,
+          "dZ_mm": 0,
+          "interference_mm3": 0.0
+        },
+        {
+          "motion": "retained_after_5mm_lift",
+          "dY_mm": 5,
+          "dZ_mm": -5.5,
+          "interference_mm3": 4.5844934723749615
+        }
+      ]
+    },
+    {
+      "side": "R",
+      "rigid_motion_tests": [
+        {
+          "motion": "downward",
+          "dY_mm": -0.1,
+          "dZ_mm": 0,
+          "interference_mm3": 26.980030435093084
+        },
+        {
+          "motion": "outward",
+          "dY_mm": 0,
+          "dZ_mm": -0.1,
+          "interference_mm3": 26.48003043508828
+        },
+        {
+          "motion": "release_up",
+          "dY_mm": 7,
+          "dZ_mm": 0,
+          "interference_mm3": 0.0
+        },
+        {
+          "motion": "retained_after_5mm_lift",
+          "dY_mm": 5,
+          "dZ_mm": -5.5,
+          "interference_mm3": 4.5844934723749615
+        }
+      ]
+    }
+  ],
+  "unexpected_overlaps_mm3": {},
+  "air_partition_boolean_checks": [
+    {
+      "part": "shell",
+      "before_mm3": 5120000.000000001,
+      "removed_mm3": 407292.97073525225,
+      "after_mm3": 4712707.02926475,
+      "residual_mm3": 9.313225746154785e-10
+    },
+    {
+      "part": "frame",
+      "before_mm3": 4712707.02926475,
+      "removed_mm3": 384199.7633410345,
+      "after_mm3": 4328507.265929011,
+      "residual_mm3": 5.295500159263611e-06
+    },
+    {
+      "part": "DML",
+      "before_mm3": 4328507.265929011,
+      "removed_mm3": 684000.0000000001,
+      "after_mm3": 3644507.2659290014,
+      "residual_mm3": -9.313225746154785e-09
+    },
+    {
+      "part": "DML_seal",
+      "before_mm3": 3644507.2659290014,
+      "removed_mm3": 12825.600000000042,
+      "after_mm3": 3631681.66595681,
+      "residual_mm3": 2.780882641673088e-05
+    },
+    {
+      "part": "frame_shell_seal",
+      "before_mm3": 3631681.66595681,
+      "removed_mm3": 4272.53821440004,
+      "after_mm3": 3627409.127493522,
+      "residual_mm3": -0.0002488880418241024
+    },
+    {
+      "part": "BOSS_SEAL_L1_COMPRESSED",
+      "before_mm3": 3627409.127493522,
+      "removed_mm3": 107.20848293193114,
+      "after_mm3": 3627301.9190239916,
+      "residual_mm3": 1.3401266187429428e-05
+    },
+    {
+      "part": "BOSS_SEAL_L2_COMPRESSED",
+      "before_mm3": 3627301.9190239916,
+      "removed_mm3": 107.20848293193151,
+      "after_mm3": 3627194.7102313354,
+      "residual_mm3": -0.000309724360704422
+    },
+    {
+      "part": "BOSS_SEAL_R1_COMPRESSED",
+      "before_mm3": 3627194.7102313354,
+      "removed_mm3": 107.2084829319331,
+      "after_mm3": 3627087.501742937,
+      "residual_mm3": -5.466397851705551e-06
+    },
+    {
+      "part": "BOSS_SEAL_R2_COMPRESSED",
+      "before_mm3": 3627087.501742937,
+      "removed_mm3": 107.2084829319322,
+      "after_mm3": 3626980.293450625,
+      "residual_mm3": 0.000190619844943285
+    },
+    {
+      "part": "audit_caps",
+      "before_mm3": 3626980.293450625,
+      "removed_mm3": 278.62433846708257,
+      "after_mm3": 3626701.6691120095,
+      "residual_mm3": -1.4854595065116882e-07
+    }
+  ],
+  "capped_air_components": 5,
+  "rear_component": 1,
+  "front_component": 0,
+  "mount_pocket_components": {
+    "L": [
+      3
+    ],
+    "R": [
+      2
+    ]
+  },
+  "capped_air_component_volumes_mm3": [
+    468314.8158927101,
+    3131684.9751705066,
+    12837.272537920406,
+    12837.021510872544,
+    1027.5839999999916
+  ],
+  "vent_cavity_checks": [
+    {
+      "aperture_xy_mm": [
+        17,
+        20,
+        14,
+        54
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        24,
+        27,
+        14,
+        54
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        17,
+        20,
+        62,
+        102
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        24,
+        27,
+        62,
+        102
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        17,
+        20,
+        110,
+        150
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        24,
+        27,
+        110,
+        150
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        17,
+        62,
+        315,
+        318
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        17,
+        62,
+        322,
+        325
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        17,
+        62,
+        329,
+        332
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        17,
+        62,
+        336,
+        339
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        17,
+        62,
+        343,
+        346
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        300,
+        303,
+        14,
+        54
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        293,
+        296,
+        14,
+        54
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        300,
+        303,
+        62,
+        102
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        293,
+        296,
+        62,
+        102
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        300,
+        303,
+        110,
+        150
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        293,
+        296,
+        110,
+        150
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        258,
+        303,
+        315,
+        318
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        258,
+        303,
+        322,
+        325
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        258,
+        303,
+        329,
+        332
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        258,
+        303,
+        336,
+        339
+      ],
+      "capped_cavity_component": 1
+    },
+    {
+      "aperture_xy_mm": [
+        258,
+        303,
+        343,
+        346
+      ],
+      "capped_cavity_component": 1
+    }
+  ],
+  "artifacts": {
+    "frame": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_FRAME_REV_FG.step",
+      "bytes": 4305391,
+      "sha256": "337b484cf4c43287016260202a841259ed45a090a25ae30b74268ecfaa0c79aa",
+      "volume_mm3": 384199.7633410345,
+      "STEP_relative_volume_error": 1.7870750408521788e-08
+    },
+    "shell": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_SHELL_REV_FG.step",
+      "bytes": 1951273,
+      "sha256": "f437458c6def75a6bbce99cad9367b45d6c3d779475c43be6af12d7a02fc2939",
+      "volume_mm3": 407292.97073525225,
+      "STEP_relative_volume_error": 5.2877992220450745e-14
+    },
+    "DML": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_DML_REV_FG.step",
+      "bytes": 15479,
+      "sha256": "7a823a7f109382917f7a7f7765493d2286c20b48bd04d9cc01f8ea5c543fbc3b",
+      "volume_mm3": 684000.0000000001,
+      "STEP_relative_volume_error": 0.0
+    },
+    "DML_seal": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_DML_SEAL_REV_FG.step",
+      "bytes": 28999,
+      "sha256": "5f9040721918104785e2640662b75336e2dbcc23719d0c844086ad94c9c16e9b",
+      "volume_mm3": 12825.600000000042,
+      "STEP_relative_volume_error": 0.0
+    },
+    "frame_shell_seal": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_FRAME_SHELL_SEAL_REV_FG.step",
+      "bytes": 29268,
+      "sha256": "4895e90b917b9fbe2d897bafb139ea85b846ca06d6572b3116a8ab83e943eed5",
+      "volume_mm3": 4272.538214399974,
+      "STEP_relative_volume_error": 0.0
+    },
+    "WALL_HEAD_L_37.5_SPACE_ENVELOPE": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_HEAD_L_37.5_SPACE_ENVELOPE_REV_FG.step",
+      "bytes": 5729,
+      "sha256": "c8d54cf8783bbfc948eec4cdf135372da9f3a9ff2c47e08d7ecd7526cb8ca26b",
+      "volume_mm3": 85.78159790770928,
+      "STEP_relative_volume_error": 6.129538703955756e-13
+    },
+    "WALL_HEAD_L_67.5_SPACE_ENVELOPE": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_HEAD_L_67.5_SPACE_ENVELOPE_REV_FG.step",
+      "bytes": 5729,
+      "sha256": "f3f556df4f7ee1021b82642eecbd7f753c7faf9f388846068a239cc705be27ba",
+      "volume_mm3": 85.78159790770928,
+      "STEP_relative_volume_error": 6.134508600202206e-13
+    },
+    "SCREW_L1_BOUNDING": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_SCREW_L1_BOUNDING_REV_FG.step",
+      "bytes": 8195,
+      "sha256": "deef3d6f72cdfecadb592904f7c2961813952c6ccdb3b3b6a906834cd50c8b8f",
+      "volume_mm3": 180.28070492769035,
+      "STEP_relative_volume_error": 1.399954475678458e-13
+    },
+    "BOSS_SEAL_L1_COMPRESSED": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_BOSS_SEAL_L1_COMPRESSED_REV_FG.step",
+      "bytes": 10513,
+      "sha256": "e7ea95f7ccfdc56af35f50d06dcd3b4f978096f7674c368f3998297290af96ed",
+      "volume_mm3": 107.20848293193157,
+      "STEP_relative_volume_error": 2.651069080834715e-16
+    },
+    "SCREW_L2_BOUNDING": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_SCREW_L2_BOUNDING_REV_FG.step",
+      "bytes": 8212,
+      "sha256": "b49863e80f72e8c80cbbc4fe2690af0ae341d1a1fa3f511cc391aff000cb2ba6",
+      "volume_mm3": 180.28070492769035,
+      "STEP_relative_volume_error": 1.399954475678458e-13
+    },
+    "BOSS_SEAL_L2_COMPRESSED": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_BOSS_SEAL_L2_COMPRESSED_REV_FG.step",
+      "bytes": 10481,
+      "sha256": "e7ce68e850fbb243e84825e0ab69e970c768f70861a2de658905ca7d9802bc56",
+      "volume_mm3": 107.20848293193144,
+      "STEP_relative_volume_error": 5.302138161669437e-16
+    },
+    "PRODUCT_CLEAT_L": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_PRODUCT_CLEAT_L_REV_FG.step",
+      "bytes": 42292,
+      "sha256": "a604534a9c130d2e3e2e44fcb1743fe9b7c9a9cbae086be9381391e080eb01f4",
+      "volume_mm3": 5161.151237627844,
+      "STEP_relative_volume_error": 1.0485051156989813e-13
+    },
+    "WALL_CLEAT_L": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_CLEAT_L_REV_FG.step",
+      "bytes": 47911,
+      "sha256": "a0f7669492079ff38ef96744fdb3d4e550d6955c9a80efccbf1192bc8ce1ba44",
+      "volume_mm3": 4523.434012238464,
+      "STEP_relative_volume_error": 1.7894596945326987e-14
+    },
+    "WALL_HEAD_R_252.5_SPACE_ENVELOPE": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_HEAD_R_252.5_SPACE_ENVELOPE_REV_FG.step",
+      "bytes": 5739,
+      "sha256": "38e37083669866ad5fb9f36198c00ef86783118f1f92088f76f4dc635249d844",
+      "volume_mm3": 85.78159790770928,
+      "STEP_relative_volume_error": 6.16598460976306e-13
+    },
+    "WALL_HEAD_R_282.5_SPACE_ENVELOPE": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_HEAD_R_282.5_SPACE_ENVELOPE_REV_FG.step",
+      "bytes": 5739,
+      "sha256": "a1edb80860114652902d6bfd4737ebc2a86fa838bda3ffa8629d0e304d2572bb",
+      "volume_mm3": 85.7815979077093,
+      "STEP_relative_volume_error": 6.164327977680909e-13
+    },
+    "SCREW_R1_BOUNDING": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_SCREW_R1_BOUNDING_REV_FG.step",
+      "bytes": 8209,
+      "sha256": "058d75655c2b8f8aeeba74e815c202ffae0a51f81c430d18b78fd7bd0196fa58",
+      "volume_mm3": 180.2807049276903,
+      "STEP_relative_volume_error": 1.4330615071978816e-13
+    },
+    "BOSS_SEAL_R1_COMPRESSED": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_BOSS_SEAL_R1_COMPRESSED_REV_FG.step",
+      "bytes": 10495,
+      "sha256": "55d4698a6f95c7a5f6e351dab7dc47020d7e0792d88d0a4edb6e6b28e8a336d0",
+      "volume_mm3": 107.20848293193197,
+      "STEP_relative_volume_error": 1.8557483565842935e-15
+    },
+    "SCREW_R2_BOUNDING": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_SCREW_R2_BOUNDING_REV_FG.step",
+      "bytes": 8209,
+      "sha256": "15bb5272b8a78015e2a89d1e5bcff352b0aca14ce3c72a29c4fbec17709e6ad8",
+      "volume_mm3": 180.28070492769035,
+      "STEP_relative_volume_error": 1.4314849818874325e-13
+    },
+    "BOSS_SEAL_R2_COMPRESSED": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_BOSS_SEAL_R2_COMPRESSED_REV_FG.step",
+      "bytes": 10495,
+      "sha256": "3377e43fe815340946e7ebd9071f8cb32abfcdc1fb606b85c14da2f338f12eff",
+      "volume_mm3": 107.20848293193207,
+      "STEP_relative_volume_error": 1.855748356584292e-15
+    },
+    "PRODUCT_CLEAT_R": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_PRODUCT_CLEAT_R_REV_FG.step",
+      "bytes": 42356,
+      "sha256": "82336e2d968623b11aad02636eeb5f43bc850c2f66950b321fa1ca0777cb434a",
+      "volume_mm3": 5161.151237627845,
+      "STEP_relative_volume_error": 1.0467429222272181e-13
+    },
+    "WALL_CLEAT_R": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_CLEAT_R_REV_FG.step",
+      "bytes": 47987,
+      "sha256": "4b71db7308d68513256c79d39737781b7054573274d5e902aefedcd9d09007b5",
+      "volume_mm3": 4523.434012238465,
+      "STEP_relative_volume_error": 1.8296722719379275e-14
+    },
+    "WALL_SPACER_1MM_L": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_SPACER_1MM_L_REV_FG.step",
+      "bytes": 25045,
+      "sha256": "d0259fb4353c6291f1dc32f81a5941a106e66fa737f77838307a5d9211a43996",
+      "volume_mm3": 968.1913743824035,
+      "STEP_relative_volume_error": 0.0
+    },
+    "WALL_SPACER_2MM_L": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_SPACER_2MM_L_REV_FG.step",
+      "bytes": 25045,
+      "sha256": "45adfae9b9245a6663082f4b0d8e1f854db7565740b32948887d02b421d4f06d",
+      "volume_mm3": 1936.382748764807,
+      "STEP_relative_volume_error": 0.0
+    },
+    "WALL_SPACER_1MM_R": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_SPACER_1MM_R_REV_FG.step",
+      "bytes": 25083,
+      "sha256": "67aaefb02aed46110976154cd7ba8ba944f6f30a08d67eade600a9e75a9c2f3a",
+      "volume_mm3": 968.1913743824035,
+      "STEP_relative_volume_error": 0.0
+    },
+    "WALL_SPACER_2MM_R": {
+      "file": "evidence/rev-fg/upper-mounts-deep/AP22_WALL_SPACER_2MM_R_REV_FG.step",
+      "bytes": 25083,
+      "sha256": "0928b00f5b7659213e720ddcfbbf7587ebb33e04044b9ca2b11e024cc58fd8dd",
+      "volume_mm3": 1936.382748764807,
+      "STEP_relative_volume_error": 0.0
+    }
+  },
+  "source_sha256": {
+    "evidence/rev-fg/fixed-seals/AP22_FRAME_SEAL_LAND_REV_FG.step": "2058bec225bdb79d098ad708d8045f6939b4eebcc3d3a36533b70fe4fbe254ca",
+    "evidence/rev-fe/sidewalls-eu22/AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": "8106ba52ad9e5378f24f0dcf08cebb09c14039e44bb4e086a0f61d3b97bbd793",
+    "evidence/rev-fg/fixed-seals/AP22_DML_NOMINAL_REV_FG.step": "941500dba2d0861687ecf77a3fc75859490db4618a744b80a073c2dcfd9d4391",
+    "evidence/rev-fg/fixed-seals/AP22_DML_GASKET_COMPRESSED_REV_FG.step": "b9c92229e77855edec6d80777ee499684a0862ad3f3dc4ea29c6e2a7d1f7a34a",
+    "evidence/rev-fg/fixed-seals/AP22_FRAME_SHELL_GASKET_COMPRESSED_REV_FG.step": "331d63dc7dc4db6eba1f25bc8a6291871ff18f85d3fabfbb634d8c273cc15353",
+    "mechanical/cad/generate_upper_cleats_rev_fg.py": "8aa749beba9d413536699b5a8aeee020bac2610fd2cab90a139cc63a50329890"
+  },
+  "limits": [
+    "No installed heat-set plastic-flow geometry, clamp torque or pullout strength.",
+    "Cleat shape and seal grooves are nominal design choices; nonlinear/contact FEA and tolerance sweeps remain required.",
+    "Wall-anchor holes and head space are design interfaces; exact anchors, substrate, preload and bearing/edge strength are unqualified.",
+    "Rigid interference tests establish kinematic engagement only, not stiffness or retention strength.",
+    "Normal contact of ASA pocket is excluded from the intended structural load path.",
+    "Seal domains are impermeable geometric assumptions, not measured leakage or seal force."
+  ]
+}

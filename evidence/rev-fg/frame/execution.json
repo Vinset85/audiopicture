@@ -1,0 +1,152 @@
+{
+  "revision": "Rev.FG",
+  "classification": "CALCULATED_NOMINAL_INSTALLATION_CAD_NOT_QUALIFIED_PRODUCT",
+  "BREP_valid": true,
+  "solid_count": 1,
+  "STEP_reimport_valid": true,
+  "STL_watertight": true,
+  "STEP_volume_absolute_error_mm3": 0.008485989877954125,
+  "STEP_relative_volume_limit": 1e-06,
+  "STEP_boolean_difference": {
+    "original_minus_STEP_mm3": 0.0,
+    "STEP_minus_original_mm3": 0.0
+  },
+  "volume_integration": "OCC adaptive Gauss, per-face relative tolerance 1e-10",
+  "volume_mm3": 373684.3282161172,
+  "mass_g_at_catalog_density_1p22": 455.894880423663,
+  "mount_centers_xy_mm": {
+    "UL1": [
+      37.5,
+      375.0
+    ],
+    "UL2": [
+      67.5,
+      375.0
+    ],
+    "UR1": [
+      252.5,
+      375.0
+    ],
+    "UR2": [
+      282.5,
+      375.0
+    ]
+  },
+  "bore_radius_mm": 2.8,
+  "bore_z_mm": [
+    25.9,
+    35
+  ],
+  "boss_outer_diameter_mm": 12,
+  "floor_mm": 2.5,
+  "root_fillet_mm": 2,
+  "mount_modules": [
+    {
+      "base_xy_mm": [
+        27.5,
+        77.5,
+        366.8,
+        383.2
+      ],
+      "base_z_mm": [
+        23.4,
+        25.9
+      ],
+      "root_fillet_mm": 2
+    },
+    {
+      "base_xy_mm": [
+        242.5,
+        292.5,
+        366.8,
+        383.2
+      ],
+      "base_z_mm": [
+        23.4,
+        25.9
+      ],
+      "root_fillet_mm": 2
+    }
+  ],
+  "nominal_DML_front_band_XY_clearance_mm": 1.5,
+  "nominal_DML_rear_clearance_mm": 1,
+  "front_band_solid_width_mm": 5.3,
+  "front_band_z_mm": [
+    6,
+    10.3
+  ],
+  "hole_checks": [
+    {
+      "name": "UL1",
+      "hole_obstruction_mm3": 0.0,
+      "missing_floor_mm3": 0.0
+    },
+    {
+      "name": "UL2",
+      "hole_obstruction_mm3": 0.0,
+      "missing_floor_mm3": 0.0
+    },
+    {
+      "name": "UR1",
+      "hole_obstruction_mm3": 0.0,
+      "missing_floor_mm3": 0.0
+    },
+    {
+      "name": "UR2",
+      "hole_obstruction_mm3": 0.0,
+      "missing_floor_mm3": 0.0
+    }
+  ],
+  "collision_volume_mm3": {
+    "EX_L1": 0.0,
+    "EX_L2": 0.0,
+    "EX_R1": 0.0,
+    "EX_R2": 0.0,
+    "MAIN_C": 0.0,
+    "MAIN_P": 0.0,
+    "VOICE": 0.0,
+    "RADAR": 0.0,
+    "ENV": 0.0,
+    "SERVICE": 0.0,
+    "ESP32_RF": 0.0,
+    "DML": 0.0,
+    "shell": 0.0,
+    "front": 0.0,
+    "metal_target_1": 0.0,
+    "metal_target_2": 0.0,
+    "metal_target_3": 0.0,
+    "metal_target_4": 0.0,
+    "metal_target_5": 0.0,
+    "metal_target_6": 0.0,
+    "metal_target_7": 0.0,
+    "metal_target_8": 0.0
+  },
+  "part_clearances_mm": {
+    "shell": 1.0,
+    "front": 0.5
+  },
+  "source_sha256": {
+    "evidence/rev-eu20/AP22_FRAME_CANDIDATE_REV_EU.step": "7cf83a13cd1b69d3f5fef667a060b6e3e916ee2aab6fd03fe2f6a83e419d583a",
+    "evidence/rev-fe/sidewalls-eu22/AP22_SHELL_SIDEWALL_CANDIDATE_REV_FE.step": "8106ba52ad9e5378f24f0dcf08cebb09c14039e44bb4e086a0f61d3b97bbd793",
+    "evidence/rev-fa/AP22_FRONT_CARRIER_OPTICAL_CANDIDATE_REV_FA.step": "e0d03c62d9f8c1cd740e88bf0f04749e26b3a3a6bddb8fff3f4693aca86fab7f",
+    "mechanical/components/ruthex-m4-insert-candidate-rev-fe.json": "49e87bde4b2df645b7d92934af2a5fa45ac317401d3fcdf117e5bb881aa3d738",
+    "mechanical/cad/generate_frame_interfaces_rev_fg.py": "12af765cdd02d720df122c4179f20095cc39f7df94397b034ed483972bf284ec"
+  },
+  "artifacts": {
+    "AP22_FRAME_INTERFACE_CANDIDATE_REV_FG.step": {
+      "bytes": 2188850,
+      "sha256": "92062663ac6be0910f7e54ff01e5d2dffe085b07a2d06df542a8a38f12a7d314"
+    },
+    "AP22_FRAME_INTERFACE_CANDIDATE_REV_FG.stl": {
+      "bytes": 1973384,
+      "sha256": "c5ea2842da666b527aba72edaf276e0401823fcb93ac7fa4207621c439b0f780"
+    }
+  },
+  "limitations": [
+    "Nominal uninstalled holes, no print compensation or heat-set material-flow model.",
+    "Cleats, screws and actual wall contacts must be integrated before complete interface verification.",
+    "Boss root fillets are present; other inherited rib junctions remain unqualified.",
+    "Clearances are nominal, not a tolerance or deformed-assembly acceptance.",
+    "No strength, physical material property, manufacturing-process or production approval."
+  ]
+}

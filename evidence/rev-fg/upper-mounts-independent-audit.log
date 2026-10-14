@@ -1,0 +1,6 @@
+Independent partition and four omitted-seal controls passed
+{
+  "status": "PASS_SCOPED_REIMPORTED_PARTITION_AND_CONTINUOUS_RIGID_SWEPT_CHECKS",
+  "controls": 4,
+  "coarse_keepout_checks": 187
+}

@@ -1,0 +1,63 @@
+{
+  "status": "PASS_SCOPED_CAD_PENDING_CONTINUOUS_ASSEMBLY_MOTION_AUDIT",
+  "rigid_engagement": [
+    {
+      "side": "L",
+      "rigid_motion_tests": [
+        {
+          "motion": "downward",
+          "dY_mm": -0.1,
+          "dZ_mm": 0,
+          "interference_mm3": 26.312815664627244
+        },
+        {
+          "motion": "outward",
+          "dY_mm": 0,
+          "dZ_mm": -0.1,
+          "interference_mm3": 25.8128156646213
+        },
+        {
+          "motion": "release_up",
+          "dY_mm": 7,
+          "dZ_mm": 0,
+          "interference_mm3": 0.0
+        },
+        {
+          "motion": "retained_after_5mm_lift",
+          "dY_mm": 5,
+          "dZ_mm": -5.5,
+          "interference_mm3": 0.23060056445907393
+        }
+      ]
+    },
+    {
+      "side": "R",
+      "rigid_motion_tests": [
+        {
+          "motion": "downward",
+          "dY_mm": -0.1,
+          "dZ_mm": 0,
+          "interference_mm3": 26.312815664627244
+        },
+        {
+          "motion": "outward",
+          "dY_mm": 0,
+          "dZ_mm": -0.1,
+          "interference_mm3": 25.8128156646213
+        },
+        {
+          "motion": "release_up",
+          "dY_mm": 7,
+          "dZ_mm": 0,
+          "interference_mm3": 0.0
+        },
+        {
+          "motion": "retained_after_5mm_lift",
+          "dY_mm": 5,
+          "dZ_mm": -5.5,
+          "interference_mm3": 0.23060056445907393
+        }
+      ]
+    }
+  ]
+}

@@ -4,9 +4,9 @@ Smart acoustic picture / complete Home Assistant room node.
 
 **V2.2 target:** 320 x 400 x 40 mm, DML audio, far-field voice, 60 GHz presence sensing, temperature/humidity/light sensing, Ethernet + Wi-Fi, PoE+ + 24 V external power, automatic acoustic calibration and plug-and-play Home Assistant integration.
 
-**Current verified checkpoint: [Rev.FE](mechanical/digital-validation-rev-fe.md).** Weak-material and print-axis studies expose the limits of the earlier scoped displacement result. New ASA sidewalls and an M4 installation coupon are verified as CAD candidates; production qualification remains OPEN. The 250 g frame ceiling remains removed.
+**Current verified checkpoint: [Rev.FG](mechanical/digital-validation-rev-fg.md).** Recessed upper mounts, actual installation bores, nominal seals and continuous rigid removal checks are verified. The current frame still fails the weak-Z LC4 corner/clearance screen. Full assembly, product CFD, electronics and production qualification remain OPEN. The 250 g frame ceiling remains removed.
 
-**Physical inputs needed:** [measurements, parameters and existing acceptance criteria](manufacturing/real-data-required-rev-fe.md). This separates coupon/component tests from first-assembly tests and the digital work still required.
+**Physical inputs needed:** [measurements, parameters and existing acceptance criteria](manufacturing/real-data-required-rev-fe.md). The [Rev.FG addendum](manufacturing/real-data-addendum-rev-fg.md) adds upper mounts, countersunk heads and seal-stack requirements. These plans separate coupon/component tests from first-assembly tests and the digital work still required.
 
 ## Project areas
 - `hardware/` — electronics, BOM and KiCad design
@@ -150,14 +150,14 @@ All three attachment names, sizes and SHA-256 digests are verified against
 GitHub. Receipt: `evidence/rev-fd/github-publication.json`.
 
 
-## Current checkpoint Rev.FE — 2026-10-09
+## Checkpoint Rev.FE — 2026-10-09
 
 14 full-frame runs and 18 independent material-axis checks are actually executed.
 The weaker normalized material makes EU.20/EU.21/EU.22 fail the flat-print
 LC4 criterion; EU.22 remains above 1 mm on both meshes despite 605.105 g
 calculated mass. EU.20 weak-Y orientation gives 0.825603/0.826344 mm at the
 two lower corners, but linear vertical screens predict DML interference.
-The separate contact/nonlinear 100 N run also fails refined full-element DML clearance, despite zero intersecting sampled nodes. Its limitations are in the report.
+The separate contact/nonlinear 100 N run also fails refined full-element DML clearance, with 57 intersecting sampled nodes and additional interior-element witnesses. Its limitations are in the report.
 No production orientation, strength or complete FEA matrix is qualified.
 
 ASA sidewalls preserve all 22 rear labyrinth cells, while a BREP path audit
@@ -176,3 +176,30 @@ engineering commit; 178 raw artifacts are individually SHA-256 checked.
 Receipts: `evidence/rev-fe/github-publication.json` and
 `evidence/rev-fe/archive-tree-verification.json`. Publication integrity does
 not qualify the design for production.
+
+
+## Current checkpoint Rev.FG — 2026-10-14
+
+The upper assembly now has recessed cleats, catalog-sized M4 bores and
+countersunk screw envelopes. Reimported CAD passes 187 coarse keepout checks,
+continuous 7 mm lift/extraction checks and capped-air partition controls;
+removing each of four mounting seals reconnects its pocket to the rear cavity.
+The existing 22 labyrinth cells are geometrically preserved. Nominal seals
+and rigid motion do not qualify leakage, tolerances or actual contact strength.
+
+Four full-frame CalculiX runs are executed on three successive geometries.
+On the current 468.724 g frame (calculated at catalog density), nonlinear
+LC1 100 N weak-Y retains at least 0.823384 mm modeled DML separation.
+LC4 weak-Z reaches 1.141787 mm against a 1 mm limit and has 19 robust
+interior-element DML interference witnesses: FAIL. No production release.
+
+The gasket stack calculation exposes tight conditional gap budgets. A fixed
+DML retainer, adjustable stops, lower capture, full contact/orthotropic FEA,
+product CFD and complete electronics/firmware remain digital work to finish.
+All physical tests remain NOT_RUN. The prior FE zero-node claim is corrected:
+the EU20 LC1 100 N weak-Y nonlinear case had 57 intersecting sampled nodes.
+
+See [Rev.FG report](mechanical/digital-validation-rev-fg.md),
+[gate register](mechanical/validation/rev-fg/gate-register.json),
+[component candidates](mechanical/components/upper-mount-candidates-rev-fg.json)
+and [physical-test addendum](manufacturing/real-data-addendum-rev-fg.md).

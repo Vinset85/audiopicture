@@ -1,0 +1,48 @@
+{
+  "mount_centers_xy_mm": {
+    "UL1": [
+      37.5,
+      375.0
+    ],
+    "UL2": [
+      67.5,
+      375.0
+    ],
+    "UR1": [
+      252.5,
+      375.0
+    ],
+    "UR2": [
+      282.5,
+      375.0
+    ]
+  },
+  "bore_radius_mm": 2.8,
+  "bore_z_mm": [
+    25.9,
+    35
+  ],
+  "boss_outer_diameter_mm": 12,
+  "floor_mm": 2.5,
+  "root_fillet_mm": 2,
+  "limitations": [
+    "Nominal uninstalled holes, no print compensation or heat-set material-flow model.",
+    "Cleats, screws and actual wall contacts must be integrated before complete interface verification.",
+    "Boss root fillets are present; other inherited rib junctions remain unqualified.",
+    "Clearances are nominal, not a tolerance or deformed-assembly acceptance.",
+    "No strength, physical material property, manufacturing-process or production approval.",
+    "DML preload retention, gasket properties and installed seal compression are unqualified."
+  ],
+  "parent_geometry_sha256": "e4e68c0515dd5d78409db712d0cea040b055f6df21b656745a28a65f0b6952e9",
+  "BREP_valid": true,
+  "solid_count": 1,
+  "STEP_reimport_valid": true,
+  "revision": "Rev.FG seal-land candidate",
+  "volume_mm3": 391989.7887964842,
+  "mass_g_at_catalog_density_1p22": 478.22754233171065,
+  "artifacts": {
+    "AP22_FRAME_SEAL_LAND_REV_FG.step": {
+      "sha256": "2058bec225bdb79d098ad708d8045f6939b4eebcc3d3a36533b70fe4fbe254ca"
+    }
+  }
+}

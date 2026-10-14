@@ -1,0 +1,145 @@
+{
+  "classification": "CALCULATED_CONDITIONAL_STACK_FROM_CATALOG_THICKNESS_BANDS",
+  "status": "OPEN_MANUFACTURED_GAP_PRELOAD_AND_LEAKAGE_QUALIFICATION",
+  "rows": [
+    {
+      "name": "DML rear, 320 kg/m3 catalog family",
+      "nominal_free_thickness_mm": 2,
+      "catalog_fractional_thickness_tolerance": 0.1,
+      "nominal_installed_gap_mm": 1.6,
+      "compression_extremes_with_exact_gap": [
+        0.11111111111111105,
+        0.2727272727272727
+      ],
+      "allowed_gap_for_10_to_30_percent_mm": [
+        1.54,
+        1.62
+      ],
+      "any_fixed_gap_can_cover_stock_tolerance": true,
+      "rigid_and_adhesive_stack_budget_below_nominal_mm": 0.06000000000000005,
+      "rigid_and_adhesive_stack_budget_above_nominal_mm": 0.020000000000000018,
+      "maximum_symmetric_gap_budget_at_current_nominal_mm": 0.020000000000000018,
+      "optimal_gap_for_symmetric_budget_mm": 1.58,
+      "best_possible_symmetric_gap_budget_mm": 0.040000000000000036,
+      "status": "PASS_CONDITIONAL_EXACT_GAP_ARITHMETIC"
+    },
+    {
+      "name": "Frame-shell radial, 320 kg/m3 catalog family",
+      "nominal_free_thickness_mm": 1.57,
+      "catalog_fractional_thickness_tolerance": 0.1,
+      "nominal_installed_gap_mm": 1.256,
+      "compression_extremes_with_exact_gap": [
+        0.11111111111111116,
+        0.2727272727272728
+      ],
+      "allowed_gap_for_10_to_30_percent_mm": [
+        1.2089,
+        1.2717
+      ],
+      "any_fixed_gap_can_cover_stock_tolerance": true,
+      "rigid_and_adhesive_stack_budget_below_nominal_mm": 0.04709999999999992,
+      "rigid_and_adhesive_stack_budget_above_nominal_mm": 0.015700000000000047,
+      "maximum_symmetric_gap_budget_at_current_nominal_mm": 0.015700000000000047,
+      "optimal_gap_for_symmetric_budget_mm": 1.2403,
+      "best_possible_symmetric_gap_budget_mm": 0.031399999999999983,
+      "status": "PASS_CONDITIONAL_EXACT_GAP_ARITHMETIC"
+    },
+    {
+      "name": "Upper mount axial washers, 320 kg/m3 catalog family",
+      "nominal_free_thickness_mm": 1.57,
+      "catalog_fractional_thickness_tolerance": 0.1,
+      "nominal_installed_gap_mm": 1.256,
+      "compression_extremes_with_exact_gap": [
+        0.11111111111111116,
+        0.2727272727272728
+      ],
+      "allowed_gap_for_10_to_30_percent_mm": [
+        1.2089,
+        1.2717
+      ],
+      "any_fixed_gap_can_cover_stock_tolerance": true,
+      "rigid_and_adhesive_stack_budget_below_nominal_mm": 0.04709999999999992,
+      "rigid_and_adhesive_stack_budget_above_nominal_mm": 0.015700000000000047,
+      "maximum_symmetric_gap_budget_at_current_nominal_mm": 0.015700000000000047,
+      "optimal_gap_for_symmetric_budget_mm": 1.2403,
+      "best_possible_symmetric_gap_budget_mm": 0.031399999999999983,
+      "status": "PASS_CONDITIONAL_EXACT_GAP_ARITHMETIC"
+    },
+    {
+      "name": "Rejected 0.79 mm / 400 kg/m3 fixed-gap option",
+      "nominal_free_thickness_mm": 0.79,
+      "catalog_fractional_thickness_tolerance": 0.15,
+      "nominal_installed_gap_mm": 0.632,
+      "compression_extremes_with_exact_gap": [
+        0.05882352941176472,
+        0.30434782608695654
+      ],
+      "allowed_gap_for_10_to_30_percent_mm": [
+        0.6359499999999999,
+        0.60435
+      ],
+      "any_fixed_gap_can_cover_stock_tolerance": false,
+      "rigid_and_adhesive_stack_budget_below_nominal_mm": null,
+      "rigid_and_adhesive_stack_budget_above_nominal_mm": null,
+      "maximum_symmetric_gap_budget_at_current_nominal_mm": null,
+      "optimal_gap_for_symmetric_budget_mm": null,
+      "best_possible_symmetric_gap_budget_mm": null,
+      "status": "FAIL_STOCK_TOLERANCE_WITH_FIXED_GAP"
+    }
+  ],
+  "force_references": [
+    {
+      "part": "DML rear gasket",
+      "geometric_area_mm2_each": 8016,
+      "count": 1,
+      "catalog_25_percent_stress_range_kPa": [
+        21,
+        55
+      ],
+      "catalog_25_percent_typical_stress_kPa": 35,
+      "reference_force_at_25_percent_N_each": [
+        168.336,
+        440.88
+      ],
+      "reference_typical_force_at_25_percent_N_each": 280.56,
+      "classification": "CATALOG_POINT_REFERENCE_ONLY_NOT_20_PERCENT_PRELOAD"
+    },
+    {
+      "part": "Mount washer",
+      "geometric_area_mm2_each": 85.35707239803466,
+      "count": 4,
+      "catalog_25_percent_stress_range_kPa": [
+        21,
+        55
+      ],
+      "catalog_25_percent_typical_stress_kPa": 35,
+      "reference_force_at_25_percent_N_each": [
+        1.792498520358728,
+        4.694638981891907
+      ],
+      "reference_typical_force_at_25_percent_N_each": 2.9874975339312133,
+      "classification": "CATALOG_POINT_REFERENCE_ONLY_NOT_20_PERCENT_PRELOAD"
+    }
+  ],
+  "production_tolerances_assigned": false,
+  "force_at_20_percent_N": null,
+  "required_digital_work": [
+    "Independent fixed DML retainer and over-travel capture; magnetic front is not the preload mechanism.",
+    "Include adhesive and land-flatness contributions, and provide adjustable stops/shim selection and an inspection gauge."
+  ],
+  "required_measurements": [
+    "Actual gasket stock thickness, force-compression curves at operating temperatures and compression set.",
+    "Installed gaps around the whole perimeter and each mounting washer, including shell clamping and print warp.",
+    "Pressure-flow leakage and dynamic stiffness; a solid CAD gasket does not establish airtightness."
+  ],
+  "limits": [
+    "Rogers data are catalog references, not certified specification limits or AudioPicture material allowables.",
+    "No modulus is inferred from one 25% compression point; no force is interpolated to 20%.",
+    "The calculated gap budgets are requirements on the combined stack, not demonstrated FDM capabilities.",
+    "Sheet family ranges do not establish availability, adhesive option or qualification of a specific purchased MPN."
+  ],
+  "source_sha256": {
+    "evidence/rev-fg/sources/poron-4701-30.pdf": "9567c83b0d8d9e97e5477a4ccbef6c966d849ac3209b0aff4d1a9204922c4b68",
+    "mechanical/cad/audit_gasket_stack_rev_fg.py": "adf2a4f456938bc91cb3352e0f1c35fde167a6769fc832cbe5f37854cd9db8b4"
+  }
+}

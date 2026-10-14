@@ -1,0 +1,48 @@
+{
+  "mount_centers_xy_mm": {
+    "UL1": [
+      37.5,
+      375.0
+    ],
+    "UL2": [
+      67.5,
+      375.0
+    ],
+    "UR1": [
+      252.5,
+      375.0
+    ],
+    "UR2": [
+      282.5,
+      375.0
+    ]
+  },
+  "bore_radius_mm": 2.8,
+  "bore_z_mm": [
+    21.9,
+    31.0
+  ],
+  "boss_outer_diameter_mm": 12,
+  "floor_mm": 2.5,
+  "root_fillet_mm": 2,
+  "limitations": [
+    "Nominal uninstalled holes, no print compensation or heat-set material-flow model.",
+    "Cleats, screws and actual wall contacts must be integrated before complete interface verification.",
+    "Boss root fillets are present; other inherited rib junctions remain unqualified.",
+    "Clearances are nominal, not a tolerance or deformed-assembly acceptance.",
+    "No strength, physical material property, manufacturing-process or production approval.",
+    "DML preload retention, gasket properties and installed seal compression are unqualified."
+  ],
+  "parent_geometry_sha256": "f872013e202dd1964e2b429b8f7a40a71231f561c015687388eb850f016e9909",
+  "BREP_valid": true,
+  "solid_count": 1,
+  "STEP_reimport_valid": true,
+  "revision": "Rev.FG recessed upper mount candidate",
+  "volume_mm3": 384199.7633410345,
+  "mass_g_at_catalog_density_1p22": 468.72371127606203,
+  "artifacts": {
+    "AP22_FRAME_REV_FG.step": {
+      "sha256": "337b484cf4c43287016260202a841259ed45a090a25ae30b74268ecfaa0c79aa"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS_NOMINAL_FRONT_REAR_PARTITION_WITH_22_AUDIT_CAPS",
+  "frame_volume_mm3": 391989.7887964842,
+  "frame_mass_g_at_catalog_density_1p22": 478.22754233171065,
+  "capped_partition": {
+    "components": 4,
+    "rear_component": 3,
+    "front_component": 0,
+    "rear_front_connected": false,
+    "volumes_mm3": [
+      468314.81589271047,
+      1027.584000000002,
+      32829.60882281552,
+      3122322.9880621643
+    ]
+  },
+  "without_radial_seal": {
+    "components": 3,
+    "rear_component": 0,
+    "front_component": 0,
+    "rear_front_connected": true,
+    "volumes_mm3": [
+      3594910.3422766062,
+      1027.584000000002,
+      32829.60882281552
+    ]
+  },
+  "without_DML_seal": {
+    "components": 3,
+    "rear_component": 0,
+    "front_component": 0,
+    "rear_front_connected": true,
+    "volumes_mm3": [
+      3603463.4040730614,
+      1027.584000000002,
+      32829.60882281552
+    ]
+  }
+}

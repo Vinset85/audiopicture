@@ -1,0 +1,104 @@
+[
+  {
+    "case": "LC1",
+    "material_axes_global": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "weak_global_axis": "Y",
+    "properties_are_in_local_material_axes": true,
+    "print_process_and_axes_qualified": false,
+    "vertical_load_seed_N": 100.0,
+    "assembled_mass_load_adequacy_verified": false,
+    "loaded_corner": null,
+    "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+    "constitutive_assumptions": {
+      "E1": 1900.0,
+      "E2": 1900.0,
+      "E3": 380.0,
+      "nu12": 0.35,
+      "nu13": 0.35,
+      "nu23": 0.35,
+      "G12": 703.7037037037037,
+      "G13": 175.92592592592592,
+      "G23": 175.92592592592592
+    },
+    "load_sum_N": [
+      0.0,
+      -99.99999999999801,
+      0.0
+    ],
+    "load_cg_seed_mm": [
+      159.9999999999999,
+      199.9999999999998,
+      22.342696548084145
+    ],
+    "nonlinear_geometry": true,
+    "lower_unilateral_gap_contacts": 208,
+    "total_pad_penalty_N_per_mm": 100000.0,
+    "gap_force_floor_N": 1e-12,
+    "contact_iteration_controls": true,
+    "anti_lift_normal_support_assumption": true,
+    "bonded_insert_cleat_surrogate_nodes": 2864,
+    "corner_warp_mm": null,
+    "input_sha256": "7c5588e4d72f9f742db411ee8038323a65f1b86e2397fb569f18b893bdcdd755",
+    "runner_sha256": "531547f2e80aae4a79bd06129e2ffd62a8f4b6bb82e464864b2d1840abdf2926",
+    "mesh_report": {
+      "source_sha256": "92062663ac6be0910f7e54ff01e5d2dffe085b07a2d06df542a8a38f12a7d314",
+      "size_mm": 4.0,
+      "nodes": 204722,
+      "elements": 111260,
+      "type": "C3D10",
+      "min_SICN": 0.0037482824385540628,
+      "corner_tet_volume_mm3": 373687.0750520007,
+      "volume_weighted_seed_cg_mm": [
+        160.29697898481783,
+        155.79398294409597,
+        22.26206551466442
+      ],
+      "node_sets": {
+        "UL1": 716,
+        "UL2": 716,
+        "UR1": 716,
+        "UR2": 716,
+        "PAD_L": 104,
+        "PAD_R": 104,
+        "ANTILIFT": 107,
+        "CORNER_LL": 7,
+        "CORNER_LR": 7,
+        "CORNER_UL": 31,
+        "CORNER_UR": 31
+      },
+      "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+      "interface_geometry_sha256": "e4e68c0515dd5d78409db712d0cea040b055f6df21b656745a28a65f0b6952e9",
+      "installation_hole_radius_mm": 2.8,
+      "installation_hole_z_mm": [
+        25.9,
+        35
+      ],
+      "algorithm3d": 1,
+      "linear_mesh_optimizer": "Netgen",
+      "gmsh_version": "4.15.2",
+      "mesher_sha256": "3eba13bdb07692f7656e77cc4f5adbf2622c51d4c8c61457c724df9f080b2c60"
+    },
+    "qualified_allowables": null,
+    "release_margin": null,
+    "exit_code": 0,
+    "job_finished": true,
+    "errors": [],
+    "solver_execution_pass": true
+  }
+]

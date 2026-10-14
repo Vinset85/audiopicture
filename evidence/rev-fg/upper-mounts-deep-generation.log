@@ -1,0 +1,65 @@
+{
+  "status": "PASS_SCOPED_CAD_AND_RIGID_ENGAGEMENT_CHECKS",
+  "capped_air_components": 5,
+  "rigid_engagement": [
+    {
+      "side": "L",
+      "rigid_motion_tests": [
+        {
+          "motion": "downward",
+          "dY_mm": -0.1,
+          "dZ_mm": 0,
+          "interference_mm3": 26.980030435093084
+        },
+        {
+          "motion": "outward",
+          "dY_mm": 0,
+          "dZ_mm": -0.1,
+          "interference_mm3": 26.48003043508828
+        },
+        {
+          "motion": "release_up",
+          "dY_mm": 7,
+          "dZ_mm": 0,
+          "interference_mm3": 0.0
+        },
+        {
+          "motion": "retained_after_5mm_lift",
+          "dY_mm": 5,
+          "dZ_mm": -5.5,
+          "interference_mm3": 4.5844934723749615
+        }
+      ]
+    },
+    {
+      "side": "R",
+      "rigid_motion_tests": [
+        {
+          "motion": "downward",
+          "dY_mm": -0.1,
+          "dZ_mm": 0,
+          "interference_mm3": 26.980030435093084
+        },
+        {
+          "motion": "outward",
+          "dY_mm": 0,
+          "dZ_mm": -0.1,
+          "interference_mm3": 26.48003043508828
+        },
+        {
+          "motion": "release_up",
+          "dY_mm": 7,
+          "dZ_mm": 0,
+          "interference_mm3": 0.0
+        },
+        {
+          "motion": "retained_after_5mm_lift",
+          "dY_mm": 5,
+          "dZ_mm": -5.5,
+          "interference_mm3": 4.5844934723749615
+        }
+      ]
+    }
+  ],
+  "unexpected_overlaps_mm3": {}
+}

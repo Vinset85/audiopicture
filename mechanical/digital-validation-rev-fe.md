@@ -114,7 +114,7 @@ La suddivisione successiva dei 128 elementi con scatole sovrapposte trova
 0,0001 mm**. Il punto più interno rispetto al bordo della regione vietata
 ha margine **0.01109993 mm**. Ogni punto è ricostruito anche direttamente
 nelle coordinate baricentriche dell'elemento originale: **FAIL di clearance
-nel modello**, pur con zero nodi campionati interferenti. Le sottoregioni
+nel modello**, coerente con i 57 nodi campionati interferenti già rilevati. Le sottoregioni
 non risolte non annullano questi controesempi. La guardia numerica non è
 una tolleranza produttiva; nessuna risposta fisica dopo contatto è simulata.
 La suddivisione in otto tetraedri supera controlli di volume, partizione
@@ -205,3 +205,12 @@ Gli artefatti nuovi sono nel supplemento Rev.FE, da estrarre dopo le quattro
 parti Rev.FA e i supplementi FB/FC/FD. La presenza e l'integrità su GitHub
 sono verificate separatamente e registrate in `evidence/rev-fe/github-publication.json`
 quando disponibili; vedere [la politica di pubblicazione](../docs/validation-checkpoints.md).
+
+## Errata verificata il 2026-10-11
+
+La precedente frase «zero nodi campionati interferenti» contraddiceva il file
+`deformed-clearance.json`: il conteggio effettivo è 57. È corretta senza
+modificare input/output della simulazione né gli allegati immutabili Rev.FE.
+Il controllo raffinato resta un FAIL indipendente; questo caso reale non
+dimostra un falso negativo del controllo nodale. Il test sintetico separato
+del controllo Bernstein conserva il proprio ambito.

@@ -1,0 +1,12 @@
+STEP reimport volume difference mm3: 0.008485989877954125
+{
+  "revision": "Rev.FG",
+  "BREP_valid": true,
+  "solid_count": 1,
+  "volume_mm3": 373684.3282161172,
+  "mass_g_at_catalog_density_1p22": 455.894880423663,
+  "part_clearances_mm": {
+    "shell": 1.0,
+    "front": 0.5
+  }
+}
