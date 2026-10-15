@@ -159,3 +159,11 @@ Estrarre `audiopicture-rev-fh-supplement.zip` dopo FA+FB+FC+FD+FE+FG.
 La pubblicazione è completa solo dopo verifica degli allegati e relativa
 ricevuta in `main`. Le successive verifiche saranno eseguite una alla volta
 come richiesto dall'utente il 15 ottobre.
+
+Rev.FH è [pubblicata](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fh-2026-10-15)
+sul commit `0fa19a389e9840527128557908a5cd4ebaa5dc12`. Tutti e tre gli
+allegati e il commit del tag sono verificati. Lo ZIP contiene 58 file:
+43 corrispondenti ai blob Git e 15 output grezzi verificati individualmente.
+Ricevute: `evidence/rev-fh/github-publication.json` e
+`evidence/rev-fh/archive-tree-verification.json`. La verifica di integrità
+della pubblicazione non costituisce qualificazione del progetto.

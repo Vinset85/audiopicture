@@ -1,0 +1,11 @@
+{
+  "classification": "PUBLICATION_PACKAGE_CONSISTENCY_NOT_DESIGN_QUALIFICATION",
+  "status": "PASS",
+  "engineering_commit": "0fa19a389e9840527128557908a5cd4ebaa5dc12",
+  "engineering_tree": "783505948eb01115ac78ad39a888690c1fef7243",
+  "archive": "audiopicture-rev-fh-supplement.zip",
+  "archive_sha256": "0900d1d04482a7102d86de1373e10cc5904d05f537eb3021ce23ef652e5a630c",
+  "tracked_archive_members_matching_git_blobs": 43,
+  "raw_members_individually_sha256_verified": 15,
+  "verified_by_sha256": "415e1aca69030c0589435226e5a8dece5655b08bdbe3bd664c335b1329bc4b00"
+}
