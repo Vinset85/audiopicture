@@ -132,3 +132,16 @@ Estrarre `audiopicture-rev-fg-supplement.zip` dopo FA+FB+FC+FD+FE.
 L'indice `evidence/rev-fg/raw-artifact-index.json` descrive gli artefatti grezzi.
 La pubblicazione degli allegati è verificata separatamente dalla validazione
 digitale; non si considera completata prima della ricevuta in `main`.
+
+Rev.FG è [pubblicata](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fg-2026-10-14)
+il 15 ottobre sul commit `d2dbe81e34abad0a0a7c749e5e940226d7e55684`.
+Tutti e tre gli allegati sono verificati per nomi, dimensioni e SHA-256 contro
+i digest GitHub; il commit del tag coincide. L'archivio contiene 201 file:
+115 file corrispondenti ai blob Git e 86 artefatti grezzi verificati uno per uno.
+Le ricevute sono `evidence/rev-fg/github-publication.json` e
+`evidence/rev-fg/archive-tree-verification.json`. Il confronto si ripete con
+`tools/verify_checkpoint_archive.py`, specificando archivio, commit e indice grezzo.
+
+È verificata anche la rettifica della descrizione pubblica Rev.FE: i tre
+allegati originari conservano dimensioni e SHA-256 identici. Vedere
+`evidence/rev-fg/prior-release-erratum-verification.json`.

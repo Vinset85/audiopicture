@@ -203,3 +203,11 @@ See [Rev.FG report](mechanical/digital-validation-rev-fg.md),
 [gate register](mechanical/validation/rev-fg/gate-register.json),
 [component candidates](mechanical/components/upper-mount-candidates-rev-fg.json)
 and [physical-test addendum](manufacturing/real-data-addendum-rev-fg.md).
+
+The [Rev.FG supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fg-2026-10-14)
+is published on 15 October at commit `d2dbe81e34abad0a0a7c749e5e940226d7e55684`.
+All three asset names, sizes and SHA-256 digests match GitHub. The archive
+contains 115 files matching their Git blobs and 86 raw artifacts checked
+individually. Receipts: `evidence/rev-fg/github-publication.json` and
+`evidence/rev-fg/archive-tree-verification.json`. The prior Rev.FE release
+description is corrected while its three original assets remain unchanged.
