@@ -1,0 +1,85 @@
+{
+  "revision": "Rev.FH",
+  "publication_verified": false,
+  "release_tag": "checkpoint-rev-fh-2026-10-15",
+  "checkpoint_parent_head": "069621b970e5b8b130c754e29dd4dac697ac8674",
+  "baseline_release": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06",
+  "scope": "Three actual weak-Y follow-up structural screens on the unchanged FG frame and mesh. Extract over all four Rev.FA parts and Rev.FB/FC/FD/FE/FG supplements. Not a production release.",
+  "files": [
+    {
+      "path": "evidence/rev-fh/M0-LC3-weakY/LC3/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC3-weakY/LC3/frame.dat",
+      "bytes": 13237243,
+      "sha256": "e14ff5b79896700df573002ecb98c76fb05e4605a68b381c8254a38504941f43"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC3-weakY/LC3/frame.frd",
+      "bytes": 82919770,
+      "sha256": "d913d9dda5901194258c91e3f484ff2758f83afcbe614d199b7dcc37538accbf"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC3-weakY/LC3/frame.inp",
+      "bytes": 32512606,
+      "sha256": "9e53895f8a7cdbda9e660457eb70880a859e760baadb8d2fe8774b83153b0999"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC3-weakY/LC3/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.dat",
+      "bytes": 13237243,
+      "sha256": "c2288833523ffffcfb7fcd6bc657d1b1eb50c96a0f0d40e81431ffeb727f041c"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.frd",
+      "bytes": 82919770,
+      "sha256": "a74fcbe09938bc474740d91eb099f975366697e28211831f8c39a7cc6bb95e51"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.inp",
+      "bytes": 25832311,
+      "sha256": "06c2a77836ae7a8121d2ede91a0ed4d4f6d2b97e5174aba324274fe3f3f45487"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.dat",
+      "bytes": 13237243,
+      "sha256": "e635a294cd6407565ad0ff1610eacf55cab7442beab23159edcfb2705296b720"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.frd",
+      "bytes": 82919770,
+      "sha256": "9ae02103881886fb5dd5b84d4c9edf7bca97e576f95cb97eecfd1f97c543ebcb"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.inp",
+      "bytes": 25832313,
+      "sha256": "83f635fc0475aa80a69856e9ddc2101066b2ab2af01b6826f964312d4ea311e8"
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

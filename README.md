@@ -4,7 +4,7 @@ Smart acoustic picture / complete Home Assistant room node.
 
 **V2.2 target:** 320 x 400 x 40 mm, DML audio, far-field voice, 60 GHz presence sensing, temperature/humidity/light sensing, Ethernet + Wi-Fi, PoE+ + 24 V external power, automatic acoustic calibration and plug-and-play Home Assistant integration.
 
-**Current verified checkpoint: [Rev.FG](mechanical/digital-validation-rev-fg.md).** Recessed upper mounts, actual installation bores, nominal seals and continuous rigid removal checks are verified. The current frame still fails the weak-Z LC4 corner/clearance screen. Full assembly, product CFD, electronics and production qualification remain OPEN. The 250 g frame ceiling remains removed.
+**Current verified checkpoint: [Rev.FH](mechanical/digital-validation-rev-fh.md).** Three additional weak-Y frame screens pass the scoped lower-corner displacement and final DML-separation checks. Weak-Z LC4 still fails. Materials, actual joints, current-frame mesh convergence and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.
 
 **Physical inputs needed:** [measurements, parameters and existing acceptance criteria](manufacturing/real-data-required-rev-fe.md). The [Rev.FG addendum](manufacturing/real-data-addendum-rev-fg.md) adds upper mounts, countersunk heads and seal-stack requirements. These plans separate coupon/component tests from first-assembly tests and the digital work still required.
 
@@ -178,7 +178,7 @@ Receipts: `evidence/rev-fe/github-publication.json` and
 not qualify the design for production.
 
 
-## Current checkpoint Rev.FG — 2026-10-14
+## Checkpoint Rev.FG — 2026-10-14
 
 The upper assembly now has recessed cleats, catalog-sized M4 bores and
 countersunk screw envelopes. Reimported CAD passes 187 coarse keepout checks,
@@ -211,3 +211,19 @@ contains 115 files matching their Git blobs and 86 raw artifacts checked
 individually. Receipts: `evidence/rev-fg/github-publication.json` and
 `evidence/rev-fg/archive-tree-verification.json`. The prior Rev.FE release
 description is corrected while its three original assets remain unchanged.
+
+
+## Current checkpoint Rev.FH — 2026-10-15
+
+Three completed nonlinear weak-Y screens use the unchanged FG frame and M0
+mesh. Lower-corner LC4 reaches 0.869805 / 0.870653 mm against 1 mm, with
+conservative full-element DML separation of at least 0.177358 / 0.176540 mm.
+LC3 outward pull at 50 N retains at least 0.404518 mm separation; maximum
+displacement is 3.279141 mm. These are normalized diagnostic results with
+idealized mounts, not qualified strength, tolerances or complete assembly FEA.
+
+Weak-Z LC4 remains FAIL. Current-frame mesh convergence and physical print
+orientation/process qualification remain OPEN. Further checks run one at a
+time, preserving and validating each outcome before the next.
+See [Rev.FH report](mechanical/digital-validation-rev-fh.md) and
+[gate register](mechanical/validation/rev-fh/gate-register.json).

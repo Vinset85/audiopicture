@@ -1,0 +1,56 @@
+{
+  "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+  "status": "NO_SAMPLED_NODE_INTERFERENCE",
+  "load_case": "Rev.FH LC3; normalized material and surrogate supports",
+  "load_sum_N": [
+    0.0,
+    0.0,
+    -50.00000000000028
+  ],
+  "constitutive_assumptions": {
+    "E1": 1900.0,
+    "E2": 1900.0,
+    "E3": 380.0,
+    "nu12": 0.35,
+    "nu13": 0.35,
+    "nu23": 0.35,
+    "G12": 703.7037037037037,
+    "G13": 175.92592592592592,
+    "G23": 175.92592592592592
+  },
+  "weak_global_axis": "Y",
+  "nonlinear_geometry": true,
+  "nodes_initially_inside_DML": 0,
+  "nodes_predicted_inside_DML": 0,
+  "nodes_predicted_frontward_of_DML_within_projection": 0,
+  "max_displacement_node": 13408,
+  "max_node_original_xyz_mm": [
+    156.3856406460551,
+    160.2,
+    28.0
+  ],
+  "max_node_displacement_xyz_mm": [
+    0.1534988,
+    -0.08537286,
+    -3.274434
+  ],
+  "max_node_predicted_xyz_mm": [
+    156.5391394460551,
+    160.11462713999998,
+    24.725566
+  ],
+  "sample_predicted_DML_nodes": [],
+  "source_sha256": {
+    "evidence/rev-fh/M0-LC3-weakY/LC3/frame.dat": "e14ff5b79896700df573002ecb98c76fb05e4605a68b381c8254a38504941f43",
+    "evidence/rev-fh/M0-LC3-weakY/LC3/metrics.json": "0cacf6ba462f2bd406f395d725c9d2f78400ed0ddc1826bd6448aab338ab5a94",
+    "evidence/rev-fh/M0-LC3-weakY/LC3/execution.json": "4a4c28af605fc77155f23851018fe04011d3a1eee257a8fbe2d98ccc2a5f1f37",
+    "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+    "mechanical/cad/audit_loaded_frame_envelope_rev_fe.py": "7b643f29aab695079d8730abcbd0c4693f8621db98062d18c5fecb56f8b2196f"
+  },
+  "limits": [
+    "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+    "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+    "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+    "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+  ]
+}

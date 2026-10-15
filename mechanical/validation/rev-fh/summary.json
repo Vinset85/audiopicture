@@ -1,0 +1,1075 @@
+{
+  "revision": "Rev.FH",
+  "client_checkpoint_date": "2026-10-15",
+  "checkpoint_parent_head": "069621b970e5b8b130c754e29dd4dac697ac8674",
+  "executed_followup_runs": 3,
+  "same_geometry_and_mesh_as_FG": true,
+  "gate_counts_including_history": {
+    "PASS": 101,
+    "FAIL": 43,
+    "OPEN": 24
+  },
+  "counts_are_not_completion_percentages": true,
+  "new_gates": [
+    {
+      "id": "G161",
+      "status": "PASS",
+      "scope": "FH M0-LC4-LR-weakY: actual solver completion and prescribed force-balance tolerance only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/metrics.json",
+        "max_force_residual_N": 9.547707207957501e-06,
+        "allowable_force_residual_N": 0.029999999999999995
+      }
+    },
+    {
+      "id": "G162",
+      "status": "PASS",
+      "scope": "FH M0-LC4-LR-weakY: normalized 30 N corner displacement only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/metrics.json",
+        "corner_UZ_mm": 0.8698054,
+        "limit_mm": 1
+      }
+    },
+    {
+      "id": "G163",
+      "status": "PASS",
+      "scope": "FH M0-LC4-LR-weakY: final full quadratic-element enclosure versus fixed DML only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4/quadratic-dml-clearance.json",
+        "separation_lower_bound_mm": 0.17735769999999995,
+        "actual_deformable_assembly_contact_qualified": false
+      }
+    },
+    {
+      "id": "G164",
+      "status": "PASS",
+      "scope": "FH M0-LC4-LL-weakY: actual solver completion and prescribed force-balance tolerance only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/metrics.json",
+        "max_force_residual_N": 8.631410679527107e-07,
+        "allowable_force_residual_N": 0.029999999999999995
+      }
+    },
+    {
+      "id": "G165",
+      "status": "PASS",
+      "scope": "FH M0-LC4-LL-weakY: normalized 30 N corner displacement only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/metrics.json",
+        "corner_UZ_mm": 0.8706533,
+        "limit_mm": 1
+      }
+    },
+    {
+      "id": "G166",
+      "status": "PASS",
+      "scope": "FH M0-LC4-LL-weakY: final full quadratic-element enclosure versus fixed DML only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4/quadratic-dml-clearance.json",
+        "separation_lower_bound_mm": 0.17653989999999986,
+        "actual_deformable_assembly_contact_qualified": false
+      }
+    },
+    {
+      "id": "G167",
+      "status": "PASS",
+      "scope": "FH M0-LC3-weakY: actual solver completion and prescribed force-balance tolerance only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC3-weakY/LC3/metrics.json",
+        "max_force_residual_N": 0.02219917062257082,
+        "allowable_force_residual_N": 0.05000000000000028
+      }
+    },
+    {
+      "id": "G168",
+      "status": "PASS",
+      "scope": "FH M0-LC3-weakY: final full quadratic-element enclosure versus fixed DML only",
+      "evidence": {
+        "path": "evidence/rev-fh/M0-LC3-weakY/LC3/quadratic-dml-clearance.json",
+        "separation_lower_bound_mm": 0.4045183390000009,
+        "actual_deformable_assembly_contact_qualified": false
+      }
+    }
+  ],
+  "runs": [
+    {
+      "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4",
+      "execution": {
+        "case": "LC4",
+        "material_axes_global": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "weak_global_axis": "Y",
+        "properties_are_in_local_material_axes": true,
+        "print_process_and_axes_qualified": false,
+        "vertical_load_seed_N": 70.0,
+        "assembled_mass_load_adequacy_verified": false,
+        "loaded_corner": "LR",
+        "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+        "constitutive_assumptions": {
+          "E1": 1900.0,
+          "E2": 1900.0,
+          "E3": 380.0,
+          "nu12": 0.35,
+          "nu13": 0.35,
+          "nu23": 0.35,
+          "G12": 703.7037037037037,
+          "G13": 175.92592592592592,
+          "G23": 175.92592592592592
+        },
+        "load_sum_N": [
+          0.0,
+          0.0,
+          -29.999999999999996
+        ],
+        "load_cg_seed_mm": [
+          160.00000000000009,
+          199.99999999999875,
+          21.291919509125115
+        ],
+        "nonlinear_geometry": true,
+        "lower_unilateral_gap_contacts": 208,
+        "total_pad_penalty_N_per_mm": 100000.0,
+        "gap_force_floor_N": 1e-12,
+        "contact_iteration_controls": true,
+        "anti_lift_normal_support_assumption": true,
+        "bonded_insert_cleat_surrogate_nodes": 2864,
+        "corner_warp_mm": null,
+        "input_sha256": "83f635fc0475aa80a69856e9ddc2101066b2ab2af01b6826f964312d4ea311e8",
+        "runner_sha256": "531547f2e80aae4a79bd06129e2ffd62a8f4b6bb82e464864b2d1840abdf2926",
+        "mesh_report": {
+          "source_sha256": "337b484cf4c43287016260202a841259ed45a090a25ae30b74268ecfaa0c79aa",
+          "size_mm": 4.0,
+          "nodes": 246574,
+          "elements": 137215,
+          "type": "C3D10",
+          "min_SICN": 0.009984719386908395,
+          "corner_tet_volume_mm3": 384197.1005554655,
+          "volume_weighted_seed_cg_mm": [
+            160.2951875134616,
+            156.4596909084548,
+            21.455914631553323
+          ],
+          "node_sets": {
+            "UL1": 716,
+            "UL2": 716,
+            "UR1": 716,
+            "UR2": 716,
+            "PAD_L": 104,
+            "PAD_R": 104,
+            "ANTILIFT": 107,
+            "CORNER_LL": 7,
+            "CORNER_LR": 7,
+            "CORNER_UL": 36,
+            "CORNER_UR": 36
+          },
+          "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+          "interface_geometry_sha256": "68ae48c9e1e68d5c25f3bc4151716f7241bf58526f570d86ed916d73f4653e8b",
+          "installation_hole_radius_mm": 2.8,
+          "installation_hole_z_mm": [
+            21.9,
+            31.0
+          ],
+          "algorithm3d": 1,
+          "linear_mesh_optimizer": "Netgen",
+          "gmsh_version": "4.15.2",
+          "mesher_sha256": "3eba13bdb07692f7656e77cc4f5adbf2622c51d4c8c61457c724df9f080b2c60"
+        },
+        "qualified_allowables": null,
+        "release_margin": null,
+        "exit_code": 0,
+        "job_finished": true,
+        "errors": [],
+        "solver_execution_pass": true
+      },
+      "metrics": {
+        "case": "LC4",
+        "solver_execution_pass": true,
+        "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+        "final_step_time": 1.0,
+        "max_displacement_mm": 0.8786997709234493,
+        "max_displacement_node": 70,
+        "max_displacement_xyz_mm": [
+          316.8,
+          12.0,
+          36.8
+        ],
+        "max_abs_UZ_mm": 0.8698054,
+        "corner_max_abs_UZ_mm": {
+          "CORNER_LL": 0.02352717,
+          "CORNER_LR": 0.8698054,
+          "CORNER_UL": 0.01485501,
+          "CORNER_UR": 0.06323378
+        },
+        "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+        "adjacent_mount_max_displacement_mm": {
+          "UL1": 0.001588667366533366,
+          "UL2": 0.003946129241510943,
+          "UR1": 0.009622504689945922,
+          "UR2": 0.006877187848866861
+        },
+        "support_reaction_sum_N": [
+          -3.709617117479691e-08,
+          -4.696860203719233e-09,
+          29.99999045229279
+        ],
+        "force_balance_residual_N": [
+          -3.709617117479691e-08,
+          -4.696860203719233e-09,
+          -9.547707207957501e-06
+        ],
+        "force_balance_within_0_1_percent_or_0_001N": true,
+        "cleat_bore_reactions_N": {
+          "UL1": [
+            0.06542180121348996,
+            -0.05970492265876,
+            0.2200398080807
+          ],
+          "UL2": [
+            -0.07259379636122,
+            0.0883357210214501,
+            -0.04501426660340011
+          ],
+          "UR1": [
+            0.23148242690155973,
+            -0.16455446356554987,
+            -0.20000699952189976
+          ],
+          "UR2": [
+            -0.2243104688500004,
+            0.13592366050600005,
+            0.4948352231560006
+          ]
+        },
+        "anti_lift_normal_reaction_N": 47.390858747000046,
+        "warp_normal_reaction_N": null,
+        "pad_max_numerical_penetration_mm": 0.002341543,
+        "pad_max_opening_mm": 0.6102532,
+        "moment_balance_residual_Nmm": [
+          0.001798333300143895,
+          0.0001015872243215199,
+          7.1275112094315585e-06
+        ],
+        "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+        "nodal_extrapolated_stress_diagnostic": {
+          "von_mises_max_MPa": 5.466057423948523,
+          "node": 79155,
+          "xyz_mm": [
+            168.1,
+            10.0,
+            36.349999999999994
+          ],
+          "principal_max_MPa": 6.427767802534495,
+          "principal_min_MPa": -3.878307956623437,
+          "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+        },
+        "qualified_strength_margin": null,
+        "measurement_geometry": {
+          "bore_radius_mm": 2.8,
+          "bore_z_mm": [
+            21.9,
+            31.0
+          ]
+        },
+        "source_sha256": {
+          "mechanical/cad/summarize_frame_results_rev_fg.py": "12573a3979220964ad7e35d60a12507c43289d435c1418e1665490d04b7ec8d7",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.inp": "83f635fc0475aa80a69856e9ddc2101066b2ab2af01b6826f964312d4ea311e8",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.dat": "e635a294cd6407565ad0ff1610eacf55cab7442beab23159edcfb2705296b720",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.frd": "9ae02103881886fb5dd5b84d4c9edf7bca97e576f95cb97eecfd1f97c543ebcb",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/execution.json": "3ee6c90383f51e99cc22d765cbb1ae05ee1e5753cf697d44bb08b6e8279aa24c"
+        },
+        "corner_displacement_screen_status": "PASS_SCOPE_ONLY"
+      },
+      "quadratic_clearance": {
+        "classification": "CALCULATED_CONSERVATIVE_FULL_QUADRATIC_ELEMENT_BOUND_ON_SIMULATED_FINAL_STATE",
+        "status": "PASS_SCOPED_FEA_GEOMETRY_SEPARATION",
+        "method": "Quadratic tetrahedral Bernstein control-point convex enclosure; enclosing AABBs inflated 1e-7 mm. Overlap is inconclusive.",
+        "gmsh_edge_node_pairs_zero_based": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "self_checks": {
+          "curved_node_only_false_negative_detected": true,
+          "random_elements": 32,
+          "barycentric_samples_each": 64
+        },
+        "initial": {
+          "elements": 137215,
+          "potential_DML_box_overlap_elements": 0,
+          "potential_frontward_within_DML_projection_elements": 0,
+          "all_element_bounds_separated_from_DML_and_frontward_region": true,
+          "conservative_DML_separation_lower_bound_mm": 0.39999990000000096,
+          "unresolved_element_tags_sample": []
+        },
+        "final": {
+          "elements": 137215,
+          "potential_DML_box_overlap_elements": 0,
+          "potential_frontward_within_DML_projection_elements": 0,
+          "all_element_bounds_separated_from_DML_and_frontward_region": true,
+          "conservative_DML_separation_lower_bound_mm": 0.17735769999999995,
+          "unresolved_element_tags_sample": []
+        },
+        "limits": [
+          "Final load state only; not all intermediate states.",
+          "FEA interpolation geometry only; not exact deformed BREP, manufacturing tolerance or real assembly qualification.",
+          "DML is the fixed nominal hard box, not a deformable contact body.",
+          "No physical clearance is certified from unqualified material/support assumptions."
+        ],
+        "source_sha256": {
+          "mechanical/cad/audit_quadratic_dml_clearance_rev_fd.py": "743717843502e2064af187afe502356c5b8c35d623d9ad407608bfde2ec8d0f2",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.dat": "e635a294cd6407565ad0ff1610eacf55cab7442beab23159edcfb2705296b720",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/metrics.json": "1353ee09f53d2be05ac80dd36b3fcaea6bb0ee4fe471f73f681d11d33388d60d"
+        }
+      },
+      "nodal_clearance": {
+        "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+        "status": "NO_SAMPLED_NODE_INTERFERENCE",
+        "load_case": "Rev.FH LC4; normalized material and surrogate supports",
+        "load_sum_N": [
+          0.0,
+          0.0,
+          -29.999999999999996
+        ],
+        "constitutive_assumptions": {
+          "E1": 1900.0,
+          "E2": 1900.0,
+          "E3": 380.0,
+          "nu12": 0.35,
+          "nu13": 0.35,
+          "nu23": 0.35,
+          "G12": 703.7037037037037,
+          "G13": 175.92592592592592,
+          "G23": 175.92592592592592
+        },
+        "weak_global_axis": "Y",
+        "nonlinear_geometry": true,
+        "nodes_initially_inside_DML": 0,
+        "nodes_predicted_inside_DML": 0,
+        "nodes_predicted_frontward_of_DML_within_projection": 0,
+        "max_displacement_node": 70,
+        "max_node_original_xyz_mm": [
+          316.8,
+          12.0,
+          36.8
+        ],
+        "max_node_displacement_xyz_mm": [
+          0.1330969,
+          0.01172682,
+          -0.868482
+        ],
+        "max_node_predicted_xyz_mm": [
+          316.9330969,
+          12.01172682,
+          35.931518
+        ],
+        "sample_predicted_DML_nodes": [],
+        "source_sha256": {
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.dat": "e635a294cd6407565ad0ff1610eacf55cab7442beab23159edcfb2705296b720",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/metrics.json": "1353ee09f53d2be05ac80dd36b3fcaea6bb0ee4fe471f73f681d11d33388d60d",
+          "evidence/rev-fh/M0-LC4-LR-weakY/LC4/execution.json": "3ee6c90383f51e99cc22d765cbb1ae05ee1e5753cf697d44bb08b6e8279aa24c",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "mechanical/cad/audit_loaded_frame_envelope_rev_fe.py": "7b643f29aab695079d8730abcbd0c4693f8621db98062d18c5fecb56f8b2196f"
+        },
+        "limits": [
+          "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+          "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+          "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+          "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+        ]
+      }
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4",
+      "execution": {
+        "case": "LC4",
+        "material_axes_global": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "weak_global_axis": "Y",
+        "properties_are_in_local_material_axes": true,
+        "print_process_and_axes_qualified": false,
+        "vertical_load_seed_N": 70.0,
+        "assembled_mass_load_adequacy_verified": false,
+        "loaded_corner": "LL",
+        "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+        "constitutive_assumptions": {
+          "E1": 1900.0,
+          "E2": 1900.0,
+          "E3": 380.0,
+          "nu12": 0.35,
+          "nu13": 0.35,
+          "nu23": 0.35,
+          "G12": 703.7037037037037,
+          "G13": 175.92592592592592,
+          "G23": 175.92592592592592
+        },
+        "load_sum_N": [
+          0.0,
+          0.0,
+          -29.999999999999996
+        ],
+        "load_cg_seed_mm": [
+          160.00000000000009,
+          199.99999999999875,
+          21.291919509125115
+        ],
+        "nonlinear_geometry": true,
+        "lower_unilateral_gap_contacts": 208,
+        "total_pad_penalty_N_per_mm": 100000.0,
+        "gap_force_floor_N": 1e-12,
+        "contact_iteration_controls": true,
+        "anti_lift_normal_support_assumption": true,
+        "bonded_insert_cleat_surrogate_nodes": 2864,
+        "corner_warp_mm": null,
+        "input_sha256": "06c2a77836ae7a8121d2ede91a0ed4d4f6d2b97e5174aba324274fe3f3f45487",
+        "runner_sha256": "531547f2e80aae4a79bd06129e2ffd62a8f4b6bb82e464864b2d1840abdf2926",
+        "mesh_report": {
+          "source_sha256": "337b484cf4c43287016260202a841259ed45a090a25ae30b74268ecfaa0c79aa",
+          "size_mm": 4.0,
+          "nodes": 246574,
+          "elements": 137215,
+          "type": "C3D10",
+          "min_SICN": 0.009984719386908395,
+          "corner_tet_volume_mm3": 384197.1005554655,
+          "volume_weighted_seed_cg_mm": [
+            160.2951875134616,
+            156.4596909084548,
+            21.455914631553323
+          ],
+          "node_sets": {
+            "UL1": 716,
+            "UL2": 716,
+            "UR1": 716,
+            "UR2": 716,
+            "PAD_L": 104,
+            "PAD_R": 104,
+            "ANTILIFT": 107,
+            "CORNER_LL": 7,
+            "CORNER_LR": 7,
+            "CORNER_UL": 36,
+            "CORNER_UR": 36
+          },
+          "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+          "interface_geometry_sha256": "68ae48c9e1e68d5c25f3bc4151716f7241bf58526f570d86ed916d73f4653e8b",
+          "installation_hole_radius_mm": 2.8,
+          "installation_hole_z_mm": [
+            21.9,
+            31.0
+          ],
+          "algorithm3d": 1,
+          "linear_mesh_optimizer": "Netgen",
+          "gmsh_version": "4.15.2",
+          "mesher_sha256": "3eba13bdb07692f7656e77cc4f5adbf2622c51d4c8c61457c724df9f080b2c60"
+        },
+        "qualified_allowables": null,
+        "release_margin": null,
+        "exit_code": 0,
+        "job_finished": true,
+        "errors": [],
+        "solver_execution_pass": true
+      },
+      "metrics": {
+        "case": "LC4",
+        "solver_execution_pass": true,
+        "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+        "final_step_time": 1.0,
+        "max_displacement_mm": 0.8826135073619681,
+        "max_displacement_node": 55,
+        "max_displacement_xyz_mm": [
+          3.2,
+          12.0,
+          36.8
+        ],
+        "max_abs_UZ_mm": 0.8706533,
+        "corner_max_abs_UZ_mm": {
+          "CORNER_LL": 0.8706533,
+          "CORNER_LR": 0.0234857,
+          "CORNER_UL": 0.06218175,
+          "CORNER_UR": 0.01512759
+        },
+        "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+        "adjacent_mount_max_displacement_mm": {
+          "UL1": 0.005845531911451608,
+          "UL2": 0.008852198622317023,
+          "UR1": 0.004451761895598861,
+          "UR2": 0.0018122107775408894
+        },
+        "support_reaction_sum_N": [
+          5.148579784242709e-09,
+          -7.469419988624139e-08,
+          30.000000863141064
+        ],
+        "force_balance_residual_N": [
+          5.148579784242709e-09,
+          -7.469419988624139e-08,
+          8.631410679527107e-07
+        ],
+        "force_balance_within_0_1_percent_or_0_001N": true,
+        "cleat_bore_reactions_N": {
+          "UL1": [
+            0.1755479866488998,
+            0.14731661877000019,
+            0.4654099156079995
+          ],
+          "UL2": [
+            -0.14691091682026003,
+            -0.1737024677100999,
+            -0.1680008468400002
+          ],
+          "UR1": [
+            0.09116718816394008,
+            0.09920971393299988,
+            -0.054262145942799954
+          ],
+          "UR2": [
+            -0.1198042528439994,
+            -0.07282393968710027,
+            0.22031264113450003
+          ]
+        },
+        "anti_lift_normal_reaction_N": 47.42548498899998,
+        "warp_normal_reaction_N": null,
+        "pad_max_numerical_penetration_mm": 0.002381234,
+        "pad_max_opening_mm": 0.6111615,
+        "moment_balance_residual_Nmm": [
+          -0.00011851398323869944,
+          0.0001330751208570291,
+          8.696388497764218e-06
+        ],
+        "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+        "nodal_extrapolated_stress_diagnostic": {
+          "von_mises_max_MPa": 5.405956418376691,
+          "node": 79157,
+          "xyz_mm": [
+            151.9,
+            10.0,
+            36.349999999999994
+          ],
+          "principal_max_MPa": 6.297055437705966,
+          "principal_min_MPa": -3.559503465650696,
+          "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+        },
+        "qualified_strength_margin": null,
+        "measurement_geometry": {
+          "bore_radius_mm": 2.8,
+          "bore_z_mm": [
+            21.9,
+            31.0
+          ]
+        },
+        "source_sha256": {
+          "mechanical/cad/summarize_frame_results_rev_fg.py": "12573a3979220964ad7e35d60a12507c43289d435c1418e1665490d04b7ec8d7",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.inp": "06c2a77836ae7a8121d2ede91a0ed4d4f6d2b97e5174aba324274fe3f3f45487",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.dat": "c2288833523ffffcfb7fcd6bc657d1b1eb50c96a0f0d40e81431ffeb727f041c",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.frd": "a74fcbe09938bc474740d91eb099f975366697e28211831f8c39a7cc6bb95e51",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/execution.json": "17bd5c1edee105513e0a7e213d9563fb1f9c63eebbb359f974a1dd4466728a0f"
+        },
+        "corner_displacement_screen_status": "PASS_SCOPE_ONLY"
+      },
+      "quadratic_clearance": {
+        "classification": "CALCULATED_CONSERVATIVE_FULL_QUADRATIC_ELEMENT_BOUND_ON_SIMULATED_FINAL_STATE",
+        "status": "PASS_SCOPED_FEA_GEOMETRY_SEPARATION",
+        "method": "Quadratic tetrahedral Bernstein control-point convex enclosure; enclosing AABBs inflated 1e-7 mm. Overlap is inconclusive.",
+        "gmsh_edge_node_pairs_zero_based": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "self_checks": {
+          "curved_node_only_false_negative_detected": true,
+          "random_elements": 32,
+          "barycentric_samples_each": 64
+        },
+        "initial": {
+          "elements": 137215,
+          "potential_DML_box_overlap_elements": 0,
+          "potential_frontward_within_DML_projection_elements": 0,
+          "all_element_bounds_separated_from_DML_and_frontward_region": true,
+          "conservative_DML_separation_lower_bound_mm": 0.39999990000000096,
+          "unresolved_element_tags_sample": []
+        },
+        "final": {
+          "elements": 137215,
+          "potential_DML_box_overlap_elements": 0,
+          "potential_frontward_within_DML_projection_elements": 0,
+          "all_element_bounds_separated_from_DML_and_frontward_region": true,
+          "conservative_DML_separation_lower_bound_mm": 0.17653989999999986,
+          "unresolved_element_tags_sample": []
+        },
+        "limits": [
+          "Final load state only; not all intermediate states.",
+          "FEA interpolation geometry only; not exact deformed BREP, manufacturing tolerance or real assembly qualification.",
+          "DML is the fixed nominal hard box, not a deformable contact body.",
+          "No physical clearance is certified from unqualified material/support assumptions."
+        ],
+        "source_sha256": {
+          "mechanical/cad/audit_quadratic_dml_clearance_rev_fd.py": "743717843502e2064af187afe502356c5b8c35d623d9ad407608bfde2ec8d0f2",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.dat": "c2288833523ffffcfb7fcd6bc657d1b1eb50c96a0f0d40e81431ffeb727f041c",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/metrics.json": "b14107af0b38fdc5e752b588bfd5671fa0626ba23ba7d0e3f63539064a23927e"
+        }
+      },
+      "nodal_clearance": {
+        "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+        "status": "NO_SAMPLED_NODE_INTERFERENCE",
+        "load_case": "Rev.FH LC4; normalized material and surrogate supports",
+        "load_sum_N": [
+          0.0,
+          0.0,
+          -29.999999999999996
+        ],
+        "constitutive_assumptions": {
+          "E1": 1900.0,
+          "E2": 1900.0,
+          "E3": 380.0,
+          "nu12": 0.35,
+          "nu13": 0.35,
+          "nu23": 0.35,
+          "G12": 703.7037037037037,
+          "G13": 175.92592592592592,
+          "G23": 175.92592592592592
+        },
+        "weak_global_axis": "Y",
+        "nonlinear_geometry": true,
+        "nodes_initially_inside_DML": 0,
+        "nodes_predicted_inside_DML": 0,
+        "nodes_predicted_frontward_of_DML_within_projection": 0,
+        "max_displacement_node": 55,
+        "max_node_original_xyz_mm": [
+          3.2,
+          12.0,
+          36.8
+        ],
+        "max_node_displacement_xyz_mm": [
+          -0.1506895,
+          0.01768757,
+          -0.8694748
+        ],
+        "max_node_predicted_xyz_mm": [
+          3.0493105000000003,
+          12.01768757,
+          35.9305252
+        ],
+        "sample_predicted_DML_nodes": [],
+        "source_sha256": {
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/frame.dat": "c2288833523ffffcfb7fcd6bc657d1b1eb50c96a0f0d40e81431ffeb727f041c",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/metrics.json": "b14107af0b38fdc5e752b588bfd5671fa0626ba23ba7d0e3f63539064a23927e",
+          "evidence/rev-fh/M0-LC4-LL-weakY/LC4/execution.json": "17bd5c1edee105513e0a7e213d9563fb1f9c63eebbb359f974a1dd4466728a0f",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "mechanical/cad/audit_loaded_frame_envelope_rev_fe.py": "7b643f29aab695079d8730abcbd0c4693f8621db98062d18c5fecb56f8b2196f"
+        },
+        "limits": [
+          "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+          "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+          "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+          "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+        ]
+      }
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC3-weakY/LC3",
+      "execution": {
+        "case": "LC3",
+        "material_axes_global": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "weak_global_axis": "Y",
+        "properties_are_in_local_material_axes": true,
+        "print_process_and_axes_qualified": false,
+        "vertical_load_seed_N": 70.0,
+        "assembled_mass_load_adequacy_verified": false,
+        "loaded_corner": null,
+        "classification": "SIMULATED_NORMALIZED_FULL_CANDIDATE_FRAME_SCREEN_NOT_RELEASE",
+        "constitutive_assumptions": {
+          "E1": 1900.0,
+          "E2": 1900.0,
+          "E3": 380.0,
+          "nu12": 0.35,
+          "nu13": 0.35,
+          "nu23": 0.35,
+          "G12": 703.7037037037037,
+          "G13": 175.92592592592592,
+          "G23": 175.92592592592592
+        },
+        "load_sum_N": [
+          0.0,
+          0.0,
+          -50.00000000000028
+        ],
+        "load_cg_seed_mm": [
+          160.00000000000009,
+          199.99999999999875,
+          21.291919509125115
+        ],
+        "nonlinear_geometry": true,
+        "lower_unilateral_gap_contacts": 208,
+        "total_pad_penalty_N_per_mm": 100000.0,
+        "gap_force_floor_N": 1e-12,
+        "contact_iteration_controls": true,
+        "anti_lift_normal_support_assumption": true,
+        "bonded_insert_cleat_surrogate_nodes": 2864,
+        "corner_warp_mm": null,
+        "input_sha256": "9e53895f8a7cdbda9e660457eb70880a859e760baadb8d2fe8774b83153b0999",
+        "runner_sha256": "531547f2e80aae4a79bd06129e2ffd62a8f4b6bb82e464864b2d1840abdf2926",
+        "mesh_report": {
+          "source_sha256": "337b484cf4c43287016260202a841259ed45a090a25ae30b74268ecfaa0c79aa",
+          "size_mm": 4.0,
+          "nodes": 246574,
+          "elements": 137215,
+          "type": "C3D10",
+          "min_SICN": 0.009984719386908395,
+          "corner_tet_volume_mm3": 384197.1005554655,
+          "volume_weighted_seed_cg_mm": [
+            160.2951875134616,
+            156.4596909084548,
+            21.455914631553323
+          ],
+          "node_sets": {
+            "UL1": 716,
+            "UL2": 716,
+            "UR1": 716,
+            "UR2": 716,
+            "PAD_L": 104,
+            "PAD_R": 104,
+            "ANTILIFT": 107,
+            "CORNER_LL": 7,
+            "CORNER_LR": 7,
+            "CORNER_UL": 36,
+            "CORNER_UR": 36
+          },
+          "load_scope": "volume-lumped structural-body load, not actual assembled product mass distribution",
+          "interface_geometry_sha256": "68ae48c9e1e68d5c25f3bc4151716f7241bf58526f570d86ed916d73f4653e8b",
+          "installation_hole_radius_mm": 2.8,
+          "installation_hole_z_mm": [
+            21.9,
+            31.0
+          ],
+          "algorithm3d": 1,
+          "linear_mesh_optimizer": "Netgen",
+          "gmsh_version": "4.15.2",
+          "mesher_sha256": "3eba13bdb07692f7656e77cc4f5adbf2622c51d4c8c61457c724df9f080b2c60"
+        },
+        "qualified_allowables": null,
+        "release_margin": null,
+        "exit_code": 0,
+        "job_finished": true,
+        "errors": [],
+        "solver_execution_pass": true
+      },
+      "metrics": {
+        "case": "LC3",
+        "solver_execution_pass": true,
+        "classification": "SIMULATED_NORMALIZED_SCREEN_NOT_RELEASE",
+        "final_step_time": 1.0,
+        "max_displacement_mm": 3.2791414161609462,
+        "max_displacement_node": 13408,
+        "max_displacement_xyz_mm": [
+          156.3856406460551,
+          160.2,
+          28.0
+        ],
+        "max_abs_UZ_mm": 3.274502,
+        "corner_max_abs_UZ_mm": {
+          "CORNER_LL": 0.1624575,
+          "CORNER_LR": 0.1643058,
+          "CORNER_UL": 0.08286337,
+          "CORNER_UR": 0.09104144
+        },
+        "bore_boundary_displacement_note": "Bore displacements are prescribed zero; cannot validate <=0.5 mm mount movement with these supports.",
+        "adjacent_mount_max_displacement_mm": {
+          "UL1": 0.019768025447638442,
+          "UL2": 0.01291930454199242,
+          "UR1": 0.011986486256888588,
+          "UR2": 0.020613689121937295
+        },
+        "support_reaction_sum_N": [
+          6.543400163120869e-07,
+          3.171133015952149e-07,
+          49.977800829377706
+        ],
+        "force_balance_residual_N": [
+          6.543400163120869e-07,
+          3.171133015952149e-07,
+          -0.02219917062257082
+        ],
+        "force_balance_within_0_1_percent_or_0_001N": true,
+        "cleat_bore_reactions_N": {
+          "UL1": [
+            0.7517302887000155,
+            0.49573799378420186,
+            12.336470759641013
+          ],
+          "UL2": [
+            -2.1048574248189995,
+            -0.5244905329433004,
+            0.3418672500999997
+          ],
+          "UR1": [
+            2.3125987754820003,
+            -0.42281386769859985,
+            0.21602420031900005
+          ],
+          "UR2": [
+            -0.9594709850230059,
+            0.4515667239709966,
+            12.30869260011
+          ]
+        },
+        "anti_lift_normal_reaction_N": 24.774746019,
+        "warp_normal_reaction_N": null,
+        "pad_max_numerical_penetration_mm": 0.0,
+        "pad_max_opening_mm": 0.1952496,
+        "moment_balance_residual_Nmm": [
+          4.129961628728295,
+          0.003511867834960036,
+          -0.0001517510938244815
+        ],
+        "moment_balance_note": "About (160,200,0); wall reaction uses deformed slave tangential location. Diagnostic, not qualification of the contact model.",
+        "nodal_extrapolated_stress_diagnostic": {
+          "von_mises_max_MPa": 12.43813351184606,
+          "node": 16158,
+          "xyz_mm": [
+            289.00923931960875,
+            380.30940707424656,
+            27.344
+          ],
+          "principal_max_MPa": 15.480048746238399,
+          "principal_min_MPa": -3.189747602592351,
+          "hotspot_classification": "UNRESOLVED: unfilleted corners and bonded constraints; no non-singular peak or failure index claimed"
+        },
+        "qualified_strength_margin": null,
+        "measurement_geometry": {
+          "bore_radius_mm": 2.8,
+          "bore_z_mm": [
+            21.9,
+            31.0
+          ]
+        },
+        "source_sha256": {
+          "mechanical/cad/summarize_frame_results_rev_fg.py": "12573a3979220964ad7e35d60a12507c43289d435c1418e1665490d04b7ec8d7",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/frame.inp": "9e53895f8a7cdbda9e660457eb70880a859e760baadb8d2fe8774b83153b0999",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/frame.dat": "e14ff5b79896700df573002ecb98c76fb05e4605a68b381c8254a38504941f43",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/frame.frd": "d913d9dda5901194258c91e3f484ff2758f83afcbe614d199b7dcc37538accbf",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/execution.json": "4a4c28af605fc77155f23851018fe04011d3a1eee257a8fbe2d98ccc2a5f1f37"
+        }
+      },
+      "quadratic_clearance": {
+        "classification": "CALCULATED_CONSERVATIVE_FULL_QUADRATIC_ELEMENT_BOUND_ON_SIMULATED_FINAL_STATE",
+        "status": "PASS_SCOPED_FEA_GEOMETRY_SEPARATION",
+        "method": "Quadratic tetrahedral Bernstein control-point convex enclosure; enclosing AABBs inflated 1e-7 mm. Overlap is inconclusive.",
+        "gmsh_edge_node_pairs_zero_based": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "self_checks": {
+          "curved_node_only_false_negative_detected": true,
+          "random_elements": 32,
+          "barycentric_samples_each": 64
+        },
+        "initial": {
+          "elements": 137215,
+          "potential_DML_box_overlap_elements": 0,
+          "potential_frontward_within_DML_projection_elements": 0,
+          "all_element_bounds_separated_from_DML_and_frontward_region": true,
+          "conservative_DML_separation_lower_bound_mm": 0.39999990000000096,
+          "unresolved_element_tags_sample": []
+        },
+        "final": {
+          "elements": 137215,
+          "potential_DML_box_overlap_elements": 0,
+          "potential_frontward_within_DML_projection_elements": 0,
+          "all_element_bounds_separated_from_DML_and_frontward_region": true,
+          "conservative_DML_separation_lower_bound_mm": 0.4045183390000009,
+          "unresolved_element_tags_sample": []
+        },
+        "limits": [
+          "Final load state only; not all intermediate states.",
+          "FEA interpolation geometry only; not exact deformed BREP, manufacturing tolerance or real assembly qualification.",
+          "DML is the fixed nominal hard box, not a deformable contact body.",
+          "No physical clearance is certified from unqualified material/support assumptions."
+        ],
+        "source_sha256": {
+          "mechanical/cad/audit_quadratic_dml_clearance_rev_fd.py": "743717843502e2064af187afe502356c5b8c35d623d9ad407608bfde2ec8d0f2",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/frame.dat": "e14ff5b79896700df573002ecb98c76fb05e4605a68b381c8254a38504941f43",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/metrics.json": "0cacf6ba462f2bd406f395d725c9d2f78400ed0ddc1826bd6448aab338ab5a94"
+        }
+      },
+      "nodal_clearance": {
+        "classification": "CALCULATED_COLLISION_SCREEN_OF_SIMULATED_UNCONSTRAINED_DISPLACEMENTS",
+        "status": "NO_SAMPLED_NODE_INTERFERENCE",
+        "load_case": "Rev.FH LC3; normalized material and surrogate supports",
+        "load_sum_N": [
+          0.0,
+          0.0,
+          -50.00000000000028
+        ],
+        "constitutive_assumptions": {
+          "E1": 1900.0,
+          "E2": 1900.0,
+          "E3": 380.0,
+          "nu12": 0.35,
+          "nu13": 0.35,
+          "nu23": 0.35,
+          "G12": 703.7037037037037,
+          "G13": 175.92592592592592,
+          "G23": 175.92592592592592
+        },
+        "weak_global_axis": "Y",
+        "nonlinear_geometry": true,
+        "nodes_initially_inside_DML": 0,
+        "nodes_predicted_inside_DML": 0,
+        "nodes_predicted_frontward_of_DML_within_projection": 0,
+        "max_displacement_node": 13408,
+        "max_node_original_xyz_mm": [
+          156.3856406460551,
+          160.2,
+          28.0
+        ],
+        "max_node_displacement_xyz_mm": [
+          0.1534988,
+          -0.08537286,
+          -3.274434
+        ],
+        "max_node_predicted_xyz_mm": [
+          156.5391394460551,
+          160.11462713999998,
+          24.725566
+        ],
+        "sample_predicted_DML_nodes": [],
+        "source_sha256": {
+          "evidence/rev-fh/M0-LC3-weakY/LC3/frame.dat": "e14ff5b79896700df573002ecb98c76fb05e4605a68b381c8254a38504941f43",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/metrics.json": "0cacf6ba462f2bd406f395d725c9d2f78400ed0ddc1826bd6448aab338ab5a94",
+          "evidence/rev-fh/M0-LC3-weakY/LC3/execution.json": "4a4c28af605fc77155f23851018fe04011d3a1eee257a8fbe2d98ccc2a5f1f37",
+          "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+          "mechanical/cad/audit_loaded_frame_envelope_rev_fe.py": "7b643f29aab695079d8730abcbd0c4693f8621db98062d18c5fecb56f8b2196f"
+        },
+        "limits": [
+          "DML contact is absent from this screening FEA; post-contact response is not a physical displacement prediction.",
+          "No impact, panel strength, allowable load, contact onset load, or material failure margin is inferred.",
+          "Node membership detects interference but is not a complete deformed-element intersection algorithm. A detected collision is sufficient to reject this clearance screen.",
+          "The true assembly/contact/load distribution and deformed elements need validation even if no sampled node intersects."
+        ]
+      }
+    }
+  ],
+  "future_execution_policy": "One verification at a time, validate and preserve before starting the next, per user request 2026-10-15.",
+  "production_ready": false,
+  "full_assembly_FEA_complete": false,
+  "mesh_convergence_current_frame_verified": false,
+  "print_orientation_selected_for_production": false,
+  "full_product_CFD_executed": false,
+  "physical_tests_executed": false
+}

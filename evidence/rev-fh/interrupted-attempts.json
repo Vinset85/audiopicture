@@ -1,0 +1,20 @@
+[
+  {
+    "case": "M0-LC4-LR-weakY",
+    "classification": "INTERRUPTED_NOT_A_SOLVER_PASS",
+    "last_completed_step_time": 0.2,
+    "job_finished": false,
+    "solver_log_sha256": "aa4bba270d97be285f5d5e0aad2523e8ae8c813cbf4bc8975a4bb32fc3a1104d",
+    "last_status": "     1          2     1     2  0.200000E+00  0.200000E+00  0.100000E+00",
+    "reason": "Execution session disappeared during application/session interruption; no solver completion report was generated. Exact external cause not established."
+  },
+  {
+    "case": "M0-LC4-LL-weakY",
+    "classification": "INTERRUPTED_NOT_A_SOLVER_PASS",
+    "last_completed_step_time": 0.2,
+    "job_finished": false,
+    "solver_log_sha256": "6e401d89cd2ceac91d48243fbc2b7fbdec4c3577c8b6335614cef57382a760e3",
+    "last_status": "     1          2     1     2  0.200000E+00  0.200000E+00  0.100000E+00",
+    "reason": "Execution session disappeared during application/session interruption; no solver completion report was generated. Exact external cause not established."
+  }
+]

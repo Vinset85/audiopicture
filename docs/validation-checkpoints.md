@@ -145,3 +145,17 @@ Le ricevute sono `evidence/rev-fg/github-publication.json` e
 È verificata anche la rettifica della descrizione pubblica Rev.FE: i tre
 allegati originari conservano dimensioni e SHA-256 identici. Vedere
 `evidence/rev-fg/prior-release-erratum-verification.json`.
+
+
+## Supplemento Rev.FH — 15 ottobre 2026
+
+Il [report Rev.FH](../mechanical/digital-validation-rev-fh.md) aggiunge tre
+esecuzioni complete sul telaio Rev.FG con asse materiale debole Y: i due
+angoli inferiori LC4 e la trazione LC3. I controlli geometrici finali passano
+negli ambiti esplicitati; non è qualificato l'assemblaggio. Il FAIL debole Z
+resta registrato. Due tentativi precedenti interrotti sono separati dai risultati.
+
+Estrarre `audiopicture-rev-fh-supplement.zip` dopo FA+FB+FC+FD+FE+FG.
+La pubblicazione è completa solo dopo verifica degli allegati e relativa
+ricevuta in `main`. Le successive verifiche saranno eseguite una alla volta
+come richiesto dall'utente il 15 ottobre.
