@@ -167,3 +167,15 @@ allegati e il commit del tag sono verificati. Lo ZIP contiene 58 file:
 Ricevute: `evidence/rev-fh/github-publication.json` e
 `evidence/rev-fh/archive-tree-verification.json`. La verifica di integrità
 della pubblicazione non costituisce qualificazione del progetto.
+
+## Supplemento Rev.FI — 16 ottobre 2026
+
+Il [report Rev.FI](../mechanical/digital-validation-rev-fi.md) registra una sola
+nuova simulazione LC4/LR debole Y sulla mesh più fine del telaio invariato.
+Spostamento 0,875290 mm, differenza M0/M1 0,626581%, separazione conservativa
+dal DML almeno 0,173090 mm. La convergenza delle tensioni rimane OPEN.
+Mesh, audit di qualità, solve e audit degli output sono eseguiti in sequenza.
+
+Estrarre `audiopicture-rev-fi-supplement.zip` dopo FA+FB+FC+FD+FE+FG+FH.
+La pubblicazione è completa solo dopo verifica degli allegati e relativa
+ricevuta in `main`. Non è un rilascio per produzione.

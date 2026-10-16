@@ -1,0 +1,50 @@
+{
+  "revision": "Rev.FI",
+  "publication_verified": false,
+  "release_tag": "checkpoint-rev-fi-2026-10-16",
+  "checkpoint_parent_head": "f45808a49d7e4ceba46a800b765b528b9fde5046",
+  "baseline_release": "https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fa-2026-10-06",
+  "scope": "One serial refined-mesh LC4 right-corner screen on the unchanged FG frame. Two-level displacement consistency only, not full mesh convergence or production qualification. Extract over all four Rev.FA parts and Rev.FB/FC/FD/FE/FG/FH supplements.",
+  "files": [
+    {
+      "path": "evidence/rev-fi/M1-LC4-LR-weakY/LC4/frame.12d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-fi/M1-LC4-LR-weakY/LC4/frame.dat",
+      "bytes": 18914762,
+      "sha256": "518b38090ee53e6570cde00a5f6e12f9d141e29320d66c4e8d82a10aa20bb54e"
+    },
+    {
+      "path": "evidence/rev-fi/M1-LC4-LR-weakY/LC4/frame.frd",
+      "bytes": 118888983,
+      "sha256": "71e206533d82f1a47471f1e57c3291c54341db94771f79ee15bf0cbb25fcdfbb"
+    },
+    {
+      "path": "evidence/rev-fi/M1-LC4-LR-weakY/LC4/frame.inp",
+      "bytes": 37446995,
+      "sha256": "378a41daef70b342841b041797dd4b5c6171b7fd7e79c1d9647afd6840f0c508"
+    },
+    {
+      "path": "evidence/rev-fi/M1-LC4-LR-weakY/LC4/spooles.out",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/rev-fi/mesh/M1/mesh-data.npz",
+      "bytes": 15501105,
+      "sha256": "4520b1f7e81fec0759fc794de9d7a52d182527ebb5c1a3fb2e1899b05c0c3d57"
+    },
+    {
+      "path": "evidence/rev-fi/mesh/M1/mesh.inp",
+      "bytes": 34992704,
+      "sha256": "acd4c3b44d39ae6dbd900c7f5d6c2c2e5d4f1e551af2ef6913d6b75ac135bcad"
+    },
+    {
+      "path": "evidence/rev-fi/mesh/M1/mesh.msh",
+      "bytes": 32667806,
+      "sha256": "94de48d965b7f231efffa16eabb5700f1c590d3d6018282f3c9cea6b8ba0d551"
+    }
+  ]
+}

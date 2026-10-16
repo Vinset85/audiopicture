@@ -4,7 +4,7 @@ Smart acoustic picture / complete Home Assistant room node.
 
 **V2.2 target:** 320 x 400 x 40 mm, DML audio, far-field voice, 60 GHz presence sensing, temperature/humidity/light sensing, Ethernet + Wi-Fi, PoE+ + 24 V external power, automatic acoustic calibration and plug-and-play Home Assistant integration.
 
-**Current verified checkpoint: [Rev.FH](mechanical/digital-validation-rev-fh.md).** Three additional weak-Y frame screens pass the scoped lower-corner displacement and final DML-separation checks. Weak-Z LC4 still fails. Materials, actual joints, current-frame mesh convergence and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.
+**Current verified checkpoint: [Rev.FI](mechanical/digital-validation-rev-fi.md).** One serial refined-mesh weak-Y LC4 run passes the corner displacement check at 0.875290 mm and retains at least 0.173090 mm conservative final DML separation. The two-mesh displacement difference is 0.626581%; stress convergence remains OPEN. Weak-Z LC4 still fails. Materials, actual joints and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.
 
 The [Rev.FH supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fh-2026-10-15) is published: all three asset names, sizes and SHA-256 digests match. Its 58 archive members match 43 Git blobs and 15 individually hashed raw artifacts. Receipts: [publication](evidence/rev-fh/github-publication.json) and [archive consistency](evidence/rev-fh/archive-tree-verification.json). Subsequent checks run one at a time, with audit and preservation before the next.
 

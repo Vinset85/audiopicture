@@ -1,0 +1,140 @@
+{
+  "coarse_max_size_mm": 4.0,
+  "fine_max_size_mm": 3.0,
+  "coarse_elements": 137215,
+  "fine_elements": 196622,
+  "coarse_corner_UZ_mm": 0.8698054,
+  "fine_corner_UZ_mm": 0.8752898,
+  "relative_difference_percent_of_fine": 0.6265810477855512,
+  "comparison_threshold_percent": 5,
+  "displacement_pair_within_5_percent": true,
+  "coarse_load_patch": {
+    "loaded_nodes": 7,
+    "force_N": -29.99999999997,
+    "original_load_centroid_mm": [
+      312.40000000000003,
+      12.0,
+      34.99999999999999
+    ],
+    "coordinate_force_samples_rounded_1e_9": [
+      [
+        308.0,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        309.466666667,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        310.933333333,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        312.4,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        313.866666667,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        315.333333333,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        316.8,
+        12.0,
+        35.0,
+        -4.285714286
+      ]
+    ],
+    "distribution": "Equal force per node in the existing geometric corner set; not consistent surface traction."
+  },
+  "fine_load_patch": {
+    "loaded_nodes": 7,
+    "force_N": -29.99999999997,
+    "original_load_centroid_mm": [
+      312.40000000000003,
+      12.0,
+      34.99999999999999
+    ],
+    "coordinate_force_samples_rounded_1e_9": [
+      [
+        308.0,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        309.466666667,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        310.933333333,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        312.4,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        313.866666667,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        315.333333333,
+        12.0,
+        35.0,
+        -4.285714286
+      ],
+      [
+        316.8,
+        12.0,
+        35.0,
+        -4.285714286
+      ]
+    ],
+    "distribution": "Equal force per node in the existing geometric corner set; not consistent surface traction."
+  },
+  "same_load_points_and_forces_at_1e_9_precision": true,
+  "load_centroid_shift_mm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "coarse_lower_support_nodes": 208,
+  "fine_lower_support_nodes": 332,
+  "coarse_nodal_von_mises_peak_MPa_diagnostic_only": 5.466057423948523,
+  "fine_nodal_von_mises_peak_MPa_diagnostic_only": 6.1673779753452616,
+  "nodal_peak_difference_percent_of_fine_diagnostic_only": 11.371454031199987,
+  "coarse_DML_separation_lower_bound_mm": 0.17735769999999995,
+  "fine_DML_separation_lower_bound_mm": 0.17308950000000145,
+  "full_mesh_convergence_verified": false,
+  "limits": [
+    "Two mesh levels and one load case only.",
+    "Load and support sets are selected on each mesh; actual load point equality is checked, while lower support discretization changes. The equal nodal load is a surrogate, not a resolved physical load footprint.",
+    "Full-element clearance bounds vary with subdivision and are not exact minimum distances.",
+    "Non-singular stress convergence and hotspot classification remain open.",
+    "Normalized material and ideal joints are not qualified physical properties or assembly contacts."
+  ]
+}
