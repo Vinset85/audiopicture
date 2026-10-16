@@ -186,3 +186,9 @@ corrispondono per nomi, dimensioni e SHA-256; il commit del tag è verificato.
 L'archivio contiene 27 file corrispondenti ai blob Git e otto artefatti grezzi
 verificati individualmente. Ricevute in `evidence/rev-fi/github-publication.json`
 e `evidence/rev-fi/archive-tree-verification.json`.
+
+Il successivo [audit dei picchi e della cattura inferiore](../mechanical/lower-capture-hotspot-audit-rev-fi.md)
+usa esclusivamente gli output esistenti, senza nuove simulazioni. Sorgente,
+JSON con hash e figura SVG sono versionati direttamente in Git. Gli archivi
+Rev.FI e le loro ricevute restano immutati. Nessun nuovo PASS strutturale viene
+dedotto dalla prossimità dei picchi ai vincoli o alle giunzioni geometriche.

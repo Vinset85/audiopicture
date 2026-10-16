@@ -8,6 +8,8 @@ Smart acoustic picture / complete Home Assistant room node.
 
 The [Rev.FI supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fi-2026-10-16) is published and verified: three attachments, 35 archive members (27 exact Git blobs and eight individually hashed raw artifacts). Receipts: [publication](evidence/rev-fi/github-publication.json), [archive consistency](evidence/rev-fi/archive-tree-verification.json).
 
+A subsequent [Rev.FI stress-location audit](mechanical/lower-capture-hotspot-audit-rev-fi.md) locates unresolved peaks near the ideal lower capture and at the upper seal-collar junction. The available model cases transfer up to 47.609 N normal reaction through the ideal lower capture; this is not a measured capacity or a complete design-load envelope. The addendum is versioned in Git without altering the release archives.
+
 The [Rev.FH supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fh-2026-10-15) is published: all three asset names, sizes and SHA-256 digests match. Its 58 archive members match 43 Git blobs and 15 individually hashed raw artifacts. Receipts: [publication](evidence/rev-fh/github-publication.json) and [archive consistency](evidence/rev-fh/archive-tree-verification.json). Subsequent checks run one at a time, with audit and preservation before the next.
 
 **Physical inputs needed:** [measurements, parameters and existing acceptance criteria](manufacturing/real-data-required-rev-fe.md). The [Rev.FG addendum](manufacturing/real-data-addendum-rev-fg.md) adds upper mounts, countersunk heads and seal-stack requirements. These plans separate coupon/component tests from first-assembly tests and the digital work still required.

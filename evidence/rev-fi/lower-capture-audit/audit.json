@@ -1,0 +1,632 @@
+{
+  "classification": "POSTPROCESSING_EXISTING_NORMALIZED_SCREENS_NOT_NEW_FEA_OR_STRENGTH_QUALIFICATION",
+  "client_date": "2026-10-16",
+  "runs": [
+    {
+      "mesh": "M0",
+      "source_run": "evidence/rev-fh/M0-LC4-LR-weakY/LC4",
+      "peak_node": 79155,
+      "peak_xyz_mm": [
+        168.1,
+        10.0,
+        36.349999999999994
+      ],
+      "peak_nodal_von_mises_MPa": 5.466057423948523,
+      "peak_is_prescribed_displacement_node": false,
+      "nearest_anti_normal_node_mm": [
+        167.2,
+        10.0,
+        35.0
+      ],
+      "distance_to_nearest_anti_normal_node_mm": 1.6224980739587935,
+      "distance_to_selection_rectangle_mm": 1.3499999999999943,
+      "nearest_CAD_edges": [
+        {
+          "index_in_this_STEP_import": 319,
+          "type": "LINE",
+          "distance_mm": 0.45000000000000284,
+          "bbox_mm": [
+            151.0,
+            169.0,
+            10.0,
+            10.0,
+            36.8,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 977,
+          "type": "LINE",
+          "distance_mm": 0.9000000000000057,
+          "bbox_mm": [
+            169.0,
+            169.0,
+            10.0,
+            10.0,
+            35.0,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 318,
+          "type": "LINE",
+          "distance_mm": 1.0062305898749118,
+          "bbox_mm": [
+            169.0,
+            169.0,
+            10.0,
+            19.0,
+            36.8,
+            36.8
+          ]
+        }
+      ],
+      "nearest_CAD_faces": [
+        {
+          "index_in_this_STEP_import": 168,
+          "type": "PLANE",
+          "distance_mm": 0.0,
+          "bbox_mm": [
+            151.0,
+            169.0,
+            10.0,
+            10.0,
+            35.0,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 46,
+          "type": "PLANE",
+          "distance_mm": 0.45000000000000284,
+          "bbox_mm": [
+            3.2,
+            316.8,
+            3.2,
+            19.0,
+            36.8,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 167,
+          "type": "PLANE",
+          "distance_mm": 0.9000000000000057,
+          "bbox_mm": [
+            169.0,
+            169.0,
+            10.0,
+            19.0,
+            35.0,
+            36.8
+          ]
+        }
+      ],
+      "normal_reaction_N": 47.390858747000046,
+      "distance_band_diagnostics": [
+        {
+          "lower_mm": 0.0,
+          "upper_mm": 1.0,
+          "nodes": 198,
+          "max_nodal_von_mises_MPa": 5.16292082287488,
+          "peak_xyz_mm": [
+            169.0,
+            17.5,
+            35.0
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 378.1414088622386,
+            "UL2": 368.8566083670316,
+            "UR1": 364.345418022593,
+            "UR2": 372.3112114159373,
+            "PAD_L": 115.08800980119518,
+            "PAD_R": 97.10432534135644,
+            "ANTILIFT": 0.0,
+            "CORNER_LR": 139.10877039209282
+          }
+        },
+        {
+          "lower_mm": 1.0,
+          "upper_mm": 2.0,
+          "nodes": 198,
+          "max_nodal_von_mises_MPa": 5.466057423948523,
+          "peak_xyz_mm": [
+            168.1,
+            10.0,
+            36.349999999999994
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 384.9019789250925,
+            "UL2": 375.8551094342052,
+            "UR1": 371.87079731683434,
+            "UR2": 379.7520491145688,
+            "PAD_L": 114.73723240517874,
+            "PAD_R": 98.64194087709346,
+            "ANTILIFT": 1.6224980739587935,
+            "CORNER_LR": 139.92080795935965
+          }
+        },
+        {
+          "lower_mm": 2.0,
+          "upper_mm": 3.0,
+          "nodes": 155,
+          "max_nodal_von_mises_MPa": 4.268860190220306,
+          "peak_xyz_mm": [
+            167.89545842797259,
+            8.622915972167082,
+            36.8
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 386.1368252878764,
+            "UL2": 377.1351542174652,
+            "UR1": 373.2651290926944,
+            "UR2": 381.13425072544385,
+            "PAD_L": 114.69246630710202,
+            "PAD_R": 99.02872034993362,
+            "ANTILIFT": 2.370658736459265,
+            "CORNER_LR": 140.15679528884428
+          }
+        },
+        {
+          "lower_mm": 3.0,
+          "upper_mm": 5.0,
+          "nodes": 238,
+          "max_nodal_von_mises_MPa": 2.4963670824695896,
+          "peak_xyz_mm": [
+            169.62028768620897,
+            11.769533425275965,
+            31.561271501416154
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 383.7142499631938,
+            "UL2": 374.51439867510186,
+            "UR1": 369.76752276027463,
+            "UR2": 377.56723622147763,
+            "PAD_L": 116.12294443677031,
+            "PAD_R": 96.98214395295993,
+            "ANTILIFT": 3.504605365512097,
+            "CORNER_LR": 138.42262368766387
+          }
+        },
+        {
+          "lower_mm": 5.0,
+          "upper_mm": 10.0,
+          "nodes": 670,
+          "max_nodal_von_mises_MPa": 2.149572678218442,
+          "peak_xyz_mm": [
+            171.90886075949365,
+            3.2,
+            36.8
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 392.5949934808515,
+            "UL2": 383.4332004866455,
+            "UR1": 377.67913897930174,
+            "UR2": 385.14938918429453,
+            "PAD_L": 119.41180613993602,
+            "PAD_R": 95.96782004180544,
+            "ANTILIFT": 7.611929513475671,
+            "CORNER_LR": 136.38723613219418
+          }
+        },
+        {
+          "lower_mm": 10.0,
+          "upper_mm": 20.0,
+          "nodes": 1599,
+          "max_nodal_von_mises_MPa": 2.0452950930438947,
+          "peak_xyz_mm": [
+            177.86329113924052,
+            3.2,
+            36.8
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 394.6570410478106,
+            "UL2": 385.084947669525,
+            "UR1": 376.46214133080497,
+            "UR2": 383.49468345621057,
+            "PAD_L": 125.29483186406476,
+            "PAD_R": 90.1374475387798,
+            "ANTILIFT": 11.315384651833071,
+            "CORNER_LR": 130.44632226747552
+          }
+        },
+        {
+          "lower_mm": 20.0,
+          "upper_mm": null,
+          "nodes": 243516,
+          "max_nodal_von_mises_MPa": 3.300141004258606,
+          "peak_xyz_mm": [
+            289.00923931960875,
+            380.30940707424656,
+            27.172
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 248.76599923344833,
+            "UL2": 218.7737827424472,
+            "UR1": 34.09357263163024,
+            "UR2": 5.609297550216211,
+            "PAD_L": 418.5938671047359,
+            "PAD_R": 346.4340853476709,
+            "ANTILIFT": 379.85044943012275,
+            "CORNER_LR": 368.8817505849306
+          },
+          "nearest_CAD_edges": [
+            {
+              "index_in_this_STEP_import": 396,
+              "type": "LINE",
+              "distance_mm": 0.014601951018654821,
+              "bbox_mm": [
+                289.0184589697,
+                289.0184589697,
+                380.29808386685,
+                380.29808386685,
+                27.0,
+                27.344
+              ]
+            }
+          ],
+          "nearest_CAD_faces": [
+            {
+              "index_in_this_STEP_import": 199,
+              "type": "CYLINDER",
+              "distance_mm": 0.0,
+              "bbox_mm": [
+                289.0,
+                290.9,
+                373.5999999999969,
+                380.3207142377637,
+                26.144,
+                27.344
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mesh": "M1",
+      "source_run": "evidence/rev-fi/M1-LC4-LR-weakY/LC4",
+      "peak_node": 117689,
+      "peak_xyz_mm": [
+        168.25,
+        10.0,
+        36.349999999999994
+      ],
+      "peak_nodal_von_mises_MPa": 6.1673779753452616,
+      "peak_is_prescribed_displacement_node": false,
+      "nearest_anti_normal_node_mm": [
+        167.5,
+        10.0,
+        35.0
+      ],
+      "distance_to_nearest_anti_normal_node_mm": 1.544344521148045,
+      "distance_to_selection_rectangle_mm": 1.3499999999999943,
+      "nearest_CAD_edges": [
+        {
+          "index_in_this_STEP_import": 319,
+          "type": "LINE",
+          "distance_mm": 0.45000000000000284,
+          "bbox_mm": [
+            151.0,
+            169.0,
+            10.0,
+            10.0,
+            36.8,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 977,
+          "type": "LINE",
+          "distance_mm": 0.75,
+          "bbox_mm": [
+            169.0,
+            169.0,
+            10.0,
+            10.0,
+            35.0,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 318,
+          "type": "LINE",
+          "distance_mm": 0.8746427842267965,
+          "bbox_mm": [
+            169.0,
+            169.0,
+            10.0,
+            19.0,
+            36.8,
+            36.8
+          ]
+        }
+      ],
+      "nearest_CAD_faces": [
+        {
+          "index_in_this_STEP_import": 168,
+          "type": "PLANE",
+          "distance_mm": 0.0,
+          "bbox_mm": [
+            151.0,
+            169.0,
+            10.0,
+            10.0,
+            35.0,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 46,
+          "type": "PLANE",
+          "distance_mm": 0.45000000000000284,
+          "bbox_mm": [
+            3.2,
+            316.8,
+            3.2,
+            19.0,
+            36.8,
+            36.8
+          ]
+        },
+        {
+          "index_in_this_STEP_import": 167,
+          "type": "PLANE",
+          "distance_mm": 0.75,
+          "bbox_mm": [
+            169.0,
+            169.0,
+            10.0,
+            19.0,
+            35.0,
+            36.8
+          ]
+        }
+      ],
+      "normal_reaction_N": 47.609033683999996,
+      "distance_band_diagnostics": [
+        {
+          "lower_mm": 0.0,
+          "upper_mm": 1.0,
+          "nodes": 238,
+          "max_nodal_von_mises_MPa": 5.530670321111184,
+          "peak_xyz_mm": [
+            168.25,
+            10.0,
+            35.45
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 384.9410272059464,
+            "UL2": 375.88350579291756,
+            "UR1": 371.82514206670936,
+            "UR2": 379.6945834300501,
+            "PAD_L": 114.87934975442714,
+            "PAD_R": 98.48484655011653,
+            "ANTILIFT": 0.8746427842267965,
+            "CORNER_LR": 139.76503496940856
+          }
+        },
+        {
+          "lower_mm": 1.0,
+          "upper_mm": 2.0,
+          "nodes": 251,
+          "max_nodal_von_mises_MPa": 6.1673779753452616,
+          "peak_xyz_mm": [
+            168.25,
+            10.0,
+            36.349999999999994
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 384.9524833357608,
+            "UL2": 375.8952379682061,
+            "UR1": 371.83700229123053,
+            "UR2": 379.7072097627892,
+            "PAD_L": 114.88640041362598,
+            "PAD_R": 98.49307082226647,
+            "ANTILIFT": 1.544344521148045,
+            "CORNER_LR": 139.77083029015745
+          }
+        },
+        {
+          "lower_mm": 2.0,
+          "upper_mm": 3.0,
+          "nodes": 224,
+          "max_nodal_von_mises_MPa": 4.233242708010727,
+          "peak_xyz_mm": [
+            167.94396261859762,
+            8.943780310455143,
+            36.8
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 385.85080541477924,
+            "UL2": 376.83864411211806,
+            "UR1": 372.9416243568185,
+            "UR2": 380.8135874905043,
+            "PAD_L": 114.70366816196433,
+            "PAD_R": 98.93781551825691,
+            "ANTILIFT": 2.1337063620128904,
+            "CORNER_LR": 140.10094248709228
+          }
+        },
+        {
+          "lower_mm": 3.0,
+          "upper_mm": 5.0,
+          "nodes": 371,
+          "max_nodal_von_mises_MPa": 2.668920339819979,
+          "peak_xyz_mm": [
+            170.74985079964853,
+            11.454964190566951,
+            32.36363140292832
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 384.4001343583372,
+            "UL2": 375.1291437033005,
+            "UR1": 369.82662568125676,
+            "UR2": 377.53713129687407,
+            "PAD_L": 117.2547477987226,
+            "PAD_R": 95.86834275344007,
+            "ANTILIFT": 3.1645608581266975,
+            "CORNER_LR": 137.27654919516272
+          }
+        },
+        {
+          "lower_mm": 5.0,
+          "upper_mm": 10.0,
+          "nodes": 1179,
+          "max_nodal_von_mises_MPa": 2.149190751083905,
+          "peak_xyz_mm": [
+            170.45333333333338,
+            3.2,
+            36.8
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 392.1030414762232,
+            "UL2": 383.04250196771613,
+            "UR1": 377.9902983345144,
+            "UR2": 385.5667793323253,
+            "PAD_L": 117.97482292609916,
+            "PAD_R": 97.39530538537832,
+            "ANTILIFT": 7.182769506101242,
+            "CORNER_LR": 137.83963693767876
+          }
+        },
+        {
+          "lower_mm": 10.0,
+          "upper_mm": 20.0,
+          "nodes": 2989,
+          "max_nodal_von_mises_MPa": 2.0699680952229578,
+          "peak_xyz_mm": [
+            176.4266666666667,
+            3.2,
+            36.8
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 394.15228527262985,
+            "UL2": 384.681844731403,
+            "UR1": 376.7475123603077,
+            "UR2": 383.8861134164827,
+            "PAD_L": 123.87481064006161,
+            "PAD_R": 91.54267881400695,
+            "ANTILIFT": 10.229143550550962,
+            "CORNER_LR": 131.87957402283507
+          }
+        },
+        {
+          "lower_mm": 20.0,
+          "upper_mm": null,
+          "nodes": 348303,
+          "max_nodal_von_mises_MPa": 3.7276424058633455,
+          "peak_xyz_mm": [
+            289.0184589697,
+            380.29808386685,
+            27.172
+          ],
+          "distances_to_boundary_or_load_nodes_mm": {
+            "UL1": 248.77497537557923,
+            "UL2": 218.7827251748594,
+            "UR1": 34.101082756898855,
+            "UR2": 5.608924123759094,
+            "PAD_L": 418.58967561365444,
+            "PAD_R": 346.4228996534184,
+            "ANTILIFT": 379.84262177326184,
+            "CORNER_LR": 368.8699704013302
+          },
+          "nearest_CAD_edges": [
+            {
+              "index_in_this_STEP_import": 396,
+              "type": "LINE",
+              "distance_mm": 0.0,
+              "bbox_mm": [
+                289.0184589697,
+                289.0184589697,
+                380.29808386685,
+                380.29808386685,
+                27.0,
+                27.344
+              ]
+            }
+          ],
+          "nearest_CAD_faces": [
+            {
+              "index_in_this_STEP_import": 65,
+              "type": "PLANE",
+              "distance_mm": 0.0,
+              "bbox_mm": [
+                289.0,
+                299.2844582472,
+                380.288854382,
+                385.4310835056,
+                27.0,
+                32.6
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "available_case_reactions": [
+    {
+      "path": "evidence/rev-fg/upper-frame-runs/M0-LC1-100N-weakY/LC1",
+      "case": "LC1",
+      "loaded_corner": null,
+      "normal_reaction_N": -0.48484953499999484
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC3-weakY/LC3",
+      "case": "LC3",
+      "loaded_corner": null,
+      "normal_reaction_N": 24.774746019
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LL-weakY/LC4",
+      "case": "LC4",
+      "loaded_corner": "LL",
+      "normal_reaction_N": 47.42548498899998
+    },
+    {
+      "path": "evidence/rev-fh/M0-LC4-LR-weakY/LC4",
+      "case": "LC4",
+      "loaded_corner": "LR",
+      "normal_reaction_N": 47.390858747000046
+    },
+    {
+      "path": "evidence/rev-fi/M1-LC4-LR-weakY/LC4",
+      "case": "LC4",
+      "loaded_corner": "LR",
+      "normal_reaction_N": 47.609033683999996
+    }
+  ],
+  "maximum_absolute_normal_reaction_N_in_available_cases": 47.609033683999996,
+  "physical_hotspot_classification": "OPEN: proximity to the ideal support established; cause and non-singular peak unresolved",
+  "real_lower_capture_qualified": false,
+  "full_stress_convergence_verified": false,
+  "limits": [
+    "Nodal extrapolated stress, not integration-point stress or an orthotropic failure index.",
+    "Distance bands are diagnostic; no exclusion radius or acceptance rule is introduced.",
+    "Proximity alone cannot distinguish geometric stress concentration from a constraint singularity.",
+    "Case envelope is incomplete; reactions are model loads, not measured capacities or production design loads."
+  ],
+  "source_sha256": {
+    "evidence/rev-fg/mesh-upper/M0/mesh-data.npz": "6a1ad30602da3900d797284310ed8e1a940142c92935e8e1954e93fddc9d3faa",
+    "evidence/rev-fg/mesh-upper/M0/mesh-report.json": "6c4967c8e2ae7f07cff0a26e54fe8ce870fe0700b2f2ef56226b5275bb38de06",
+    "evidence/rev-fg/mesh-upper/M0/sets.json": "cfbb9882d2a9d98c9f69968bd4e5ee7e34481a690a3cf0799f58b7569901d869",
+    "evidence/rev-fg/upper-frame-runs/M0-LC1-100N-weakY/LC1/execution.json": "d992db9f29ab709ee866be2c9d3082665ab8dda7221f1c43a2be84d803f6b7e6",
+    "evidence/rev-fg/upper-frame-runs/M0-LC1-100N-weakY/LC1/metrics.json": "f35d7b7d70619eab974f764f2279abb1c73ede161fa86d2c8a48c5c872e54321",
+    "evidence/rev-fg/upper-mounts-chamfer/AP22_FRAME_REV_FG.step": "337b484cf4c43287016260202a841259ed45a090a25ae30b74268ecfaa0c79aa",
+    "evidence/rev-fh/M0-LC3-weakY/LC3/execution.json": "4a4c28af605fc77155f23851018fe04011d3a1eee257a8fbe2d98ccc2a5f1f37",
+    "evidence/rev-fh/M0-LC3-weakY/LC3/metrics.json": "0cacf6ba462f2bd406f395d725c9d2f78400ed0ddc1826bd6448aab338ab5a94",
+    "evidence/rev-fh/M0-LC4-LL-weakY/LC4/execution.json": "17bd5c1edee105513e0a7e213d9563fb1f9c63eebbb359f974a1dd4466728a0f",
+    "evidence/rev-fh/M0-LC4-LL-weakY/LC4/metrics.json": "b14107af0b38fdc5e752b588bfd5671fa0626ba23ba7d0e3f63539064a23927e",
+    "evidence/rev-fh/M0-LC4-LR-weakY/LC4/execution.json": "3ee6c90383f51e99cc22d765cbb1ae05ee1e5753cf697d44bb08b6e8279aa24c",
+    "evidence/rev-fh/M0-LC4-LR-weakY/LC4/frame.frd": "9ae02103881886fb5dd5b84d4c9edf7bca97e576f95cb97eecfd1f97c543ebcb",
+    "evidence/rev-fh/M0-LC4-LR-weakY/LC4/metrics.json": "1353ee09f53d2be05ac80dd36b3fcaea6bb0ee4fe471f73f681d11d33388d60d",
+    "evidence/rev-fi/M1-LC4-LR-weakY/LC4/execution.json": "c8e3254fa9f05837db0ec4226422324466f72f02ecdf82e36e48722501ed2aed",
+    "evidence/rev-fi/M1-LC4-LR-weakY/LC4/frame.frd": "71e206533d82f1a47471f1e57c3291c54341db94771f79ee15bf0cbb25fcdfbb",
+    "evidence/rev-fi/M1-LC4-LR-weakY/LC4/metrics.json": "2f4f945bfca42c24536b9842b6e9f2b40b6528b9b35d16592c42cd238dc6cc8b",
+    "evidence/rev-fi/mesh/M1/mesh-data.npz": "4520b1f7e81fec0759fc794de9d7a52d182527ebb5c1a3fb2e1899b05c0c3d57",
+    "evidence/rev-fi/mesh/M1/mesh-report.json": "1b7dbbe6629152a2169a1671f3e74640b93e8d6894add5f24067e35ec0363d64",
+    "evidence/rev-fi/mesh/M1/sets.json": "163752b1a895b9f86d497232c08d8cbe43c001007f22b1ca92bb06e471acd4c0",
+    "mechanical/cad/audit_lower_capture_hotspot_rev_fi.py": "2ab9f69c1f26166f71b59ec6d0f198d5bd3e5944a40597b19512b09b85039a8e"
+  }
+}

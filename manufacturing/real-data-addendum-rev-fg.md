@@ -33,3 +33,11 @@ La progettazione del fermo DML indipendente, della cattura contro sovracorsa, de
 Restano applicabili i criteri originali del contratto strutturale, fra cui spostamento locale LC1 ≤0,5 mm e margine 2, LC4 ≤1 mm e margine 1,5, margine 1,5 per LC2/LC3/LC6, con interpretazione e punti di misura definiti dal contratto. La ritenzione frontale è 20–30 N e il gap tessuto-DML minimo 2 mm. La compressione delle guarnizioni resta 10–30%. Nessun limite di perdita, coppia o proprietà materiale viene inventato in assenza di una specifica qualificata.
 
 Il telaio corrente raggiunge **1,141787 mm** nella sensibilità normalizzata LC4 debole Z: **FAIL**, con interferenza deformata predetta. Una prova fisica non deve essere usata per ignorare questo difetto digitale. Tutte le prove di questo addendum hanno stato **NOT_RUN**; nessun materiale, giunto o prodotto risulta qualificato.
+
+## Integrazione P10 — 16 ottobre, dopo Rev.FI
+
+Le verifiche successive con asse debole Y superano i controlli circoscritti di spostamento e separazione, ma non selezionano un processo di stampa o qualificano il prodotto. Il FAIL debole Z sopra rimane valido. L'[audit Rev.FI](../mechanical/lower-capture-hotspot-audit-rev-fi.md) mostra una reazione normale della cattura inferiore ideale fino a **47,609034 N nei soli casi disponibili**: è un risultato del modello, non una resistenza del componente o un carico di prova già approvato.
+
+Prima della prova P10 restano da definire digitalmente la cattura reale, le superfici di contatto, la corsa utile, il gioco nominale, il percorso dei carichi, i fissaggi e l'inviluppo completo LC1–LC7. Sulla soluzione risultante misurare la curva forza-spostamento nei due versi normali, l'eventuale apertura o disimpegno, il recupero dopo scarico e la stabilità dopo temperatura/cicli. Separare la cedevolezza dell'attrezzatura da quella del giunto e controllare contemporaneamente la distanza dal DML.
+
+I livelli di prova e i margini derivano dai casi completi e dai criteri del contratto strutturale già richiamato; non si adottano automaticamente 47,609 N o il target dei magneti frontali come soglia. Stato **NOT_RUN**. Prova da eseguire dopo il congelamento digitale della soluzione.
