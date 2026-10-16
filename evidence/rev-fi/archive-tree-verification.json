@@ -1,0 +1,11 @@
+{
+  "classification": "PUBLICATION_PACKAGE_CONSISTENCY_NOT_DESIGN_QUALIFICATION",
+  "status": "PASS",
+  "engineering_commit": "0b56d52f45cffc461b02fd00e43324f47336b43c",
+  "engineering_tree": "3b633bc3bdf72daf314a2ff19f2a2f0573e6b203",
+  "archive": "audiopicture-rev-fi-supplement.zip",
+  "archive_sha256": "e2101dc86f3c67feeb24faded1ca39115a01857b1bc931736f36dfa05b57f61b",
+  "tracked_archive_members_matching_git_blobs": 27,
+  "raw_members_individually_sha256_verified": 8,
+  "verified_by_sha256": "415e1aca69030c0589435226e5a8dece5655b08bdbe3bd664c335b1329bc4b00"
+}

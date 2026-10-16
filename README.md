@@ -6,6 +6,8 @@ Smart acoustic picture / complete Home Assistant room node.
 
 **Current verified checkpoint: [Rev.FI](mechanical/digital-validation-rev-fi.md).** One serial refined-mesh weak-Y LC4 run passes the corner displacement check at 0.875290 mm and retains at least 0.173090 mm conservative final DML separation. The two-mesh displacement difference is 0.626581%; stress convergence remains OPEN. Weak-Z LC4 still fails. Materials, actual joints and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.
 
+The [Rev.FI supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fi-2026-10-16) is published and verified: three attachments, 35 archive members (27 exact Git blobs and eight individually hashed raw artifacts). Receipts: [publication](evidence/rev-fi/github-publication.json), [archive consistency](evidence/rev-fi/archive-tree-verification.json).
+
 The [Rev.FH supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fh-2026-10-15) is published: all three asset names, sizes and SHA-256 digests match. Its 58 archive members match 43 Git blobs and 15 individually hashed raw artifacts. Receipts: [publication](evidence/rev-fh/github-publication.json) and [archive consistency](evidence/rev-fh/archive-tree-verification.json). Subsequent checks run one at a time, with audit and preservation before the next.
 
 **Physical inputs needed:** [measurements, parameters and existing acceptance criteria](manufacturing/real-data-required-rev-fe.md). The [Rev.FG addendum](manufacturing/real-data-addendum-rev-fg.md) adds upper mounts, countersunk heads and seal-stack requirements. These plans separate coupon/component tests from first-assembly tests and the digital work still required.

@@ -179,3 +179,10 @@ Mesh, audit di qualità, solve e audit degli output sono eseguiti in sequenza.
 Estrarre `audiopicture-rev-fi-supplement.zip` dopo FA+FB+FC+FD+FE+FG+FH.
 La pubblicazione è completa solo dopo verifica degli allegati e relativa
 ricevuta in `main`. Non è un rilascio per produzione.
+
+Rev.FI è [pubblicata](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fi-2026-10-16)
+sul commit `0b56d52f45cffc461b02fd00e43324f47336b43c`. I tre allegati
+corrispondono per nomi, dimensioni e SHA-256; il commit del tag è verificato.
+L'archivio contiene 27 file corrispondenti ai blob Git e otto artefatti grezzi
+verificati individualmente. Ricevute in `evidence/rev-fi/github-publication.json`
+e `evidence/rev-fi/archive-tree-verification.json`.
