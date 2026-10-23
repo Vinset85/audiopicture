@@ -1,5 +1,7 @@
 # Manufacturing
 
+**Current product package:** [`rev-e/`](rev-e/) (DML ≤ 30 mm). Historical cone/P1 paths are not authority.
+
 Factory test/provisioning target:
 1. power rails;
 2. ESP32 boot and identity;

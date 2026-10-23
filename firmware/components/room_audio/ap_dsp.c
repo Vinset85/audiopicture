@@ -1,7 +1,7 @@
 #include "ap_dsp.h"
 #include <math.h>
 #include <string.h>
-#include "ap_model_curve_rev_d.h"
+#include "ap_model_curve_rev_e.h"
 
 static const double PI = 3.14159265358979323846;
 static const double BUTTERWORTH4_Q[2] = {0.5411961, 1.3065630};
@@ -50,12 +50,13 @@ void ap_twoway_default_config(ap_twoway_config *cfg) {
     cfg->role=AP_ROLE_SOLO;
     cfg->eq_count=AP_MODEL_EQ_COUNT;
     for(size_t i=0;i<AP_MODEL_EQ_COUNT;i++)
-        cfg->eq[i]=(ap_eq_band){ap_model_eq_rev_d[i].hz,ap_model_eq_rev_d[i].q,ap_model_eq_rev_d[i].gain_db};
+        cfg->eq[i]=(ap_eq_band){ap_model_eq_rev_e[i].hz,ap_model_eq_rev_e[i].q,ap_model_eq_rev_e[i].gain_db};
 }
 
 static ap_dsp_result check(const ap_twoway_config *c) {
     if(c->sample_rate_hz!=44100.0 && c->sample_rate_hz!=48000.0) return AP_DSP_RATE;
-    if(!isfinite(c->crossover_hz) || c->crossover_hz<1500 || c->crossover_hz>5000) return AP_DSP_CROSSOVER;
+    /* Rev.E DML band-split may sit near 450 Hz; cone LR4 stays near 3 kHz. */
+    if(!isfinite(c->crossover_hz) || c->crossover_hz<200 || c->crossover_hz>5000) return AP_DSP_CROSSOVER;
     if(!isfinite(c->subsonic_hz) || c->subsonic_hz<20 || c->subsonic_hz>80) return AP_DSP_SUBSONIC;
     if(!isfinite(c->tweeter_pad_db) || c->tweeter_pad_db<-20 || c->tweeter_pad_db>0) return AP_DSP_PAD;
     if(!isfinite(c->trim_db) || c->trim_db<-30 || c->trim_db>0) return AP_DSP_TRIM;

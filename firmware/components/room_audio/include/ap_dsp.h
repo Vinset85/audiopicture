@@ -3,9 +3,9 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-/* Rev.D mono two-way chain: role select, delay, subsonic, EQ, trim, LR4 split, tweeter pad.
- * Biquads are RBJ cookbook, identical to tools/acoustic_box_model_rev_d.py.
- * Gains never exceed AP_DSP_MAX_BOOST_DB; the excursion model has authority over bass. */
+/* Dual-output chain (Rev.E DML: EX_LF + EX_WB; still named woofer/tweeter in the API).
+ * Role select, delay, subsonic, EQ, trim, LR4 split, pad. Defaults from ap_model_curve_rev_e.h.
+ * Gains never exceed AP_DSP_MAX_BOOST_DB; panel limits have authority over bass. */
 typedef struct { float b0, b1, b2, a1, a2, z1, z2; } ap_biquad;
 typedef enum { AP_BIQUAD_LOWPASS, AP_BIQUAD_HIGHPASS, AP_BIQUAD_PEAKING } ap_biquad_kind;
 bool ap_biquad_design(ap_biquad *, ap_biquad_kind, double fs, double f0, double q, double gain_db);

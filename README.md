@@ -6,6 +6,8 @@ Smart acoustic picture / complete Home Assistant room node.
 
 **Supporting specs:** [DML panel](mechanical/dml-panel-rev-e.md), [electronics packaging](hardware/electronics-packaging-rev-e.md). Room logic already in `firmware/components/room_audio` and HA `room.py` carries forward; acoustic coefficients become DML-specific after measurement.
 
+**Production package (digital):** [manufacturing/rev-e/](manufacturing/rev-e/) — gate register, BOM, OEM RFQ, assembly, factory test. CAD kernel STEP/STL in `mechanical/rev-e/cad/`. Modal screening in `evidence/rev-e/`. Mass production still requires OEM quotes, PCB fab, acoustic first article, product firmware on ESP-IDF, and certification (see gate register `OPEN_EXTERNAL`).
+
 **Historical Rev.D (digital only, superseded):** [box model](mechanical/acoustic-box-model-rev-d.md) and [Rev.D architecture](docs/architecture/v2.2-rev-d-mono-room.md) for the 84 mm cone path.
 
 **Historical structural checkpoint: [Rev.FI](mechanical/digital-validation-rev-fi.md).** It does not govern the radiator, the exciter, or the rear cavity. One serial refined-mesh weak-Y LC4 run passes the corner displacement check at 0.875290 mm and retains at least 0.173090 mm conservative final DML separation. The two-mesh displacement difference is 0.626581%; stress convergence remains OPEN. Weak-Z LC4 still fails. Materials, actual joints and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.

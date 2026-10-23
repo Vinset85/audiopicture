@@ -1,0 +1,81 @@
+{
+  "revision": "E",
+  "authority": "docs/architecture/v2.2-rev-e-dml-30mm.md",
+  "body": {
+    "width_mm": 320.0,
+    "height_mm": 400.0,
+    "depth_mm": 30.0,
+    "depth_max_mm": 30.0
+  },
+  "frame": {
+    "lip_mm": 18.0,
+    "wall_mm": 3.0,
+    "material": "ASA or PA12 dyed black",
+    "service_rail_height_mm": 52.0
+  },
+  "panel": {
+    "aperture_width_mm": 284.0,
+    "aperture_height_mm": 364.0,
+    "thickness_mm": 10.0,
+    "core": "phenolic_honeycomb_candidate_A",
+    "skin": "glass_epoxy_0.3mm_class",
+    "areal_density_kg_m2_nominal": 1.8,
+    "young_gpa_nominal": 8.0,
+    "poisson": 0.3,
+    "damping_loss_factor": 0.04
+  },
+  "exciters": {
+    "lf": {
+      "role": "LowFreq_DML",
+      "target_xy_mm": [
+        142.0,
+        127.4
+      ],
+      "max_depth_mm": 14.0,
+      "max_moving_mass_g": 8.0,
+      "z_nominal_ohm": 4.0,
+      "oem": "TBD_LowFreq_class"
+    },
+    "wb": {
+      "role": "Wideband_DML_BMR",
+      "target_xy_mm": [
+        156.2,
+        247.5
+      ],
+      "max_depth_mm": 14.0,
+      "max_moving_mass_g": 4.0,
+      "z_nominal_ohm": 4.0,
+      "oem": "TBD_BMR_class"
+    },
+    "note": "Coordinates are FEA seeds from analytical screening; freeze after vibrometry.",
+    "seed_source": "tools/dml_panel_modal_rev_e.py"
+  },
+  "stack_z_mm": {
+    "fabric_print": 1.5,
+    "panel": 10.0,
+    "exciter_protrusion": 14.0,
+    "rear_skin_and_standoff": 4.5,
+    "total": 30.0
+  },
+  "sensors_on_frame": {
+    "mic_array": "top_bar_4x_PDM",
+    "radar": "right_edge_60GHz_window",
+    "sht45": "left_edge_vent",
+    "opt3004": "top_right_optical_slot",
+    "mute_button": "bottom_edge",
+    "action_button": "bottom_edge"
+  },
+  "hanger": {
+    "type": "french_cleat",
+    "working_load_kg": 5.0,
+    "design_factor": 3.0
+  },
+  "electronics": {
+    "main_board_mm": [
+      292.0,
+      48.0,
+      1.6
+    ],
+    "placement": "bottom_service_rail"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "model": "Kirchhoff thin plate, simply supported, uniform orthotropy approximated as isotropic",
+  "not_a_measurement": true,
+  "not_full_fea": true,
+  "bass_note": "f1 near 600 Hz is expected for this stiff thin plate model. LowFreq DML exciters produce usable output below f1 via forced bending, as in Amina-class products. Do not treat f1 as F3.",
+  "inputs": {
+    "aperture_mm": [
+      284.0,
+      364.0
+    ],
+    "thickness_mm": 10.0,
+    "E_gpa": 8.0,
+    "nu": 0.3,
+    "areal_density_kg_m2": 1.8,
+    "derived_bulk_density_kg_m3": 180.0,
+    "flexural_rigidity_N_m": 732.6007326007327
+  },
+  "modes_hz": [
+    {
+      "m": 1,
+      "n": 1,
+      "f_hz": 632.07,
+      "antinode_seed_xy_mm": [
+        142.0,
+        127.4
+      ]
+    },
+    {
+      "m": 1,
+      "n": 2,
+      "f_hz": 1349.6,
+      "antinode_seed_xy_mm": [
+        142.0,
+        91.0
+      ]
+    },
+    {
+      "m": 2,
+      "n": 1,
+      "f_hz": 1810.77,
+      "antinode_seed_xy_mm": [
+        156.2,
+        247.5
+      ]
+    },
+    {
+      "m": 2,
+      "n": 2,
+      "f_hz": 2528.29,
+      "antinode_seed_xy_mm": [
+        71.0,
+        91.0
+      ]
+    },
+    {
+      "m": 1,
+      "n": 3,
+      "f_hz": 2545.47,
+      "antinode_seed_xy_mm": [
+        142.0,
+        60.7
+      ]
+    },
+    {
+      "m": 2,
+      "n": 3,
+      "f_hz": 3724.16,
+      "antinode_seed_xy_mm": [
+        71.0,
+        60.7
+      ]
+    },
+    {
+      "m": 3,
+      "n": 1,
+      "f_hz": 3775.26,
+      "antinode_seed_xy_mm": [
+        47.3,
+        182.0
+      ]
+    },
+    {
+      "m": 1,
+      "n": 4,
+      "f_hz": 4219.69,
+      "antinode_seed_xy_mm": [
+        142.0,
+        45.5
+      ]
+    },
+    {
+      "m": 3,
+      "n": 2,
+      "f_hz": 4492.79,
+      "antinode_seed_xy_mm": [
+        47.3,
+        91.0
+      ]
+    },
+    {
+      "m": 2,
+      "n": 4,
+      "f_hz": 5398.38,
+      "antinode_seed_xy_mm": [
+        71.0,
+        45.5
+      ]
+    },
+    {
+      "m": 3,
+      "n": 3,
+      "f_hz": 5688.66,
+      "antinode_seed_xy_mm": [
+        47.3,
+        60.7
+      ]
+    },
+    {
+      "m": 1,
+      "n": 5,
+      "f_hz": 6372.26,
+      "antinode_seed_xy_mm": [
+        142.0,
+        36.4
+      ]
+    }
+  ],
+  "exciter_seeds_mm": {
+    "EX_LF": [
+      142.0,
+      127.4
+    ],
+    "EX_WB": [
+      156.2,
+      247.5
+    ]
+  },
+  "gates": {
+    "f1_hz": 632.07,
+    "warnings": [],
+    "damping_loss_factor_required": 0.04
+  }
+}

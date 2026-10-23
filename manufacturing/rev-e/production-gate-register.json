@@ -1,0 +1,29 @@
+{
+  "product": "AudioPicture",
+  "revision": "Rev.E",
+  "authority": "docs/architecture/v2.2-rev-e-dml-30mm.md",
+  "updated": "2026-10-23",
+  "honest_limit": "Digital production package can be completed in-repo. Shipping units requires OEM exciters, PCB fab, acoustic lab, and first-article sign-off outside this repository.",
+  "gates": [
+    {"id": "E-ARCH", "name": "Architecture Rev.E frozen", "result": "PASS", "evidence": "docs/architecture/v2.2-rev-e-dml-30mm.md"},
+    {"id": "E-PANEL-SPEC", "name": "DML panel specification", "result": "PASS", "evidence": "mechanical/dml-panel-rev-e.md"},
+    {"id": "E-PKG-SPEC", "name": "Electronics packaging ≤30 mm", "result": "PASS", "evidence": "hardware/electronics-packaging-rev-e.md"},
+    {"id": "E-PARAMS", "name": "CAD parameter set Rev.E", "result": "PASS", "evidence": "mechanical/rev-e/rev_e_params.json"},
+    {"id": "E-CAD-KERNEL", "name": "Parametric CAD kernel (frame/panel/rail)", "result": "PASS", "evidence": "mechanical/rev-e/cad/"},
+    {"id": "E-MODAL-SCREEN", "name": "Analytical panel modal screening", "result": "PASS", "evidence": "evidence/rev-e/panel-modal-screen.json"},
+    {"id": "E-BOM", "name": "Production BOM Rev.E", "result": "PASS", "evidence": "manufacturing/rev-e/AP-E-BOM.csv"},
+    {"id": "E-RFQ", "name": "OEM RFQ pack (panel + exciters)", "result": "PASS", "evidence": "manufacturing/rev-e/oem-rfq-pack.md"},
+    {"id": "E-ASM", "name": "Assembly procedure", "result": "PASS", "evidence": "manufacturing/rev-e/assembly.md"},
+    {"id": "E-FCT", "name": "Factory test / QC procedure", "result": "PASS", "evidence": "manufacturing/rev-e/factory-test.md"},
+    {"id": "E-FW-HOST", "name": "Host-tested room_audio + Rev.E curve header", "result": "PASS", "evidence": "firmware/components/room_audio/"},
+    {"id": "E-HA-ROOM", "name": "HA room planner + media_player product surface", "result": "PASS", "evidence": "home-assistant/"},
+    {"id": "E-OEM-QUOTE", "name": "Signed OEM quotes for panel and exciters", "result": "OPEN_EXTERNAL", "owner": "buyer"},
+    {"id": "E-PCB-FAB", "name": "MAIN Gerbers released and fabbed", "result": "OPEN_EXTERNAL", "owner": "hardware"},
+    {"id": "E-PROTO-ACOUSTIC", "name": "Measured F3/SPL/distortion on first article", "result": "OPEN_EXTERNAL", "owner": "acoustics"},
+    {"id": "E-DSP-FACTORY", "name": "Factory DSP curve from measurement", "result": "OPEN_EXTERNAL", "owner": "acoustics"},
+    {"id": "E-FW-IDF", "name": "ESP-IDF product image with I2S/TAS/stream", "result": "OPEN_EXTERNAL", "owner": "firmware"},
+    {"id": "E-CERT", "name": "EMC / safety / PoE compliance", "result": "OPEN_EXTERNAL", "owner": "compliance"},
+    {"id": "E-PILOT", "name": "Pilot lot ≥10 units pass FCT", "result": "OPEN_EXTERNAL", "owner": "manufacturing"},
+    {"id": "E-MP", "name": "Mass production release", "result": "BLOCKED", "depends_on": ["E-OEM-QUOTE", "E-PCB-FAB", "E-PROTO-ACOUSTIC", "E-DSP-FACTORY", "E-FW-IDF", "E-CERT", "E-PILOT"]}
+  ]
+}

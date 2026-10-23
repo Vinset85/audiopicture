@@ -1,0 +1,15 @@
+{
+  "generator": "tools/cad_rev_e_kernel.py",
+  "params": "mechanical/rev-e/rev_e_params.json",
+  "parts": [
+    "AP-E-FRAME",
+    "AP-E-PANEL",
+    "AP-E-CLEAT"
+  ],
+  "envelope_mm": [
+    320.0,
+    400.0,
+    30.0
+  ],
+  "note": "Kernel only \u2014 not tooling-ready; exciters and PCB are keep-outs in DMU."
+}

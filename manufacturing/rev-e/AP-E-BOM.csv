@@ -1,0 +1,27 @@
+Reference,Category,Manufacturer Part / Spec,Qty,Function,Status
+PN1,ACOUSTIC,Custom phenolic/aramid honeycomb DML panel 284x364x10 mm class,1,Bending-wave diaphragm,OPEN_OEM_RFQ
+EX_LF,ACOUSTIC,LowFreq-class DML exciter depth<=14 mm Z~4 ohm,1,Bass panel motor,OPEN_OEM_RFQ
+EX_WB,ACOUSTIC,Wideband DML/BMR exciter depth<=14 mm Z~4 ohm,1,Mid-high panel motor,OPEN_OEM_RFQ
+FAB1,ACOUSTIC,ShowTex Speaker Mesh Print 3838 class 320x400,1,Front fabric,FROZEN_CLASS
+MT1-MT8,MECH,Compliant panel mounts (tuned elastomer),8,Panel-to-frame isolation,OPEN_VALIDATE
+FR1,MECH,Frame ASA/PA12 320x400x30 mm service rail,1,Structural envelope,CAD_KERNEL
+CL1,MECH,French cleat rail + picture cleat,1,Wall hang 5 kg x3,CAD_KERNEL
+U1,MAIN,ESP32-S3-WROOM-1-N16R8,1,MCU Wi-Fi BLE,FROZEN
+U2,MAIN,W5500,1,Ethernet MAC/PHY,FROZEN
+U_POE,MAIN,Silvertel Ag53024 or low-profile PD alternate,1,PoE PD 24V,HEIGHT_GATE
+T_ETH,MAIN,Wurth 7490220121 class,1,LAN/PoE magnetics,FROZEN_CLASS
+J_ETH,MAIN,Shielded RJ45 RA THT low-profile prefer,1,Ethernet,HEIGHT_GATE
+U9,MAIN,TAS5825MRHBR,1,Class-D DSP dual BTL to exciters,FROZEN_ROLE
+U6,MAIN,INA228AIDGSR,1,Power monitor,FROZEN
+U7,MAIN,TPSM63603 class 5V,1,5V rail,FROZEN_CLASS
+U8,MAIN,TPS62823 3V3,1,3V3 rail,FROZEN
+J_USB,MAIN,USB-C USB2 service,1,Flash/console,FROZEN_CLASS
+U101,VOICE,XVF3800 Flex core or QF60,1,Voice DSP,FROZEN_ROLE
+MIC101-MIC104,VOICE,Infineon IM72D128V01 class PDM,4,Far-field mics,FROZEN_CLASS
+Q_MUTE,VOICE,Load switch mic/Flex 5V,1,Hardware privacy mute,FROZEN_ROLE
+U201,RADAR,Infineon BGT60TR13C or LD6004 module,1,60 GHz presence,FROZEN_ROLE
+U301,ENV,Sensirion SHT45,1,Temperature humidity,FROZEN
+U302,ENV,OPT3004,1,Illuminance,FROZEN
+PCB1,PCB,MAIN 4-layer ~292x48x1.6 mm service-rail,1,Electronics,OPEN_RESPIN
+W_EX,HARNESS,Exciter leads twisted pair AWG26 class,2,Amp to EX_LF/EX_WB,OPEN
+W_FLEX,HARNESS,Voice flex/IDC as packaging allows,1,MAIN to XVF,OPEN

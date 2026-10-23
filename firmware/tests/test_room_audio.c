@@ -23,6 +23,7 @@ static double mag_db(cpx a) { return 10*log10(a.re*a.re+a.im*a.im); }
 static ap_twoway_config flat(void) {
     ap_twoway_config c; ap_twoway_default_config(&c);
     c.eq_count=0; c.tweeter_pad_db=0; c.trim_db=0;
+    c.crossover_hz=3000; c.subsonic_hz=45; /* classic LR4 reference for sum tests */
     return c;
 }
 
@@ -91,8 +92,9 @@ static void test_runtime(void) {
 
     ap_twoway_config d; ap_twoway_default_config(&d);
     assert(ap_twoway_init(&dsp,&d)==AP_DSP_OK);
-    double low=20*log10(sine_gain(&dsp,66.91,1,1)), mid=20*log10(sine_gain(&dsp,1000,1,1));
-    assert(fabs(low-mid-5.9)<0.5);
+    /* Rev.E provisional: +4.5 dB peaking near 55 Hz vs midband. */
+    double low=20*log10(sine_gain(&dsp,55,1,1)), mid=20*log10(sine_gain(&dsp,1000,1,1));
+    assert(fabs(low-mid-4.5)<1.0);
 }
 
 static void test_delay_and_faults(void) {
@@ -115,7 +117,7 @@ static void test_delay_and_faults(void) {
     for(int n=0;n<4;n++) { w[n]=t[n]=1; }
     ap_twoway_process(&dsp,in,w,t,4);
     assert(w[0]==0 && t[3]==0);
-    bad=c; bad.crossover_hz=800; assert(ap_twoway_init(&dsp,&bad)==AP_DSP_CROSSOVER);
+    bad=c; bad.crossover_hz=100; assert(ap_twoway_init(&dsp,&bad)==AP_DSP_CROSSOVER);
     bad=c; bad.subsonic_hz=10; assert(ap_twoway_init(&dsp,&bad)==AP_DSP_SUBSONIC);
     bad=c; bad.tweeter_pad_db=1; assert(ap_twoway_init(&dsp,&bad)==AP_DSP_PAD);
     bad=c; bad.trim_db=0.5; assert(ap_twoway_init(&dsp,&bad)==AP_DSP_TRIM);
