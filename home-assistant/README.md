@@ -16,9 +16,13 @@ and monitor die temperature. Missing, invalid or stale measurements are
 unavailable, never zero-filled. Labels distinguish diagnostics from calibrated
 room readings. Network recovery, unload and DHCP-address changes are handled.
 
-Audio playback, multiroom, voice, radar, firmware upload and room calibration
-are **not implemented**. No media player entity is created for the diagnostic
-firmware, which explicitly advertises those capabilities as false.
+Audio playback, stereo pairing, room groups, voice, radar, firmware upload and
+room calibration are **not implemented**. Rev.D requires them as product
+behaviour: a lone unit plays a mono downmix; two identical units in one room
+become LEFT/RIGHT; three or more share one clock and per-unit delay. See
+`docs/architecture/v2.2-rev-d-mono-room.md`. No media player entity is created
+for the diagnostic firmware, which explicitly advertises those capabilities as
+false.
 
 ## Tests actually executed
 

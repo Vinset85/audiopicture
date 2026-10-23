@@ -1,11 +1,13 @@
 # AudioPicture V2.2 Rev.A — Full DML / frame FEA contract
 
-Status: **FULL_FEA_MODEL_CONTRACT_FROZEN / MATERIAL_AND_MOUNT_STIFFNESS_CALIBRATION_OPEN**
+Superseded by `docs/architecture/v2.2-rev-b-acoustic-first.md`. The next solve is one EX25FHE2-4 at seed S0 (120, 152) mm, sealed wall-baffled radiation, body maximum 48 mm. Candidate A/B and the 40 mm hard cap are withdrawn. Mesh, mount, and adhesive rules below still apply to that single-exciter model.
+
+Status: **SUPERSEDED_BY_REV_B / HISTORICAL_FOUR_EXCITER_CONTRACT**
 
 ## 1. Scope
-This contract supersedes reduced-order models for production decisions. It defines the coupled structural model used to compare Candidate A/B, select the DML stack and derive the complex electrical/acoustic load used by the audio release process.
+This contract superseded reduced-order models for the Rev.A four-exciter study. It is not the production acoustic model.
 
-Fixed outer product envelope remains 320 x 400 x 40 mm maximum. Active DML baseline is 300 x 380 mm.
+Historical Rev.A envelope was 320 x 400 x 40 mm maximum. Active DML baseline remains 300 x 380 mm.
 
 ## 2. Solver model
 Use a linear eigenfrequency solve first, followed by harmonic response and acoustic coupling for shortlisted configurations.

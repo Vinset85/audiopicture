@@ -1,9 +1,11 @@
 # AudioPicture V2.2 — printed acoustic fabric selection Rev.A
 
-Status: **PRINTABLE_ACOUSTIC_FABRIC_PRIMARY_SELECTED / FINAL_TRANSFER_FUNCTION_MEASUREMENT_REQUIRED**
+Rev.B swaps the default over the radiator: **ShowTex Speaker Mesh Print, item 3838** is primary. Matrix Print stays a cosmetic candidate only where a transfer measurement accepts it. See `docs/architecture/v2.2-rev-b-acoustic-first.md`.
+
+Status: **SUPERSEDED_DEFAULT_BY_REV_B / TRANSFER_FUNCTION_STILL_REQUIRED**
 
 ## 1. Primary candidate
-Primary:
+Historical Rev.A primary, now the cosmetic candidate:
 **ShowTex Matrix Print, item 3849**
 
 Published characteristics:

@@ -16,6 +16,8 @@ Operating target:
 At 24 V / 8 ohm TI specifies approximately 2 x 30 W at 1% THD+N. The AudioPicture limit may be lower after DML thermal/excursion characterization.
 
 ## 2. DML topology
+Withdrawn by `docs/architecture/v2.2-rev-b-acoustic-first.md`: one **Dayton Audio EX25FHE2-4** on one BTL channel. The four-exciter series pairs below are historical Rev.A only.
+
 Four **Dayton Audio DAEX25FHE-4** exciters, each nominally 4 ohm.
 
 LEFT:

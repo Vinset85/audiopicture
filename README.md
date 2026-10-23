@@ -2,9 +2,9 @@
 
 Smart acoustic picture / complete Home Assistant room node.
 
-**V2.2 target:** 320 x 400 x 40 mm, DML audio, far-field voice, 60 GHz presence sensing, temperature/humidity/light sensing, Ethernet + Wi-Fi, PoE+ + 24 V external power, automatic acoustic calibration and plug-and-play Home Assistant integration.
+**Product authority: [V2.2 Rev.D mono two-way, room software](docs/architecture/v2.2-rev-d-mono-room.md).** Footprint 320 × 400 mm. Body 84 mm maximum. One ND91-4, one ND20FB-4 and two ND90-PR in a single 2.5–4.0 L chamber. Stereo and coverage come from two or more pictures in the same Home Assistant room. Rev.C in-box stereo is withdrawn.
 
-**Current verified checkpoint: [Rev.FI](mechanical/digital-validation-rev-fi.md).** One serial refined-mesh weak-Y LC4 run passes the corner displacement check at 0.875290 mm and retains at least 0.173090 mm conservative final DML separation. The two-mesh displacement difference is 0.626581%; stress convergence remains OPEN. Weak-Z LC4 still fails. Materials, actual joints and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.
+**Historical structural checkpoint: [Rev.FI](mechanical/digital-validation-rev-fi.md).** It does not govern the radiator, the exciter, or the rear cavity. One serial refined-mesh weak-Y LC4 run passes the corner displacement check at 0.875290 mm and retains at least 0.173090 mm conservative final DML separation. The two-mesh displacement difference is 0.626581%; stress convergence remains OPEN. Weak-Z LC4 still fails. Materials, actual joints and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.
 
 The [Rev.FI supplement](https://github.com/Vinset85/audiopicture/releases/tag/checkpoint-rev-fi-2026-10-16) is published and verified: three attachments, 35 archive members (27 exact Git blobs and eight individually hashed raw artifacts). Receipts: [publication](evidence/rev-fi/github-publication.json), [archive consistency](evidence/rev-fi/archive-tree-verification.json).
 
@@ -23,9 +23,9 @@ The [Rev.FH supplement](https://github.com/Vinset85/audiopicture/releases/tag/ch
 - `docs/` — architecture and engineering specifications
 
 ## Architecture baseline
-**V2.2 Rev.A engineering.** Architecture-level decisions are tracked as `FROZEN`; parts and values requiring reference-design/layout verification are tracked as `VALIDATE`.
+**V2.2 Rev.D mono two-way** is the product authority. Rev.A remains the electronics partition and power tree except where Rev.D changes the transducers, the cabinet, and the room-audio software.
 
-See `docs/architecture/v2.2-rev-a.md` and `hardware/bom/audiopicture-v2.2-rev-a.csv`.
+See `docs/architecture/v2.2-rev-d-mono-room.md`, `docs/architecture/v2.2-rev-a.md`, and `hardware/bom/audiopicture-v2.2-rev-a.csv`.
 
 ## Digital validation checkpoint Rev.EN–EY
 

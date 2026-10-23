@@ -1,6 +1,8 @@
 # AudioPicture V2.2 Rev.A — DML compliant perimeter mount
 
-Status: **MOUNT_ARCHITECTURE_BASELINE_FROZEN / EXACT_FOAM_GRADE_AND_COMPRESSION_FEA_GATE**
+The compliant perimeter remains in force. Depth numbers that assume four 20.5 mm exciters inside 40 mm are superseded by `docs/architecture/v2.2-rev-b-acoustic-first.md`.
+
+Status: **PERIMETER_RETAINED / DEPTH_SUPERSEDED_BY_REV_B**
 
 ## 1. Function
 The DML panel shall be retained by a compliant perimeter interface, not hard-clamped directly to the printed enclosure.

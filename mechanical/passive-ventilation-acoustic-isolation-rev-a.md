@@ -1,6 +1,8 @@
 # AudioPicture V2.2 Rev.A — passive ventilation and acoustic-isolation architecture
 
-Status: **PASSIVE_CHIMNEY_ARCHITECTURE_FROZEN / CFD_SLOT_AREA_AND_ACOUSTIC_LEAKAGE_RELEASE_GATES_OPEN**
+The rear chimney in this file is withdrawn. `docs/architecture/v2.2-rev-b-acoustic-first.md` seals the DML rear volume and moves heat into the wall bracket.
+
+Status: **SUPERSEDED_BY_REV_B / CHIMNEY_WITHDRAWN**
 
 ## 1. Objective
 Define fanless cooling while preserving the 40 mm envelope, DML acoustic separation, hidden appearance, RF zones and wall-mount structure.

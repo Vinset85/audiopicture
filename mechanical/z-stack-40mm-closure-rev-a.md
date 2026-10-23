@@ -1,6 +1,8 @@
 # AudioPicture V2.2 Rev.A — 40 mm Z-stack closure
 
-Status: **40MM_ARCHITECTURE_CONDITIONALLY_VIABLE / SHARED_CAD_STEP_COLLISION_AND_REAR_SKIN_CLOSURE_REQUIRED**
+Superseded by `docs/architecture/v2.2-rev-b-acoustic-first.md`: one exciter column, 8 mm rear clearance, body maximum 48 mm. The four-column 40 mm closure below is historical.
+
+Status: **SUPERSEDED_BY_REV_B / HISTORICAL_40MM_STACK**
 
 ## 1. Objective
 Determine whether the current architecture can physically remain within the product target:

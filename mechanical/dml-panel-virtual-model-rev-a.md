@@ -1,6 +1,8 @@
 # AudioPicture V2.2 Rev.A — DML panel virtual model contract
 
-Status: **PARAMETRIC_MODEL_BASELINE / MATERIAL_AND_EXCITER_VARIANT_OPTIMIZATION_REQUIRED**
+Superseded by `docs/architecture/v2.2-rev-b-acoustic-first.md`. Four-exciter seeds, Candidate A/B, and the stereo pairing in this file are withdrawn. Stack A1 remains the panel baseline.
+
+Status: **SUPERSEDED_BY_REV_B / PARAMETRIC_MODEL_BASELINE**
 
 ## 1. Purpose
 This document defines the virtual modal/electro-mechanical model that has authority over final DML panel material, thickness, exciter coordinates and the load model used to release the TAS5825M output filter.
