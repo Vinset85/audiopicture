@@ -1,0 +1,397 @@
+{
+  "model": "lumped sealed box + two passive radiators, half-space 2pi at 1 m, small signal",
+  "not_a_measurement": true,
+  "woofer": {
+    "name": "Dayton Audio ND91-4",
+    "re": 4.3,
+    "le": 0.00083,
+    "bl": 4.59,
+    "mms": 0.0048,
+    "cms": 0.00096,
+    "qms": 4.24,
+    "fs": 74.0,
+    "sd": 0.00304,
+    "xmax": 0.0046,
+    "p_rated_w": 30.0,
+    "z_nominal": 4.0
+  },
+  "passive": {
+    "name": "Dayton Audio ND90-PR",
+    "mmp": 0.0081,
+    "cmp": 0.00109,
+    "rmp": 0.44,
+    "sd": 0.00312,
+    "xmax": 0.009,
+    "supplied_disk_kg": 0.0073,
+    "supplied_disks": 2,
+    "count": 2
+  },
+  "box_losses": {
+    "ql": 7.0,
+    "referred_to_hz": 50.0
+  },
+  "selection": {
+    "reference_band_hz": [
+      150.0,
+      400.0
+    ],
+    "rule": "maximize the flat SPL reachable over the EQ band, limited by woofer Xmax, passive Xmax and the 30 W rated voltage, with DSP boost <= 6 dB"
+  },
+  "geometry": {
+    "inner_mm": [
+      300.0,
+      380.0,
+      53.3
+    ],
+    "gross_l": 6.076,
+    "deductions_l": {
+      "sealed_electronics_pocket_300x70": 1.119,
+      "two_vertical_braces_10x360": 0.384,
+      "hanger_and_cable_recess": 0.2,
+      "driver_bodies_inside_box": 0.25
+    },
+    "net_l": 4.123,
+    "magnet_to_rear_wall_mm": 4.3
+  },
+  "nominal": {
+    "net_volume_l": 4.123,
+    "passive_added_mass_g_each": 4.9,
+    "passive_added_mass_vs_supplied_disks_g": -9.7,
+    "raw_alignment": {
+      "reference_spl_db_2v83": 85.06,
+      "f3_hz": 109.9,
+      "f6_hz": 53.7,
+      "f10_hz": 51.0,
+      "ripple_above_reference_db": 0.53
+    },
+    "raw_alignment_without_added_mass": {
+      "reference_spl_db_2v83": 85.22,
+      "f3_hz": 69.2,
+      "f6_hz": 66.2,
+      "f10_hz": 63.2,
+      "ripple_above_reference_db": 0.45
+    },
+    "min_impedance_ohm_20_3000hz": 4.39,
+    "eq_band_hz": [
+      55.0,
+      300.0
+    ],
+    "dsp_boost_needed_db": 4.88,
+    "flat_max_spl_1m_db_over_eq_band": 89.6,
+    "max_spl_1m_db": {
+      "40": 60.9,
+      "45": 67.1,
+      "50": 79.8,
+      "55": 89.7,
+      "60": 90.8,
+      "70": 89.6,
+      "80": 90.3,
+      "100": 92.9,
+      "150": 95.4,
+      "200": 96.5,
+      "500": 96.9,
+      "1000": 93.9
+    },
+    "max_spl_limit": {
+      "40": "excursion",
+      "45": "excursion",
+      "50": "excursion",
+      "55": "excursion",
+      "60": "excursion",
+      "70": "excursion",
+      "80": "excursion",
+      "100": "excursion",
+      "150": "voltage",
+      "200": "voltage",
+      "500": "voltage",
+      "1000": "voltage"
+    },
+    "woofer_band_min_max_spl_100_1500hz_db": 91.1,
+    "voltage_rms_for_90db_at_100hz": 7.47,
+    "build_option_one_supplied_disk_each": {
+      "added_mass_g": 7.3,
+      "flat_max_spl_1m_db_over_eq_band": 88.1,
+      "dsp_boost_needed_db": 5.49
+    },
+    "dsp_design_one_supplied_disk": {
+      "sample_rate_hz": 48000.0,
+      "subsonic": {
+        "type": "butterworth4",
+        "hz": 45.0,
+        "q": [
+          0.5411961,
+          1.306563
+        ]
+      },
+      "crossover": {
+        "type": "linkwitz_riley4",
+        "hz": 3000.0
+      },
+      "eq": [
+        {
+          "hz": 66.91,
+          "q": 1.1577,
+          "gain_db": 6.0
+        }
+      ],
+      "max_eq_boost_db": 6.0,
+      "woofer_response_55_500hz_db": [
+        -0.74,
+        0.8
+      ],
+      "model_valid_to_hz": 500.0,
+      "f3_after_dsp_hz": 50.6,
+      "max_level_1m_db_reference_band": 88.4,
+      "max_level_limited_at_hz": 65.9,
+      "tweeter_pad_db": -4.98,
+      "tweeter_not_modeled": true,
+      "passive_added_mass_g_each": 7.3
+    }
+  },
+  "volume_sensitivity": {
+    "2.5": {
+      "net_volume_l": 2.5,
+      "passive_added_mass_g_each": 7.8,
+      "passive_added_mass_vs_supplied_disks_g": -6.8,
+      "raw_alignment": {
+        "reference_spl_db_2v83": 85.25,
+        "f3_hz": 105.6,
+        "f6_hz": 54.4,
+        "f10_hz": 50.6,
+        "ripple_above_reference_db": 0.47
+      },
+      "raw_alignment_without_added_mass": {
+        "reference_spl_db_2v83": 85.6,
+        "f3_hz": 75.7,
+        "f6_hz": 72.1,
+        "f10_hz": 68.2,
+        "ripple_above_reference_db": 0.3
+      },
+      "min_impedance_ohm_20_3000hz": 4.39,
+      "eq_band_hz": [
+        55.0,
+        300.0
+      ],
+      "dsp_boost_needed_db": 5.56,
+      "flat_max_spl_1m_db_over_eq_band": 91.0,
+      "max_spl_1m_db": {
+        "40": 58.1,
+        "45": 71.1,
+        "50": 81.5,
+        "55": 91.1,
+        "60": 92.8,
+        "70": 91.0,
+        "80": 91.2,
+        "100": 93.4,
+        "150": 95.7,
+        "200": 96.8,
+        "500": 97.0,
+        "1000": 93.9
+      },
+      "max_spl_limit": {
+        "40": "excursion",
+        "45": "excursion",
+        "50": "excursion",
+        "55": "excursion",
+        "60": "voltage",
+        "70": "excursion",
+        "80": "excursion",
+        "100": "excursion",
+        "150": "voltage",
+        "200": "voltage",
+        "500": "voltage",
+        "1000": "voltage"
+      },
+      "woofer_band_min_max_spl_100_1500hz_db": 91.1,
+      "voltage_rms_for_90db_at_100hz": 7.12,
+      "build_option_one_supplied_disk_each": {
+        "added_mass_g": 7.3,
+        "flat_max_spl_1m_db_over_eq_band": 89.9,
+        "dsp_boost_needed_db": 5.99
+      }
+    },
+    "3.0": {
+      "net_volume_l": 3.0,
+      "passive_added_mass_g_each": 6.5,
+      "passive_added_mass_vs_supplied_disks_g": -8.1,
+      "raw_alignment": {
+        "reference_spl_db_2v83": 85.17,
+        "f3_hz": 106.7,
+        "f6_hz": 54.1,
+        "f10_hz": 50.8,
+        "ripple_above_reference_db": 0.49
+      },
+      "raw_alignment_without_added_mass": {
+        "reference_spl_db_2v83": 85.44,
+        "f3_hz": 73.0,
+        "f6_hz": 69.6,
+        "f10_hz": 66.2,
+        "ripple_above_reference_db": 0.37
+      },
+      "min_impedance_ohm_20_3000hz": 4.39,
+      "eq_band_hz": [
+        55.0,
+        300.0
+      ],
+      "dsp_boost_needed_db": 5.24,
+      "flat_max_spl_1m_db_over_eq_band": 90.5,
+      "max_spl_1m_db": {
+        "40": 56.9,
+        "45": 69.5,
+        "50": 80.7,
+        "55": 90.5,
+        "60": 92.5,
+        "70": 90.6,
+        "80": 90.9,
+        "100": 93.2,
+        "150": 95.6,
+        "200": 96.7,
+        "500": 96.9,
+        "1000": 93.9
+      },
+      "max_spl_limit": {
+        "40": "excursion",
+        "45": "excursion",
+        "50": "excursion",
+        "55": "excursion",
+        "60": "excursion",
+        "70": "excursion",
+        "80": "excursion",
+        "100": "excursion",
+        "150": "voltage",
+        "200": "voltage",
+        "500": "voltage",
+        "1000": "voltage"
+      },
+      "woofer_band_min_max_spl_100_1500hz_db": 91.1,
+      "voltage_rms_for_90db_at_100hz": 7.23,
+      "build_option_one_supplied_disk_each": {
+        "added_mass_g": 7.3,
+        "flat_max_spl_1m_db_over_eq_band": 90.1,
+        "dsp_boost_needed_db": 4.75
+      }
+    },
+    "3.5": {
+      "net_volume_l": 3.5,
+      "passive_added_mass_g_each": 5.6,
+      "passive_added_mass_vs_supplied_disks_g": -9.0,
+      "raw_alignment": {
+        "reference_spl_db_2v83": 85.12,
+        "f3_hz": 108.1,
+        "f6_hz": 53.9,
+        "f10_hz": 51.0,
+        "ripple_above_reference_db": 0.51
+      },
+      "raw_alignment_without_added_mass": {
+        "reference_spl_db_2v83": 85.32,
+        "f3_hz": 71.0,
+        "f6_hz": 67.8,
+        "f10_hz": 64.6,
+        "ripple_above_reference_db": 0.41
+      },
+      "min_impedance_ohm_20_3000hz": 4.39,
+      "eq_band_hz": [
+        55.0,
+        300.0
+      ],
+      "dsp_boost_needed_db": 5.08,
+      "flat_max_spl_1m_db_over_eq_band": 90.1,
+      "max_spl_1m_db": {
+        "40": 58.5,
+        "45": 68.1,
+        "50": 80.0,
+        "55": 90.0,
+        "60": 91.7,
+        "70": 90.1,
+        "80": 90.7,
+        "100": 93.1,
+        "150": 95.5,
+        "200": 96.6,
+        "500": 96.9,
+        "1000": 93.9
+      },
+      "max_spl_limit": {
+        "40": "excursion",
+        "45": "excursion",
+        "50": "excursion",
+        "55": "excursion",
+        "60": "excursion",
+        "70": "excursion",
+        "80": "excursion",
+        "100": "excursion",
+        "150": "voltage",
+        "200": "voltage",
+        "500": "voltage",
+        "1000": "voltage"
+      },
+      "woofer_band_min_max_spl_100_1500hz_db": 91.1,
+      "voltage_rms_for_90db_at_100hz": 7.34,
+      "build_option_one_supplied_disk_each": {
+        "added_mass_g": 7.3,
+        "flat_max_spl_1m_db_over_eq_band": 89.1,
+        "dsp_boost_needed_db": 5.02
+      }
+    },
+    "4.5": {
+      "net_volume_l": 4.5,
+      "passive_added_mass_g_each": 4.5,
+      "passive_added_mass_vs_supplied_disks_g": -10.1,
+      "raw_alignment": {
+        "reference_spl_db_2v83": 85.03,
+        "f3_hz": 110.6,
+        "f6_hz": 53.8,
+        "f10_hz": 51.2,
+        "ripple_above_reference_db": 0.53
+      },
+      "raw_alignment_without_added_mass": {
+        "reference_spl_db_2v83": 85.17,
+        "f3_hz": 68.5,
+        "f6_hz": 65.4,
+        "f10_hz": 62.5,
+        "ripple_above_reference_db": 0.47
+      },
+      "min_impedance_ohm_20_3000hz": 4.39,
+      "eq_band_hz": [
+        55.0,
+        300.0
+      ],
+      "dsp_boost_needed_db": 4.91,
+      "flat_max_spl_1m_db_over_eq_band": 89.4,
+      "max_spl_1m_db": {
+        "40": 62.2,
+        "45": 66.3,
+        "50": 79.3,
+        "55": 89.4,
+        "60": 90.4,
+        "70": 89.4,
+        "80": 90.2,
+        "100": 92.8,
+        "150": 95.3,
+        "200": 96.5,
+        "500": 96.9,
+        "1000": 93.9
+      },
+      "max_spl_limit": {
+        "40": "excursion",
+        "45": "excursion",
+        "50": "excursion",
+        "55": "excursion",
+        "60": "excursion",
+        "70": "excursion",
+        "80": "excursion",
+        "100": "excursion",
+        "150": "voltage",
+        "200": "voltage",
+        "500": "voltage",
+        "1000": "voltage"
+      },
+      "woofer_band_min_max_spl_100_1500hz_db": 91.1,
+      "voltage_rms_for_90db_at_100hz": 7.53,
+      "build_option_one_supplied_disk_each": {
+        "added_mass_g": 7.3,
+        "flat_max_spl_1m_db_over_eq_band": 87.6,
+        "dsp_boost_needed_db": 5.74
+      }
+    }
+  }
+}

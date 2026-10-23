@@ -22,6 +22,10 @@ Implemented:
 - Tested portable power-governor state machine. It is **not connected to live
   amplifier control**, because hardware qualification and calibrated limits
   are missing. Thirty-second sensor polling is not the governor's fast loop.
+- Rev.D `room_audio` component, portable C, **not linked into the app yet**:
+  - `ap_dsp`: mono two-way chain at 44.1/48 kHz. Input selection is SOLO/FILL L+R downmix, LEFT or RIGHT. Then delay up to 50 ms, Butterworth 4th-order subsonic at 45 Hz, the box-model EQ from `ap_model_curve_rev_d.h`, trim, and an active LR4 crossover at 3 kHz with tweeter pad. Bad configuration or total boost above 6 dB is rejected and the output stays silent.
+  - `ap_room`: room-plan validation and application with the Rev.D rules.
+  - `ap_clock`: four-timestamp clock follower with minimum-delay filtering and offset/drift fit.
 
 ## Build and host checks
 
@@ -49,9 +53,16 @@ cmake --build build-host
 ctest --test-dir build-host --output-on-failure
 ```
 
-Assertions remain enabled even in Release builds. The three suites exercise
+Assertions remain enabled even in Release builds. The four suites exercise
 200000 governor events/320 combinations, official sensor vectors/CRC and bus
-faults, and input-expander register/pattern/fault handling. Raw logs and hashes
+faults, input-expander register/pattern/fault handling, and `room_audio`. The
+`room_audio` suite checks the LR4 sum (flat within 0.01 dB from 200 Hz to
+20 kHz), real-time sine gains, role routing, delay, NaN input, and
+configuration and room-plan rejection. It also checks clock lock: under 25 µs
+error with 50 ppm drift and up to 1.8 ms one-way jitter on a synthetic link.
+On macOS with Homebrew LLVM, pass
+`-DCMAKE_C_COMPILER=/opt/homebrew/opt/llvm/bin/clang -DCMAKE_OSX_SYSROOT=$(xcrun --show-sdk-path)`
+for working sanitizers. Raw logs and hashes
 are recorded in `../evidence/rev-ez`. Host transport mocks do not validate PCB
 wiring, I2C rise time, SPI timing, network behavior or boot waveforms.
 
@@ -59,7 +70,8 @@ wiring, I2C rise time, SPI timing, network behavior or boot waveforms.
 
 Native MAIN/VOICE/RADAR schematics and all boards (ENV schematic has scoped ERC/netlist PASS), status-input conditioning,
 isolated PoE classification/negotiation, hardware bring-up and measured safe
-states; bounded fast power acquisition; TAS5825M initialization/DSP and audio
-pipeline; XVF3800/radar integration; commissioning, OTA/security, acoustic
-calibration and multiroom timing. Hardware release and complete functional
+states; bounded fast power acquisition; TAS5825M initialization, porting the
+`room_audio` chain to TAS coefficient RAM, dynamic bass limiter, I2S audio
+pipeline, room stream and clock transport; XVF3800/radar integration;
+commissioning, OTA/security and acoustic calibration. Hardware release and complete functional
 firmware must not be inferred from this successful diagnostic build.

@@ -24,13 +24,24 @@ become LEFT/RIGHT; three or more share one clock and per-unit delay. See
 for the diagnostic firmware, which explicitly advertises those capabilities as
 false.
 
+`room.py` is the first piece of the Rev.D room software. It is pure logic and
+not yet exposed as entities or services. It validates a room with the same
+rules as firmware `ap_room`: one SOLO, or one LEFT/RIGHT pair plus FILL units,
+up to 8, same firmware major. From listener distances it computes per-unit
+delay (arrival alignment at 343 m/s) and trim (1/r level match). FILL units
+get an extra precedence delay, 10 ms and −3 dB by default. Results beyond the
+firmware limits of 50 ms and −30 dB are rejected. `payload()` builds the JSON
+body for the future device room-plan endpoint. Distances are estimates; the
+microphone calibration in Rev.D §4.4 must refine them.
+
 ## Tests actually executed
 
-32 tests passed against the real Home Assistant fixture runtime and an HTTP
+Tests run against the real Home Assistant fixture runtime and an HTTP
 loopback server: discovery/config flow, duplicate discovery, confirmation
 identity changes, reconnect/unload, malformed and oversized responses,
 timeouts/redirects, finite measurement validation and diagnostics redaction.
-Line coverage: 181/181 executable statements. This is not branch coverage or
+Room-planner tests cover delay/trim results, every rejection rule and the
+limits. Line coverage is 100% of executable statements. This is not branch coverage or
 an ESP32/network hardware test. Evidence: `../evidence/rev-ez/`.
 
 Reproduce in a fresh Python 3.14 virtual environment:

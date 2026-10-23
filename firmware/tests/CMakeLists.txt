@@ -40,3 +40,19 @@ if(AP_ENABLE_SANITIZERS)
   target_link_options(test_status PRIVATE -fsanitize=address,undefined)
 endif()
 add_test(NAME status_expander_fail_closed COMMAND test_status)
+
+add_executable(test_room_audio test_room_audio.c
+  ../components/room_audio/ap_dsp.c
+  ../components/room_audio/ap_room.c
+  ../components/room_audio/ap_clock.c)
+target_include_directories(test_room_audio PRIVATE ../components/room_audio/include)
+target_compile_features(test_room_audio PRIVATE c_std_11)
+target_compile_options(test_room_audio PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+if(AP_ENABLE_SANITIZERS)
+  target_compile_options(test_room_audio PRIVATE -fsanitize=address,undefined -fno-omit-frame-pointer)
+  target_link_options(test_room_audio PRIVATE -fsanitize=address,undefined)
+endif()
+if(UNIX)
+  target_link_libraries(test_room_audio PRIVATE m)
+endif()
+add_test(NAME room_audio_dsp_room_clock COMMAND test_room_audio)
