@@ -2,9 +2,11 @@
 
 Smart acoustic picture / complete Home Assistant room node.
 
-**Product authority: [V2.2 Rev.D mono two-way, room software](docs/architecture/v2.2-rev-d-mono-room.md).** Footprint 320 × 400 mm. Body 84 mm maximum. One ND91-4, one ND20FB-4 and two ND90-PR in a single 2.5–4.0 L chamber. Stereo and coverage come from two or more pictures in the same Home Assistant room. Rev.C in-box stereo is withdrawn.
+**Product authority: [V2.2 Rev.E ultra-thin DML ≤ 30 mm](docs/architecture/v2.2-rev-e-dml-30mm.md).** Footprint 320 × 400 mm. Body **≤ 30 mm**. Dual specialized DML exciters on a composite bending-wave panel. Full room node retained: Ethernet, Wi-Fi, PoE, voice (4-mic + XVF3800), 60 GHz presence, temperature/humidity, illuminance, power telemetry, HA room software. Stereo and coverage from two or more pictures in the same room. Rev.D cone/PR 84 mm stack is withdrawn for the product.
 
-**Rev.D development, 2026-10-23 (digital only):** the [first box model](mechanical/acoustic-box-model-rev-d.md) gives 4.12 L net air and one 7.3 g disk on each passive. After DSP it models F3 50.6 Hz and 55–500 Hz within ±0.8 dB, with about 88 dB flat maximum at 1 m. The host-tested `firmware/components/room_audio` adds the mono two-way DSP chain, stereo/fill roles, the room-plan rules and the group clock follower. The Home Assistant `room.py` computes per-unit delay and level. Measurements, the dynamic bass limiter, TAS5825M/I2S integration, room streaming and media-player entities remain OPEN.
+**Supporting specs:** [DML panel](mechanical/dml-panel-rev-e.md), [electronics packaging](hardware/electronics-packaging-rev-e.md). Room logic already in `firmware/components/room_audio` and HA `room.py` carries forward; acoustic coefficients become DML-specific after measurement.
+
+**Historical Rev.D (digital only, superseded):** [box model](mechanical/acoustic-box-model-rev-d.md) and [Rev.D architecture](docs/architecture/v2.2-rev-d-mono-room.md) for the 84 mm cone path.
 
 **Historical structural checkpoint: [Rev.FI](mechanical/digital-validation-rev-fi.md).** It does not govern the radiator, the exciter, or the rear cavity. One serial refined-mesh weak-Y LC4 run passes the corner displacement check at 0.875290 mm and retains at least 0.173090 mm conservative final DML separation. The two-mesh displacement difference is 0.626581%; stress convergence remains OPEN. Weak-Z LC4 still fails. Materials, actual joints and complete product qualification remain OPEN. The 250 g frame ceiling remains removed.
 
@@ -25,9 +27,9 @@ The [Rev.FH supplement](https://github.com/Vinset85/audiopicture/releases/tag/ch
 - `docs/` — architecture and engineering specifications
 
 ## Architecture baseline
-**V2.2 Rev.D mono two-way** is the product authority. Rev.A remains the electronics partition and power tree except where Rev.D changes the transducers, the cabinet, and the room-audio software.
+**V2.2 Rev.E DML ≤ 30 mm** is the product authority. Rev.A remains the electronics partition and power tree except where Rev.E changes the transducers, thickness, and packaging. Rev.D room-software policy is absorbed into Rev.E.
 
-See `docs/architecture/v2.2-rev-d-mono-room.md`, `docs/architecture/v2.2-rev-a.md`, and `hardware/bom/audiopicture-v2.2-rev-a.csv`.
+See `docs/architecture/v2.2-rev-e-dml-30mm.md`, `docs/architecture/v2.2-rev-a.md`, and `hardware/bom/audiopicture-v2.2-rev-a.csv`.
 
 ## Digital validation checkpoint Rev.EN–EY
 
