@@ -53,7 +53,8 @@ def main() -> int:
     cleat = box(W - 48, 18, 6, 0, H / 2 - 28, 0)
     frame = frame.union(cleat)
 
-    panel = box(pw, ph, pt, 0, -H / 2 + wall + bay_h + cavity_h / 2, D - lip - pt)
+    panel_z = p.get("panel_z_mm", D - lip - pt)
+    panel = box(pw, ph, pt, 0, -H / 2 + wall + bay_h + cavity_h / 2, panel_z)
 
     OUT.mkdir(parents=True, exist_ok=True)
     for name, solid in (("AP-G-FRAME", frame), ("AP-G-PANEL", panel)):

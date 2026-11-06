@@ -2,7 +2,7 @@
 
 Smart acoustic picture / complete Home Assistant room node.
 
-**Product authority: [Rev.G clean sheet](docs/architecture/v2.2-rev-g-clean.md).** 320 × 400 × 30 mm. Satellite1.1 Dev Kit is the brain, the voice, and the LD2450 presence input. The panel is driven by a thin woofer exciter plus a Tectonic TEAX25C10-8/HS, each on its own TAS5825M channel. Printed frame in `mechanical/rev-g/cad/`. No PoE and no custom MAIN.
+**Product authority: [Rev.G frozen configuration](docs/architecture/v2.2-rev-g-clean.md).** 320 × 400 × 30 mm. Satellite1.1 Dev Kit, LD2450, Billionsound RMD002514H26-BS on TAS5825M channel A, Tectonic TEAX25C10-8/HS on channel B, 8 mm honeycomb panel. Frame: `mechanical/rev-g/cad/AP-G-FRAME.stl`.
 
 **Supporting specs:** [DML panel](mechanical/dml-panel-rev-e.md), [electronics packaging](hardware/electronics-packaging-rev-e.md). Room logic already in `firmware/components/room_audio` and HA `room.py` carries forward; acoustic coefficients become DML-specific after measurement.
 

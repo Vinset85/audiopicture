@@ -3,20 +3,54 @@
   "authority": "docs/architecture/v2.2-rev-g-clean.md",
   "body_mm": [320, 400, 30],
   "wall_mm": 4,
-  "rear_skin_mm": 1.5,
-  "front_lip_mm": 2,
+  "rear_skin_mm": 1.0,
+  "front_lip_mm": 1.5,
   "bay_height_mm": 78,
   "panel_mm": [296, 308, 8],
-  "exciters": {
-    "lf": {"part": "thin woofer exciter <=16 mm", "depth_mm": 16, "impedance_ohm": 4},
-    "wb": {"part": "Tectonic TEAX25C10-8/HS", "depth_mm": 19, "impedance_ohm": 8, "mass_g": 85}
+  "panel_z_mm": 20.5,
+  "stack_mm": {
+    "rear_skin": 1.0,
+    "clearance_behind_teax": 0.5,
+    "teax_depth": 19.0,
+    "panel": 8.0,
+    "cloth": 1.5,
+    "total": 30.0
   },
-  "amplifier": "TAS5825M dual BTL, I2S from Satellite1 header, PVDD 20 V",
+  "exciters": {
+    "lf": {
+      "part": "Billionsound RMD002514H26-BS",
+      "role": "bass",
+      "depth_mm": 15.5,
+      "diameter_mm": 46.8,
+      "impedance_ohm": 4,
+      "power_w": "5-10",
+      "on_panel_mm_from_lower_left": [110, 78]
+    },
+    "wb": {
+      "part": "Tectonic TEAX25C10-8/HS",
+      "role": "mid_high",
+      "depth_mm": 19,
+      "footprint_mm": [61.3, 50.8],
+      "impedance_ohm": 8,
+      "power_w": 10,
+      "fs_hz": 202,
+      "mass_g": 85,
+      "on_panel_mm_from_lower_left": [186, 220]
+    }
+  },
+  "amplifier": {
+    "part": "TAS5825M",
+    "pvdd_v": 20,
+    "channel_a": "LF 4 ohm",
+    "channel_b": "TEAX25 8 ohm",
+    "crossover_hz": 300,
+    "subsonic_hz": 45
+  },
   "electronics": {
     "hat_mm": [88, 88, 10],
     "core_mm": [66, 31, 10],
-    "radar": "HLK-LD2450 15 x 44 mm, window in the bay",
-    "power": "USB-C PD 45 W or 65 W, 20 V"
+    "radar": "HLK-LD2450 15 x 44 mm",
+    "power": "HAT on its USB-C PD supply; TAS5825M on a separate 20 V rail, grounds joined at one point"
   },
   "print": {
     "material": "PETG or ASA",
