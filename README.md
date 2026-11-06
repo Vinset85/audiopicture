@@ -2,7 +2,7 @@
 
 Smart acoustic picture / complete Home Assistant room node.
 
-**Product authority: [V2.2 Rev.E ultra-thin DML ≤ 30 mm](docs/architecture/v2.2-rev-e-dml-30mm.md).** Footprint 320 × 400 mm. Body **≤ 30 mm**. Dual specialized DML exciters on a composite bending-wave panel. Full room node retained: Ethernet, Wi-Fi, PoE, voice (4-mic + XVF3800), 60 GHz presence, temperature/humidity, illuminance, power telemetry, HA room software. Stereo and coverage from two or more pictures in the same room. Rev.D cone/PR 84 mm stack is withdrawn for the product.
+**Product authority: [V2.2 Rev.F — Satellite1.1 Dev Kit + DML ≤ 30 mm](docs/architecture/v2.2-rev-f-satellite1-dml.md).** Footprint 320 × 400 mm. Body **≤ 30 mm**. The kit supplies voice, four mics, ESPHome, Snapcast, climate, light, and LD2450 presence. The picture is still a dual-exciter DML panel, amplified by an external TAS5825M. The kit’s mono speaker and its 181 mm enclosure are not used. Ethernet and PoE are withdrawn. Rev.E remains the panel specification.
 
 **Supporting specs:** [DML panel](mechanical/dml-panel-rev-e.md), [electronics packaging](hardware/electronics-packaging-rev-e.md). Room logic already in `firmware/components/room_audio` and HA `room.py` carries forward; acoustic coefficients become DML-specific after measurement.
 
@@ -29,7 +29,7 @@ The [Rev.FH supplement](https://github.com/Vinset85/audiopicture/releases/tag/ch
 - `docs/` — architecture and engineering specifications
 
 ## Architecture baseline
-**V2.2 Rev.E DML ≤ 30 mm** is the product authority. Rev.A remains the electronics partition and power tree except where Rev.E changes the transducers, thickness, and packaging. Rev.D room-software policy is absorbed into Rev.E.
+**V2.2 Rev.F** is the product authority: Satellite1.1 Dev Kit plus the Rev.E DML panel. Rev.E still governs the diaphragm and the exciters. Ethernet, PoE, and the custom MAIN are withdrawn.
 
 See `docs/architecture/v2.2-rev-e-dml-30mm.md`, `docs/architecture/v2.2-rev-a.md`, and `hardware/bom/audiopicture-v2.2-rev-a.csv`.
 
