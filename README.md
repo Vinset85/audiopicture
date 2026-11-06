@@ -2,7 +2,7 @@
 
 Smart acoustic picture / complete Home Assistant room node.
 
-**Product authority: [Rev.G clean sheet](docs/architecture/v2.2-rev-g-clean.md).** 320 × 400 × 30 mm. Satellite1.1 Dev Kit is the brain, the voice, and the amplifier. One Visaton EX 60 S – 4 on a 6 mm panel. LD2450 for presence. Printed frame in `mechanical/rev-g/cad/`. No custom PCB, no PoE, no second amplifier.
+**Product authority: [Rev.G clean sheet](docs/architecture/v2.2-rev-g-clean.md).** 320 × 400 × 30 mm. Satellite1.1 Dev Kit is the brain, the voice, and the LD2450 presence input. The panel is driven by a thin woofer exciter plus a Tectonic TEAX25C10-8/HS, each on its own TAS5825M channel. Printed frame in `mechanical/rev-g/cad/`. No PoE and no custom MAIN.
 
 **Supporting specs:** [DML panel](mechanical/dml-panel-rev-e.md), [electronics packaging](hardware/electronics-packaging-rev-e.md). Room logic already in `firmware/components/room_audio` and HA `room.py` carries forward; acoustic coefficients become DML-specific after measurement.
 

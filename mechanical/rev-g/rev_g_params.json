@@ -6,19 +6,17 @@
   "rear_skin_mm": 1.5,
   "front_lip_mm": 2,
   "bay_height_mm": 78,
-  "panel_mm": [296, 308, 6],
-  "exciter": {
-    "part": "Visaton EX 60 S - 4",
-    "footprint_mm": [58, 50],
-    "depth_mm": 21,
-    "impedance_ohm": 4,
-    "seed_on_panel_mm": [148, 110]
+  "panel_mm": [296, 308, 8],
+  "exciters": {
+    "lf": {"part": "thin woofer exciter <=16 mm", "depth_mm": 16, "impedance_ohm": 4},
+    "wb": {"part": "Tectonic TEAX25C10-8/HS", "depth_mm": 19, "impedance_ohm": 8, "mass_g": 85}
   },
+  "amplifier": "TAS5825M dual BTL, I2S from Satellite1 header, PVDD 20 V",
   "electronics": {
     "hat_mm": [88, 88, 10],
     "core_mm": [66, 31, 10],
     "radar": "HLK-LD2450 15 x 44 mm, window in the bay",
-    "power": "USB-C PD 30 W on the HAT"
+    "power": "USB-C PD 45 W or 65 W, 20 V"
   },
   "print": {
     "material": "PETG or ASA",
