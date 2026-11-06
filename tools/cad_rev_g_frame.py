@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Printable Rev.G frame: 320 x 400 x 30 mm, Satellite1 bay, radar window, panel.
+"""Printable Rev.G frame. Front face is Z = 30. Print with the front on the bed.
 
-One solid. Front face is Z = 30. Print with the front on the bed.
+The acoustic cavity stops at the back of the panel. A 1.5 mm lip keeps the
+panel in. The bottom bay is tall enough for the 88 mm Satellite1 HAT.
 """
 from __future__ import annotations
 import json
@@ -24,57 +25,42 @@ def main() -> int:
     wall, rear, lip = p["wall_mm"], p["rear_skin_mm"], p["front_lip_mm"]
     bay_h = p["bay_height_mm"]
     pw, ph, pt = p["panel_mm"]
+    panel_z = p["panel_z_mm"]
+    cavity_h = H - bay_h - wall
+    bay_clear = bay_h - wall
 
     def box(w, h, d, x, y, z):
         return cq.Workplane("XY").box(w, h, d, centered=(True, True, False)).translate((x, y, z))
 
+    cy = -H / 2 + wall + bay_h + cavity_h / 2
+    by = -H / 2 + wall + bay_clear / 2
     outer = box(W, H, D, 0, 0, 0)
-    # Acoustic cavity: above the bay, open through the front lip except a 8 mm picture rebate.
-    cavity_h = H - bay_h - wall
-    cavity = box(W - 2 * wall, cavity_h, D - rear, 0, -H / 2 + wall + bay_h + cavity_h / 2, rear)
-    # Front opening slightly smaller than the panel so the panel sits on a rebate.
-    opening = box(pw - 16, ph - 16, lip + 1, 0, -H / 2 + wall + bay_h + cavity_h / 2, D - lip)
-    # Electronics bay, open at the back for the boards (covers screw on later if needed).
-    bay = box(W - 2 * wall, bay_h - wall, D - rear - 2, 0, -H / 2 + wall + (bay_h - wall) / 2, rear)
-    frame = outer.cut(cavity).cut(opening).cut(bay)
-
-    # USB-C slot, bottom edge, centred.
-    usb = box(14, wall + 2, 8, 0, -H / 2 + wall / 2, 8)
-    # Radar window in the front of the bay, right side. Plastic remains the bay floor.
-    radar = box(16, 46, lip + 2, W / 2 - 36, -H / 2 + bay_h / 2, D - lip)
-    # Four mic slots above the HAT seat, through the front lip of the bay.
-    mics = None
-    for i, x in enumerate((-30, -10, 10, 30)):
-        slot = box(6, 3, lip + 2, x, -H / 2 + bay_h - 8, D - lip)
-        mics = slot if mics is None else mics.union(slot)
-    frame = frame.cut(usb).cut(radar).cut(mics)
-
-    # Cleat rib on the rear, inside the top edge. Stays within 30 mm.
-    cleat = box(W - 48, 18, 6, 0, H / 2 - 28, 0)
-    frame = frame.union(cleat)
-
-    panel_z = p.get("panel_z_mm", D - lip - pt)
-    panel = box(pw, ph, pt, 0, -H / 2 + wall + bay_h + cavity_h / 2, panel_z)
+    behind = box(W - 2 * wall, cavity_h, panel_z - rear, 0, cy, rear)
+    pocket = box(pw + 1.0, ph + 1.0, pt, 0, cy, panel_z)
+    opening = box(pw - 16, ph - 16, lip + 1, 0, cy, D - lip)
+    bay = box(W - 2 * wall, bay_clear, D - rear - lip, 0, by, rear)
+    frame = outer.cut(behind).cut(pocket).cut(opening).cut(bay)
+    frame = frame.cut(box(14, wall + 2, 8, 0, -H / 2 + wall / 2, 8))
+    frame = frame.cut(box(16, 46, lip + 2, W / 2 - 36, by, D - lip))
+    for x in (-30, -10, 10, 30):
+        frame = frame.cut(box(6, 3, lip + 2, x, -H / 2 + bay_h - 6, D - lip))
+    frame = frame.union(box(W - 48, 14, 4, 0, H / 2 - 22, 0))
+    panel = box(pw, ph, pt, 0, cy, panel_z)
 
     OUT.mkdir(parents=True, exist_ok=True)
     for name, solid in (("AP-G-FRAME", frame), ("AP-G-PANEL", panel)):
         cq.exporters.export(solid, str(OUT / f"{name}.step"))
         cq.exporters.export(solid, str(OUT / f"{name}.stl"))
-        print("wrote", name)
     bb = frame.val().BoundingBox()
-    depth = round(bb.zmax - bb.zmin, 2)
-    if depth > 30.01:
-        print("FAIL depth", depth)
-        return 1
+    depth = bb.zmax - bb.zmin
     meta = {
-        "parts": ["AP-G-FRAME", "AP-G-PANEL"],
-        "envelope_mm": [round(bb.xmax - bb.xmin, 2), round(bb.ymax - bb.ymin, 2), depth],
-        "print": p["print"],
-        "note": "Prototype frame. Mic slots are a pitch, not a measured HAT footprint.",
+        "envelope_mm": [round(bb.xmax - bb.xmin, 3), round(bb.ymax - bb.ymin, 3), round(depth, 3)],
+        "bay_interior_mm": [round(W - 2 * wall, 3), round(bay_clear, 3)],
+        "cavity_mm": [round(W - 2 * wall, 3), round(cavity_h, 3)],
     }
     (OUT / "manifest.json").write_text(json.dumps(meta, indent=2) + "\n")
-    print("envelope", meta["envelope_mm"])
-    return 0
+    print(json.dumps(meta))
+    return 0 if depth <= 30.01 else 1
 
 
 if __name__ == "__main__":

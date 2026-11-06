@@ -1,0 +1,67 @@
+{
+  "configuration": "Rev.G",
+  "digital_result": "PASS",
+  "production_release": "BLOCKED",
+  "blocked_by": [
+    "First-article acoustic measurement against the pass bars in the frozen spec",
+    "Line-out level and channel assignment confirmed on a real Dev Kit",
+    "Pilot of at least one assembled frame, not a released lot"
+  ],
+  "gates": [
+    {
+      "gate": "stack sums to 30.0 mm",
+      "result": "PASS",
+      "detail": "sum=30.0"
+    },
+    {
+      "gate": "TEAX clears the rear skin",
+      "result": "PASS",
+      "detail": "TEAX back face Z=1.5, skin inner Z=1.0"
+    },
+    {
+      "gate": "panel fits the acoustic cavity",
+      "result": "PASS",
+      "detail": "panel 296x286 cavity 312x294 front Z=28.5"
+    },
+    {
+      "gate": "HAT and Core fit the bay side by side",
+      "result": "PASS",
+      "detail": "bay interior 312x98, HAT 88x88, Core 66x31"
+    },
+    {
+      "gate": "boards are thinner than the bay",
+      "result": "PASS",
+      "detail": "bay depth 27.5 mm"
+    },
+    {
+      "gate": "bass exciter footprint inside the panel",
+      "result": "PASS",
+      "detail": "[110, 78]"
+    },
+    {
+      "gate": "TEAX footprint inside the panel",
+      "result": "PASS",
+      "detail": "[186, 200]"
+    },
+    {
+      "gate": "exciters do not overlap",
+      "result": "PASS",
+      "detail": "centre distance 143.7 mm"
+    },
+    {
+      "gate": "bass exciter is the shallower motor",
+      "result": "PASS",
+      "detail": "LF 15.5 mm 4 ohm, WB 19 mm 8 ohm"
+    },
+    {
+      "gate": "frame STEP and STL exist",
+      "result": "PASS",
+      "detail": "stl=10684"
+    },
+    {
+      "gate": "audio path matches the published kit firmware",
+      "result": "PASS",
+      "detail": "GPIO9 I2S feeds the onboard TAS2780/PCM5122. An external TAS5825M I2S tap is not a documented port."
+    }
+  ]
+}
