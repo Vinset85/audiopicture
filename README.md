@@ -2,7 +2,7 @@
 
 Smart acoustic picture / complete Home Assistant room node.
 
-**Product authority: [V2.2 Rev.F — Satellite1.1 Dev Kit + DML ≤ 30 mm](docs/architecture/v2.2-rev-f-satellite1-dml.md).** Footprint 320 × 400 mm. Body **≤ 30 mm**. The kit supplies voice, four mics, ESPHome, Snapcast, climate, light, and LD2450 presence. The picture is still a dual-exciter DML panel, amplified by an external TAS5825M. The kit’s mono speaker and its 181 mm enclosure are not used. Ethernet and PoE are withdrawn. Rev.E remains the panel specification.
+**Product authority: [Rev.G clean sheet](docs/architecture/v2.2-rev-g-clean.md).** 320 × 400 × 30 mm. Satellite1.1 Dev Kit is the brain, the voice, and the amplifier. One Visaton EX 60 S – 4 on a 6 mm panel. LD2450 for presence. Printed frame in `mechanical/rev-g/cad/`. No custom PCB, no PoE, no second amplifier.
 
 **Supporting specs:** [DML panel](mechanical/dml-panel-rev-e.md), [electronics packaging](hardware/electronics-packaging-rev-e.md). Room logic already in `firmware/components/room_audio` and HA `room.py` carries forward; acoustic coefficients become DML-specific after measurement.
 
@@ -29,7 +29,7 @@ The [Rev.FH supplement](https://github.com/Vinset85/audiopicture/releases/tag/ch
 - `docs/` — architecture and engineering specifications
 
 ## Architecture baseline
-**V2.2 Rev.F** is the product authority: Satellite1.1 Dev Kit plus the Rev.E DML panel. Rev.E still governs the diaphragm and the exciters. Ethernet, PoE, and the custom MAIN are withdrawn.
+**Rev.G** is the product authority. Earlier revisions stay in the tree as evidence.
 
 See `docs/architecture/v2.2-rev-e-dml-30mm.md`, `docs/architecture/v2.2-rev-a.md`, and `hardware/bom/audiopicture-v2.2-rev-a.csv`.
 

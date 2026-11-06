@@ -1,0 +1,28 @@
+{
+  "revision": "G",
+  "authority": "docs/architecture/v2.2-rev-g-clean.md",
+  "body_mm": [320, 400, 30],
+  "wall_mm": 4,
+  "rear_skin_mm": 1.5,
+  "front_lip_mm": 2,
+  "bay_height_mm": 78,
+  "panel_mm": [296, 308, 6],
+  "exciter": {
+    "part": "Visaton EX 60 S - 4",
+    "footprint_mm": [58, 50],
+    "depth_mm": 21,
+    "impedance_ohm": 4,
+    "seed_on_panel_mm": [148, 110]
+  },
+  "electronics": {
+    "hat_mm": [88, 88, 10],
+    "core_mm": [66, 31, 10],
+    "radar": "HLK-LD2450 15 x 44 mm, window in the bay",
+    "power": "USB-C PD 30 W on the HAT"
+  },
+  "print": {
+    "material": "PETG or ASA",
+    "orientation": "front face on the bed",
+    "layer_mm": 0.2
+  }
+}

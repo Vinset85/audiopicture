@@ -1,0 +1,17 @@
+{
+  "parts": [
+    "AP-G-FRAME",
+    "AP-G-PANEL"
+  ],
+  "envelope_mm": [
+    320.0,
+    400.0,
+    30.0
+  ],
+  "print": {
+    "material": "PETG or ASA",
+    "orientation": "front face on the bed",
+    "layer_mm": 0.2
+  },
+  "note": "Prototype frame. Mic slots are a pitch, not a measured HAT footprint."
+}
