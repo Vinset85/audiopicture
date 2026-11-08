@@ -1,6 +1,6 @@
 # Schema elettrico quadro cucina
 
-Schema di cablaggio corretto del quadro cucina basato sul bozzetto a mano e sullo schema ufficiale Shelly Pro 4PM.
+Schema di cablaggio del quadro cucina con **simulazione grafica** dei dispositivi DIN e **icone** dei carichi.
 
 ## File
 
@@ -10,11 +10,11 @@ Schema di cablaggio corretto del quadro cucina basato sul bozzetto a mano e sull
 
 ## Architettura
 
-1. **Magnetotermico differenziale (RCBO)** protegge L + N in ingresso.
-2. **BUS L** e **BUS N** alimentano due **Shelly Pro 4PM**.
-3. Ogni uscita `Ox` fornisce la fase commutata al carico; il neutro torna al BUS N.
-4. **ETH 1 / ETH 2** collegano le porte LAN dei due moduli.
-5. Ingressi interruttore **S1–S4** non usati in questo quadro.
+1. **Magnetotermico differenziale (RCBO)** — rendering con leva ON e pulsante TEST.
+2. **Shelly Pro 4PM** — corpo scuro, display, LED O1–O4, morsetti, RJ45.
+3. **BUS L / BUS N** alimentano i due moduli; **N carichi** chiude i neutri.
+4. Ogni uscita `Ox` passa da un fusibile e arriva all’icona del carico.
+5. **ETH 1 / ETH 2** sulle porte LAN; **S1–S4** non usati.
 
 ## Mappa carichi
 
