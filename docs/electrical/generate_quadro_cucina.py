@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera lo schema elettrico quadro cucina con icone e rendering dispositivi."""
+"""Schema quadro cucina realistico: armadio, DIN, RCBO, Shelly Pro 4PM, icone."""
 
 from pathlib import Path
 
@@ -8,24 +8,25 @@ import cairosvg
 OUT_DIR = Path(__file__).resolve().parent
 ART_DIR = Path("/opt/cursor/artifacts")
 
-W, H = 2000, 1420
-BG = "#e8eef3"
-PANEL = "#ffffff"
-PANEL_EDGE = "#b8c4d0"
-INK = "#1a2332"
-MUTED = "#5a6b7d"
-L_COL = "#c0392b"
-L_SOFT = "#fdecea"
-N_COL = "#0f766e"
-N_SOFT = "#e6f4f2"
-ETH = "#334155"
-ACCENT = "#0f4c81"
-ACCENT_SOFT = "#e8f1f8"
-DIN = "#9aa6b2"
-SHELLY_BODY = "#2b3340"
-SHELLY_FACE = "#3a4454"
-SCREEN = "#0a1624"
-FUSE = "#94a3b8"
+W, H = 2200, 1680
+
+# IEC-ish colors (Italia)
+L_COL = "#8B4513"  # marrone fase
+L_BRIGHT = "#A0522D"
+N_COL = "#1D4ED8"  # blu neutro
+PE_COL = "#CA8A04"
+ETH = "#111827"
+INK = "#111827"
+MUTED = "#4B5563"
+BG = "#9CA3AF"
+CABINET = "#D1D5DB"
+CABINET_IN = "#E5E7EB"
+PLASTIC = "#F3F4F6"
+PLASTIC_EDGE = "#9CA3AF"
+SHELLY_GRAY = "#E8EAED"
+SHELLY_DARK = "#4B5563"
+SCREEN_BG = "#1a2332"
+ACCENT = "#0F4C81"
 
 SHELLY1 = {
     "O4": (4, "Frigorifero", "fridge"),
@@ -41,64 +42,67 @@ SHELLY2 = {
 }
 
 
-def esc(text: str) -> str:
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
+def esc(t: str) -> str:
+    return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
+# ----- Icons (more detailed) -----
 def icon_dishwasher(a, cx, cy, s=1.0):
-    x, y = cx - 16 * s, cy - 18 * s
-    a(f'<rect x="{x}" y="{y}" width="{32*s}" height="{36*s}" rx="{3*s}" fill="#dbe7f3" stroke="{ACCENT}" stroke-width="1.6"/>')
-    a(f'<rect x="{x+3*s}" y="{y+3*s}" width="{26*s}" height="{6*s}" rx="{1.5*s}" fill="{ACCENT}"/>')
-    a(f'<circle cx="{cx+8*s}" cy="{y+6*s}" r="{1.6*s}" fill="#9fd0ff"/>')
-    a(f'<rect x="{x+5*s}" y="{y+13*s}" width="{22*s}" height="{16*s}" rx="{2*s}" fill="#fff" stroke="{ACCENT}" stroke-width="1.2"/>')
-    a(f'<path d="M {x+8*s} {y+20*s} q {8*s} {8*s} {16*s} 0" fill="none" stroke="{ACCENT}" stroke-width="1.4"/>')
+    x, y, w, h = cx - 18 * s, cy - 22 * s, 36 * s, 44 * s
+    a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{4*s}" fill="#E5E7EB" stroke="#374151" stroke-width="1.5"/>')
+    a(f'<rect x="{x+3*s}" y="{y+3*s}" width="{w-6*s}" height="{8*s}" rx="{2*s}" fill="#6B7280"/>')
+    a(f'<circle cx="{cx+10*s}" cy="{y+7*s}" r="{2*s}" fill="#93C5FD"/>')
+    a(f'<rect x="{x+5*s}" y="{y+14*s}" width="{w-10*s}" height="{22*s}" rx="{2*s}" fill="#F9FAFB" stroke="#6B7280"/>')
+    a(f'<path d="M{x+9*s} {y+26*s} q {9*s} {10*s} {18*s} 0" fill="none" stroke="#3B82F6" stroke-width="{1.6*s}"/>')
+    a(f'<path d="M{x+11*s} {y+23*s} q {7*s} {7*s} {14*s} 0" fill="none" stroke="#93C5FD" stroke-width="{1.2*s}"/>')
 
 
 def icon_microwave(a, cx, cy, s=1.0):
-    x, y = cx - 18 * s, cy - 14 * s
-    a(f'<rect x="{x}" y="{y}" width="{36*s}" height="{28*s}" rx="{3*s}" fill="#dbe7f3" stroke="{ACCENT}" stroke-width="1.6"/>')
-    a(f'<rect x="{x+3*s}" y="{y+4*s}" width="{20*s}" height="{20*s}" rx="{2*s}" fill="#0b1f33"/>')
-    a(f'<rect x="{x+25*s}" y="{y+4*s}" width="{8*s}" height="{20*s}" rx="{1.5*s}" fill="#fff" stroke="{ACCENT}" stroke-width="1"/>')
-    a(f'<circle cx="{x+29*s}" cy="{y+10*s}" r="{1.8*s}" fill="{ACCENT}"/>')
-    a(f'<circle cx="{x+29*s}" cy="{y+18*s}" r="{1.8*s}" fill="{ACCENT}"/>')
+    x, y, w, h = cx - 22 * s, cy - 16 * s, 44 * s, 32 * s
+    a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{3*s}" fill="#E5E7EB" stroke="#374151" stroke-width="1.5"/>')
+    a(f'<rect x="{x+4*s}" y="{y+4*s}" width="{24*s}" height="{24*s}" rx="{2*s}" fill="#111827"/>')
+    a(f'<rect x="{x+8*s}" y="{y+8*s}" width="{16*s}" height="{16*s}" rx="{1*s}" fill="#1F2937" stroke="#4B5563"/>')
+    a(f'<rect x="{x+30*s}" y="{y+4*s}" width="{10*s}" height="{24*s}" rx="{2*s}" fill="#F9FAFB" stroke="#6B7280"/>')
+    a(f'<circle cx="{x+35*s}" cy="{y+11*s}" r="{2.2*s}" fill="#374151"/>')
+    a(f'<circle cx="{x+35*s}" cy="{y+20*s}" r="{2.2*s}" fill="#374151"/>')
+    a(f'<rect x="{x+32*s}" y="{y+25*s}" width="{6*s}" height="{1.5*s}" fill="#9CA3AF"/>')
 
 
 def icon_oven(a, cx, cy, s=1.0):
-    x, y = cx - 16 * s, cy - 18 * s
-    a(f'<rect x="{x}" y="{y}" width="{32*s}" height="{36*s}" rx="{3*s}" fill="#dbe7f3" stroke="{ACCENT}" stroke-width="1.6"/>')
-    a(f'<rect x="{x+4*s}" y="{y+4*s}" width="{24*s}" height="{5*s}" rx="{1.5*s}" fill="{ACCENT}"/>')
-    a(f'<rect x="{x+5*s}" y="{y+13*s}" width="{22*s}" height="{16*s}" rx="{2*s}" fill="#0b1f33"/>')
-    a(f'<line x1="{x+8*s}" y1="{y+21*s}" x2="{x+24*s}" y2="{y+21*s}" stroke="#9fd0ff" stroke-width="1.3"/>')
-    a(f'<circle cx="{cx}" cy="{y+6.5*s}" r="{1.4*s}" fill="#9fd0ff"/>')
+    x, y, w, h = cx - 18 * s, cy - 22 * s, 36 * s, 44 * s
+    a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{3*s}" fill="#E5E7EB" stroke="#374151" stroke-width="1.5"/>')
+    a(f'<rect x="{x+4*s}" y="{y+4*s}" width="{w-8*s}" height="{7*s}" rx="{2*s}" fill="#4B5563"/>')
+    a(f'<circle cx="{cx-6*s}" cy="{y+7.5*s}" r="{1.8*s}" fill="#D1D5DB"/>')
+    a(f'<circle cx="{cx+6*s}" cy="{y+7.5*s}" r="{1.8*s}" fill="#D1D5DB"/>')
+    a(f'<rect x="{x+5*s}" y="{y+15*s}" width="{w-10*s}" height="{22*s}" rx="{2*s}" fill="#111827"/>')
+    a(f'<rect x="{x+8*s}" y="{y+19*s}" width="{w-16*s}" height="{14*s}" rx="{1*s}" fill="#1F2937" stroke="#F59E0B" stroke-width="1"/>')
+    a(f'<line x1="{x+10*s}" y1="{y+26*s}" x2="{x+w-10*s}" y2="{y+26*s}" stroke="#FBBF24" stroke-width="1.2"/>')
 
 
 def icon_fridge(a, cx, cy, s=1.0):
-    x, y = cx - 14 * s, cy - 20 * s
-    a(f'<rect x="{x}" y="{y}" width="{28*s}" height="{40*s}" rx="{3*s}" fill="#dbe7f3" stroke="{ACCENT}" stroke-width="1.6"/>')
-    a(f'<line x1="{x}" y1="{y+14*s}" x2="{x+28*s}" y2="{y+14*s}" stroke="{ACCENT}" stroke-width="1.4"/>')
-    a(f'<rect x="{x+22*s}" y="{y+5*s}" width="{2.5*s}" height="{6*s}" rx="{1*s}" fill="{ACCENT}"/>')
-    a(f'<rect x="{x+22*s}" y="{y+20*s}" width="{2.5*s}" height="{10*s}" rx="{1*s}" fill="{ACCENT}"/>')
+    x, y, w, h = cx - 15 * s, cy - 24 * s, 30 * s, 48 * s
+    a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{3*s}" fill="#E5E7EB" stroke="#374151" stroke-width="1.5"/>')
+    a(f'<line x1="{x}" y1="{y+16*s}" x2="{x+w}" y2="{y+16*s}" stroke="#6B7280" stroke-width="1.4"/>')
+    a(f'<rect x="{x+w-6*s}" y="{y+5*s}" width="{2.5*s}" height="{7*s}" rx="{1*s}" fill="#374151"/>')
+    a(f'<rect x="{x+w-6*s}" y="{y+22*s}" width="{2.5*s}" height="{12*s}" rx="{1*s}" fill="#374151"/>')
+    a(f'<rect x="{x+4*s}" y="{y+4*s}" width="{8*s}" height="{3*s}" rx="{1*s}" fill="#93C5FD" opacity="0.7"/>')
 
 
 def icon_cooktop(a, cx, cy, s=1.0):
-    x, y = cx - 18 * s, cy - 14 * s
-    a(f'<rect x="{x}" y="{y}" width="{36*s}" height="{28*s}" rx="{3*s}" fill="#1f2937" stroke="{ACCENT}" stroke-width="1.6"/>')
-    for dx, dy in ((-7, -4), (7, -4), (-7, 6), (7, 6)):
-        a(f'<circle cx="{cx+dx*s}" cy="{cy+dy*s}" r="{5*s}" fill="none" stroke="#f59e0b" stroke-width="1.6"/>')
-        a(f'<circle cx="{cx+dx*s}" cy="{cy+dy*s}" r="{2*s}" fill="#f59e0b" opacity="0.35"/>')
+    x, y, w, h = cx - 22 * s, cy - 16 * s, 44 * s, 32 * s
+    a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{3*s}" fill="#1F2937" stroke="#111827" stroke-width="1.5"/>')
+    for dx, dy, r in ((-8, -4, 6), (8, -4, 5), (-8, 7, 5), (8, 7, 6)):
+        a(f'<circle cx="{cx+dx*s}" cy="{cy+dy*s}" r="{r*s}" fill="none" stroke="#F59E0B" stroke-width="1.7"/>')
+        a(f'<circle cx="{cx+dx*s}" cy="{cy+dy*s}" r="{(r-2.5)*s}" fill="#F59E0B" opacity="0.25"/>')
 
 
 def icon_socket(a, cx, cy, s=1.0):
-    x, y = cx - 14 * s, cy - 14 * s
-    a(f'<rect x="{x}" y="{y}" width="{28*s}" height="{28*s}" rx="{4*s}" fill="#dbe7f3" stroke="{ACCENT}" stroke-width="1.6"/>')
-    a(f'<circle cx="{cx-5*s}" cy="{cy-2*s}" r="{2.4*s}" fill="{ACCENT}"/>')
-    a(f'<circle cx="{cx+5*s}" cy="{cy-2*s}" r="{2.4*s}" fill="{ACCENT}"/>')
-    a(f'<path d="M {cx-4*s} {cy+7*s} a 4 {4*s} 0 0 0 {8*s} 0" fill="none" stroke="{ACCENT}" stroke-width="1.5"/>')
+    x, y, w, h = cx - 16 * s, cy - 16 * s, 32 * s, 32 * s
+    a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{4*s}" fill="#F3F4F6" stroke="#374151" stroke-width="1.5"/>')
+    a(f'<rect x="{x+4*s}" y="{y+4*s}" width="{w-8*s}" height="{h-8*s}" rx="{3*s}" fill="#E5E7EB" stroke="#9CA3AF"/>')
+    a(f'<circle cx="{cx-5*s}" cy="{cy-1*s}" r="{2.6*s}" fill="#111827"/>')
+    a(f'<circle cx="{cx+5*s}" cy="{cy-1*s}" r="{2.6*s}" fill="#111827"/>')
+    a(f'<path d="M{cx-5*s} {cy+8*s} a 5 {5*s} 0 0 0 {10*s} 0" fill="none" stroke="#111827" stroke-width="1.6"/>')
 
 
 ICONS = {
@@ -111,314 +115,327 @@ ICONS = {
 }
 
 
+def screw(a, cx, cy, r=3.4):
+    a(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#9CA3AF" stroke="#4B5563" stroke-width="0.8"/>')
+    a(f'<line x1="{cx-r*0.6}" y1="{cy}" x2="{cx+r*0.6}" y2="{cy}" stroke="#374151" stroke-width="1"/>')
+    a(f'<line x1="{cx}" y1="{cy-r*0.6}" x2="{cx}" y2="{cy+r*0.6}" stroke="#374151" stroke-width="1"/>')
+
+
+def terminal_block(a, x, y, labels, width):
+    n = len(labels)
+    slot = width / n
+    a(f'<rect x="{x}" y="{y}" width="{width}" height="18" rx="2" fill="#6B7280" stroke="#374151"/>')
+    for i, lab in enumerate(labels):
+        tx = x + slot * (i + 0.5)
+        a(f'<rect x="{tx-11}" y="{y+1}" width="22" height="16" rx="1.5" fill="#9CA3AF"/>')
+        screw(a, tx, y + 9, 3.0)
+        a(f'<text x="{tx}" y="{y+32}" text-anchor="middle" style="font:700 10px DejaVu Sans,Arial;fill:#111827">{lab}</text>')
+
+
+def draw_mcb_fuse(a, cx, cy):
+    """Mini magnetotermico / portafusibile canale — aspetto plastica."""
+    a(f'<rect x="{cx-14}" y="{cy-28}" width="28" height="56" rx="3" fill="#F9FAFB" stroke="#6B7280" stroke-width="1.3"/>')
+    a(f'<rect x="{cx-10}" y="{cy-22}" width="20" height="10" rx="1.5" fill="#FEE2E2" stroke="#EF4444" stroke-width="0.8"/>')
+    a(f'<text x="{cx}" y="{cy-14}" text-anchor="middle" style="font:700 7px DejaVu Sans,Arial;fill:#B91C1C">16A</text>')
+    a(f'<rect x="{cx-5}" y="{cy-6}" width="10" height="22" rx="2" fill="#E5E7EB" stroke="#374151"/>')
+    a(f'<rect x="{cx-4}" y="{cy-4}" width="8" height="10" rx="1.5" fill="#22C55E"/>')
+    screw(a, cx, cy - 24, 2.2)
+    screw(a, cx, cy + 22, 2.2)
+
+
 def draw_rj45(a, x, y):
-    a(f'<rect x="{x}" y="{y}" width="34" height="22" rx="2" fill="#0f172a" stroke="#1e293b"/>')
-    a(f'<rect x="{x+4}" y="{y+4}" width="26" height="14" rx="1" fill="#334155"/>')
-    for i in range(6):
-        a(f'<rect x="{x+7+i*3.5}" y="{y+7}" width="2" height="8" fill="#94a3b8"/>')
+    a(f'<rect x="{x}" y="{y}" width="40" height="26" rx="2" fill="#111827" stroke="#000"/>')
+    a(f'<rect x="{x+4}" y="{y+4}" width="32" height="16" rx="1" fill="#374151"/>')
+    for i in range(8):
+        a(f'<rect x="{x+6+i*3.5}" y="{y+6}" width="2.2" height="10" fill="#D1D5DB"/>')
+    a(f'<rect x="{x+14}" y="{y+20}" width="12" height="4" fill="#4B5563"/>')
 
 
-def draw_fuse(a, cx, cy):
-    a(f'<rect x="{cx-10}" y="{cy-12}" width="20" height="24" rx="3" fill="#fff7ed" stroke="#d97706" stroke-width="1.6"/>')
-    a(f'<line x1="{cx}" y1="{cy-7}" x2="{cx}" y2="{cy+7}" stroke="#d97706" stroke-width="2"/>')
-    a(f'<circle cx="{cx}" cy="{cy-7}" r="2" fill="#d97706"/>')
-    a(f'<circle cx="{cx}" cy="{cy+7}" r="2" fill="#d97706"/>')
+def draw_eth_cable(a, x1, y1, x2, y2, label):
+    # jack plug
+    a(f'<rect x="{x1-8}" y="{y1}" width="16" height="10" rx="1" fill="#1F2937"/>')
+    a(f'<path d="M{x1} {y1+10} V {y2} H {x2}" fill="none" stroke="#111827" stroke-width="3.5" stroke-linecap="round"/>')
+    a(f'<path d="M{x1} {y1+10} V {y2} H {x2}" fill="none" stroke="#6B7280" stroke-width="1.6" stroke-dasharray="2 3"/>')
+    a(f'<rect x="{x2}" y="{y2-12}" width="54" height="24" rx="4" fill="#111827"/>')
+    a(f'<text x="{x2+27}" y="{y2+4}" text-anchor="middle" style="font:700 11px DejaVu Sans,Arial;fill:#F9FAFB">{label}</text>')
 
 
 def build_svg() -> str:
     p: list[str] = []
     a = p.append
 
-    a(
-        f'''<?xml version="1.0" encoding="UTF-8"?>
+    a(f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
   <defs>
-    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#d5dde6" stroke-width="1"/>
-    </pattern>
-    <linearGradient id="dinGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#c5ced6"/>
-      <stop offset="50%" stop-color="#e8edf1"/>
-      <stop offset="100%" stop-color="#b7c2cc"/>
+    <linearGradient id="cabOut" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E5E7EB"/>
+      <stop offset="100%" stop-color="#9CA3AF"/>
     </linearGradient>
-    <linearGradient id="rcboGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="100%" stop-color="#e2e8f0"/>
+    <linearGradient id="cabIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#D1D5DB"/>
     </linearGradient>
-    <linearGradient id="shellyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3d4758"/>
-      <stop offset="100%" stop-color="#232a36"/>
+    <linearGradient id="din" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9FAFB"/>
+      <stop offset="45%" stop-color="#E5E7EB"/>
+      <stop offset="55%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#6B7280"/>
     </linearGradient>
-    <filter id="soft" x="-3%" y="-3%" width="106%" height="106%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#1a2332" flood-opacity="0.12"/>
+    <linearGradient id="plastic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+    <linearGradient id="shellyBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F9FA"/>
+      <stop offset="40%" stop-color="#E8EAED"/>
+      <stop offset="100%" stop-color="#CBD0D6"/>
+    </linearGradient>
+    <filter id="depth" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#111827" flood-opacity="0.22"/>
+    </filter>
+    <filter id="inset">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.25"/>
     </filter>
     <style><![CDATA[
-      .title {{ font: 700 36px "DejaVu Sans", Arial, sans-serif; fill: {INK}; }}
-      .sub {{ font: 400 14px "DejaVu Sans", Arial, sans-serif; fill: {MUTED}; }}
-      .h {{ font: 700 14px "DejaVu Sans", Arial, sans-serif; fill: {INK}; }}
-      .h2 {{ font: 600 11px "DejaVu Sans", Arial, sans-serif; fill: {MUTED}; }}
-      .chip {{ font: 700 11px "DejaVu Sans", Arial, sans-serif; fill: #fff; }}
-      .name {{ font: 700 12px "DejaVu Sans", Arial, sans-serif; fill: {INK}; }}
-      .term {{ font: 700 11px "DejaVu Sans", Arial, sans-serif; fill: {INK}; }}
-      .term-l {{ font: 700 11px "DejaVu Sans", Arial, sans-serif; fill: {L_COL}; }}
-      .term-n {{ font: 700 11px "DejaVu Sans", Arial, sans-serif; fill: {N_COL}; }}
-      .note {{ font: 400 12px "DejaVu Sans", Arial, sans-serif; fill: {MUTED}; }}
-      .leg {{ font: 600 12px "DejaVu Sans", Arial, sans-serif; fill: {INK}; }}
-      .leg-m {{ font: 400 11px "DejaVu Sans", Arial, sans-serif; fill: {MUTED}; }}
-      .warn {{ font: 500 12px "DejaVu Sans", Arial, sans-serif; fill: #8a5a00; }}
-      .dev-w {{ font: 700 13px "DejaVu Sans", Arial, sans-serif; fill: #fff; }}
-      .scr {{ font: 600 12px "DejaVu Sans", Arial, sans-serif; fill: #7dd3fc; }}
-      .scr2 {{ font: 500 10px "DejaVu Sans", Arial, sans-serif; fill: #64748b; }}
+      .title {{ font: 700 34px DejaVu Sans, Arial, sans-serif; fill: #111827; }}
+      .sub {{ font: 400 13px DejaVu Sans, Arial, sans-serif; fill: #4B5563; }}
+      .h {{ font: 700 13px DejaVu Sans, Arial, sans-serif; fill: #111827; }}
+      .h2 {{ font: 600 10px DejaVu Sans, Arial, sans-serif; fill: #6B7280; }}
+      .name {{ font: 700 11px DejaVu Sans, Arial, sans-serif; fill: #111827; }}
+      .note {{ font: 400 12px DejaVu Sans, Arial, sans-serif; fill: #4B5563; }}
+      .leg {{ font: 600 12px DejaVu Sans, Arial, sans-serif; fill: #111827; }}
+      .leg-m {{ font: 400 11px DejaVu Sans, Arial, sans-serif; fill: #6B7280; }}
+      .warn {{ font: 500 12px DejaVu Sans, Arial, sans-serif; fill: #92400E; }}
+      .chip {{ font: 700 11px DejaVu Sans, Arial, sans-serif; fill: #fff; }}
+      .scr {{ font: 700 12px DejaVu Sans, Arial, sans-serif; fill: #7DD3FC; }}
+      .scr2 {{ font: 500 10px DejaVu Sans, Arial, sans-serif; fill: #64748B; }}
+      .l {{ font: 700 11px DejaVu Sans, Arial, sans-serif; fill: {L_COL}; }}
+      .n {{ font: 700 11px DejaVu Sans, Arial, sans-serif; fill: {N_COL}; }}
+      .vert {{ font: 700 12px DejaVu Sans, Arial, sans-serif; fill: #374151; }}
     ]]></style>
   </defs>
   <rect width="100%" height="100%" fill="{BG}"/>
-  <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
-'''
-    )
+''')
 
-    # Header
-    a(f'<rect x="0" y="0" width="{W}" height="92" fill="{PANEL}"/>')
-    a(f'<rect x="0" y="90" width="{W}" height="3" fill="{ACCENT}"/>')
-    a(f'<text x="48" y="42" class="title">Quadro elettrico cucina</text>')
-    a(
-        f'<text x="48" y="68" class="sub">'
-        "Simulazione dispositivi DIN + schema cablaggio · RCBO · 2× Shelly Pro 4PM · 8 carichi</text>"
-    )
-    keys = [
-        (1500, L_COL, "Fase L"),
-        (1600, N_COL, "Neutro N"),
-        (1710, ETH, "Ethernet"),
-        (1825, "#d97706", "Fusibile"),
-    ]
-    for x, col, lab in keys:
-        a(f'<rect x="{x}" y="34" width="14" height="14" rx="3" fill="{col}"/>')
-        a(f'<text x="{x+22}" y="46" class="note">{lab}</text>')
+    # Outer room / wall
+    a(f'<rect x="30" y="30" width="{W-60}" height="{H-60}" rx="8" fill="#6B7280"/>')
 
-    top_n_y = 175
-    din_y = 430
-    device_y = 390
-    device_h = 300
-    l_bus_y = 780
-    n_bus_y = 1040
+    # Header plate
+    a(f'<rect x="50" y="50" width="{W-100}" height="78" rx="6" fill="#F9FAFB" filter="url(#depth)"/>')
+    a(f'<text x="74" y="88" class="title">Quadro elettrico cucina</text>')
+    a(f'<text x="74" y="110" class="sub">Armadio DIN · RCBO · 2× Shelly Pro 4PM · colori IEC (L marrone / N blu) · vista frontale realistica</text>')
+    a(f'<rect x="1680" y="68" width="14" height="14" rx="2" fill="{L_COL}"/>')
+    a(f'<text x="1702" y="80" class="note">L fase</text>')
+    a(f'<rect x="1780" y="68" width="14" height="14" rx="2" fill="{N_COL}"/>')
+    a(f'<text x="1802" y="80" class="note">N neutro</text>')
+    a(f'<rect x="1890" y="68" width="14" height="14" rx="2" fill="{ETH}"/>')
+    a(f'<text x="1912" y="80" class="note">ETH</text>')
 
-    # N carichi
-    a(f'<line x1="310" y1="{top_n_y}" x2="1860" y2="{top_n_y}" stroke="{N_COL}" stroke-width="3.2"/>')
-    a(f'<rect x="1870" y="{top_n_y-14}" width="90" height="28" rx="14" fill="{N_SOFT}" stroke="{N_COL}" stroke-width="1.5"/>')
-    a(f'<text x="1915" y="{top_n_y+5}" text-anchor="middle" class="term-n">N carichi</text>')
+    # Cabinet enclosure
+    cab_x, cab_y, cab_w, cab_h = 50, 145, W - 100, 1280
+    a(f'<rect x="{cab_x}" y="{cab_y}" width="{cab_w}" height="{cab_h}" rx="10" fill="url(#cabOut)" stroke="#4B5563" stroke-width="3" filter="url(#depth)"/>')
+    for hy in (cab_y + 80, cab_y + cab_h / 2, cab_y + cab_h - 100):
+        a(f'<rect x="{cab_x-6}" y="{hy}" width="12" height="36" rx="2" fill="#374151"/>')
+    ix, iy, iw, ih = cab_x + 28, cab_y + 28, cab_w - 56, cab_h - 56
+    a(f'<rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="4" fill="url(#cabIn)" stroke="#9CA3AF"/>')
+    for i in range(14):
+        a(f'<rect x="{ix+40+i*55}" y="{iy+8}" width="30" height="4" rx="1" fill="#9CA3AF"/>')
 
-    # DIN rail under devices
-    a(f'<rect x="280" y="{din_y+250}" width="1560" height="28" rx="4" fill="url(#dinGrad)" stroke="{DIN}" stroke-width="1"/>')
-    a(f'<text x="300" y="{din_y+269}" class="h2">Guida DIN 35 mm</text>')
+    # Zona carichi in alto
+    top_n_y = iy + 55
+    a(f'<rect x="{ix+40}" y="{top_n_y-8}" width="{iw-200}" height="16" rx="3" fill="{N_COL}"/>')
+    a(f'<rect x="{ix+iw-150}" y="{top_n_y-14}" width="100" height="28" rx="4" fill="#DBEAFE" stroke="{N_COL}"/>')
+    a(f'<text x="{ix+iw-100}" y="{top_n_y+5}" text-anchor="middle" class="n">MORSETTIERA N</text>')
 
-    # ===== RCBO device simulation =====
-    mx, my, mw, mh = 48, 360, 220, 340
-    a(f'<rect x="{mx}" y="{my}" width="{mw}" height="{mh}" rx="10" fill="url(#rcboGrad)" stroke="{PANEL_EDGE}" stroke-width="1.6" filter="url(#soft)"/>')
-    # DIN clip look
-    a(f'<rect x="{mx+8}" y="{my+mh-18}" width="{mw-16}" height="10" rx="2" fill="#cbd5e1"/>')
-    a(f'<text x="{mx+mw/2}" y="{my+28}" text-anchor="middle" class="h">Magnetotermico</text>')
-    a(f'<text x="{mx+mw/2}" y="{my+48}" text-anchor="middle" class="h">differenziale</text>')
-    a(f'<rect x="{mx+40}" y="{my+62}" width="{mw-80}" height="24" rx="12" fill="{ACCENT_SOFT}"/>')
-    a(f'<text x="{mx+mw/2}" y="{my+78}" text-anchor="middle" class="h2">RCBO · bipolare</text>')
+    # Canalina intermedia (tra carichi e dispositivi)
+    duct_y = iy + 250
+    a(f'<rect x="{ix+20}" y="{duct_y}" width="{iw-40}" height="32" rx="3" fill="#9CA3AF" stroke="#6B7280"/>')
+    a(f'<rect x="{ix+24}" y="{duct_y+4}" width="{iw-48}" height="24" rx="2" fill="#D1D5DB"/>')
+    a(f'<text x="{ix+40}" y="{duct_y+20}" class="h2">Canalina · fusibili/MT di canale</text>')
 
-    # Lever / test button simulation
-    a(f'<rect x="{mx+55}" y="{my+105}" width="110" height="150" rx="8" fill="#fff" stroke="{PANEL_EDGE}"/>')
-    a(f'<rect x="{mx+78}" y="{my+120}" width="64" height="18" rx="3" fill="#ef4444"/>')
-    a(f'<text x="{mx+110}" y="{my+133}" text-anchor="middle" class="chip" style="font-size:10px">TEST</text>')
-    # Toggle lever
-    a(f'<rect x="{mx+92}" y="{my+155}" width="36" height="70" rx="6" fill="#e2e8f0" stroke="{INK}" stroke-width="1.4"/>')
-    a(f'<rect x="{mx+96}" y="{my+160}" width="28" height="28" rx="4" fill="#22c55e"/>')
-    a(f'<text x="{mx+110}" y="{my+250}" text-anchor="middle" class="h2">ON</text>')
-    a(f'<text x="{mx+mw/2}" y="{my+290}" text-anchor="middle" class="h2">IΔn · protezione L+N</text>')
+    # DIN rail più in basso per lasciare spazio a MCB e card
+    din_y = iy + 560
+    a(f'<rect x="{ix+30}" y="{din_y}" width="{iw-60}" height="34" rx="2" fill="url(#din)" stroke="#6B7280"/>')
+    a(f'<rect x="{ix+30}" y="{din_y+12}" width="{iw-60}" height="4" fill="#F9FAFB" opacity="0.7"/>')
+    a(f'<text x="{ix+45}" y="{din_y+58}" class="h2">Guida DIN EN 60715 · 35 mm</text>')
 
-    # Supply in
-    a(f'<line x1="100" y1="125" x2="100" y2="{my}" stroke="{L_COL}" stroke-width="3.2"/>')
-    a(f'<line x1="170" y1="125" x2="170" y2="{my}" stroke="{N_COL}" stroke-width="3.2"/>')
-    a(f'<circle cx="100" cy="{my}" r="5.5" fill="{L_COL}"/>')
-    a(f'<circle cx="170" cy="{my}" r="5.5" fill="{N_COL}"/>')
-    a(f'<rect x="74" y="100" width="52" height="22" rx="11" fill="{L_SOFT}" stroke="{L_COL}" stroke-width="1.3"/>')
-    a(f'<text x="100" y="115" text-anchor="middle" class="term-l">L rete</text>')
-    a(f'<rect x="144" y="100" width="52" height="22" rx="11" fill="{N_SOFT}" stroke="{N_COL}" stroke-width="1.3"/>')
-    a(f'<text x="170" y="115" text-anchor="middle" class="term-n">N rete</text>')
+    a(f'<rect x="{ix+20}" y="{iy+ih-90}" width="{iw-40}" height="36" rx="3" fill="#9CA3AF" stroke="#6B7280"/>')
+    a(f'<rect x="{ix+24}" y="{iy+ih-86}" width="{iw-48}" height="28" rx="2" fill="#D1D5DB"/>')
+    a(f'<text x="{ix+40}" y="{iy+ih-66}" class="h2">Canalina inferiore · alimentazione e Ethernet</text>')
 
-    # Terminal screws on RCBO top/bottom
-    for tx in (100, 170):
-        a(f'<rect x="{tx-10}" y="{my-1}" width="20" height="12" rx="2" fill="#64748b"/>')
-        a(f'<circle cx="{tx}" cy="{my+5}" r="3" fill="#cbd5e1"/>')
-        a(f'<rect x="{tx-10}" y="{my+mh-11}" width="20" height="12" rx="2" fill="#64748b"/>')
-        a(f'<circle cx="{tx}" cy="{my+mh-5}" r="3" fill="#cbd5e1"/>')
+    # ===== RCBO realistic =====
+    mx, my, mw, mh = ix + 40, din_y - 280, 160, 300
+    a(f'<rect x="{mx}" y="{my}" width="{mw}" height="{mh}" rx="4" fill="url(#plastic)" stroke="#6B7280" stroke-width="1.4" filter="url(#depth)"/>')
+    # brand plate
+    a(f'<rect x="{mx+8}" y="{my+8}" width="{mw-16}" height="42" rx="3" fill="#F9FAFB" stroke="#D1D5DB"/>')
+    a(f'<text x="{mx+mw/2}" y="{my+26}" text-anchor="middle" class="h">RCBO</text>')
+    a(f'<text x="{mx+mw/2}" y="{my+42}" text-anchor="middle" class="h2">2P · 40A · 30mA</text>')
+    # top terminals L N
+    terminal_block(a, mx + 18, my - 2, ["L", "N"], mw - 36)
+    # body window
+    a(f'<rect x="{mx+20}" y="{my+60}" width="{mw-40}" height="160" rx="4" fill="#FFFFFF" stroke="#9CA3AF"/>')
+    a(f'<rect x="{mx+35}" y="{my+72}" width="{mw-70}" height="22" rx="3" fill="#EF4444"/>')
+    a(f'<text x="{mx+mw/2}" y="{my+87}" text-anchor="middle" class="chip">TEST</text>')
+    # lever
+    a(f'<rect x="{mx+55}" y="{my+110}" width="40" height="85" rx="5" fill="#E5E7EB" stroke="#374151" stroke-width="1.3"/>')
+    a(f'<rect x="{mx+58}" y="{my+114}" width="34" height="38" rx="4" fill="#22C55E"/>')
+    a(f'<text x="{mx+mw/2}" y="{my+175}" text-anchor="middle" style="font:700 11px DejaVu Sans,Arial;fill:#166534">I</text>')
+    a(f'<text x="{mx+mw/2}" y="{my+205}" text-anchor="middle" class="h2">ON</text>')
+    a(f'<text x="{mx+mw/2}" y="{my+235}" text-anchor="middle" class="h2">Tipo A</text>')
+    # bottom terminals
+    terminal_block(a, mx + 18, my + mh - 16, ["L", "N"], mw - 36)
+    # clip on DIN
+    a(f'<rect x="{mx+20}" y="{din_y-4}" width="{mw-40}" height="12" rx="2" fill="#9CA3AF"/>')
 
-    a(f'<line x1="100" y1="{my}" x2="100" y2="{my+mh}" stroke="{L_COL}" stroke-width="3.2"/>')
-    a(f'<line x1="170" y1="{my}" x2="170" y2="{my+mh}" stroke="{N_COL}" stroke-width="3.2"/>')
+    # Alimentazione: ingresso alto RCBO (lato linea), uscita basso (lato carico)
+    l_bus_y = din_y + 90
+    n_bus_y = iy + ih - 130
+    lx_in, nx_in = mx + 45, mx + 105
+    # L/N rete dalla canalina inferiore, salgono lateralmente e entrano dall'alto
+    a(f'<path d="M{lx_in-35} {iy+ih-72} V {my-50} H {lx_in} V {my}" fill="none" stroke="{L_COL}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
+    a(f'<path d="M{nx_in+35} {iy+ih-72} V {my-50} H {nx_in} V {my}" fill="none" stroke="{N_COL}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
+    a(f'<rect x="{lx_in-60}" y="{iy+ih-95}" width="50" height="18" rx="3" fill="#FEF3C7" stroke="{L_COL}"/>')
+    a(f'<text x="{lx_in-35}" y="{iy+ih-82}" text-anchor="middle" class="l">L rete</text>')
+    a(f'<rect x="{nx_in+10}" y="{iy+ih-95}" width="50" height="18" rx="3" fill="#DBEAFE" stroke="{N_COL}"/>')
+    a(f'<text x="{nx_in+35}" y="{iy+ih-82}" text-anchor="middle" class="n">N rete</text>')
+    # Uscite protette → BUS
+    a(f'<path d="M{lx_in} {my+mh} V {l_bus_y} H {ix+iw-80}" fill="none" stroke="{L_COL}" stroke-width="4.5" stroke-linecap="round"/>')
+    a(f'<path d="M{nx_in} {my+mh} V {n_bus_y} H {ix+iw-80}" fill="none" stroke="{N_COL}" stroke-width="4.5" stroke-linecap="round"/>')
+    a(f'<rect x="{ix+iw-160}" y="{l_bus_y-12}" width="70" height="24" rx="4" fill="#FEF3C7" stroke="{L_COL}"/>')
+    a(f'<text x="{ix+iw-125}" y="{l_bus_y+5}" text-anchor="middle" class="l">BUS L</text>')
+    a(f'<rect x="{ix+iw-160}" y="{n_bus_y-12}" width="70" height="24" rx="4" fill="#DBEAFE" stroke="{N_COL}"/>')
+    a(f'<text x="{ix+iw-125}" y="{n_bus_y+5}" text-anchor="middle" class="n">BUS N</text>')
+    a(f'<path d="M{ix+iw-100} {top_n_y} V {n_bus_y}" fill="none" stroke="{N_COL}" stroke-width="4" stroke-linecap="round"/>')
 
-    # Buses
-    a(f'<line x1="100" y1="{my+mh}" x2="100" y2="{l_bus_y}" stroke="{L_COL}" stroke-width="3.2"/>')
-    a(f'<line x1="100" y1="{l_bus_y}" x2="1860" y2="{l_bus_y}" stroke="{L_COL}" stroke-width="3.2"/>')
-    a(f'<rect x="1870" y="{l_bus_y-14}" width="72" height="28" rx="14" fill="{L_SOFT}" stroke="{L_COL}" stroke-width="1.5"/>')
-    a(f'<text x="1906" y="{l_bus_y+5}" text-anchor="middle" class="term-l">BUS L</text>')
+    def draw_shelly(x, title, eth_label, mapping):
+        y = din_y - 280
+        w, h = 460, 300
+        # Corpo plastica grigio chiaro (Shelly Pro reale)
+        a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="5" fill="url(#shellyBody)" stroke="#6B7280" stroke-width="1.5" filter="url(#depth)"/>')
+        a(f'<rect x="{x+3}" y="{y+3}" width="6" height="{h-6}" rx="2" fill="#CBD5E1"/>')
+        a(f'<rect x="{x}" y="{y}" width="30" height="{h}" fill="#D8DCE2" stroke="#9CA3AF"/>')
+        for i, ch in enumerate("Shelly"):
+            a(f'<text x="{x+15}" y="{y+75+i*24}" text-anchor="middle" class="vert">{ch}</text>')
+        # Viti angolo
+        screw(a, x + 42, y + 18, 2.4)
+        screw(a, x + w - 14, y + 18, 2.4)
+        screw(a, x + 42, y + h - 40, 2.4)
+        screw(a, x + w - 14, y + h - 40, 2.4)
 
-    a(f'<line x1="170" y1="{my+mh}" x2="170" y2="{n_bus_y}" stroke="{N_COL}" stroke-width="3.2"/>')
-    a(f'<line x1="170" y1="{n_bus_y}" x2="1860" y2="{n_bus_y}" stroke="{N_COL}" stroke-width="3.2"/>')
-    a(f'<rect x="1870" y="{n_bus_y-14}" width="72" height="28" rx="14" fill="{N_SOFT}" stroke="{N_COL}" stroke-width="1.5"/>')
-    a(f'<text x="1906" y="{n_bus_y+5}" text-anchor="middle" class="term-n">BUS N</text>')
-    a(f'<line x1="1860" y1="{top_n_y}" x2="1860" y2="{n_bus_y}" stroke="{N_COL}" stroke-width="3.2"/>')
+        a(f'<rect x="{x+42}" y="{y+40}" width="{w-56}" height="155" rx="6" fill="#EEF1F4" stroke="#C5CAD3"/>')
+        sx, sy, sw, sh = x + 100, y + 52, 240, 82
+        a(f'<rect x="{sx-4}" y="{sy-4}" width="{sw+8}" height="{sh+8}" rx="5" fill="#9CA3AF"/>')
+        a(f'<rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="3" fill="{SCREEN_BG}"/>')
+        # scanline leggera sul display
+        for i in range(0, int(sh), 4):
+            a(f'<line x1="{sx}" y1="{sy+i}" x2="{sx+sw}" y2="{sy+i}" stroke="#243044" stroke-width="1" opacity="0.35"/>')
+        a(f'<text x="{sx+sw/2}" y="{sy+26}" text-anchor="middle" class="scr">{title}</text>')
+        a(f'<text x="{sx+sw/2}" y="{sy+46}" text-anchor="middle" class="scr2">Pro 4PM · 4×16A metering</text>')
+        a(f'<text x="{sx+14}" y="{sy+68}" class="scr2" style="fill:#22C55E">● online</text>')
+        a(f'<text x="{sx+sw-14}" y="{sy+68}" text-anchor="end" class="scr2" style="fill:#38BDF8">{eth_label}</text>')
 
-    def draw_shelly(x: float, title: str, eth: str, mapping: dict):
-        y, w, h = device_y, 620, device_h
-        # Body — look like DIN Shelly Pro
-        a(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="url(#shellyGrad)" stroke="#111827" stroke-width="1.4" filter="url(#soft)"/>')
-        # Top bevel / label strip
-        a(f'<rect x="{x+10}" y="{y+10}" width="{w-20}" height="36" rx="6" fill="#1f2937"/>')
-        a(f'<text x="{x+24}" y="{y+33}" class="dev-w">{title}</text>')
-        a(f'<text x="{x+w-24}" y="{y+33}" text-anchor="end" class="scr2" style="fill:#94a3b8">Pro 4PM</text>')
-
-        # Screen simulation
-        sx, sy, sw, sh = x + w / 2 - 120, y + 60, 240, 88
-        a(f'<rect x="{sx-4}" y="{sy-4}" width="{sw+8}" height="{sh+8}" rx="8" fill="#0b1220"/>')
-        a(f'<rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="6" fill="{SCREEN}"/>')
-        a(f'<text x="{sx+sw/2}" y="{sy+28}" text-anchor="middle" class="scr">Shelly Pro 4PM</text>')
-        a(f'<text x="{sx+sw/2}" y="{sy+48}" text-anchor="middle" class="scr2">4× relè · 16 A · metering</text>')
-        a(f'<text x="{sx+14}" y="{sy+72}" class="scr2" style="fill:#22c55e">● online</text>')
-        a(f'<text x="{sx+sw-14}" y="{sy+72}" text-anchor="end" class="scr2" style="fill:#38bdf8">{eth}</text>')
-
-        # Buttons under screen
         for i, lab in enumerate(["▲", "▼", "OK"]):
-            bx = sx + 30 + i * 65
+            bx = sx + 40 + i * 60
             by = sy + sh + 14
-            a(f'<rect x="{bx}" y="{by}" width="48" height="24" rx="5" fill="#4b5563" stroke="#6b7280"/>')
-            a(f'<text x="{bx+24}" y="{by+16}" text-anchor="middle" class="chip">{lab}</text>')
+            a(f'<rect x="{bx}" y="{by}" width="50" height="28" rx="5" fill="#E5E7EB" stroke="#6B7280"/>')
+            a(f'<rect x="{bx+2}" y="{by+2}" width="46" height="11" rx="2" fill="#F9FAFB"/>')
+            a(f'<text x="{bx+25}" y="{by+20}" text-anchor="middle" style="font:700 11px DejaVu Sans,Arial;fill:#374151">{lab}</text>')
 
-        # Status LEDs
-        for i, col in enumerate(["#22c55e", "#22c55e", "#22c55e", "#22c55e"]):
-            a(f'<circle cx="{x+40+i*18}" cy="{y+78}" r="4" fill="{col}"/>')
-        a(f'<text x="{x+40}" y="{y+98}" class="scr2" style="fill:#94a3b8">O1–O4</text>')
+        # Morsetti superiori O4 O3 L O2 O1
+        top_labels = ["O4", "O3", "L", "O2", "O1"]
+        term_w = w - 55
+        term_x0 = x + 42
+        slot = term_w / 5
+        a(f'<rect x="{term_x0}" y="{y-8}" width="{term_w}" height="22" rx="2" fill="#4B5563"/>')
+        term_xs = {}
+        for i, lab in enumerate(top_labels):
+            tx = term_x0 + slot * (i + 0.5)
+            term_xs[lab] = tx
+            a(f'<rect x="{tx-15}" y="{y-7}" width="30" height="20" rx="2" fill="#9CA3AF"/>')
+            screw(a, tx, y + 3, 3.4)
+            color = L_COL if lab == "L" else "#111827"
+            a(f'<text x="{tx}" y="{y+30}" text-anchor="middle" style="font:700 12px DejaVu Sans,Arial;fill:{color}">{lab}</text>')
 
-        # Terminal positions
-        term_x = {
-            "O4": x + 70,
-            "O3": x + 175,
-            "L": x + w / 2,
-            "O2": x + w - 175,
-            "O1": x + w - 70,
-        }
-
-        # Top terminal block visual
-        a(f'<rect x="{x+30}" y="{y-8}" width="{w-60}" height="16" rx="3" fill="#475569"/>')
-        for label, tx in term_x.items():
-            a(f'<rect x="{tx-12}" y="{y-10}" width="24" height="14" rx="2" fill="#64748b"/>')
-            a(f'<circle cx="{tx}" cy="{y-3}" r="3.2" fill="#e2e8f0"/>')
-            if label == "L":
-                a(f'<rect x="{tx-14}" y="{y+14}" width="28" height="18" rx="9" fill="{L_SOFT}" stroke="{L_COL}" stroke-width="1.2"/>')
-                a(f'<text x="{tx}" y="{y+27}" text-anchor="middle" class="term-l">L</text>')
-                a(f'<line x1="{tx}" y1="{y}" x2="{tx}" y2="{l_bus_y}" stroke="{L_COL}" stroke-width="3.2"/>')
-                a(f'<circle cx="{tx}" cy="{l_bus_y}" r="4.5" fill="{L_COL}"/>')
-            else:
-                a(f'<text x="{tx}" y="{y+28}" text-anchor="middle" class="chip" style="fill:#e2e8f0">{label}</text>')
-
-        # Bottom: LAN + N + unused S silhouette
-        lan_x = x + 70
-        n_x = x + 165
-        draw_rj45(a, lan_x - 17, y + h - 18)
-        a(f'<text x="{lan_x}" y="{y+h+28}" text-anchor="middle" class="h2" style="fill:#cbd5e1">LAN</text>')
-        eth_y = y + h + 62
-        a(f'<path d="M {lan_x} {y+h+8} V {eth_y} H {lan_x+95}" fill="none" stroke="{ETH}" stroke-width="2.4" stroke-dasharray="6 4" stroke-linecap="round"/>')
-        a(f'<rect x="{lan_x+103}" y="{eth_y-13}" width="60" height="26" rx="13" fill="#e2e8f0" stroke="{ETH}" stroke-width="1.3"/>')
-        a(f'<text x="{lan_x+133}" y="{eth_y+4}" text-anchor="middle" class="term">{eth}</text>')
-
-        a(f'<rect x="{n_x-12}" y="{y+h-10}" width="24" height="14" rx="2" fill="#64748b"/>')
-        a(f'<circle cx="{n_x}" cy="{y+h-3}" r="3.2" fill="#e2e8f0"/>')
-        a(f'<rect x="{n_x-14}" y="{y+h-34}" width="28" height="18" rx="9" fill="{N_SOFT}" stroke="{N_COL}" stroke-width="1.2"/>')
-        a(f'<text x="{n_x}" y="{y+h-21}" text-anchor="middle" class="term-n">N</text>')
-        a(f'<line x1="{n_x}" y1="{y+h}" x2="{n_x}" y2="{n_bus_y}" stroke="{N_COL}" stroke-width="3.2"/>')
-        a(f'<circle cx="{n_x}" cy="{n_bus_y}" r="4.5" fill="{N_COL}"/>')
-
-        # S terminal silhouettes (unused)
+        bot_y = y + h - 16
+        draw_rj45(a, x + 42, bot_y - 10)
+        a(f'<text x="{x+62}" y="{bot_y+30}" text-anchor="middle" class="h2">LAN</text>')
+        nx = x + 120
+        a(f'<rect x="{nx-14}" y="{bot_y-6}" width="28" height="18" rx="2" fill="#9CA3AF"/>')
+        screw(a, nx, bot_y + 3, 3.2)
+        a(f'<text x="{nx}" y="{bot_y-12}" text-anchor="middle" class="n">N</text>')
         for i, lab in enumerate(["S4", "S3", "S2", "S1"]):
-            sx_ = x + w - 200 + i * 42
-            a(f'<rect x="{sx_-10}" y="{y+h-10}" width="20" height="12" rx="2" fill="#374151" opacity="0.7"/>')
-            a(f'<text x="{sx_}" y="{y+h+18}" text-anchor="middle" class="scr2" style="fill:#64748b">{lab}</text>')
-        a(f'<text x="{x+w-24}" y="{y+h+38}" text-anchor="end" class="note" style="fill:#94a3b8">S1–S4 non usati</text>')
+            sx_ = x + 185 + i * 58
+            a(f'<rect x="{sx_-12}" y="{bot_y-6}" width="24" height="16" rx="2" fill="#9CA3AF" opacity="0.5"/>')
+            screw(a, sx_, bot_y + 2, 2.6)
+            a(f'<text x="{sx_}" y="{bot_y+28}" text-anchor="middle" class="h2">{lab}</text>')
+        a(f'<text x="{x+w-12}" y="{bot_y+44}" text-anchor="end" class="h2">S1–S4 non collegati</text>')
+        a(f'<rect x="{x+42}" y="{din_y-4}" width="{w-60}" height="12" rx="2" fill="#9CA3AF"/>')
 
-        # Output channels with icons
+        a(f'<path d="M{term_xs["L"]} {y} V {l_bus_y}" fill="none" stroke="{L_COL}" stroke-width="3.8"/>')
+        a(f'<circle cx="{term_xs["L"]}" cy="{l_bus_y}" r="4.5" fill="{L_COL}"/>')
+        a(f'<path d="M{nx} {y+h} V {n_bus_y}" fill="none" stroke="{N_COL}" stroke-width="3.8"/>')
+        a(f'<circle cx="{nx}" cy="{n_bus_y}" r="4.5" fill="{N_COL}"/>')
+        draw_eth_cable(a, x + 62, y + h + 20, x + 130, y + h + 78, eth_label)
+
+        # MCB canale nella fascia canalina, card carichi sopra
         for idx, out in enumerate(("O4", "O3", "O2", "O1")):
             num, name, icon = mapping[out]
-            tx = term_x[out]
-            fuse_y = y - 48
-            a(f'<line x1="{tx}" y1="{y}" x2="{tx}" y2="{fuse_y+12}" stroke="{INK}" stroke-width="2.6"/>')
-            draw_fuse(a, tx, fuse_y)
-            load_y = top_n_y + 78
-            a(f'<line x1="{tx}" y1="{fuse_y-12}" x2="{tx}" y2="{load_y}" stroke="{INK}" stroke-width="2.6"/>')
-            a(f'<line x1="{tx}" y1="{top_n_y}" x2="{tx}" y2="{top_n_y+18}" stroke="{N_COL}" stroke-width="2.6"/>')
-            a(f'<circle cx="{tx}" cy="{top_n_y}" r="4.2" fill="{N_COL}"/>')
+            tx = term_xs[out]
+            mcb_y = duct_y + 16
+            a(f'<line x1="{tx}" y1="{y}" x2="{tx}" y2="{mcb_y+28}" stroke="#111827" stroke-width="2.8"/>')
+            draw_mcb_fuse(a, tx, mcb_y)
+            stagger = (idx % 2) * 58
+            card_y = top_n_y + 28 + stagger
+            a(f'<line x1="{tx}" y1="{mcb_y-28}" x2="{tx}" y2="{card_y+102}" stroke="#111827" stroke-width="2.8"/>')
+            a(f'<line x1="{tx}" y1="{top_n_y}" x2="{tx}" y2="{card_y}" stroke="{N_COL}" stroke-width="2.6"/>')
+            a(f'<circle cx="{tx}" cy="{top_n_y}" r="3.8" fill="{N_COL}"/>')
 
-            # Icon card
-            stagger = 0 if idx % 2 == 0 else 50
-            card_y = top_n_y + 18 + stagger
-            card_w, card_h = 118, 86
-            a(f'<rect x="{tx-card_w/2}" y="{card_y}" width="{card_w}" height="{card_h}" rx="12" fill="{PANEL}" stroke="{PANEL_EDGE}" stroke-width="1.4" filter="url(#soft)"/>')
-            a(f'<circle cx="{tx-card_w/2+18}" cy="{card_y+18}" r="12" fill="{ACCENT}"/>')
-            a(f'<text x="{tx-card_w/2+18}" y="{card_y+22}" text-anchor="middle" class="chip">{num}</text>')
-            a(f'<text x="{tx+10}" y="{card_y+22}" text-anchor="middle" class="h2">{out}</text>')
-            ICONS[icon](a, tx, card_y + 48, 1.0)
-            # name below card
+            cw, ch = 118, 102
+            a(f'<rect x="{tx-cw/2}" y="{card_y}" width="{cw}" height="{ch}" rx="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.3" filter="url(#depth)"/>')
+            a(f'<circle cx="{tx-cw/2+17}" cy="{card_y+17}" r="12" fill="{ACCENT}"/>')
+            a(f'<text x="{tx-cw/2+17}" y="{card_y+21}" text-anchor="middle" class="chip">{num}</text>')
+            a(f'<text x="{tx+16}" y="{card_y+21}" text-anchor="middle" class="h2">{out}</text>')
+            ICONS[icon](a, tx, card_y + 56, 1.0)
             words = name.split()
-            if len(name) > 14 and len(words) > 1:
+            if len(name) > 13 and len(words) > 1:
                 mid = max(1, len(words) // 2)
-                a(f'<text x="{tx}" y="{card_y+card_h+16}" text-anchor="middle" class="name" style="font-size:11px">{esc(" ".join(words[:mid]))}</text>')
-                a(f'<text x="{tx}" y="{card_y+card_h+30}" text-anchor="middle" class="name" style="font-size:11px">{esc(" ".join(words[mid:]))}</text>')
+                a(f'<text x="{tx}" y="{card_y+ch+14}" text-anchor="middle" class="name">{esc(" ".join(words[:mid]))}</text>')
+                a(f'<text x="{tx}" y="{card_y+ch+28}" text-anchor="middle" class="name">{esc(" ".join(words[mid:]))}</text>')
             else:
-                a(f'<text x="{tx}" y="{card_y+card_h+18}" text-anchor="middle" class="name">{esc(name)}</text>')
+                a(f'<text x="{tx}" y="{card_y+ch+16}" text-anchor="middle" class="name">{esc(name)}</text>')
 
-    draw_shelly(310, "SHELLY #1", "ETH 1", SHELLY1)
-    draw_shelly(1020, "SHELLY #2", "ETH 2", SHELLY2)
+    draw_shelly(ix + 250, "SHELLY #1", "ETH 1", SHELLY1)
+    draw_shelly(ix + 780, "SHELLY #2", "ETH 2", SHELLY2)
 
-    # Legend with mini icons
-    lx, ly = 310, 1120
-    a(f'<rect x="{lx}" y="{ly}" width="1300" height="250" rx="16" fill="{PANEL}" stroke="{PANEL_EDGE}" stroke-width="1.5" filter="url(#soft)"/>')
-    a(f'<text x="{lx+24}" y="{ly+32}" class="h">Legenda carichi e dispositivi</text>')
-    a(f'<text x="{lx+24}" y="{ly+52}" class="note">Icone appliance · canale Shelly = numero circuito · fase da Ox · neutro da N carichi</text>')
+    # PE bar optional small
+    a(f'<rect x="{ix+40}" y="{n_bus_y+30}" width="220" height="14" rx="3" fill="{PE_COL}"/>')
+    a(f'<text x="{ix+150}" y="{n_bus_y+55}" text-anchor="middle" style="font:700 11px DejaVu Sans,Arial;fill:#854D0E">BARRA PE (giallo/verde)</text>')
 
+    # Legend outside cabinet bottom
+    ly = cab_y + cab_h + 15
+    a(f'<rect x="50" y="{ly}" width="{W-100}" height="130" rx="8" fill="#F9FAFB" filter="url(#depth)"/>')
+    a(f'<text x="70" y="{ly+28}" class="h">Legenda carichi</text>')
     legend = [
-        (1, "Lavastoviglie", "Shelly #1 · O1", "dishwasher"),
-        (2, "Microonde", "Shelly #1 · O2", "microwave"),
-        (3, "Forno", "Shelly #1 · O3", "oven"),
-        (4, "Frigorifero", "Shelly #1 · O4", "fridge"),
-        (5, "Piano cottura", "Shelly #2 · O1", "cooktop"),
-        (6, "Prese piano cottura", "Shelly #2 · O2", "socket"),
-        (7, "Prese piano lavoro", "Shelly #2 · O3", "socket"),
-        (8, "Prese interno mobile", "Shelly #2 · O4", "socket"),
+        (1, "Lavastoviglie", "#1 · O1", "dishwasher"),
+        (2, "Microonde", "#1 · O2", "microwave"),
+        (3, "Forno", "#1 · O3", "oven"),
+        (4, "Frigorifero", "#1 · O4", "fridge"),
+        (5, "Piano cottura", "#2 · O1", "cooktop"),
+        (6, "Prese piano cottura", "#2 · O2", "socket"),
+        (7, "Prese piano lavoro", "#2 · O3", "socket"),
+        (8, "Prese interno mobile", "#2 · O4", "socket"),
     ]
     for i, (num, name, path, icon) in enumerate(legend):
-        col = i % 4
-        row = i // 4
-        x = lx + 24 + col * 315
-        y = ly + 72 + row * 70
-        a(f'<rect x="{x}" y="{y}" width="295" height="58" rx="12" fill="#f8fafc" stroke="{PANEL_EDGE}"/>')
-        a(f'<circle cx="{x+22}" cy="{y+29}" r="13" fill="{ACCENT}"/>')
-        a(f'<text x="{x+22}" y="{y+33}" text-anchor="middle" class="chip">{num}</text>')
-        ICONS[icon](a, x + 58, y + 29, 0.72)
-        a(f'<text x="{x+88}" y="{y+24}" class="leg">{esc(name)}</text>')
-        a(f'<text x="{x+88}" y="{y+42}" class="leg-m">{esc(path)}</text>')
+        x = 70 + i * 245
+        y = ly + 45
+        a(f'<rect x="{x}" y="{y}" width="230" height="55" rx="8" fill="#F3F4F6" stroke="#D1D5DB"/>')
+        a(f'<circle cx="{x+18}" cy="{y+28}" r="12" fill="{ACCENT}"/>')
+        a(f'<text x="{x+18}" y="{y+32}" text-anchor="middle" class="chip">{num}</text>')
+        ICONS[icon](a, x + 48, y + 28, 0.55)
+        a(f'<text x="{x+75}" y="{y+24}" class="leg">{esc(name)}</text>')
+        a(f'<text x="{x+75}" y="{y+42}" class="leg-m">Shelly {esc(path)}</text>')
 
-    a(
-        f'<text x="{lx+24}" y="{ly+230}" class="warn">'
-        "Verificare correnti in opera: max 16 A/canale e 40 A totali per Pro 4PM "
-        "(attenzione a forno e piano cottura).</text>"
-    )
-
-    # Flow + device key
-    a(f'<rect x="48" y="1120" width="230" height="250" rx="16" fill="{PANEL}" stroke="{PANEL_EDGE}" stroke-width="1.5" filter="url(#soft)"/>')
-    a(f'<text x="68" y="1154" class="h">Flusso</text>')
-    for i, step in enumerate([
-        "1. L/N da rete",
-        "2. RCBO (leva ON)",
-        "3. BUS L / BUS N",
-        "4. Shelly #1 e #2",
-        "5. Fusibile → Ox",
-        "6. Icona carico",
-        "7. Neutro comune",
-        "8. ETH 1 / ETH 2",
-    ]):
-        a(f'<text x="68" y="{1182 + i*22}" class="note">{step}</text>')
+    a(f'<text x="70" y="{ly+120}" class="warn">Limiti Pro 4PM: 16 A/canale, 40 A totali — verificare forno e piano cottura in opera.</text>')
 
     a("</svg>")
     return "\n".join(p)
@@ -428,15 +445,11 @@ def main() -> None:
     svg = build_svg()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     ART_DIR.mkdir(parents=True, exist_ok=True)
-    svg_path = OUT_DIR / "quadro-elettrico-cucina.svg"
-    png_path = OUT_DIR / "quadro-elettrico-cucina.png"
-    art_svg = ART_DIR / "quadro-elettrico-cucina.svg"
-    art_png = ART_DIR / "quadro-elettrico-cucina.png"
-    svg_path.write_text(svg, encoding="utf-8")
-    cairosvg.svg2png(bytestring=svg.encode("utf-8"), write_to=str(png_path), scale=1.25)
-    art_svg.write_text(svg, encoding="utf-8")
-    cairosvg.svg2png(bytestring=svg.encode("utf-8"), write_to=str(art_png), scale=1.25)
-    print(f"Wrote {art_png}")
+    for path in (OUT_DIR / "quadro-elettrico-cucina.svg", ART_DIR / "quadro-elettrico-cucina.svg"):
+        path.write_text(svg, encoding="utf-8")
+    for path in (OUT_DIR / "quadro-elettrico-cucina.png", ART_DIR / "quadro-elettrico-cucina.png"):
+        cairosvg.svg2png(bytestring=svg.encode("utf-8"), write_to=str(path), scale=1.2)
+    print("OK", ART_DIR / "quadro-elettrico-cucina.png")
 
 
 if __name__ == "__main__":
