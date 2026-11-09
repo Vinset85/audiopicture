@@ -1,22 +1,22 @@
 # Schema elettrico quadro cucina
 
-**Fonte di verità:** solo lo schema tecnico vettoriale. I render fotorealistici generati da AI inventano collegamenti errati (es. ETH sulla barra PE, L/N scambiati, uscite sui morsetti sbagliati) e non vanno usati per l’impianto.
-
 ## File
 
-- [`quadro-elettrico-cucina.png`](quadro-elettrico-cucina.png) — schema corretto
-- [`quadro-elettrico-cucina.svg`](quadro-elettrico-cucina.svg) — sorgente vettoriale
-- [`generate_quadro_cucina.py`](generate_quadro_cucina.py) — generatore
+- [`quadro-elettrico-cucina-foto.jpg`](quadro-elettrico-cucina-foto.jpg) — **render** (cablaggio corretto, generato da codice)
+- [`quadro-elettrico-cucina.png`](quadro-elettrico-cucina.png) / [`.svg`](quadro-elettrico-cucina.svg) — schema tecnico
+- [`generate_quadro_cucina.py`](generate_quadro_cucina.py) — generatore schema
+- [`generate_quadro_cucina_render.py`](generate_quadro_cucina_render.py) — generatore render
+
+I render AI “liberi” inventano collegamenti errati: questo render è prodotto dal codice con la stessa topologia dello schema.
 
 ## Cablaggio corretto
 
-1. **L rete / N rete** entrano dall’**alto** del RCBO.
-2. Uscite RCBO → **BUS L** (marrone) e **BUS N** (blu).
-3. Ogni Shelly Pro 4PM: **L** sul morsetto alto centrale; **N** sul morsetto basso; terminali alti `O4 O3 L O2 O1`.
-4. Ogni **Ox** → MCB 16A → carico; il neutro del carico torna alla **morsettiera N**.
-5. **ETH 1 / ETH 2** solo sulle porte **LAN** (mai su PE / S / L / N).
-6. **S1–S4** non collegati in questo quadro.
-7. **Barra PE** separata (giallo/verde).
+1. **L/N rete** → morsetti **alti** del RCBO  
+2. Uscite RCBO → **BUS L** / **BUS N**  
+3. Shelly: **L** alto centrale, **N** basso  
+4. **Ox** → MCB 16A → carico; neutro → **MORSETTIERA N**  
+5. **ETH1/ETH2** solo porte **LAN**  
+6. **S1–S4** non usati; **PE** separata  
 
 ## Mappa carichi
 
@@ -33,4 +33,5 @@
 
 ```bash
 python3 docs/electrical/generate_quadro_cucina.py
+python3 docs/electrical/generate_quadro_cucina_render.py
 ```
