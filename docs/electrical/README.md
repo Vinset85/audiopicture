@@ -1,25 +1,26 @@
 # Schema elettrico quadro cucina
 
-Schema di cablaggio del quadro cucina con **simulazione grafica** dei dispositivi DIN e **icone** dei carichi.
+Vista del quadro cucina con RCBO + 2× Shelly Pro 4PM.
 
 ## File
 
-- [`quadro-elettrico-cucina.png`](quadro-elettrico-cucina.png) — schema pronto da stampare
-- [`quadro-elettrico-cucina.svg`](quadro-elettrico-cucina.svg) — vettoriale modificabile
+- [`quadro-elettrico-cucina.png`](quadro-elettrico-cucina.png) — schema tecnico ad alta fedeltà (vettoriale rasterizzato)
+- [`quadro-elettrico-cucina.svg`](quadro-elettrico-cucina.svg) — sorgente vettoriale
+- [`quadro-elettrico-cucina-foto.jpg`](quadro-elettrico-cucina-foto.jpg) — render fotorealistico dell’armadio
 - [`generate_quadro_cucina.py`](generate_quadro_cucina.py) — generatore SVG/PNG
 
 ## Architettura
 
-1. **Magnetotermico differenziale (RCBO)** — rendering con leva ON e pulsante TEST.
-2. **Shelly Pro 4PM** — corpo scuro, display, LED O1–O4, morsetti, RJ45.
-3. **BUS L / BUS N** alimentano i due moduli; **N carichi** chiude i neutri.
-4. Ogni uscita `Ox` passa da un fusibile e arriva all’icona del carico.
-5. **ETH 1 / ETH 2** sulle porte LAN; **S1–S4** non usati.
+1. Armadio DIN con canaline, piastra forata, barra N e PE
+2. RCBO 2P 40A 30mA (ingresso alto, uscita verso BUS)
+3. Due Shelly Pro 4PM (O4 O3 L O2 O1 / LAN N S4–S1)
+4. MCB 16A di canale verso i carichi 1–8
+5. ETH 1 / ETH 2; S1–S4 non usati
 
 ## Mappa carichi
 
-| Circuito | Carico | Modulo | Terminale |
-|---:|---|---|---|
+| # | Carico | Modulo | Terminale |
+|--:|---|---|---|
 | 1 | Lavastoviglie | Shelly #1 | O1 |
 | 2 | Microonde | Shelly #1 | O2 |
 | 3 | Forno | Shelly #1 | O3 |
@@ -29,11 +30,7 @@ Schema di cablaggio del quadro cucina con **simulazione grafica** dei dispositiv
 | 7 | Prese piano lavoro | Shelly #2 | O3 |
 | 8 | Prese interno mobile | Shelly #2 | O4 |
 
-## Limiti Shelly Pro 4PM
-
-Verificare in opera correnti e sezioni: tipicamente max **16 A per canale** e **40 A totali** per modulo. Forno e piano cottura possono richiedere protezione dedicata o moduli diversi se superano questi limiti.
-
-Rigenerazione:
+Rigenerazione schema tecnico:
 
 ```bash
 python3 docs/electrical/generate_quadro_cucina.py
