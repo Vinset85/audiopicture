@@ -56,7 +56,7 @@
 
 <rect x="40" y="36" width="2220" height="82" rx="8" fill="#F8FAFC" filter="url(#soft)"/>
 <text x="64" y="74" class="title">Quadro elettrico cucina</text>
-<text x="64" y="98" class="sub">Vista frontale ad alta fedeltà · armadio DIN · RCBO · 2× Shelly Pro 4PM · cavi IEC con ferrule</text>
+<text x="64" y="98" class="sub">Schema corretto · armadio DIN · RCBO · 2× Shelly Pro 4PM · colori IEC · ETH solo su LAN</text>
 <rect x="1750" y="58" width="14" height="14" rx="3" fill="#7A3E1D"/>
 <text x="1772" y="70" class="note">L fase</text>
 <rect x="1860" y="58" width="14" height="14" rx="3" fill="#1E40AF"/>
@@ -1107,5 +1107,6 @@
 <path d="M1964.1 1615.22 a 5 2.9 0 0 0 5.8 0" fill="none" stroke="#0F172A" stroke-width="1.7"/>
 <text x="1995" y="1605" class="leg">Prese interno mobile</text>
 <text x="1995" y="1623" class="legm">Shelly #2 O4</text>
-<text x="60" y="1661" class="warn">Limiti Pro 4PM: 16 A/canale, 40 A totali — verificare forno e piano cottura in opera.</text>
+<text x="60" y="1651" class="warn">Limiti Pro 4PM: 16 A/canale, 40 A totali — verificare forno e piano cottura in opera.</text>
+<text x="60" y="1667" class="note">Cablaggio corretto: L/N rete → alto RCBO → BUS L/N → Shelly (L alto, N basso); Ox → MCB 16A → carico; neutro carico → morsettiera N; ETH1/ETH2 solo porte LAN; S1–S4 e barra PE non misti con dati/fase.</text>
 </svg>

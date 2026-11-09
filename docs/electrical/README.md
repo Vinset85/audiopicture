@@ -1,21 +1,22 @@
 # Schema elettrico quadro cucina
 
-Vista del quadro cucina con RCBO + 2× Shelly Pro 4PM.
+**Fonte di verità:** solo lo schema tecnico vettoriale. I render fotorealistici generati da AI inventano collegamenti errati (es. ETH sulla barra PE, L/N scambiati, uscite sui morsetti sbagliati) e non vanno usati per l’impianto.
 
 ## File
 
-- [`quadro-elettrico-cucina.png`](quadro-elettrico-cucina.png) — schema tecnico ad alta fedeltà (vettoriale rasterizzato)
+- [`quadro-elettrico-cucina.png`](quadro-elettrico-cucina.png) — schema corretto
 - [`quadro-elettrico-cucina.svg`](quadro-elettrico-cucina.svg) — sorgente vettoriale
-- [`quadro-elettrico-cucina-foto.jpg`](quadro-elettrico-cucina-foto.jpg) — render fotorealistico dell’armadio
-- [`generate_quadro_cucina.py`](generate_quadro_cucina.py) — generatore SVG/PNG
+- [`generate_quadro_cucina.py`](generate_quadro_cucina.py) — generatore
 
-## Architettura
+## Cablaggio corretto
 
-1. Armadio DIN con canaline, piastra forata, barra N e PE
-2. RCBO 2P 40A 30mA (ingresso alto, uscita verso BUS)
-3. Due Shelly Pro 4PM (O4 O3 L O2 O1 / LAN N S4–S1)
-4. MCB 16A di canale verso i carichi 1–8
-5. ETH 1 / ETH 2; S1–S4 non usati
+1. **L rete / N rete** entrano dall’**alto** del RCBO.
+2. Uscite RCBO → **BUS L** (marrone) e **BUS N** (blu).
+3. Ogni Shelly Pro 4PM: **L** sul morsetto alto centrale; **N** sul morsetto basso; terminali alti `O4 O3 L O2 O1`.
+4. Ogni **Ox** → MCB 16A → carico; il neutro del carico torna alla **morsettiera N**.
+5. **ETH 1 / ETH 2** solo sulle porte **LAN** (mai su PE / S / L / N).
+6. **S1–S4** non collegati in questo quadro.
+7. **Barra PE** separata (giallo/verde).
 
 ## Mappa carichi
 
@@ -29,8 +30,6 @@ Vista del quadro cucina con RCBO + 2× Shelly Pro 4PM.
 | 6 | Prese piano cottura | Shelly #2 | O2 |
 | 7 | Prese piano lavoro | Shelly #2 | O3 |
 | 8 | Prese interno mobile | Shelly #2 | O4 |
-
-Rigenerazione schema tecnico:
 
 ```bash
 python3 docs/electrical/generate_quadro_cucina.py

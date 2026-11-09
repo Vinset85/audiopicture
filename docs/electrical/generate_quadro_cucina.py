@@ -219,7 +219,7 @@ def build_svg() -> str:
     # Header
     a(f'<rect x="40" y="36" width="{W-80}" height="82" rx="8" fill="#F8FAFC" filter="url(#soft)"/>')
     a(f'<text x="64" y="74" class="title">Quadro elettrico cucina</text>')
-    a(f'<text x="64" y="98" class="sub">Vista frontale ad alta fedeltà · armadio DIN · RCBO · 2× Shelly Pro 4PM · cavi IEC con ferrule</text>')
+    a(f'<text x="64" y="98" class="sub">Schema corretto · armadio DIN · RCBO · 2× Shelly Pro 4PM · colori IEC · ETH solo su LAN</text>')
     for x, col, lab in ((1750, L, "L fase"), (1860, N, "N neutro"), (1980, "#1E3A8A", "ETH"), (2085, PE, "PE")):
         a(f'<rect x="{x}" y="58" width="14" height="14" rx="3" fill="{col}"/>')
         a(f'<text x="{x+22}" y="70" class="note">{lab}</text>')
@@ -480,7 +480,13 @@ def build_svg() -> str:
         ICONS[icon](a, x + 52, y + 29, 0.58)
         a(f'<text x="{x+80}" y="{y+24}" class="leg">{esc(name)}</text>')
         a(f'<text x="{x+80}" y="{y+42}" class="legm">Shelly {esc(path)}</text>')
-    a(f'<text x="60" y="{ly+128}" class="warn">Limiti Pro 4PM: 16 A/canale, 40 A totali — verificare forno e piano cottura in opera.</text>')
+    a(f'<text x="60" y="{ly+118}" class="warn">Limiti Pro 4PM: 16 A/canale, 40 A totali — verificare forno e piano cottura in opera.</text>')
+    a(
+        f'<text x="60" y="{ly+134}" class="note">'
+        "Cablaggio corretto: L/N rete → alto RCBO → BUS L/N → Shelly (L alto, N basso); "
+        "Ox → MCB 16A → carico; neutro carico → morsettiera N; ETH1/ETH2 solo porte LAN; "
+        "S1–S4 e barra PE non misti con dati/fase.</text>"
+    )
 
     a("</svg>")
     return "\n".join(p)
@@ -494,16 +500,6 @@ def main() -> None:
         path.write_text(svg, encoding="utf-8")
     for path in (OUT_DIR / "quadro-elettrico-cucina.png", ART_DIR / "quadro-elettrico-cucina.png"):
         cairosvg.svg2png(bytestring=svg.encode("utf-8"), write_to=str(path), scale=1.15)
-    # copia anche il render foto se presente
-    src = Path("/opt/cursor/artifacts/assets/quadro-cucina-foto-realistico.jpg")
-    alt = Path("/opt/cursor/artifacts/assets/quadro-cucina-foto-realistico.png")
-    for candidate in (src, alt):
-        if candidate.exists():
-            dest = OUT_DIR / "quadro-elettrico-cucina-foto.jpg"
-            dest.write_bytes(candidate.read_bytes())
-            (ART_DIR / candidate.name).write_bytes(candidate.read_bytes())
-            print("foto", dest)
-            break
     print("OK", ART_DIR / "quadro-elettrico-cucina.png")
 
 
