@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render fotorealistico del quadro cucina con cablaggio corretto (PIL)."""
+"""Render realistico quadro cucina con foto componenti reali + cablaggio corretto."""
 
 from __future__ import annotations
 
@@ -8,310 +8,288 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 OUT_DIR = Path(__file__).resolve().parent
+COMP = OUT_DIR / "components"
 ART_DIR = Path("/opt/cursor/artifacts")
 
-W, H = 2200, 1500
-L = (122, 62, 29)       # marrone fase
-N = (30, 64, 175)       # blu neutro
+W, H = 2400, 1600
+L = (122, 62, 29)
+N = (30, 64, 175)
 PE = (161, 98, 7)
 ETH = (30, 58, 138)
-METAL = (100, 116, 139)
 INK = (15, 23, 42)
 
 SHELLY1 = [("O4", 4, "Frigorifero"), ("O3", 3, "Forno"), ("O2", 2, "Microonde"), ("O1", 1, "Lavastoviglie")]
-SHELLY2 = [("O4", 8, "Prese int. mobile"), ("O3", 7, "Prese piano lavoro"), ("O2", 6, "Prese piano cottura"), ("O1", 5, "Piano cottura")]
+SHELLY2 = [("O4", 8, "Prese int. mobile"), ("O3", 7, "Prese p. lavoro"), ("O2", 6, "Prese p. cottura"), ("O1", 5, "Piano cottura")]
 
 
 def font(size: int, bold: bool = False):
     name = "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf"
-    path = f"/usr/share/fonts/truetype/dejavu/{name}"
     try:
-        return ImageFont.truetype(path, size)
+        return ImageFont.truetype(f"/usr/share/fonts/truetype/dejavu/{name}", size)
     except OSError:
         return ImageFont.load_default()
 
 
-def rr(draw, box, radius, fill, outline=None, width=1):
-    draw.rounded_rectangle(box, radius=radius, fill=fill, outline=outline, width=width)
+def rr(d, box, r, fill=None, outline=None, width=1):
+    d.rounded_rectangle(box, radius=r, fill=fill, outline=outline, width=width)
 
 
-def gradient_rect(img, box, c1, c2, vertical=True):
-    x0, y0, x1, y1 = box
-    crop = img.crop((x0, y0, x1, y1))
-    w, h = crop.size
-    for i in range(h if vertical else w):
-        t = i / max((h if vertical else w) - 1, 1)
-        col = tuple(int(c1[j] * (1 - t) + c2[j] * t) for j in range(3))
-        line = Image.new("RGB", (w, 1) if vertical else (1, h), col)
-        if vertical:
-            crop.paste(line, (0, i))
-        else:
-            crop.paste(line, (i, 0))
-    img.paste(crop, (x0, y0))
-
-
-def screw(draw, cx, cy, r=6):
-    draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(75, 85, 99), outline=(31, 41, 55))
-    draw.ellipse([cx - r + 2, cy - r + 2, cx + r - 2, cy + r - 2], fill=(203, 213, 225))
-    draw.line([cx - r + 3, cy, cx + r - 3, cy], fill=(51, 65, 85), width=2)
-    draw.line([cx, cy - r + 3, cx, cy + r - 3], fill=(51, 65, 85), width=2)
-
-
-def wire(draw, pts, color, width=5):
-    draw.line(pts, fill=color, width=width, joint="curve")
-    # highlight
-    hi = tuple(min(255, c + 40) for c in color)
-    draw.line(pts, fill=hi + (0,), width=max(1, width // 4))  # ignored alpha on RGB; ok
-    draw.line([(x, y - 1) for x, y in pts], fill=hi, width=max(1, width // 5))
-
-
-def label_chip(draw, xy, text, bg, fg=(255, 255, 255)):
+def chip(d, xy, text, bg, fg=(255, 255, 255)):
     x, y = xy
-    f = font(16, True)
-    bbox = draw.textbbox((0, 0), text, font=f)
-    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    rr(draw, [x, y, x + tw + 16, y + th + 10], 8, bg, outline=(255, 255, 255), width=1)
-    draw.text((x + 8, y + 4), text, fill=fg, font=f)
+    f = font(15, True)
+    bb = d.textbbox((0, 0), text, font=f)
+    tw, th = bb[2] - bb[0], bb[3] - bb[1]
+    rr(d, [x, y, x + tw + 16, y + th + 10], 8, bg, (255, 255, 255), 1)
+    d.text((x + 8, y + 4), text, fill=fg, font=f)
 
 
-def draw_rcbo(img, draw, x, y, w, h):
-    gradient_rect(img, (x, y, x + w, y + h), (255, 255, 255), (210, 215, 222))
-    rr(draw, [x, y, x + w, y + h], 8, None, outline=(100, 116, 139), width=2)
-    rr(draw, [x + 10, y + 12, x + w - 10, y + 58], 6, (248, 250, 252), (203, 213, 225))
-    draw.text((x + w // 2, y + 28), "RCBO", fill=INK, font=font(18, True), anchor="mm")
-    draw.text((x + w // 2, y + 48), "2P 40A 30mA", fill=(100, 116, 139), font=font(12), anchor="mm")
-    # TEST
-    rr(draw, [x + 28, y + 75, x + w - 28, y + 105], 6, (220, 38, 38))
-    draw.text((x + w // 2, y + 90), "TEST", fill=(255, 255, 255), font=font(14, True), anchor="mm")
-    # lever
-    rr(draw, [x + w // 2 - 22, y + 120, x + w // 2 + 22, y + 210], 8, (226, 232, 240), (51, 65, 85), 2)
-    rr(draw, [x + w // 2 - 18, y + 126, x + w // 2 + 18, y + 168], 6, (34, 197, 94))
-    draw.text((x + w // 2, y + 195), "ON", fill=(22, 101, 52), font=font(14, True), anchor="mm")
-    # terminals
-    for i, lab in enumerate(["L", "N"]):
-        tx = x + 40 + i * 70
-        rr(draw, [tx - 16, y - 8, tx + 16, y + 14], 3, (107, 114, 128))
-        screw(draw, tx, y + 3, 5)
-        col = L if lab == "L" else N
-        draw.text((tx, y + 28), lab, fill=col, font=font(14, True), anchor="mm")
-        rr(draw, [tx - 16, y + h - 14, tx + 16, y + h + 8], 3, (107, 114, 128))
-        screw(draw, tx, y + h - 3, 5)
-    return {"L_top": (x + 40, y), "N_top": (x + 110, y), "L_bot": (x + 40, y + h), "N_bot": (x + 110, y + h)}
+def wire(d, pts, color, width=6):
+    d.line(pts, fill=color, width=width, joint="curve")
+    hi = tuple(min(255, c + 50) for c in color)
+    d.line([(x, y - max(1, width // 4)) for x, y in pts], fill=hi, width=max(1, width // 4))
 
 
-def draw_shelly(img, draw, x, y, w, h, title, eth):
-    gradient_rect(img, (x, y, x + w, y + h), (250, 251, 252), (180, 186, 194))
-    rr(draw, [x, y, x + w, y + h], 10, None, outline=(100, 116, 139), width=2)
-    # side brand
-    gradient_rect(img, (x, y, x + 34, y + h), (209, 213, 219), (156, 163, 175), vertical=True)
-    for i, ch in enumerate("Shelly"):
-        draw.text((x + 17, y + 70 + i * 28), ch, fill=(51, 65, 85), font=font(14, True), anchor="mm")
-    # face
-    rr(draw, [x + 48, y + 48, x + w - 18, y + 210], 10, (233, 237, 241), (203, 213, 225))
-    # LCD
-    rr(draw, [x + 110, y + 62, x + 360, y + 155], 8, (11, 18, 32))
-    for i in range(0, 90, 3):
-        draw.line([x + 112, y + 64 + i, x + 358, y + 64 + i], fill=(30, 41, 59), width=1)
-    draw.text((x + 235, y + 95), title, fill=(125, 211, 252), font=font(18, True), anchor="mm")
-    draw.text((x + 235, y + 120), "Pro 4PM · 4×16A", fill=(148, 163, 184), font=font(12), anchor="mm")
-    draw.text((x + 130, y + 142), "● online", fill=(74, 222, 128), font=font(12))
-    draw.text((x + 340, y + 142), eth, fill=(56, 189, 248), font=font(12), anchor="rm")
-    # buttons
-    for i, lab in enumerate(["▲", "▼", "OK"]):
-        bx = x + 140 + i * 70
-        rr(draw, [bx, y + 168, bx + 55, y + 198], 6, (229, 231, 235), (100, 116, 139))
-        draw.text((bx + 27, y + 183), lab, fill=(51, 65, 85), font=font(13, True), anchor="mm")
-    # top terminals O4 O3 L O2 O1
-    labels = ["O4", "O3", "L", "O2", "O1"]
-    xs = {}
-    span = w - 70
-    x0 = x + 50
-    for i, lab in enumerate(labels):
-        tx = int(x0 + span * (i + 0.5) / 5)
-        xs[lab] = tx
-        rr(draw, [tx - 15, y - 10, tx + 15, y + 12], 3, (107, 114, 128))
-        screw(draw, tx, y + 1, 5)
-        col = L if lab == "L" else INK
-        draw.text((tx, y + 26), lab, fill=col, font=font(13, True), anchor="mm")
-    # bottom LAN N S
-    lan = (x + 75, y + h)
-    rr(draw, [lan[0] - 22, lan[1] - 18, lan[0] + 22, lan[1] + 6], 3, (15, 23, 42))
-    for i in range(8):
-        draw.rectangle([lan[0] - 14 + i * 4, lan[1] - 12, lan[0] - 12 + i * 4, lan[1] - 2], fill=(203, 213, 225))
-    draw.text((lan[0], lan[1] + 18), "LAN", fill=(100, 116, 139), font=font(11), anchor="mm")
-    nx = x + 140
-    rr(draw, [nx - 15, y + h - 10, nx + 15, y + h + 10], 3, (107, 114, 128))
-    screw(draw, nx, y + h, 5)
-    draw.text((nx, y + h - 18), "N", fill=N, font=font(13, True), anchor="mm")
-    for i, lab in enumerate(["S4", "S3", "S2", "S1"]):
-        sx = x + 210 + i * 55
-        rr(draw, [sx - 12, y + h - 8, sx + 12, y + h + 8], 3, (148, 163, 184))
-        screw(draw, sx, y + h, 4)
-        draw.text((sx, y + h + 20), lab, fill=(148, 163, 184), font=font(10), anchor="mm")
-    draw.text((x + w - 12, y + h + 38), "S1–S4 non collegati", fill=(148, 163, 184), font=font(11), anchor="rm")
-    return {"terms": xs, "N": (nx, y + h), "LAN": lan, "top": y, "bottom": y + h}
+def load_cutout(path: Path) -> Image.Image:
+    im = Image.open(path).convert("RGBA")
+    return im
 
 
-def draw_mcb(img, draw, cx, cy):
-    gradient_rect(img, (cx - 16, cy - 34, cx + 16, cy + 34), (255, 255, 255), (220, 220, 220))
-    rr(draw, [cx - 16, cy - 34, cx + 16, cy + 34], 4, None, (107, 114, 128), 1)
-    rr(draw, [cx - 12, cy - 28, cx + 12, cy - 14], 3, (254, 226, 226), (239, 68, 68))
-    draw.text((cx, cy - 21), "16A", fill=(185, 28, 28), font=font(9, True), anchor="mm")
-    rr(draw, [cx - 6, cy - 8, cx + 6, cy + 18], 3, (226, 232, 240), (51, 65, 85))
-    rr(draw, [cx - 5, cy - 6, cx + 5, cy + 6], 2, (34, 197, 94))
-    screw(draw, cx, cy - 30, 3)
-    screw(draw, cx, cy + 26, 3)
+def fit_height(im: Image.Image, height: int) -> Image.Image:
+    ratio = height / im.height
+    return im.resize((max(1, int(im.width * ratio)), height), Image.Resampling.LANCZOS)
 
 
-def draw_load_card(draw, cx, cy, num, name, out):
-    rr(draw, [cx - 58, cy, cx + 58, cy + 78], 10, (255, 255, 255), (148, 163, 184), 2)
-    draw.ellipse([cx - 56, cy + 8, cx - 32, cy + 32], fill=(15, 76, 129))
-    draw.text((cx - 44, cy + 20), str(num), fill=(255, 255, 255), font=font(14, True), anchor="mm")
-    draw.text((cx + 12, cy + 20), out, fill=(100, 116, 139), font=font(12, True), anchor="mm")
-    # simple appliance glyph
-    draw.rounded_rectangle([cx - 22, cy + 38, cx + 22, cy + 68], 4, outline=(51, 65, 85), width=2)
-    draw.text((cx, cy + 53), {1: "LV", 2: "MO", 3: "FO", 4: "FR", 5: "PC", 6: "PR", 7: "PL", 8: "PM"}.get(num, "·"),
-              fill=(15, 76, 129), font=font(11, True), anchor="mm")
-    words = name.split()
-    if len(name) > 14 and len(words) > 1:
-        mid = max(1, len(words) // 2)
-        draw.text((cx, cy + 90), " ".join(words[:mid]), fill=INK, font=font(12, True), anchor="mm")
-        draw.text((cx, cy + 106), " ".join(words[mid:]), fill=INK, font=font(12, True), anchor="mm")
-    else:
-        draw.text((cx, cy + 94), name, fill=INK, font=font(12, True), anchor="mm")
+def paste(base: Image.Image, sprite: Image.Image, xy: tuple[int, int]):
+    base.alpha_composite(sprite, dest=xy)
+
+
+def prepare_components():
+    """Assicura cutout Shelly ufficiale e RCBO pronti."""
+    COMP.mkdir(parents=True, exist_ok=True)
+    shelly_src = COMP / "shelly-pro-4pm-official.png"
+    shelly_out = COMP / "shelly-pro-4pm-cutout.png"
+    rcbo_src = COMP / "component-rcbo-magnetotermico.jpg"
+    rcbo_out = COMP / "rcbo-cutout.png"
+
+    if shelly_src.exists():
+        im = Image.open(shelly_src).convert("RGBA")
+        px = im.load()
+        w, h = im.size
+        for y in range(h):
+            for x in range(w):
+                r, g, b, a = px[x, y]
+                if r < 35 and g < 35 and b < 35:
+                    px[x, y] = (r, g, b, 0)
+        # rimuovi anche cavo ethernet bianco in basso se presente: lascia corpo
+        bbox = im.split()[-1].getbbox()
+        im = im.crop(bbox)
+        # ritaglia un po' il cavo in basso: tieni ~88% altezza dal top
+        im = im.crop((0, 0, im.width, int(im.height * 0.90)))
+        bbox = im.split()[-1].getbbox()
+        im = im.crop(bbox)
+        im.save(shelly_out)
+
+    if rcbo_src.exists():
+        im = Image.open(rcbo_src).convert("RGBA")
+        px = im.load()
+        w, h = im.size
+        for y in range(h):
+            for x in range(w):
+                r, g, b, a = px[x, y]
+                if r > 245 and g > 245 and b > 245:
+                    px[x, y] = (r, g, b, 0)
+        bbox = im.split()[-1].getbbox()
+        im = im.crop(bbox)
+        im.save(rcbo_out)
+
+    return shelly_out, rcbo_out
+
+
+def draw_cabinet(img: Image.Image, d: ImageDraw.ImageDraw):
+    # metal cabinet
+    for y in range(H):
+        t = y / H
+        col = (
+            int(120 + 40 * (1 - t)),
+            int(130 + 35 * (1 - t)),
+            int(145 + 30 * (1 - t)),
+        )
+        d.line([(0, y), (W, y)], fill=col)
+    rr(d, [36, 36, W - 36, H - 36], 18, (90, 100, 115), (40, 45, 55), 5)
+    # hinges
+    for hy in (160, H // 2, H - 200):
+        rr(d, [28, hy, 52, hy + 48], 4, (180, 190, 200), (60, 70, 80), 2)
+    # inner tray
+    rr(d, [70, 100, W - 70, H - 80], 10, (210, 218, 226), (140, 150, 160), 2)
+    # perforated plate
+    for yy in range(130, H - 110, 18):
+        for xx in range(100, W - 100, 18):
+            d.ellipse([xx, yy, xx + 3, yy + 3], fill=(160, 170, 180))
+
+
+def draw_din(d, y):
+    d.rectangle([110, y, W - 110, y + 40], fill=(190, 198, 206), outline=(90, 100, 110))
+    d.rectangle([110, y + 12, W - 110, y + 18], fill=(245, 248, 250))
+    d.rectangle([110, y + 26, W - 110, y + 30], fill=(70, 80, 90))
+    d.text((120, y + 52), "Guida DIN EN 60715 · 35 mm", fill=(60, 70, 80), font=font(13))
 
 
 def build() -> Image.Image:
-    img = Image.new("RGB", (W, H), (71, 85, 105))
-    draw = ImageDraw.Draw(img)
+    shelly_path, rcbo_path = prepare_components()
+    shelly = load_cutout(shelly_path)
+    rcbo = load_cutout(rcbo_path)
 
-    # cabinet shell
-    gradient_rect(img, (40, 40, W - 40, H - 40), (229, 231, 235), (100, 116, 139))
-    rr(draw, [40, 40, W - 40, H - 40], 16, None, (51, 65, 85), 4)
-    # inner
-    rr(draw, [70, 90, W - 70, H - 70], 8, (203, 213, 225), (148, 163, 184), 2)
-    # perforated plate
-    for yy in range(120, H - 100, 16):
-        for xx in range(100, W - 100, 16):
-            draw.ellipse([xx, yy, xx + 3, yy + 3], fill=(148, 163, 184))
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 255))
+    d = ImageDraw.Draw(img)
+    draw_cabinet(img, d)
 
-    # title plate
-    rr(draw, [90, 55, 820, 100], 8, (248, 250, 252), (255, 255, 255), 1)
-    draw.text((110, 67), "Quadro elettrico cucina", fill=INK, font=font(28, True))
-    draw.text((110, 100), "Render · cablaggio corretto da schema tecnico", fill=(71, 85, 105), font=font(14))
-
-    # legend colors
+    # header plate
+    rr(d, [95, 55, 980, 115], 10, (248, 250, 252), (255, 255, 255), 1)
+    d.text((115, 68), "Quadro elettrico cucina", fill=INK, font=font(30, True))
+    d.text((115, 100), "Render con foto reali · Shelly Pro 4PM ufficiale + RCBO · cablaggio corretto", fill=(71, 85, 105), font=font(14))
     for i, (c, t) in enumerate([(L, "L fase"), (N, "N neutro"), (ETH, "ETH"), (PE, "PE")]):
-        x = 1600 + i * 120
-        rr(draw, [x, 65, x + 18, 83], 4, c)
-        draw.text((x + 26, 67), t, fill=(248, 250, 252), font=font(13, True))
+        x = 1680 + i * 140
+        rr(d, [x, 70, x + 18, 88], 4, c)
+        d.text((x + 26, 72), t, fill=(248, 250, 252), font=font(14, True))
 
-    # DIN rail
-    din_y = 820
-    gradient_rect(img, (110, din_y, W - 110, din_y + 36), (248, 250, 252), (71, 85, 105))
-    draw.rectangle([110, din_y + 10, W - 110, din_y + 16], fill=(255, 255, 255))
-    draw.text((120, din_y + 48), "Guida DIN 35 mm", fill=(51, 65, 85), font=font(12))
+    # N bar
+    n_y = 155
+    d.rectangle([150, n_y - 9, W - 240, n_y + 9], fill=N)
+    chip(d, (W - 330, n_y - 18), "MORSETTIERA N", (219, 234, 254), N)
 
-    # N bar top
-    n_y = 150
-    draw.rectangle([140, n_y - 8, W - 220, n_y + 8], fill=N)
-    for i in range(16):
-        screw(draw, 180 + i * 70, n_y, 4)
-    label_chip(draw, (W - 300, n_y - 18), "MORSETTIERA N", (219, 234, 254), N)
+    din_y = 860
+    draw_din(d, din_y)
 
-    # buses
-    l_bus_y = 980
-    n_bus_y = 1080
-    draw.line([(160, l_bus_y), (W - 160, l_bus_y)], fill=L, width=8)
-    draw.line([(160, n_bus_y), (W - 160, n_bus_y)], fill=N, width=8)
-    label_chip(draw, (W - 280, l_bus_y - 16), "BUS L", (254, 243, 199), L)
-    label_chip(draw, (W - 280, n_bus_y - 16), "BUS N", (219, 234, 254), N)
-    # PE
-    draw.rectangle([140, 1160, 420, 1178], fill=PE)
+    l_bus_y = 1040
+    n_bus_y = 1140
+    d.line([(160, l_bus_y), (W - 170, l_bus_y)], fill=L, width=9)
+    d.line([(160, n_bus_y), (W - 170, n_bus_y)], fill=N, width=9)
+    chip(d, (W - 300, l_bus_y - 16), "BUS L", (254, 243, 199), L)
+    chip(d, (W - 300, n_bus_y - 16), "BUS N", (219, 234, 254), N)
+    d.rectangle([150, 1230, 430, 1248], fill=PE)
     for i in range(0, 280, 14):
-        draw.rectangle([140 + i, 1160, 147 + i, 1178], fill=(22, 101, 52))
-    draw.text((280, 1195), "BARRA PE", fill=PE, font=font(13, True), anchor="mm")
+        d.rectangle([150 + i, 1230, 157 + i, 1248], fill=(22, 101, 52))
+    d.text((290, 1268), "BARRA PE", fill=PE, font=font(13, True), anchor="mm")
 
-    # RCBO
-    rcbo = draw_rcbo(img, draw, 120, din_y - 290, 150, 300)
+    # Place RCBO photo
+    rcbo_h = 340
+    rcbo_s = fit_height(rcbo, rcbo_h)
+    rcbo_x, rcbo_y = 120, din_y - rcbo_h + 20
+    paste(img, rcbo_s, (rcbo_x, rcbo_y))
+    # terminal anchors on photo (approximate fractions of device)
+    rcx = rcbo_x + rcbo_s.width // 2
+    rc_L_top = (rcbo_x + int(rcbo_s.width * 0.32), rcbo_y + 8)
+    rc_N_top = (rcbo_x + int(rcbo_s.width * 0.68), rcbo_y + 8)
+    rc_L_bot = (rcbo_x + int(rcbo_s.width * 0.32), rcbo_y + rcbo_h - 8)
+    rc_N_bot = (rcbo_x + int(rcbo_s.width * 0.68), rcbo_y + rcbo_h - 8)
+    d.text((rcx, rcbo_y - 18), "Magnetotermico differenziale (RCBO)", fill=INK, font=font(14, True), anchor="mm")
 
-    # supply into top of RCBO
-    wire(draw, [(100, 1120), (100, 480), (rcbo["L_top"][0], 480), rcbo["L_top"]], L, 6)
-    wire(draw, [(250, 1120), (250, 480), (rcbo["N_top"][0], 480), rcbo["N_top"]], N, 6)
-    label_chip(draw, (70, 1125), "L rete", (254, 243, 199), L)
-    label_chip(draw, (220, 1125), "N rete", (219, 234, 254), N)
+    # Place two Shelly official photos
+    shelly_h = 360
+    s_img = fit_height(shelly, shelly_h)
+    s1x, s1y = 380, din_y - shelly_h + 25
+    s2x, s2y = 980, din_y - shelly_h + 25
+    paste(img, s_img, (s1x, s1y))
+    paste(img, s_img, (s2x, s2y))
+    d.text((s1x + s_img.width // 2, s1y - 18), "SHELLY #1 · Pro 4PM", fill=INK, font=font(14, True), anchor="mm")
+    d.text((s2x + s_img.width // 2, s2y - 18), "SHELLY #2 · Pro 4PM", fill=INK, font=font(14, True), anchor="mm")
+
+    def shelly_terms(sx, sy, sw, sh):
+        # top O4 O3 L O2 O1 across upper terminal strip
+        labels = ["O4", "O3", "L", "O2", "O1"]
+        xs = {}
+        for i, lab in enumerate(labels):
+            xs[lab] = sx + int(sw * (0.18 + i * 0.16))
+        return {
+            "terms": xs,
+            "top_y": sy + 18,
+            "N": (sx + int(sw * 0.38), sy + sh - 12),
+            "LAN": (sx + int(sw * 0.22), sy + sh - 8),
+            "bottom_y": sy + sh,
+        }
+
+    s1 = shelly_terms(s1x, s1y, s_img.width, shelly_h)
+    s2 = shelly_terms(s2x, s2y, s_img.width, shelly_h)
+
+    # redraw draw context after alpha paste (PIL draw stays valid)
+    d = ImageDraw.Draw(img)
+
+    # Supply L/N to RCBO top
+    wire(d, [(100, 1200), (100, rc_L_top[1] - 40), (rc_L_top[0], rc_L_top[1] - 40), rc_L_top], L, 7)
+    wire(d, [(250, 1200), (250, rc_N_top[1] - 40), (rc_N_top[0], rc_N_top[1] - 40), rc_N_top], N, 7)
+    chip(d, (70, 1205), "L rete", (254, 243, 199), L)
+    chip(d, (220, 1205), "N rete", (219, 234, 254), N)
 
     # RCBO out to buses
-    wire(draw, [rcbo["L_bot"], (rcbo["L_bot"][0], l_bus_y), (W - 200, l_bus_y)], L, 7)
-    wire(draw, [rcbo["N_bot"], (rcbo["N_bot"][0], n_bus_y), (W - 200, n_bus_y)], N, 7)
-    wire(draw, [(W - 250, n_y), (W - 250, n_bus_y)], N, 6)
+    wire(d, [rc_L_bot, (rc_L_bot[0], l_bus_y), (W - 200, l_bus_y)], L, 8)
+    wire(d, [rc_N_bot, (rc_N_bot[0], n_bus_y), (W - 200, n_bus_y)], N, 8)
+    wire(d, [(W - 260, n_y), (W - 260, n_bus_y)], N, 6)
 
-    # Shellys
-    s1 = draw_shelly(img, draw, 340, din_y - 290, 520, 310, "SHELLY #1", "ETH 1")
-    s2 = draw_shelly(img, draw, 980, din_y - 290, 520, 310, "SHELLY #2", "ETH 2")
-
-    # power to Shellys
+    # Power Shellys
     for s in (s1, s2):
-        wire(draw, [(s["terms"]["L"], s["top"]), (s["terms"]["L"], l_bus_y)], L, 5)
-        wire(draw, [s["N"], (s["N"][0], n_bus_y)], N, 5)
+        wire(d, [(s["terms"]["L"], s["top_y"]), (s["terms"]["L"], l_bus_y)], L, 6)
+        wire(d, [s["N"], (s["N"][0], n_bus_y)], N, 6)
+        # label terminals lightly
+        for lab, tx in s["terms"].items():
+            col = L if lab == "L" else (248, 250, 252)
+            d.text((tx, s["top_y"] - 14), lab, fill=col if lab == "L" else INK, font=font(11, True), anchor="mm")
 
-    # ETH only to LAN, exit right as data (NOT to PE)
-    for s, label, xoff in ((s1, "ETH 1", 0), (s2, "ETH 2", 80)):
+    # ETH only LAN
+    for s, label, xo in ((s1, "ETH 1", 0), (s2, "ETH 2", 100)):
         lx, ly = s["LAN"]
-        wire(draw, [(lx, ly + 8), (lx, 1140), (1700 + xoff, 1140), (1700 + xoff, 1220)], ETH, 5)
-        label_chip(draw, (1660 + xoff, 1225), label, (30, 58, 138), (248, 250, 252))
+        wire(d, [(lx, ly), (lx, 1210), (1750 + xo, 1210), (1750 + xo, 1280)], ETH, 5)
+        chip(d, (1710 + xo, 1285), label, ETH, (248, 250, 252))
 
-    # loads + MCB
-    def loads_for(s, mapping):
+    # Loads via MCB
+    def place_loads(s, mapping):
         for idx, (out, num, name) in enumerate(mapping):
             tx = s["terms"][out]
             mcb_y = 430
-            wire(draw, [(tx, s["top"]), (tx, mcb_y + 34)], INK, 4)
-            draw_mcb(img, draw, tx, mcb_y)
-            stagger = (idx % 2) * 55
+            wire(d, [(tx, s["top_y"]), (tx, mcb_y + 30)], INK, 4)
+            # mini MCB drawing
+            rr(d, [tx - 14, mcb_y - 28, tx + 14, mcb_y + 28], 4, (250, 250, 250), (100, 110, 120), 1)
+            rr(d, [tx - 10, mcb_y - 22, tx + 10, mcb_y - 10], 2, (254, 226, 226), (220, 38, 38))
+            d.text((tx, mcb_y - 16), "16A", fill=(185, 28, 28), font=font(9, True), anchor="mm")
+            rr(d, [tx - 5, mcb_y - 4, tx + 5, mcb_y + 14], 2, (34, 197, 94))
+            stagger = (idx % 2) * 58
             card_y = 175 + stagger
-            wire(draw, [(tx, mcb_y - 34), (tx, card_y + 78)], INK, 4)
-            wire(draw, [(tx, n_y), (tx, card_y)], N, 3)
-            draw_load_card(draw, tx, card_y, num, name, out)
+            wire(d, [(tx, mcb_y - 28), (tx, card_y + 70)], INK, 4)
+            wire(d, [(tx, n_y), (tx, card_y)], N, 3)
+            rr(d, [tx - 56, card_y, tx + 56, card_y + 70], 10, (255, 255, 255), (120, 130, 140), 2)
+            d.ellipse([tx - 52, card_y + 8, tx - 28, card_y + 32], fill=(15, 76, 129))
+            d.text((tx - 40, card_y + 20), str(num), fill=(255, 255, 255), font=font(13, True), anchor="mm")
+            d.text((tx + 14, card_y + 20), out, fill=(80, 90, 100), font=font(12, True), anchor="mm")
+            d.text((tx, card_y + 48), name.split()[0], fill=INK, font=font(12, True), anchor="mm")
+            if len(name.split()) > 1:
+                d.text((tx, card_y + 64), " ".join(name.split()[1:]), fill=INK, font=font(11, True), anchor="mm")
 
-    loads_for(s1, SHELLY1)
-    loads_for(s2, SHELLY2)
+    place_loads(s1, SHELLY1)
+    place_loads(s2, SHELLY2)
 
-    # footer rules
-    rr(draw, [90, 1240, W - 90, 1430], 12, (248, 250, 252), (203, 213, 225), 2)
-    draw.text((110, 1260), "Cablaggio corretto (questo render)", fill=INK, font=font(18, True))
-    rules = [
-        "1. L/N rete → morsetti ALTI del RCBO",
-        "2. Uscite RCBO → BUS L (marrone) e BUS N (blu)",
-        "3. Shelly: L sul morsetto alto centrale · N sul morsetto basso",
-        "4. Ox → MCB 16A → carico · neutro carico → MORSETTIERA N",
-        "5. ETH1/ETH2 SOLO porte LAN (non PE, non S, non L/N)",
-        "6. S1–S4 non collegati · barra PE separata",
-    ]
-    for i, r in enumerate(rules):
-        col = i % 2
-        row = i // 2
-        draw.text((110 + col * 980, 1300 + row * 28), r, fill=(51, 65, 85), font=font(15))
+    # Source credit
+    rr(d, [90, 1320, W - 90, 1520], 12, (248, 250, 252), (200, 210, 220), 2)
+    d.text((110, 1340), "Componenti reali nel render", fill=INK, font=font(18, True))
+    d.text((110, 1372), "• Shelly Pro 4PM: foto ufficiale shelly.com (cutout)", fill=(51, 65, 85), font=font(14))
+    d.text((110, 1396), "• Magnetotermico differenziale: cutout RCBO 2P 40A 30mA Tipo A", fill=(51, 65, 85), font=font(14))
+    d.text((110, 1420), "Cablaggio (corretto): L/N → alto RCBO → BUS → Shelly (L alto, N basso); Ox → MCB → carico; ETH solo LAN; PE separata.", fill=(51, 65, 85), font=font(14))
+    d.text((110, 1450), "S1–S4 non collegati. Limiti Pro 4PM: 16 A/canale, 40 A totali.", fill=(146, 64, 14), font=font(14, True))
+    d.text((110, 1485), "Fonte Shelly: https://www.shelly.com/products/shelly-pro-4pm", fill=(100, 116, 139), font=font(12))
 
-    # photographic finish
-    img = ImageEnhance.Contrast(img).enhance(1.08)
-    img = ImageEnhance.Color(img).enhance(1.04)
-    img = ImageEnhance.Sharpness(img).enhance(1.2)
-    blur = img.filter(ImageFilter.GaussianBlur(0.8))
-    img = Image.blend(img, blur, 0.12)
-    noise = Image.effect_noise((W, H), 10).convert("RGB")
-    img = Image.blend(img, noise, 0.035)
-    return img
+    # finish
+    rgb = img.convert("RGB")
+    rgb = ImageEnhance.Contrast(rgb).enhance(1.06)
+    rgb = ImageEnhance.Sharpness(rgb).enhance(1.15)
+    rgb = Image.blend(rgb, rgb.filter(ImageFilter.GaussianBlur(0.7)), 0.1)
+    noise = Image.effect_noise((W, H), 8).convert("RGB")
+    rgb = Image.blend(rgb, noise, 0.03)
+    return rgb
 
 
 def main():
     img = build()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     ART_DIR.mkdir(parents=True, exist_ok=True)
-    for path in (
-        OUT_DIR / "quadro-elettrico-cucina-foto.jpg",
-        ART_DIR / "quadro-elettrico-cucina-foto.jpg",
-    ):
+    for path in (OUT_DIR / "quadro-elettrico-cucina-foto.jpg", ART_DIR / "quadro-elettrico-cucina-foto.jpg"):
         img.save(path, quality=93, optimize=True)
         print("wrote", path)
 

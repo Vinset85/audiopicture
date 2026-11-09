@@ -2,12 +2,16 @@
 
 ## File
 
-- [`quadro-elettrico-cucina-foto.jpg`](quadro-elettrico-cucina-foto.jpg) — **render** (cablaggio corretto, generato da codice)
+- [`quadro-elettrico-cucina-foto.jpg`](quadro-elettrico-cucina-foto.jpg) — **render** con foto componenti reali
 - [`quadro-elettrico-cucina.png`](quadro-elettrico-cucina.png) / [`.svg`](quadro-elettrico-cucina.svg) — schema tecnico
-- [`generate_quadro_cucina.py`](generate_quadro_cucina.py) — generatore schema
-- [`generate_quadro_cucina_render.py`](generate_quadro_cucina_render.py) — generatore render
+- [`components/`](components/) — cutout Shelly ufficiale + RCBO
+- [`generate_quadro_cucina.py`](generate_quadro_cucina.py) / [`generate_quadro_cucina_render.py`](generate_quadro_cucina_render.py)
 
-I render AI “liberi” inventano collegamenti errati: questo render è prodotto dal codice con la stessa topologia dello schema.
+### Foto componenti
+- **Shelly Pro 4PM**: immagine ufficiale [shelly.com](https://www.shelly.com/cdn/shop/files/Shelly-Pro-4PM-main-image.png?v=1749538954)
+- **RCBO**: cutout prodotto 2P 40A 30mA Tipo A
+
+Il cablaggio sopra le foto è disegnato dal codice (topologia corretta), non inventato dall’AI.
 
 ## Cablaggio corretto
 
