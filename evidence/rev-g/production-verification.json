@@ -5,7 +5,8 @@
   "blocked_by": [
     "First-article acoustic measurement against the pass bars in the frozen spec",
     "Line-out level and channel assignment confirmed on a real Dev Kit",
-    "Pilot of at least one assembled frame, not a released lot"
+    "Pilot of at least one assembled frame, not a released lot",
+    "Volume-button contact confirmed active-low to ground before the touch output shares it"
   ],
   "gates": [
     {
@@ -21,7 +22,7 @@
     {
       "gate": "panel fits the acoustic cavity",
       "result": "PASS",
-      "detail": "panel 296x286 cavity 312x294 front Z=28.5"
+      "detail": "panel 296x286 cavity 312x290.0 front Z=28.5"
     },
     {
       "gate": "HAT and Core fit the bay side by side",
@@ -56,7 +57,32 @@
     {
       "gate": "frame STEP and STL exist",
       "result": "PASS",
-      "detail": "stl=10684"
+      "detail": "stl=55284"
+    },
+    {
+      "gate": "top wall stays inside the outline",
+      "result": "PASS",
+      "detail": "cavity top Y=196.0, envelope=[320.0, 400.0, 30.0]"
+    },
+    {
+      "gate": "power text names the analog amplifier",
+      "result": "PASS",
+      "detail": "HAT on its USB-C PD supply; analog amplifier on a separate 20 V rail, grounds joined at one point"
+    },
+    {
+      "gate": "top wall is closed",
+      "result": "PASS",
+      "detail": "sampled 30 points in the top skin; both keyholes open"
+    },
+    {
+      "gate": "volume pads sit under the cloth on the bay",
+      "result": "PASS",
+      "detail": "left tap lowers, right tap raises, clear of radar, mics and the sounding panel"
+    },
+    {
+      "gate": "volume pockets do not pierce the front skin",
+      "result": "PASS",
+      "detail": "remaining skin 1.2 mm"
     },
     {
       "gate": "audio path matches the published kit firmware",

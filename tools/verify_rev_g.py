@@ -39,8 +39,10 @@ def main() -> int:
         panel_z - lf["depth_mm"] > rear and abs((panel_z - wb["depth_mm"]) - (rear + stack["clearance_behind_teax"])) < 0.05,
         f"TEAX back face Z={panel_z - wb['depth_mm']}, skin inner Z={rear}",
     ))
-    cavity_h = H - bay_h - wall
     bay_clear = bay_h - wall
+    cavity_bottom = -H / 2 + wall + bay_clear + wall
+    cavity_top_design = H / 2 - wall
+    cavity_h = cavity_top_design - cavity_bottom
     bay_w = W - 2 * wall
     gates.append(gate(
         "panel fits the acoustic cavity",
@@ -78,10 +80,84 @@ def main() -> int:
 
     stl = ROOT / "mechanical/rev-g/cad/AP-G-FRAME.stl"
     step = ROOT / "mechanical/rev-g/cad/AP-G-FRAME.step"
+    manifest = ROOT / "mechanical/rev-g/cad/manifest.json"
     gates.append(gate("frame STEP and STL exist", stl.is_file() and step.is_file() and stl.stat().st_size > 1000, f"stl={stl.stat().st_size if stl.is_file() else 0}"))
+    meta = json.loads(manifest.read_text()) if manifest.is_file() else {}
+    cavity_top = (meta.get("cavity_y_mm") or [None, None])[1]
+    envelope = meta.get("envelope_mm") or [0, 0, 0]
+    gates.append(gate(
+        "top wall stays inside the outline",
+        cavity_top is not None and abs(cavity_top - cavity_top_design) < 0.05 and all(abs(a - b) < 0.05 for a, b in zip(envelope, (W, H, D))),
+        f"cavity top Y={cavity_top}, envelope={envelope}",
+    ))
+    power = p["electronics"].get("power", "")
+    gates.append(gate(
+        "power text names the analog amplifier",
+        "TAS5825M" not in power and p["amplifier"]["part"].startswith("stereo analog"),
+        power,
+    ))
+    try:
+        import cadquery as cq
+        frame = cq.importers.importStep(str(step))
+        shape = frame.val()
+        skin = [(x, y, z) for x in (-120, 0, 120) for y in (196.8, 198.8) for z in (0.5, 8, 16, 24, 29)]
+        closed = all(shape.isInside(pt) for pt in skin) and not shape.isInside((0, 190, 10))
+        throat = not shape.isInside((148, 182, 2)) and not shape.isInside((-148, 182, 2))
+        gates.append(gate("top wall is closed", closed and throat, f"sampled {len(skin)} points in the top skin; both keyholes open"))
+        shape_probe = shape
+    except Exception as exc:
+        shape_probe = None
+        gates.append(gate("top wall is closed", False, f"STEP probe failed: {exc}"))
 
     # Published Satellite1 firmware (speaker.yaml, 2026-11): I2S dout is GPIO9
     # into the on-board DAC proxy. External audio is the PCM5122 line-out.
+    touch = p.get("volume_touch") or {}
+    zones = touch.get("zones") or []
+    bay_top = -H / 2 + wall + bay_clear
+    bay_bottom = -H / 2 + wall
+    hat_cx = -W / 2 + wall + 4 + hat[0] / 2
+    by = -H / 2 + wall + bay_clear / 2
+    radar = (hat_cx, by, 16, 46)
+    mics = [(hat_cx + dx, bay_top - 6, 6, 3) for dx in (-30, -10, 10, 30)]
+
+    def overlaps(a, b, gap=3.0):
+        ax, ay, aw, ah = a
+        bx, by_, bw, bh = b
+        return abs(ax - bx) < (aw + bw) / 2 + gap and abs(ay - by_) < (ah + bh) / 2 + gap
+
+    pads_ok = (
+        len(zones) == 2
+        and zones[0]["id"] == "vol_down" and zones[0]["center_mm"][0] < 0
+        and zones[1]["id"] == "vol_up" and zones[1]["center_mm"][1] == zones[0]["center_mm"][1]
+        and zones[1]["center_mm"][0] == -zones[0]["center_mm"][0]
+        and 0 < touch.get("pocket_depth_mm", 0) < lip
+    )
+    for zone in zones:
+        zx, zy = zone["center_mm"]
+        zw, zh = zone["size_mm"]
+        pads_ok = pads_ok and bay_bottom + 2 + zh / 2 <= zy <= bay_top - 2 - zh / 2
+        pads_ok = pads_ok and -W / 2 + wall + 2 + zw / 2 <= zx <= W / 2 - wall - 2 - zw / 2
+        pads_ok = pads_ok and not overlaps((zx, zy, zw, zh), radar)
+        pads_ok = pads_ok and not any(overlaps((zx, zy, zw, zh), mic) for mic in mics)
+    gates.append(gate(
+        "volume pads sit under the cloth on the bay",
+        pads_ok,
+        "left tap lowers, right tap raises, clear of radar, mics and the sounding panel",
+    ))
+    if shape_probe is None:
+        gates.append(gate("volume pockets do not pierce the front skin", False, "no STEP shape"))
+    else:
+        recess_ok = True
+        for zone in zones:
+            zx, zy = zone["center_mm"]
+            recess_ok = recess_ok and shape_probe.isInside((zx, zy, D - lip + touch["pocket_depth_mm"] + 0.4))
+            recess_ok = recess_ok and not shape_probe.isInside((zx, zy, D - lip + touch["pocket_depth_mm"] / 2))
+        gates.append(gate(
+            "volume pockets do not pierce the front skin",
+            recess_ok,
+            f"remaining skin {lip - touch.get('pocket_depth_mm', 0):.1f} mm",
+        ))
+
     audio = p.get("audio_path")
     gates.append(gate(
         "audio path matches the published kit firmware",
@@ -98,6 +174,7 @@ def main() -> int:
             "First-article acoustic measurement against the pass bars in the frozen spec",
             "Line-out level and channel assignment confirmed on a real Dev Kit",
             "Pilot of at least one assembled frame, not a released lot",
+            "Volume-button contact confirmed active-low to ground before the touch output shares it",
         ],
         "gates": gates,
     }

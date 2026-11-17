@@ -10,6 +10,44 @@
   ],
   "cavity_mm": [
     312,
-    294
+    290.0
+  ],
+  "cavity_y_mm": [
+    -94.0,
+    196.0
+  ],
+  "panel_origin_mm": [
+    -148.0,
+    -92.0,
+    20.5
+  ],
+  "hat_center_mm": [
+    -108.0,
+    -147.0
+  ],
+  "top_wall_mm": 4,
+  "volume_touch_mm": [
+    {
+      "id": "vol_down",
+      "center_mm": [
+        -136,
+        -186
+      ],
+      "size_mm": [
+        32,
+        16
+      ]
+    },
+    {
+      "id": "vol_up",
+      "center_mm": [
+        136,
+        -186
+      ],
+      "size_mm": [
+        32,
+        16
+      ]
+    }
   ]
 }
