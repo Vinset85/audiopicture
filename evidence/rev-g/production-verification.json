@@ -67,7 +67,7 @@
     {
       "gate": "power text names the analog amplifier",
       "result": "PASS",
-      "detail": "HAT on its USB-C PD supply; analog amplifier on a separate 20 V rail, grounds joined at one point"
+      "detail": "One internal Mean Well IRM-30-24. Its 24 V rail feeds the amplifier and, through a USB-C PD source, the HAT."
     },
     {
       "gate": "top wall is closed",
@@ -83,6 +83,11 @@
       "gate": "volume pockets do not pierce the front skin",
       "result": "PASS",
       "detail": "remaining skin 1.2 mm"
+    },
+    {
+      "gate": "one 24 V supply fits beside the Core",
+      "result": "PASS",
+      "detail": "IRM-30-24 ends at X=82, amplifier ends at X=146, bay edge X=156"
     },
     {
       "gate": "audio path matches the published kit firmware",

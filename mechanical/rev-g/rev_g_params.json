@@ -51,7 +51,7 @@
   },
   "audio_path": "pcm5122-line-out",
   "amplifier": {
-    "part": "stereo analog Class-D, line input, 20 V, 4 ohm and 8 ohm",
+    "part": "stereo analog Class-D, line input, 12 to 26 V, 4 ohm and 8 ohm",
     "reason": "Satellite1 public firmware routes I2S GPIO9 to the onboard DAC proxy. External sound is the PCM5122 jack.",
     "channel_left": "LF 4 ohm after 300 Hz low-pass",
     "channel_right": "TEAX25 8 ohm after 300 Hz high-pass",
@@ -62,7 +62,14 @@
     "hat_mm": [88, 88, 10],
     "core_mm": [66, 31, 10],
     "radar": "HLK-LD2450 15 x 44 mm",
-    "power": "HAT on its USB-C PD supply; analog amplifier on a separate 20 V rail, grounds joined at one point"
+    "power": "One internal Mean Well IRM-30-24. Its 24 V rail feeds the amplifier and, through a USB-C PD source, the HAT.",
+    "psu": {
+      "part": "Mean Well IRM-30-24",
+      "size_mm": [69.5, 39, 24],
+      "output": "24 V, 1.25 A, 30 W",
+      "place": "bay, right of the Core"
+    },
+    "amp_max_mm": [60, 80, 16]
   },
   "print": {
     "material": "PETG or ASA",

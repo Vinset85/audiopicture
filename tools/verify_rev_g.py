@@ -158,6 +158,28 @@ def main() -> int:
             f"remaining skin {lip - touch.get('pocket_depth_mm', 0):.1f} mm",
         ))
 
+    psu = p["electronics"]["psu"]["size_mm"]
+    amp = p["electronics"]["amp_max_mm"]
+    bay_depth = D - rear - lip
+    core_right = hat_cx + hat[0] / 2 + 6 + core[0]
+    psu_left = core_right + 4
+    psu_right = psu_left + psu[0]
+    amp_left = psu_right + 4
+    amp_right = amp_left + amp[0]
+    bay_left = -W / 2 + wall
+    bay_right = W / 2 - wall
+    supply_ok = (
+        psu[2] < bay_depth and amp[2] < bay_depth
+        and psu[1] < bay_clear - 4 and amp[1] < bay_clear - 4
+        and bay_left + 2 <= psu_left and amp_right <= bay_right - 2
+        and "IRM-30-24" in p["electronics"]["psu"]["part"]
+    )
+    gates.append(gate(
+        "one 24 V supply fits beside the Core",
+        supply_ok,
+        f"IRM-30-24 ends at X={psu_right:.0f}, amplifier ends at X={amp_right:.0f}, bay edge X={bay_right:.0f}",
+    ))
+
     audio = p.get("audio_path")
     gates.append(gate(
         "audio path matches the published kit firmware",

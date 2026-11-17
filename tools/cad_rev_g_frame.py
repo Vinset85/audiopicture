@@ -50,7 +50,7 @@ def main() -> int:
     opening = box(pw - 16, ph - 16, lip + 1, 0, cy, D - lip)
     bay = box(W - 2 * wall, bay_clear, D - rear - lip, 0, by, rear)
     frame = outer.cut(behind).cut(pocket).cut(opening).cut(bay)
-    frame = frame.cut(box(14, wall + 2, 8, 0, -H / 2 + wall / 2, 8))
+    frame = frame.cut(box(14, wall + 2, 8, 0, -H / 2 + wall / 2, 8))  # mains lead, clamped
     frame = frame.cut(box(16, 46, lip + 2, hat_cx, by, D - lip))
     pocket_depth = p["volume_touch"]["pocket_depth_mm"]
     if pocket_depth <= 0 or pocket_depth >= lip:

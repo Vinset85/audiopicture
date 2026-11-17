@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" font-family="ui-sans-serif, system-ui, sans-serif">
+  <rect width="880" height="520" fill="#f7f6f3"/>
+  <text x="28" y="34" font-size="18" fill="#1c1b19">Collegamenti Rev.G</text>
+  <text x="28" y="54" font-size="12" fill="#5c5852">Una rete, un modulo, un punto di massa</text>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#1c1b19"/>
+    </marker>
+  </defs>
+  <g fill="#fff" stroke="#1c1b19" stroke-width="1.4">
+    <rect x="28" y="84" width="110" height="44" rx="4"/>
+    <rect x="188" y="84" width="140" height="44" rx="4"/>
+    <rect x="378" y="78" width="120" height="56" rx="4"/>
+    <rect x="548" y="48" width="150" height="44" rx="4"/>
+    <rect x="548" y="120" width="170" height="44" rx="4"/>
+    <rect x="748" y="48" width="100" height="44" rx="4"/>
+    <rect x="748" y="120" width="100" height="44" rx="4"/>
+    <rect x="188" y="210" width="150" height="52" rx="4"/>
+    <rect x="378" y="210" width="140" height="52" rx="4"/>
+    <rect x="558" y="204" width="150" height="30" rx="4"/>
+    <rect x="558" y="242" width="150" height="30" rx="4"/>
+    <rect x="748" y="204" width="100" height="30" rx="4"/>
+    <rect x="748" y="242" width="110" height="30" rx="4"/>
+    <rect x="28" y="330" width="140" height="44" rx="4"/>
+    <rect x="28" y="390" width="140" height="44" rx="4"/>
+    <rect x="220" y="360" width="120" height="44" rx="4"/>
+    <rect x="400" y="360" width="130" height="44" rx="4"/>
+  </g>
+  <g font-size="13" fill="#1c1b19" text-anchor="middle">
+    <text x="83" y="110">Rete</text>
+    <text x="258" y="110">IRM-30-24</text>
+    <text x="438" y="102">24 V</text>
+    <text x="438" y="120">1,25 A</text>
+    <text x="623" y="74">Amplificatore</text>
+    <text x="633" y="146">Sorgente PD</text>
+    <text x="798" y="74">8 W + 8 W</text>
+    <text x="798" y="146">HAT 20 V</text>
+    <text x="263" y="232">Satellite1.1</text>
+    <text x="263" y="250">jack 3,5 mm</text>
+    <text x="448" y="232">Filtro</text>
+    <text x="448" y="250">300 Hz / 45 Hz</text>
+    <text x="633" y="224">Sinistro</text>
+    <text x="633" y="262">Destro</text>
+    <text x="798" y="224">RMD 4 ?</text>
+    <text x="803" y="262">TEAX 8 ?</text>
+    <text x="98" y="356">Tocco sinistro</text>
+    <text x="98" y="416">Tocco destro</text>
+    <text x="280" y="386">Vol? / Vol+</text>
+    <text x="465" y="386">LD2450</text>
+  </g>
+  <g fill="none" stroke="#1c1b19" stroke-width="1.4" marker-end="url(#a)">
+    <path d="M138 106 H188"/>
+    <path d="M328 106 H378"/>
+    <path d="M498 96 H548"/>
+    <path d="M498 116 H520 V142 H548"/>
+    <path d="M698 70 H748"/>
+    <path d="M718 142 H748"/>
+    <path d="M338 236 H378"/>
+    <path d="M518 219 H558"/>
+    <path d="M518 257 H558"/>
+    <path d="M708 219 H748"/>
+    <path d="M708 257 H748"/>
+    <path d="M168 352 H190 V382 H220"/>
+    <path d="M168 412 H190 V382"/>
+    <path d="M340 382 H400"/>
+  </g>
+  <text x="28" y="480" font-size="12" fill="#5c5852">La massa dell’amplificatore e quella della HAT si uniscono in un solo punto.</text>
+  <text x="28" y="498" font-size="12" fill="#5c5852">Il TAS2780 del kit resta scollegato. Il mute è l’interruttore hardware, non un tocco.</text>
+</svg>
