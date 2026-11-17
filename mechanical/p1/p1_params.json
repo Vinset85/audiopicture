@@ -1,0 +1,442 @@
+{
+ "_doc": "AudioPicture P1 single source of geometry. Units mm. X left->right seen from the front, Y bottom->top, Z wall(0)->front. Read by mechanical/p1/cad/*.py and quoted by docs/p1/*.md.",
+ "body": {
+  "width": 320.0,
+  "height": 400.0,
+  "depth": 84.0,
+  "corner_radius_xy": 3.0,
+  "edge_fillet": 1.0
+ },
+ "z_stack": {
+  "rear_outer": 0.0,
+  "rear_skin": 6.0,
+  "baffle_back": 58.3,
+  "baffle_front": 70.3,
+  "fabric_back": 82.5,
+  "fabric_front": 84.0
+ },
+ "tub": {
+  "side_wall": 10.0,
+  "lip_thickness": 2.0,
+  "ledge_width": 8.0,
+  "ledge_z": 58.3,
+  "partition_y": [
+   80.0,
+   84.0
+  ],
+  "pocket_interior_y": [
+   10.0,
+   80.0
+  ],
+  "driver_interior_y": [
+   84.0,
+   390.0
+  ],
+  "rib": {
+   "width": 4.0,
+   "height": 10.0,
+   "pitch": 60.0,
+   "fillet": 1.5
+  },
+  "tie_column": {
+   "od": 16.0,
+   "insert_bore": 5.6,
+   "insert_depth": 9.0,
+   "root_fillet": 3.0
+  }
+ },
+ "baffle": {
+  "outline": [
+   316.0,
+   396.0
+  ],
+  "thickness": 12.0,
+  "flange_gasket_compressed": 0.8,
+  "edge_screw": "M3x16 ISO 10642 A2 countersunk into Ruthex RX-M3x5.7 in the tub ledge",
+  "edge_screw_pitch_max": 65.0
+ },
+ "drivers": {
+  "WF1": {
+   "part": "Dayton Audio ND91-4",
+   "center": [
+    160.0,
+    194.0
+   ],
+   "rotation_deg": 45.0,
+   "cutout_d": 85.0,
+   "flange_flats": 88.5,
+   "flange_corner_d": 103.2,
+   "flange_t": 1.1,
+   "bolt_circle_d": 93.3,
+   "hole_d": 4.0,
+   "rebate_depth": 2.0,
+   "depth_below_mount_face": 56.8,
+   "front_above_mount_face": 6.1,
+   "magnet_d": 42.0,
+   "basket_d": 77.8,
+   "xmax": 4.6
+  },
+  "TW1": {
+   "part": "Dayton Audio ND20FB-4 rear mount",
+   "center": [
+    160.0,
+    262.0
+   ],
+   "front_ring_d": 35.7,
+   "hole_d": 36.2,
+   "flange_square": 39.0,
+   "bolt_circle_d": 43.0,
+   "hole_screw_d": 3.5,
+   "ring_height_above_flange": 14.0,
+   "body_below_flange": 5.0,
+   "seat_boss": [
+    47.0,
+    2.0
+   ]
+  },
+  "PR1": {
+   "part": "Dayton Audio ND90-PR",
+   "center": [
+    66.0,
+    326.0
+   ],
+   "rotation_deg": 45.0,
+   "cutout_d": 85.0,
+   "flange_flats": 88.4,
+   "flange_corner_d": 103.5,
+   "flange_t": 1.1,
+   "bolt_circle_d": 93.0,
+   "hole_d": 4.2,
+   "rebate_depth": 6.0,
+   "recess_chamfer": 3.0,
+   "basket_depth_below_mount_face": 28.5,
+   "front_above_mount_face": 8.5,
+   "basket_d": 76.5,
+   "stud_protrusion_after_trim": 14.0,
+   "added_mass_g": 7.3,
+   "xmax": 9.0
+  },
+  "PR2": {
+   "part": "Dayton Audio ND90-PR",
+   "center": [
+    254.0,
+    130.0
+   ],
+   "rotation_deg": 45.0,
+   "same_as": "PR1"
+  }
+ },
+ "ties": [
+  [
+   40.0,
+   118.0
+  ],
+  [
+   160.0,
+   140.0
+  ],
+  [
+   106.0,
+   194.0
+  ],
+  [
+   214.0,
+   194.0
+  ],
+  [
+   290.0,
+   200.0
+  ],
+  [
+   30.0,
+   215.0
+  ],
+  [
+   110.0,
+   262.0
+  ],
+  [
+   210.0,
+   262.0
+  ],
+  [
+   290.0,
+   300.0
+  ],
+  [
+   160.0,
+   340.0
+  ],
+  [
+   250.0,
+   368.0
+  ],
+  [
+   30.0,
+   380.0
+  ],
+  [
+   120.0,
+   326.0
+  ],
+  [
+   66.0,
+   272.0
+  ],
+  [
+   200.0,
+   130.0
+  ],
+  [
+   254.0,
+   184.0
+  ]
+ ],
+ "electronics_pocket": {
+  "main_pcb": {
+   "outline": [
+    292.0,
+    58.0
+   ],
+   "origin": [
+    14.0,
+    16.0
+   ],
+   "z_bottom": 37.0,
+   "thickness": 1.6,
+   "layers": 4,
+   "envelopes": "hardware/kicad/p1-main/fab/P1-MAIN_revA_envelopes.json",
+   "mount_holes": [
+    [
+     18.0,
+     20.0
+    ],
+    [
+     302.0,
+     20.0
+    ],
+    [
+     18.0,
+     70.0
+    ],
+    [
+     302.0,
+     70.0
+    ],
+    [
+     142.0,
+     20.0
+    ],
+    [
+     142.0,
+     70.0
+    ]
+   ]
+  },
+  "rear_bay": {
+   "x": [
+    150.0,
+    250.0
+   ],
+   "y": [
+    10.0,
+    76.0
+   ],
+   "z": [
+    0.0,
+    35.0
+   ]
+  },
+  "flex_core": {
+   "part": "Seeed reSpeaker Flex XVF3800 core (no XIAO)",
+   "outline": [
+    70.5,
+    52.2
+   ],
+   "origin": [
+    30.0,
+    14.0
+   ],
+   "z_bottom": 12.0
+  },
+  "mic_array": {
+   "part": "Seeed reSpeaker Flex Linear-4",
+   "outline": [
+    110.0,
+    11.0
+   ],
+   "center": [
+    160.0,
+    46.0
+   ],
+   "mic_x_from_left": [
+    5.5,
+    38.5,
+    71.5,
+    104.5
+   ],
+   "mic_y_from_bottom": 6.18,
+   "mount_holes_x": [
+    23.75,
+    86.25
+   ],
+   "mount_hole_y": 5.5,
+   "mount_hole_d": 3.3,
+   "baffle_remaining": 2.0,
+   "port_d": 1.2,
+   "gasket_ring": [
+    7.0,
+    3.0,
+    0.5
+   ],
+   "gasket_compressed": 0.3
+  },
+  "radar": {
+   "part": "Hi-Link HLK-LD6004",
+   "outline": [
+    25.0,
+    31.5
+   ],
+   "center": [
+    62.0,
+    45.0
+   ],
+   "radome_t": 1.5
+  },
+  "light_pipe": {
+   "d": 3.0,
+   "center": [
+    294.0,
+    46.0
+   ],
+   "_doc": "OPT3004 (U15) ambient light, PMMA rod"
+  },
+  "status_led_pipe": {
+   "d": 3.0,
+   "center": [
+    90.0,
+    24.0
+   ],
+   "_doc": "WS2812B-2020 (D4) status"
+  },
+  "vents_bottom": [
+   [
+    40.0,
+    140.0
+   ],
+   [
+    255.0,
+    280.0
+   ],
+   [
+    287.0,
+    304.0
+   ]
+  ],
+  "vents_front_y": [
+   70.0,
+   77.0
+  ],
+  "env_chamber": {
+   "x": [
+    283.5,
+    310.0
+   ],
+   "y": [
+    10.0,
+    80.0
+   ],
+   "wall_x": [
+    283.5,
+    284.5
+   ],
+   "_doc": "ENV island (SHT45 U14, OPT3004 U15) walled off from the pocket; wall passes the MAIN slots"
+  },
+  "mute_led_pipe": {
+   "d": 3.0,
+   "center": [
+    80.0,
+    24.0
+   ],
+   "_doc": "red mute LED (D3), hardware-driven"
+  },
+  "vents_front_x": [
+   [
+    22.0,
+    74.0
+   ],
+   [
+    228.0,
+    280.0
+   ],
+   [
+    287.0,
+    304.0
+   ]
+  ],
+  "buttons": {
+   "MUTE": [
+    60.0,
+    16.0
+   ],
+   "ACTION": [
+    100.0,
+    16.0
+   ],
+   "plunger_d": 3.0,
+   "travel": 0.6,
+   "_doc": "EVQ-P7A01P side-actuated at the MAIN bottom edge; printed flexure plungers in the tub bottom wall"
+  }
+ },
+ "front_frame": {
+  "profile_width": 12.0,
+  "z": [
+   70.3,
+   84.0
+  ],
+  "magnet_inset": 6.5,
+  "magnet": [
+   8.0,
+   3.0
+  ],
+  "steel_disc": [
+   8.0,
+   1.0
+  ],
+  "boss_d": 11.0
+ },
+ "cleat": {
+  "recess": {
+   "x": [
+    130.0,
+    300.0
+   ],
+   "y": [
+    331.0,
+    386.0
+   ],
+   "depth": 10.0
+  },
+  "rail_top_y": 357.0,
+  "picture_cleat": [
+   130.0,
+   24.0,
+   8.0
+  ],
+  "wall_rail": [
+   150.0,
+   24.0,
+   8.0
+  ],
+  "bevel_deg": 45.0,
+  "lift_to_hang": 10.0,
+  "inserts": 4,
+  "design_mass_kg": 8.0,
+  "safety_factor": 3.0
+ },
+ "clearances": {
+  "cone_to_fabric_min": 2.0,
+  "moving_parts_to_wall_min": 3.0,
+  "part_to_part_min": 1.0
+ }
+}

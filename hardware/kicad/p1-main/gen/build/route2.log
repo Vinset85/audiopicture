@@ -1,0 +1,19 @@
+export True
+pass3 nets/keepouts (146, 865)
+/Users/cinetyk/tools/jre/jdk-25.0.5+8-jre/Contents/Home/bin/java -jar /Users/cinetyk/tools/freerouting/freerouting-2.5.0.jar --gui.enabled=false -de /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass3.dsn -do /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass3.ses -mp 60 -mt 7
+2026-10-23 19:19:08.289 WARN   Design Warning: Board has 2 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 2 unfixable violation(s) (cannot be resolved by Freerouting):
+          - U5.15@6 <-> U5.8 [net 5V]
+          - U5.15@6 <-> U5.7 [net 5V]
+Resolving these 2 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-23 19:19:13.186 INFO   [2FFF24\CBCCEE] Fanout stage completed: started with 326 total SMD pins, completed in 4.47 seconds, escaped pins: 238/326 (73.0%), using 4.29 total CPU seconds, 3.69 GB total allocated, and 250.9 MB peak heap usage.
+2026-10-23 19:22:19.262 INFO   [2FFF24\CBCCEE] Auto-routing stage completed: started with 109 unrouted nets, completed in 190.76 seconds, final score: 874.39 (21 unrouted and 2 violations), using 177.32 total CPU seconds, 158.15 GB total allocated, and 471.9 MB peak heap usage.
+import True restored 612 items; tracks now 2339
+saved
+export True
+pass4 nets/keepouts (19, 2266)
+/Users/cinetyk/tools/jre/jdk-25.0.5+8-jre/Contents/Home/bin/java -jar /Users/cinetyk/tools/freerouting/freerouting-2.5.0.jar --gui.enabled=false -de /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass4.dsn -do /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass4.ses -mp 40 -mt 7
+2026-10-23 19:22:30.604 INFO   [55C634\9A9F8E] Fanout stage completed: started with 49 total SMD pins, completed in 0.28 seconds, escaped pins: 49/49 (100.0%), using 0.26 total CPU seconds, 0.21 GB total allocated, and 146.8 MB peak heap usage.
+2026-10-23 19:22:42.718 INFO   [55C634\9A9F8E] Auto-routing stage completed: started with 4 unrouted nets, completed in 12.57 seconds, final score: 873.02 (4 unrouted and 0 violations), using 12.21 total CPU seconds, 10.16 GB total allocated, and 197.0 MB peak heap usage.
+import True restored 1916 items; tracks now 2339
+saved

@@ -1,0 +1,151 @@
+{
+ "params": "mechanical/p1/p1_params.json",
+ "gates": [
+  {
+   "gate": "interference TUB x BAFFLE",
+   "result": "PASS",
+   "value": 0.0
+  },
+  {
+   "gate": "interference BAFFLE x FRAME",
+   "result": "PASS",
+   "value": 0.0
+  },
+  {
+   "gate": "interference TUB x FRAME",
+   "result": "PASS",
+   "value": 0.0
+  },
+  {
+   "gate": "purchased-part interference sweep",
+   "result": "PASS",
+   "value": null
+  },
+  {
+   "gate": "WF1 cone at +Xmax to fabric >= 2 mm",
+   "result": "PASS",
+   "value": 4.8
+  },
+  {
+   "gate": "PR1 cone at +Xmax to fabric >= 2 mm",
+   "result": "PASS",
+   "value": 2.9
+  },
+  {
+   "gate": "PR1 stud/disk at -Xmax clear of tub",
+   "result": "PASS",
+   "value": {
+    "clearance_to_rear_skin_mm": 7.6,
+    "overlap_mm3": 0.0
+   }
+  },
+  {
+   "gate": "PR2 cone at +Xmax to fabric >= 2 mm",
+   "result": "PASS",
+   "value": 2.9
+  },
+  {
+   "gate": "PR2 stud/disk at -Xmax clear of tub",
+   "result": "PASS",
+   "value": {
+    "clearance_to_rear_skin_mm": 7.6,
+    "overlap_mm3": 0.0
+   }
+  },
+  {
+   "gate": "WF1 magnet to rear skin >= 3 mm",
+   "result": "PASS",
+   "value": 6.3
+  },
+  {
+   "gate": "body depth <= 84 mm",
+   "result": "PASS",
+   "value": 84.0
+  },
+  {
+   "gate": "French cleat: rail inside recess, lift-to-hang >= 10 mm",
+   "result": "PASS",
+   "value": {
+    "rail_y": [
+     333.0,
+     357.0
+    ],
+    "cleat_y": [
+     351.0,
+     375.0
+    ],
+    "rail_inside_recess": true,
+    "lift_clear_mm": 11.0,
+    "lift_ok": true,
+    "rail_x_inside_recess": true
+   }
+  },
+  {
+   "gate": "cleat and rail do not touch",
+   "result": "PASS",
+   "value": null
+  },
+  {
+   "gate": "picture cleat seats on recess floor without tub overlap",
+   "result": "PASS",
+   "value": null
+  },
+  {
+   "gate": "woofer-tweeter centre spacing <= 70 mm",
+   "result": "PASS",
+   "value": 68.0
+  },
+  {
+   "gate": "net driver-chamber air within 3.5-5.0 L (acoustic model reads this value)",
+   "result": "PASS",
+   "value": 4.508
+  },
+  {
+   "gate": "hanger design mass >= 1.0 x assembled estimate",
+   "result": "PASS",
+   "value": 4.392
+  }
+ ],
+ "overall": "PASS",
+ "net_air_l": 4.508,
+ "air_before_driver_displacement_l": 4.575,
+ "driver_displacement_cm3": {
+  "WF1 magnet+basket steel": 41.7,
+  "PR basket steel+disk+stud x2": 21.0,
+  "TW1 body": 4.7
+ },
+ "printed_and_machined_mass_g": {
+  "TUB": 1850.9,
+  "BAFFLE": 1237.3,
+  "FRAME": 114.0,
+  "MIC_RETAINER": 6.2,
+  "RADAR_RETAINER": 3.5,
+  "PICTURE_CLEAT": 54.3,
+  "WALL_RAIL": 63.0,
+  "BUTTON_ROD_MUTE": 0.3,
+  "BUTTON_ROD_ACTION": 0.3
+ },
+ "purchased_mass_estimate_g": {
+  "ND91-4": 317.5,
+  "ND90-PR x2 (+7.3 g disk each)": 241.4,
+  "ND20FB-4": 45.0,
+  "MAIN PCBA": 120.0,
+  "Flex core + array + FPC": 45.0,
+  "LD6004": 6.0,
+  "fasteners/inserts/magnets": 90.0,
+  "fabric + CLD + fill + gaskets": 260.0
+ },
+ "assembled_mass_estimate_kg": 4.392,
+ "mount_faces_z_mm": {
+  "WF1": 69.1,
+  "PR": 65.1,
+  "TW1_flange_top": 56.3
+ },
+ "edge_screws": 26,
+ "magnets": 14,
+ "assumptions_to_verify": {
+  "PR cone rest above mount face mm": 5.5,
+  "WF cone rest above mount face mm": 4.0,
+  "PR stud trimmed protrusion mm": 14.0
+ }
+}

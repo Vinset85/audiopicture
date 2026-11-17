@@ -1,0 +1,122 @@
+Section,Item / designators,Qty,Description,Manufacturer part / material,Source / note,Status
+A Printed,AP-P1-TUB,1,"Tub: rear skin, side walls, partition, ribs, tie columns, connector bay, ENV wall","SLS PA12 (EOS PA 2200 / HP 3D HR PA12), dyed black",mechanical/p1/cad/out/AP-P1-TUB.step,MAKE
+A Printed,AP-P1-BAFFLE,1,"Baffle 316x396x12 with rebates, pockets, bores, ENV wall rib","SLS PA12, dyed black",AP-P1-BAFFLE.step,MAKE
+A Printed,AP-P1-FRAME,1,Magnetic front frame,"SLS PA12, dyed to finish",AP-P1-FRAME.step,MAKE
+A Printed,AP-P1-MIC_RETAINER,1,Mic array retainer,SLS PA12,AP-P1-MIC_RETAINER.step,MAKE
+A Printed,AP-P1-RADAR_RETAINER,1,Radar retainer,SLS PA12,AP-P1-RADAR_RETAINER.step,MAKE
+A Printed,AP-P1-BUTTON_ROD,2,Push rod MUTE / ACTION,SLS PA12,AP-P1-BUTTON_ROD_MUTE.step,MAKE
+B Machined,AP-P1-PICTURE_CLEAT,1,"French cleat, frame side 130x24x8","EN AW-6082 T6, anodised",AP-P1-PICTURE_CLEAT.step,MAKE
+B Machined,AP-P1-WALL_RAIL,1,"French cleat, wall rail 150x24x8","EN AW-6082 T6, anodised",AP-P1-WALL_RAIL.step,MAKE
+C Drivers,WF1,1,"Woofer 3.5 in, 4 ohm",Dayton Audio ND91-4,Parts Express (SKU to confirm at order),BUY
+C Drivers,TW1,1,"Tweeter 3/4 in dome, rear mount, 4 ohm",Dayton Audio ND20FB-4,Parts Express (SKU to confirm at order),BUY
+C Drivers,PR1 PR2,2,"Passive radiator 3.5 in, one supplied 7.3 g disk fitted each",Dayton Audio ND90-PR,Parts Express (SKU to confirm at order),BUY
+D Modules,MAIN PCBA,1,"P1-MAIN rev A, 292x58 mm, 4 layers 1.6 mm, see section E",Cinetyk P1-MAIN,hardware/kicad/p1-main/fab,MAKE
+D Modules,FLEX,1,"XVF3800 voice processor core, without XIAO",Seeed reSpeaker Flex XVF3800,Seeed Studio,BUY
+D Modules,MIC,1,Linear 4-mic array with FPC,Seeed reSpeaker Flex Linear-4,Seeed Studio,BUY
+D Modules,RADAR,1,60 GHz presence radar,Hi-Link HLK-LD6004,Hi-Link,BUY / VERIFY pinout
+F Cables,W1,1,"IDC ribbon 20-way 1.27 mm, 80 mm, two 2x10 IDC sockets",Amphenol T812120A101CEU x2 + 3M 3365/20,MAIN J5 -> Flex header,BUY / VERIFY Flex header pitch
+F Cables,W2,1,"Radar harness GH 1.25 6-way, 120 mm","JST GHR-06V-S x2 + SSHL-002T-P0.2 x12, 28 AWG",MAIN J6 -> LD6004,MAKE
+F Cables,W3,1,"Speaker harness VH 3.96 4-way, 200 mm, 18 AWG twisted pairs",JST VHR-4N + SVH-21T-P1.1 x4,MAIN J4 -> WF1/TW1,MAKE
+F Cables,W3-T,4,Driver terminals,TE 2.8 mm and 4.8 mm FASTON receptacles (VERIFY on driver tabs),WF1 / TW1,BUY
+G Fasteners,S1,28,Baffle to tub ledge and partition bosses,M3x16 ISO 10642 A2,,BUY
+G Fasteners,S2,16,Baffle to tie columns,M4x16 ISO 10642 A2,,BUY
+G Fasteners,S3,16,"Drivers to baffle (4 each WF1, TW1, PR1, PR2)",M3x8 ISO 7380 A2,,BUY
+G Fasteners,S4,10,MAIN (6) and Flex core (4) to standoffs,M3x6 ISO 7380 A2 + nylon washer M3,,BUY
+G Fasteners,S5,4,Mic and radar retainers,M3x8 ISO 7380 A2,,BUY
+G Fasteners,S6,4,Picture cleat to tub,M4x10 ISO 10642 A2,,BUY
+G Fasteners,S7,2,Mic array to retainer fingers (through the board M3 holes),M3x6 ISO 7380 A2 nylon,,BUY
+H Inserts,I1,58,"Heat-set insert M3, bore 4.0 x 6",Ruthex RX-M3x5.7,,BUY
+H Inserts,I2,20,"Heat-set insert M4, bore 5.6 x 9",Ruthex RX-M4x8.1,,BUY
+J Magnetic,M1,14,"Frame magnets 8x3 mm axial, bonded",N52 NdFeB 8x3 Ni-Cu-Ni,,BUY
+J Magnetic,M2,14,Steel discs 8x1 mm in the baffle,DC01 / 1.0330 zinc plated 8x1,,BUY
+K Seals,G1,4,"Driver flange gasket ring, 1.0 mm before compression",Rogers PORON 4701-30-20040 die-cut,"WF1, PR1, PR2 square flange; TW1 39x39",MAKE (die-cut)
+K Seals,G2,1.45,"Baffle perimeter gasket, metre, 6x2 mm closed cell","EPDM foam tape 6x2 mm, adhesive one side",,BUY
+K Seals,G3,4,Mic port gasket ring 7x3x0.5 mm,Rogers PORON 4701-30 0.5 mm die-cut,,MAKE (die-cut)
+K Seals,G4,1,"Wire pass-through seal, cartridge share",Neutral-cure silicone (e.g. Dow 3145 RTV),,BUY
+L Damping,D1,40,"Polyester fibre fill in the driver chamber, grams",Dayton Audio / Acousta-Stuf polyester,VERIFY amount on impedance sweep,BUY
+L Damping,D2,1,"Butyl CLD sheet 2 mm, 250x300 mm on the rear skin interior",Silent Coat 2 mm or equal,fit only if the accelerometer scan asks,OPTIONAL
+M Front,F1,1,"Acoustic fabric 340x420 mm, printed",ShowTex Speaker Mesh Print 3838,,BUY / VERIFY transfer
+M Front,F2,3,"Light pipe, PMMA rod d3.0 x 30.3 mm, polished ends",PMMA optical rod 3 mm,,MAKE
+N Misc,B1,2,Rear bumpers,3M Bumpon SJ5302,,BUY
+N Misc,L1,1,Rating and compliance label 40x20 mm,"polyester label, laser print",,MAKE
+P Power,PSU,1,"24 V 2.5 A external adapter, 5.5/2.1 centre positive (alternative to PoE)",Mean Well GST60A24-P1J,,BUY / OPTIONAL
+E MAIN PCBA,C1,1,1u C_0805_2012Metric,Murata GRM21BR71H105KA12L,,BUY
+E MAIN PCBA,C10 C11 C12 C13,4,10n C_0603_1608Metric,Murata GRM188R72A103KA01D,,BUY
+E MAIN PCBA,C14,1,1n C_1808_4520Metric,Vishay VJ1808Y102KXGAT,"Bob Smith to secondary GND, 2 kV",BUY
+E MAIN PCBA,C15,1,100n C_0805_2012Metric,Murata GRM21BR72A104KAC4L,,BUY
+E MAIN PCBA,C16,1,220u 25V CP_Elec_8x10.5,Panasonic EEE-FK1E221P,,BUY
+E MAIN PCBA,C17 C59 C60,3,10u C_1210_3225Metric,TDK C3225X7R1H106M250AC,,BUY
+E MAIN PCBA,C18 C24 C61 C62,4,100n C_0603_1608Metric,Murata GRM188R71H104KA93D,,BUY
+E MAIN PCBA,C2 C19,2,0.22u C_0603_1608Metric,Murata GRM188R71E224KA88D,,BUY
+E MAIN PCBA,C20 C34 C43 C44 C45 C46 C47 C48 C49 C52 C53 C55 C72 C73 C74 C76 C77 C81 C83 C84 C85,21,100n C_0402_1005Metric,Murata GRM155R71C104KA88D,,BUY
+E MAIN PCBA,C21,1,470u 35V CP_Radial_D10.0mm_P5.00mm,Panasonic EEU-FR1V471B,PVDD bulk; 10 x 16 mm (VERIFY height vs 16.5 envelope),VERIFY
+E MAIN PCBA,C22 C23,2,10u C_1206_3216Metric,TDK C3216X5R1H106K160AB,,BUY
+E MAIN PCBA,C25 C26 C27,3,22u C_1210_3225Metric,TDK C3225X7R1E226M250AB,,BUY
+E MAIN PCBA,C28,1,120p C_0402_1005Metric,Murata GRM1555C1H121JA01D,,BUY
+E MAIN PCBA,C29 C42 C80,3,10u C_0805_2012Metric,Murata GRM21BR71A106KA73L,,BUY
+E MAIN PCBA,C30 C31 C33 C82,4,22u C_0805_2012Metric,Murata GRM21BR61A226ME44L,,BUY
+E MAIN PCBA,C32 C35 C56 C57 C58 C75 C78,7,1u C_0603_1608Metric,Murata GRM188R71E105KA12D,,BUY
+E MAIN PCBA,C40 C54,2,4.7u C_0603_1608Metric,Murata GRM188R61A475KE15D,,BUY
+E MAIN PCBA,C41,1,10n C_0402_1005Metric,Murata GRM155R71H103KA88D,,BUY
+E MAIN PCBA,C50 C51,2,27p C_0402_1005Metric,Murata GRM1555C1H270JA01D,,BUY
+E MAIN PCBA,C63 C64 C65 C66,4,0.47u C_0603_1608Metric,Murata GRM188R71E474KA12D,,BUY
+E MAIN PCBA,C67 C68 C69 C70,4,0.68u C_0805_2012Metric,Murata GRM21BR71H684KA88L,,BUY
+E MAIN PCBA,C71,1,47u NP C_Radial_D10.0mm_H12.5mm_P5.00mm,Nichicon UES1H470MPM,"tweeter DC/LF protection, fc ~847 Hz with 4 ohm",BUY
+E MAIN PCBA,C79,1,1n C_0402_1005Metric,Murata GRM155R71H102KA01D,,BUY
+E MAIN PCBA,D1,1,SMBJ33A D_SMB,Littelfuse SMBJ33A,"unidirectional TVS, cathode (pad 1, band) on DC_F",BUY
+E MAIN PCBA,D11 D12 D13 D14 D15 D16 D17 D18,8,STPS2H100A D_SMA,ST STPS2H100A,,BUY
+E MAIN PCBA,D19,1,SMAJ58A D_SMA,Littelfuse SMAJ58A,"unidirectional TVS, cathode on POE_VP",BUY
+E MAIN PCBA,D2 D5,2,MBR130T1G D_SOD-123,onsemi MBR130T1G,USB-only service mode,BUY
+E MAIN PCBA,D3,1,RED LED_0603_1608Metric,Kingbright APT1608EC,under the mute light pipe,BUY
+E MAIN PCBA,D4,1,WS2812B-2020 LED_WS2812B-2020_PLCC4_2.0x2.0mm,Worldsemi WS2812B-2020,under the status light pipe,BUY
+E MAIN PCBA,F1,1,4A Fuse_Littelfuse-NANO2-451_453,Littelfuse 0453004.MR,,BUY
+E MAIN PCBA,FB1,1,120R L_0603_1608Metric,Murata BLM18PG121SN1D,,BUY
+E MAIN PCBA,J1,1,24V DC 5.5/2.1 BarrelJack_CUI_PJ-063AH_Horizontal,CUI PJ-063BH (VERIFY vs PJ-063AH land),"mating face toward -Y, plug inserted from the bay floor",VERIFY
+E MAIN PCBA,J2,1,RJ45 RJ45_Amphenol_54602-x08_Horizontal,Amphenol 54602-908LF (VERIFY),"unshielded, non-magnetic; magnetics T1",VERIFY
+E MAIN PCBA,J3,1,USB-C USB_C_Receptacle_GCT_USB4085,GCT USB4085-GF-A,,BUY
+E MAIN PCBA,J4,1,SPK JST_VH_B4P-VH_1x04_P3.96mm_Vertical,JST B4P-VH(LF)(SN),,BUY
+E MAIN PCBA,J5,1,FLEX IDC-Header_2x10_P2.54mm_Vertical,Amphenol T821120A1S100CEU,IDC ribbon 80 mm to the reSpeaker Flex header; pin map docs/p1/flex-header.md,BUY
+E MAIN PCBA,J6,1,RADAR JST_GH_BM06B-GHS-TBT_1x06-1MP_P1.25mm_Vertical,JST BM06B-GHS-TBT,HLK-LD6004 harness (VERIFY pinout),VERIFY
+E MAIN PCBA,L1,1,470n L_Wuerth_PMFI-201610_PMCI-compatible,TDK TFM201610ALM-R47MTAA,2016 land (VERIFY),VERIFY
+E MAIN PCBA,L2 L3 L4 L5,4,10u L_Coilcraft_XAL7050-XXX,Coilcraft XAL7050-103MEC,,BUY
+E MAIN PCBA,Q1 Q2,2,BSC028N06LS3 TDSON-8-1,Infineon BSC028N06LS3GATMA1,,BUY
+E MAIN PCBA,Q3,1,2N7002 SOT-23,onsemi 2N7002LT1G,,BUY
+E MAIN PCBA,R10 R11 R12 R13,4,75 R_0603_1608Metric,Yageo RC0603FR-0775RL,,BUY
+E MAIN PCBA,R14,1,136k R_0402_1005Metric,Yageo RC0402FR-07136KL,lowers VOUT to ~22.8 V so the DC input wins the OR (VERIFY Ag53000 ADJ table),VERIFY
+E MAIN PCBA,R20,1,8m R_Shunt_Vishay_WSK2512_6332Metric_T1.19mm,Vishay WSK25128L000FEA,,BUY
+E MAIN PCBA,R21 R24 R26 R30 R31 R47 R48 R52 R64,9,10k R_0402_1005Metric,Yageo RC0402FR-0710KL,,BUY
+E MAIN PCBA,R22 R28 R51 R60 R61,5,100k R_0402_1005Metric,Yageo RC0402FR-07100KL,UVLO 1.23*(1+100/6.65)=19.7 V,BUY
+E MAIN PCBA,R23,1,6.65k R_0402_1005Metric,Yageo RC0402FR-076K65L,,BUY
+E MAIN PCBA,R25,1,2.49k R_0402_1005Metric,Yageo RC0402FR-072K49L,RFBB -> 5.02 V,BUY
+E MAIN PCBA,R27,1,453k R_0402_1005Metric,Yageo RC0402FR-07453KL,0.6*(1+453/100)=3.32 V,BUY
+E MAIN PCBA,R32 R33,2,5.1k R_0402_1005Metric,Yageo RC0402FR-075K1L,,BUY
+E MAIN PCBA,R40,1,12.4k R_0402_1005Metric,Yageo RC0402FR-0712K4L,,BUY
+E MAIN PCBA,R41,1,1M R_0402_1005Metric,Yageo RC0402FR-071ML,,BUY
+E MAIN PCBA,R42 R43 R45 R46,4,49.9 R_0402_1005Metric,Yageo RC0402FR-0749R9L,,BUY
+E MAIN PCBA,R44,1,10 R_0402_1005Metric,Yageo RC0402FR-0710RL,,BUY
+E MAIN PCBA,R50,1,0 R_0402_1005Metric,Yageo RC0402JR-070RL,,BUY
+E MAIN PCBA,R53 R54 R55 R65,4,33 R_0402_1005Metric,Yageo RC0402FR-0733RL,,BUY
+E MAIN PCBA,R62 R66 R67,3,1k R_0402_1005Metric,Yageo RC0402FR-071KL,,BUY
+E MAIN PCBA,R63,1,470 R_0402_1005Metric,Yageo RC0402FR-07470RL,,BUY
+E MAIN PCBA,R68 R69,2,100 R_0402_1005Metric,Yageo RC0402FR-07100RL,,BUY
+E MAIN PCBA,R70 R71,2,4.7k R_0402_1005Metric,Yageo RC0402FR-074K7L,pull-ups to the Flex VDDIO: no back-powering when muted,BUY
+E MAIN PCBA,R72 R73,2,2.2k R_0402_1005Metric,Yageo RC0402FR-072K2L,,BUY
+E MAIN PCBA,R74,1,100 R_0603_1608Metric,Yageo RC0603FR-07100RL,quick output discharge,BUY
+E MAIN PCBA,SW1 SW2,2,MUTE SW_SPST_EVQP7A,Panasonic EVQ-P7A01P,"side actuated, plunger through the bottom wall",BUY
+E MAIN PCBA,SW3 SW4,2,BOOT SW_SPST_PTS810,C&K PTS810SJM250SMTRLFS,,BUY
+E MAIN PCBA,T1,1,PT61020EL Bourns_PT61020EL_SMD24,Bourns PT61020EL,,BUY
+E MAIN PCBA,U1 U3,2,LM74700QDBVRQ1 SOT-23-6,TI LM74700QDBVRQ1,,BUY
+E MAIN PCBA,U10,1,W5500 LQFP-48_7x7mm_P0.5mm,WIZnet W5500,,BUY
+E MAIN PCBA,U11,1,TAS5825MRHBR Texas_RHB0032E_VQFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm_ThermalVias,TI TAS5825MRHBR,I2C 0x4C (ADR 0 ohm to GND),BUY
+E MAIN PCBA,U12,1,74LVC1G17 SOT-353_SC-70-5,TI SN74LVC1G17DCKR,,BUY
+E MAIN PCBA,U13,1,74AUP1G74 VSSOP-8_2.3x2mm_P0.5mm,TI SN74AUP1G74DCUR,toggle: D = /Q,BUY
+E MAIN PCBA,U14,1,SHT45 Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad,Sensirion SHT45-AD1B-R2,"I2C 0x44, next to the bottom inlet vents",BUY
+E MAIN PCBA,U15,1,OPT3004 TI_DNP0006A_OPT3004,TI OPT3004DNPR,"I2C 0x45 (ADDR=VDD), under the ambient light pipe",BUY
+E MAIN PCBA,U2,1,Ag53024 Silvertel_Ag53000_SIL10,Silvertel Ag53024,"pin 1 at (203,33); module body toward -Y; primary pins 1-6 right, secondary 7-10 left",BUY
+E MAIN PCBA,U4,1,INA228AIDGSR TSSOP-10_3x3mm_P0.5mm,TI INA228AIDGSR,I2C 0x40,BUY
+E MAIN PCBA,U5,1,TPSM53603RDAR Texas_B3QFN-14-1EP_5x5.5mm_P0.65mm_ThermalVia,TI TPSM53603RDAR,,BUY
+E MAIN PCBA,U6,1,TPS62823DLCR Texas_VSON-HR-8_1.5x2mm_P0.5mm,TI TPS62823DLCR,,BUY
+E MAIN PCBA,U7,1,TPS22917DBVR SOT-23-6,TI TPS22917DBVR,hardware privacy: MUTED removes power from the XVF3800 and microphones,BUY
+E MAIN PCBA,U8,1,ESP32-S3-WROOM-1-N16R8 ESP32-S3-WROOM-1,Espressif ESP32-S3-WROOM-1-N16R8,"antenna toward +Y, module end flush with the top edge; all-layer keep-out under the antenna",BUY
+E MAIN PCBA,U9,1,TPD2EUSB30 Texas_DRT-3,TI TPD2EUSB30DRTR,,BUY
+E MAIN PCBA,Y1,1,25MHz Crystal_SMD_3225-4Pin_3.2x2.5mm,Abracon ABM8G-25.000MHZ-18-D2Y-T,,BUY

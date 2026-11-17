@@ -1,0 +1,101 @@
+{
+ "model": "finite-difference Kirchhoff plate, energy form; screening, confirm with accelerometer scan",
+ "grid_mm": 3.0,
+ "net_air_l": 4.508,
+ "ties": [
+  [
+   40.0,
+   118.0
+  ],
+  [
+   160.0,
+   140.0
+  ],
+  [
+   106.0,
+   194.0
+  ],
+  [
+   214.0,
+   194.0
+  ],
+  [
+   290.0,
+   200.0
+  ],
+  [
+   30.0,
+   215.0
+  ],
+  [
+   110.0,
+   262.0
+  ],
+  [
+   210.0,
+   262.0
+  ],
+  [
+   290.0,
+   300.0
+  ],
+  [
+   160.0,
+   340.0
+  ],
+  [
+   250.0,
+   368.0
+  ],
+  [
+   30.0,
+   380.0
+  ],
+  [
+   120.0,
+   326.0
+  ],
+  [
+   66.0,
+   272.0
+  ],
+  [
+   200.0,
+   130.0
+  ],
+  [
+   254.0,
+   184.0
+  ]
+ ],
+ "panels": {
+  "rear": {
+   "modes_hz": [
+    1308,
+    1540,
+    1576,
+    1711
+   ],
+   "volume_compliance_m3_per_pa": 6.124e-11,
+   "edge_condition": "clamped"
+  },
+  "baffle": {
+   "modes_hz": [
+    565,
+    707,
+    737,
+    993
+   ],
+   "volume_compliance_m3_per_pa": 5.859e-11,
+   "edge_condition": "simply supported"
+  }
+ },
+ "side_wall_f1_hz": 5457,
+ "wall_to_air_compliance_percent": 0.38,
+ "gates": {
+  "rear f1 >= 500 Hz": true,
+  "baffle f1 >= 500 Hz": true,
+  "wall/air compliance <= 1 %": true
+ },
+ "overall": "PASS"
+}

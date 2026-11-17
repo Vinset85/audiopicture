@@ -1,0 +1,56 @@
+2026-10-23 19:22:27.754 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-10-23 19:22:28.030 INFO   Hardware: 8 CPU cores, 361 CPU score, 4096 MB RAM
+2026-10-23 19:22:28.030 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-23 19:22:28.031 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-10-23 19:22:29.079 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-10-23 19:22:29.180 WARN   Keepout zone 'null' was skipped because its geometry is degenerate (e.g. zero-area polygon). This is likely a DSN export issue in your EDA tool. The board will be routed without this keepout constraint.
+2026-10-23 19:22:29.189 WARN   Polygon.winding_number_after_closing: winding number != 0 expected
+2026-10-23 19:22:29.204 WARN   Keepout zone 'null' was skipped because its geometry is degenerate (e.g. zero-area polygon). This is likely a DSN export issue in your EDA tool. The board will be routed without this keepout constraint.
+2026-10-23 19:22:29.206 WARN   Polygon.winding_number_after_closing: winding number != 0 expected
+2026-10-23 19:22:29.356 INFO   [55C634\9A9F8E] Loading board file 'pass4.dsn'...
+2026-10-23 19:22:29.372 WARN   Keepout zone 'null' was skipped because its geometry is degenerate (e.g. zero-area polygon). This is likely a DSN export issue in your EDA tool. The board will be routed without this keepout constraint.
+2026-10-23 19:22:29.374 WARN   Polygon.winding_number_after_closing: winding number != 0 expected
+2026-10-23 19:22:29.377 WARN   Keepout zone 'null' was skipped because its geometry is degenerate (e.g. zero-area polygon). This is likely a DSN export issue in your EDA tool. The board will be routed without this keepout constraint.
+2026-10-23 19:22:29.379 WARN   Polygon.winding_number_after_closing: winding number != 0 expected
+2026-10-23 19:22:29.577 WARN   Keepout zone 'null' was skipped because its geometry is degenerate (e.g. zero-area polygon). This is likely a DSN export issue in your EDA tool. The board will be routed without this keepout constraint.
+2026-10-23 19:22:29.579 WARN   Polygon.winding_number_after_closing: winding number != 0 expected
+2026-10-23 19:22:29.587 WARN   Keepout zone 'null' was skipped because its geometry is degenerate (e.g. zero-area polygon). This is likely a DSN export issue in your EDA tool. The board will be routed without this keepout constraint.
+2026-10-23 19:22:29.588 WARN   Polygon.winding_number_after_closing: winding number != 0 expected
+2026-10-23 19:22:29.610 INFO   [55C634\9A9F8E] Job '55C634\9A9F8E' started at 2026-10-23T17:22:29.609877Z.
+2026-10-23 19:22:30.014 INFO   [55C634\9A9F8E] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=7.
+2026-10-23 19:22:30.301 INFO   [55C634\9A9F8E] Fanout stage started on board '638c351edbf70799545c09829be86385' with 4 of 567 SMD pins needing fanout (45 already connected, 518 netless).
+2026-10-23 19:22:30.589 INFO   [55C634\9A9F8E] Fanout pass #1 on board '638c351edbf70799545c09829be86385' completed in 0.22 seconds with 0 SMD pins fanouted, 0 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-10-23 19:22:30.604 INFO   [55C634\9A9F8E] Fanout stage completed: started with 49 total SMD pins, completed in 0.28 seconds, escaped pins: 49/49 (100.0%), using 0.26 total CPU seconds, 0.21 GB total allocated, and 146.8 MB peak heap usage.
+2026-10-23 19:22:31.030 INFO   [55C634\9A9F8E] Auto-routing stage started on board '638c351edbf70799545c09829be86385' with baseline score 873.02 for 4 unrouted items.
+2026-10-23 19:22:32.022 INFO   [55C634\9A9F8E] Auto-routing pass #1 on board '638c351edbf70799545c09829be86385' was completed in 0.82 seconds with score 873.02 (4 unrouted and 0 violations), using 1.53 CPU seconds and the job allocated 0.98 GB of memory so far.
+2026-10-23 19:22:32.709 INFO   [55C634\9A9F8E] Auto-routing pass #2 on board '638c351edbf70799545c09829be86385' was completed in 0.65 seconds with score 873.02 (4 unrouted and 0 violations), using 2.49 CPU seconds and the job allocated 1.71 GB of memory so far.
+2026-10-23 19:22:33.330 INFO   [55C634\9A9F8E] Auto-routing pass #3 on board '638c351edbf70799545c09829be86385' was completed in 0.58 seconds with score 873.02 (4 unrouted and 0 violations), using 2.49 CPU seconds and the job allocated 1.71 GB of memory so far.
+2026-10-23 19:22:33.948 INFO   [55C634\9A9F8E] Auto-routing pass #4 on board '638c351edbf70799545c09829be86385' was completed in 0.58 seconds with score 873.02 (4 unrouted and 0 violations), using 3.45 CPU seconds and the job allocated 2.51 GB of memory so far.
+2026-10-23 19:22:34.522 INFO   [55C634\9A9F8E] Auto-routing pass #5 on board '638c351edbf70799545c09829be86385' was completed in 0.54 seconds with score 873.02 (4 unrouted and 0 violations), using 3.45 CPU seconds and the job allocated 2.51 GB of memory so far.
+2026-10-23 19:22:35.097 INFO   [55C634\9A9F8E] Auto-routing pass #6 on board '638c351edbf70799545c09829be86385' was completed in 0.54 seconds with score 873.02 (4 unrouted and 0 violations), using 4.44 CPU seconds and the job allocated 3.37 GB of memory so far.
+2026-10-23 19:22:35.677 INFO   [55C634\9A9F8E] Auto-routing pass #7 on board '638c351edbf70799545c09829be86385' was completed in 0.54 seconds with score 873.02 (4 unrouted and 0 violations), using 5.42 CPU seconds and the job allocated 4.25 GB of memory so far.
+2026-10-23 19:22:36.251 INFO   [55C634\9A9F8E] Auto-routing pass #8 on board '638c351edbf70799545c09829be86385' was completed in 0.54 seconds with score 873.02 (4 unrouted and 0 violations), using 5.42 CPU seconds and the job allocated 4.25 GB of memory so far.
+2026-10-23 19:22:36.852 INFO   [55C634\9A9F8E] Auto-routing pass #9 on board '638c351edbf70799545c09829be86385' was completed in 0.56 seconds with score 873.02 (4 unrouted and 0 violations), using 6.39 CPU seconds and the job allocated 5.09 GB of memory so far.
+2026-10-23 19:22:37.412 INFO   [55C634\9A9F8E] Auto-routing pass #10 on board '638c351edbf70799545c09829be86385' was completed in 0.52 seconds with score 873.02 (4 unrouted and 0 violations), using 6.39 CPU seconds and the job allocated 5.09 GB of memory so far.
+2026-10-23 19:22:37.965 INFO   [55C634\9A9F8E] Auto-routing pass #11 on board '638c351edbf70799545c09829be86385' was completed in 0.52 seconds with score 873.02 (4 unrouted and 0 violations), using 7.39 CPU seconds and the job allocated 6.01 GB of memory so far.
+2026-10-23 19:22:38.377 WARN   Analytics tracking: first delivery failure in this window - /v1/analytics/identify - SocketTimeoutException: Read timed out. Further failures will be aggregated and reported every 60 minutes.
+2026-10-23 19:22:38.648 INFO   [55C634\9A9F8E] Auto-routing pass #12 on board '638c351edbf70799545c09829be86385' was completed in 0.52 seconds with score 873.02 (4 unrouted and 0 violations), using 7.39 CPU seconds and the job allocated 6.01 GB of memory so far.
+2026-10-23 19:22:39.225 INFO   [55C634\9A9F8E] Auto-routing pass #13 on board '638c351edbf70799545c09829be86385' was completed in 0.54 seconds with score 873.02 (4 unrouted and 0 violations), using 8.38 CPU seconds and the job allocated 6.86 GB of memory so far.
+2026-10-23 19:22:39.869 INFO   [55C634\9A9F8E] Auto-routing pass #14 on board '638c351edbf70799545c09829be86385' was completed in 0.60 seconds with score 873.02 (4 unrouted and 0 violations), using 9.33 CPU seconds and the job allocated 7.68 GB of memory so far.
+2026-10-23 19:22:40.471 INFO   [55C634\9A9F8E] Auto-routing pass #15 on board '638c351edbf70799545c09829be86385' was completed in 0.54 seconds with score 873.02 (4 unrouted and 0 violations), using 9.33 CPU seconds and the job allocated 7.68 GB of memory so far.
+2026-10-23 19:22:41.058 INFO   [55C634\9A9F8E] Auto-routing pass #16 on board '638c351edbf70799545c09829be86385' was completed in 0.53 seconds with score 873.02 (4 unrouted and 0 violations), using 10.31 CPU seconds and the job allocated 8.56 GB of memory so far.
+2026-10-23 19:22:41.712 INFO   [55C634\9A9F8E] Auto-routing pass #17 on board '638c351edbf70799545c09829be86385' was completed in 0.61 seconds with score 873.02 (4 unrouted and 0 violations), using 11.22 CPU seconds and the job allocated 9.35 GB of memory so far.
+2026-10-23 19:22:42.269 INFO   [55C634\9A9F8E] Auto-routing pass #18 on board '638c351edbf70799545c09829be86385' was completed in 0.52 seconds with score 873.02 (4 unrouted and 0 violations), using 11.22 CPU seconds and the job allocated 9.35 GB of memory so far.
+2026-10-23 19:22:42.323 INFO   [55C634\9A9F8E] The router's best score (873.02) has not improved by more than 0.5 points since pass #8. Stopping the auto-router after 18 passes (4 items still unconnected).
+The following connections could not be routed -- please review your design (e.g. check pad clearances, trace width rules, and available routing space):
+  Net 'GND' (2 unrouted connections):
+    - conductionarea  ->  conductionarea
+    - conductionarea  ->  conductionarea
+  Net 'POE_CT36' (2 unrouted connections):
+    - via  ->  via
+    - T1-21  ->  D13-2
+2026-10-23 19:22:42.718 INFO   [55C634\9A9F8E] Auto-routing stage completed: started with 4 unrouted nets, completed in 12.57 seconds, final score: 873.02 (4 unrouted and 0 violations), using 12.21 total CPU seconds, 10.16 GB total allocated, and 197.0 MB peak heap usage.
+2026-10-23 19:22:42.865 INFO   [55C634\9A9F8E] Skipping optimization stage: the board has 4 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-10-23 19:22:42.891 INFO   [55C634\9A9F8E] Job '55C634\9A9F8E' finished with state: COMPLETED (elapsed: 13.28 seconds, finished at UTC: 2026-10-23T17:22:42.890514Z).
+2026-10-23 19:22:42.926 INFO   Saving output file '/Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass4.ses' (SES)...
+2026-10-23 19:22:42.929 INFO   Successfully saved output file '/Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass4.ses' (53970 bytes).

@@ -1,0 +1,31 @@
+export True
+pass1 nets/keepouts (19, 532)
+/Users/cinetyk/tools/jre/jdk-25.0.5+8-jre/Contents/Home/bin/java -jar /Users/cinetyk/tools/freerouting/freerouting-2.5.0.jar --gui.enabled=false -de /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass1.dsn -do /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass1.ses -mp 40 -mt 7
+2026-10-23 18:31:27.781 INFO   [7C9FF1\33F7FA] Fanout stage completed: started with 49 total SMD pins, completed in 1.11 seconds, escaped pins: 27/49 (55.1%), using 1.01 total CPU seconds, 0.57 GB total allocated, and 159.7 MB peak heap usage.
+2026-10-23 18:32:00.498 INFO   [7C9FF1\33F7FA] Auto-routing stage completed: started with 42 unrouted nets, completed in 33.94 seconds, final score: 904.76 (3 unrouted and 0 violations), using 31.50 total CPU seconds, 22.98 GB total allocated, and 254.1 MB peak heap usage.
+import True restored 351 items; tracks now 675
+saved
+export True
+pass2 nets/keepouts (146, 854)
+/Users/cinetyk/tools/jre/jdk-25.0.5+8-jre/Contents/Home/bin/java -jar /Users/cinetyk/tools/freerouting/freerouting-2.5.0.jar --gui.enabled=false -de /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass2.dsn -do /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass2.ses -mp 100 -mt 7
+2026-10-23 18:32:09.974 WARN   Design Warning: Board has 2 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 2 unfixable violation(s) (cannot be resolved by Freerouting):
+          - U5.15@6 <-> U5.8 [net 5V]
+          - U5.15@6 <-> U5.7 [net 5V]
+Resolving these 2 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-23 18:32:15.338 INFO   [4CC044\4A5617] Fanout stage completed: started with 326 total SMD pins, completed in 5.10 seconds, escaped pins: 151/326 (46.3%), using 4.25 total CPU seconds, 3.23 GB total allocated, and 270.7 MB peak heap usage.
+2026-10-23 18:46:43.749 INFO   [4CC044\4A5617] Auto-routing stage completed: started with 223 unrouted nets, completed in 873.61 seconds, final score: 904.29 (16 unrouted and 2 violations), using 800.34 total CPU seconds, 729.68 GB total allocated, and 595.6 MB peak heap usage.
+import True restored 675 items; tracks now 2312
+saved
+export True
+pass3 nets/keepouts (146, 859)
+/Users/cinetyk/tools/jre/jdk-25.0.5+8-jre/Contents/Home/bin/java -jar /Users/cinetyk/tools/freerouting/freerouting-2.5.0.jar --gui.enabled=false -de /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass3.dsn -do /Users/cinetyk/Library/CloudStorage/Dropbox/Azienda Cinetyk/Sviluppo/audiopicture/hardware/kicad/p1-main/gen/build/pass3.ses -mp 60 -mt 7
+2026-10-23 18:46:55.273 WARN   Design Warning: Board has 2 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 2 unfixable violation(s) (cannot be resolved by Freerouting):
+          - U5.15@6 <-> U5.8 [net 5V]
+          - U5.15@6 <-> U5.7 [net 5V]
+Resolving these 2 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-10-23 18:47:00.627 INFO   [64FBC0\7FA5D3] Fanout stage completed: started with 326 total SMD pins, completed in 4.83 seconds, escaped pins: 262/326 (80.4%), using 4.64 total CPU seconds, 3.91 GB total allocated, and 277.4 MB peak heap usage.
+2026-10-23 18:57:24.800 INFO   [64FBC0\7FA5D3] Auto-routing stage completed: started with 52 unrouted nets, completed in 629.30 seconds, final score: 826.56 (29 unrouted and 2 violations), using 596.01 total CPU seconds, 560.35 GB total allocated, and 487.1 MB peak heap usage.
+import True restored 675 items; tracks now 2350
+saved

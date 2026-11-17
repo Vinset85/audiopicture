@@ -1,0 +1,501 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T19:27:33",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.7",
+    "schematic_parity": [],
+    "source": "p1-main.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pista [5V] su F.Cu, lung. 36.4780 mm",
+                    "pos": {
+                        "x": 156.006,
+                        "y": 33.5539
+                    },
+                    "uuid": "dbc4e414-eb96-47e5-893e-759ce6d273b3"
+                },
+                {
+                    "description": "Piazzola 1 [5V] di TP2 su F.Cu",
+                    "pos": {
+                        "x": 163.8,
+                        "y": 46.85
+                    },
+                    "uuid": "e6bc305b-09f3-456e-848a-1051a53d6f11"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pista [5V] su F.Cu, lung. 2.9410 mm",
+                    "pos": {
+                        "x": 179.15,
+                        "y": 30.5
+                    },
+                    "uuid": "e2537978-5acc-457c-badf-be483a3cf08d"
+                },
+                {
+                    "description": "Pista [5V] su F.Cu, lung. 3.6000 mm",
+                    "pos": {
+                        "x": 263.2,
+                        "y": 74.625
+                    },
+                    "uuid": "3e387819-6f84-4f35-82aa-d1af1a0f2d11"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Piazzola 1 [W_EXRES] di R40 su F.Cu",
+                    "pos": {
+                        "x": 185.74,
+                        "y": 21.95
+                    },
+                    "uuid": "08a34969-05c3-4027-8563-5462e723ee19"
+                },
+                {
+                    "description": "Piazzola 10 [W_EXRES] di U10 su F.Cu",
+                    "pos": {
+                        "x": 185.8375,
+                        "y": 29.75
+                    },
+                    "uuid": "4353e4a5-0f01-44fb-ad6a-2ec2f87bd9e2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pista [POE_CT36] su F.Cu, lung. 0.0395 mm",
+                    "pos": {
+                        "x": 221.524,
+                        "y": 27.8528
+                    },
+                    "uuid": "f50cf6c2-08da-4504-8222-65cce1ebda88"
+                },
+                {
+                    "description": "Pista [POE_CT36] su F.Cu, lung. 1.8030 mm",
+                    "pos": {
+                        "x": 222.9,
+                        "y": 34.2
+                    },
+                    "uuid": "489a372c-0318-441a-809d-71e4b10ceca1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Piazzola 35 [ETH_MOSI] di U10 su F.Cu",
+                    "pos": {
+                        "x": 194.1625,
+                        "y": 25.75
+                    },
+                    "uuid": "48ddfd69-4133-49df-8b2c-21237bcf84c5"
+                },
+                {
+                    "description": "Pista [ETH_MOSI] su F.Cu, lung. 0.3132 mm",
+                    "pos": {
+                        "x": 90.3386,
+                        "y": 44.2983
+                    },
+                    "uuid": "c88d0589-105d-4b88-8836-4a0240818114"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [I2C0_SCL] su B.Cu, lung. 0.0386 mm",
+                    "pos": {
+                        "x": 87.1006,
+                        "y": 48.5837
+                    },
+                    "uuid": "9045560b-35cd-4439-8777-475b5ad76379"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [I2C0_SCL] su B.Cu, lung. 0.2196 mm",
+                    "pos": {
+                        "x": 87.2559,
+                        "y": 48.739
+                    },
+                    "uuid": "d1161da0-ae19-4400-9b1b-3160c05f71ba"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [TAS_PDN] su B.Cu, lung. 0.1666 mm",
+                    "pos": {
+                        "x": 103.4446,
+                        "y": 37.6591
+                    },
+                    "uuid": "8afc11ef-a6a3-4d2e-ba62-067c7a9be2a1"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [TAS_PDN] su B.Cu, lung. 0.0828 mm",
+                    "pos": {
+                        "x": 103.4446,
+                        "y": 37.7419
+                    },
+                    "uuid": "a533b7ee-e753-4428-a0cf-bbbe6c815db3"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [ETH_RST] su F.Cu, lung. 0.0371 mm",
+                    "pos": {
+                        "x": 192.078,
+                        "y": 22.5945
+                    },
+                    "uuid": "26946078-1497-4402-9a44-44541a026bd0"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [ETH_RST] su F.Cu, lung. 0.8973 mm",
+                    "pos": {
+                        "x": 191.1807,
+                        "y": 22.5945
+                    },
+                    "uuid": "4b45d85b-8593-45a4-82a5-26eec1a0c556"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [ESP_TAS_SDIN] su B.Cu, lung. 1.2604 mm",
+                    "pos": {
+                        "x": 91.3563,
+                        "y": 46.4441
+                    },
+                    "uuid": "229e47de-b751-4410-b3c1-47b407bca6eb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Larghezza pista (vincoli impostazioni scheda larg. min 0.1500 mm; reale 0.1200 mm)",
+            "items": [
+                {
+                    "description": "Pista [ESP_TAS_SDIN] su B.Cu, lung. 0.3554 mm",
+                    "pos": {
+                        "x": 91.3563,
+                        "y": 47.7045
+                    },
+                    "uuid": "ef7d87a4-8033-4805-8ab8-6f5da9e05d5e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Raccordo termico alla zona incompleto (strato F.Cu; zona conteggio min raggi 2; effettivo 1)",
+            "items": [
+                {
+                    "description": "Zona 'GND pour top' [GND] su F.Cu, priorità 0",
+                    "pos": {
+                        "x": 20.0,
+                        "y": 78.0
+                    },
+                    "uuid": "3374e5d3-685b-4203-98f3-475f94d02af4"
+                },
+                {
+                    "description": "Piazzola PTH  8 [GND] di J5",
+                    "pos": {
+                        "x": 54.31,
+                        "y": 24.23
+                    },
+                    "uuid": "708e32b1-c3b5-4d6a-95a3-c2976cb2a520"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Raccordo termico alla zona incompleto (strato B.Cu; 1 raggi connessi a isola isolata)",
+            "items": [
+                {
+                    "description": "Zona 'GND pour bottom' [GND] su B.Cu, priorità 0",
+                    "pos": {
+                        "x": 20.0,
+                        "y": 78.0
+                    },
+                    "uuid": "d44a081e-b8cc-4301-8c42-d7ac4dc61ccc"
+                },
+                {
+                    "description": "Piazzola PTH  8 [GND] di J5",
+                    "pos": {
+                        "x": 54.31,
+                        "y": 24.23
+                    },
+                    "uuid": "708e32b1-c3b5-4d6a-95a3-c2976cb2a520"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [MUTE_STATE] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 93.6505,
+                        "y": 37.9103
+                    },
+                    "uuid": "59f5a8a7-fcc0-4a1f-9a2e-a3601c6a7124"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [ESP_TAS_BCLK] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 96.3985,
+                        "y": 49.558
+                    },
+                    "uuid": "db0496ab-de0d-4301-b5b5-c3bb95ff1b02"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [POE_24V] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 173.638,
+                        "y": 47.6787
+                    },
+                    "uuid": "06df51b7-129c-456c-86e5-c0ba4d12b9a3"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [POE_CT36] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 221.524,
+                        "y": 27.8528
+                    },
+                    "uuid": "3e807c44-e331-45d9-8514-63f4435b9fbe"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [FLEX_VDDIO] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 68.5344,
+                        "y": 30.5868
+                    },
+                    "uuid": "0e4972af-9258-4730-81f6-51d5dd3ac746"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [ETH_MOSI] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 90.5601,
+                        "y": 44.0768
+                    },
+                    "uuid": "726efa0a-4474-4d49-a442-50850ac64179"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [RADAR_IO] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 53.5392,
+                        "y": 40.725
+                    },
+                    "uuid": "93423b9e-7c60-46ce-aa11-de8ce4a96eb8"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [ESP_TAS_SDIN] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 105.289,
+                        "y": 53.2668
+                    },
+                    "uuid": "8c0606d5-0ded-4523-9a85-1ee971c88c7c"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [XVF_DATA0] su F.Cu - B.Cu",
+                    "pos": {
+                        "x": 70.3701,
+                        "y": 35.5237
+                    },
+                    "uuid": "7d62a9aa-2c09-45be-b47d-09f2f620246e"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segmento su Edge.Cuts",
+                    "pos": {
+                        "x": 312.0,
+                        "y": 20.0
+                    },
+                    "uuid": "341bc45e-4eba-45f1-9986-89357663eb7d"
+                },
+                {
+                    "description": "Segmento di U8 su F.Silkscreen",
+                    "pos": {
+                        "x": 82.8,
+                        "y": 19.9
+                    },
+                    "uuid": "223c8f40-1b84-4623-a31b-9f62a5c24b25"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segmento su Edge.Cuts",
+                    "pos": {
+                        "x": 312.0,
+                        "y": 20.0
+                    },
+                    "uuid": "341bc45e-4eba-45f1-9986-89357663eb7d"
+                },
+                {
+                    "description": "Segmento di U8 su F.Silkscreen",
+                    "pos": {
+                        "x": 101.2,
+                        "y": 19.9
+                    },
+                    "uuid": "a394f8c0-cbab-45f9-ad4c-c7fcec45f396"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        }
+    ]
+}

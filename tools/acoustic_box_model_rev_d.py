@@ -324,8 +324,13 @@ def main() -> None:
     parser.add_argument("--header", type=pathlib.Path,
                         default=pathlib.Path(__file__).resolve().parents[1]
                         / "firmware/components/room_audio/include/ap_model_curve_rev_d.h")
+    parser.add_argument("--net-l", type=float, default=None,
+                        help="net driver-chamber air from CAD (evidence/p1/cad-gates.json net_air_l)")
     args = parser.parse_args()
     geometry = net_volume()
+    if args.net_l is not None:
+        geometry = {"source": "CAD net volume (drivers, ties, ribs, partition deducted)",
+                    "rev_d_estimate_l": geometry["net_l"], "net_l": args.net_l}
     nominal = run(geometry["net_l"])
     f = np.geomspace(15, 3000, 4000)
     build = solve(f, geometry["net_l"], PASSIVE["supplied_disk_kg"])
