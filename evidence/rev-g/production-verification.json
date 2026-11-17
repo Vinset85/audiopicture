@@ -6,7 +6,8 @@
     "First-article acoustic measurement against the pass bars in the frozen spec",
     "Line-out level and channel assignment confirmed on a real Dev Kit",
     "Pilot of at least one assembled frame, not a released lot",
-    "Volume-button contact confirmed active-low to ground before the touch output shares it"
+    "Volume-button contact confirmed active-low to ground before the touch output shares it",
+    "Three free Core pins confirmed on a real Dev Kit before blue, red and amber are wired"
   ],
   "gates": [
     {
@@ -22,7 +23,7 @@
     {
       "gate": "panel fits the acoustic cavity",
       "result": "PASS",
-      "detail": "panel 296x286 cavity 312x290.0 front Z=28.5"
+      "detail": "panel 292x278 cavity 312x290.0 front Z=28.5"
     },
     {
       "gate": "HAT and Core fit the bay side by side",
@@ -52,12 +53,12 @@
     {
       "gate": "bass exciter is the shallower motor",
       "result": "PASS",
-      "detail": "LF 15.5 mm 4 ohm, WB 19 mm 8 ohm"
+      "detail": "LF 14.0 mm 4 ohm Fs 83.8 Hz, WB 19 mm 8 ohm"
     },
     {
       "gate": "frame STEP and STL exist",
       "result": "PASS",
-      "detail": "stl=55284"
+      "detail": "stl=582884"
     },
     {
       "gate": "top wall stays inside the outline",
@@ -75,19 +76,39 @@
       "detail": "sampled 30 points in the top skin; both keyholes open"
     },
     {
-      "gate": "volume pads sit under the cloth on the bay",
+      "gate": "volume and mute sit on the bare bottom edge",
       "result": "PASS",
-      "detail": "left tap lowers, right tap raises, clear of radar, mics and the sounding panel"
+      "detail": "left tap lowers, right tap raises, latching mute between them, on the bare underside"
     },
     {
-      "gate": "volume pockets do not pierce the front skin",
+      "gate": "bottom controls do not open the bay",
       "result": "PASS",
-      "detail": "remaining skin 1.2 mm"
+      "detail": "volume skin 1.2 mm, mute hole open"
     },
     {
       "gate": "one 24 V supply fits beside the Core",
       "result": "PASS",
       "detail": "IRM-30-24 ends at X=82, amplifier ends at X=146, bay edge X=156"
+    },
+    {
+      "gate": "mains inlet is on the rear skin",
+      "result": "PASS",
+      "detail": "14 x 8 mm at the IRM-30 AC end; the bottom edge is closed"
+    },
+    {
+      "gate": "four status LEDs sit under the cloth on the lower edge",
+      "result": "PASS",
+      "detail": "power, link, mute, listen; clear of the volume pads"
+    },
+    {
+      "gate": "cloth sits flush in the front rabbet",
+      "result": "PASS",
+      "detail": "317 x 397 mm, magnets open on the recessed border, rim stays proud"
+    },
+    {
+      "gate": "speaker wires can leave the bay",
+      "result": "PASS",
+      "detail": "20 x 8 mm through the divider, behind the panel, sealed around the pairs"
     },
     {
       "gate": "audio path matches the published kit firmware",

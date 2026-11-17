@@ -1,5 +1,5 @@
 /* Rev.G provisional split. NOT A MEASUREMENT.
- * Left line-out, after the low-pass = Billionsound RMD002514H26-BS.
+ * Left line-out, after the low-pass = XCITE XT19-4.
  * Right line-out, after the high-pass = Tectonic TEAX25C10-8/HS.
  * The kit does not publish an external I2S port. No peaking EQ yet. */
 #ifndef AP_MODEL_CURVE_REV_G_H

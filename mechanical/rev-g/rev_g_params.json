@@ -6,7 +6,7 @@
   "rear_skin_mm": 1.0,
   "front_lip_mm": 1.5,
   "bay_height_mm": 102,
-  "panel_mm": [296, 286, 8],
+  "panel_mm": [292, 278, 8],
   "panel_z_mm": 20.5,
   "stack_mm": {
     "rear_skin": 1.0,
@@ -18,12 +18,15 @@
   },
   "exciters": {
     "lf": {
-      "part": "Billionsound RMD002514H26-BS",
+      "part": "XCITE XT19-4",
       "role": "bass",
-      "depth_mm": 15.5,
-      "diameter_mm": 46.8,
+      "depth_mm": 14.0,
+      "diameter_mm": 36.3,
       "impedance_ohm": 4,
-      "power_w": "5-10",
+      "power_w": 10,
+      "fs_hz": 83.8,
+      "mass_g": 30,
+      "xmax_mm": 1.0,
       "on_panel_mm_from_lower_left": [110, 78]
     },
     "wb": {
@@ -39,15 +42,65 @@
     }
   },
   "volume_touch": {
-    "style": "nest-mini-2",
+    "face": "bottom edge",
     "action": "one tap, one step, same path as the HAT Vol- and Vol+ buttons",
     "sensor": "TTP223, momentary, active-low, powered at 3.3 V",
     "wiring": "output across the existing button contact after that contact is confirmed active-low to ground",
-    "pocket_depth_mm": 0.3,
+    "pocket_depth_mm": 2.8,
+    "lead_hole_mm": 3.0,
     "zones": [
-      {"id": "vol_down", "side": "viewer_left", "center_mm": [-136, -186], "size_mm": [32, 16]},
-      {"id": "vol_up", "side": "viewer_right", "center_mm": [136, -186], "size_mm": [32, 16]}
+      {"id": "vol_down", "side": "viewer_left", "center_xz_mm": [-40, 15], "size_mm": [28, 12]},
+      {"id": "vol_up", "side": "viewer_right", "center_xz_mm": [40, 15], "size_mm": [28, 12]}
     ]
+  },
+  "mic_mute": {
+    "face": "bottom edge, between the volume pads",
+    "type": "latching switch, dry contact across the HAT hardware mute",
+    "center_xz_mm": [0, 15],
+    "hole_diameter_mm": 4.5
+  },
+  "status_leds": {
+    "place": "under the cloth, lower front edge of the bay",
+    "hole_diameter_mm": 2.4,
+    "part": "discrete 3 mm LED behind the hole, one 1 kohm resistor each",
+    "ring": {
+      "part": "HAT 24-LED WS2812",
+      "data": "GPIO21",
+      "firmware": "control_leds in led_ring.yaml",
+      "use": "left unconnected and dark"
+    },
+    "wiring": "Cathode to ground. Anode through 1 kohm. White anode from the HAT 3.3 V rail. Blue, red and amber each go to a free Core header tail that protrudes through the HAT.",
+    "occupied_gpio": [0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 21, 43, 44, 45],
+    "do_not_use": "GPIO21 is the ring data line. GPIO45 is the ESP32 strapping LED.",
+    "lamps": [
+      {"id": "power", "color": "white", "center_mm": [-45, -192], "drive": "HAT 3.3 V", "meaning": "3.3 V present"},
+      {"id": "link", "color": "blue", "center_mm": [-15, -192], "drive": "own Core GPIO, not yet assigned", "meaning": "Wi-Fi and Home Assistant connected"},
+      {"id": "mute", "color": "red", "center_mm": [15, -192], "drive": "own Core GPIO, not yet assigned", "meaning": "master mute on"},
+      {"id": "listen", "color": "amber", "center_mm": [45, -192], "drive": "own Core GPIO, not yet assigned", "meaning": "voice assistant listening"}
+    ]
+  },
+  "cloth_fastening": {
+    "style": "flush with the frame edge, front rabbet",
+    "part": "ShowTex 3838, no metallic ink",
+    "blank_mm": [317, 397],
+    "hem_mm": 0,
+    "metal_on_face": false,
+    "rabbet": {"rim_mm": 1.5, "depth_mm": 1.5, "shelf_mm": 12},
+    "magnet": {
+      "part": "N52 disc 8 x 2 mm",
+      "diameter_mm": 8.0,
+      "thickness_mm": 2.0,
+      "pocket_diameter_mm": 8.4,
+      "pocket_depth_mm": 2.2,
+      "fix": "glued in the front rabbet, opening toward the cloth"
+    },
+    "steel_disc": {
+      "part": "steel disc 10 x 1 mm",
+      "diameter_mm": 10.0,
+      "place": "reverse of the cloth edge"
+    },
+    "long_side_y_mm": [-150, -50, 50, 150],
+    "short_side_x_mm": [-100, 0, 100]
   },
   "audio_path": "pcm5122-line-out",
   "amplifier": {
@@ -69,7 +122,18 @@
       "output": "24 V, 1.25 A, 30 W",
       "place": "bay, right of the Core"
     },
-    "amp_max_mm": [60, 80, 16]
+    "mains_inlet": {
+      "place": "rear skin, beside the IRM-30 AC pins",
+      "center_mm": [77, -180],
+      "size_mm": [14, 8]
+    },
+    "amp_max_mm": [60, 80, 16],
+    "cable_pass": {
+      "place": "divider, right side, into the space behind the panel",
+      "center_xz_mm": [120, 6],
+      "size_mm": [20, 8],
+      "use": "two speaker pairs from the amplifier; seal around them"
+    }
   },
   "print": {
     "material": "PETG or ASA",

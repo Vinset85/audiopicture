@@ -2,7 +2,7 @@
 
 Smart acoustic picture / complete Home Assistant room node.
 
-**Product authority: [Rev.G frozen configuration](docs/architecture/v2.2-rev-g-clean.md).** 320 × 400 × 30 mm. Satellite1.1 Dev Kit and LD2450. One internal 24 V supply. Line-out to a stereo analog amplifier: Billionsound RMD002514H26-BS on the left, Tectonic TEAX25C10-8/HS on the right. Volume is two taps under the cloth, left down and right up. Frame: `mechanical/rev-g/cad/AP-G-FRAME.stl`. Digital checks: `evidence/rev-g/production-verification.json`. Not a production release.
+**Product authority: [Rev.G frozen configuration](docs/architecture/v2.2-rev-g-clean.md).** 320 × 400 × 30 mm. Satellite1.1 Dev Kit and LD2450. One internal 24 V supply. Line-out to a stereo analog amplifier: XCITE XT19-4 on the left, Tectonic TEAX25C10-8/HS on the right. Volume is two taps on the bare bottom edge, left down and right up, with a latching microphone mute between them. Four LEDs sit under the cloth: white on 3.3 V, and blue, red and amber waiting for three free Core pins. The 24-LED ring stays dark. The cloth drops into a front rabbet and finishes flush with the rim, held by fourteen magnets in that face. Frame: `mechanical/rev-g/cad/AP-G-FRAME.stl`. Digital checks: `evidence/rev-g/production-verification.json`. Not a production release.
 
 **Supporting specs:** [DML panel](mechanical/dml-panel-rev-e.md), [electronics packaging](hardware/electronics-packaging-rev-e.md). Room logic already in `firmware/components/room_audio` and HA `room.py` carries forward; acoustic coefficients become DML-specific after measurement.
 

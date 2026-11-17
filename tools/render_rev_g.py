@@ -157,6 +157,8 @@ def build(section=False):
     parts.append(cloth)
     mark_mat = material("touch", (0.45, 0.38, 0.28), 0.85)
     for zone in PARAMS["volume_touch"]["zones"]:
+        if "center_mm" not in zone:
+            continue
         zw, zh = zone["size_mm"]
         zx, zy = zone["center_mm"]
         parts.append(cube(zone["id"], [zw, zh, 0.3], [zx, zy, 31.0], mark_mat))
