@@ -217,7 +217,14 @@ def main() -> int:
     lamps = leds.get("lamps") or []
     led_d = leds.get("hole_diameter_mm", 0)
     led_ids = [lamp.get("id") for lamp in lamps]
-    led_ok = led_ids == ["power", "link", "mute", "listen"] and 1.6 <= led_d <= 3.0
+    led_drive = {lamp.get("id"): (lamp.get("gpio"), lamp.get("header_pin")) for lamp in lamps}
+    led_ok = (
+        led_ids == ["power", "link", "mute", "listen"]
+        and 1.6 <= led_d <= 3.0
+        and led_drive.get("link") == (2, 13)
+        and led_drive.get("mute") == (14, 31)
+        and led_drive.get("listen") == (18, 32)
+    )
     for lamp in lamps:
         lx, ly = lamp["center_mm"]
         led_ok = led_ok and bay_bottom + 1.5 + led_d / 2 <= ly <= -188
@@ -231,7 +238,7 @@ def main() -> int:
     gates.append(gate(
         "four status LEDs sit under the cloth on the lower edge",
         led_ok,
-        "power, link, mute, listen; clear of the volume pads",
+        "white on pin 1; blue GPIO2 pin 13; red GPIO14 pin 31; amber GPIO18 pin 32",
     ))
 
     cloth = p.get("cloth_fastening") or {}
@@ -313,7 +320,6 @@ def main() -> int:
             "Line-out level and channel assignment confirmed on a real Dev Kit",
             "Pilot of at least one assembled frame, not a released lot",
             "Volume-button contact confirmed active-low to ground before the touch output shares it",
-            "Three free Core pins confirmed on a real Dev Kit before blue, red and amber are wired",
         ],
         "gates": gates,
     }

@@ -66,6 +66,6 @@
   </g>
   <text x="28" y="480" font-size="12" fill="#5c5852">La massa dell’amplificatore e quella della HAT si uniscono in un solo punto.</text>
   <text x="28" y="498" font-size="12" fill="#5c5852">Il TAS2780 del kit resta scollegato. Il mute è l’interruttore hardware, non un tocco.</text>
-  <text x="28" y="520" font-size="12" fill="#5c5852">Anello da 24 LED spento: il dato è GPIO21 e non comanda le lampade discrete. Il bianco è sui 3,3 V.</text>
-  <text x="28" y="538" font-size="12" fill="#5c5852">Blu, rosso e ambra vogliono tre pin liberi della Core. GPIO45 non si usa. Finché i pin non sono misurati restano spenti.</text>
+  <text x="28" y="520" font-size="12" fill="#5c5852">Anello da 24 LED spento: il dato è GPIO21, pin 15. Il bianco è sul pin 1, 3,3 V.</text>
+  <text x="28" y="538" font-size="12" fill="#5c5852">Blu GPIO2 pin 13, rosso GPIO14 pin 31, ambra GPIO18 pin 32. GPIO3 e GPIO45 non si usano.</text>
 </svg>
